@@ -1,0 +1,142 @@
+<!doctype html><html data-current="post" lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Une réinitialisation CSS moderne</title><script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><style>body{color:red}</style><script>window.netlifyIdentity&&window.netlifyIdentity.on("init",n=>{n||window.netlifyIdentity.on("login",()=>{document.location.href="/admin/"})});</script></head><body><header><em><a href="/">chriskirknielsen</a></em><nav><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact/">Contact</a></li></ul></nav></header><main><article><h1>Une réinitialisation CSS moderne</h1><p><small><time datetime="2019-10-16">16 Oct 2019</time> by Christopher Kirk-Nielsen</small></p><p>J'utilise constamment une feuille de style pour réinitialiser de nombreux éléments dans mes projets (&quot;<em>CSS reset</em>&quot; ou &quot;<em>reset</em>&quot;). Je suis sûr que de nombreux développeur·eurs le font également, sans trop s'attarder sur le contenu : &quot;J'ai importé <code>normalize.css</code>, c'est bon !&quot; Il est donc agréable de voir que certaines personnes se penchent sur cette question dans le contexte de nous navigateurs actuels. Une de ces personnes est Andy Bell, qui propose un <em>reset</em> moderne. Il nous explique chaque choix et j'ai pensé qu'une traduction en français pourrait servir pour certain·e·s francophones qui pourraient être un peu déboussolé·e·s par tant de termes anglais.</p><p>Andy pense bien trop souvent à des choses liées au CSS qui sont…ennuyeuses. Une de ces choses sur laquelle il estime avoir passé trop de temps au fil des années est la réinitialisation de CSS.</p><p>Dans cette ère moderne de développement web, nous n'avons pas réellement besoin d'une réinitialisation complète — ou même du tout — car les problèmes de compatibilité entre navigateurs sont bien moindres comparés aux jours où Internet Explorer 6 dominait. Cette ère avait vu naître des réinitialisations comme <code>normalize.css</code> qui nous avait évité de nombreux maux de têtes. Ces jours sont loin derrière nous et nous pouvons désormais faire bien plus confiance à nos navigateurs. Les réinitialisations comme cela sont donc, pour la plupart, redondantes.</p><h1 id="une-r%C3%A9initialisation-avec-des-valeurs-par-d%C3%A9faut-raisonnables">Une réinitialisation avec des valeurs par défaut raisonnables</h1><p>Andy est un grand adept de <em>reset CSS</em> donc il a petit à petit assemblé son propre groupe de règles, avec une approche de &quot;code golf&quot; (le moins de code possible). Avant d'analyser chaque règle, voici le <em>reset</em> proposé par Andy dans son intégralité :</p><pre><code class="language-css">/* Règles de dimensionnement des boîtes */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+  
+
+/* Retirer le rembourrage (zone de remplissage) par défaut */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+  
+/* Retirer les marges par défaut */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Définir les défauts élémentaires du corps */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+  
+
+/* Retirer les styles de liste sur les éléments ul, ol qui ont un attribut class */
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* Les éléments a qui n'ont pas de classes reçoivent les styles par défaut */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}  
+
+/* Rendre l'utilisation d'images plus simple */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Cadence et rythme naturels pour les éléments enfants d'élements article par défaut */
+article &gt; * + * {
+	margin-top: 1em;
+}
+
+/* Hérite les règles typographiques pour les éléments input et button */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Retire toutes les animations et transition pour les personnes qui préfèrent ne pas les voir */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+</code></pre><h1 id="%C3%A9tape-par-%C3%A9tape">Étape par étape</h1><p>Commençons par <code>box-sizing</code>. Je réinitialise absolument tous les éléments et pseudo-éléments en leur assignant box-sizing: border-box.</p><pre><code class="language-css">*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+</code></pre><p>Certaines personnes pensent que les pseudo-éléments devraient hériter <code>box-sizing</code>, ce qui est assez ridicule. Si vous souhaitez utiliser une autre valeur, définissez-la explicitement.</p><pre><code class="language-css">ul[class],
+ol[class] {
+	padding: 0;
+}
+</code></pre><pre><code class="language-css">body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+</code></pre><p>Après <code>box-sizing</code>, ce sont les rembourrages et marges qui sont définis par les styles du navigateur qui sont réinitialisés.</p><p>Pour ce qui est des listes, le sélecteur se limite aux celles qui ont un attribut <code>class</code>, parce que si un bon vieux <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code> est utilisé, il devrait ressembler à une liste. De nombreuses réinitialisations retirent ceci agressivement.</p><pre><code class="language-css">body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+</code></pre><p>Ensuite : styles du corps. Il est pratique que <code>&lt;body&gt;</code> prenne toute la hauteur de l'écran, même vide donc il a une hauteur minimale de <code>100vh</code>. Question de goûts, le défilement doux vers les ancres est agréable donc <code>scroll-behavior: smooth</code> est également défini.</p><p>Seuls deux styles texte sont définis. La hauteur d'une ligne est ajustée à <code>1.5</code> car le défaut de <code>1.2</code> n'est juste pas suffisant pour avoir un texte accessible et lisible. Aussi, le rendu du texte est <code>optimizeSpeed</code>. Utiliser <code>optimizeLegibility</code> rend le texte plus agréable à voir mais peut avoir un sérieux impact de performance avec des délais de chargement jusqu'à 30 secondes de long. Cependant, nous pouvons nous permettre de l'utiliser pour certaines micro-sections de texte.</p><pre><code class="language-css">ul[class],
+ol[class] {
+	list-style: none;
+}
+</code></pre><p>Tout comme les marges et rembourrage, <code>list-style</code> est uniquement réinitialisé sur les éléments de liste ayant un attribut <code>class</code>.</p><pre><code class="language-css">a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+</code></pre><p>Pour les liens sans classe, <code>text-decoration-skip-ink: auto</code> est défini pour que le soulignent n'impacte pas la lisibilité. Ceci pourrait être assigné à tous les liens mais cela a provoqué quelques conflits par le passé donc Andy ne préfère pas généraliser.</p><pre><code class="language-css">img {
+	max-width: 100%;
+	display: block;
+}
+</code></pre><p>C'est au tour de la bonne vieille méthode d'images fluides. Les images sont définies comme un élément de type bloc car honnêtement, la vie est trop courte pour se soucier du petit espace en-dessous. Qui plus est, si on regarde ceci d'un point de vue réaliste, les images ont tendance à se comporter comme des éléments blocs. Créer une classe comme <code>.inline</code> sera plus souvent l'exception que la règle.</p><pre><code class="language-css">article &gt; * + * {
+	margin-top: 1em;
+}
+</code></pre><p>Andy a hésité avec ce bout de code mais pense qu'il est temps de l'implémenter, étant ce qu'il utilise le plus souvent ces jours-ci. <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/">Le sélecteur de hibou lobotomisé</a> cible les descendants directs d'un <code>&lt;article&gt;</code> et leur ajoute une marge supérieure de <code>1em</code>. Ceci donne un rythme consistant au flux d'un article. De manière moins générale, Andy utilise plutôt une classe <code>.flow</code> dans ses projets pour le même résultat. Vous pouvez <a href="https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/">en lire plus sur 24 Ways</a>.</p><pre><code class="language-css">input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+</code></pre><p>Une autre chose que Andy a finalement choisi de définir comme valeur par défaut est <code>font: inherit</code> sur les éléments de saisie, un raccourci, qui fait exactement ce que nous attendons de lui. Finis sont les minuscules textes (parfois en mono) !</p><pre><code class="language-css">@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+</code></pre><p>Dernièrement mais loin d'être triviale, est une règle <code>@media</code> qui réinitialise les transitions, animations et comportement du défilement si l'utilisateur préfère les mouvements réduits. Ceci est une addition utile — notamment avec les sélecteurs <code>!important</code> qui donnent la priorité en termes de spécificité — puisque maintenant, si une utilisatrice ne veut pas de mouvement, elle n'en verra pas, quel que soit le CSS qui suit cette réinitialisation.</p><p><em>Note :</em> Merci à <a href="https://github.com/atomiks">@atomiks</a>, désormais ceci ne cassera pas les écouteurs d'événements JavaScript sur <code>animationend</code> et <code>transitionend</code>.</p><h1 id="en-conclusion">En conclusion</h1><p>C'est tout, une toute petite réinitialisation qui simplifie grandement la vie. Si vous l'aimez, vous pouvez l'utiliser aussi ! Vous trouverez ce <em>reset</em> sur <a href="https://github.com/hankchizljaw/modern-css-reset">GitHub</a> ou <a href="https://www.npmjs.com/package/modern-css-reset">NPM</a>.</p><p><a href="/tags/css/" rel="tag">css</a></p></article><nav><a href="/blog/">← Blog index</a></nav></main><footer><small>This project is maintained by <a href="https://www.danurbanowicz.com">Dan Urbanowicz</a>. Check out the <a href="https://github.com/danurbanowicz/eleventy-netlify-boilerplate">Github repo</a>.</small></footer></body></html>
