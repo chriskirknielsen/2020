@@ -1,3 +1,4 @@
+const root = 'src'; // Root folder
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
@@ -63,15 +64,17 @@ module.exports = function(eleventyConfig) {
   // only content in the `posts/` directory
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getAllSorted().filter(function(item) {
-      return item.inputPath.match(/^\.\/src\/posts\//) !== null;
+      var postsRegExp = new RegExp("^\.\/"+(root ? (root+'/') : '')+"posts\/");
+      return item.inputPath.match(postsRegExp) !== null;
     });
   });
 
   // Don't process folders with static assets e.g. images
-  eleventyConfig.addPassthroughCopy("src/static/img");
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/admin");
-  eleventyConfig.addPassthroughCopy("src/_includes/assets/");
+  eleventyConfig.addPassthroughCopy(root+"/static/img");
+  eleventyConfig.addPassthroughCopy(root+"/admin");
+  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/js");
+  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/css");
+  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/vendors");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");

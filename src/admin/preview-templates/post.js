@@ -10,7 +10,7 @@ const Post = createClass({
 
     return html`
       <main>
-        <article>
+        <article class="u-flow">
           <h1>${entry.getIn(["data", "title"], null)}</h1>
           <p>
             <small>

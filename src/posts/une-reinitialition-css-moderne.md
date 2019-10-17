@@ -19,7 +19,7 @@ Dans cette ère moderne de développement web, nous n'avons pas réellement beso
 
 # Une réinitialisation avec des valeurs par défaut raisonnables
 
-Andy est un grand adept de _reset CSS_ donc il a petit à petit assemblé son propre groupe de règles, avec une approche de "code golf" (le moins de code possible). Avant d'analyser chaque règle, voici le _reset_ proposé par Andy dans son intégralité :
+Andy est un grand adepte de _reset CSS_ donc il a petit à petit assemblé son propre groupe de règles, avec une approche de "code golf" (le moins de code possible). Avant d'analyser chaque règle, voici le _reset_ proposé par Andy dans son intégralité :
 
   
 ``` css
