@@ -10,23 +10,28 @@
 					{% endif %}
 				</a>
 			</h3>
+
+			<p>
 			{% if post.data.summary %}
-				<p>
-					{{ post.data.summary }}
-				</p>
+				{{ post.data.summary }}
+			{% else %}
+				{{ post.excerpt }}
 			{% endif %}
+			</p>
+
 			<p>
 				<time datetime="{{ post.date | machineDate }}">
 					<small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>
 				</time>
 			</p>
+			
 			{% if post.data.tags %}
 				<p>
 					{% for tag in post.data.tags %}
-		  			{%- if tag != "post" -%}
-		  				{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-		  			<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-		  			{%- endif -%}
+						{%- if tag != "post" -%}
+							{% set tagUrl %}/tags/{{ tag }}/{% endset %}
+							<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+						{%- endif -%}
 					{% endfor %}
 				</p>
 			{% endif %}

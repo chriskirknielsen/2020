@@ -38,22 +38,30 @@ module.exports = function(eleventyConfig) {
   });
 
   // Minify HTML output
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if (outputPath.indexOf(".html") > -1) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true
-      });
-      return minified;
-    }
-    return content;
-  });
+  // eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  //   if (outputPath.indexOf(".html") > -1) {
+  //     let minified = htmlmin.minify(content, {
+  //       useShortDoctype: true,
+  //       removeComments: true,
+  //       collapseWhitespace: true
+  //     });
+  //     return minified;
+  //   }
+  //   return content;
+  // });
+
+  module.exports = function(eleventyConfig) {
+    eleventyConfig.setFrontMatterParsingOptions({
+      excerpt: true,
+      // Optional, default is "---"
+      excerpt_separator: "<!-- excerpt -->"
+    });
+  };
 
   // only content in the `posts/` directory
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getAllSorted().filter(function(item) {
-      return item.inputPath.match(/^\.\/posts\//) !== null;
+      return item.inputPath.match(/^\.\/src\/posts\//) !== null;
     });
   });
 
