@@ -24,16 +24,18 @@
 					<small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>
 				</time>
 			</p>
-			
+
 			{% if post.data.tags %}
-				<p>
+				<ul>
 					{% for tag in post.data.tags %}
 						{%- if tag != "post" -%}
-							{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-							<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+							<li>
+								{% set tagUrl %}/tags/{{ tag }}/{% endset %}
+								<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+							</li>
 						{%- endif -%}
 					{% endfor %}
-				</p>
+				</ul>
 			{% endif %}
 		</article>
 	{% endfor %}
