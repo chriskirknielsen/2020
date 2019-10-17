@@ -1,0 +1,12 @@
+.head {
+    &__banner {
+        &-link { // Define the box with the right aspect ratio
+            min-height: #{$header-height-rem / $header-width-rem * 100vw};
+            max-height: #{$header-height-rem * 1rem};
+            
+            @include above-large {
+                min-height: #{$header-height-rem * 1rem};
+            }
+        }
+    }
+}

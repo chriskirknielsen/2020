@@ -1,0 +1,12 @@
+.skip-link {
+    &:focus { // Override .visually-hidden
+        position: fixed;
+
+        display: inline-block;
+        height: auto;
+        width: auto;
+        margin: auto;
+
+        clip: initial;
+    }
+}

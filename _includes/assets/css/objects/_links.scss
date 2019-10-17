@@ -1,0 +1,64 @@
+a:not([class]) {
+    $link-padding: .125em;
+    $link-underline: .0875em;
+    $link-underline-offset: .0625em;
+
+    color: inherit;
+    text-decoration-skip-ink: auto;
+
+    @supports (--a: a) {
+        --space: #{$link-padding};
+        --offset: #{$link-underline-offset};
+		--link-color: var(--c, currentColor);
+		--text-shadow-color: var(--bg);
+		--text-shadow-factor: 1;
+        --bg-size: #{$link-underline};
+        --bg-pos: calc(100% - var(--offset)); // Don't place it too low
+		--shadow-size: 0;
+    
+        padding: 0 var(--space);
+        box-decoration-break: clone;
+        
+        color: var(--link-color);
+        text-decoration: none;
+        text-shadow: // No calc with 0, or it will fail
+            0                                      calc(var(--text-shadow-factor) * -1px) 0 var(--text-shadow-color),
+            calc(var(--text-shadow-factor) *  1px) calc(var(--text-shadow-factor) * -1px) 0 var(--text-shadow-color),
+            calc(var(--text-shadow-factor) * -1px) calc(var(--text-shadow-factor) * -1px) 0 var(--text-shadow-color),
+            calc(var(--text-shadow-factor) *  1px) 0                                      0 var(--text-shadow-color),
+            calc(var(--text-shadow-factor) * -1px) 0                                      0 var(--text-shadow-color),
+            0                                      calc(var(--text-shadow-factor) *  1px) 0 var(--text-shadow-color),
+            calc(var(--text-shadow-factor) *  1px) calc(var(--text-shadow-factor) *  1px) 0 var(--text-shadow-color),
+            calc(var(--text-shadow-factor) * -1px) calc(var(--text-shadow-factor) *  1px) 0 var(--text-shadow-color);
+
+        border-radius: #{$link-padding} #{$link-padding} 0 0;
+        background-image: linear-gradient(var(--c, currentColor), var(--c, currentColor));
+        background-repeat: repeat-x;
+        background-position: 0 var(--bg-pos);
+        background-size: 100% var(--bg-size);
+        box-shadow: 0 0 0 var(--shadow-size, 0) var(--c, currentColor); // Used in the :active state
+        
+        transition-property: color, text-shadow, background-size, box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+        will-change: color, text-shadow, background-size, box-shadow;
+        
+        // &:link,
+        // &:visited {
+        // }
+        
+        &:hover,
+        &:focus,
+        &:active {
+            --bg-size: 100%;
+            --link-color: var(--bg);
+            --text-shadow-color: var(--c);
+            --text-shadow-factor: 0;
+        }
+        
+        &:active {
+            --bg-pos: 100%;
+            --shadow-size: var(--space); // Define the box-shadow size
+        }
+    }
+}

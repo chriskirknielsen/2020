@@ -1,0 +1,32 @@
+a {
+    color: c('green');
+    color: currentColor;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+a,
+button {
+    &:focus {
+        outline: 4px dashed c('teal');
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    @-moz-document url-prefix() {
+        &:focus{
+            outline: none;
+        }
+        
+        &:-moz-focusring {
+            outline: 4px dashed c('teal');
+        }
+    }
+}

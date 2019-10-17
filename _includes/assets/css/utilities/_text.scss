@@ -1,0 +1,31 @@
+.u-fontBody { font-family: f('body', 'fallback'); }
+.u-fontHeading { font-family: f('heading', 'fallback'); }
+// FontFaceObserver-supervised webfonts
+html.ffo--heading .u-fontHeading { font-family: f('heading'); }
+html.ffo--body .u-fontBody { font-family: f('body'); }
+
+.u-textLeft { text-align: left; }
+.u-textCenter { text-align: center; }
+.u-textCenter--belowLarge { @include below-large { text-align: center; } }
+.u-textRight--aboveLarge { @include above-large { text-align: right; } }
+
+.u-textHuge { font-size: 2rem; }
+.u-textLarge { font-size: 1.2rem; }
+.u-textSmall { font-size: .875rem; }
+.u-textTiny { font-size: .625rem; }
+.u-textNormal { font-size: 1rem; }
+.u-textSizeInherit { font-size: 1em; }
+.u-textLarger { font-size: 1.2em; }
+.u-textSmaller { font-size: .875em; }
+.u-textNormal--belowLarge { @include below-large { font-size: 1rem; } }
+
+.u-fontRegular { font-style: normal; }
+.u-fontItalic { font-style: italic; }
+
+.u-fontNormal { font-weight: 400; }
+.u-fontBold { font-weight: 700; }
+
+.u-textUppercase { text-transform: uppercase; }
+.u-textDecoration--none { text-decoration: none; }
+.u-vAlign--middle { vertical-align: middle; }
+.u-letterSpacing { letter-spacing: .05em; }

@@ -1,0 +1,38 @@
+.foot {
+    &__avatar {
+        @include below-large {
+            margin-bottom: $spacing;
+            // margin-block-end: $spacing;
+        }
+
+        @include above-large {
+            width: 2.625rem;
+            height: 2.625rem;
+        }
+    }
+
+    &__legal-nav {
+        @include above-large {
+            margin: 0 auto 0 #{$spacing};
+        }
+    }
+
+    &__nav {
+        @include below-large {
+            margin-top: $spacing;
+            // margin-block-start: $spacing;
+        }
+
+        @include above-large {
+            margin: 0;
+
+            > li {
+                &:not(:last-child) {
+                    &::after {
+                        content: "\00a0|\00a0"
+                    }
+                }
+            }
+        }
+    }
+}

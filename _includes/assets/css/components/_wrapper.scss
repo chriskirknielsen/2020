@@ -1,0 +1,6 @@
+.main {
+    width: #{$large-breakpoint-content-width-rem * 1rem};
+}
+.sidebar {
+    width: #{$large-breakpoint-sidebar-width-rem * 1rem};
+}

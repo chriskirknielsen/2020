@@ -1,0 +1,13 @@
+.fluid-type {
+    $min: .875rem;
+    $max: 1rem;
+    font-size: $min;
+
+    @include above-small {
+        font-size: fluid-type($small-breakpoint-width-rem, $large-breakpoint-width-rem, $min, $max);
+    }
+
+    @include above-large {
+        font-size: $max;
+    }
+}

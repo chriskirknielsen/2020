@@ -1,0 +1,105 @@
+// Returns a color from the $colors map
+@function c($name, $opacity: 100) {
+    @if map-has-key($colors, $name) { // If the colour exists in the list
+        @if $opacity < 100 { // return alpha value
+            $opacity-decimal: $opacity / 100;
+            @return rgba(map-get($colors, $name), $opacity-decimal);
+        }
+        @else { // returns opaque value
+            @return map-get($colors, $name);
+        }
+    }
+    @else { // Return a CSS colour keyword in case it exists
+        @return unquote($name);
+    }
+}
+
+// Returns a font from the $fonts map
+@function f($stack, $layer: false) {
+    @if map-has-key($fonts, $stack) { // If the font exists in the list
+        $font: map-get($fonts, $stack);
+
+        @if $layer != false and map-has-key($font, $layer) {
+            @return map-get($font, $layer);
+        }
+        @else {
+            @return map-values($font);
+        }
+    }
+    @else {
+        @return 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    }
+}
+
+// Returns a z-index from the $z-index map
+@function z($layer, $position: 1) {
+    @return map-get($z-index, $layer) + $position;
+}
+
+// Remaps a number `n` from range `[in_min, in_max]` to range `[out_min, out_max]`
+@function remap-number($n, $in_min, $in_max, $out_min, $out_max) {
+    @return ($n - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
+}
+
+// Removes the unit from a given value
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+// Converts px values to rem values
+@function px2rem($px) {
+    @if unit($px) == 'rem' { @return $px; }
+    @return strip-unit($px) / strip-unit($rem-in-px) * 1rem;
+}
+
+// Converts rem values to px values
+@function rem2px($rem) {
+    @if unit($rem) == 'px' { @return $rem; }
+    @return strip-unit($rem) * strip-unit($rem-in-px) * 1px;
+}
+
+// Returns an rem-based and vw-based calc() value that clamps the min and max size based on min and max viewport width
+@function fluid-type($min-vw-input, $max-vw-input, $min-font-size-input, $max-font-size-input) {
+    // Convert values to pixels
+    $min-vw: rem2px($min-vw-input);
+    $max-vw: rem2px($max-vw-input);
+    $min-font-size: rem2px($min-font-size-input);
+    $max-font-size: rem2px($max-font-size-input);
+    
+    // Retrieve unit for each value
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 { // Return the calc() value if all units match
+        $fac: strip-unit($max-font-size - $min-font-size); // Determine factor
+        $div: strip-unit($max-vw - $min-vw); // Determine divider
+        // @return calc(#{px2rem($min-font-size)} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        @return calc(#{px2rem($min-font-size - ($min-vw / $div * $fac))} + #{100vw / $div * $fac}); // Simplified from the above
+    }
+    @else { // Return bigger font size
+        @return $max-font-size;
+    }
+}
+
+// Returns a list of color stops for gradients using Andreas Larsen's Scrim gradient technique
+@function smooth-gradient($color-name, $alpha-max: 100, $alpha-min: 0) {
+    @return
+        c($color-name, remap-number(1.000, 0, 1, $alpha-min, $alpha-max))  0.0%,
+        c($color-name, remap-number(0.987, 0, 1, $alpha-min, $alpha-max))  8.1%,
+        c($color-name, remap-number(0.951, 0, 1, $alpha-min, $alpha-max)) 15.5%,
+        c($color-name, remap-number(0.896, 0, 1, $alpha-min, $alpha-max)) 22.5%,
+        c($color-name, remap-number(0.825, 0, 1, $alpha-min, $alpha-max)) 29.0%,
+        c($color-name, remap-number(0.741, 0, 1, $alpha-min, $alpha-max)) 35.3%,
+        c($color-name, remap-number(0.648, 0, 1, $alpha-min, $alpha-max)) 41.2%,
+        c($color-name, remap-number(0.550, 0, 1, $alpha-min, $alpha-max)) 47.1%,
+        c($color-name, remap-number(0.450, 0, 1, $alpha-min, $alpha-max)) 52.9%,
+        c($color-name, remap-number(0.352, 0, 1, $alpha-min, $alpha-max)) 58.8%,
+        c($color-name, remap-number(0.259, 0, 1, $alpha-min, $alpha-max)) 64.7%,
+        c($color-name, remap-number(0.175, 0, 1, $alpha-min, $alpha-max)) 71.0%,
+        c($color-name, remap-number(0.104, 0, 1, $alpha-min, $alpha-max)) 77.5%,
+        c($color-name, remap-number(0.049, 0, 1, $alpha-min, $alpha-max)) 84.5%,
+        c($color-name, remap-number(0.013, 0, 1, $alpha-min, $alpha-max)) 91.9%,
+        c($color-name, remap-number(0.000, 0, 1, $alpha-min, $alpha-max))  100%;
+}

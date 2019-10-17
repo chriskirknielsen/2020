@@ -1,0 +1,37 @@
+ol,
+ul {
+    &[class] {
+        padding-left: 0;
+        // padding-inline-start: 0;
+        list-style: none;
+
+        > li:before { // Bugfix to prevent webkit from removing list semantics
+            content: "\200B"; // Add a non-breaking space
+            position: absolute; // Make sure it doesn't mess up the DOM flow
+        }
+    }
+}
+
+.o-inlineList {
+    > li {
+        display: inline-block;
+
+        &:not(:last-child) {
+            &::after {
+                content: ",\00a0";
+            }
+        }
+    }
+}
+
+.o-basicList[class] { // [class] added to override the ol/ul[class] default style
+    list-style-type: disc;
+    list-style-position: inside;
+
+    ul {
+        padding-left: $spacing;
+        // padding-inline-start: $spacing;
+        list-style-type: square;
+        list-style-position: inside;
+    }
+}

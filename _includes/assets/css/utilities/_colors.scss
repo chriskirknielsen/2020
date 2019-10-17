@@ -1,0 +1,67 @@
+.u-bg--white {
+    background-color: c('white');
+    --bg: #{c('white')};
+}
+
+.u-bg--light {
+    background-color: c('light');
+    --bg: #{c('light')};
+}
+
+.u-bg--grey {
+    background-color: c('grey');
+    --bg: #{c('grey')};
+}
+
+.u-bg--dark {
+    background-color: c('dark');
+    --bg: #{c('dark')};
+}
+
+.u-bg--green {
+    &,
+    &\:onHovered:hover,
+    &\:onHovered:focus {
+        background-color: c('green');
+        --bg: #{c('green')};
+    }
+}
+
+.u-color--white {
+    color: c('white');
+    --c: #{c('white')};
+}
+
+.u-color--light {
+    &,
+    &\:onHovered:hover,
+    &\:onHovered:focus {
+        color: c('light');
+        --c: #{c('light')};
+    }
+}
+
+.u-color--lightgrey {
+    color: c('lightgrey');
+    --c: #{c('lightgrey')};
+}
+
+.u-color--grey {
+    color: c('grey');
+    --c: #{c('grey')};
+}
+
+.u-color--darkgrey {
+    color: c('darkgrey');
+    --c: #{c('darkgrey')};
+}
+
+.u-color--dark {
+    color: c('dark');
+    --c: #{c('dark')};
+}
+
+.u-color--green {
+    color: c('green');
+    --c: #{c('green')};
+}

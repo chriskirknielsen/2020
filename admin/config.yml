@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: dev # Branch to update (optional; defaults to master)
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
@@ -17,19 +17,22 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Original", name: "original", widget: "string", required: false, description: "Link to the original content" }
+      - { label: "Language", name: "lang", widget: "select", options: ["en","fr"], default: "en" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - { label: "Body", name: "body", widget: "markdown" }
-  # Our pages e.g. About
+  
+      # Our pages e.g. About
   - name: "pages"
     label: "Page"
     folder: "pages"
-    create: false # Change to true to allow editors to create new pages
+    create: true # Change to true to allow editors to create new pages
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Navigation Title", name: "navtitle", widget: "string" }
+      - { label: "Language", name: "lang", widget: "select", options: ["en","fr"], default: "en" }
       - { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
       - { label: "Body", name: "body", widget: "markdown" }
