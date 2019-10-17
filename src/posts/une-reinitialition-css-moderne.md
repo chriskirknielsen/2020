@@ -22,7 +22,7 @@ Dans cette ère moderne de développement web, nous n'avons pas réellement beso
 Andy est un grand adept de _reset CSS_ donc il a petit à petit assemblé son propre groupe de règles, avec une approche de "code golf" (le moins de code possible). Avant d'analyser chaque règle, voici le _reset_ proposé par Andy dans son intégralité :
 
   
-```css
+``` css
 /* Règles de dimensionnement des boîtes */
 *,
 *::before,
@@ -110,7 +110,7 @@ select {
 # Étape par étape
 Commençons par `box-sizing`. Je réinitialise absolument tous les éléments et pseudo-éléments en leur assignant box-sizing: border-box.
   
-```css
+``` css
 *,
 *::before,
 *::after {
@@ -121,14 +121,14 @@ Commençons par `box-sizing`. Je réinitialise absolument tous les éléments et
 Certaines personnes pensent que les pseudo-éléments devraient hériter `box-sizing`, ce qui est assez ridicule. Si vous souhaitez utiliser une autre valeur, définissez-la explicitement.
 
   
-```css
+``` css
 ul[class],
 ol[class] {
 	padding: 0;
 }
 ```
 
-```css
+``` css
 body,
 h1,
 h2,
@@ -151,7 +151,7 @@ Après `box-sizing`, ce sont les rembourrages et marges qui sont définis par le
 
 Pour ce qui est des listes, le sélecteur se limite aux celles qui ont un attribut `class`, parce que si un bon vieux `<ul>` ou `<ol>` est utilisé, il devrait ressembler à une liste. De nombreuses réinitialisations retirent ceci agressivement.
 
-```css
+``` css
 body {
 	min-height: 100vh;
 	scroll-behavior: smooth;
@@ -164,7 +164,7 @@ Ensuite : styles du corps. Il est pratique que `<body>` prenne toute la hauteur 
 
 Seuls deux styles texte sont définis. La hauteur d'une ligne est ajustée à `1.5` car le défaut de `1.2` n'est juste pas suffisant pour avoir un texte accessible et lisible. Aussi, le rendu du texte est `optimizeSpeed`. Utiliser `optimizeLegibility` rend le texte plus agréable à voir mais peut avoir un sérieux impact de performance avec des délais de chargement jusqu'à 30 secondes de long. Cependant, nous pouvons nous permettre de l'utiliser pour certaines micro-sections de texte.
 
-```css
+``` css
 ul[class],
 ol[class] {
 	list-style: none;
@@ -173,7 +173,7 @@ ol[class] {
 
 Tout comme les marges et rembourrage, `list-style` est uniquement réinitialisé sur les éléments de liste ayant un attribut `class`.
 
-```css
+``` css
 a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
@@ -181,7 +181,7 @@ a:not([class]) {
 
 Pour les liens sans classe, `text-decoration-skip-ink: auto` est défini pour que le soulignent n'impacte pas la lisibilité. Ceci pourrait être assigné à tous les liens mais cela a provoqué quelques conflits par le passé donc Andy ne préfère pas généraliser.
 
-```css
+``` css
 img {
 	max-width: 100%;
 	display: block;
@@ -190,7 +190,7 @@ img {
 
 C'est au tour de la bonne vieille méthode d'images fluides. Les images sont définies comme un élément de type bloc car honnêtement, la vie est trop courte pour se soucier du petit espace en-dessous. Qui plus est, si on regarde ceci d'un point de vue réaliste, les images ont tendance à se comporter comme des éléments blocs. Créer une classe comme `.inline` sera plus souvent l'exception que la règle.
 
-```css
+``` css
 article > * + * {
 	margin-top: 1em;
 }
@@ -198,7 +198,7 @@ article > * + * {
 
 Andy a hésité avec ce bout de code mais pense qu'il est temps de l'implémenter, étant ce qu'il utilise le plus souvent ces jours-ci. [Le sélecteur de hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/) cible les descendants directs d'un `<article>` et leur ajoute une marge supérieure de `1em`. Ceci donne un rythme consistant au flux d'un article. De manière moins générale, Andy utilise plutôt une classe `.flow` dans ses projets pour le même résultat. Vous pouvez [en lire plus sur 24 Ways](https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/).
 
-```css
+``` css
 input,
 button,
 textarea,
@@ -209,7 +209,7 @@ select {
 
 Une autre chose que Andy a finalement choisi de définir comme valeur par défaut est `font: inherit` sur les éléments de saisie, un raccourci, qui fait exactement ce que nous attendons de lui. Finis sont les minuscules textes (parfois en mono) !
 
-```css
+``` css
 @media (prefers-reduced-motion: reduce) {
 	* {
 		animation-duration: 0.01ms !important;

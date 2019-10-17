@@ -11,4 +11,7 @@
     {% include "assets/js/inline.js" %}
   {% endset %}
   <script>{{ js | jsmin | safe }}</script>
+
+  <script src="{{ '/_includes/assets/vendors/prism/prism.js' | url }}" deferred></script>
+  <link rel="stylesheet" href="{{ '/_includes/assets/vendors/prism/prism.css' | url }}" />
 </head>
