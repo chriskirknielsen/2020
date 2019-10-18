@@ -11,6 +11,10 @@ section: post
     </small>
   </p>
 
+  {% if original %}
+    <p>Consulter l'article original sur : <a href="{{ original | url }}" rel="nofollow">{{ original }}</a>
+  {% endif %}
+
   {{ layoutContent | safe }}
 
   {% if tags %}
