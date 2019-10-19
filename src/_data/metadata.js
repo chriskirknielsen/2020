@@ -7,13 +7,16 @@ module.exports = {
     twitter: "https://twitter.com/ckirknielsen"
   },
   currentYear: (new Date()).getFullYear(),
+  primaryLanguage: "en",
   languages: [
     {
       label: "English",
+      path: "/",
       code: "en"
     },
     {
       label: "Français",
+      path: "/fr",
       code: "fr"
     }
   ]

@@ -3,7 +3,7 @@
   
   <ul>
     {% for lang in metadata.languages %}
-    {% set langUrl = "/" + lang.code + "/" %}
+      {% set langUrl = (lang.path + "/") if lang.path != metadata.primaryLang else lang.path %}
       <li><a href="{{ langUrl | url }}">{{ lang.label }}</a></li>
     {% endfor %}
   </ul>
