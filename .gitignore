@@ -2,6 +2,7 @@ _site/
 src/_site/
 node_modules/
 package-lock.json
+*.sketch
 
 # Local Netlify folder
 .netlify
