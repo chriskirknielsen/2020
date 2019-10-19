@@ -1,6 +1,10 @@
 <footer>
-  <small>
-    This project is maintained by <a href="https://www.danurbanowicz.com">Dan Urbanowicz</a>.
-    Check out the <a href="{{ pkg.repository.url }}">Github repo</a>.
-  </small>
+  &copy {{ metadata.currentYear }} {{ metadata.author.name }}
+  
+  <ul>
+    {% for lang in metadata.languages %}
+    {% set langUrl = "/" + lang.code + "/" %}
+      <li><a href="{{ langUrl | url }}">{{ lang.label }}</a></li>
+    {% endfor %}
+  </ul>
 </footer>
