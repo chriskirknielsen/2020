@@ -5,6 +5,7 @@ const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const Prism = require('prismjs');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -14,6 +15,23 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ["html","css","scss","js","php"]
   });
+
+  // Syntax Highlighting
+  eleventyConfig.addTransform("syntax-highlight", function(content, outputPath) {
+    if (outputPath.indexOf(".html") > -1) {
+      const matchCodeBlock = /(<pre class="language-([a-z0-9_-]+)">([\s\S]*?)<\/pre>)/gi;
+      const prismified = content.replace(matchCodeBlock, function (match, group, lang, code, index, original) {
+        if (index !== 0) {
+          return Prism.highlight(code, Prism.languages[lang], lang);
+        } else {
+          return group;
+        }
+      });
+
+      return prismified;
+    }
+    return content;
+  }); // */
 
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {
