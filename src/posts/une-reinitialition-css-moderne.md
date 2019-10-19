@@ -13,7 +13,7 @@ J'utilise constamment une feuille de style pour réinitialiser de nombreux élé
 
 <!-- excerpt -->
 
-Andy pense bien trop souvent à des choses liées au CSS qui sont…ennuyeuses. Une de ces choses sur laquelle il estime avoir passé trop de temps au fil des années est la réinitialisation de CSS.
+Andy pense bien trop souvent à des choses liées au CSS qui sont… ennuyeuses. Une de ces choses sur laquelle il estime avoir passé trop de temps au fil des années est la réinitialisation de CSS.
 
 Dans cette ère moderne de développement web, nous n'avons pas réellement besoin d'une réinitialisation complète — ou même du tout — car les problèmes de compatibilité entre navigateurs sont bien moindres comparés aux jours où Internet Explorer 6 dominait. Cette ère avait vu naître des réinitialisations comme `normalize.css` qui nous avait évité de nombreux maux de têtes. Ces jours sont loin derrière nous et nous pouvons désormais faire bien plus confiance à nos navigateurs. Les réinitialisations comme cela sont donc, pour la plupart, redondantes.
 
@@ -108,7 +108,7 @@ select {
 ```
 
 # Étape par étape
-Commençons par `box-sizing`. Je réinitialise absolument tous les éléments et pseudo-éléments en leur assignant box-sizing: border-box.
+Commençons par `box-sizing`.  Absolument tous les éléments et pseudo-éléments sont réinitialisés en leur assignant `box-sizing: border-box`.
   
 ``` css
 *,
