@@ -33,6 +33,6 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Navigation Title", name: "navtitle", widget: "string" }
-      - { label: "Language", name: "lang", widget: "select", options: ["en","fr"], default: "en" }
+      - { label: "Language", name: "language", widget: "select", options: ["en","fr"], default: "en" }
       - { label: "Tags", name: "tags", widget: "hidden", default: "nav" }
       - { label: "Body", name: "body", widget: "markdown" }

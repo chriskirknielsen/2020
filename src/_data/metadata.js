@@ -8,16 +8,14 @@ module.exports = {
   },
   currentYear: (new Date()).getFullYear(),
   primaryLanguage: "en",
-  languages: [
-    {
+  languages: {
+    "en": {
       label: "English",
-      path: "/",
-      code: "en"
+      path: "/"
     },
-    {
+    "fr": {
       label: "Français",
-      path: "/fr",
-      code: "fr"
+      path: "/fr"
     }
-  ]
+  }
 };

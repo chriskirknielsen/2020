@@ -1,9 +1,14 @@
 <nav>
   <ul>
-  {%- for nav in collections.nav | sort(attribute="date") -%}
+  {%- for nav in collections.nav -%}
+    {% set navExists = nav | navLocale(navSet) %}
+    {% if navExists %}
     <li>
-      <a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
+      <a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
     </li>
+    {%- endif -%}
   {%- endfor -%}
   </ul>
+
+  {{ en.locale }}
 </nav>

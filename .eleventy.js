@@ -17,7 +17,7 @@ module.exports = function(eleventyConfig) {
   });
 
   // Syntax Highlighting
-  eleventyConfig.addTransform("syntax-highlight", function(content, outputPath) {
+  /*eleventyConfig.addTransform("syntax-highlight", function(content, outputPath) {
     if (outputPath.indexOf(".html") > -1) {
       const matchCodeBlock = /(<pre class="language-([a-z0-9_-]+)">([\s\S]*?)<\/pre>)/gi;
       const prismified = content.replace(matchCodeBlock, function (match, group, lang, code, index, original) {
@@ -33,6 +33,41 @@ module.exports = function(eleventyConfig) {
     return content;
   }); // */
 
+  /* LOCALISATION */
+
+  // Create a shortcode for the current language path
+  eleventyConfig.addShortcode('localepath', function(locale) {
+    return '/'; //metadata.languages[locale].path + '#';
+  });
+
+  eleventyConfig.addFilter('pathlocale', function(path, locale) {
+    locale = locale || this.ctx.locale;
+    const root = metadata.languages[locale].path;
+    return `${root}/${path}`;
+  });
+
+  eleventyConfig.addFilter('navLocale', function(collectionItem, navSet) {
+    if (!navSet) { return null; }
+    for (let i = 0; i < navSet.length; i++) {
+      let navItem = navSet[i];
+      if (collectionItem.fileSlug === navItem) { return true; }
+    }
+
+    return false;
+  });
+
+  // English
+  eleventyConfig.addCollection("posts_en", function(collection) {
+    return collection.getFilteredByGlob("./src/en/posts/*.md");
+  });
+
+  // French
+  eleventyConfig.addCollection("posts_fr", function(collection) {
+    return collection.getFilteredByGlob("./src/fr/posts/*.md");
+  });
+
+  /* DATES */
+
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
@@ -42,6 +77,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("machineDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
+
+  /* MINIFICATION */
 
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {
