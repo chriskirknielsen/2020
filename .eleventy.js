@@ -40,20 +40,21 @@ module.exports = function(eleventyConfig) {
     return '/'; //metadata.languages[locale].path + '#';
   });
 
-  eleventyConfig.addFilter('pathlocale', function(path, locale) {
-    locale = locale || this.ctx.locale;
-    const root = metadata.languages[locale].path;
-    return `${root}/${path}`;
+  eleventyConfig.addFilter('sortNavLocale', function(collection, navSet) {
+    // Loop through the locale's list of items (slugs)
+    let collectionSorted = navSet.map((navItem) => {
+      // Find the first item whose slug matches the nav item
+      return collection.find((collItem) => { return collItem.fileSlug === navItem });
+    });
+
+    return collectionSorted;
   });
 
-  eleventyConfig.addFilter('navLocale', function(collectionItem, navSet, locale) {
-    if (!navSet) { return null; }
-    for (let i = 0; i < navSet.length; i++) {
-      let navItem = navSet[i];
-      if (collectionItem.fileSlug === navItem && collectionItem.filePathStem.includes(`/${locale}/`)) { return true; }
-    }
-
-    return false;
+  eleventyConfig.addCollection("posts_all", function(collection) {
+    return [].concat(
+      collection.getFilteredByGlob("./src/en/posts/*.md"),
+      collection.getFilteredByGlob("./src/fr/posts/*.md")
+    );
   });
 
   // English
