@@ -1,6 +1,6 @@
 <nav>
   <ul>
-  {%- for nav in collections.nav -%}
+  {%- for nav in collections['pages_'+locale] -%}
     {% set navExists = nav | navLocale(navSet, locale) %}
     {% if navExists %}
     <li>

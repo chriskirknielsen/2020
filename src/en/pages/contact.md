@@ -2,8 +2,8 @@
 layout: layouts/contact.njk
 title: Get in touch
 navtitle: Contact
+translationKey: "contactPage"
 date: 2018-01-01
-permalink: /contact/index.html
 tags:
   - nav
 ---
