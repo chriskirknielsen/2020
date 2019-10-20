@@ -57,11 +57,19 @@ module.exports = function(eleventyConfig) {
   });
 
   // English
+  eleventyConfig.addCollection("pages_en", function(collection) {
+    return collection.getFilteredByGlob("./src/en/pages/*.md");
+  });
+
   eleventyConfig.addCollection("posts_en", function(collection) {
     return collection.getFilteredByGlob("./src/en/posts/*.md");
   });
 
   // French
+  eleventyConfig.addCollection("pages_fr", function(collection) {
+    return collection.getFilteredByGlob("./src/fr/pages/*.md");
+  });
+
   eleventyConfig.addCollection("posts_fr", function(collection) {
     return collection.getFilteredByGlob("./src/fr/posts/*.md");
   });

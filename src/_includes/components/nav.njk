@@ -1,7 +1,6 @@
 <nav>
   <ul>
   {%- for nav in collections.nav -%}
-    {# {% for p,v in nav %}[{{p}} = {{v}}]<br>{% endfor %} #}
     {% set navExists = nav | navLocale(navSet, locale) %}
     {% if navExists %}
     <li>
