@@ -1,6 +1,6 @@
-module.exports = {
+{
     "locale": "fr",
-    "localepath": metadata.languages[this.locale],
+    "localepath": "fr/",
     "navSet": [
         "accueil",
         "blog",
