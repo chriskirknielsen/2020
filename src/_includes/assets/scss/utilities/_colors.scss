@@ -1,3 +1,8 @@
+:root {
+    --bg: #{c('white')};
+    --c: #{c('black')};
+}
+
 .u-bg--white {
     background-color: c('white');
     --bg: #{c('white')};
