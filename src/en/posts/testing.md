@@ -5,6 +5,8 @@ date: 2019-10-19
 language: en
 tags:
   - post
+  - css
+  - js
 ---
 
 # Test

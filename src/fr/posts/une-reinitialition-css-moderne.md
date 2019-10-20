@@ -30,7 +30,6 @@ Andy est un grand adepte de _reset CSS_ donc il a petit à petit assemblé son p
 	box-sizing: border-box;
 }
 
-  
 
 /* Retirer le rembourrage (zone de remplissage) par défaut */
 ul[class],
@@ -63,8 +62,6 @@ body {
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }
-
-  
 
 /* Retirer les styles de liste sur les éléments ul, ol qui ont un attribut class */
 ul[class],
@@ -119,7 +116,6 @@ Commençons par `box-sizing`.  Absolument tous les éléments et pseudo-élémen
 ```
 
 Certaines personnes pensent que les pseudo-éléments devraient hériter `box-sizing`, ce qui est assez ridicule. Si vous souhaitez utiliser une autre valeur, définissez-la explicitement.
-
   
 ``` css
 ul[class],
@@ -225,4 +221,4 @@ Dernièrement mais loin d'être triviale, est une règle `@media` qui réinitial
 _Note :_ Merci à [@atomiks](https://github.com/atomiks), désormais ceci ne cassera pas les écouteurs d'événements JavaScript sur `animationend` et `transitionend`.
 
 # En conclusion
-C'est tout, une toute petite réinitialisation qui simplifie grandement la vie. Si vous l'aimez, vous pouvez l'utiliser aussi ! Vous trouverez ce _reset_ sur [GitHub](https://github.com/hankchizljaw/modern-css-reset) ou [NPM](https://www.npmjs.com/package/modern-css-reset).
+C'est tout, une toute petite réinitialisation qui simplifie grandement la vie. Si vous l'aimez, vous pouvez l'utiliser aussi ! Vous trouverez ce _reset_ sur [GitHub](https://github.com/hankchizljaw/modern-css-reset) ou [npm](https://www.npmjs.com/package/modern-css-reset).
