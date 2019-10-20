@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
 	/* PLUGINS */
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    templateFormats: ["html","css","scss","js","php"]
+    templateFormats: ["md","html","njk"]
   });
 
   // Syntax Highlighting
