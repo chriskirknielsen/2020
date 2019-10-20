@@ -1,14 +1,46 @@
+/* INTERNAL HELPERS */
+
+// Determines if the variable is a map
+@function is-map($var){
+    @return type-of($var) == 'map';
+}
+
+// Remaps a number `n` from range `[in_min, in_max]` to range `[out_min, out_max]`
+@function remap-number($n, $in_min, $in_max, $out_min, $out_max) {
+    @return ($n - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
+}
+
+// Removes the unit from a given value
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+// Converts px values to rem values
+@function px2rem($px) {
+    @if unit($px) == 'rem' { @return $px; }
+    @return strip-unit($px) / strip-unit($rem-in-px) * 1rem;
+}
+
+// Converts rem values to px values
+@function rem2px($rem) {
+    @if unit($rem) == 'px' { @return $rem; }
+    @return strip-unit($rem) * strip-unit($rem-in-px) * 1px;
+}
+
+
+
+/* COLOUR, FONT AND LAYER-ORDER HELPERS */
+
 // Returns a color from the $colors map
 @function c($name, $weight: 500, $opacity: 100) {
     @if map-has-key($colors, $name) { // If the colour exists in the list
-        $color-map: map-get($colors, $name);
+        $color: map-get($colors, $name);
 
-        $weighted-color: $color-map; // Default value
-
-        @if is-map($color-map) {
-            @if map-has-key($color-map, $weight) {
-                $weighted-color: map-get($color-map, $weight);
-            }
+        @if is-map($color) and map-has-key($color, $weight) {
+            $weighted-color: map-get($color, $weight);
+        }
+        @else {
+            $weighted-color: $color;
         }
 
         @if $opacity < 100 { // return alpha value
@@ -39,27 +71,9 @@
     @return map-get($z-index, $layer) + $position;
 }
 
-// Remaps a number `n` from range `[in_min, in_max]` to range `[out_min, out_max]`
-@function remap-number($n, $in_min, $in_max, $out_min, $out_max) {
-    @return ($n - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
-}
 
-// Removes the unit from a given value
-@function strip-unit($value) {
-    @return $value / ($value * 0 + 1);
-}
 
-// Converts px values to rem values
-@function px2rem($px) {
-    @if unit($px) == 'rem' { @return $px; }
-    @return strip-unit($px) / strip-unit($rem-in-px) * 1rem;
-}
-
-// Converts rem values to px values
-@function rem2px($rem) {
-    @if unit($rem) == 'px' { @return $rem; }
-    @return strip-unit($rem) * strip-unit($rem-in-px) * 1px;
-}
+/* GENERATORS */
 
 // Returns an rem-based and vw-based calc() value that clamps the min and max size based on min and max viewport width
 @function fluid-type($min-vw-input, $max-vw-input, $min-font-size-input, $max-font-size-input) {
