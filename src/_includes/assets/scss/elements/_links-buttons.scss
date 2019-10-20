@@ -1,5 +1,5 @@
 a {
-    color: c('green');
+    color: red;
     color: currentColor;
     text-decoration: underline;
 
@@ -13,7 +13,7 @@ a {
 a,
 button {
     &:focus {
-        outline: 4px dashed c('teal');
+        outline: 4px dashed blue;
     }
 
     &:focus:not(:focus-visible) {
@@ -26,7 +26,7 @@ button {
         }
         
         &:-moz-focusring {
-            outline: 4px dashed c('teal');
+            outline: 4px dashed blue;
         }
     }
 }

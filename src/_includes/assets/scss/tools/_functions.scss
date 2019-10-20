@@ -1,12 +1,22 @@
 // Returns a color from the $colors map
-@function c($name, $opacity: 100) {
+@function c($name, $weight: 500, $opacity: 100) {
     @if map-has-key($colors, $name) { // If the colour exists in the list
+        $color-map: map-get($colors, $name);
+
+        $weighted-color: $color-map; // Default value
+
+        @if is-map($color-map) {
+            @if map-has-key($color-map, $weight) {
+                $weighted-color: map-get($color-map, $weight);
+            }
+        }
+
         @if $opacity < 100 { // return alpha value
             $opacity-decimal: $opacity / 100;
-            @return rgba(map-get($colors, $name), $opacity-decimal);
+            @return rgba($weighted-color, $opacity-decimal);
         }
         @else { // returns opaque value
-            @return map-get($colors, $name);
+            @return $weighted-color;
         }
     }
     @else { // Return a CSS colour keyword in case it exists
