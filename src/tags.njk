@@ -5,6 +5,7 @@ pagination:
   alias: tag
   filter:
     - all
+    - language
     - nav
     - post
     - posts
@@ -18,7 +19,3 @@ renderData:
 
 {% set postslist = collections[ tag ] %}
 {% include "components/postslist.njk" %}
-
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
