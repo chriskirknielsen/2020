@@ -46,11 +46,11 @@ module.exports = function(eleventyConfig) {
     return `${root}/${path}`;
   });
 
-  eleventyConfig.addFilter('navLocale', function(collectionItem, navSet) {
+  eleventyConfig.addFilter('navLocale', function(collectionItem, navSet, locale) {
     if (!navSet) { return null; }
     for (let i = 0; i < navSet.length; i++) {
       let navItem = navSet[i];
-      if (collectionItem.fileSlug === navItem) { return true; }
+      if (collectionItem.fileSlug === navItem && collectionItem.filePathStem.includes(`/${locale}/`)) { return true; }
     }
 
     return false;
