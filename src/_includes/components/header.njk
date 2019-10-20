@@ -1,6 +1,6 @@
 <header>
     <em>
-        <a href="{{ '/' | url }}">{{ metadata.title }}</a>
+        <a href="{{ metadata.langues[locale].path | url }}">{{ metadata.title }}</a>
     </em>
     {% include "components/nav.njk" %}
 </header>
