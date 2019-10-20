@@ -41,12 +41,11 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter('sortNavLocale', function(collection, navSet) {
-    // Loop through the locale's list of items (slugs)
-    let collectionSorted = navSet.map((navItem) => {
-      // Find the first item whose slug matches the nav item
-      return collection.find((collItem) => { return collItem.fileSlug === navItem });
+    // Neat solution found on https://stackoverflow.com/a/44063445/3624336
+    let collectionSorted = collection.slice().sort(function(a, b){
+      return navSet.indexOf(a.fileSlug) - navSet.indexOf(b.fileSlug);
     });
-
+    
     return collectionSorted;
   });
 
