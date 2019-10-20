@@ -108,13 +108,11 @@ module.exports = function(eleventyConfig) {
   //   return content;
   // });
 
-  module.exports = function(eleventyConfig) {
-    eleventyConfig.setFrontMatterParsingOptions({
-      excerpt: true,
-      // Optional, default is "---"
-      excerpt_separator: "<!-- excerpt -->"
-    });
-  };
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Optional, default is "---"
+    excerpt_separator: "<!-- excerpt -->"
+  });
 
   // only content in the `posts/` directory
   eleventyConfig.addCollection("posts", function(collection) {
