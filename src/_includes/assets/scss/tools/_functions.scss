@@ -31,16 +31,14 @@
 
 /* COLOUR, FONT AND LAYER-ORDER HELPERS */
 
-// Returns a color from the $colors map
+// Returns a colour from the $colors map
 @function c($name, $weight: 500, $opacity: 100) {
     @if map-has-key($colors, $name) { // If the colour exists in the list
         $color: map-get($colors, $name);
 
+        $weighted-color: $color; // Define default
         @if is-map($color) and map-has-key($color, $weight) {
             $weighted-color: map-get($color, $weight);
-        }
-        @else {
-            $weighted-color: $color;
         }
 
         @if $opacity < 100 { // return alpha value
