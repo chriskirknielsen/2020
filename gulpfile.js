@@ -1,6 +1,7 @@
 const root = 'src'; // Root folder
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+//const sass = require("gulp-sass");
+const sass = require('gulp-dart-sass');
 
 gulp.task('css', function () {
     return gulp.src([
