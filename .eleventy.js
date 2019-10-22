@@ -35,14 +35,10 @@ module.exports = function(eleventyConfig) {
 
   /* LOCALISATION */
 
-  // Create a shortcode for the current language path
-  eleventyConfig.addShortcode('localepath', function(locale) {
-    return '/'; //metadata.languages[locale].path + '#';
-  });
-
+  // Sort a collection of pages for the navigation based on the locale's navSet setting
   eleventyConfig.addFilter('sortNavLocale', function(collection, navSet) {
     if (!Array.isArray(collection)) { return collection; }
-    
+
     // Neat solution found on https://stackoverflow.com/a/44063445/3624336
     let collectionSorted = collection.slice().sort(function(a, b){
       return navSet.indexOf(a.fileSlug) - navSet.indexOf(b.fileSlug);
