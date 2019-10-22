@@ -2,3 +2,8 @@
     --bg: #{c('grey', 100)};
     --c: #{c('grey', 900)};
 }
+
+html[data-scheme="dusk"] {
+    --bg: #{c('grey', 900)};
+    --c: #{c('grey', 100)};
+}

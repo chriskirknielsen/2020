@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
 
-    color: c('grey', 900);
-    background-color: c('grey', 100);
+    color: var(--c);
+    background-color: var(--bg);
 }
