@@ -1,9 +1,20 @@
-:root {
-    --bg: #{c('grey', 100)};
-    --c: #{c('grey', 900)};
+html {
+    --c-sky: #{c('sky', 'dusk')};
+    --c-glass: #{c('glass', 'dusk')};
+    --c-cloud: #{c('cloud', 'dusk')};
+    --c-glow: #{c('glow', 'dusk')};
+    --c-wall: #{c('wall', 'dusk')};
 }
 
-html[data-scheme="dusk"] {
-    --bg: #{c('grey', 900)};
-    --c: #{c('grey', 100)};
+html[data-scheme="dawn"] {
+    --c-sky: #{c('sky', 'dawn')};
+    --c-glass: #{c('glass', 'dawn')};
+    --c-cloud: #{c('cloud', 'dawn')};
+    --c-glow: #{c('glow', 'dawn')};
+    --c-wall: #{c('wall', 'dawn')};
+}
+
+:root {
+    --bg: var(--c-sky);
+    --c: var(--c-wall);
 }
