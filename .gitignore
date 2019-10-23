@@ -3,6 +3,7 @@ src/_site/
 node_modules/
 package-lock.json
 *.sketch
+*.code-workspace
 
 # Local Netlify folder
 .netlify
