@@ -32,25 +32,15 @@
 /* COLOUR, FONT AND LAYER-ORDER HELPERS */
 
 // Returns a colour from the $colors map
-@function c($name, $palette: 'grey', $weight: 500, $opacity: 100) {
+@function c($name, $weight: 400, $opacity: 100) {
     $return: unquote($name);
-    @if (map-has-key($colors, $name) or map-has-key($colors, $palette)) { // If the colour exists in the list
-        $color: null;
-        $weighted-color: null;
 
-        $color-group: map-get($colors, $palette);
-        @if ($palette != 'grey' and is-map($color-group)) {
-            $color: map-get($color-group, $name);
-        }
-        @else {
-            $color: $color-group;
-        }
+    @if (map-has-key($colors, $name)) { // If the colour exists in the list
+        $color: map-get($colors, $name);
+        $weighted-color: $color !default; // Define default
 
         @if is-map($color) and map-has-key($color, $weight) {
             $weighted-color: map-get($color, $weight);
-        }
-        @else {
-            $weighted-color: $color; // Define default
         }
 
         @if $opacity < 100 { // return alpha value

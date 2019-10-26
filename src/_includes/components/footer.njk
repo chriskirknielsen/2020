@@ -1,7 +1,7 @@
 <footer>
   &copy {{ metadata.currentYear }} {{ metadata.author.name }}
 
-  <button onclick="document.documentElement.dataset.scheme = (document.documentElement.dataset.scheme === 'dusk') ? 'dawn' : 'dusk';">Toggle Dusk/Dawn</button>
+  <button type="button" data-scheme-switcher>Toggle Dusk/Dawn</button>
   
   <ul>
     {% for landCode, langData in metadata.languages %}

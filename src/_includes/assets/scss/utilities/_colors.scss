@@ -1,20 +1,36 @@
 html {
-    --c-sky: #{c('sky', 'dusk')};
-    --c-glass: #{c('glass', 'dusk')};
-    --c-cloud: #{c('cloud', 'dusk')};
-    --c-glow: #{c('glow', 'dusk')};
-    --c-wall: #{c('wall', 'dusk')};
+    @for $i from 1 through 9 {
+        $color-weight: $i * 100;
+        $color-weight-inv: (10 - $i) * 100;
+
+        $color-name-grey: '--c-grey-' + $color-weight;
+        #{$color-name-grey}: #{c('grey', $color-weight-inv)};
+
+        $color-name-main: '--c-main-' + $color-weight;
+        #{$color-name-main}: #{c('main', $color-weight)};
+        
+        $color-name-accent: '--c-accent-' + $color-weight;
+        #{$color-name-accent}: #{c('accent', $color-weight-inv)};
+    }
 }
 
 html[data-scheme="dawn"] {
-    --c-sky: #{c('sky', 'dawn')};
-    --c-glass: #{c('glass', 'dawn')};
-    --c-cloud: #{c('cloud', 'dawn')};
-    --c-glow: #{c('glow', 'dawn')};
-    --c-wall: #{c('wall', 'dawn')};
+    @for $i from 1 through 9 {
+        $color-weight: $i * 100;
+        $color-weight-inv: (10 - $i) * 100;
+
+        $color-name-grey: '--c-grey-' + $color-weight;
+        #{$color-name-grey}: #{c('grey', $color-weight)};
+
+        $color-name-main: '--c-main-' + $color-weight;
+        #{$color-name-main}: #{c('main', $color-weight-inv)};
+        
+        $color-name-accent: '--c-accent-' + $color-weight;
+        #{$color-name-accent}: #{c('accent', $color-weight)};
+    }
 }
 
 :root {
-    --bg: var(--c-sky);
-    --c: var(--c-wall);
+    --bg: var(--c-main-900);
+    --c: var(--c-grey-900);
 }
