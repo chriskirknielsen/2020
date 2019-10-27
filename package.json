@@ -6,7 +6,10 @@
     "build": "npx eleventy",
     "fullbuild": "gulp watch & npx eleventy --serve",
     "watch": "npx eleventy --watch",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx eleventy",
+    "dev": "gulp watch & eleventy --serve",
+    "dev:eleventy": "eleventy --serve",
+    "dev:gulpcss": "gulp css"
   },
   "repository": {
     "type": "git",

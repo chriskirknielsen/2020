@@ -1,36 +1,39 @@
 html {
     @for $i from 1 through 9 {
-        $color-weight: $i * 100;
-        $color-weight-inv: (10 - $i) * 100;
+        $colour-weight: $i * 100;
+        $colour-weight-inv: (10 - $i) * 100;
 
-        $color-name-grey: '--c-grey-' + $color-weight;
-        #{$color-name-grey}: #{c('grey', $color-weight-inv)};
+        $colour-name-grey: '--c-grey-' + $colour-weight;
+        #{$colour-name-grey}: #{c('grey', $colour-weight-inv)};
 
-        $color-name-main: '--c-main-' + $color-weight;
-        #{$color-name-main}: #{c('main', $color-weight)};
+        $colour-name-main: '--c-main-' + $colour-weight;
+        #{$colour-name-main}: #{c('main', $colour-weight)};
         
-        $color-name-accent: '--c-accent-' + $color-weight;
-        #{$color-name-accent}: #{c('accent', $color-weight-inv)};
+        $colour-name-accent: '--c-accent-' + $colour-weight;
+        #{$colour-name-accent}: #{c('accent', $colour-weight-inv)};
     }
+
+    --colour-bg: var(--c-main-900);
+    --colour-main: var(--c-accent-900);
+    --colour-accent: var(--c-accent-500);
 }
 
 html[data-scheme="dawn"] {
     @for $i from 1 through 9 {
-        $color-weight: $i * 100;
-        $color-weight-inv: (10 - $i) * 100;
+        $colour-weight: $i * 100;
+        $colour-weight-inv: (10 - $i) * 100;
 
-        $color-name-grey: '--c-grey-' + $color-weight;
-        #{$color-name-grey}: #{c('grey', $color-weight)};
+        $colour-name-grey: '--c-grey-' + $colour-weight;
+        #{$colour-name-grey}: #{c('grey', $colour-weight)};
 
-        $color-name-main: '--c-main-' + $color-weight;
-        #{$color-name-main}: #{c('main', $color-weight-inv)};
+        $colour-name-main: '--c-main-' + $colour-weight;
+        #{$colour-name-main}: #{c('main', $colour-weight-inv)};
         
-        $color-name-accent: '--c-accent-' + $color-weight;
-        #{$color-name-accent}: #{c('accent', $color-weight)};
+        $colour-name-accent: '--c-accent-' + $colour-weight;
+        #{$colour-name-accent}: #{c('accent', $colour-weight)};
     }
-}
 
-:root {
-    --bg: var(--c-main-900);
-    --c: var(--c-grey-900);
+    --colour-bg: var(--c-main-900);
+    --colour-main: var(--c-accent-900);
+    --colour-accent: var(--c-accent-600);
 }
