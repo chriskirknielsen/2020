@@ -13,7 +13,7 @@ html {
         #{$colour-name-accent}: #{c('accent', $colour-weight-inv)};
     }
 
-    --colour-bg: var(--c-main-900);
+    --colour-bg: var(--c-grey-100);
     --colour-main: var(--c-accent-900);
     --colour-accent: var(--c-accent-500);
 }
@@ -33,7 +33,23 @@ html[data-scheme="dawn"] {
         #{$colour-name-accent}: #{c('accent', $colour-weight)};
     }
 
-    --colour-bg: var(--c-main-900);
+    --colour-bg: var(--c-grey-100);
     --colour-main: var(--c-accent-900);
     --colour-accent: var(--c-accent-600);
+}
+
+@each $c in map-keys($colours) {
+    @for $i from 1 through 9 {
+        $colour-weight: $i * 100;
+
+        .u-color--#{$c}-#{$colour-weight} {
+            color: var(--c-#{$c}-#{$colour-weight});
+            --c: var(--c-#{$c}-#{$colour-weight});
+        }
+
+        .u-background--#{$c}-#{$colour-weight} {
+            background-color: var(--c-#{$c}-#{$colour-weight});
+            --bg: var(--c-#{$c}-#{$colour-weight});
+        }
+    }
 }
