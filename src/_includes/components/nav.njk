@@ -1,9 +1,9 @@
-<nav class="nav">
+<nav class="nav u-displayFlex u-flex--stretchBlock">
   {% set navList = collections['pages_'+locale] | sortNavLocale(navSet) %}
-  <ul class="nav__list">
+  <ul class="nav__list u-displayFlex u-flex--stretchBlock">
   {% for nav in navList %}
-    <li class="nav__item">
-      <a href="{{ nav.url | url }}" class="nav__link u-color--accent-900"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
+    <li class="nav__item u-displayFlex u-flex--stretchBlock">
+      <a href="{{ nav.url | url }}" class="nav__link u-displayFlex u-flex--centerBlock u-color--accent-900"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
     </li>
   {% endfor %}
   </ul>
