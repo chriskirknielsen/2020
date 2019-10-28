@@ -1,9 +1,9 @@
 <nav class="nav">
   {% set navList = collections['pages_'+locale] | sortNavLocale(navSet) %}
-  <ul>
+  <ul class="nav__list">
   {% for nav in navList %}
-    <li>
-      <a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
+    <li class="nav__item">
+      <a href="{{ nav.url | url }}" class="nav__link u-color--accent-900"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
     </li>
   {% endfor %}
   </ul>
