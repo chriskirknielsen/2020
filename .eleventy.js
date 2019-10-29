@@ -133,6 +133,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy(root+"/cms-editor");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/js");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/css");
+  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/fonts");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/vendors");
 
   /* Markdown Plugins */
