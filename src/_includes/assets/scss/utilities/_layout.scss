@@ -8,7 +8,7 @@
 
 .u-posRelative { position: relative; }
 
-.u-overflow--hidden { overflow: hidden; }
+.u-overflowHidden { overflow: hidden; }
 
 .u-displayBlock{ display: block; }
 .u-displayInlineBlock { display: inline-block; }
@@ -53,6 +53,14 @@
 .u-marginBlockEnd--half {
     margin-bottom: #{$spacing / 2};
     // margin-block-end: #{$spacing / 2};
+}
+.u-marginBlockStart--auto {
+    margin-left: auto;
+    // margin-block-start: auto;
+}
+.u-marginInlineStart {
+    margin-left: #{$spacing};
+    // margin-inline-start: #{$spacing};
 }
 .u-marginInlineEnd--half {
     margin-right: #{$spacing / 2};

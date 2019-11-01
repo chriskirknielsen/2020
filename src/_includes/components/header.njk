@@ -1,4 +1,4 @@
-<header class="header u-displayFlex u-flex--stretchBlock u-color--accent-700 u-background--main-900">
+<header class="header u-displayFlex u-flex--stretchBlock u-padding u-color--accent-700 u-background--main-900">
     <a href="{{ metadata.langues[locale].path | url }}" class="header__link">
         <svg viewBox="0 0 160 63" width="160px" height="63px" xmlns="http://www.w3.org/2000/svg" class="header__logo">
             <title>{{ metadata.title }}</title>
@@ -7,4 +7,6 @@
     </a>
 
     {% include "components/nav.njk" %}
+
+    {% include "components/colour-toggler.njk" %}
 </header>

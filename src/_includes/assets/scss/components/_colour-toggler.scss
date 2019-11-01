@@ -1,0 +1,20 @@
+.colour-toggler {
+    &__button {
+        width: 2rem;
+        height: 2rem;
+
+        background: transparent;
+    
+        &::before {
+            border-radius: 50%;
+            background: linear-gradient(180deg,
+                currentColor 50%,    transparent  50%,
+                transparent  62.5%,  currentColor 62.5%,
+                currentColor 70.83%, transparent  70.83%,
+                transparent  79.83%, currentColor 79.83%,
+                currentColor 87.5%,  transparent  87.5%,
+                transparent  91.67%, currentColor 91.67%
+            );
+        }
+    }
+}
