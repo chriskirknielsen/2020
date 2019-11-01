@@ -47,6 +47,14 @@ html[data-scheme="dawn"] {
             --c: var(--c-#{$c}-#{$colour-weight});
         }
 
+        .u-color\:hover--#{$c}-#{$colour-weight} {
+            &:hover,
+            &:focus {
+                color: var(--c-#{$c}-#{$colour-weight});
+                --c: var(--c-#{$c}-#{$colour-weight});
+            }
+        }
+
         .u-background--#{$c}-#{$colour-weight} {
             background-color: var(--c-#{$c}-#{$colour-weight});
             --bg: var(--c-#{$c}-#{$colour-weight});
