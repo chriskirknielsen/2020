@@ -3,18 +3,21 @@
 		if metadata.copyrightStart == metadata.currentYear
 		else metadata.copyrightStart + "–" + metadata.currentYear
 	) %}
-	&copy {{ copyrightYear }} {{ metadata.author.name }}
+	<p>
+		&copy {{ copyrightYear }} {{ metadata.author.name }}.
+		{{ footer.buildInfo | safe }}.
+	</p>
 
-	<ul>
+	<ul class="u-displayFlex footer__language">
 	{% for langCode, langData in metadata.languages %}
 		{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
-		<li><a href="{{ langUrl | url }}">{{ langData.label }}</a></li>
+		<li class="footer__language-item"><a href="{{ langUrl | url }}">{{ langData.label }}</a></li>
 	{% endfor %}
 	</ul>
 
-	<ul>
+	<ul class="u-displayFlex footer__social">
 	{% for social in social %}
-		<li><a href="{{ social.url | url }}">{{ social.name }}</a></li>
+		<li class="footer__social-item"><a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link">{{ social.icon | safe }}</a></li>
 	{% endfor %}
 	</ul>
 </footer>
