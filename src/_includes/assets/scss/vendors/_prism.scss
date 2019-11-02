@@ -1,0 +1,177 @@
+/* PrismJS 1.17.1 */
+/**
+* xonokai theme for JavaScript, CSS and HTML
+* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
+* license: MIT; http://moox.mit-license.org/
+*/
+code[class*="language-"],
+pre[class*="language-"] {
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: normal;
+	font-family: f('code');
+	font-size: .875rem;
+	color: var(--c-comp-med);
+    text-shadow: none;
+}
+
+pre > code[class*="language-"] {
+	font-size: 1em;
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: var(--c-main-max);
+    
+    mark {
+        color: var(--c-comp-med);
+        background: var(--c-grey-max);
+        box-shadow: #{$spacing * -1} 0 0 var(--c-comp-med);
+    }
+}
+
+pre[class*="language-"] {
+    padding: #{$spacing};
+    box-shadow: 0 #{ $spacing * .5 } 0 #{ $spacing * -.25 } var(--c-grey-med);
+}
+
+pre[class*="language-"] {
+	position: relative;
+}
+pre[class*="language-"] code {
+	white-space: pre;
+	display: block;
+}
+
+:not(pre) > code[class*="language-"] {
+	padding: 0.15em 0.2em 0.05em;
+	border-radius: .3em;
+	border: 0.13em solid var(--c-main-med);
+	// box-shadow: 1px 1px 0.3em -0.1em var(--c-grey-max) inset;
+}
+.token.namespace {
+	opacity: .7;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--c-grey-med);
+}
+.token.operator,
+.token.boolean,
+.token.number {
+	color: var(--c-main-med);
+}
+.token.attr-name,
+.token.string {
+	color: var(--c-main-min);
+}
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: var(--c-main-min);
+}
+.token.selector,
+.token.inserted {
+	color: var(--c-comp-min);
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.important,
+.token.deleted {
+	color: var(--c-main-med);
+}
+.token.regex,
+.token.statement {
+	color: var(--c-comp-med);
+}
+.token.placeholder,
+.token.variable {
+	color: var(--c-grey-min);
+}
+.token.important,
+.token.statement,
+.token.bold {
+	font-weight: bold;
+}
+.token.punctuation {
+	color: var(--c-grey-min);
+}
+.token.entity {
+	cursor: help;
+}
+.token.italic {
+	font-style: italic;
+}
+
+code.language-markup {
+	color: var(--c-grey-min);
+}
+code.language-markup .token.tag {
+	color: var(--c-main-med);
+}
+code.language-markup .token.attr-name {
+	color: var(--c-comp-med);
+}
+code.language-markup .token.attr-value {
+	color: var(--c-main-min);
+}
+code.language-markup .token.style,
+code.language-markup .token.script {
+	color: var(--c-comp-med);
+}
+code.language-markup .token.script .token.keyword {
+	color: var(--c-comp-med);
+}
+
+
+
+// /* Line highlight plugin */
+// pre[class*="language-"][data-line] {
+// 	position: relative;
+// 	padding: 1em 0 1em 3em;
+// }
+// pre[data-line] .line-highlight {
+// 	position: absolute;
+// 	left: 0;
+// 	right: 0;
+// 	padding: 0;
+// 	margin-top: 1em;
+// 	background: rgba(255, 255, 255, 0.08);
+// 	pointer-events: none;
+// 	line-height: inherit;
+// 	white-space: pre;
+// }
+// pre[data-line] .line-highlight:before,
+// pre[data-line] .line-highlight[data-end]:after {
+// 	content: attr(data-start);
+// 	position: absolute;
+// 	top: .4em;
+// 	left: .6em;
+// 	min-width: 1em;
+// 	padding: 0.2em 0.5em;
+// 	background-color: rgba(255, 255, 255, 0.4);
+// 	color: black;
+// 	font: bold 65%/1 sans-serif;
+// 	height: 1em;
+// 	line-height: 1em;
+// 	text-align: center;
+// 	border-radius: 999px;
+// 	text-shadow: none;
+// 	box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+// }
+// pre[data-line] .line-highlight[data-end]:after {
+// 	content: attr(data-end);
+// 	top: auto;
+// 	bottom: .4em;
+// }

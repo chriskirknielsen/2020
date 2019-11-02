@@ -11,20 +11,29 @@ tags:
 
 # Test
 
+I like to write `code` sometimes and it looks like `<html>` with a twist.
+
 ## CSS
 
 ``` css
 pre[class*="language-"] {
-	font-family: monospace;
+	font-family: monospace !important; /* win! */
 }
 
-#my-id { color: #ff0000; }
+#my-id.visible > * { color: #ff0000; }
 ```
 
 ## JS
 
 ``` js
-function myFunction() {
+function myFunction(arg) {
+  // Hello
+  /* Comment */
+  var test2 = arg && arg.trim() == 'test';
+  var test = arg && arg.trim() == 'test';
+  if (test) {
+    return false;
+  }
   return true;
 }
 ```

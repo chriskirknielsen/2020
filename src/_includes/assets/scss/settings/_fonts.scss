@@ -37,6 +37,15 @@ $font-sans-fallback-list: (
 'Segoe UI Symbol'
 );
 
+$font-mono-fallback-list: (
+    Monaco,
+    Courier New,
+    monospace,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol'
+);
+
 $fonts: (
     // Stacks based on https://gist.github.com/don1138/5761014
     'heading': (
@@ -47,5 +56,10 @@ $fonts: (
     'body': (
         'main': (IBMPlexSans),
         'fallback': $font-sans-fallback-list
+    ),
+
+    'code': (
+        'main': (Menlo),
+        'fallback': $font-mono-fallback-list
     )
 );
