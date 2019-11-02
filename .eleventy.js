@@ -33,6 +33,19 @@ module.exports = function(eleventyConfig) {
     return content;
   }); // */
 
+  /* SHORTCODES */
+
+  eleventyConfig.addShortcode("figure", function(imageUrl, caption, altText, figureClass, imageClass, captionClass) {
+    altText = altText || '';
+    imageClass = imageClass || '';
+    figureClass = figureClass || '';
+    captionClass = captionClass || '';
+    return `<figure${figureClass ? ' class="'+figureClass+'"' : ''}>
+      <img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}>
+      <figcaption${captionClass ? ' class="'+captionClass+'"' : ''}>${caption}</figcaption>
+    </figure>`;
+  });
+
   /* LOCALISATION */
 
   // Sort a collection of pages for the navigation based on the locale's navSet setting
@@ -132,6 +145,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy(root+"/static/img");
   eleventyConfig.addPassthroughCopy(root+"/cms-editor");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/js");
+  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/img");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/css");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/fonts");
   eleventyConfig.addPassthroughCopy(root+"/_includes/assets/vendors");
