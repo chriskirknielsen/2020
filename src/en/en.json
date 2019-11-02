@@ -7,5 +7,8 @@
         "work",
         "about",
         "contact"
-    ]
+    ],
+    "footer": {
+        "buildInfo": "Site built with <a href=\"https://www.11ty.io\" rel=\"noopener noreferrer\">11ty</a>, hosted on <a href=\"https://netlify.com\" rel=\"noopener noreferrer\">Netlify</a>"
+    }
 }
