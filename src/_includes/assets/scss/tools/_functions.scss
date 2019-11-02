@@ -31,7 +31,7 @@
 
 /* COLOUR, FONT AND LAYER-ORDER HELPERS */
 
-// Returns a colour from the $colors map
+// Returns a colour from the $colours map
 @function c($name, $weight: 400, $opacity: 100) {
     $return: unquote($name);
 
@@ -68,7 +68,7 @@
         }
     }
     @else {
-        @return 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        @return 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
     }
 }
 

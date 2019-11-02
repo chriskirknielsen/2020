@@ -1,63 +1,65 @@
-html {
-    @for $i from 1 through 9 {
-        $colour-weight: $i * 100;
-        $colour-weight-inv: (10 - $i) * 100;
+$colour-weights: 100, 400, 900;
 
-        $colour-name-grey: '--c-grey-' + $colour-weight;
-        #{$colour-name-grey}: #{c('grey', $colour-weight-inv)};
+html { // Min is lightest during dusk, Max is darkest
+    --c-max: #000000;
+    --c-min: #ffffff;
 
-        $colour-name-main: '--c-main-' + $colour-weight;
-        #{$colour-name-main}: #{c('main', $colour-weight)};
-        
-        $colour-name-accent: '--c-accent-' + $colour-weight;
-        #{$colour-name-accent}: #{c('accent', $colour-weight-inv)};
-    }
+    --c-grey-min: #{ c('grey', 100) };
+    --c-grey-med: #{ c('grey', 400) };
+    --c-grey-max: #{ c('grey', 900) };
 
-    --colour-bg: var(--c-grey-100);
-    --colour-main: var(--c-accent-900);
-    --colour-accent: var(--c-accent-500);
+    --c-main-min: #{ c('main', 100) };
+    --c-main-med: #{ c('main', 400) };
+    --c-main-max: #{ c('main', 900) };
+
+    --c-comp-min: #{ c('comp', 100) };
+    --c-comp-med: #{ c('comp', 400) };
+    --c-comp-max: #{ c('comp', 900) };
+
+    --colour-bg: var(--c-grey-max);
+    --colour-main: var(--c-main-med);
+    --colour-comp: var(--c-comp-med);
 }
 
-html[data-scheme="dawn"] {
-    @for $i from 1 through 9 {
-        $colour-weight: $i * 100;
-        $colour-weight-inv: (10 - $i) * 100;
+html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
+    --c-max: #ffffff;
+    --c-min: #000000;
+    
+    --c-grey-min: #{ c('grey', 900) };
+    --c-grey-med: #{ c('grey', 500) };
+    --c-grey-max: #{ c('grey', 100) };
 
-        $colour-name-grey: '--c-grey-' + $colour-weight;
-        #{$colour-name-grey}: #{c('grey', $colour-weight)};
+    --c-main-min: #{ c('main', 900) };
+    --c-main-med: #{ c('main', 400) };
+    --c-main-max: #{ c('main', 100) };
 
-        $colour-name-main: '--c-main-' + $colour-weight;
-        #{$colour-name-main}: #{c('main', $colour-weight-inv)};
-        
-        $colour-name-accent: '--c-accent-' + $colour-weight;
-        #{$colour-name-accent}: #{c('accent', $colour-weight)};
-    }
+    --c-comp-min: #{ c('comp', 900) };
+    --c-comp-med: #{ c('comp', 500) };
+    --c-comp-max: #{ c('comp', 100) };
 
-    // --colour-bg: var(--c-grey-100);
-    // --colour-main: var(--c-accent-900);
-    --colour-accent: var(--c-accent-600);
+    --colour-bg: var(--c-grey-min);
+    --colour-main: var(--c-main-med);
+    --colour-comp: var(--c-comp-med);
 }
 
 @each $c in map-keys($colours) {
-    @for $i from 1 through 9 {
-        $colour-weight: $i * 100;
-
-        .u-color--#{$c}-#{$colour-weight} {
-            color: var(--c-#{$c}-#{$colour-weight});
-            --c: var(--c-#{$c}-#{$colour-weight});
+    @each $n in (min,med,max) {
+        .u-c--#{$c}-#{$n} {
+            color: var(--c-#{$c}-#{$n});
+            --c: var(--c-#{$c}-#{$n});
         }
 
-        .u-color\:hover--#{$c}-#{$colour-weight} {
+        .u-c\:h--#{$c}-#{$n} {
             &:hover,
             &:focus {
-                color: var(--c-#{$c}-#{$colour-weight});
-                --c: var(--c-#{$c}-#{$colour-weight});
+                color: var(--c-#{$c}-#{$n});
+                --c: var(--c-#{$c}-#{$n});
             }
         }
 
-        .u-background--#{$c}-#{$colour-weight} {
-            background-color: var(--c-#{$c}-#{$colour-weight});
-            --bg: var(--c-#{$c}-#{$colour-weight});
+        .u-bg--#{$c}-#{$n} {
+            background-color: var(--c-#{$c}-#{$n});
+            --bg: var(--c-#{$c}-#{$n});
         }
     }
 }

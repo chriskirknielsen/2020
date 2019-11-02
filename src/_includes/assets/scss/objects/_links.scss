@@ -2,7 +2,7 @@ a:not([class]) {
     &:link,
     &:visited {
         color: var(--c, var(--colour-main));
-        text-decoration-color: var(--c, var(--colour-accent));
+        text-decoration-color: var(--colour-comp);
         transition: 
             text-decoration-thickness 200ms ease-out, 
             text-underline-offset 200ms ease-out,
@@ -14,7 +14,7 @@ a:not([class]) {
     &:hover,
     &:focus,
     &:active {
-        color: var(--c, var(--colour-accent));
+        color: var(--c, var(--colour-comp));
         text-decoration-color: var(--c, var(--colour-main));
     }
 

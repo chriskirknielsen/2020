@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
 
+    font-family: f('body', 'fallback');
     color: var(--colour-main);
     background-color: var(--colour-bg);
 }

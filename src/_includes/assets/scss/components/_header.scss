@@ -5,7 +5,7 @@
         height: 2rem;
 
         &-path {
-            fill: currentColor;
+            fill: var(--c, currentColor);
         }
     }
 }

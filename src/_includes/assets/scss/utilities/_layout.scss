@@ -54,13 +54,17 @@
     margin-bottom: #{$spacing / 2};
     // margin-block-end: #{$spacing / 2};
 }
-.u-marginBlockStart--auto {
+.u-marginInlineStart--auto {
     margin-left: auto;
     // margin-block-start: auto;
 }
 .u-marginInlineStart {
     margin-left: #{$spacing};
     // margin-inline-start: #{$spacing};
+}
+.u-marginInlineEnd--none {
+    margin-right: 0;
+    // margin-inline-end: 0;
 }
 .u-marginInlineEnd--half {
     margin-right: #{$spacing / 2};

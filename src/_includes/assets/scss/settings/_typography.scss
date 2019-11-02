@@ -1,47 +1,51 @@
+$font-serif-fallback-list: (
+    Constantia,
+    Lucida Bright,
+    Lucidabright,
+    Lucida Serif,
+    Lucida,
+    DejaVu Serif,
+    Bitstream Vera Serif,
+    Liberation Serif,
+    Georgia,
+    serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+'Segoe UI Symbol'
+);
+
+$font-sans-fallback-list: (
+    Frutiger,
+    Frutiger Linotype,
+    Univers,
+    Calibri,
+    Gill Sans,
+    Gill Sans MT,
+    Myriad Pro,
+    Myriad,
+    DejaVu Sans Condensed,
+    Liberation Sans,
+    Nimbus Sans L,
+    Tahoma,
+    Geneva,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+'Segoe UI Symbol'
+);
+
 $fonts: (
     // Stacks based on https://gist.github.com/don1138/5761014
     'heading': (
         'main': (IBMPlexSans),
-        'fallback': (
-            Frutiger,
-            Frutiger Linotype,
-            Univers,
-            Calibri,
-            Gill Sans,
-            Gill Sans MT,
-            Myriad Pro,
-            Myriad,
-            DejaVu Sans Condensed,
-            Liberation Sans,
-            Nimbus Sans L,
-            Tahoma,
-            Geneva,
-            Helvetica Neue,
-            Helvetica,
-            Arial,
-            sans-serif,
-            'Apple Color Emoji',
-            'Segoe UI Emoji',
-            'Segoe UI Symbol'
-        ),
+        'fallback': $font-sans-fallback-list
     ),
 
     'body': (
         'main': (IBMPlexSans),
-        'fallback': (
-            Constantia,
-            Lucida Bright,
-            Lucidabright,
-            Lucida Serif,
-            Lucida,
-            DejaVu Serif,
-            Bitstream Vera Serif,
-            Liberation Serif,
-            Georgia,
-            serif,
-            'Apple Color Emoji',
-            'Segoe UI Emoji',
-            'Segoe UI Symbol'
-        )
+        'fallback': $font-sans-fallback-list
     )
 );

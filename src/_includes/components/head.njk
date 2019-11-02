@@ -1,19 +1,19 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or renderData.title or metadata.title }}</title>
-  <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {% set css %}
-    {% include "assets/css/inline.css" %}
-  {% endset %}
-  <style>{{ css | cssmin | safe }}</style>
-  {% set js %}
-    {% include "assets/js/inline.js" %}
-  {% endset %}
-  <script>{{ js | jsmin | safe }}</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title or renderData.title or metadata.title }}</title>
+	<script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	{% set css %}
+	{% include "assets/css/inline.css" %}
+	{% endset %}
+	<style>{{ css | cssmin | safe }}</style>
+	{% set js %}
+	{% include "assets/js/inline.js" %}
+	{% endset %}
+	<script>{{ js | jsmin | safe }}</script>
 
-  <link rel="stylesheet" href="{{ '/_includes/assets/css/global.css' | url }}" />
+	<link rel="stylesheet" href="{{ '/_includes/assets/css/global.css' | url }}" />
 
-  <script src="{{ '/_includes/assets/js/color-scheme-switcher.js' | url }}" deferred></script>
-  <link rel="stylesheet" href="{{ '/_includes/assets/vendors/prism/prism.css' | url }}" defer />
+	<script src="{{ '/_includes/assets/js/color-scheme-switcher.js' | url }}" deferred></script>
+	<link rel="stylesheet" href="{{ '/_includes/assets/vendors/prism/prism.css' | url }}" defer />
 </head>
