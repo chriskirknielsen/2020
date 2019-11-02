@@ -1,3 +1,29 @@
 .footer {
     border-top: .125em solid var(--c-grey-med);
+
+    &__language {
+        &-item {
+            &:not(:last-child) {
+                padding-right: 1em;
+            }
+            &:not(:first-child) {
+                padding-left: 1em;
+                border-left: 1px solid var(--c-grey-med);
+            }
+        }
+    }
+
+    &__social {
+        &-item {
+            &:not(:first-child) {
+                margin-left: 1em;
+            }
+        }
+
+        &-link > svg {
+            fill: currentColor;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
 }
