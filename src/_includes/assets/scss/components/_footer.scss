@@ -1,5 +1,13 @@
 .footer {
-    border-top: .125em solid var(--c-grey-med);
+    // border-top: .125em solid var(--c-grey-med);
+
+    margin: calc(#{ $spacing } / 2 * -1);
+    
+    > * {
+        flex-grow: 1;
+        flex-basis: calc((#{ $medium-breakpoint-width } - (100% - #{ $spacing })) * 999);
+        margin: calc(#{ $spacing } / 2);
+    }
 
     &__language {
         &-item {

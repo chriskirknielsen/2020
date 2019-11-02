@@ -1,21 +1,21 @@
-<footer class="footer u-marginBlockStart--auto u-padding">
+<footer class="footer fluid-type u-displayFlex u-flex--wrap u-flex--centerBlock u-marginBlockStart--auto u-padding u-c--grey-min u-bg--comp-max">
 	{% set copyrightYear = (metadata.currentYear
 		if metadata.copyrightStart == metadata.currentYear
 		else metadata.copyrightStart + "–" + metadata.currentYear
 	) %}
-	<p>
+	<p class="footer__copyright u-margin--none u-textCenter">
 		&copy {{ copyrightYear }} {{ metadata.author.name }}.
 		{{ footer.buildInfo | safe }}.
 	</p>
 
-	<ul class="u-displayFlex footer__language">
+	<ul class="footer__language u-displayFlex u-flex--centerInline">
 	{% for langCode, langData in metadata.languages %}
 		{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
 		<li class="footer__language-item"><a href="{{ langUrl | url }}">{{ langData.label }}</a></li>
 	{% endfor %}
 	</ul>
 
-	<ul class="u-displayFlex footer__social">
+	<ul class="footer__social u-displayFlex u-flex--centerInline">
 	{% for social in social %}
 		<li class="footer__social-item"><a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link">{{ social.icon | safe }}</a></li>
 	{% endfor %}
