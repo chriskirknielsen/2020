@@ -2,9 +2,15 @@
   &copy {{ metadata.currentYear }} {{ metadata.author.name }}
   
   <ul>
-    {% for landCode, langData in metadata.languages %}
+    {% for langCode, langData in metadata.languages %}
       {% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
       <li><a href="{{ langUrl | url }}">{{ langData.label }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <ul>
+    {% for social in social %}
+      <li><a href="{{ social.url | url }}">{{ social.name }}</a></li>
     {% endfor %}
   </ul>
 </footer>
