@@ -21,32 +21,32 @@ h6 {
 
 h1,
 .h1 {
-    $min: 1rem * $ratio * $ratio * $ratio * $ratio * $ratio;
-    $max: 1rem * $ratio * $ratio * $ratio * $ratio * $ratio * $ratio;
+    $min: 1rem * pow($ratio, 5);
+    $max: 1rem * pow($ratio, 6);
 
     @include fluid-type($min, $max);
 }
 
 h2,
 .h2 {
-    $min: 1rem * $ratio * $ratio * $ratio * $ratio;
-    $max: 1rem * $ratio * $ratio * $ratio * $ratio * $ratio;
+    $min: 1rem * pow($ratio, 4);
+    $max: 1rem * pow($ratio, 5);
 
     @include fluid-type($min, $max);
 }
 
 h3,
 .h3 {
-    $min: 1rem * $ratio * $ratio * $ratio;
-    $max: 1rem * $ratio * $ratio * $ratio * $ratio;
+    $min: 1rem * pow($ratio, 3);
+    $max: 1rem * pow($ratio, 4);
 
     @include fluid-type($min, $max);
 }
 
 h4,
 .h4 {
-    $min: 1rem * $ratio * $ratio;
-    $max: 1rem * $ratio * $ratio * $ratio;
+    $min: 1rem * pow($ratio, 2);
+    $max: 1rem * pow($ratio, 3);
 
     @include fluid-type($min, $max);
 }
@@ -54,7 +54,7 @@ h4,
 h5,
 .h5 {
     $min: 1rem * $ratio;
-    $max: 1rem * $ratio * $ratio;
+    $max: 1rem * pow($ratio, 2);
 
     @include fluid-type($min, $max);
 }

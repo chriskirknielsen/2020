@@ -1,6 +1,5 @@
 // Layer ordering
 $z-index: (
-    'sidebar': 10,
     'main': 20,
     'article': 30,
     'footer': 40,
@@ -13,24 +12,10 @@ $z-index: (
 $rem-in-px: 16px;
 $spacing: 1rem;
 $ratio: 1.2;
-$columns: 7;
-$max-width: 960px;
-$max-width-rem: $max-width / $rem-in-px;
-
-//-- Breakpoint @ large
-$large-breakpoint-width-rem: $max-width-rem;
-$large-breakpoint-column-rem: $large-breakpoint-width-rem / $columns;
-$large-breakpoint-width: $large-breakpoint-width-rem * $rem-in-px; // 980px
-
-//-- Sidebar @ large
-$large-breakpoint-sidebar-columns: 2;
-$large-breakpoint-sidebar-width-rem: $large-breakpoint-column-rem * $large-breakpoint-sidebar-columns;
-$large-breakpoint-sidebar-width: $large-breakpoint-sidebar-width-rem * $rem-in-px; // 280px
 
 //-- Content @ large
-$large-breakpoint-content-columns: $columns - $large-breakpoint-sidebar-columns;
-$large-breakpoint-content-width-rem: $large-breakpoint-column-rem * $large-breakpoint-content-columns; // 44.25rem
-$large-breakpoint-content-width: $large-breakpoint-content-width-rem * $rem-in-px; // 700px
+$large-breakpoint-width-rem: 60; 
+$large-breakpoint-width: $large-breakpoint-width-rem * 1em; // 960px
 
 //-- Breakpoint @ medium
 $medium-breakpoint-width-rem: 48;
@@ -39,17 +24,3 @@ $medium-breakpoint-width: $medium-breakpoint-width-rem * 1em; // 768px
 //-- Breakpoint @ small
 $small-breakpoint-width-rem: 30;
 $small-breakpoint-width: $small-breakpoint-width-rem * 1em; // 480px
-
-//-- Header sizing
-$header-width-rem: $large-breakpoint-width-rem; // 980px
-$header-height-rem: 15; // 240px
-
-//-- Menu sizing
-$menu-icon-box-size: 2rem;
-$menu-icon-line-size: .1875rem;
-$menu-item-height: 3rem;
-$menu-item-padding: .25rem;
-
-//-- Article image default size
-$article-image-x: 600px;
-$article-image-y: 250px;

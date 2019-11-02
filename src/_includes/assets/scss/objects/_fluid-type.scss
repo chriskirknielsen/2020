@@ -1,4 +1,6 @@
-.fluid-type {
+.fluid-type p,
+p.fluid-type,
+article p {
     $min: .875rem;
     $max: 1rem;
     @include fluid-type($min, $max);
