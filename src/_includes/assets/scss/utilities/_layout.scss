@@ -54,6 +54,12 @@
     margin-bottom: #{$spacing / 2};
     // margin-block-end: #{$spacing / 2};
 }
+.u-marginInline--none {
+    margin-left: 0;
+    margin-left: 0;
+    // margin-inline-start: 0;
+    // margin-inline-end: 0;
+}
 .u-marginInlineStart--auto {
     margin-left: auto;
     // margin-block-start: auto;
@@ -62,6 +68,10 @@
     margin-left: #{$spacing};
     // margin-inline-start: #{$spacing};
 }
+.u-marginInlineEnd {
+    margin-right: #{$spacing};
+    // margin-inline-end: #{$spacing};
+}
 .u-marginInlineEnd--none {
     margin-right: 0;
     // margin-inline-end: 0;
@@ -69,6 +79,10 @@
 .u-marginInlineEnd--half {
     margin-right: #{$spacing / 2};
     // margin-inline-end: #{$spacing / 2};
+}
+.u-marginInlineEnd--auto {
+    margin-right: auto;
+    // margin-inline-end: auto;
 }
 .u-marginInline--auto {
     margin-left: auto;
