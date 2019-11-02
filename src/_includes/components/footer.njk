@@ -11,13 +11,21 @@
 	<ul class="footer__language u-displayFlex u-flex--centerInline">
 	{% for langCode, langData in metadata.languages %}
 		{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
-		<li class="footer__language-item"><a href="{{ langUrl | url }}">{{ langData.label }}</a></li>
+		<li class="footer__language-item">
+			<a href="{{ langUrl | url }}">{{ langData.label }}</a>
+		</li>
 	{% endfor %}
 	</ul>
 
-	<ul class="footer__social u-displayFlex u-flex--centerInline">
+	<ul class="footer__social u-displayFlex u-flex--center">
 	{% for social in social %}
-		<li class="footer__social-item"><a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link">{{ social.icon | safe }}</a></li>
+		<li class="footer__social-item u-displayFlex">
+			<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock">
+				<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="u-displayBlock">
+					{{ social.icon | safe }}
+				</svg>
+			</a>
+		</li>
 	{% endfor %}
 	</ul>
 </footer>
