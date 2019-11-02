@@ -12,8 +12,9 @@ $z-index: (
 // Sizing
 $rem-in-px: 16px;
 $spacing: 1rem;
+$ratio: 1.2;
 $columns: 7;
-$max-width: 980px;
+$max-width: 960px;
 $max-width-rem: $max-width / $rem-in-px;
 
 //-- Breakpoint @ large

@@ -93,14 +93,6 @@
     padding-top: $spacing;
     // padding-block-start: $spacing;
 }
-.u-paddingBlock--quarter--belowLarge {
-    @include below-large {
-        padding-top: #{$spacing / 4};
-        padding-bottom: #{$spacing / 4};
-        // padding-block-start: #{$spacing / 4};
-        // padding-block-end: #{$spacing / 4};
-    }
-}
 
 .u-floatLeft { float: left; }
 .u-floatClear { clear: both; }

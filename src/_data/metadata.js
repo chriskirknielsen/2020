@@ -6,6 +6,7 @@ module.exports = {
     email: "chriskirknielsen@gmail.com",
     twitter: "https://twitter.com/ckirknielsen"
   },
+  copyrightStart: 2019,
   currentYear: (new Date()).getFullYear(),
   primaryLanguage: "en",
   languages: {

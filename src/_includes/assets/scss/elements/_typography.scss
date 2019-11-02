@@ -9,30 +9,65 @@ body {
 :lang(en) > q { quotes: '\201C' '\201D' '\2018' '\2019'; }
 :lang(fr) > q { quotes: '« ' ' »'; }
 
-%heading {
-    margin: 0;
-    
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: f('heading');
     font-weight: 700;
 }
 
-h1 { @extend %heading; }
-h2 { @extend %heading; }
-h3 { @extend %heading; }
-h4 { @extend %heading; }
-h5 { @extend %heading; }
-h6 { @extend %heading; }
+h1,
+.h1 {
+    $min: 1rem * $ratio * $ratio * $ratio * $ratio * $ratio;
+    $max: 1rem * $ratio * $ratio * $ratio * $ratio * $ratio * $ratio;
 
-h1, .h1 { font-size: 1.50rem; }
-h2, .h2 { font-size: 1.24rem; }
-h3, .h3 { font-size: 1.12rem; }
-h4, .h4 { font-size: 1.00rem; }
-h5, .h5 { font-size: 0.83rem; }
-h6, .h6 { font-size: 0.67rem; }
+    @include fluid-type($min, $max);
+}
+
+h2,
+.h2 {
+    $min: 1rem * $ratio * $ratio * $ratio * $ratio;
+    $max: 1rem * $ratio * $ratio * $ratio * $ratio * $ratio;
+
+    @include fluid-type($min, $max);
+}
+
+h3,
+.h3 {
+    $min: 1rem * $ratio * $ratio * $ratio;
+    $max: 1rem * $ratio * $ratio * $ratio * $ratio;
+
+    @include fluid-type($min, $max);
+}
+
+h4,
+.h4 {
+    $min: 1rem * $ratio * $ratio;
+    $max: 1rem * $ratio * $ratio * $ratio;
+
+    @include fluid-type($min, $max);
+}
+
+h5,
+.h5 {
+    $min: 1rem * $ratio;
+    $max: 1rem * $ratio * $ratio;
+
+    @include fluid-type($min, $max);
+}
+
+h6,
+.h6 {
+    $min: 1rem;
+    $max: 1rem * $ratio;
+
+    @include fluid-type($min, $max);
+}
 
 p {
-    margin: 0;
-    
     -ms-word-wrap: break-word;
     word-break: break-word; //non-standard css for webkit
     word-wrap: break-word;
@@ -43,5 +78,5 @@ hr {
     height: 2px;
 
     border: 0;
-    background: c('grey', 500);
+    background: var(--c-grey-med);
 }

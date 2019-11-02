@@ -3,8 +3,7 @@
 
 .u-textLeft { text-align: left; }
 .u-textCenter { text-align: center; }
-.u-textCenter--belowLarge { @include below-large { text-align: center; } }
-.u-textRight--aboveLarge { @include above-large { text-align: right; } }
+.u-textRight { text-align: right; }
 
 .u-textHuge { font-size: 2rem; }
 .u-textLarge { font-size: 1.2rem; }
@@ -14,7 +13,6 @@
 .u-textSizeInherit { font-size: 1em; }
 .u-textLarger { font-size: 1.2em; }
 .u-textSmaller { font-size: .875em; }
-.u-textNormal--belowLarge { @include below-large { font-size: 1rem; } }
 
 .u-fontRegular { font-style: normal; }
 .u-fontItalic { font-style: italic; }

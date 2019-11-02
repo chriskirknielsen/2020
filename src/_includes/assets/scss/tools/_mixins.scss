@@ -4,26 +4,26 @@
     }
 }
 
-@mixin below-large {
-    @media (max-width: #{$large-breakpoint-width - 1}) {
-        @content;
-    }
-}
-
 @mixin above-medium {
     @media (min-width: #{$medium-breakpoint-width}) {
         @content;
     }
 }
 
-@mixin below-medium {
-    @media (max-width: #{$medium-breakpoint-width - 1}) {
-        @content;
-    }
-}
 @mixin above-small {
     @media (min-width: #{$small-breakpoint-width}) {
         @content;
     }
 }
 
+@mixin fluid-type($min, $max) {
+    font-size: $min;
+
+    @include above-small {
+        font-size: fluid-type($small-breakpoint-width-rem, $large-breakpoint-width-rem, $min, $max);
+    }
+
+    @include above-large {
+        font-size: $max;
+    }
+}

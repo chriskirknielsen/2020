@@ -3,11 +3,11 @@
 
 	{% include "components/head.njk" %}
 
-	<body class="u-c--grey-min u-bg--grey-max">
+	<body class="u-displayFlex u-flex--column u-c--grey-min u-bg--grey-max">
 
 		{% include "components/header.njk" %}
 		
-		<main>
+		<main class="main u-padding">
 			{{ layoutContent | safe }}
 		</main>
 
