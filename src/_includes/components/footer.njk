@@ -1,26 +1,29 @@
 <footer class="footer fluid-type u-displayFlex u-flex--wrap u-flex--centerBlock u-marginBlockStart--auto u-padding u-c--grey-min u-bg--comp-max">
 	{% set copyrightYear = (metadata.currentYear
 		if metadata.copyrightStart == metadata.currentYear
-		else metadata.copyrightStart + "–" + metadata.currentYear
-	) %}
-	<p class="footer__copyright u-margin--none u-textCenter">
-		&copy {{ copyrightYear }} {{ metadata.author.name }}.
-		{{ footer.buildInfo | safe }}.
-	</p>
+		else metadata.copyrightStart + "&ndash;" + metadata.currentYear
+	) | safe %}
+	<div class="footer__copyright">
+		<p class="u-fontBold u-textCenter">&copy; {{ copyrightYear }} {{ metadata.author.name }} &mdash; {{ footer.allRights }}</p>
+		<p class="u-textCenter">{{ footer.buildInfo | safe }}.</p>
+	</div>
 
-	<ul class="footer__language u-displayFlex u-flex--centerInline">
-	{% for langCode, langData in metadata.languages %}
-		{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
-		<li class="footer__language-item">
-			<a href="{{ langUrl | url }}">{{ langData.label }}</a>
-		</li>
-	{% endfor %}
-	</ul>
+	{# <div class="footer__language">
+		{{ footer.langLabel }}{{ punctSp }}:
+		<ul class="u-displayInlineFlex u-flex--centerInline">
+		{% for langCode, langData in metadata.languages %}
+			{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
+			<li class="footer__language-item">
+				<a href="{{ langUrl | url }}">{{ langData.label }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div> #}
 
 	<ul class="footer__social u-displayFlex u-flex--center">
 	{% for social in social %}
 		<li class="footer__social-item u-displayFlex">
-			<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock">
+			<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock u-c--grey-min u-c:h--comp-med">
 				<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="u-displayBlock">
 					{{ social.icon | safe }}
 				</svg>

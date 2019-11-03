@@ -16,11 +16,12 @@
 
     &__language {
         &-item {
+            $lang-space: .5em;
             &:not(:last-child) {
-                padding-right: 1em;
+                padding-right: #{ $lang-space };
             }
             &:not(:first-child) {
-                padding-left: 1em;
+                padding-left: #{ $lang-space };
                 border-left: 1px solid var(--c-grey-med);
             }
         }

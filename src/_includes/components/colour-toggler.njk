@@ -1,3 +1,9 @@
-<button class="colour-toggler__button button--reset u-posRelative u-beforeCover u-displayBlock u-margin--auto u-marginInline--none u-flex--shrink--none u-c--main-min u-c:h--comp-med" type="button" data-scheme-switcher>
-    <span class="visually-hidden">Toggle Dusk/Dawn</span>
+<button class="button--reset u-posRelative u-displayBlock u-margin--auto u-marginInline--none u-flex--shrink--none u-c--main-min u-c:h--comp-med" type="button" data-lang-menu>
+    {{ icons.lang | safe }}
+    <span class="visually-hidden">{{ langSwitchLabel }}</span>
+</button>
+
+<button class="button--reset u-posRelativeu-displayBlock u-margin--auto u-marginInline--none u-flex--shrink--none u-c--main-min u-c:h--comp-med" type="button" data-scheme-switcher>
+    {{ icons.scheme | safe }}
+    <span class="visually-hidden">{{ schemeSwitchLabel }}</span>
 </button>
