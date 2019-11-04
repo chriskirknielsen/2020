@@ -12,15 +12,18 @@ $z-index: (
 $rem-in-px: 16px;
 $spacing: 1rem;
 $ratio: 1.2;
+$container-max-width: 60;
+$container-max-width-em: #{ $container-max-width * 1em };
 
+// Breakpoints used in fluid type
 //-- Content @ large
-$large-breakpoint-width-rem: 60; 
-$large-breakpoint-width: $large-breakpoint-width-rem * 1em; // 960px
+$large-breakpoint-width-rem: $container-max-width; 
+$large-breakpoint-width: $large-breakpoint-width-rem * 1em;
 
 //-- Breakpoint @ medium
-$medium-breakpoint-width-rem: 48;
-$medium-breakpoint-width: $medium-breakpoint-width-rem * 1em; // 768px
+$medium-breakpoint-width-rem: $container-max-width / 5 * 4;
+$medium-breakpoint-width: $medium-breakpoint-width-rem * 1em;
 
 //-- Breakpoint @ small
-$small-breakpoint-width-rem: 30;
-$small-breakpoint-width: $small-breakpoint-width-rem * 1em; // 480px
+$small-breakpoint-width-rem: $container-max-width / 2;
+$small-breakpoint-width: $small-breakpoint-width-rem * 1em;

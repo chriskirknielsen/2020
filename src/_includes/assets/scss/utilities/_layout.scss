@@ -20,78 +20,59 @@
 .u-displayFlex--aboveLarge { @include above-large { display: flex; } }
 
 .u-width--100 { width: 100%; }
-.u-maxWidth--widget { max-width: 500px; }
 
 .u-flow > * + * {
-    margin-top: $spacing;
+    margin-top: #{ $spacing };
     margin-bottom: 0;
-    // margin-block-start: $spacing;
-    // margin-block-end: 0;
 }
 
-.u-margin { margin: $spacing; }
+.u-margin { margin: #{ $spacing }; }
 .u-margin--none { margin: 0; }
 .u-margin--auto { margin: auto; }
 .u-marginBlock--none {
     margin-top: 0;
     margin-bottom: 0;
-    // margin-block-start: 0;
-    // margin-block-end: 0;
 }
 .u-marginBlockStart {
-    margin-top: $spacing;
-    // margin-block-start: $spacing;
+    margin-top: #{ $spacing };
 }
 .u-marginBlockStart--auto {
     margin-top: auto;
-    // margin-block-start: auto;
 }
 .u-marginBlockEnd {
-    margin-bottom: $spacing;
-    // margin-block-end: $spacing;
+    margin-bottom: #{ $spacing };
 }
 .u-marginBlockEnd--half {
     margin-bottom: #{$spacing / 2};
-    // margin-block-end: #{$spacing / 2};
 }
 .u-marginInline--none {
     margin-left: 0;
     margin-right: 0;
-    // margin-inline-start: 0;
-    // margin-inline-end: 0;
 }
 .u-marginInlineStart--auto {
     margin-left: auto;
-    // margin-block-start: auto;
 }
 .u-marginInlineStart {
     margin-left: #{$spacing};
-    // margin-inline-start: #{$spacing};
 }
 .u-marginInlineEnd {
     margin-right: #{$spacing};
-    // margin-inline-end: #{$spacing};
 }
 .u-marginInlineEnd--none {
     margin-right: 0;
-    // margin-inline-end: 0;
 }
 .u-marginInlineEnd--half {
     margin-right: #{$spacing / 2};
-    // margin-inline-end: #{$spacing / 2};
 }
 .u-marginInlineEnd--auto {
     margin-right: auto;
-    // margin-inline-end: auto;
 }
 .u-marginInline--auto {
     margin-left: auto;
     margin-right: auto;
-    // margin-inline-start: auto;
-    // margin-inline-end: auto;
 }
 
-.u-padding { padding: $spacing; }
+.u-padding { padding: #{ $spacing }; }
 .u-padding--half { padding: #{$spacing / 2}; }
 .u-padding--quarter { padding: #{$spacing / 4}; }
 .u-padding--none { padding: 0; }
@@ -104,8 +85,7 @@
     padding-right: #{$spacing / 2};
 }
 .u-paddingBlockStart {
-    padding-top: $spacing;
-    // padding-block-start: $spacing;
+    padding-top: #{ $spacing };
 }
 
 .u-floatLeft { float: left; }
@@ -127,3 +107,9 @@
 
 .u-radius--half { border-radius: #{$spacing / 2}; }
 .u-radius--quarter { border-radius: #{$spacing / 4}; }
+
+.u-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $container-max-width-em;
+}
