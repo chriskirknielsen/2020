@@ -84,6 +84,9 @@ pre[class*="language-"] code {
 .token.inserted {
 	color: var(--c-comp-min);
 }
+.token.property {
+	color: var(--c-main-min);
+}
 .token.atrule,
 .token.attr-value,
 .token.keyword,
