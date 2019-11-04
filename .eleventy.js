@@ -5,6 +5,7 @@ const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const slugify = require("slugify");
 const Prism = require('prismjs');
 
 module.exports = function(eleventyConfig) {
@@ -16,22 +17,14 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["md","html","njk"]
   });
 
-  // Syntax Highlighting
-  /*eleventyConfig.addTransform("syntax-highlight", function(content, outputPath) {
-    if (outputPath.indexOf(".html") > -1) {
-      const matchCodeBlock = /(<pre class="language-([a-z0-9_-]+)">([\s\S]*?)<\/pre>)/gi;
-      const prismified = content.replace(matchCodeBlock, function (match, group, lang, code, index, original) {
-        if (index !== 0) {
-          return Prism.highlight(code, Prism.languages[lang], lang);
-        } else {
-          return group;
-        }
-      });
-
-      return prismified;
-    }
-    return content;
-  }); // */
+  eleventyConfig.addFilter("slug", (input) => {
+    const options = {
+      replacement: "-",
+      remove: /[&,+()$~%.'":*?!<>{}]/g,
+      lower: true
+    };
+    return slugify(input, options);
+  });
 
   /* SHORTCODES */
 
