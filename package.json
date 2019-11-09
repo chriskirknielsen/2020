@@ -8,7 +8,7 @@
     "watch": "npx eleventy --watch",
     "debug": "DEBUG=* npx eleventy",
     "sass:tokens": "npx json-to-scss src/_data/tokens.json src/_includes/assets/scss/settings/_tokens.scss",
-    "dev": "npx json-to-scss src/_data/tokens.json src/_includes/assets/scss/settings/_tokens.scss && gulp watch & eleventy --serve",
+    "dev": "gulp watch & eleventy --serve",
     "dev:eleventy": "eleventy --serve",
     "dev:gulpcss": "gulp css"
   },
