@@ -135,13 +135,8 @@ module.exports = function(eleventyConfig) {
   });
 
   // Don't process folders with static assets e.g. images
-  eleventyConfig.addPassthroughCopy(root+"/static/img");
   eleventyConfig.addPassthroughCopy(root+"/cms-editor");
-  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/js");
-  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/img");
-  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/css");
-  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/fonts");
-  eleventyConfig.addPassthroughCopy(root+"/_includes/assets/vendors");
+  eleventyConfig.addPassthroughCopy({ [`${root}/_includes/assets/`]: "/assets/" });
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
