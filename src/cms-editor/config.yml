@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: chriskirknielsen/2020
   branch: dev # Branch to update (optional; defaults to master)
 
 # Uncomment below to enable drafts
@@ -41,8 +42,10 @@ collections:
     files:
       - label: "Theme Settings"
         name: "theme"
-        delete: false
         file: "src/_data/tokens.json"
+        delete: false
+        editor: 
+          preview: false
         fields:
           - label: "Fonts"
             name: "fonts"
