@@ -7,7 +7,8 @@
     "fullbuild": "gulp watch & npx eleventy --serve",
     "watch": "npx eleventy --watch",
     "debug": "DEBUG=* npx eleventy",
-    "dev": "gulp watch & eleventy --serve",
+    "sass:tokens": "npx json-to-scss src/_data/tokens.json src/_includes/assets/scss/settings/_tokens.scss",
+    "dev": "npx json-to-scss src/_data/tokens.json src/_includes/assets/scss/settings/_tokens.scss && gulp watch & eleventy --serve",
     "dev:eleventy": "eleventy --serve",
     "dev:gulpcss": "gulp css"
   },
@@ -41,6 +42,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "html-minifier": "^4.0.0",
+    "json-to-scss": "^1.4.0",
     "netlify-cli": "^2.19.0",
     "prismjs": "^1.17.1",
     "uglify-es": "^3.3.9"

@@ -7,3 +7,6 @@ package-lock.json
 
 # Local Netlify folder
 .netlify
+
+# Ignore tokens file
+src/_includes/assets/scss/settings/_tokens.scss
