@@ -46,8 +46,7 @@ $font-fallback-list: (
     )
 );
 
-$font-token: map-get($tokens, fonts);
-
+$font-token: token-get(fonts);
 $fonts: (
     // Stacks based on https://gist.github.com/don1138/5761014
     'heading': (

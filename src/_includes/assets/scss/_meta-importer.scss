@@ -1,4 +1,5 @@
 @import "settings/tokens";
+@function token-get($key) { @return map-get($tokens, $key); }
 @import "settings/layout";
 @import "settings/fonts";
 @import "settings/colors";
