@@ -7,7 +7,7 @@
 
 		{% include "components/header.njk" %}
 		
-		<main class="main u-padding fluid-type">
+		<main class="main {% if section != 'home' %}u-padding{% endif %} fluid-type">
 			{{ layoutContent | safe }}
 		</main>
 

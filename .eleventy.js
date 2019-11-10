@@ -92,6 +92,15 @@ module.exports = function(eleventyConfig) {
 
   /* MINIFICATION */
 
+  // Minify HTML/SVG
+  eleventyConfig.addFilter("htmlmin", function(code) {
+    return htmlmin.minify(code, {
+      useShortDoctype: true,
+      removeComments: true,
+      collapseWhitespace: true
+    });
+  });
+
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;

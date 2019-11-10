@@ -1,0 +1,39 @@
+.homescreen {
+    min-height: calc(100vh - #{ $header-expected-height }); // Take up the whole screen, minus menu
+
+    &__wrapper {
+        outline: .5rem solid var(--c-main-med);
+    }
+
+    &__background {
+        // Canvas fallback
+        background-image: url(https://wallpaperaccess.com/full/856965.jpg); // PLACEHOLDER
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    &__svg-wrapper {
+        > svg {
+            width: 60rem;
+        }
+    }
+
+    &__name-shineOver {
+        animation: shineOver 2s linear 2s 1 both;
+    }
+
+    @keyframes shineOver {
+        0% { transform: translateX(150%); }
+        50% { opacity: .9; }
+        100% { transform: translateX(-150%); }
+    }
+
+    &__title-blink {
+        animation: underscoreBlink 1.8s steps(1) infinite both;
+    }
+
+    @keyframes underscoreBlink {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+}
