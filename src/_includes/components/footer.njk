@@ -8,7 +8,7 @@
 		<p class="u-textCenter">{{ footer.buildInfo | safe }}.</p>
 	</div>
 
-	{# <div class="footer__language">
+	<div class="footer__language">
 		{{ footer.langLabel }}{{ punctSp }}:
 		<ul class="u-displayInlineFlex u-flex--centerInline">
 		{% for langCode, langData in metadata.languages %}
@@ -18,7 +18,7 @@
 			</li>
 		{% endfor %}
 		</ul>
-	</div> #}
+	</div>
 
 	<ul class="footer__social u-displayFlex u-flex--center">
 	{% for social in social %}

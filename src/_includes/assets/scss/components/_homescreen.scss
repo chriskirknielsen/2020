@@ -19,17 +19,17 @@
     }
 
     &__name-shineOver {
-        animation: shineOver 2s linear 2s 1 both;
+        animation: shineOver 1.75s linear 2s 1 both;
     }
 
     @keyframes shineOver {
         0% { transform: translateX(150%); }
-        50% { opacity: .9; }
+        50% { opacity: 1; }
         100% { transform: translateX(-150%); }
     }
 
     &__title-blink {
-        animation: underscoreBlink 1.8s steps(1) infinite both;
+        animation: underscoreBlink 1.75s steps(1) infinite both;
     }
 
     @keyframes underscoreBlink {
