@@ -31,7 +31,9 @@
 {% set pattern_half_height = pattern_height / 2 %}
 
 
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="971.25" height="504.18" viewBox="0 0 971.25 504.18">
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="971.25" height="504.18" viewBox="0 0 971.25 504.18" class="svg-mark">
   <defs>
     <!-- SHAPE: Chris -->
     <path id="svg-mark-chris-shape" d="M170.04,287.19h93.75v46.88h-93.75c-46.88,0,-70.31,-23.44,-70.31,-70.31v-23.44c0,-46.88,23.44,-70.31,70.31,-70.31h93.75v46.88h-93.75c-15.63,0,-23.44,7.81,-23.44,23.44v23.44c0.01,15.6,7.82,23.42,23.44,23.42zm152.35,-11.72v58.59h-46.88v-164.06h46.88v58.59h82.03v-58.59h46.88v164.06h-46.88v-58.59h-82.03zm140.62,-105.47h123.05c35.16,0,52.73,17.58,52.73,52.73c0,28.59,-11.6,45.55,-34.8,50.86l34.8,60.47h-54.02l-33.87,-58.59h-41.02v58.59h-46.88v-164.06zm46.88,46.87v11.72h76.17c3.9,0,5.86,-1.95,5.86,-5.86s-1.96,-5.86,-5.86,-5.86h-76.17zm187.5,117.19h-46.88v-164.06h46.88v164.06zm111.33,0h-99.61v-46.88h99.61c3.9,0,5.86,-1.95,5.86,-5.86s-1.96,-5.86,-5.86,-5.86h-46.88c-35.16,0,-52.73,-17.58,-52.73,-52.73c0,-35.16,17.58,-52.73,52.73,-52.73h99.61v46.88h-99.61c-3.91,0,-5.86,1.95,-5.86,5.86s1.95,5.86,5.86,5.86h46.88c35.16,0,52.73,17.58,52.73,52.73s-17.58,52.73,-52.73,52.73z"></path>
@@ -89,10 +91,10 @@
     <!-- FILTER: Dark Purple Glow Thick -->
     <filter id="violetShadeGlow" height="300%" width="300%" x="-75%" y="-75%">
       <!-- Thicken out the original shape -->
-      <feMorphology operator="dilate" radius="1" in="SourceAlpha" result="violetShadeGlow_thicken" />
+      <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="violetShadeGlow_thicken" />
 
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
-      <feGaussianBlur in="violetShadeGlow_thicken" stdDeviation="4" result="violetShadeGlow_blurred" />
+      <feGaussianBlur in="violetShadeGlow_thicken" stdDeviation="2" result="violetShadeGlow_blurred" />
 
       <!-- Change the colour -->
       <feFlood flood-color="{{ firstname_inner }}" result="violetShadeGlow_glowColor" />
@@ -102,7 +104,7 @@
 
       <!-- Lower the final opacity -->
       <feComponentTransfer>
-        <feFuncA type="linear" slope="0.4"/>
+        <feFuncA type="linear" slope="0.3"/>
       </feComponentTransfer>
 
     </filter>
@@ -113,7 +115,7 @@
       <feMorphology operator="dilate" radius="4" in="SourceAlpha" result="violetShadeGlow2_thicken" />
 
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
-      <feGaussianBlur in="violetShadeGlow2_thicken" stdDeviation="4" result="violetShadeGlow2_blurred" />
+      <feGaussianBlur in="violetShadeGlow2_thicken" stdDeviation="8" result="violetShadeGlow2_blurred" />
 
       <!-- Change the colour -->
       <feFlood flood-color="{{ firstname_inner }}" result="violetShadeGlow_glowColor" />
@@ -176,10 +178,10 @@
   </defs>
   
   <!-- Chris -->
-  <g>
+  <g class="svg-mark__chris-group svg-mark__group">
     <!-- Fake depth -->
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" style="transform: scale(0.95, 1)" />
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour }}" style="transform: scale(0.975, 1)" />
+    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" style="transform: scale(0.975, 1)" />
+    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour }}" style="transform: scale(0.9875, 1)" />
 
     <!-- Outline -->
     <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="2" />
@@ -217,14 +219,14 @@
   </g>
 
   <!-- Kirk-Nielsen -->
-  <g>
+  <g class="svg-mark__kirknielsen-group svg-mark__group">
     <use xlink:href="#svg-mark-kirknielsen-shape" filter="url(#pinkGlow)" />
     <use xlink:href="#svg-mark-kirknielsen-shape" stroke="{{ lastname_stroke }}" stroke-width="4" />
     <use xlink:href="#svg-mark-kirknielsen-shape" fill="{{ lastname_fill }}" />
   </g>
 
   <!-- Creative Developer -->
-  <g>
+  <g class="svg-mark__creativedeveloper-group svg-mark__group">
     <use xlink:href="#svg-mark-dev-shape" fill="{{ title_fill }}" />
   </g>
 </svg>
