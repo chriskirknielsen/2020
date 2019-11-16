@@ -46,8 +46,9 @@
     }
 
     &__chris-group {
-        transform: scale(0, 0);
-        animation-duration: 1s;
+        opacity: 0;
+        transform: scale(0.01, 0.01);
+        animation-duration: 1.25s;
         animation-delay: 1s;
         animation-timing-function: ease;
     }
@@ -63,16 +64,20 @@
     &__creativedeveloper-group {
         opacity: 0;
         transform: translate(150%, 0);
-        animation-duration: 1s;
+        animation-duration: 1.5s;
         animation-delay: 2s;
-        animation-timing-function: ease;
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
     &__glare-group {
-        transform: scale(0, 0) rotate(-90deg);
+        transform-origin: 0 0;
+        transform: translate(76%, 34.25%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
+    }
+    &__glare {
+        transform: scale(0, 0) rotate(-270deg);
         animation-duration: 1s;
-        animation-delay: 2s;
-        animation-timing-function: cubic-bezier(.25, 1.5, .5, 1);
+        animation-delay: 2.5s;
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
     @keyframes svgMarkTransform {

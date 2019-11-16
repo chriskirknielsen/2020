@@ -106,7 +106,7 @@
 
       <!-- Lower the final opacity -->
       <feComponentTransfer>
-        <feFuncA type="linear" slope="0.3"/>
+        <feFuncA type="linear" slope="0.5"/>
       </feComponentTransfer>
 
     </filter>
@@ -163,7 +163,6 @@
       <stop offset=".67" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
 
-
     <!-- GRADIENT: Blinds -->
     <linearGradient id="gradientBlinds" gradientUnits="userSpaceOnUse" x1="480.592" y1="334.06" x2="480.592" y2="169.998">
       <stop offset="0" stop-color="{{ blinds_endpoint }}"/>
@@ -185,11 +184,11 @@
   <!-- Chris -->
   <g class="svg-mark__chris-group svg-mark__group">
     <!-- Fake depth -->
+    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour }}" style="transform: scale(0.95, 1)" />
     <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" style="transform: scale(0.975, 1)" />
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour }}" style="transform: scale(0.9875, 1)" />
 
     <!-- Outline -->
-    <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="2" />
+    <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="3" />
 
     <!-- Gradient -->
     <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientDusk)" />
@@ -222,12 +221,10 @@
       <ellipse fill="url(#gradientShine)" cx="790.35" cy="227.84" rx="29.94" ry="7.9"/>
     </g>
 
-    <g style="transform-origin: 0 0; transform: translate(12.97297%, 35.7015%);">
-      <g style="transform: rotate(30deg);">
-        <g class="svg-mark__glare-group svg-mark__group">
-          <ellipse fill="url(#gradientShine)" cx="0" cy="0" ry="16" rx="4" />
-          <ellipse fill="url(#gradientShine)" cx="0" cy="0" rx="16" ry="4" />
-        </g>
+    <g class="svg-mark__glare-group">
+      <g class="svg-mark__glare svg-mark__group">
+        <ellipse fill="url(#gradientShine)" cx="0" cy="0" ry="16" rx="4" />
+        <ellipse fill="url(#gradientShine)" cx="0" cy="0" rx="16" ry="4" />
       </g>
     </g>
   </g>
