@@ -80,13 +80,13 @@
 .u-padding--half { padding: #{$spacing / 2}; }
 .u-padding--quarter { padding: #{$spacing / 4}; }
 .u-padding--none { padding: 0; }
-.u-paddingBlock--half {
-    padding-top: #{$spacing / 2};
-    padding-bottom: #{$spacing / 2};
+.u-paddingBlock {
+    padding-top: #{$spacing};
+    padding-bottom: #{$spacing};
 }
-.u-paddingInline--half {
-    padding-left: #{$spacing / 2};
-    padding-right: #{$spacing / 2};
+.u-paddingInline--double {
+    padding-left: #{$spacing * 2};
+    padding-right: #{$spacing * 2};
 }
 .u-paddingBlockStart {
     padding-top: #{ $spacing };
