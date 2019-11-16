@@ -50,12 +50,20 @@
         animation-fill-mode: forwards;
     }
 
+    &__chris-depth {
+        animation-fill-mode: backwards;
+        animation-direction: reverse;
+        animation-duration: 1.25s;
+        animation-delay: .9s;
+        animation-timing-function: cubic-bezier(0, 0, 1, 0);
+    }
+
     &__chris-group {
         opacity: 0;
-        transform: scale(0.01, 0.01);
+        transform: scale(.9);
         animation-duration: 1.25s;
         animation-delay: 1s;
-        animation-timing-function: ease;
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
     &__kirknielsen-group {
@@ -92,3 +100,4 @@
         }
     }
 }
+
