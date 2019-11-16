@@ -2,7 +2,12 @@
     min-height: calc(100vh - #{ $header-expected-height }); // Take up the whole screen, minus menu
 
     &__wrapper {
-        outline: .5rem solid var(--c-main-med);
+        $outline-size: .5rem;
+
+        &::after {
+            border: #{ $outline-size } solid var(--c-main-med);
+            pointer-events: none;;
+        }
     }
 
     &__background {
@@ -63,7 +68,7 @@
 
     &__creativedeveloper-group {
         opacity: 0;
-        transform: translate(150%, 0);
+        transform: translate(50%, 0);
         animation-duration: 1.5s;
         animation-delay: 2s;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);

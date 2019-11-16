@@ -32,6 +32,10 @@
 .u-margin--double { margin: #{ $spacing * 2}; }
 .u-margin--none { margin: 0; }
 .u-margin--auto { margin: auto; }
+.u-marginBlock--double {
+    margin-top: #{ $spacing * 2};
+    margin-bottom: #{ $spacing * 2};
+}
 .u-marginBlock--none {
     margin-top: 0;
     margin-bottom: 0;
@@ -42,11 +46,14 @@
 .u-marginBlockStart--auto {
     margin-top: auto;
 }
+.u-marginBlockStart--none {
+    margin-top: 0;
+}
 .u-marginBlockEnd {
     margin-bottom: #{ $spacing };
 }
-.u-marginBlockEnd--half {
-    margin-bottom: #{$spacing / 2};
+.u-marginBlockEnd--double {
+    margin-bottom: #{$spacing * 2};
 }
 .u-marginInline--none {
     margin-left: 0;
@@ -101,7 +108,8 @@
 }
 
 .u-absCover,
-.u-beforeCover::before {
+.u-beforeCover::before,
+.u-afterCover::after {
     position: absolute;
     left: 0;
     right: 0;
@@ -109,7 +117,8 @@
     bottom: 0;
 }
 
-.u-beforeCover::before { // Creates a ::before pseudo-element that covers the parent element
+.u-beforeCover::before, // Creates a ::before pseudo-element that covers the parent element
+.u-afterCover::after { // Creates an ::after pseudo-element that covers the parent element
     content: '';
 }
 
