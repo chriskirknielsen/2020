@@ -18,13 +18,15 @@
 
 {# Define the name's gradient fill colours #}
 {% set firstname_halfstart = "#1a2681" %}
-{% set firstname_halfmid = "#9e4abb" %}
-{% set firstname_halfend = "#fbdaca" %}
-{% set firstname_endfill = "#491b80" %}
+{% set firstname_halfmid1 = "#9e4abb" %}
+{% set firstname_halfmid2 = "#fbdaca" %}
+{% set firstname_halfend = "#ffffff" %}
+{% set firstname_endtop = "#060a37" %}
+{% set firstname_endbottom = "#101652" %}
 
 {# Define the name's lower "blinds" effect gradient colours #}
-{% set blinds_endpoint = "#ffde67" %}
-{% set blinds_startpoint = "#e7a6ff" %}
+{% set blinds_startpoint = "#12ede6" %}
+{% set blinds_endpoint = "#eb008b" %}
 
 {# Define the name's lower "blinds" effect pattern size #}
 {% set pattern_height = 14 %}
@@ -140,14 +142,17 @@
     <!-- GRADIENT: Main -->
     <linearGradient id="gradientDusk" gradientUnits="userSpaceOnUse" x1="480.592" y1="169.998" x2="480.592" y2="334.06">
       <stop offset="0" stop-color="{{ firstname_halfstart }}"/>
-      <stop offset=".25" stop-color="{{ firstname_halfmid }}"/>
+      <stop offset=".21" stop-color="{{ firstname_halfmid1 }}"/>
+      <stop offset=".42" stop-color="{{ firstname_halfmid2 }}"/>
       <stop offset=".5" stop-color="{{ firstname_halfend }}"/>
-      <stop offset=".5" stop-color="{{ firstname_endfill }}"/>
+      <stop offset=".5" stop-color="{{ firstname_endtop }}"/>
+      <stop offset="1" stop-color="{{ firstname_endbottom }}"/>
     </linearGradient>
 
     <!-- GRADIENT: Shine Spots -->
     <radialGradient id="gradientShine">
       <stop offset="0" stop-color="#fff"/>
+      <stop offset=".75" stop-color="#fff" stop-opacity="0"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </radialGradient>
 
@@ -189,7 +194,7 @@
     <!-- Gradient -->
     <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientDusk)" />
 
-    <!-- Gradient -->
+    <!-- Gradient Blinds -->
     <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientBlinds)" mask="url(#maskBlinds)" />
     
     <!-- Inner Shadow  -->
@@ -205,7 +210,7 @@
 
     <!-- Shine Spots -->
     <g mask="url(#svg-mark-chris-mask-outline)">
-      <circle fill="url(#gradientShine)" cx="119.01" cy="178.95" r="48.81"/>
+      <circle fill="url(#gradientShine)" cx="119" cy="178.95" r="48.81"/>
       <circle fill="url(#gradientShine)" cx="735.67" cy="168.52" r="36.76"/>
       <ellipse fill="url(#gradientShine)" cx="523.35" cy="173.84" rx="63.03" ry="26.07"/>
       <ellipse fill="url(#gradientShine)" cx="363.35" cy="226.84" rx="40.05" ry="13.95"/>
@@ -215,6 +220,15 @@
       <circle fill="url(#gradientShine)" cx="626.35" cy="303.114" r="39.29"/>
       <ellipse fill="url(#gradientShine)" cx="563.72" cy="227.84" rx="26.79" ry="7.9"/>
       <ellipse fill="url(#gradientShine)" cx="790.35" cy="227.84" rx="29.94" ry="7.9"/>
+    </g>
+
+    <g style="transform-origin: 0 0; transform: translate(12.97297%, 35.7015%);">
+      <g style="transform: rotate(30deg);">
+        <g class="svg-mark__glare-group svg-mark__group">
+          <ellipse fill="url(#gradientShine)" cx="0" cy="0" ry="16" rx="4" />
+          <ellipse fill="url(#gradientShine)" cx="0" cy="0" rx="16" ry="4" />
+        </g>
+      </g>
     </g>
   </g>
 

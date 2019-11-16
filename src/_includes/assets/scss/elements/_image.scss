@@ -4,9 +4,17 @@ html[data-scheme="dusk"] img {
 }
 
 svg {
-    &,
+    // Ensure SVG elements transform from their centre point
+    transform-origin: 50% 50%;
+    
     & * {
-        // Ensure SVG elements transform from their centre point
-        transform-origin: 50% 50%;
+        transform-origin: inherit;
     }
+
+    color: #3ec2d3;
+    color: #12ede6;
+    color: #060a37;
+    color: #9a224a;
+    color: #101652;
+    color: #e7a6ff;
 }

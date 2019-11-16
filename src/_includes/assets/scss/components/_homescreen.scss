@@ -68,6 +68,13 @@
         animation-timing-function: ease;
     }
 
+    &__glare-group {
+        transform: scale(0, 0) rotate(-90deg);
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-timing-function: cubic-bezier(.25, 1.5, .5, 1);
+    }
+
     @keyframes svgMarkTransform {
         100% {
             opacity: 1;
