@@ -6,7 +6,7 @@
 
         &::after {
             border: #{ $outline-size } solid var(--c-main-med);
-            pointer-events: none;;
+            pointer-events: none;
         }
     }
 
@@ -15,6 +15,10 @@
         background-image: url(https://i.pinimg.com/originals/5b/17/b2/5b17b2b4f26aa523dca15fbf902223b4.jpg); // PLACEHOLDER
         background-size: cover;
         background-position: 50% 50%;
+    }
+
+    &__scene {
+        background-color: var(--c-main-max);
     }
 
     &__svg-wrapper {
