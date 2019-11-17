@@ -1,40 +1,9 @@
-$colours: (
-    'grey': (
-        100:  #f0f1f4,
-        200:  #d7d8dc,
-        300:  #b9bbc0,
-        400:  #9c9ea5,
-        500:  #80828a,
-        600:  #656770,
-        700:  #4b4d56,
-        800:  #33353e,
-        900:  #1d1e25,
-    ),
-
-    'main': (
-        100:  #f2e6d8,
-        200:  #f6bacd,
-        300:  #fa88c1,
-        400:  #f64eb0,
-        500:  #c83e99,
-        600:  #9b2e84,
-        700:  #701f6f,
-        800:  #46115b,
-        900:  #1e0347,
-    ),
-
-    'comp': (
-        100:  #d5e8ec,
-        200:  #7adad8,
-        300:  #10c6bd,
-        400:  #0daaa6,
-        500:  #0b8f8f,
-        600:  #097578,
-        700:  #075c63,
-        800:  #05444e,
-        900:  #032d3b,
-    ),
-
-    'lightest': #ffffff,
-    'darkest': #000000,
-) !default;
+$colour-token: token-get("colours");
+$colours: map-merge(
+    $colour-token,
+    ( // Basic greyscale values
+        "min": #ffffff,
+        "med": #808080,
+        "max": #000000
+    )
+);

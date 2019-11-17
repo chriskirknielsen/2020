@@ -1,10 +1,9 @@
+@import "tools/functions";
+@import "tools/mixins";
+
 @import "settings/tokens";
-@function token-get($key) { @return map-get($tokens, $key); }
 @import "settings/layout";
 @import "settings/fonts";
 @import "settings/colors";
 @import "settings/anim";
 @import "settings/social";
-
-@import "tools/mixins";
-@import "tools/functions";

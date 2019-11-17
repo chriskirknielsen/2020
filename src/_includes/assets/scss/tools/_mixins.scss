@@ -29,16 +29,16 @@
     $breakpoint-min: $small-breakpoint-width-rem * 1rem;
     $breakpoint-max: $large-breakpoint-width-rem * 1rem;
     $prop: unquote($prop);
-  
+
     #{$prop}: template-value($min, $template, $tag);
-  
+
     @media screen and (min-width: #{$breakpoint-min}) {
-      $val: fluid-unit($breakpoint-min, $breakpoint-max, $min, $max);
-      #{$prop}: template-value($val, $template, $tag);
+        $val: fluid-unit($breakpoint-min, $breakpoint-max, $min, $max);
+        #{$prop}: template-value($val, $template, $tag);
     }
 
     @media screen and (min-width: #{$breakpoint-max}) {
-      #{$prop}: template-value($max, $template, $tag);
+        #{$prop}: template-value($max, $template, $tag);
     }
 }
 

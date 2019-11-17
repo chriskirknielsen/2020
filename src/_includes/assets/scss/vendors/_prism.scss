@@ -18,7 +18,7 @@ pre[class*="language-"] {
 	word-wrap: normal;
 	font-family: f('code');
 	font-size: .875rem;
-	color: var(--c-comp-med);
+	color: var(--c-secondary-med);
     text-shadow: none;
 }
 
@@ -28,12 +28,12 @@ pre > code[class*="language-"] {
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-	background: var(--c-main-max);
+	background: var(--c-primary-max);
     
     mark {
-        color: var(--c-comp-med);
+        color: var(--c-secondary-med);
         background: var(--c-grey-max);
-        box-shadow: #{$spacing * -1} 0 0 var(--c-comp-med);
+        box-shadow: #{$spacing * -1} 0 0 var(--c-secondary-med);
     }
 }
 
@@ -53,7 +53,7 @@ pre[class*="language-"] code {
 :not(pre) > code[class*="language-"] {
 	padding: 0.15em 0.2em 0.05em;
 	border-radius: .3em;
-	border: 0.13em solid var(--c-main-med);
+	border: 0.13em solid var(--c-primary-med);
 	// box-shadow: 1px 1px 0.3em -0.1em var(--c-grey-max) inset;
 }
 .token.namespace {
@@ -68,35 +68,35 @@ pre[class*="language-"] code {
 .token.operator,
 .token.boolean,
 .token.number {
-	color: var(--c-main-med);
+	color: var(--c-primary-med);
 }
 .token.attr-name,
 .token.string {
-	color: var(--c-main-min);
+	color: var(--c-primary-min);
 }
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: var(--c-main-min);
+	color: var(--c-primary-min);
 }
 .token.selector,
 .token.inserted {
-	color: var(--c-comp-min);
+	color: var(--c-secondary-min);
 }
 .token.property {
-	color: var(--c-main-min);
+	color: var(--c-primary-min);
 }
 .token.atrule,
 .token.attr-value,
 .token.keyword,
 .token.important,
 .token.deleted {
-	color: var(--c-main-med);
+	color: var(--c-primary-med);
 }
 .token.regex,
 .token.statement {
-	color: var(--c-comp-med);
+	color: var(--c-secondary-med);
 }
 .token.placeholder,
 .token.variable {
@@ -121,20 +121,20 @@ code.language-markup {
 	color: var(--c-grey-min);
 }
 code.language-markup .token.tag {
-	color: var(--c-main-med);
+	color: var(--c-primary-med);
 }
 code.language-markup .token.attr-name {
-	color: var(--c-comp-med);
+	color: var(--c-secondary-med);
 }
 code.language-markup .token.attr-value {
-	color: var(--c-main-min);
+	color: var(--c-primary-min);
 }
 code.language-markup .token.style,
 code.language-markup .token.script {
-	color: var(--c-comp-med);
+	color: var(--c-secondary-med);
 }
 code.language-markup .token.script .token.keyword {
-	color: var(--c-comp-med);
+	color: var(--c-secondary-med);
 }
 
 

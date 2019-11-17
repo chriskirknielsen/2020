@@ -49,7 +49,7 @@
             const dy = Math.pow(1.5, i + periods.vScroll);
 
             const lowerY = lowerHorizon - 1 + dy;
-            ctx.strokeStyle = `rgba(255, 0, 255, 1)`;
+            ctx.strokeStyle = '#eb008b';
             drawLine(ctx, 0, lowerY, width, lowerY);
 
             if (lowerY > height) break;
@@ -63,7 +63,7 @@
             const x = width * (i / VLINES);// + Math.sin(periods.hScroll * Math.PI * 2) * xSep;
 
             const xSpreadLower = ((HSPREAD - z) * 2 / width) * x - (HSPREAD - z);
-            ctx.strokeStyle = 'rgba(255, 0, 255, 1)';
+            ctx.strokeStyle = '#eb008b';
             drawLine(ctx, x + xSpreadLower, height, x, lowerHorizon);
         }
 

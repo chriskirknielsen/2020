@@ -47,18 +47,51 @@ collections:
         editor: 
           preview: false
         fields:
+          - label: "Colours"
+            name: "colours"
+            widget: "object"
+            fields: 
+              - label: "Grey"
+                name: "grey"
+                widget: "object"
+                fields:
+                  - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
+                  - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                  - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
+              - label: "Primary"
+                name: "primary"
+                widget: "object"
+                fields:
+                  - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
+                  - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                  - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
+              - label: "Secondary"
+                name: "secondary"
+                widget: "object"
+                fields:
+                  - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
+                  - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                  - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
           - label: "Fonts"
             name: "fonts"
             widget: "object"
             fields: 
-              - {label: "Heading Main", name: "heading_main", widget: "string", default: "IBMPlexSans"}
-              - {label: "Heading Fallback List", name: "heading_fallback", widget: "select", options: ['sans','serif','mono'], default: "sans"}
-              - {label: "Body Main", name: "body_main", widget: "string", default: "IBMPlexSans"}
-              - {label: "Heading Fallback List", name: "body_fallback", widget: "select", options: ['sans','serif','mono'], default: "serif"}
-              - {label: "Code Main", name: "code_main", widget: "string", default: "Menlo"}
-              - {label: "Code Fallback List", name: "code_fallback", widget: "select", options: ['sans','serif','mono'], default: "mono"}
-          - label: "Colors"
-            name: "colors"
-            widget: "object"
-            fields: 
-              #- {label: "Main", name: "main", widget: "string", default: "#00a39b"}
+              - label: "Heading Font"
+                name: "heading"
+                widget: "object"
+                fields:
+                  - {label: "Main", name: "main", widget: "string", default: "IBMPlexSans"}
+                  - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "sans"}
+              - label: "Body Font"
+                name: "body"
+                widget: "object"
+                fields:
+                  - {label: "Main", name: "main", widget: "string", default: "IBMPlexSans"}
+                  - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "sans"}
+              - label: "Code Font"
+                name: "Code"
+                widget: "object"
+                fields:
+                  - {label: "Main", name: "main", widget: "string", default: "Menlo"}
+                  - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "mono"}
+          

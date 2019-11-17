@@ -1,0 +1,7 @@
+.about {
+    &__image {
+        $shadow-size: .25rem;
+        width: 8rem;
+        box-shadow: #{ $shadow-size } #{ $shadow-size } 0 var(--c-secondary-med);
+    }
+}

@@ -5,7 +5,7 @@
         $outline-size: .5rem;
 
         &::after {
-            border: #{ $outline-size } solid var(--c-main-med);
+            border: #{ $outline-size } solid var(--c-primary-med);
             pointer-events: none;
         }
     }
@@ -18,7 +18,7 @@
     }
 
     &__scene {
-        background-color: var(--c-main-max);
+        background-color: var(--c-primary-max);
     }
 
     &__svg-wrapper {
@@ -46,62 +46,3 @@
         50% { opacity: 1; }
     }
 }
-
-.svg-mark {
-    &__group {
-        animation-name: svgMarkTransform;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-
-    &__chris-depth {
-        animation-fill-mode: backwards;
-        animation-direction: reverse;
-        animation-duration: 1.25s;
-        animation-delay: .9s;
-        animation-timing-function: cubic-bezier(0, 0, 1, 0);
-    }
-
-    &__chris-group {
-        opacity: 0;
-        transform: scale(.9);
-        animation-duration: 1.25s;
-        animation-delay: 1s;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
-
-    &__kirknielsen-group {
-        opacity: 0;
-        transform: translate(-8%, 25%);
-        animation-duration: .75s;
-        animation-delay: 1.5s;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
-
-    &__creativedeveloper-group {
-        opacity: 0;
-        transform: translate(50%, 0);
-        animation-duration: 1.5s;
-        animation-delay: 2s;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
-
-    &__glare-group {
-        transform-origin: 0 0;
-        transform: translate(76%, 34.25%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
-    }
-    &__glare {
-        transform: scale(0, 0) rotate(-270deg);
-        animation-duration: 1s;
-        animation-delay: 2.5s;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
-
-    @keyframes svgMarkTransform {
-        100% {
-            opacity: 1;
-            transform: none;
-        }
-    }
-}
-

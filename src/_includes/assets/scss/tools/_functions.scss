@@ -50,12 +50,24 @@
     @return $string;
 }
 
+// Finds nested map values
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+// Pulls a token's value
+@function token-get($key) { @return map-get($tokens, $key); }
+
+
 
 
 /* COLOUR, FONT AND LAYER-ORDER HELPERS */
 
 // Returns a colour from the $colours map
-@function c($name, $weight: 400, $opacity: 100) {
+@function c($name, $weight: med, $opacity: 100) {
     $return: unquote($name);
 
     @if (map-has-key($colours, $name)) { // If the colour exists in the list

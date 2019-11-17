@@ -1,45 +1,45 @@
 $colour-weights: 100, 400, 900;
 
 html { // Min is lightest during dusk, Max is darkest
-    --c-max: #000000;
-    --c-min: #ffffff;
+    --c-min: #{ c('min') };
+    --c-max: #{ c('max') };
 
-    --c-grey-min: #{ c('grey', 100) };
-    --c-grey-med: #{ c('grey', 400) };
-    --c-grey-max: #{ c('grey', 900) };
+    --c-grey-min: #{ c('grey', min) };
+    --c-grey-med: #{ c('grey', med) };
+    --c-grey-max: #{ c('grey', max) };
 
-    --c-main-min: #{ c('main', 100) };
-    --c-main-med: #{ c('main', 400) };
-    --c-main-max: #{ c('main', 900) };
+    --c-primary-min: #{ c('primary', min) };
+    --c-primary-med: #{ c('primary', med) };
+    --c-primary-max: #{ c('primary', max) };
 
-    --c-comp-min: #{ c('comp', 100) };
-    --c-comp-med: #{ c('comp', 400) };
-    --c-comp-max: #{ c('comp', 900) };
+    --c-secondary-min: #{ c('secondary', min) };
+    --c-secondary-med: #{ c('secondary', med) };
+    --c-secondary-max: #{ c('secondary', max) };
 
     --colour-bg: var(--c-grey-max);
-    --colour-main: var(--c-main-med);
-    --colour-comp: var(--c-comp-med);
+    --colour-main: var(--c-primary-med);
+    --colour-comp: var(--c-secondary-med);
 }
 
 html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
-    --c-max: #ffffff;
-    --c-min: #000000;
+    --c-min: #{ c('max') };
+    --c-max: #{ c('min') };
     
-    --c-grey-min: #{ c('grey', 900) };
-    --c-grey-med: #{ c('grey', 500) };
-    --c-grey-max: #{ c('grey', 100) };
+    --c-grey-min: #{ c('grey', max) };
+    --c-grey-med: #{ c('grey', min) };
+    --c-grey-max: #{ c('grey', min) };
 
-    --c-main-min: #{ c('main', 900) };
-    --c-main-med: #{ c('main', 400) };
-    --c-main-max: #{ c('main', 100) };
+    --c-primary-min: #{ c('primary', max) };
+    --c-primary-med: #{ c('primary', med) };
+    --c-primary-max: #{ c('primary', min) };
 
-    --c-comp-min: #{ c('comp', 900) };
-    --c-comp-med: #{ c('comp', 500) };
-    --c-comp-max: #{ c('comp', 100) };
+    --c-secondary-min: #{ c('secondary', max) };
+    --c-secondary-med: #{ c('secondary', med) };
+    --c-secondary-max: #{ c('secondary', min) };
 
     --colour-bg: var(--c-grey-min);
-    --colour-main: var(--c-main-med);
-    --colour-comp: var(--c-comp-med);
+    --colour-main: var(--c-primary-med);
+    --colour-comp: var(--c-secondary-med);
 }
 
 @each $c in map-keys($colours) {

@@ -46,21 +46,21 @@ $font-fallback-list: (
     )
 );
 
-$font-token: token-get(fonts);
+$font-token: token-get("fonts");
 $fonts: (
     // Stacks based on https://gist.github.com/don1138/5761014
     'heading': (
-        'main': (#{ map-get($font-token, heading_main) }),
-        'fallback': map-get($font-fallback-list, map-get($font-token, heading_fallback))
+        'main': (#{ map-deep-get($font-token, "heading", "main") }),
+        'fallback': map-get($font-fallback-list, map-deep-get($font-token, "heading", "fallback"))
     ),
 
     'body': (
-        'main': (#{ map-get($font-token, body_main) }),
-        'fallback': map-get($font-fallback-list, map-get($font-token, body_fallback))
+        'main': (#{ map-deep-get($font-token, "body", "main") }),
+        'fallback': map-get($font-fallback-list, map-deep-get($font-token, "body", "fallback"))
     ),
 
     'code': (
-        'main': (#{ map-get($font-token, code_main) }),
-        'fallback': map-get($font-fallback-list, map-get($font-token, code_fallback))
+        'main': (#{ map-deep-get($font-token, "code", "main") }),
+        'fallback': map-get($font-fallback-list, map-deep-get($font-token, "code", "fallback"))
     )
 );

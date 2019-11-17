@@ -24,7 +24,7 @@ gulp.task("watch", function () {
 });
 
 gulp.task('tokens', function (cb) {
-    const cmd = spawn('npx', ['json-to-scss', root+'/_data/tokens.json', root+'/_includes/assets/scss/settings/_tokens.scss'], {stdio: 'inherit'});
+    const cmd = spawn('npx', ['json-to-scss', root+'/_data/tokens.json', root+'/_includes/assets/scss/settings/_tokens.scss', '--k="dq"'], {stdio: 'inherit'});
     cmd.on('close', function (code) {
         console.log('tokens exited with code ' + code);
         cb(code);
