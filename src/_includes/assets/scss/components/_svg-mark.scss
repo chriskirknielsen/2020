@@ -54,4 +54,17 @@
             transform: none;
         }
     }
+
+
+
+    &__name-shineOver {
+        animation: shineOver 3s ease-in-out 3.5s 1 both;
+    }
+
+    @keyframes shineOver {
+        0% { transform: translateX(150%); opacity: 0; }
+        1% { opacity: 1; }
+        99% { opacity: 1; }
+        100% { transform: translateX(-150%); opacity: 0; }
+    }
 }
