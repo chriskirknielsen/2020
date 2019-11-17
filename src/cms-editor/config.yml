@@ -89,7 +89,7 @@ collections:
                   - {label: "Main", name: "main", widget: "string", default: "IBMPlexSans"}
                   - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "sans"}
               - label: "Code Font"
-                name: "Code"
+                name: "code"
                 widget: "object"
                 fields:
                   - {label: "Main", name: "main", widget: "string", default: "Menlo"}
