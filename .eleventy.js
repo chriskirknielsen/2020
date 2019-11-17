@@ -28,11 +28,16 @@ module.exports = function(eleventyConfig) {
 
   /* SHORTCODES */
 
-  eleventyConfig.addShortcode("figure", function(imageUrl, caption, altText, figureClass, imageClass, captionClass) {
+  eleventyConfig.addShortcode("figure", function(imageUrl, altText, caption, figureClass, imageClass, captionClass) {
     altText = altText || '';
     imageClass = imageClass || '';
     figureClass = figureClass || '';
     captionClass = captionClass || '';
+
+    if (!caption) {
+      return `<img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}>`;
+    }
+
     return `<figure${figureClass ? ' class="'+figureClass+'"' : ''}>
       <img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}>
       <figcaption${captionClass ? ' class="'+captionClass+'"' : ''}>${caption}</figcaption>
