@@ -9,7 +9,7 @@
         animation-fill-mode: backwards;
         animation-direction: reverse;
         animation-duration: 1.25s;
-        animation-delay: .9s;
+        animation-delay: 1s;
         animation-timing-function: cubic-bezier(0, 0, 1, 0);
     }
 
@@ -58,13 +58,13 @@
 
 
     &__name-shineOver {
-        animation: shineOver 3s ease-in-out 3.5s 1 both;
+        animation: shineOver 1s linear 3.5s 1 both;
     }
 
     @keyframes shineOver {
-        0% { transform: translateX(150%); opacity: 0; }
+        0% { transform: translateX(75%); opacity: 0; }
         1% { opacity: 1; }
         99% { opacity: 1; }
-        100% { transform: translateX(-150%); opacity: 0; }
+        100% { transform: translateX(-75%); opacity: 0; }
     }
 }
