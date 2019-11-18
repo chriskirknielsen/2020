@@ -18,7 +18,22 @@
     }
 
     &__scene {
-        background-color: var(--c-primary-max);
+        $grad1: #0a0634;
+        $grad2: #791e74;
+        background:
+            radial-gradient(circle at 50% 100%,
+                #{ c('primary', 'med', 25) } calc(33% - 2rem),
+                #{ c('primary', 'med', 0) } calc(33% + 4rem)
+            ) no-repeat 50% 0 / 100% 50%,
+
+            linear-gradient(
+                #{ $grad1 } 0%,
+                #{ $grad2 } 40%,
+                #{ mix( $grad2, c('primary', 'med'), 25% ) } 50%,
+                #{ c('primary', 'max') } 50%,
+                #3c0328 100%
+            );
+        background-color: c('primary', 'max'); // Hardcode since we don't want this to be affected by colour schemes
     }
 
     &__svg-wrapper {

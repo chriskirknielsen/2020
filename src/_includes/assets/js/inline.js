@@ -7,3 +7,7 @@ if (window.netlifyIdentity) {
     }
   });
 }
+
+// Get user's preferences
+window.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+window.prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
