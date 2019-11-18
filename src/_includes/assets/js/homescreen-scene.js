@@ -1,5 +1,8 @@
 (function(){ // Based on https://codepen.io/exonj/pen/QYLLmL
     const canvasEl = document.getElementById('homescreen-scene');
+    const hotpink = '#eb008b';
+    const electric = '#f9ec31';
+    const cyan = '#10c6bd';
 
     function getContext(width, height) {
         canvasEl.width = width;
@@ -29,6 +32,12 @@
 
         ctx.clearRect(0, 0, width, height);
 
+        var gradient = ctx.createLinearGradient(0,height/4, 0,height/2);
+
+        // Add three color stops
+        gradient.addColorStop(0, electric);
+        gradient.addColorStop(1, hotpink);
+
         const speeds = {
             sway: 3000,
             hScroll: 7000,
@@ -49,7 +58,7 @@
             const dy = Math.pow(1.5, i + periods.vScroll);
 
             const lowerY = lowerHorizon - 1 + dy;
-            ctx.strokeStyle = '#eb008b';
+            ctx.strokeStyle = cyan;
             drawLine(ctx, 0, lowerY, width, lowerY);
 
             if (lowerY > height) break;
@@ -63,9 +72,15 @@
             const x = width * (i / VLINES);// + Math.sin(periods.hScroll * Math.PI * 2) * xSep;
 
             const xSpreadLower = ((HSPREAD - z) * 2 / width) * x - (HSPREAD - z);
-            ctx.strokeStyle = '#eb008b';
+            ctx.strokeStyle = cyan;
             drawLine(ctx, x + xSpreadLower, height, x, lowerHorizon);
         }
+
+        // Draw half-sun
+        ctx.beginPath();
+        ctx.arc(width/2, height/2, height/4, Math.PI, 0, false);
+        ctx.fillStyle = gradient;
+        ctx.fill();
 
         window.requestAnimationFrame(draw);
     }
