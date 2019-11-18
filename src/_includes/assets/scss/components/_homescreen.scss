@@ -31,7 +31,7 @@
                 #{ $grad2 } 45%,
                 #{ mix( $grad2, c('primary', 'med'), 60% ) } 50%,
                 #{ c('primary', 'max') } 50%,
-                #3c0328 100%
+                #{ c('grey', 'max') } 100%
             );
         background-color: c('primary', 'max'); // Hardcode since we don't want this to be affected by colour schemes
     }
