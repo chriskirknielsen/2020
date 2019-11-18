@@ -186,11 +186,13 @@
 
   <!-- Chris -->
   <g class="svg-mark__chris-group svg-mark__group" role="img" aria-label="Chris">
-    <!-- Fake depth -->
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.92500, 1)" />
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.94325, 1)" />
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.96250, 1)" />
-    <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.98125, 1)" />
+    <!-- Fake depth layers -->
+    <g stroke-width="2.5">
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.92500, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.94325, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.96250, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.98125, 1)" />
+    </g>
 
     <!-- Outline -->
     <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="3" />
