@@ -188,10 +188,10 @@
   <g class="svg-mark__chris-group svg-mark__group" role="img" aria-label="Chris">
     <!-- Fake depth layers -->
     <g stroke-width="2.5">
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.92500, 1)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.94325, 1)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.96250, 1)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.98125, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.900, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.925, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.950, 1)" />
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.975, 1)" />
     </g>
 
     <!-- Outline -->
@@ -206,6 +206,10 @@
     <!-- Shine Overlay (hide initially, show with CSS) -->
     <g mask="url(#svg-mark-chris-mask)">
       <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver" style="opacity:0" />
+    </g>
+
+    <g mask="url(#svg-mark-chris-mask-outline)">
+      <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver svg-mark__name-shineOver--delayed" style="opacity:0" />
     </g>
 
     <!-- Inner Shadow  -->

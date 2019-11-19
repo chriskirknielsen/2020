@@ -15,7 +15,7 @@
 
     &__chris-group {
         opacity: 0;
-        transform: scale(.9);
+        transform: scale(.8);
         animation-duration: 1.25s;
         animation-delay: 1s;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
@@ -58,7 +58,11 @@
 
 
     &__name-shineOver {
-        animation: shineOver .75s linear 3.5s 1 both;
+        animation: shineOver .75s linear 3.75s 1 both;
+    }
+
+    &__name-shineOver--delayed {
+        animation-delay: 3.5s;
     }
 
     @keyframes shineOver {
