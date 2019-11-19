@@ -22,8 +22,8 @@
         $grad2: #791e74;
         background:
             radial-gradient(circle at 50% 100%,
-                #{ c('primary', 'med', 25) } calc(33% - 2rem),
-                #{ c('primary', 'med', 0) } calc(33% + 4rem)
+                #{ c('primary', 'med', 25) } 0,
+                #{ c('primary', 'med', 0) } 50%
             ) no-repeat 50% 0 / 100% 50%,
 
             linear-gradient(
