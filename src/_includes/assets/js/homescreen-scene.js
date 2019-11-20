@@ -8,6 +8,9 @@
     const cyan = '#10c6bd';
 
     function getContext(width, height) {
+        if (width > window.innerWidth) { width = window.innerWidth; }
+        if (height > window.innerHeight) { height = window.innerHeight; }
+        
         canvasEl.width = width;
         canvasEl.height = height;
         return canvasEl.getContext('2d');
