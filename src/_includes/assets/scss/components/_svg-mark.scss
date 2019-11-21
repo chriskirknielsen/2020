@@ -1,4 +1,37 @@
 .svg-mark {
+    &__wires {
+        transform-origin: 50% 50%;
+    }
+
+    &__wire {
+        $s: &;
+        $count: 8;
+        $init-delay: 0s;
+        $step-delay: .0625s;
+        $f: .33;
+
+        animation-name: svgMarkWire;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-timing-function: steps(1);
+
+        @keyframes svgMarkWire {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @for $w from 1 through $count {
+            &:nth-child(#{ $w }) {
+                $delay: $step-delay * $w;
+                $scale: .85 + (1/10 * ($count - $w)) * $f;
+                transform: scale(#{ $scale });
+                animation-delay: #{ $init-delay + $delay };
+            }
+        }
+    }
+
     &__group {
         animation-name: svgMarkTransform;
         animation-iteration-count: 1;
@@ -9,7 +42,7 @@
         animation-fill-mode: backwards;
         animation-direction: reverse;
         animation-duration: 1.25s;
-        animation-delay: 1s;
+        animation-delay: 2s;
         animation-timing-function: cubic-bezier(0, 0, 1, 0);
     }
 
@@ -17,7 +50,7 @@
         opacity: 0;
         transform: scale(.8);
         animation-duration: 1.25s;
-        animation-delay: 1s;
+        animation-delay: 1.5s;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
@@ -25,7 +58,7 @@
         opacity: 0;
         transform: translate(-8%, 25%);
         animation-duration: .75s;
-        animation-delay: 1.5s;
+        animation-delay: 2s;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
@@ -33,7 +66,7 @@
         opacity: 0;
         transform: translate(25%, 0);
         animation-duration: 1.5s;
-        animation-delay: 2s;
+        animation-delay: 2.5s;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
