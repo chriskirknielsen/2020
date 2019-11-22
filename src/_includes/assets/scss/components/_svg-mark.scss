@@ -1,19 +1,23 @@
 .svg-mark {
+    $wire-s: &;
+    $wire-count: 8;
+    $wire-init-delay: 0s;
+    $wire-step-delay: .0625s;
+    $wire-anim-time: 1s;
+    $wire-factor: .33;
+    $wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
+    $chris-anim-time: 1.25s;
+    $chris-anim-delay: $wire-final-end - $wire-step-delay * $wire-count/2;
+    
     &__wires {
         transform-origin: 50% 50%;
     }
 
     &__wire {
-        $s: &;
-        $count: 8;
-        $init-delay: 0s;
-        $step-delay: .0625s;
-        $f: .33;
-
         animation-name: svgMarkWire;
         animation-iteration-count: 1;
         animation-fill-mode: both;
-        animation-duration: 1s;
+        animation-duration: #{ $wire-anim-time };
         animation-timing-function: steps(1);
 
         @keyframes svgMarkWire {
@@ -22,12 +26,12 @@
             100% { opacity: 0; }
         }
 
-        @for $w from 1 through $count {
+        @for $w from 1 through $wire-count {
             &:nth-child(#{ $w }) {
-                $delay: $step-delay * $w;
-                $scale: .85 + (1/10 * ($count - $w)) * $f;
+                $delay: $wire-step-delay * $w;
+                $scale: 1 + (1/10 * ($wire-count - $w)) * $wire-factor;
                 transform: scale(#{ $scale });
-                animation-delay: #{ $init-delay + $delay };
+                animation-delay: #{ $wire-init-delay + $delay };
             }
         }
     }
@@ -42,16 +46,25 @@
         animation-fill-mode: backwards;
         animation-direction: reverse;
         animation-duration: 1.25s;
-        animation-delay: 2s;
+        animation-delay: #{ $chris-anim-delay };
         animation-timing-function: cubic-bezier(0, 0, 1, 0);
     }
 
-    &__chris-group {
+    &__chris-main {
         opacity: 0;
-        transform: scale(.8);
-        animation-duration: 1.25s;
-        animation-delay: 1.5s;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+        animation-name: svgMarkTransform;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-duration: 0.1s;
+        animation-delay: #{ $chris-anim-delay };
+        animation-timing-function: steps(1);
+    }
+
+    &__chris-group {
+        // transform: scale(.8);
+        // animation-duration: 1.25s;
+        // animation-delay: 1.5s;
+        // animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
     &__kirknielsen-group {

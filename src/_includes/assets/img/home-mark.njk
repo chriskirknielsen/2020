@@ -16,6 +16,9 @@
 {% set title_fill = "#eaeaea" %}
 
 {# Define the name's inner shadow colour #}
+{% set wire_colour = "#10c6bd" %}
+
+{# Define the name's inner shadow colour #}
 {% set firstname_inner = "#130026" %}
 
 {# Define the name's gradient fill colours #}
@@ -92,6 +95,33 @@
       <!-- Lower the final opacity -->
       <feComponentTransfer>
         <feFuncA type="linear" slope="0.75" />
+      </feComponentTransfer>
+
+    </filter>
+
+    <!-- FILTER: Faint Glow -->
+    <filter id="faintGlow" height="300%" width="300%" x="-75%" y="-75%">
+      <!-- Thicken out the original shape -->
+      <feMorphology operator="dilate" radius="1" in="SourceAlpha" result="faintGlow__thicken" />
+
+      <!-- Use a gaussian blur to create the soft blurriness of the glow -->
+      <feGaussianBlur in="faintGlow__thicken" stdDeviation="4" result="faintGlow_blurred" />
+
+      <!-- Change the colour -->
+      <feFlood flood-color="{{ wire_colour }}" result="faintGlow_glowColor" />
+
+      <!-- Color in the glows -->
+      <feComposite in="faintGlow_glowColor" in2="faintGlow_blurred" operator="in" result="faintGlow_colored" />
+
+      <!--Layer the effects together -->
+      <feMerge>
+        <feMergeNode in="faintGlow_colored"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+
+      <!-- Lower the final opacity -->
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
       </feComponentTransfer>
 
     </filter>
@@ -187,74 +217,80 @@
     </mask>
   </defs>
 
-  <!-- Wires -->
-  <g class="svg-mark__wires">
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-      <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ outline_midpoint }}" />
-  </g>
-
   <!-- Chris -->
   <g class="svg-mark__chris-group svg-mark__group" role="img" aria-label="Chris">
-    <!-- Fake depth layers -->
-    <g stroke-width="2.5">
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.900, 1)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.925, 1)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.950, 1)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.975, 1)" />
+
+    <!-- Wires -->
+    <g class="svg-mark__wires">
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
     </g>
 
-    <!-- Outline -->
-    <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="3" />
+    <g class="svg-mark__chris-main">
 
-    <!-- Gradient -->
-    <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientDusk)" />
+      <!-- Fake depth layers -->
+      <g stroke-width="2.5">
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.900, 1)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.925, 1)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.950, 1)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.975, 1)" />
+      </g>
 
-    <!-- Gradient Blinds -->
-    <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientBlinds)" mask="url(#maskBlinds)" />
-    
-    <!-- Shine Overlay (hide initially, show with CSS) -->
-    <g mask="url(#svg-mark-chris-mask)">
-      <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver" style="opacity:0" />
-    </g>
+      <!-- Outline -->
+      <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="3" />
 
-    <g mask="url(#svg-mark-chris-mask-outline-double)">
-      <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver svg-mark__name-shineOver--delayed" style="opacity:0" />
-    </g>
+      <!-- Gradient -->
+      <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientDusk)" />
 
-    <!-- Inner Shadow  -->
-    <g mask="url(#svg-mark-chris-mask)">
-      <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow)" />
-      <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow2)" />
-    </g>
+      <!-- Gradient Blinds -->
+      <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientBlinds)" mask="url(#maskBlinds)" />
 
-    <!-- Shine Spots -->
-    <g mask="url(#svg-mark-chris-mask-outline)">
-      <circle fill="url(#gradientShine)" cx="119" cy="178.95" r="48.81"/>
-      <circle fill="url(#gradientShine)" cx="735.67" cy="168.52" r="36.76"/>
-      <ellipse fill="url(#gradientShine)" cx="523.35" cy="173.84" rx="63.03" ry="26.07"/>
-      <ellipse fill="url(#gradientShine)" cx="363.35" cy="226.84" rx="40.05" ry="13.95"/>
-      <circle fill="url(#gradientShine)" cx="299.35" cy="169.84" r="19.17"/>
-      <ellipse fill="url(#gradientShine)" cx="222.35" cy="285.84" rx="40.05" ry="13.95"/>
-      <ellipse fill="url(#gradientShine)" cx="788.85" cy="285.84" rx="28.44" ry="13.95"/>
-      <circle fill="url(#gradientShine)" cx="626.35" cy="303.114" r="39.29"/>
-      <ellipse fill="url(#gradientShine)" cx="563.72" cy="227.84" rx="26.79" ry="7.9"/>
-      <ellipse fill="url(#gradientShine)" cx="790.35" cy="227.84" rx="29.94" ry="7.9"/>
-    </g>
+      <!-- Inner Shadow  -->
+      <g mask="url(#svg-mark-chris-mask)">
+        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow2)" />
+      </g>
 
-    {# <circle fill="url(#gradientShine)" cx="736" cy="173" r="12" /> #}
 
-    <g class="svg-mark__glare-group">
-      <g class="svg-mark__glare svg-mark__group">
-        <ellipse fill="url(#gradientShine)" cx="0" cy="0" ry="16" rx="4" />
-        <ellipse fill="url(#gradientShine)" cx="0" cy="0" rx="16" ry="4" />
+      <!-- Shine Overlay (hide initially, show with CSS) -->
+      <g mask="url(#svg-mark-chris-mask)">
+        <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver" style="opacity:0" />
+      </g>
+
+      <g mask="url(#svg-mark-chris-mask-outline-double)">
+        <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver svg-mark__name-shineOver--delayed" style="opacity:0" />
+      </g>
+
+      <!-- Shine Spots -->
+      <g mask="url(#svg-mark-chris-mask-outline)">
+        <circle fill="url(#gradientShine)" cx="119" cy="178.95" r="48.81"/>
+        <circle fill="url(#gradientShine)" cx="735.67" cy="168.52" r="36.76"/>
+        <ellipse fill="url(#gradientShine)" cx="523.35" cy="173.84" rx="63.03" ry="26.07"/>
+        <ellipse fill="url(#gradientShine)" cx="363.35" cy="226.84" rx="40.05" ry="13.95"/>
+        <circle fill="url(#gradientShine)" cx="299.35" cy="169.84" r="19.17"/>
+        <ellipse fill="url(#gradientShine)" cx="222.35" cy="285.84" rx="40.05" ry="13.95"/>
+        <ellipse fill="url(#gradientShine)" cx="788.85" cy="285.84" rx="28.44" ry="13.95"/>
+        <circle fill="url(#gradientShine)" cx="626.35" cy="303.114" r="39.29"/>
+        <ellipse fill="url(#gradientShine)" cx="563.72" cy="227.84" rx="26.79" ry="7.9"/>
+        <ellipse fill="url(#gradientShine)" cx="790.35" cy="227.84" rx="29.94" ry="7.9"/>
+      </g>
+
+      {# <circle fill="url(#gradientShine)" cx="736" cy="173" r="12" /> #}
+
+      <g class="svg-mark__glare-group">
+        <g class="svg-mark__glare svg-mark__group">
+          <ellipse fill="url(#gradientShine)" cx="0" cy="0" ry="16" rx="4" />
+          <ellipse fill="url(#gradientShine)" cx="0" cy="0" rx="16" ry="4" />
+        </g>
       </g>
     </g>
+    
   </g>
 
   <!-- Kirk-Nielsen -->

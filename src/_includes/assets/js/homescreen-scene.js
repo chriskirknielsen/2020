@@ -48,9 +48,10 @@
         const now = new Date();
         for (t in speeds) { periods[t] = (now % speeds[t]) / speeds[t]; }
 
-        const MAX_HLINES = 50;
+        const MAX_HLINES = Math.floor(width / 96);
         let VLINES = Math.floor(width / 100);
-        if (VLINES % 2 !== 0) { VLINES++; }
+        if (VLINES % 2 !== 0) { VLINES += 1; }
+        if (VLINES > 25) { VLINES = 25; }
 
         const HSPREAD = 1500;
         const z = HSPREAD * 0.05;
