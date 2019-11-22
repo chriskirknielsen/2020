@@ -6,21 +6,23 @@
     $wire-anim-time: 1s;
     $wire-factor: .33;
     $wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
+    $flash-anim-delay: $wire-final-end - $wire-step-delay * $wire-count;
+    $flash-anim-time: 1s;
     $chris-anim-time: 1.25s;
-    $chris-anim-delay: $wire-final-end - $wire-step-delay * $wire-count/2;
+    $chris-anim-delay: $flash-anim-delay + $flash-anim-time/2;
     
     &__wires {
         transform-origin: 50% 50%;
     }
 
     &__wire {
-        animation-name: svgMarkWire;
+        animation-name: svgMarkFadeInOut;
         animation-iteration-count: 1;
         animation-fill-mode: both;
         animation-duration: #{ $wire-anim-time };
         animation-timing-function: steps(1);
 
-        @keyframes svgMarkWire {
+        @keyframes svgMarkFadeInOut {
             0% { opacity: 0; }
             50% { opacity: 1; }
             100% { opacity: 0; }
@@ -28,12 +30,23 @@
 
         @for $w from 1 through $wire-count {
             &:nth-child(#{ $w }) {
+                $w-i: ($w + 1) / ($wire-count + 1) * -1;
                 $delay: $wire-step-delay * $w;
                 $scale: 1 + (1/10 * ($wire-count - $w)) * $wire-factor;
-                transform: scale(#{ $scale });
+                $translateY: 1 - $w-i*$w-i*$w-i;
+                transform: scale(#{ $scale }) translateY(#{ $translateY * -2% * ($wire-count - $w) });
                 animation-delay: #{ $wire-init-delay + $delay };
             }
         }
+    }
+
+    &_chris-flash {
+        animation-name: svgMarkFadeInOut;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-duration: #{ $flash-anim-time };
+        animation-timing-function: ease-in-out;
+        animation-delay: #{ $flash-anim-delay };
     }
 
     &__group {

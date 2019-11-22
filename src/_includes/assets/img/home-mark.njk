@@ -4,6 +4,9 @@
 {% set depth_colour3 = "#121023" %}
 {% set depth_colour4 = "#050404" %}
 
+{# Define the colour for the shiny parts #}
+{% set shine_colour = "#fff" %}
+
 {# Define the name's outline colours #}
 {% set outline_midpoint = "#e04fab" %}
 {% set outline_endpoint = "#4f045f" %}
@@ -16,7 +19,7 @@
 {% set title_fill = "#eaeaea" %}
 
 {# Define the name's inner shadow colour #}
-{% set wire_colour = "#10c6bd" %}
+{% set wire_colour = "#71d1cc" %}
 
 {# Define the name's inner shadow colour #}
 {% set firstname_inner = "#130026" %}
@@ -119,11 +122,6 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
 
-      <!-- Lower the final opacity -->
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.5" />
-      </feComponentTransfer>
-
     </filter>
 
     <!-- FILTER: Dark Purple Glow Thick -->
@@ -187,16 +185,16 @@
 
     <!-- GRADIENT: Shine Spots -->
     <radialGradient id="gradientShine">
-      <stop offset="0" stop-color="#fff"/>
-      <stop offset=".75" stop-color="#fff" stop-opacity="0"/>
-      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0" stop-color="{{ shine_colour }}"/>
+      <stop offset=".75" stop-color="{{ shine_colour }}" stop-opacity="0"/>
+      <stop offset="1" stop-color="{{ shine_colour }}" stop-opacity="0"/>
     </radialGradient>
 
     <!-- GRADIENT: Shine Overlay -->
     <linearGradient id="gradientShineOver" gradientUnits="userSpaceOnUse" x1="120.234" y1="-143.29" x2="684.493" y2="330.18">
-      <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#fff" stop-opacity="0.9"/>
-      <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".45" stop-color="{{ shine_colour }}" stop-opacity="0"/>
+      <stop offset=".5" stop-color="{{ shine_colour }}" stop-opacity="0.9"/>
+      <stop offset=".55" stop-color="{{ shine_colour }}" stop-opacity="0"/>
     </linearGradient>
 
     <!-- GRADIENT: Blinds -->
@@ -231,9 +229,8 @@
         <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
         <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
     </g>
-
+    
     <g class="svg-mark__chris-main">
-
       <!-- Fake depth layers -->
       <g stroke-width="2.5">
         <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.900, 1)" />
@@ -290,7 +287,12 @@
         </g>
       </g>
     </g>
-    
+
+    <g class="svg-mark_chris-flash">
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ shine_colour }}" stroke="{{ shine_colour }}" filter="url(#faintGlow)" />
+      {# <use xlink:href="#svg-mark-chris-shape"  fill="{{ shine_colour }}" stroke="{{ shine_colour }}" /> #}
+    </g>
+
   </g>
 
   <!-- Kirk-Nielsen -->
