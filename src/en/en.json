@@ -9,6 +9,9 @@
         "about",
         "contact"
     ],
+    "localisedContent": {
+        "tagged": "Tagged"
+    },
     "langSwitchLabel": "Switch Language",
     "schemeSwitchLabel": "Toggle Colour Scheme",
     "footer": {

@@ -9,6 +9,9 @@
         "a-propos",
         "contact"
     ],
+    "localisedContent": {
+        "tagged": "Etiquettes"
+    },
     "langSwitchLabel": "Changer de Langue",
     "schemeSwitchLabel": "Permuter la Palette de Couleurs",
     "footer": {
