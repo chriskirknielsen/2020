@@ -11,7 +11,8 @@
 	{% endset %}
 	<script>{{ js | jsmin | safe }}</script>
 
+	<link rel="icon" href="{{ '/assets/img/icon.png' | url }}" type="image/png">
 	<link rel="stylesheet" href="{{ '/assets/css/global.css' | url }}" />
 
-	<script src="{{ '/assets/js/color-scheme-switcher.js' | url }}" deferred></script>
+	{# <script src="{{ '/assets/js/color-scheme-switcher.js' | url }}" deferred></script> #}
 </head>
