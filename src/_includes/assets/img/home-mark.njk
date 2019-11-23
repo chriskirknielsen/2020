@@ -4,6 +4,9 @@
 {% set depth_colour3 = "#121023" %}
 {% set depth_colour4 = "#050404" %}
 
+{# Define the colour for the horizon #}
+{% set horizon_flash = "#fff" %}
+
 {# Define the colour for the shiny parts #}
 {% set shine_colour = "#fff" %}
 
@@ -183,6 +186,30 @@
       <stop offset="1" stop-color="{{ firstname_endbottom }}"/>
     </linearGradient>
 
+    <!-- GRADIENT: Horizon Shine -->
+    <radialGradient id="horizonFlash">
+      {# <stop offset="0" stop-color="{{ horizon_flash }}"/>
+      <stop offset="1" stop-color="{{ horizon_flash }}" stop-opacity="0"/> #}
+
+      {# Stops generated with https://larsenwork.com/easing-gradients/ #}
+      <stop offset="0.000" stop-color="{{ horizon_flash }}" stop-opacity="1.000" />
+      <stop offset="0.081" stop-color="{{ horizon_flash }}" stop-opacity="0.987" />
+      <stop offset="0.155" stop-color="{{ horizon_flash }}" stop-opacity="0.951" />
+      <stop offset="0.225" stop-color="{{ horizon_flash }}" stop-opacity="0.896" />
+      <stop offset="0.290" stop-color="{{ horizon_flash }}" stop-opacity="0.825" />
+      <stop offset="0.353" stop-color="{{ horizon_flash }}" stop-opacity="0.741" />
+      <stop offset="0.412" stop-color="{{ horizon_flash }}" stop-opacity="0.648" />
+      <stop offset="0.471" stop-color="{{ horizon_flash }}" stop-opacity="0.550" />
+      <stop offset="0.529" stop-color="{{ horizon_flash }}" stop-opacity="0.450" />
+      <stop offset="0.588" stop-color="{{ horizon_flash }}" stop-opacity="0.352" />
+      <stop offset="0.647" stop-color="{{ horizon_flash }}" stop-opacity="0.259" />
+      <stop offset="0.710" stop-color="{{ horizon_flash }}" stop-opacity="0.175" />
+      <stop offset="0.775" stop-color="{{ horizon_flash }}" stop-opacity="0.104" />
+      <stop offset="0.845" stop-color="{{ horizon_flash }}" stop-opacity="0.049" />
+      <stop offset="0.919" stop-color="{{ horizon_flash }}" stop-opacity="0.013" />
+      <stop offset="1.000" stop-color="{{ horizon_flash }}" stop-opacity="0.000" />
+    </radialGradient>
+
     <!-- GRADIENT: Shine Spots -->
     <radialGradient id="gradientShine">
       <stop offset="0" stop-color="{{ shine_colour }}"/>
@@ -215,6 +242,9 @@
     </mask>
   </defs>
 
+  <!-- Horizon Flash -->
+  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="33%" ry="1%"/>
+
   <!-- Chris -->
   <g class="svg-mark__chris-group svg-mark__group" role="img" aria-label="Chris">
 
@@ -233,10 +263,14 @@
     <g class="svg-mark__chris-main">
       <!-- Fake depth layers -->
       <g stroke-width="2.5">
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.900, 1)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.925, 1)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.950, 1)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.975, 1)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9000)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9125)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9250)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9375)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9500)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9625)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9750)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9875)" />
       </g>
 
       <!-- Outline -->
@@ -254,12 +288,12 @@
         <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow2)" />
       </g>
 
-
       <!-- Shine Overlay (hide initially, show with CSS) -->
       <g mask="url(#svg-mark-chris-mask)">
         <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver" style="opacity:0" />
       </g>
 
+      <!-- Outline Overlay (hide initially, show with CSS) -->
       <g mask="url(#svg-mark-chris-mask-outline-double)">
         <rect x="78.13" y="161.21" fill="url(#gradientShineOver)" width="804.73" height="186.89" class="svg-mark__name-shineOver svg-mark__name-shineOver--delayed" style="opacity:0" />
       </g>
@@ -288,12 +322,15 @@
       </g>
     </g>
 
-    <g class="svg-mark_chris-flash">
+    <g class="svg-mark__chris-flash">
       <use xlink:href="#svg-mark-chris-shape" fill="{{ shine_colour }}" stroke="{{ shine_colour }}" filter="url(#flashGlow)" />
       {# <use xlink:href="#svg-mark-chris-shape"  fill="{{ shine_colour }}" stroke="{{ shine_colour }}" /> #}
     </g>
 
   </g>
+
+  <!-- Horizon Glow -->
+  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="25%" ry="33%"/>
 
   <!-- Kirk-Nielsen -->
   <g class="svg-mark__kirknielsen-group svg-mark__group" role="img" aria-label="Kirk-Nielsen">
@@ -304,7 +341,7 @@
 
   <!-- Creative Developer -->
   <g class="svg-mark__creativedeveloper-group svg-mark__group"aria-label="creative developer">
-    <use xlink:href="#svg-mark-dev-shape" fill="{{ title_fill }}" />
-    {# <text fill="{{ title_fill }}" class="u-fontCode u-fontBold u-fluidType" x="126.5" y="148">&lt;creative developer /&gt;</text> #}
+    {# <use xlink:href="#svg-mark-dev-shape" fill="{{ title_fill }}" /> #}
+    <text fill="{{ title_fill }}" class="u-fontCode u-fontBold" style="font-size:1.25rem;" text-anchor="middle" x="50%" y="148">&lt;creative-developer/&gt;</text>
   </g>
 </svg>

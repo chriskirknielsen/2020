@@ -48,12 +48,11 @@
         const now = new Date();
         for (t in speeds) { periods[t] = (now % speeds[t]) / speeds[t]; }
 
-        const MAX_HLINES = Math.floor(width / 96);
+        const MAX_HLINES = Math.floor(width / 10);
         let VLINES = Math.floor(width / 100);
-        if (VLINES % 2 !== 0) { VLINES += 1; }
-        if (VLINES > 25) { VLINES = 25; }
+        if (VLINES % 2 !== 0) { VLINES += 1; } // Always keep a vertical line in the centre
 
-        const HSPREAD = 1500;
+        const HSPREAD = 2000;
         const z = HSPREAD * 0.05;
         const lowerHorizon = height / 2;
 

@@ -1,5 +1,4 @@
 .svg-mark {
-    $wire-s: &;
     $wire-count: 8;
     $wire-init-delay: .75s;
     $wire-step-delay: .0625s;
@@ -14,15 +13,11 @@
     $kn-anim-time: .75s;
     $creadev-anim-delay: $kn-anim-delay + $kn-anim-time;
     $creadev-anim-time: 1.5s;
-    $glare-anim-time: 1s;
-    $glare-anim-delay: $creadev-anim-delay + $kn-anim-time;
     $shine-anim-time: 1.25s;
-    $shine-anim-delay: $glare-anim-delay + .25s;
+    $shine-anim-delay: $creadev-anim-delay + $kn-anim-time;
+    $glare-anim-time: 1s;
+    $glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
     
-    &__wires {
-        transform-origin: 50% 50%;
-    }
-
     &__wire {
         animation-name: svgMarkFadeInOut;
         animation-iteration-count: 1;
@@ -35,27 +30,37 @@
                 $wpow: ($wire-count + 1) / ($w + 1);
                 $delay: $wire-step-delay * $w;
                 $scale: 1 + (1/10 * ($wire-count - $w)) * $wire-factor + .0125;
-                $translateY: $wpow * $wpow * $wire-factor;
+                $translateY: $wpow * $wire-factor;
                 transform: scale(#{ $scale }) translateY(#{ $translateY * -1% });
                 animation-delay: #{ $wire-init-delay + $delay };
             }
         }
     }
 
-    &_chris-flash {
+    &__horizon-flash,
+    &__chris-flash {
         animation-name: svgMarkFadeInOut;
         animation-iteration-count: 1;
         animation-fill-mode: both;
         animation-duration: #{ $flash-anim-time };
         animation-timing-function: ease;
         animation-delay: #{ $flash-anim-delay };
-        // mix-blend-mode: overlay;
+    }
+
+    &__horizon-flash {
+        animation-name: svgMarkFadeInOut, scaleOut;
+        animation-timing-function: ease-in-out, ease;
     }
 
     @keyframes svgMarkFadeInOut {
         0% { opacity: 0; }
         50% { opacity: 1; }
         100% { opacity: 0; }
+    }
+
+    @keyframes scaleOut {
+        0% { transform: scale(.5); }
+        100% { transform: scale(1.5); }
     }
 
     &__group {
@@ -68,7 +73,7 @@
         animation-fill-mode: backwards;
         animation-direction: reverse;
         animation-duration: 1s;
-        animation-delay: #{ $chris-anim-delay - $wire-step-delay };
+        animation-delay: #{ $chris-anim-delay - $wire-step-delay*($wire-count/2) };
         animation-timing-function: cubic-bezier(.75, 0, 1, 1);
     }
 
@@ -135,9 +140,23 @@
     }
 
     @keyframes shineOver {
-        0% { transform: translateX(82.5%); opacity: 0; visibility: hidden; }
-        1% { opacity: 1; visibility: visible; }
-        99% { opacity: 1; visibility: visible; }
-        100% { transform: translateX(-82.5%); opacity: 0; visibility: hidden; }
+        0% {
+            transform: translateX(82.5%);
+            opacity: 0;
+            visibility: hidden;
+        }
+        1% {
+            opacity: 1;
+            visibility: visible;
+        }
+        99% {
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            transform: translateX(-82.5%);
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 }
