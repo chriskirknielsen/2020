@@ -6,6 +6,33 @@
     const peach = '#dd6a65';
     const electric = '#f0c54f';
     const cyan = '#10c6bd';
+    // const horizonNear = '#0a0634';
+    // const horizonFar = '#791e74';
+    // const mountainCount = 8;
+    // let mountains = [];
+    
+    // for (let c = 0; c < mountainCount; c++) {
+    //     // Make the factor stronger towards the middle of the set (probably not a real bell curve, this is my own implementation)
+    //     const bellCurveFactor = Math.abs(c - mountainCount/2) * -1 + mountainCount/2;
+    //     const mHeightFactor = bellCurveFactor / (mountainCount/2);
+
+    //     // Place the centre point based on the index of the item
+    //     const mCentreFactor = c / mountainCount + (Math.random() - .5) / 10;
+        
+    //     // Make the width factor between .25 and 1.
+    //     const mWidthFactor = Math.max(.25, Math.min(1, Math.random()*2));
+        
+    //     // Place the factor within 25% of the centre point, on either side
+    //     const mApexPositionFactor = .5 + (Math.random() - .5) / 4;
+    //     const mData = {
+    //         widthFactor: mWidthFactor,
+    //         heightFactor: mHeightFactor,
+    //         centreFactor: mCentreFactor,
+    //         apexFactor: mApexPositionFactor
+    //     };
+
+    //     mountains.push(mData);
+    // }
 
     function getContext(width, height) {
         if (width > window.innerWidth) { width = window.innerWidth; }
@@ -20,6 +47,16 @@
         ctx.beginPath();
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
+        ctx.stroke();
+    }
+
+    function drawMountain(ctx, base, tHeight, x1, x2, x3, fillStyle) {
+        ctx.beginPath();
+        ctx.moveTo(x1, base);
+        ctx.lineTo(x2, base - tHeight);
+        ctx.lineTo(x3, base);
+        ctx.fillStyle = fillStyle;
+        ctx.fill();
         ctx.stroke();
     }
 
@@ -57,34 +94,16 @@
         const lowerHorizon = height / 2;
 
         // Half-sun
-        const sunCenter = lowerHorizon;
+        const sunCenter = lowerHorizon + 1;
         const sunRadius = ((width < height) ? width : height) / 4;
         const sunBlindCount = 8;
         const rectHeight = (sunRadius / sunBlindCount) / 2; // Height of individual "blind" is half of each blind and their counter (empty) space
         const gradient = ctx.createLinearGradient(0, sunCenter-sunRadius, 0, sunCenter+sunRadius);
-            gradient.addColorStop(0, electric);
-            gradient.addColorStop(.3, peach);
-            gradient.addColorStop(.5, hotpink);
-            gradient.addColorStop(.5, dullpink);
-            gradient.addColorStop(1, darkmagenta);
-
-        const doGlow = false;
-        if (doGlow) {
-            // Start Glow
-            ctx.shadowBlur = rectHeight*2;
-            ctx.shadowColor = hotpink;
-            ctx.beginPath();
-            ctx.arc(width/2, sunCenter, sunRadius, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = 'black';
-            ctx.globalCompositeOperation = 'screen';
-            ctx.fill();
-
-            // Reset
-            ctx.globalCompositeOperation = 'source-over';
-            ctx.shadowColor = 'rgba(0,0,0,0)';
-            ctx.shadowBlur = 0;
-        }
+        gradient.addColorStop(0, electric);
+        gradient.addColorStop(.3, peach);
+        gradient.addColorStop(.5, hotpink);
+        gradient.addColorStop(.5, dullpink);
+        gradient.addColorStop(1, darkmagenta);
 
         // Start clipping mask
         ctx.save(); // Save state before clipping
@@ -137,6 +156,23 @@
             ctx.strokeStyle = cyan;
             drawLine(ctx, x + xSpreadLower, height, x, lowerHorizon);
         }
+
+        // const mountainsCentre = Math.floor(width/2);
+        // const mountainsMaxWidth = Math.floor(width/4);
+        // const mountainsMaxHeight = Math.floor(height/8);
+        // const horizonGradient = ctx.createLinearGradient(0, lowerHorizon, 0, height/8);
+        // horizonGradient.addColorStop(0, horizonNear);
+        // horizonGradient.addColorStop(1, horizonFar);
+
+        // for (let m of mountains) {
+        //     const mWidth = mountainsMaxWidth * m.widthFactor;
+        //     const mHeight = mountainsMaxHeight * m.heightFactor;
+        //     const mCentre = width * m.centreFactor + mWidth/2;
+        //     const mApex = mWidth * (m.apexFactor - .5);
+
+        //     drawMountain(ctx, lowerHorizon, mHeight, mCentre-mWidth/2, mCentre+mApex, mCentre+mWidth/2, horizonGradient);
+        //     drawLine(ctx, mCentre+mApex, lowerHorizon-mHeight, mCentre, lowerHorizon); // Draw median line through triangle
+        // }
         
         if (!window.prefersReducedMotion) { // Only animate if user doesn't prefer reduced motion
             window.requestAnimationFrame(draw);
