@@ -1,7 +1,7 @@
 .svg-mark {
     $wire-s: &;
     $wire-count: 8;
-    $wire-init-delay: 0s;
+    $wire-init-delay: .5s;
     $wire-step-delay: .0625s;
     $wire-anim-time: 1s;
     $wire-factor: .33;
@@ -10,6 +10,14 @@
     $flash-anim-time: 1s;
     $chris-anim-time: 1.25s;
     $chris-anim-delay: $flash-anim-delay + $flash-anim-time/2;
+    $kn-anim-delay: $chris-anim-delay + $chris-anim-time/4;
+    $kn-anim-time: .75s;
+    $creadev-anim-delay: $kn-anim-delay + $kn-anim-time;
+    $creadev-anim-time: 1.5s;
+    $glare-anim-time: 1s;
+    $glare-anim-delay: $creadev-anim-delay + $kn-anim-time;
+    $shine-anim-time: 1.25s;
+    $shine-anim-delay: $glare-anim-delay + .25s;
     
     &__wires {
         transform-origin: 50% 50%;
@@ -30,11 +38,11 @@
 
         @for $w from 1 through $wire-count {
             &:nth-child(#{ $w }) {
-                $w-i: ($w + 1) / ($wire-count + 1) * -1;
+                $wpow: ($wire-count + 1) / ($w + 1);
                 $delay: $wire-step-delay * $w;
-                $scale: 1 + (1/10 * ($wire-count - $w)) * $wire-factor;
-                $translateY: 1 - $w-i*$w-i*$w-i;
-                transform: scale(#{ $scale }) translateY(#{ $translateY * -2% * ($wire-count - $w) });
+                $scale: 1 + (1/10 * ($wire-count - $w)) * $wire-factor + .0125;
+                $translateY: $wpow * $wpow * $wire-factor;
+                transform: scale(#{ $scale }) translateY(#{ $translateY * -1% });
                 animation-delay: #{ $wire-init-delay + $delay };
             }
         }
@@ -47,6 +55,7 @@
         animation-duration: #{ $flash-anim-time };
         animation-timing-function: ease-in-out;
         animation-delay: #{ $flash-anim-delay };
+        // mix-blend-mode: overlay;
     }
 
     &__group {
@@ -58,9 +67,9 @@
     &__chris-depth {
         animation-fill-mode: backwards;
         animation-direction: reverse;
-        animation-duration: 1.25s;
-        animation-delay: #{ $chris-anim-delay };
-        animation-timing-function: cubic-bezier(0, 0, 1, 0);
+        animation-duration: 1s;
+        animation-delay: #{ $chris-anim-delay - $wire-step-delay };
+        animation-timing-function: cubic-bezier(.75, 0, 1, 1);
     }
 
     &__chris-main {
@@ -83,16 +92,16 @@
     &__kirknielsen-group {
         opacity: 0;
         transform: translate(-8%, 25%);
-        animation-duration: .75s;
-        animation-delay: 2s;
+        animation-duration: #{ $kn-anim-time };
+        animation-delay: #{ $kn-anim-delay };
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
     &__creativedeveloper-group {
         opacity: 0;
         transform: translate(25%, 0);
-        animation-duration: 1.5s;
-        animation-delay: 2.5s;
+        animation-duration: #{ $creadev-anim-time };
+        animation-delay: #{ $creadev-anim-delay };
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
@@ -102,8 +111,8 @@
     }
     &__glare {
         transform: scale(0, 0) rotate(-270deg);
-        animation-duration: 1s;
-        animation-delay: 3.75s;
+        animation-duration: #{ $glare-anim-time };
+        animation-delay: #{ $glare-anim-delay };
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
@@ -117,12 +126,12 @@
 
 
     &__name-shineOver {
-        animation: shineOver 1.25s ease-in-out 3.5s 1 both;
+        animation: shineOver #{ $shine-anim-time } ease-in-out #{ $shine-anim-delay } 1 both;
     }
 
     &__name-shineOver--delayed {
-        animation-duration: 1.325s;
-        animation-delay: 3.75s;
+        animation-duration: #{ $shine-anim-time - .125s };
+        animation-delay: #{ $shine-anim-delay + .25s }
     }
 
     @keyframes shineOver {
