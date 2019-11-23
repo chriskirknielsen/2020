@@ -144,4 +144,26 @@
     }
 
     draw();
-})()
+})();
+
+(function() {
+    if (!prefersReducedMotion) {
+        // Type in creative developer
+        const creativeDeveloperText = 'creative developer';
+        const creativeDeveloperNode = document.getElementById('svg-mark-creative-developer-text');
+        const creativeDeveloperStartDelay = 3250;
+        const creativeDeveloperTypeDelay = 42;
+        let creativeDeveloperIndex = 0;
+        creativeDeveloperNode.innerHTML = ''; // Reset
+
+        const typeCreativeDeveloper = function() {
+            creativeDeveloperNode.innerHTML += creativeDeveloperText[creativeDeveloperIndex];
+            creativeDeveloperIndex++;
+
+            if (typeof creativeDeveloperText[creativeDeveloperIndex] === 'undefined') { return; }
+            setTimeout(typeCreativeDeveloper, creativeDeveloperTypeDelay);
+        }
+
+        setTimeout(typeCreativeDeveloper, creativeDeveloperStartDelay);
+    }
+})();
