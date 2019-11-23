@@ -43,15 +43,19 @@
         opacity: 0;
         animation-name: svgMarkFadeInOut;
         animation-iteration-count: 1;
-        animation-fill-mode: both;
-        animation-duration: #{ $flash-anim-time };
         animation-timing-function: ease;
         animation-delay: #{ $flash-anim-delay };
     }
 
+    &__chris-flash {
+        animation-fill-mode: both;
+        animation-duration: #{ $flash-anim-time };
+    }
+
     &__horizon-flash {
         animation-name: svgMarkFadeInOut, scaleOut;
-        animation-timing-function: ease-in-out, ease;
+        animation-duration: #{ $flash-anim-time + .25s };
+        animation-timing-function: linear, ease;
     }
 
     @keyframes svgMarkFadeInOut {
@@ -66,7 +70,7 @@
     }
 
     &__group {
-        animation-name: svgMarkTransform;
+        animation-name: svgMarkReset;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
@@ -81,7 +85,7 @@
 
     &__chris-main {
         opacity: 0;
-        animation-name: svgMarkTransform;
+        animation-name: svgMarkReset;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         animation-duration: 0.1s;
@@ -113,7 +117,7 @@
     }
 
     &__glare-group {
-        transform-origin: 0 0;
+        transform-origin: 0 0; // Keep this at 0 0 since the glare is placed relative to the top-left corner so the element's rotation is anchored properly
         transform: translate(76%, 34.5%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
     }
     &__glare {
@@ -123,7 +127,7 @@
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
-    @keyframes svgMarkTransform {
+    @keyframes svgMarkReset {
         100% {
             opacity: 1;
             transform: none;

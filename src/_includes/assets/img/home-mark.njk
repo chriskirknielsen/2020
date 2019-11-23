@@ -29,8 +29,9 @@
 {# Define the title's colour #}
 {% set title_fill = "#eaeaea" %}
 
-{# Define the name's inner shadow colour #}
+{# Define the name's wireframe #}
 {% set wire_colour = "#71d1cc" %}
+{% set wire_count = 8 %}
 
 {# Define the name's inner shadow colour #}
 {% set firstname_inner = "#130026" %}
@@ -258,14 +259,9 @@
 
     <!-- Wires -->
     <g class="svg-mark__wires">
+      {% for d in range(0, wire_count) -%}
         <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+      {%- endfor %}
     </g>
     
     <g class="svg-mark__chris-main">
@@ -282,15 +278,6 @@
           style="transform: scale({{ (1 - depth_min_scale) * (d/depth_count) + depth_min_scale }})"
         />
       {%- endfor %}
-
-        {# <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9000)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour4 }}" stroke="{{ depth_colour4 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9125)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9250)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour3 }}" stroke="{{ depth_colour3 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9375)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9500)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour2 }}" stroke="{{ depth_colour2 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9625)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9750)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="{{ depth_colour1 }}" stroke="{{ depth_colour1 }}" class="svg-mark__group svg-mark__chris-depth" style="transform: scale(0.9875)" /> #}
       </g>
 
       <!-- Outline -->
