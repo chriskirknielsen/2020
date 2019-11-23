@@ -8,7 +8,6 @@ section: home
         <div class="homescreen__background u-posAbsolute u-absCover u-bg--primary-max" aria-hidden="true">
             <canvas id="homescreen-scene" class="homescreen__scene"></canvas>
         </div>
-        <script src="{{ '/assets/js/homescreen-scene.js' | url }}" deferred></script>
 
         <div class="homescreen__svg-wrapper u-posRelative">
             {% set ckn_mark %}
@@ -16,6 +15,8 @@ section: home
             {% endset %}
             {{ ckn_mark | htmlmin | safe }}
         </div>
+        
+        <script src="{{ '/assets/js/homescreen-scene.js' | url }}" deferred></script>
     </div>
 </section>
 
