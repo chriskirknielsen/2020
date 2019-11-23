@@ -1,7 +1,7 @@
 .svg-mark {
     $wire-s: &;
     $wire-count: 8;
-    $wire-init-delay: .5s;
+    $wire-init-delay: .75s;
     $wire-step-delay: .0625s;
     $wire-anim-time: 1s;
     $wire-factor: .33;
@@ -30,12 +30,6 @@
         animation-duration: #{ $wire-anim-time };
         animation-timing-function: steps(1);
 
-        @keyframes svgMarkFadeInOut {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
         @for $w from 1 through $wire-count {
             &:nth-child(#{ $w }) {
                 $wpow: ($wire-count + 1) / ($w + 1);
@@ -53,9 +47,15 @@
         animation-iteration-count: 1;
         animation-fill-mode: both;
         animation-duration: #{ $flash-anim-time };
-        animation-timing-function: ease-in-out;
+        animation-timing-function: ease;
         animation-delay: #{ $flash-anim-delay };
         // mix-blend-mode: overlay;
+    }
+
+    @keyframes svgMarkFadeInOut {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
     }
 
     &__group {
