@@ -1,7 +1,4 @@
 .header {
-    background-image: // Little grid background
-        linear-gradient( 0deg, transparent calc(100% - 1px), var(--c-secondary-max) calc(100% - 1px)),
-        linear-gradient(90deg, transparent calc(100% - 1px), var(--c-secondary-max) calc(100% - 1px));
     background-size: #{ $header-brand-height } #{ $header-brand-height };
     background-position: #{ $spacing * 2 } 50%; // Copy the horizontal offset from the padding
 

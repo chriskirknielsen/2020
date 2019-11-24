@@ -28,13 +28,15 @@ pre > code {
 
 pre[class*="language-"],
 :not(pre) > code {
-	background: var(--c-primary-max);
-	border-radius: .25em;
+	@extend .u-bg-grid;
+	background-color: var(--c-primary-max);
+	background-size: #{ $spacing * 2 } #{ $spacing * 2 };
+	background-position: 50% 50%;
     
     mark {
         color: var(--c-secondary-med);
         background: var(--c-grey-max);
-        box-shadow: #{$spacing * -1} 0 0 var(--c-secondary-med);
+        box-shadow: #{ $spacing * -1 } 0 0 var(--c-secondary-med);
     }
 }
 
