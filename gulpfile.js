@@ -2,6 +2,9 @@ const root = 'src'; // Root folder
 const gulp = require("gulp");
 //const sass = require("gulp-sass");
 const sass = require('gulp-dart-sass');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 const exec = require('child_process').exec;
 const spawn = require('child_process').spawn;
 
@@ -17,10 +20,22 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./'+root+'/_includes/assets/css'));
 });
 
+gulp.task('js', function () {
+    return gulp.src([
+        './'+root+'/_includes/assets/js/*.js',
+    ])
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify())
+        .pipe(rename({suffix: ".min"}))
+        .pipe(gulp.dest('./'+root+'/_includes/assets/jsmin'));
+});
+
 gulp.task("watch", function () {
     gulp.watch('./'+root+'/_data/tokens.json', gulp.parallel('tokens'));
     gulp.watch('./'+root+'/_includes/assets/scss/**/*.scss', gulp.parallel('css'));
-    //gulp.watch('./'+root+'/_includes/assets/js/**/*.js', gulp.parallel('js'));
+    gulp.watch('./'+root+'/_includes/assets/js/**/*.js', gulp.parallel('js'));
 });
 
 gulp.task('tokens', function (cb) {
