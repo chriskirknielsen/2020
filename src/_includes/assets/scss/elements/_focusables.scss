@@ -6,7 +6,7 @@ a {
 a,
 button {
     &:focus {
-        outline: 4px dashed var(--colour-comp);
+        outline: 4px dashed var(--colour-secondary);
     }
 
     &:focus:not(:focus-visible) {
@@ -19,7 +19,7 @@ button {
         }
         
         &:-moz-focusring {
-            outline: 4px dashed var(--colour-comp);
+            outline: 4px dashed var(--colour-secondary);
         }
     }
 }
