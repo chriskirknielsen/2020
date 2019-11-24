@@ -6,7 +6,7 @@
     $wire-factor: .33;
     $wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
     $flash-anim-delay: $wire-final-end - $wire-step-delay * $wire-count;
-    $flash-anim-time: 1s;
+    $flash-anim-time: 1.25s;
     $chris-anim-time: 1.25s;
     $chris-anim-delay: $flash-anim-delay + $flash-anim-time/2;
     $kn-anim-delay: $chris-anim-delay + $chris-anim-time/4;
@@ -54,7 +54,7 @@
 
     &__horizon-flash {
         animation-name: svgMarkFadeInOut, scaleOut;
-        animation-duration: #{ $flash-anim-time + .25s };
+        animation-duration: #{ $flash-anim-time };
         animation-timing-function: linear, ease;
     }
 
