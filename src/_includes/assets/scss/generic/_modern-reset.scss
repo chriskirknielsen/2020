@@ -47,7 +47,7 @@ body {
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: #{ $base-line-height };
 }
 
 /* A elements that don't have a class get default styles */

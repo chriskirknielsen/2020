@@ -17,6 +17,9 @@ $container-max-width-em: #{ $container-max-width * 1em };
 $header-brand-height: 2rem;
 $header-expected-height: $spacing * 2 + $header-brand-height;
 
+// Typography
+$base-line-height: 1.5;
+
 // Breakpoints used in fluid type
 //-- Content @ large
 $large-breakpoint-width-rem: $container-max-width; 

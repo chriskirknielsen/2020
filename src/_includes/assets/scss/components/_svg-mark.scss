@@ -13,7 +13,7 @@
     $kn-anim-time: .75s;
     $creadev-anim-delay: $kn-anim-delay + $kn-anim-time;
     $creadev-anim-time: 1.5s;
-    $shine-anim-time: 1.25s;
+    $shine-anim-time: 1.5s;
     $shine-anim-delay: $creadev-anim-delay + $kn-anim-time;
     $glare-anim-time: 1s;
     $glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);

@@ -30,9 +30,9 @@ pre[class*="language-"],
 :not(pre) > code {
 	@extend .u-bg-grid;
 	background-color: var(--c-primary-max);
-	background-size: #{ $spacing * 2 } #{ $spacing * 2 };
-	background-position: 50% 50%;
-    
+	background-size: #{ $base-line-height * 1em } #{ $base-line-height * 1em };
+	background-position: #{ $spacing } calc(#{ $spacing * .5 } - #{ 1em - $base-line-height * 1em }); // Horizontally, offset by the padding (line 48); vertically, ensure lines repeat between each line of text
+
     mark {
         color: var(--c-secondary-med);
         background: var(--c-grey-max);
@@ -45,7 +45,7 @@ pre[class*="language-"],
 }
 
 pre[class*="language-"] {
-    padding: #{$spacing};
+    padding: #{ $spacing };
     box-shadow: inset 0 #{ $spacing * -.125 } 0 var(--c-grey-med);
 }
 
