@@ -63,5 +63,13 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
             background-color: var(--c-#{$c}-#{$n});
             --bg: var(--c-#{$c}-#{$n});
         }
+
+        .u-bg\:h--#{$c}-#{$n} {
+            &:hover,
+            &:focus {
+                background-color: var(--c-#{$c}-#{$n});
+                --bg: var(--c-#{$c}-#{$n});
+            }
+        }
     }
 }

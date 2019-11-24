@@ -2,7 +2,7 @@ a:not([class]) {
     &:link,
     &:visited {
         color: var(--c, var(--colour-grey));
-        text-decoration-color: var(--colour-primary);
+        text-decoration-color: var(--colour-secondary);
         transition: 
             text-decoration-thickness 200ms ease-out, 
             text-underline-offset 200ms ease-out,
@@ -21,13 +21,13 @@ a:not([class]) {
     @supports (text-decoration-thickness: 1em) {
         &:link {
             text-decoration-skip-ink: none;
-            text-decoration-thickness: 0.25em;  
-            text-underline-offset: 0.25em;
+            text-decoration-thickness: .125em;  
+            text-underline-offset: .125em;
         }
     
         &:hover {
             color: var(--bg, var(--colour-bg));
-            text-decoration-thickness: 1.375em;
+            text-decoration-thickness: 1.125em;
             text-underline-offset: -0.875em;     
         }
     }

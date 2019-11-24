@@ -1,4 +1,4 @@
-<footer class="footer fluid-type u-displayFlex u-flex--wrap u-flex--centerBlock u-marginBlockStart--auto u-padding u-c--grey-min u-bg--secondary-max">
+<footer class="footer fluid-type u-displayFlex u-flex--wrap u-flex--centreBlock u-marginBlockStart--auto u-padding u-c--grey-min u-bg--secondary-max">
 	{% set copyrightYear = (metadata.currentYear
 		if metadata.copyrightStart == metadata.currentYear
 		else metadata.copyrightStart + "&ndash;" + metadata.currentYear
@@ -10,7 +10,7 @@
 
 	<div class="footer__language">
 		{{ footer.langLabel }}{{ punctSp }}:
-		<ul class="u-displayInlineFlex u-flex--centerInline">
+		<ul class="u-displayInlineFlex u-flex--centreInline">
 		{% for langCode, langData in metadata.languages %}
 			{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
 			<li class="footer__language-item">
@@ -20,7 +20,7 @@
 		</ul>
 	</div>
 
-	<ul class="footer__social u-displayFlex u-flex--center">
+	<ul class="footer__social u-displayFlex u-flex--centre">
 	{% for social in social %}
 		<li class="footer__social-item u-displayFlex">
 			<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock u-c--grey-min u-c:h--comp-med">

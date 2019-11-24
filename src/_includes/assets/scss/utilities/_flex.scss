@@ -8,12 +8,12 @@
 .u-flex--stretchBlock {
     align-items: stretch;
 }
-.u-flex--center,
-.u-flex--centerBlock {
+.u-flex--centre,
+.u-flex--centreBlock {
     align-items: center;
 }
-.u-flex--center,
-.u-flex--centerInline {
+.u-flex--centre,
+.u-flex--centreInline {
     justify-content: center;
 }
 .u-flex--justifyInline { justify-content: space-between; }
@@ -21,5 +21,6 @@
 .u-flex--alignSelfStart { align-self: start; }
 .u-flex--alignSelfStretch { align-self: stretch; }
 .u-flex--grow { flex-grow: 1; }
+.u-flex--shrink { flex-shrink: 1; }
 .u-flex--shrink--none { flex-shrink: 0; }
 .u-flex--gsa { flex: 1 1 auto; } // GSA = Grow, Shrink, Auto
