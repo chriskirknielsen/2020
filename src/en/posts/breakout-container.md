@@ -13,11 +13,10 @@ Here's a quick tip if you have your content limited to a certain width but you w
 
 I did not in any way invent this concept, but I've seen methods out there with some `transform` to move the element back into place but that is not necessary, you can make it a lot easier with relative positioning.
 
-Say you have a `.container` class with a `max-width` value, `margin: 0 auto`, and `overflow: hidden`: the latter will help with breakout elements that might eat up extra space for the vertical scrollbar…
+Say you have a `.container` class with a `max-width` value and `margin: 0 auto`. You can also add `overflow-x: hidden` to the `body` to help with breakout elements that might eat up extra space for the vertical scrollbar on some browsers/operating systems.
 
 ```css
 .container {
-  overflow: hidden;
   max-width: 48em;
   margin: 0 auto`;
 }
