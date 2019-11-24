@@ -86,10 +86,10 @@
         for (let t in speeds) { periods[t] = (now % speeds[t]) / speeds[t]; }
 
         const MAX_HLINES = Math.floor(width / 10);
-        let VLINES = Math.floor(width / 100);
+        let VLINES = Math.floor(width / 24);
         if (VLINES % 2 !== 0) { VLINES += 1; } // Always keep a vertical line in the centre
 
-        const HSPREAD = 2000;
+        const HSPREAD = 32000;
         const z = HSPREAD * 0.05;
         const lowerHorizon = height / 2;
 
@@ -137,7 +137,7 @@
 
         ctx.restore(); // Stop clipping
 
-        // Draw lines;
+        // Draw horizontal lines
         for (let i = 0; i < MAX_HLINES; i++) {
             const dy = Math.pow(1.5, i + periods.vScroll);
             const lowerY = lowerHorizon - 1 + dy;
@@ -148,9 +148,10 @@
             if (lowerY > height) break;
         }
 
+        // Draw vertical, perspective-adjusted lines
         for (let i = 0; i < VLINES; i++) {
             const xSep = width / VLINES;
-            const x = width * (i / VLINES);// + Math.sin(periods.hScroll * Math.PI * 2) * xSep;
+            const x = width * (i / VLINES);
             const xSpreadLower = ((HSPREAD - z) * 2 / width) * x - (HSPREAD - z);
 
             ctx.strokeStyle = cyan;
@@ -183,21 +184,28 @@
 })();
 
 (function() {
-    if (!prefersReducedMotion) {
+    if (!window.prefersReducedMotion) {
         // Type in creative developer
-        const creativeDeveloperText = 'creative developer';
         const creativeDeveloperNode = document.getElementById('svg-mark-creative-developer-text');
-        const creativeDeveloperStartDelay = 3250;
-        const creativeDeveloperTypeDelay = 42;
+        const creativeDeveloperText = creativeDeveloperNode.innerHTML; // Capture initial text
+        const creativeDeveloperStartDelay = 3250; // ms
         let creativeDeveloperIndex = 0;
+        let creativeDeveloperTick = 0;
+        let creativeDeveloperRefreshRate = 4; // frames
         creativeDeveloperNode.innerHTML = ''; // Reset
+        creativeDeveloperNode.setAttribute('aria-hidden', 'true'); // Ensure the updating text node is not read
+        creativeDeveloperNode.parentNode.setAttribute('aria-label', creativeDeveloperText); // Ensure the wrapping text has the final value as a label
 
         const typeCreativeDeveloper = function() {
-            creativeDeveloperNode.innerHTML += creativeDeveloperText[creativeDeveloperIndex];
-            creativeDeveloperIndex++;
+            if (creativeDeveloperTick % creativeDeveloperRefreshRate === 0) {
+                creativeDeveloperNode.innerHTML += creativeDeveloperText[creativeDeveloperIndex];
+                creativeDeveloperIndex++;
+            }
+            
+            creativeDeveloperTick++;
 
             if (typeof creativeDeveloperText[creativeDeveloperIndex] === 'undefined') { return; }
-            setTimeout(typeCreativeDeveloper, creativeDeveloperTypeDelay);
+            window.requestAnimationFrame(typeCreativeDeveloper);
         }
 
         setTimeout(typeCreativeDeveloper, creativeDeveloperStartDelay);

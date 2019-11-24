@@ -116,6 +116,13 @@
         // animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
+    &__creativedeveloper-text {
+        $min: 2.25rem;
+        $max: 1.25rem;
+        @include fluid(2.25rem, 1.25rem);
+        @include fluid(.03625em, .0625em, 'text-shadow', '{{v}} {{v}} 0 #0a0634', '{{v}}');
+    }
+
     &__glare-group {
         transform-origin: 0 0; // Keep this at 0 0 since the glare is placed relative to the top-left corner so the element's rotation is anchored properly
         transform: translate(76%, 34.5%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
