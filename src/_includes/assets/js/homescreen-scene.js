@@ -83,7 +83,7 @@
         };
         const periods = {};
         const now = new Date();
-        for (t in speeds) { periods[t] = (now % speeds[t]) / speeds[t]; }
+        for (let t in speeds) { periods[t] = (now % speeds[t]) / speeds[t]; }
 
         const MAX_HLINES = Math.floor(width / 10);
         let VLINES = Math.floor(width / 100);
