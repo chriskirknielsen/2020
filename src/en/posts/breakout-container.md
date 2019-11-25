@@ -13,7 +13,7 @@ Here's a quick tip if you have your content limited to a certain width but you w
 
 I did not in any way invent this concept, but I've seen methods out there with some `transform` to move the element back into place but that is not necessary, you can make it a lot easier with relative positioning.
 
-Say you have a `.container` class with a `max-width` value and `margin: 0 auto`. You can also add `overflow-x: hidden` to the `body` (or a main wrapper around your container that takes up 100% of the width) to help with breakout elements that might eat up extra space for the vertical scrollbar on some browsers/operating systems.
+Say you have a `.container` class with a `max-width` value and `margin: 0 auto`. You should also add `overflow-x: hidden` to the `body` (or a main wrapper around your container that takes up 100% of the width) to help with breakout elements that might eat up extra space for the vertical scrollbar on some browsers/operating systems.
 
 ```css
 .container {
@@ -22,7 +22,7 @@ Say you have a `.container` class with a `max-width` value and `margin: 0 auto`.
 }
 ```
 
-You can break out of this container by making it take up the whole screen's width (`100wv`), then move it left by `50%` of the container minus half the screen's width (`50vw`).
+You can break an element out of this container by making it take up the whole screen's width (`100wv`), then move it left by `50%` of the container )which is the middle of the screen), minus half the screen's width (`50vw`), effectively placing it on the very first horizontal pixel of the viewport.
 
 ```css
 .breakout {
