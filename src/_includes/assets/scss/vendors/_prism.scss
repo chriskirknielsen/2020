@@ -28,8 +28,10 @@ pre > code {
 
 pre[class*="language-"],
 :not(pre) > code {
-	@extend .u-bg-grid;
 	background-color: var(--c-primary-max);
+	background-image: // Grid background
+        linear-gradient( 0deg, transparent calc(100% - 1px), var(--c-secondary-max) calc(100% - 1px)),
+        linear-gradient(90deg, transparent calc(100% - 1px), var(--c-secondary-max) calc(100% - 1px));
 	background-size: #{ $base-line-height * 1em } #{ $base-line-height * 1em };
 	background-position: #{ $spacing } calc(#{ $spacing * .5 } - #{ 1em - $base-line-height * 1em }); // Horizontally, offset by the padding (line 48); vertically, ensure lines repeat between each line of text
 

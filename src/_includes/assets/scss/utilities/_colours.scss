@@ -73,9 +73,3 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
         }
     }
 }
-
-.u-bg-grid {
-    background-image: // Grid background
-        linear-gradient( 0deg, transparent calc(100% - 1px), var(--c-secondary-max) calc(100% - 1px)),
-        linear-gradient(90deg, transparent calc(100% - 1px), var(--c-secondary-max) calc(100% - 1px));
-}
