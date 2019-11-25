@@ -50,15 +50,15 @@
         ctx.stroke();
     }
 
-    function drawMountain(ctx, base, tHeight, x1, x2, x3, fillStyle) {
-        ctx.beginPath();
-        ctx.moveTo(x1, base);
-        ctx.lineTo(x2, base - tHeight);
-        ctx.lineTo(x3, base);
-        ctx.fillStyle = fillStyle;
-        ctx.fill();
-        ctx.stroke();
-    }
+    // function drawMountain(ctx, base, tHeight, x1, x2, x3, fillStyle) {
+    //     ctx.beginPath();
+    //     ctx.moveTo(x1, base);
+    //     ctx.lineTo(x2, base - tHeight);
+    //     ctx.lineTo(x3, base);
+    //     ctx.fillStyle = fillStyle;
+    //     ctx.fill();
+    //     ctx.stroke();
+    // }
 
     const pageStart = new Date();
 
@@ -183,31 +183,33 @@
     draw();
 })();
 
-(function() {
-    if (!window.prefersReducedMotion) {
-        // Type in creative developer
-        const creativeDeveloperNode = document.getElementById('svg-mark-creative-developer-text');
-        const creativeDeveloperText = creativeDeveloperNode.innerHTML; // Capture initial text
-        const creativeDeveloperStartDelay = 3250; // ms
-        let creativeDeveloperIndex = 0;
-        let creativeDeveloperTick = 0;
-        let creativeDeveloperRefreshRate = 4; // frames
-        creativeDeveloperNode.innerHTML = ''; // Reset
-        creativeDeveloperNode.setAttribute('aria-hidden', 'true'); // Ensure the updating text node is not read
-        creativeDeveloperNode.parentNode.setAttribute('aria-label', creativeDeveloperText); // Ensure the wrapping text has the final value as a label
+// (function() {
+//     if (!window.prefersReducedMotion) {
+//         // Type in creative developer
+//         const creativeDeveloperNode = document.getElementById('svg-mark-creative-developer-text');
+//         const creativeDeveloperText = creativeDeveloperNode.innerHTML; // Capture initial text
+//         const creativeDeveloperStartDelay = 3250; // ms
+//         let creativeDeveloperIndex = 0;
+//         let creativeDeveloperTick = 0;
+//         let creativeDeveloperRefreshRate = 4; // frames
+//         creativeDeveloperNode.innerHTML = ''; // Reset
+//         creativeDeveloperNode.classList.remove('svg-mark__creativedeveloper-group'); // Remove animation classes
+//         creativeDeveloperNode.classList.remove('svg-mark__group'); // Remove animation classes
+//         creativeDeveloperNode.setAttribute('aria-hidden', 'true'); // Ensure the updating text node is not read
+//         creativeDeveloperNode.parentNode.setAttribute('aria-label', creativeDeveloperText); // Ensure the wrapping text has the final value as a label
 
-        const typeCreativeDeveloper = function() {
-            if (creativeDeveloperTick % creativeDeveloperRefreshRate === 0) {
-                creativeDeveloperNode.innerHTML += creativeDeveloperText[creativeDeveloperIndex];
-                creativeDeveloperIndex++;
-            }
+//         const typeCreativeDeveloper = function() {
+//             if (creativeDeveloperTick % creativeDeveloperRefreshRate === 0) {
+//                 creativeDeveloperNode.innerHTML += creativeDeveloperText[creativeDeveloperIndex];
+//                 creativeDeveloperIndex++;
+//             }
             
-            creativeDeveloperTick++;
+//             creativeDeveloperTick++;
 
-            if (typeof creativeDeveloperText[creativeDeveloperIndex] === 'undefined') { return; }
-            window.requestAnimationFrame(typeCreativeDeveloper);
-        }
+//             if (typeof creativeDeveloperText[creativeDeveloperIndex] === 'undefined') { return; }
+//             window.requestAnimationFrame(typeCreativeDeveloper);
+//         }
 
-        setTimeout(typeCreativeDeveloper, creativeDeveloperStartDelay);
-    }
-})();
+//         setTimeout(typeCreativeDeveloper, creativeDeveloperStartDelay);
+//     }
+// })();
