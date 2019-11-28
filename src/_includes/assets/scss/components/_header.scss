@@ -4,10 +4,12 @@
 
     outline: .125em solid var(--c-secondary-med);
 
-    &__logo {
+    &__svg {
         width: auto;
         height: $header-brand-height;
+    }
 
+    &__logo {
         &-path {
             fill: var(--c, currentColor);
         }

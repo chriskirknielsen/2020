@@ -1,9 +1,9 @@
-<nav class="nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock">
+<nav class="nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock u-marginInlineStart--auto">
 	{% set navList = collections['pages_'+locale] | sortNavLocale(navSet) %}
 	<ul class="nav__list u-displayFlex u-flex--wrap u-flex--stretchBlock">
 	{% for nav in navList %}
 		<li class="nav__item u-displayFlex u-flex--stretchBlock">
-			<a href="{{ nav.url | url }}" class="nav__link u-displayFlex u-flex--centreBlock u-paddingInline u-fontBold u-textDecoration--none u-c--grey-min u-c:h--grey-max u-bg:h--secondary-med"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
+			<a href="{{ nav.url | url }}" class="nav__link u-displayFlex u-flex--centreBlock u-paddingInline--half u-fontBold u-textDecoration--none u-c--grey-min u-c:h--grey-max u-bg:h--secondary-med"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
 		</li>
 	{% endfor %}
 	</ul>

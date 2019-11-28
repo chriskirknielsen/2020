@@ -13,13 +13,13 @@ button {
         outline: none;
     }
 
-    @-moz-document url-prefix() {
-        &:focus{
-            outline: none;
-        }
+    // @-moz-document url-prefix() {
+    //     &:focus{
+    //         outline: none;
+    //     }
         
-        &:-moz-focusring {
-            outline: 4px dashed var(--colour-secondary);
-        }
-    }
+    //     &:-moz-focusring {
+    //         outline: 4px dashed var(--colour-secondary);
+    //     }
+    // }
 }
