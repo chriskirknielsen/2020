@@ -11,6 +11,7 @@
         "contact"
     ],
     "localisedContent": {
+        "skiplink": "Sauter au contenu",
         "feed": {
             "subtitle": "Blog d'un développeur front-end qui aime bidouiller"
         },

@@ -4,7 +4,7 @@
 
     outline: .125em solid var(--c-secondary-med);
 
-    svg {
+    &__svg {
         width: auto;
         height: $header-brand-height;
     }

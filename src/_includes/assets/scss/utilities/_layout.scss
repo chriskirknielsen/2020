@@ -112,6 +112,10 @@
     padding-left: #{ $spacing * 2 } !important;
     padding-right: #{ $spacing * 2 } !important;
 }
+.u-paddingInline--half {
+    padding-left: #{ $spacing / 2 } !important;
+    padding-right: #{ $spacing / 2 } !important;
+}
 .u-paddingBlockStart {
     padding-top: #{ $spacing } !important;
 }
@@ -162,7 +166,9 @@
 }
 
 .u-container {
+    width: 100%;
+    max-width: $container-max-width-em;
+    @extend .u-paddingInline--double;
     margin-left: auto;
     margin-right: auto;
-    max-width: $container-max-width-em;
 }
