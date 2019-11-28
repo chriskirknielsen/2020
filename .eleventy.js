@@ -26,6 +26,8 @@ module.exports = function(eleventyConfig) {
     return slugify(input, options);
   });
 
+  eleventyConfig.addPlugin(pluginRss);
+
   /* SHORTCODES */
 
   eleventyConfig.addShortcode("figure", function(imageUrl, altText, caption, figureClass, imageClass, captionClass) {

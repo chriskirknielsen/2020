@@ -12,11 +12,13 @@ module.exports = {
   languages: {
     "en": {
       label: "English",
-      path: "/"
+      path: "/",
+      root: ""
     },
     "fr": {
       label: "Français",
-      path: "/fr"
+      path: "/fr",
+      root: "fr/"
     }
   }
 };
