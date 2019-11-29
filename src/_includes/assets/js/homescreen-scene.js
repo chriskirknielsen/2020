@@ -2,10 +2,13 @@
     const canvasEl = document.getElementById('homescreen-scene');
     const darkmagenta = '#3c0328';
     const dullpink = '#9d3472';
-    const hotpink = '#d13190';
-    const peach = '#dd6a65';
     const electric = '#f0c54f';
+    const peach = '#dd6a65';
+    const hotpink = '#d13190';
     const cyan = '#10c6bd';
+    const sunTop = '#ed23af';
+    const sunMiddle = '#ffafa3';
+    const sunBottom = '#ffffe9';
     // const horizonNear = '#0a0634';
     // const horizonFar = '#791e74';
     // const mountainCount = 8;
@@ -99,9 +102,9 @@
         const sunBlindCount = 8;
         const rectHeight = (sunRadius / sunBlindCount) / 2; // Height of individual "blind" is half of each blind and their counter (empty) space
         const gradient = ctx.createLinearGradient(0, sunCenter-sunRadius, 0, sunCenter+sunRadius);
-        gradient.addColorStop(0, electric);
-        gradient.addColorStop(.3, peach);
-        gradient.addColorStop(.5, hotpink);
+        gradient.addColorStop(0, sunTop);
+        gradient.addColorStop(.3, sunMiddle);
+        gradient.addColorStop(.5, sunBottom);
         gradient.addColorStop(.5, dullpink);
         gradient.addColorStop(1, darkmagenta);
 
