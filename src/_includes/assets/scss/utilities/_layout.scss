@@ -119,6 +119,9 @@
 .u-paddingBlockStart {
     padding-top: #{ $spacing } !important;
 }
+.u-paddingBlockStart--none {
+    padding-top: 0 !important;
+}
 
 
 /* Float */
@@ -168,7 +171,7 @@
 .u-container {
     width: 100%;
     max-width: $container-max-width-em;
-    @extend .u-paddingInline--double;
+    @extend .u-padding--double;
     margin-left: auto;
     margin-right: auto;
 }
