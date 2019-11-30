@@ -1,5 +1,5 @@
 (function(){ // Based on https://codepen.io/exonj/pen/QYLLmL
-    const canvasEl = document.getElementById('homescreen-scene');
+    const canvasEl = window.sceneCanvas;
     const darkmagenta = '#3c0328';
     const dullpink = '#9d3472';
     const electric = '#f0c54f';
@@ -9,33 +9,6 @@
     const sunTop = '#ed23af';
     const sunMiddle = '#ffafa3';
     const sunBottom = '#ffffe9';
-    // const horizonNear = '#0a0634';
-    // const horizonFar = '#791e74';
-    // const mountainCount = 8;
-    // let mountains = [];
-    
-    // for (let c = 0; c < mountainCount; c++) {
-    //     // Make the factor stronger towards the middle of the set (probably not a real bell curve, this is my own implementation)
-    //     const bellCurveFactor = Math.abs(c - mountainCount/2) * -1 + mountainCount/2;
-    //     const mHeightFactor = bellCurveFactor / (mountainCount/2);
-
-    //     // Place the centre point based on the index of the item
-    //     const mCentreFactor = c / mountainCount + (Math.random() - .5) / 10;
-        
-    //     // Make the width factor between .25 and 1.
-    //     const mWidthFactor = Math.max(.25, Math.min(1, Math.random()*2));
-        
-    //     // Place the factor within 25% of the centre point, on either side
-    //     const mApexPositionFactor = .5 + (Math.random() - .5) / 4;
-    //     const mData = {
-    //         widthFactor: mWidthFactor,
-    //         heightFactor: mHeightFactor,
-    //         centreFactor: mCentreFactor,
-    //         apexFactor: mApexPositionFactor
-    //     };
-
-    //     mountains.push(mData);
-    // }
 
     function getContext(width, height) {
         if (width > window.innerWidth) { width = window.innerWidth; }
@@ -53,27 +26,12 @@
         ctx.stroke();
     }
 
-    // function drawMountain(ctx, base, tHeight, x1, x2, x3, fillStyle) {
-    //     ctx.beginPath();
-    //     ctx.moveTo(x1, base);
-    //     ctx.lineTo(x2, base - tHeight);
-    //     ctx.lineTo(x3, base);
-    //     ctx.fillStyle = fillStyle;
-    //     ctx.fill();
-    //     ctx.stroke();
-    // }
-
     const pageStart = new Date();
 
     function draw() {
         const width = canvasEl.parentElement.clientWidth;
         const height = canvasEl.parentElement.clientHeight;
         const ctx = getContext(width, height);
-
-        if (ctx === null) {
-            canvasEl.parentElement.removeChild(canvasEl);
-            return;
-        }
 
         ctx.clearRect(0, 0, width, height);
 
@@ -160,59 +118,12 @@
             ctx.strokeStyle = cyan;
             drawLine(ctx, x + xSpreadLower, height, x, lowerHorizon);
         }
-
-        // const mountainsCentre = Math.floor(width/2);
-        // const mountainsMaxWidth = Math.floor(width/4);
-        // const mountainsMaxHeight = Math.floor(height/8);
-        // const horizonGradient = ctx.createLinearGradient(0, lowerHorizon, 0, height/8);
-        // horizonGradient.addColorStop(0, horizonNear);
-        // horizonGradient.addColorStop(1, horizonFar);
-
-        // for (let m of mountains) {
-        //     const mWidth = mountainsMaxWidth * m.widthFactor;
-        //     const mHeight = mountainsMaxHeight * m.heightFactor;
-        //     const mCentre = width * m.centreFactor + mWidth/2;
-        //     const mApex = mWidth * (m.apexFactor - .5);
-
-        //     drawMountain(ctx, lowerHorizon, mHeight, mCentre-mWidth/2, mCentre+mApex, mCentre+mWidth/2, horizonGradient);
-        //     drawLine(ctx, mCentre+mApex, lowerHorizon-mHeight, mCentre, lowerHorizon); // Draw median line through triangle
-        // }
         
-        if (!window.prefersReducedMotion) { // Only animate if user doesn't prefer reduced motion
+        // Only animate if user doesn't prefer reduced motion
+        if (!window.prefersReducedMotion) {
             window.requestAnimationFrame(draw);
         }
     }
 
     draw();
 })();
-
-// (function() {
-//     if (!window.prefersReducedMotion) {
-//         // Type in creative developer
-//         const creativeDeveloperNode = document.getElementById('svg-mark-creative-developer-text');
-//         const creativeDeveloperText = creativeDeveloperNode.innerHTML; // Capture initial text
-//         const creativeDeveloperStartDelay = 3250; // ms
-//         let creativeDeveloperIndex = 0;
-//         let creativeDeveloperTick = 0;
-//         let creativeDeveloperRefreshRate = 4; // frames
-//         creativeDeveloperNode.innerHTML = ''; // Reset
-//         creativeDeveloperNode.classList.remove('svg-mark__creativedeveloper-group'); // Remove animation classes
-//         creativeDeveloperNode.classList.remove('svg-mark__group'); // Remove animation classes
-//         creativeDeveloperNode.setAttribute('aria-hidden', 'true'); // Ensure the updating text node is not read
-//         creativeDeveloperNode.parentNode.setAttribute('aria-label', creativeDeveloperText); // Ensure the wrapping text has the final value as a label
-
-//         const typeCreativeDeveloper = function() {
-//             if (creativeDeveloperTick % creativeDeveloperRefreshRate === 0) {
-//                 creativeDeveloperNode.innerHTML += creativeDeveloperText[creativeDeveloperIndex];
-//                 creativeDeveloperIndex++;
-//             }
-            
-//             creativeDeveloperTick++;
-
-//             if (typeof creativeDeveloperText[creativeDeveloperIndex] === 'undefined') { return; }
-//             window.requestAnimationFrame(typeCreativeDeveloper);
-//         }
-
-//         setTimeout(typeCreativeDeveloper, creativeDeveloperStartDelay);
-//     }
-// })();
