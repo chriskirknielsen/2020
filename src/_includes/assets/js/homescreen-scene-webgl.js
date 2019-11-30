@@ -95,9 +95,7 @@
             const c = renderer.domElement;
             const size = getCanvasSize();
             const needResize = c.width !== size.w || c.height !== size.h;
-            if (needResize) {
-              renderer.setSize(size.w, size.h, false);
-            }
+            
             return needResize;
         }
 
@@ -110,7 +108,10 @@
 
             if (resizeRendererToDisplaySize(renderer)) {
                 camera.aspect = size.w / size.h;
+                // camera.position.set(0, 1, 60); // Raise right above horizon
+                // camera.lookAt(new THREE.Vector3(0,.5,0)); // Move down so the grid's far end meets the horizon
                 camera.updateProjectionMatrix();
+                renderer.setSize(size.w, size.h);
             }
 
             renderer.render(scene, camera);
