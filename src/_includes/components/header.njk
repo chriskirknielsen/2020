@@ -1,17 +1,17 @@
 <header class="header u-bg--primary-max">
-    <div class="u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-paddingBlock">
-        <span class="visually-hidden">Christopher Kirk-Nielsen: Homepage</span>
-
+    <div class="header__component u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-paddingBlock">
         {%- set svg_brand_classes = "header__svg header__logo" -%}
         {%- set svg_brand_path_classes = "header__logo-path" -%}
-        <a href="{{ metadata.languages[locale].path | url }}" class="header__link u-marginInlineEnd u-c--secondary-med u-c:h--secondary-min">
+        <a href="{{ metadata.languages[locale].path | url }}" class="header__link u-marginInlineEnd--auto u-marginInlineEnd u-c--secondary-med u-c:h--grey-min" title="{{ header[locale].rssHint }}" aria-label="{{ header[locale].rssHint }}">
             {% include "assets/img/ckn.svg" %}
         </a>
 
-        {% include "components/nav.njk" %}
+        <nav class="nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock u-marginInlineEnd header__component--cancelMarginIfFlexGap">
+            {% include "components/nav.njk" %}
+        </nav>
 
         {%- set svg_rss_classes = "header__svg header__rss" -%}
-        <a href="{{ localePath }}feed.xml" class="u-c--grey-min u-c:h--grey-max u-bg:h--secondary-med u-flex--shrink--none u-marginInlineStart">
+        <a href="{{ localePath }}feed.xml" class="u-c--grey-min u-c:h--grey-max u-bg:h--secondary-med u-flex--shrink--none">
             {% include "assets/img/rss.svg" %}
         </a>
     </div>

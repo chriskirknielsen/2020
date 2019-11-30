@@ -18,10 +18,5 @@
         "tagged": "Tagged"
     },
     "langSwitchLabel": "Switch Language",
-    "schemeSwitchLabel": "Toggle Colour Scheme",
-    "footer": {
-        "allRights": "All rights reserved",
-        "langLabel": "Language",
-        "buildInfo": "Site built with <a href=\"https://www.11ty.io\" rel=\"noopener noreferrer\">11ty</a>, hosted on <a href=\"https://netlify.com\" rel=\"noopener noreferrer\">Netlify</a>"
-    }
+    "schemeSwitchLabel": "Toggle Colour Scheme"
 }
