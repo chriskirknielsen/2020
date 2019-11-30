@@ -1,18 +1,5 @@
 .footer {
-    // border-top: .125em solid var(--c-grey-med);
-    
-    > * {
-        flex-basis: calc((#{ $medium-breakpoint-width } - (100% - #{ $spacing })) * 999);
-    }
-
-    &__copyright {
-        flex-grow: 2;
-    }
-
-    &__language,
-    &__social {
-        flex-grow: 1;
-    }
+    outline: .125em solid var(--c-secondary-med);
 
     &__language {
         &-item {
@@ -28,12 +15,6 @@
     }
 
     &__social {
-        &-item {
-            &:not(:first-child) {
-                margin-left: 1em;
-            }
-        }
-
         &-link > svg {
             fill: currentColor;
             width: 1.5rem;
