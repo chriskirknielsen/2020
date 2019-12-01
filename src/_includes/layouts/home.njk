@@ -5,7 +5,7 @@ section: home
 
 <section class="homescreen u-displayFlex u-flex--stretch u-padding--double" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
 	<div class="homescreen__wrapper u-displayFlex u-flex--centre u-posRelative u-afterCover u-width--100">
-        <div class="homescreen__background u-posAbsolute u-absCover u-bg--primary-max" aria-hidden="true">
+        <div class="homescreen__background u-posAbsolute u-absCover u-bg--primary-max u-overflowHidden" aria-hidden="true">
             <canvas id="homescreen-scene" class="homescreen__scene"></canvas>
         </div>
 
@@ -16,10 +16,49 @@ section: home
             {{ ckn_mark | htmlmin | safe }}
         </div>
         
-        <script src="{{ '/assets/jsmin/homescreen-scene.min.js' | url }}" deferred></script>
+        <script type="text/javascript">
+        {% set scene_script %}
+            (function(){
+                var scene = document.getElementById('homescreen-scene');
+                var sceneRender = 'webgl'; // Default value
+                var sceneCtx = null;//scene.getContext('webgl') || scene.getContext("experimental-webgl");
+                var addHomescreenSceneScript = function(ctx) {
+                    if (ctx === null) {
+                        scene.parentElement.removeChild(scene);
+                        return;
+                    }
+
+                    if (ctx === 'webgl') {
+                        sceneScriptUrl = "{{ '/assets/jsmin/homescreen-scene-webgl.min.js' | url }}";
+                    }
+                    else if (ctx === '2d') {
+                        sceneScriptUrl = "{{ '/assets/jsmin/homescreen-scene-2d.min.js' | url }}";
+                    }
+
+                    window.sceneCanvas = scene; // Accessible in the global scope
+
+                    var sceneScript = document.createElement('script');
+                    sceneScript.src = sceneScriptUrl;
+                    sceneScript.setAttribute('deferred', true);
+                    
+                    document.body.appendChild(sceneScript);
+                }
+
+                if (sceneCtx === null) {
+                    sceneRender = '2d';
+                    sceneCtx = scene.getContext('2d');
+
+                    if (sceneCtx === null) { sceneRender = null; }
+                }
+
+                addHomescreenSceneScript(sceneRender);
+            })();
+        {% endset %}
+        {{ scene_script | jsmin | safe }}
+        </script>
     </div>
 </section>
 
-<section class="u-marginBlockEnd--double u-marginBlockStart--none u-paddingBlockStart--none u-container u-flow">
+<section class="u-marginBlockStart--none u-paddingBlockStart--none u-container u-flow">
     {{ layoutContent | safe }}
 </section>

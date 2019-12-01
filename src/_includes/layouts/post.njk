@@ -3,7 +3,7 @@ layout: layouts/base.njk
 section: post
 ---
 
-<article class="u-container u-flow">
+<article class="u-flow">
   <h1>{{ title }}</h1>
   <p>
     <small>
@@ -19,6 +19,7 @@ section: post
 
   {% if tags %}
     <p>
+    <span class="u-fontBold">{{ localisedContent.tagged }}:</span>
     {% for tag in tags %}
       {%- if tag != "post" -%}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}

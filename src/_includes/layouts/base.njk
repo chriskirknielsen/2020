@@ -9,7 +9,7 @@
 
 		{% include "components/header.njk" %}
 		
-		<main class="main {% if section != 'home' %}u-container{% endif %} fluid-type" id="content" tabindex="-1">
+		<main class="main {% if section != 'home' %}u-container{% endif %} u-overflowHidden fluid-type" id="content" tabindex="-1">
 			{{ layoutContent | safe }}
 		</main>
 

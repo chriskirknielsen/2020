@@ -7,12 +7,14 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const slugify = require("slugify");
 const Prism = require('prismjs');
+const blogTools = require("eleventy-plugin-blog-tools");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
 	/* PLUGINS */
-	eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(blogTools);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ["md","html","njk"]
   });

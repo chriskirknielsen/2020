@@ -10,7 +10,6 @@
             position: absolute;
             z-index: 1;
             top: 100%;
-            // top: calc(100% - 2px); // Prevent sub-pixel gaps
             left: 0;
             right: 0;
             width: 0;
@@ -29,13 +28,6 @@
     }
 
     &__background {
-        // Canvas fallback
-        background-image: url(https://i.pinimg.com/originals/5b/17/b2/5b17b2b4f26aa523dca15fbf902223b4.jpg); // PLACEHOLDER
-        background-size: cover;
-        background-position: 50% 50%;
-    }
-
-    &__scene {
         $grad1: #0a0634;
         $grad2: #791e74;
         background:
@@ -51,7 +43,7 @@
                 #{ c('primary', 'max') } 50%,
                 #{ c('grey', 'max') } 100%
             );
-        background-color: c('primary', 'max'); // Hardcode since we don't want this to be affected by colour schemes
+        background-color: c('primary', 'max') !important; // Hardcode since we don't want this to be affected by colour schemes
     }
 
     &__svg-wrapper {

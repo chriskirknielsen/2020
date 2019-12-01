@@ -14,4 +14,14 @@
             fill: var(--c, currentColor);
         }
     }
+
+    @supports (gap: 1em) {
+        &__component {
+            gap: #{ $spacing };
+            
+            &--cancelMarginIfFlexGap[class] { // Increased specificity
+                margin: 0 !important;
+            }
+        }
+    }
 }
