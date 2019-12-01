@@ -83,7 +83,7 @@
         /* Sky layer */
         background:
             radial-gradient(ellipse 150% 20% at 50% 100%,
-                gradient-stops($sc: $sun-glow, $sa: 1, $ec: $sun-glow, $ea: 0, $sp: 0%, $ep: 50%, $s: 16, $ease: 'in-out'),
+                gradient-stops($sc: $sun-glow, $sa: .75, $ec: $sun-glow, $ea: 0, $sp: 0%, $ep: 50%, $s: 12),
             ) no-repeat 50% 0 / 100% 50%,
 
             linear-gradient(
