@@ -25,12 +25,12 @@
 
         camera.position.set(0, 1, 60); // Raise right above horizon
         // camera.lookAt(scene.position);
-        camera.lookAt(new THREE.Vector3(0,.5,0)); // Move down so the grid's far end meets the horizon
+        camera.lookAt(new THREE.Vector3(0,-.5,0)); // Move down so the grid's far end meets the horizon
         var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
         renderer.setSize(width, height);
 
         var division = 80;
-        var limit = 100;
+        var limit = 60;
         var grid = new THREE.GridHelper(limit * 2, division, cyan, cyan);
 
         var moveable = [];
@@ -50,7 +50,7 @@
                     value: new THREE.Vector2(-limit, limit)
                 },
                 speed: {
-                    value: 5
+                    value: 3
                 }
             },
             vertexShader: `
@@ -100,7 +100,9 @@
         }
 
         function render() {
-            requestAnimationFrame(render);
+            if (!window.prefersReducedMotion) {
+                requestAnimationFrame(render);
+            }
 
             const size = getCanvasSize();
             time += clock.getDelta();
@@ -108,8 +110,6 @@
 
             if (resizeRendererToDisplaySize(renderer)) {
                 camera.aspect = size.w / size.h;
-                // camera.position.set(0, 1, 60); // Raise right above horizon
-                // camera.lookAt(new THREE.Vector3(0,.5,0)); // Move down so the grid's far end meets the horizon
                 camera.updateProjectionMatrix();
                 renderer.setSize(size.w, size.h);
             }

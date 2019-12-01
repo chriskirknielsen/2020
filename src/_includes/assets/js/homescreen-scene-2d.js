@@ -10,6 +10,10 @@
     const sunMiddle = '#ffafa3';
     const sunBottom = '#ffffe9';
 
+    function easeFn(t) {
+        return t*(2-t);
+    }
+
     function getContext(width, height) {
         if (width > window.innerWidth) { width = window.innerWidth; }
         if (height > window.innerHeight) { height = window.innerHeight; }
@@ -47,7 +51,7 @@
         for (let t in speeds) { periods[t] = (now % speeds[t]) / speeds[t]; }
 
         const MAX_HLINES = Math.floor(width / 10);
-        let VLINES = Math.floor(width / 24);
+        let VLINES = Math.floor(width / 48);
         if (VLINES % 2 !== 0) { VLINES += 1; } // Always keep a vertical line in the centre
 
         const HSPREAD = 32000;
@@ -58,6 +62,7 @@
         const sunCenter = lowerHorizon + 1;
         const sunRadius = ((width < height) ? width : height) / 4;
         const sunBlindCount = 8;
+        const sunGlowRadius = 32;
         const rectHeight = (sunRadius / sunBlindCount) / 2; // Height of individual "blind" is half of each blind and their counter (empty) space
         const gradient = ctx.createLinearGradient(0, sunCenter-sunRadius, 0, sunCenter+sunRadius);
         gradient.addColorStop(0, sunTop);
@@ -98,12 +103,13 @@
 
         ctx.restore(); // Stop clipping
 
+        ctx.strokeStyle = cyan;
+
         // Draw horizontal lines
         for (let i = 0; i < MAX_HLINES; i++) {
-            const dy = Math.pow(1.5, i + periods.vScroll);
+            const dy = Math.pow(5, i + periods.vScroll);
             const lowerY = lowerHorizon - 1 + dy;
-
-            ctx.strokeStyle = cyan;
+            
             drawLine(ctx, 0, lowerY, width, lowerY);
 
             if (lowerY > height) break;
@@ -115,9 +121,38 @@
             const x = width * (i / VLINES);
             const xSpreadLower = ((HSPREAD - z) * 2 / width) * x - (HSPREAD - z);
 
-            ctx.strokeStyle = cyan;
             drawLine(ctx, x + xSpreadLower, height, x, lowerHorizon);
         }
+
+        // Start glow
+        for (let g = 0; g <= sunGlowRadius; ++g) {
+            let eased = easeFn(g/sunGlowRadius);
+            let hexOpacity = (255 - Math.floor(eased * 128) - 127).toString(16);
+            if (hexOpacity.length < 2) hexOpacity = '0' + hexOpacity;
+            ctx.beginPath();
+            ctx.arc(width/2, sunCenter, sunRadius+g, Math.PI, 0);
+            ctx.strokeStyle = sunTop + hexOpacity;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        for (let h = 0; h <= sunGlowRadius; ++h) {
+            let eased = easeFn(h/sunGlowRadius);
+            let hexOpacity = (255 - Math.floor(eased * 128) - 127).toString(16);
+            if (hexOpacity.length < 2) hexOpacity = '0' + hexOpacity;
+            ctx.beginPath();
+            ctx.arc(width/2, sunCenter, sunRadius-h, Math.PI, 0);
+            ctx.strokeStyle = sunTop + hexOpacity;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.closePath();
+        }
+        // End glow
+
+        // Cover the horizon aliasing
+        ctx.lineWidth = 2;
+        drawLine(ctx, 0, lowerHorizon, width, lowerHorizon);
         
         // Only animate if user doesn't prefer reduced motion
         if (!window.prefersReducedMotion) {

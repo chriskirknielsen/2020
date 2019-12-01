@@ -21,7 +21,7 @@ section: home
             (function(){
                 var scene = document.getElementById('homescreen-scene');
                 var sceneRender = 'webgl'; // Default value
-                var sceneCtx = scene.getContext('webgl') || scene.getContext("experimental-webgl");
+                var sceneCtx = null;//scene.getContext('webgl') || scene.getContext("experimental-webgl");
                 var addHomescreenSceneScript = function(ctx) {
                     if (ctx === null) {
                         scene.parentElement.removeChild(scene);
@@ -45,9 +45,10 @@ section: home
                 }
 
                 if (sceneCtx === null) {
+                    sceneRender = '2d';
                     sceneCtx = scene.getContext('2d');
+
                     if (sceneCtx === null) { sceneRender = null; }
-                    else { sceneRender = '2d'; }
                 }
 
                 addHomescreenSceneScript(sceneRender);
