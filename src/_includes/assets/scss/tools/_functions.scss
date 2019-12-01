@@ -27,6 +27,22 @@
     @return strip-unit($rem) * strip-unit($rem-in-px) * 1px;
 }
 
+// Get a cubic-eased number, with $t beloging to [0,1]
+// Based on the formulas from gre (Gaëtan Renaudeau): https://gist.github.com/gre/1650294
+@function easeInOutNum($t) {
+    @if $t < .5 { @return 4 * $t * $t * $t; }
+    @return ($t - 1) * ( 2 * $t - 2) * (2 * $t - 2) + 1;
+}
+
+@function easeInNum($t) {
+    @return $t * $t * $t;
+}
+
+@function easeOutNum($t) {
+    $t: $t - 1;
+    @return $t * $t * $t + 1;
+}
+
 @function pow($number, $exponent) {
     $value: 1;
 
@@ -141,23 +157,53 @@
     }
 }
 
-// Returns a list of color stops for gradients using Andreas Larsen's Scrim gradient technique
-@function smooth-gradient($color-name, $alpha-max: 100, $alpha-min: 0) {
-    @return
-        c($color-name, remap-number(1.000, 0, 1, $alpha-min, $alpha-max))  0.0%,
-        c($color-name, remap-number(0.987, 0, 1, $alpha-min, $alpha-max))  8.1%,
-        c($color-name, remap-number(0.951, 0, 1, $alpha-min, $alpha-max)) 15.5%,
-        c($color-name, remap-number(0.896, 0, 1, $alpha-min, $alpha-max)) 22.5%,
-        c($color-name, remap-number(0.825, 0, 1, $alpha-min, $alpha-max)) 29.0%,
-        c($color-name, remap-number(0.741, 0, 1, $alpha-min, $alpha-max)) 35.3%,
-        c($color-name, remap-number(0.648, 0, 1, $alpha-min, $alpha-max)) 41.2%,
-        c($color-name, remap-number(0.550, 0, 1, $alpha-min, $alpha-max)) 47.1%,
-        c($color-name, remap-number(0.450, 0, 1, $alpha-min, $alpha-max)) 52.9%,
-        c($color-name, remap-number(0.352, 0, 1, $alpha-min, $alpha-max)) 58.8%,
-        c($color-name, remap-number(0.259, 0, 1, $alpha-min, $alpha-max)) 64.7%,
-        c($color-name, remap-number(0.175, 0, 1, $alpha-min, $alpha-max)) 71.0%,
-        c($color-name, remap-number(0.104, 0, 1, $alpha-min, $alpha-max)) 77.5%,
-        c($color-name, remap-number(0.049, 0, 1, $alpha-min, $alpha-max)) 84.5%,
-        c($color-name, remap-number(0.013, 0, 1, $alpha-min, $alpha-max)) 91.9%,
-        c($color-name, remap-number(0.000, 0, 1, $alpha-min, $alpha-max))  100%;
+/** 
+ * Returns a list of color stops
+ * @param $sc: Start color: fully opaque value
+ * @param $sa: Start alpha: [0,1]
+ * @param $ec: End color: fully opaque value
+ * @param $ea: End alpha: [0,1]
+ * @param $sp: Start point (length value)
+ * @param $ep: End point (length value)
+ * @param $s: Stops: Number of stops
+ * @param $xb: Exclude boundaries: doesn't output the boundary stops
+ */
+@function gradient-stops($sc: #000, $sa: 1, $ec: #000, $ea: 0, $sp: 0%, $ep: 100%, $s: 8, $xb: false, $ease: 'in-out') {
+    $stops : (); // Initialise the stops
+
+    // Add start boundary
+    @if ($xb == false) {
+        $stops: append($stops, 
+            (#{ rgba($sc, $sa) } #{ $sp })
+        );
+    }
+
+    // Add stops
+    @for $stop from 1 to $s {
+        $progress: $stop / $s; // Returns a decimal belonging to ]0,1[
+        $easing-value: easeInOutNum($progress); // Get the ease-mapped value
+        @if ($ease == 'in') { $easing-value: easeInNum($progress); }
+        @else if ($ease == 'out') { $easing-value: easeOutNum($progress); }
+        $mix-value: percentage($easing-value); // Compute the percentage
+        $colour-value: $sc;
+        @if ($sc != $ec) { // Only mix colours if they differ
+            $colour-value: mix($sc, $ec, $mix-value);
+        }
+        $alpha-value: remap-number($easing-value, 0, 1, $sa, $ea);
+        $position-value: remap-number($progress, 0, 1, $sp, $ep);
+        
+        $stops: append($stops,
+            (#{ rgba($colour-value, $alpha-value) } #{ $position-value })
+        );
+    }
+
+    // Add end boundary
+    @if ($xb == false) {
+        $stops: append($stops,
+            (#{ rgba($ec, $ea) } #{ $ep })
+        );
+    }
+
+    // Return comma-separated list of stops
+    @return zip($stops);
 }
