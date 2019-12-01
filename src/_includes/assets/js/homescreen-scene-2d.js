@@ -28,6 +28,7 @@
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
         ctx.stroke();
+        ctx.closePath();
     }
 
     const pageStart = new Date();
@@ -57,7 +58,7 @@
         const HSPREAD = 32000;
         const z = HSPREAD * 0.05;
         const lowerHorizon = height / 2;
-
+        /*
         // Half-sun
         const sunCenter = lowerHorizon + 1;
         const sunRadius = ((width < height) ? width : height) / 4;
@@ -102,7 +103,7 @@
         // End sun
 
         ctx.restore(); // Stop clipping
-
+        */
         ctx.strokeStyle = cyan;
 
         // Draw horizontal lines
@@ -125,29 +126,20 @@
         }
 
         // Start glow
-        for (let g = 0; g <= sunGlowRadius; ++g) {
-            let eased = easeFn(g/sunGlowRadius);
-            let hexOpacity = (255 - Math.floor(eased * 128) - 127).toString(16);
-            if (hexOpacity.length < 2) hexOpacity = '0' + hexOpacity;
-            ctx.beginPath();
-            ctx.arc(width/2, sunCenter, sunRadius+g, Math.PI, 0);
-            ctx.strokeStyle = sunTop + hexOpacity;
-            ctx.lineWidth = 1.5;
-            ctx.stroke();
-            ctx.closePath();
-        }
-
-        for (let h = 0; h <= sunGlowRadius; ++h) {
-            let eased = easeFn(h/sunGlowRadius);
-            let hexOpacity = (255 - Math.floor(eased * 128) - 127).toString(16);
-            if (hexOpacity.length < 2) hexOpacity = '0' + hexOpacity;
-            ctx.beginPath();
-            ctx.arc(width/2, sunCenter, sunRadius-h, Math.PI, 0);
-            ctx.strokeStyle = sunTop + hexOpacity;
-            ctx.lineWidth = 1.5;
-            ctx.stroke();
-            ctx.closePath();
-        }
+        // for (let g = -1*sunGlowRadius; g <= sunGlowRadius; ++g) {
+        //     const valueMax = 255;
+        //     const glowMaxValue = 128;
+        //     let eased = easeFn(Math.abs((g/sunGlowRadius))); // Get the easing value in the [0,1] range
+        //     let hexOpacity = (valueMax - Math.floor(eased * glowMaxValue) - (valueMax - glowMaxValue)).toString(16); // Get the hexidecimal value
+        //     if (hexOpacity.length < 2) hexOpacity = '0' + hexOpacity; // Pad with a 0 if the result is a single character
+            
+        //     ctx.beginPath();
+        //     ctx.arc(width/2, sunCenter, sunRadius+g, Math.PI, 0);
+        //     ctx.strokeStyle = sunTop + hexOpacity;
+        //     ctx.lineWidth = 1.5;
+        //     ctx.stroke();
+        //     ctx.closePath();
+        // }
         // End glow
 
         // Cover the horizon aliasing

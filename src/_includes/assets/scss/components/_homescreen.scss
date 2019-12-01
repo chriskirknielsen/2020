@@ -28,22 +28,90 @@
     }
 
     &__background {
-        $grad1: #0a0634;
-        $grad2: #791e74;
-        background:
+        $sun-radius: 20vmin;
+        $sun-blind-size: $sun-radius / 12;
+        $sky-start: #0a0634;
+        $sky-end: #791e74;
+        $sun-top: #ed23af;
+        $sun-middle: #ffafa3;
+        $sun-bottom: #ffffe9;
+        $sun-ref-top: #9d3472;
+        $sun-ref-bottom: #3c0328;
+        $sun-glow: $sun-top;
+
+        $sun-fallback: radial-gradient(circle at 50% 100%,
+                #{ $sun-bottom } 0,
+                #{ $sun-middle } #{ $sun-radius / 2 },
+                #{ $sun-top } #{ $sun-radius },
+                #{ rgba($sun-glow, .5) } #{ $sun-radius },
+                transparent #{ $sun-radius * 1.0625 }
+            ) no-repeat 50% 0 / 100% 50%;
+
+        $sun-mask-disk: radial-gradient(circle at 50% 50%,
+                red #{ $sun-radius * 0.999 },
+                transparent #{ $sun-radius * 1.001 }
+            ) no-repeat 50% 50%;
+        $sun-mask-lines: repeating-linear-gradient(
+                red 0,
+                red #{ $sun-blind-size },
+                transparent #{ $sun-blind-size },
+                transparent #{ $sun-blind-size * 2 }
+            ) repeat-x 50% 100% / 100% 50%;
+
+        $sun-gradient:
+            // radial-gradient(circle at 50% 100%,
+            //     #{ rgba($sun-glow, 0) } #{ $sun-radius * .75 },
+            //     #{ rgba($sun-glow, .5) } #{ $sun-radius }
+            // ) no-repeat 50% 0 / 100% 50%,
+            
+            linear-gradient(180deg,
+                #{ $sun-top } 0,
+                #{ $sun-middle } 30%,
+                #{ $sun-bottom } 50%,
+                #{ $sun-ref-top } 50%,
+                #{ $sun-ref-bottom } 100%
+            ) no-repeat 50% 50% / 100% #{ $sun-radius * 2 };
+        $sun-glow-gradient:
             radial-gradient(circle at 50% 100%,
-                #{ c('primary', 'med', 25) } 0,
-                #{ c('primary', 'med', 0) } 50%
+                #{ rgba($sun-glow, 0) } #{ $sun-radius * .875 },
+                gradient-stops($sc: $sun-glow, $sa: 0, $ec: $sun-glow, $ea: .5, $sp: $sun-radius * .875, $ep: $sun-radius, $s: 4, $xb: true, $ease: 'in'),
+                #{ rgba($sun-glow, .75) } #{ $sun-radius },
+                gradient-stops($sc: $sun-glow, $sa: .75, $ec: $sun-glow, $ea: 0, $sp: $sun-radius, $ep: $sun-radius * 1.375, $s: 8, $xb: true, $ease: 'out'),
+                #{ rgba($sun-glow, 0) } #{ $sun-radius * 1.25 }
+            ) no-repeat 50% 0 / 100% 50%;
+
+        /* Sky layer */
+        background:
+            radial-gradient(ellipse 150% 20% at 50% 100%,
+                gradient-stops($sc: $sun-glow, $sa: 1, $ec: $sun-glow, $ea: 0, $sp: 0%, $ep: 50%, $s: 16, $ease: 'in-out'),
             ) no-repeat 50% 0 / 100% 50%,
 
             linear-gradient(
-                #{ $grad1 } 0%,
-                #{ $grad2 } 45%,
-                #{ mix( $grad2, c('primary', 'med'), 60% ) } 50%,
+                #{ $sky-start } 0%,
+                #{ $sky-end } 50%,
                 #{ c('primary', 'max') } 50%,
                 #{ c('grey', 'max') } 100%
             );
         background-color: c('primary', 'max') !important; // Hardcode since we don't want this to be affected by colour schemes
+
+        /* Sun layer */
+        &::before {
+            background: #{ $sun-fallback };
+        }
+
+        @supports (mask-image: linear-gradient(0deg,red,red)) or (-webkit-mask-image: linear-gradient(0deg,red,red)) {
+            &::before {
+                background: #{ $sun-gradient };
+                -webkit-mask: #{ $sun-mask-disk }, #{ $sun-mask-lines };
+                -webkit-mask-composite: source-out;
+                        mask: #{ $sun-mask-disk } subtract, #{ $sun-mask-lines };
+            }
+
+            &::after {
+                background: #{ $sun-glow-gradient };
+            }
+        }
+
     }
 
     &__svg-wrapper {
