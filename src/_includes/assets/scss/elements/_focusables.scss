@@ -12,14 +12,8 @@ button {
     &:focus:not(:focus-visible) {
         outline: none;
     }
-
-    // @-moz-document url-prefix() {
-    //     &:focus{
-    //         outline: none;
-    //     }
         
-    //     &:-moz-focusring {
-    //         outline: 4px dashed var(--colour-secondary);
-    //     }
-    // }
+    &:focus:not(:-moz-focusring) {
+        outline: none;
+    }
 }
