@@ -74,7 +74,7 @@
         $sun-glow-gradient:
             radial-gradient(circle at 50% 100%,
                 #{ rgba($sun-glow, 0) } #{ $sun-radius * .875 },
-                gradient-stops($sc: $sun-glow, $sa: 0, $ec: $sun-glow, $ea: .5, $sp: $sun-radius * .875, $ep: $sun-radius, $s: 4, $xb: true, $ease: 'in'),
+                gradient-stops($sc: $sun-glow, $sa: 0, $ec: $sun-glow, $ea: .5, $sp: $sun-radius * .875, $ep: $sun-radius, $s: 6, $xb: true, $ease: 'in'),
                 #{ rgba($sun-glow, .75) } #{ $sun-radius },
                 gradient-stops($sc: $sun-glow, $sa: .75, $ec: $sun-glow, $ea: 0, $sp: $sun-radius, $ep: $sun-radius * 1.375, $s: 8, $xb: true, $ease: 'out'),
                 #{ rgba($sun-glow, 0) } #{ $sun-radius * 1.25 }
@@ -82,10 +82,12 @@
 
         /* Sky layer */
         background:
+            // Horizon glow
             radial-gradient(ellipse 150% 20% at 50% 100%,
                 gradient-stops($sc: $sun-glow, $sa: .75, $ec: $sun-glow, $ea: 0, $sp: 0%, $ep: 50%, $s: 12),
             ) no-repeat 50% 0 / 100% 50%,
 
+            // Full sky
             linear-gradient(
                 #{ $sky-start } 0%,
                 #{ $sky-end } 50%,
