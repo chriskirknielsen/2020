@@ -52,10 +52,10 @@
                 transparent #{ $sun-radius * 1.001 }
             ) no-repeat 50% 50%;
         $sun-mask-lines: repeating-linear-gradient(
-                red 0,
-                red #{ $sun-blind-size },
-                transparent #{ $sun-blind-size },
-                transparent #{ $sun-blind-size * 2 }
+                red var(--ckn-sun-mask-lines),
+                red calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size } ),
+                transparent calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size } ),
+                transparent calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size * 2 } )
             ) repeat-x 50% 100% / 100% 50%;
 
         $sun-gradient:
@@ -112,6 +112,13 @@
             &::after {
                 background: #{ $sun-glow-gradient };
             }
+        }
+
+        /* Animating the sun's blinds */
+        --ckn-sun-mask-lines: #{ $sun-blind-size };
+        animation: sunMaskLines 1s linear infinite;
+        @keyframes sunMaskLines {
+            0% { --ckn-sun-mask-lines: #{ $sun-blind-size * -1 }; }
         }
 
     }
