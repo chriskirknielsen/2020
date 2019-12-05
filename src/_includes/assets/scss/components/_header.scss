@@ -1,7 +1,4 @@
 .header {
-    background-size: #{ $header-brand-height } #{ $header-brand-height };
-    background-position: #{ $spacing * 2 } 50%; // Copy the horizontal offset from the padding
-
     outline: .125em solid var(--c-secondary-med);
 
     &__svg {
