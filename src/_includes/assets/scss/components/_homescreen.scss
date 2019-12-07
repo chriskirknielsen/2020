@@ -115,10 +115,11 @@
         }
 
         /* Animating the sun's blinds */
-        --ckn-sun-mask-lines: #{ $sun-blind-size };
+        --ckn-sun-mask-lines: #{ $sun-blind-size * 0 };
         animation: sunMaskLines 1s linear infinite;
         @keyframes sunMaskLines {
             0% { --ckn-sun-mask-lines: #{ $sun-blind-size * -1 }; }
+            100% { --ckn-sun-mask-lines: #{ $sun-blind-size }; }
         }
 
     }
