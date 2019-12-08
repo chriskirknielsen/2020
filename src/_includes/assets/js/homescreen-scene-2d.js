@@ -148,7 +148,7 @@
         
         // Only animate if user doesn't prefer reduced motion
         if (!window.prefersReducedMotion) {
-            window.requestAnimationFrame(draw);
+            // window.requestAnimationFrame(draw);
         }
     }
 
