@@ -108,6 +108,18 @@
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
+    &__kirknielsen-paths {
+        > path {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+            stroke-dashoffset: 0px;
+            
+            transition: stroke-dashoffset .15s ease-out; 
+        }
+    }
+
     &__creativedeveloper-group {
         opacity: 0;
         transform: translate(25%, 0);

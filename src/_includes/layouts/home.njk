@@ -5,7 +5,7 @@ section: home
 
 <section class="homescreen u-displayFlex u-flex--stretch u-breakout u-paddingInline--double" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
 	<div class="homescreen__wrapper u-displayFlex u-flex--centre u-posRelative u-afterCover u-width--100">
-        <div class="homescreen__background u-posAbsolute u-absCover u-bg--primary-max u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
+        <div class="homescreen__background u-displayFlex u-flex--centre u-posAbsolute u-absCover u-bg--primary-max u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
             <canvas id="homescreen-scene" class="homescreen__scene u-posRelative"></canvas>
         </div>
 
@@ -18,6 +18,23 @@ section: home
         
         <script type="text/javascript">
         {% set scene_script %}
+            (function(){
+                var pathInitialDelay = 800;
+                var pathDrawDelay = 100;
+                var cknMarkKnPaths = document.getElementById('ckn-mark-kn-draw').children;
+                for (var p = 0, ps = cknMarkKnPaths.length; p < ps; p++) {
+                    var path = cknMarkKnPaths[p];
+                    var pathLength = path.getTotalLength();
+                    path.style.strokeDasharray = pathLength + ' ' + pathLength;
+                    path.style.strokeDashoffset = pathLength;
+                    
+                    setTimeout(function(pData) {
+                        var drawLength = pData.pathLength;
+                        pData.path.style.strokeDashoffset = 0; // pData.pathLength - drawLength;
+                    }, pathDrawDelay*p + pathInitialDelay, { path: path, pathLength: pathLength });
+                }
+            })();
+
             if (window.CSS.registerProperty) {
                 window.CSS.registerProperty({
                     name: '--ckn-sun-mask-lines',
