@@ -1,12 +1,12 @@
-<header class="header u-bg--primary-max">
-    <div class="header__component u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-paddingBlock">
+<header class="header u-displayFlex u-flex--centre u-overflowHidden u-bg--primary-max">
+    <div class="u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-flex--gap u-paddingBlock">
         {%- set svg_brand_classes = "header__svg header__logo" -%}
         {%- set svg_brand_path_classes = "header__logo-path" -%}
         <a href="{{ metadata.languages[locale].path | url }}" class="header__link u-marginInlineEnd--auto u-marginInlineEnd u-c--secondary-med u-c:h--grey-min" aria-label="{{ header[locale].logoLink }}">
             {% include "assets/img/ckn.svg" %}
         </a>
 
-        <nav class="nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock u-marginInlineEnd">
+        <nav class="nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock">
             {% include "components/nav.njk" %}
         </nav>
 
