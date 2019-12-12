@@ -1,17 +1,17 @@
 <header class="header u-displayFlex u-flex--centre u-overflowHidden u-bg--primary-max">
-    <div class="u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-flex--gap u-paddingBlock">
+    <div class="header__wrap u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-flex--gap u-paddingBlock">
         {%- set svg_brand_classes = "header__svg header__logo" -%}
         {%- set svg_brand_path_classes = "header__logo-path" -%}
         <a href="{{ metadata.languages[locale].path | url }}" class="header__link u-marginInlineEnd--auto u-marginInlineEnd u-c--secondary-med u-c:h--grey-min" aria-label="{{ header[locale].logoLink }}">
             {% include "assets/img/ckn.svg" %}
         </a>
 
-        <nav class="nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock">
+        <nav class="header__nav nav u-flex--alignSelfStretch u-displayFlex u-flex--stretchBlock">
             {% include "components/nav.njk" %}
         </nav>
 
         {%- set svg_rss_classes = "header__svg header__rss" -%}
-        <a href="{{ localePath }}feed.xml" class="u-c--grey-min u-c:h--grey-max u-bg:h--secondary-med u-flex--shrink--none" title="{{ header[locale].rssHint }}" aria-label="{{ header[locale].rssHint }}">
+        <a href="{{ localePath }}feed.xml" class="header__rss u-c--grey-min u-c:h--grey-max u-bg:h--secondary-med u-flex--shrink--none" title="{{ header[locale].rssHint }}" aria-label="{{ header[locale].rssHint }}">
             {% include "assets/img/rss.svg" %}
         </a>
     </div>
