@@ -1,0 +1,13 @@
+.callout {
+    &::before {
+        float: left;
+        margin-right: .5em;
+    }
+
+    &--neutral::before { content: '📌'; }
+    &--success::before { content: '✅'; }
+    &--info::before { content: 'ℹ️'; }
+    &--wait::before { content: '✋'; }
+    &--warn::before { content: '⚠️'; }
+    &--error::before { content: '❌'; color: red; }
+}

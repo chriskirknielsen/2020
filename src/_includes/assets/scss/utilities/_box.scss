@@ -1,0 +1,9 @@
+/* Border */
+.u-border { border: 1px solid currentColor; }
+
+
+/* Border radius */
+
+.u-radius { border-radius: #{ $spacing } !important; }
+.u-radius--half { border-radius: #{ $spacing / 2 } !important; }
+.u-radius--quarter { border-radius: #{ $spacing / 4 } !important; }
