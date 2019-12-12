@@ -1,5 +1,9 @@
 .homescreen {
-    min-height: calc(100vh - #{ $header-expected-height } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
+    min-height: calc(100vh - #{ $header-expected-height*2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
+    
+    @include above-medium {
+        min-height: calc(100vh - #{ $header-expected-height } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
+    }
 
     &__wrapper {
         $outline-size: .5rem;
