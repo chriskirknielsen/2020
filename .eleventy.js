@@ -51,8 +51,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedShortcode("callout", function(content, type) {
     const calloutTypes = ['success', 'info', 'wait', 'warn', 'error'];
     const calloutTypeClass = (type && calloutTypes.includes(type)) ? type : 'neutral';
+    const md = new markdownIt();
     return `<div class="callout callout--${calloutTypeClass} u-padding u-border u-radius--half u-bg--secondary-max">
-      <p>${content}</p>
+      <p>${ md.renderInline(content) }</p>
     </div>`;
   });
 
