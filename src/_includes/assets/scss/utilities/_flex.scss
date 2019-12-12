@@ -17,7 +17,8 @@
     justify-content: center;
 }
 .u-flex--justifyInline { justify-content: space-between; }
-.u-flex--gap { gap: $spacing; }
+.u-flex--gap { margin: #{ $spacing * -.5 }; }
+.u-flex--gap > * { margin: #{ $spacing * .5 }; }
 .u-flex--alignSelfStart { align-self: start; }
 .u-flex--alignSelfStretch { align-self: stretch; }
 .u-flex--grow { flex-grow: 1; }

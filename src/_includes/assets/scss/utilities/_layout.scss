@@ -157,13 +157,6 @@
 }
 
 
-/* Border radius */
-
-.u-radius { border-radius: #{ $spacing } !important; }
-.u-radius--half { border-radius: #{ $spacing / 2 } !important; }
-.u-radius--quarter { border-radius: #{ $spacing / 4 } !important; }
-
-
 /* Content flow */
 
 .u-flow > * + * {

@@ -43,9 +43,17 @@ module.exports = function(eleventyConfig) {
     }
 
     return `<figure${figureClass ? ' class="'+figureClass+'"' : ''}>
-      <img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}>
+      <img src="${imageUrl}" alt="${altText}" ${imageClass ? ' class="'+imageClass+'"' : ''}>
       <figcaption${captionClass ? ' class="'+captionClass+'"' : ''}>${caption}</figcaption>
     </figure>`;
+  });
+
+  eleventyConfig.addPairedShortcode("callout", function(content, type) {
+    const calloutTypes = ['success', 'info', 'wait', 'warn', 'error'];
+    const calloutTypeClass = (type && calloutTypes.includes(type)) ? type : 'neutral';
+    return `<div class="callout callout--${calloutTypeClass} u-padding u-border u-radius--half u-bg--secondary-max">
+      <p>${content}</p>
+    </div>`;
   });
 
   /* LOCALISATION */
