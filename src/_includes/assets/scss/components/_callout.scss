@@ -1,13 +1,21 @@
 .callout {
-    &::before {
-        float: left;
-        margin-right: .5em;
-    }
+    position: relative;
 
-    &--neutral::before { content: '📌'; }
-    &--success::before { content: '✅'; }
-    &--info::before { content: 'ℹ️'; }
-    &--wait::before { content: '✋'; }
-    &--warn::before { content: '⚠️'; }
-    &--error::before { content: '❌'; color: red; }
+    &::before {
+        content: '📢';
+        position: absolute;
+        left: #{ $spacing };
+        top: 0;
+
+        display: inline-block;
+        padding: .25em;
+        
+        text-align: center;
+        line-height: 1;
+        vertical-align: center;
+        border-radius: inherit;
+        background: inherit;
+
+        transform: translateY(-50%);
+    }
 }

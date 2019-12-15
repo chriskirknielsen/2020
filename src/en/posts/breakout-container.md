@@ -22,7 +22,7 @@ Say you have a `.container` class with a `max-width` value and `margin: 0 auto`:
 }
 ```
 
-You can break an element out of this container by making it take up the whole screen's width (`100wv`), then move it left by `50%` of the container (which is the middle of the screen), minus half the screen's width (`50vw`), effectively placing it on the very first horizontal pixel of the viewport.
+You can break an element out of this container by making it take up the whole screen's width (`100vw`), then move it left by `50%` of the container (which is the middle of the screen), minus half the screen's width (`50vw`), effectively placing it on the very first horizontal pixel of the viewport.
 
 ```css
 .breakout {
@@ -41,7 +41,7 @@ You should also add `overflow-x: hidden` to the `body` (or a main wrapper around
 }
 ```
 
-Additionally, if you want to really push the backward compatibility to avoid a broken layout for browsers that support the `vw` unit but not `calc()`, you can use any variation of `calc(50vw * 2)`. This will ensure older browsers won't have content outside the viewport.
+Additionally, if you want to really push the backward compatibility to avoid a broken layout for the few browsers that support the `vw` unit but not `calc()`, you can use any variation of `calc(50vw * 2)`. This will ensure older browsers won't have content outside the viewport.
 
 As a bonus, if you want to avoid having an absurdly large content on an ultra-wide viewport, use "dynamic" padding! This `calc` value will take the screen width (`100vw`) minus the maximum width of the content (`80em`) and divide the result by `2`.
 
