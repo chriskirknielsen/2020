@@ -167,7 +167,6 @@
 .u-container {
     width: 100%;
     max-width: $container-max-width-em;
-    @extend .u-padding--double;
     margin-left: auto;
     margin-right: auto;
 }
