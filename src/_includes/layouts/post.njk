@@ -4,12 +4,12 @@ section: post
 ---
 
 <article class="u-flow">
-  <h1>{{ title }}</h1>
-  <p>
-    <small>
-      <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ metadata.author.name }}
-    </small>
-  </p>
+  <header>
+    <h1>{{ title }}</h1>
+    <p>
+        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
+    </p>
+  </header>
 
   {% if original %}
     <p>Consulter l'article original sur : <a href="{{ original | url }}" rel="nofollow">{{ original }}</a>

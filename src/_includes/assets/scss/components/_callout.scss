@@ -1,13 +1,26 @@
 .callout {
-    &::before {
-        float: left;
-        margin-right: .5em;
-    }
+    position: relative;
 
-    &--neutral::before { content: '📌'; }
-    &--success::before { content: '✅'; }
-    &--info::before { content: 'ℹ️'; }
-    &--wait::before { content: '✋'; }
-    &--warn::before { content: '⚠️'; }
-    &--error::before { content: '❌'; color: red; }
+    background-image: linear-gradient(to bottom right, transparent, rgba(255,255,255, 0.1));
+
+    html[lang="en"] &::before { content: 'Note'; }
+    html[lang="fr"] &::before { content: 'N.B.'; }
+
+    &::before {
+        position: absolute;
+        left: #{ $spacing };
+        top: 0;
+
+        display: inline-block;
+        padding: .25em .5em;
+        
+        font-weight: 700;
+        text-align: center;
+        line-height: 1;
+        vertical-align: middle;
+        border-radius: .25em;
+        background-color: inherit;
+
+        transform: translateY(-50%);
+    }
 }

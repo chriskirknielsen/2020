@@ -48,11 +48,10 @@ module.exports = function(eleventyConfig) {
     </figure>`;
   });
 
-  eleventyConfig.addPairedShortcode("callout", function(content, type) {
-    const calloutTypes = ['success', 'info', 'wait', 'warn', 'error'];
-    const calloutTypeClass = (type && calloutTypes.includes(type)) ? type : 'neutral';
-    return `<div class="callout callout--${calloutTypeClass} u-padding u-border u-radius--half u-bg--secondary-max">
-      <p>${content}</p>
+  eleventyConfig.addPairedShortcode("callout", function(content) {
+    const md = new markdownIt();
+    return `<div class="callout u-padding u-border u-radius--half u-bg--secondary-max">
+      <p>${ md.renderInline(content) }</p>
     </div>`;
   });
 
