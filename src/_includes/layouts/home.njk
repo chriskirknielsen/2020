@@ -21,7 +21,9 @@ section: home
             (function(){
                 var pathInitialDelay = 2500;
                 var pathDrawDelay = 100;
-                var cknMarkKnPaths = document.getElementById('ckn-mark-kn-draw').children;
+                var cknMarkKn = document.getElementById('ckn-mark-kn-draw');
+                if (!cknMarkKn) { return; }
+                var cknMarkKnPaths = cknMarkKn.children;
                 for (var p = 0, ps = cknMarkKnPaths.length; p < ps; p++) {
                     var path = cknMarkKnPaths[p];
                     var pathLength = path.getTotalLength();
