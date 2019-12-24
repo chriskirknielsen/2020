@@ -120,7 +120,7 @@
 
         /* Animating the sun's blinds */
         --ckn-sun-mask-lines: #{ $sun-blind-size * 0 }; // Set the default to 50% for browser who don't support animatable custom properties
-        animation: sunMaskLines 1s linear infinite;
+        animation: sunMaskLines 2s linear infinite;
         @keyframes sunMaskLines {
             0% { --ckn-sun-mask-lines: #{ $sun-blind-size * -1 }; }
             100% { --ckn-sun-mask-lines: #{ $sun-blind-size }; }
