@@ -121,19 +121,41 @@
     }
 
     &__creativedeveloper-group {
-        opacity: 0;
-        transform: translate(25%, 0);
-        animation-duration: #{ $creadev-anim-time };
-        animation-delay: #{ $creadev-anim-delay };
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+        $letters: 17;
+        $letter-mid: $letters / 2;
+        // opacity: 0;
+        // transform: translate(25%, 0);
+        // animation-duration: #{ $creadev-anim-time };
+        // animation-delay: #{ $creadev-anim-delay };
+        // animation-timing-function: cubic-bezier(0, 0, 0, 1);
+
+        > * {
+            opacity: 0.0001; // Firefox bug at 0
+            transform-origin: 50% 50%;
+
+            animation: inherit;
+            animation-duration: #{ $creadev-anim-time };
+            animation-delay: #{ $creadev-anim-delay };
+            // animation-timing-function: cubic-bezier(.5, 1.5, 0, 1);
+            animation-timing-function: cubic-bezier(0, 0, 0, 1);
+            will-change: transform, opacity;
+        }
+
+        @for $letter from 1 through $letters {
+            > *:nth-child(#{ $letter }) {
+                $letter-distance: ($letter - $letter-mid) * 2%;
+
+                transform: translate(#{ $letter-distance }, 0);
+            }
+        }
     }
 
-    &__creativedeveloper-text {
-        $min: 2.25rem;
-        $max: 1.25rem;
-        @include fluid(2.25rem, 1.25rem);
-        @include fluid(.03625em, .0625em, 'text-shadow', '{{v}} {{v}} 0 #0a0634', '{{v}}');
-    }
+    // &__creativedeveloper-text {
+    //     $min: 2.25rem;
+    //     $max: 1.25rem;
+    //     @include fluid(2.25rem, 1.25rem);
+    //     @include fluid(.03625em, .0625em, 'text-shadow', '{{v}} {{v}} 0 #0a0634', '{{v}}');
+    // }
 
     &__glare-group {
         transform-origin: 0 0; // Keep this at 0 0 since the glare is placed relative to the top-left corner so the element's rotation is anchored properly
