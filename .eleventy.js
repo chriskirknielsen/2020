@@ -32,14 +32,15 @@ module.exports = function(eleventyConfig) {
 
   /* SHORTCODES */
 
-  eleventyConfig.addShortcode("figure", function(imageUrl, altText, caption, figureClass, imageClass, captionClass) {
+  eleventyConfig.addShortcode("figure", function(imageUrl, altText, caption, figureClass, imageClass, captionClass, dimensions) {
     altText = altText || '';
     imageClass = imageClass || '';
     figureClass = figureClass || '';
     captionClass = captionClass || '';
+    size = (dimensions.indexOf('x') > -1) ? dimensions.split('x') : false;
 
     if (!caption) {
-      return `<img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}>`;
+      return `<img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}${size ? ' width="'+size[0]+'" height="'+size[1]+'"' : ''}>`;
     }
 
     return `<figure${figureClass ? ' class="'+figureClass+'"' : ''}>

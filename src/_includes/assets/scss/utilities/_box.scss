@@ -7,3 +7,4 @@
 .u-radius { border-radius: #{ $spacing }; }
 .u-radius--half { border-radius: #{ $spacing / 2 }; }
 .u-radius--quarter { border-radius: #{ $spacing / 4 }; }
+.u-radius--circle { border-radius: 50%; }
