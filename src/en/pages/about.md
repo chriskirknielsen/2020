@@ -8,6 +8,6 @@ tags:
   - nav
 ---
 
-{% figure "/assets/img/profile.jpg" "CKN profile" "" "" "u-floatRight u-marginBlockEnd u-marginInlineStart u-radius about__image" %}
+{% figure "/assets/img/profile.jpg" "CKN profile" "" "" "u-floatRight u-marginBlockEnd u-marginInlineStart u-radius--circle about__image" "512x512" %}
 
-Christopher Kirk-Nielsen: a geek who loves 80's aesthetics.
+Christopher Kirk-Nielsen: a geek who loves '80s aesthetics.

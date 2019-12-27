@@ -1,7 +1,7 @@
 .about {
     &__image {
-        $shadow-size: .25rem;
+        $shadow-size: .125rem;
         width: 8rem;
-        box-shadow: #{ $shadow-size } #{ $shadow-size } 0 var(--c-min);
+        box-shadow: 0 0 0 #{ $shadow-size } var(--c-min);
     }
 }

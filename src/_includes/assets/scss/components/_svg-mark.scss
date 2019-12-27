@@ -17,6 +17,8 @@
     $shine-anim-delay: 1.25s + $creadev-anim-delay + $kn-anim-time;
     $glare-anim-time: 1s;
     $glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
+
+    contain: layout; // Optimise as much as possible
     
     &__wire {
         opacity: 0;
