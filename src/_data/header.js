@@ -1,10 +1,8 @@
 module.exports = {
     en: {
-        logoLink: 'Homepage',
-        rssHint: 'Subscribe to chriskirknielsen\'s RSS feed'
+        logoLink: 'Homepage'
     },
     fr: {
-        logoLink: 'Page d\'accueil',
-        rssHint: 'S\'inscrire au flux RSS de chriskirknielsen'
+        logoLink: 'Page d\'accueil'
     }
 }
