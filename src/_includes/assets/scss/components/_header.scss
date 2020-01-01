@@ -11,26 +11,4 @@
             fill: var(--c, currentColor);
         }
     }
-
-    @supports (display: grid) {
-        &__wrap[class] {
-            display: grid;
-            grid-template-areas:
-                "logo rss"
-                "nav  nav";
-
-            @include above-medium { display: flex; }
-        }
-
-        &__logo {
-            grid-area: logo;
-        }
-        &__rss {
-            grid-area: rss;
-            justify-self: end;
-        }
-        &__nav {
-            grid-area: nav;
-        }
-    }
 }

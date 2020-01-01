@@ -6,6 +6,7 @@
     const peach = '#dd6a65';
     const hotpink = '#d13190';
     const cyan = '#10c6bd';
+    const cyanAlpha = 'rgba(16, 198, 189, 0)';
     const sunTop = '#ed23af';
     const sunMiddle = '#ffafa3';
     const sunBottom = '#ffffe9';
@@ -39,6 +40,11 @@
         const ctx = getContext(width, height);
 
         ctx.clearRect(0, 0, width, height);
+
+        const fadeCyan = ctx.createLinearGradient(0, 0, 0, height);
+        fadeCyan.addColorStop(0, cyan);
+        fadeCyan.addColorStop(.75, cyan);
+        fadeCyan.addColorStop(1, cyanAlpha);
 
         // Define animation values
         const speeds = {
@@ -104,7 +110,8 @@
 
         ctx.restore(); // Stop clipping
         */
-        ctx.strokeStyle = cyan;
+        // ctx.strokeStyle = cyan;
+        ctx.strokeStyle = fadeCyan;
 
         // Draw horizontal lines
         for (let i = 0; i < MAX_HLINES; i++) {
