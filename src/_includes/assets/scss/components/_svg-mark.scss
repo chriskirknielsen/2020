@@ -40,7 +40,7 @@
 
     &__horizon-flash,
     &__chris-flash {
-        opacity: 0;
+        opacity: 0.0001;
         animation-name: svgMarkFadeInOut;
         animation-iteration-count: 1;
         animation-timing-function: ease;
