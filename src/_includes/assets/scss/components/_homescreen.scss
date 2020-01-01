@@ -5,32 +5,6 @@
         min-height: calc(100vh - #{ $header-expected-height } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
     }
 
-    &__wrapper {
-        $outline-size: .5rem;
-        $arrow-size: 1rem;
-
-        &::before {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            margin: 0 auto;
-            border-style: solid;
-            border-color: var(--c-primary-med) transparent transparent;
-            border-width: #{ $arrow-size } #{ $arrow-size } 0;
-            pointer-events: none;
-        }
-
-        &::after {
-            border: #{ $outline-size } solid var(--c-primary-med);
-            pointer-events: none;
-        }
-    }
-
     &__background {
         $sun-radius: 20vmin;
         $sun-blind-size: $sun-radius / 12;

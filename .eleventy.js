@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
     imageClass = imageClass || '';
     figureClass = figureClass || '';
     captionClass = captionClass || '';
-    size = (dimensions.indexOf('x') > -1) ? dimensions.split('x') : false;
+    size = (dimensions && dimensions.indexOf('x') > -1) ? dimensions.split('x') : false;
 
     if (!caption) {
       return `<img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}${size ? ' width="'+size[0]+'" height="'+size[1]+'"' : ''}>`;
