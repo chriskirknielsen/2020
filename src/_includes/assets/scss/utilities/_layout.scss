@@ -24,114 +24,133 @@
 .u-displayInlineBlock { display: inline-block; }
 .u-displayInline { display: inline; }
 .u-displayFlex { display: flex; }
+.u-displayFlowRoot { display: flow-root; }
 .u-displayInlineFlex { display: inline-flex; }
+
+@include above-medium { .md\:u-displayFlex { display: flex; } }
 
 
 /* Size */
 
-.u-width--100 { width: 100% !important; }
-.u-height--100 { height: 100% !important; }
+.u-width--50 { width: 50%; }
+.u-width--100 { width: 100%; }
+.u-height--100 { height: 100%; }
 
 
 /* Margin */
 
-.u-margin { margin: #{ $spacing } !important; }
-.u-margin--double { margin: #{ $spacing * 2 } !important; }
-.u-margin--none { margin: 0 !important; }
-.u-margin--auto { margin: auto !important; }
+.u-margin { margin: #{ $spacing }; }
+.u-margin--double { margin: #{ $spacing * 2 }; }
+.u-margin--none { margin: 0; }
+.u-margin--auto { margin: auto; }
+.u-marginBlock {
+    margin-top: #{ $spacing };
+    margin-bottom: #{ $spacing };
+}
 .u-marginBlock--double {
-    margin-top: #{ $spacing * 2 } !important;
-    margin-bottom: #{ $spacing * 2 } !important;
+    margin-top: #{ $spacing * 2 };
+    margin-bottom: #{ $spacing * 2 };
 }
 .u-marginBlock--none {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .u-marginBlockStart {
-    margin-top: #{ $spacing } !important;
+    margin-top: #{ $spacing };
 }
 .u-marginBlockStart--half {
-    margin-top: #{ $spacing / 2 } !important;
+    margin-top: #{ $spacing / 2 };
 }
 .u-marginBlockStart--double {
-    margin-top: #{ $spacing * 2 } !important;
+    margin-top: #{ $spacing * 2 };
 }
 .u-marginBlockStart--auto {
-    margin-top: auto !important;
+    margin-top: auto;
 }
 .u-marginBlockStart--none {
-    margin-top: 0 !important;
+    margin-top: 0;
 }
 .u-marginBlockEnd {
-    margin-bottom: #{ $spacing } !important;
+    margin-bottom: #{ $spacing };
 }
 .u-marginBlockEnd--double {
-    margin-bottom: #{ $spacing * 2 } !important;
+    margin-bottom: #{ $spacing * 2 };
+}
+.u-marginInline--negative {
+    margin-left: #{ $spacing * -1 };
+    margin-right: #{ $spacing * -1 };
 }
 .u-marginInline--none {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
 }
 .u-marginInlineStart--auto {
-    margin-left: auto !important;
+    margin-left: auto;
 }
 .u-marginInlineStart {
-    margin-left: #{ $spacing } !important;
+    margin-left: #{ $spacing };
 }
 .u-marginInlineEnd {
-    margin-right: #{ $spacing } !important;
+    margin-right: #{ $spacing };
 }
 .u-marginInlineEnd--none {
-    margin-right: 0 !important;
+    margin-right: 0;
 }
 .u-marginInlineEnd--half {
-    margin-right: #{ $spacing / 2 } !important;
+    margin-right: #{ $spacing / 2 };
 }
 .u-marginInlineEnd--auto {
-    margin-right: auto !important;
+    margin-right: auto;
 }
 .u-marginInline--auto {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@include above-medium {
+    .md\:u-marginInline {
+        margin-left: #{ $spacing };
+        margin-right: #{ $spacing };
+    }
 }
 
 
 /* Padding */
 
-.u-padding { padding: #{ $spacing } !important; }
-.u-padding--double { padding: #{ $spacing * 2 } !important; }
-.u-padding--half { padding: #{ $spacing / 2 } !important; }
-.u-padding--quarter { padding: #{ $spacing / 4 } !important; }
-.u-padding--none { padding: 0 !important; }
+.u-padding { padding: #{ $spacing }; }
+.u-padding--double { padding: #{ $spacing * 2 }; }
+.u-padding--half { padding: #{ $spacing / 2 }; }
+.u-padding--quarter { padding: #{ $spacing / 4 }; }
+.u-padding--none { padding: 0; }
 .u-paddingBlock {
-    padding-top: #{ $spacing } !important;
-    padding-bottom: #{ $spacing } !important;
+    padding-top: #{ $spacing };
+    padding-bottom: #{ $spacing };
 }
 .u-paddingInline {
-    padding-left: #{ $spacing } !important;
-    padding-right: #{ $spacing } !important;
+    padding-left: #{ $spacing };
+    padding-right: #{ $spacing };
 }
 .u-paddingInline--double {
-    padding-left: #{ $spacing * 2 } !important;
-    padding-right: #{ $spacing * 2 } !important;
+    padding-left: #{ $spacing * 2 };
+    padding-right: #{ $spacing * 2 };
 }
 .u-paddingInline--half {
-    padding-left: #{ $spacing / 2 } !important;
-    padding-right: #{ $spacing / 2 } !important;
+    padding-left: #{ $spacing / 2 };
+    padding-right: #{ $spacing / 2 };
 }
 .u-paddingBlockStart {
-    padding-top: #{ $spacing } !important;
+    padding-top: #{ $spacing };
 }
 .u-paddingBlockStart--none {
-    padding-top: 0 !important;
+    padding-top: 0;
 }
 
 
 /* Float */
 
-.u-floatLeft { float: left !important; }
-.u-floatRight { float: right !important; }
-.u-floatClear { clear: both !important; }
+.u-floatLeft { float: left; }
+.u-floatRight { float: right; }
+.u-floatClear { clear: both; }
 .u-floatClearfix::after {
     content: '';
     display: table;
