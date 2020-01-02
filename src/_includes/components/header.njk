@@ -2,7 +2,7 @@
     <div class="header__wrap u-container u-displayFlex u-flex--centreBlock u-flex--wrap u-flex--gap u-paddingBlock u-paddingInline--double">
         {%- set svg_brand_classes = "header__svg header__logo" -%}
         {%- set svg_brand_path_classes = "header__logo-path" -%}
-        <a href="{{ metadata.languages[locale].path | url }}" class="header__link u-marginInlineEnd--auto u-marginInlineEnd u-c--secondary-med u-c:h--grey-min" aria-label="{{ header[locale].logoLink }}">
+        <a href="{{ metadata.languages[locale].path | url }}" class="header__link u-marginInlineEnd--auto u-marginInlineEnd u-c--secondary-med h:u-c--grey-min" aria-label="{{ header[locale].logoLink }}">
             {% include "assets/img/ckn.svg" %}
         </a>
 
