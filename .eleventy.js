@@ -40,10 +40,9 @@ module.exports = function(eleventyConfig) {
     size = (dimensions && dimensions.indexOf('x') > -1) ? dimensions.split('x') : false;
 
     // Define image attributes
-    var imageAttr = ['loading="lazy"'];
-    if (altText) { imageAttr.push('alt="'+altText+'"'); }
-    if (imageClass) { imageAttr.push('class="'+imageClass+'"'); }
-    if (size) { imageAttr.push('width="'+size[0]+'" height="'+size[1]+'"'); }
+    var imageAttr = [`alt="${altText}"`, 'loading="lazy"'];
+    if (imageClass) { imageAttr.push(`class="${imageClass}"`); }
+    if (size) { imageAttr.push(`width="${size[0]}" height="${size[1]}"`); }
     var imageAttrs = imageAttr.join(' ');
 
     if (!caption) {
