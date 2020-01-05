@@ -1,5 +1,5 @@
 ---
-title: About
+title: Hello, I'm Chris
 date: 2017-01-01T00:00:00.000Z
 permalink: /about/index.html
 translationKey: "aboutPage"
@@ -10,11 +10,15 @@ tags:
 
 {% figure "/assets/img/profile.jpg" "CKN profile" "" "" "u-floatRight u-marginBlockEnd u-marginInlineStart u-radius--circle u-shape--circle about__image" "512x512" %}
 
-Well, he's a huge geek at heart. Let's dig a bit more, shall we? He makes electronica music as Chronoise. He loves synthwave and anything inspired by the '80s. He likes watching classic movies and television shows. When he has time, he enjoys playing video games in order to relax and venture into new worlds. If you're curious about what music he likes, he listens to a lot of rock and electronica. He fancies reading riveting books with a cup of tea. For over a decade, he has been using tools such as Photoshop and After Effects as well as languages like HTML, CSS and JavaScript. He has always been self-sufficient, but also a team player and a MacGyver-worthy problem solver (minus the hair). He lives in New York, but he was born in Lyon, France. In addition to English, he also speaks French and Danish and you can throw Italian his way, as well! (however, he has a strong aversion for addressing himself in the third person…)
+I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn, which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!
+
+When I'm not doing web-related things, I might be making electronica music as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 
 ---
 
 ## Super Formal Résumé
+
+Here is a bullet-list representation of me, if you're into that sort of thing:
 
 ### Experience
 
@@ -25,10 +29,9 @@ Well, he's a huge geek at heart. Let's dig a bit more, shall we? He makes electr
 ### Skills
 
 - **Development:** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
-- **Tools:** Git, Gulp, static site generators (Hugo, Eleventy, Netlify)
-- **Design:** Photoshop, Illustrator, InDesign
+- **Tools:** Git, Gulp, JAMstack (static sites with Hugo or Eleventy, on Netlify)
+- **Design:** Photoshop, Illustrator, InDesign, Sketch
 - **Motion Design:** After Effects, Premiere Pro, Cinema 4D
-- **UI / UX:** Sketch
 
 ### Education
 
@@ -42,17 +45,17 @@ Well, he's a huge geek at heart. Let's dig a bit more, shall we? He makes electr
 - **French:** fluent
 - **Danish:** fluent
 - **Italian:** intermediate
-- *Also: reads Cyrillic, Hiragana and Katakana (I love languages!)*
+- *Also reads Cyrillic, Hiragana and Katakana*
 
 ### Interests
 
-- **Daily intake:** tea or coffee, music, movies and T.V. shows
-- **Geekometric:** personal blog reviewing movies, music and games (since 2013)
-- **Chronoise:** creating electronica music since 2010
+- **Daily intake:** tea or coffee, music, books, video games, movies, and T.V. shows
+- **Geekometric:** personal blog reviewing movies, music, and games (since 2013)
+- **Chronoise:** creating electronica music (since 2010)
 
 ### Legal Documents
 
-- **Work:** United States of America Green Card
+- **Work:** United States of America "Green Card" holder
 
 ### Online
 
