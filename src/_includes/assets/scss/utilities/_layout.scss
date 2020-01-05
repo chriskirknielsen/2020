@@ -7,6 +7,27 @@
 }
 
 
+/* Content flow */
+
+.u-flow > * + * {
+    margin-top: #{ $spacing };
+    margin-bottom: 0;
+}
+
+.u-container {
+    width: 100%;
+    max-width: $container-max-width-em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.u-breakout {
+    position: relative;
+    left: calc(50% - 50vw);
+    width: 100vw;
+}
+
+
 /* Position */
 
 .u-posRelative { position: relative; }
@@ -38,6 +59,9 @@
 
 
 /* Margin */
+
+.u-margin--flexGap { margin: #{ $spacing * -.5 }; }
+.u-margin--flexGap > * { margin: #{ $spacing * .5 }; }
 
 .u-margin { margin: #{ $spacing }; }
 .u-margin--double { margin: #{ $spacing * 2 }; }
@@ -89,6 +113,9 @@
 }
 .u-marginInlineStart {
     margin-left: #{ $spacing };
+}
+.u-marginInlineStart--auto {
+    margin-left: auto;
 }
 .u-marginInlineEnd {
     margin-right: #{ $spacing };
@@ -174,25 +201,4 @@
 .u-beforeCover::before, // Creates a ::before pseudo-element that covers the parent element
 .u-afterCover::after { // Creates an ::after pseudo-element that covers the parent element
     content: '';
-}
-
-
-/* Content flow */
-
-.u-flow > * + * {
-    margin-top: #{ $spacing };
-    margin-bottom: 0;
-}
-
-.u-container {
-    width: 100%;
-    max-width: $container-max-width-em;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.u-breakout {
-    position: relative;
-    left: calc(50% - 50vw);
-    width: 100vw;
 }
