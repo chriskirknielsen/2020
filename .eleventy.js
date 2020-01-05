@@ -39,12 +39,19 @@ module.exports = function(eleventyConfig) {
     captionClass = captionClass || '';
     size = (dimensions && dimensions.indexOf('x') > -1) ? dimensions.split('x') : false;
 
+    // Define image attributes
+    var imageAttr = ['loading="lazy"'];
+    if (altText) { imageAttr.push('alt="'+altText+'"'); }
+    if (imageClass) { imageAttr.push('class="'+imageClass+'"'); }
+    if (size) { imageAttr.push('width="'+size[0]+'" height="'+size[1]+'"'); }
+    var imageAttrs = imageAttr.join(' ');
+
     if (!caption) {
-      return `<img src="${imageUrl}"${altText ? ' alt="'+altText+'"' : ''}${imageClass ? ' class="'+imageClass+'"' : ''}${size ? ' width="'+size[0]+'" height="'+size[1]+'"' : ''}>`;
+      return `<img src="${imageUrl}" ${imageAttrs}>`;
     }
 
     return `<figure${figureClass ? ' class="'+figureClass+'"' : ''}>
-      <img src="${imageUrl}" alt="${altText}" ${imageClass ? ' class="'+imageClass+'"' : ''}>
+      <img src="${imageUrl}" ${imageAttrs}>
       <figcaption${captionClass ? ' class="'+captionClass+'"' : ''}>${caption}</figcaption>
     </figure>`;
   });
