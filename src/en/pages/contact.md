@@ -1,6 +1,6 @@
 ---
 layout: layouts/contact.njk
-title: Get in touch
+title: Fancy a chat?
 navtitle: Contact
 translationKey: "contactPage"
 date: 2020-01-01
