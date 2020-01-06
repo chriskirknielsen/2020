@@ -5,4 +5,9 @@
         max-width: 30vw;
         border: #{ $border-size } solid var(--c-min);
     }
+
+    &__download {
+        width: 1.25em;
+        height: 1.25em;
+    }
 }
