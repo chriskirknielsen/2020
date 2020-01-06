@@ -8,23 +8,17 @@ tags:
   - nav
 ---
 
-{% figure "/assets/img/profile.jpg" "CKN profile" "" "" "u-floatRight u-marginBlockEnd u-marginInlineStart u-radius--circle u-shape--circle about__image" "512x512" %}
+{% figure "/assets/img/profile.jpg" "CKN profile" "" "" "u-floatRight u-marginBlock u-marginInlineStart u-radius--circle u-shape--circle about__image" "" "512x512" %}
 
-I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn, which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!
+I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn (and share!), which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!
 
 When I'm not doing web-related things, I might be making electronica music as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 
 ---
 
-## Super Formal Résumé
+## Overly-Formal Résumé
 
 Here is a bullet-list representation of me, if you're into that sort of thing:
-
-### Experience
-
-- **2020:** senior front-end developer at MOJO PSG
-- **2018–2019:** front-end developer at MOJO PSG
-- **2015–2018:** freelance activity in digital marketing
 
 ### Skills
 
@@ -32,6 +26,12 @@ Here is a bullet-list representation of me, if you're into that sort of thing:
 - **Tools:** Git, Gulp, JAMstack (static sites with Hugo or Eleventy, on Netlify)
 - **Design:** Photoshop, Illustrator, InDesign, Sketch
 - **Motion Design:** After Effects, Premiere Pro, Cinema 4D
+
+### Experience
+
+- **2020:** senior front-end developer at MOJO PSG
+- **2018–2019:** front-end developer at MOJO PSG
+- **2015–2018:** freelance activity in digital marketing
 
 ### Education
 
@@ -64,3 +64,12 @@ Here is a bullet-list representation of me, if you're into that sort of thing:
 - [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
 - [Geekometric](https://geekometric.com) (static site built with Hugo, running on Netlify)
 - [Chronoise](https://chronoise.com)
+
+<p class="u-marginBlockStart--double">
+  <a href="/assets/pdf/resume.pdf" download="chriskirknielsen.pdf" class="u-displayInlineFlex u-flex--centreBlock u-paddingBlock--half u-paddingInline u-textDecoration--none u-c--grey-max u-bg--grey-min h:u-c--grey-max h:u-bg--secondary-med u-lineHeight--1">
+    <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="u-displayBlock u-marginInlineEnd--half about__download">
+      <path d="M3 0v5c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V0h1l2 2v13c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1V1c0-.6.4-1 1-1h2zm10 15c.6 0 1-.4 1-1V8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v6c0 .6.4 1 1 1h10zM10 5V1h2v4h-2z" fill="currentColor" fill-rule="evenodd"/>
+    </svg>
+    <span class="u-flex--alignSelfEnd u-fontBold">Download PDF</span>
+  </a>
+</p>
