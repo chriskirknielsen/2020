@@ -1,7 +1,13 @@
 .about {
     &__image {
-        $shadow-size: .125rem;
+        $border-size: .125rem;
         width: 8rem;
-        box-shadow: 0 0 0 #{ $shadow-size } var(--c-min);
+        max-width: 30vw;
+        border: #{ $border-size } solid var(--c-min);
+    }
+
+    &__download {
+        width: 1.25em;
+        height: 1.25em;
     }
 }
