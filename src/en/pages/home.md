@@ -1,14 +1,11 @@
 ---
 layout: layouts/home.njk
 title: Home
-date: 2016-01-01T00:00:00.000Z
 permalink: /
 navtitle: Home
 tags:
   - nav
 ---
-
-## Hi there! Welcome to my world.
 
 My name is Christopher Kirk-Nielsen, but you can call me Chris. I'm a designer-turned-developer who loves making websites.
 
