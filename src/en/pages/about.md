@@ -4,6 +4,7 @@ date: 2017-01-01T00:00:00.000Z
 permalink: /about/index.html
 translationKey: "aboutPage"
 navtitle: About
+ownstyles: about
 tags:
   - nav
 ---
@@ -14,7 +15,7 @@ I'm a designer-turned-developer who loves working on websites. What started as a
 
 When I'm not doing web-related things, I might be making electronica music as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 
----
+<hr class="u-floatClear">
 
 ## Overly-Formal Résumé
 
@@ -55,7 +56,7 @@ Here is a bullet-list representation of me, if you're into that sort of thing:
 
 ### Legal Documents
 
-- **Work:** United States of America "Green Card" holder
+- **Work:** United States "Green Card" holder
 
 ### Online
 

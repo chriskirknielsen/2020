@@ -3,6 +3,7 @@ layout: layouts/home.njk
 title: Home
 permalink: /
 navtitle: Home
+ownstyles: home
 tags:
   - nav
 ---
