@@ -73,6 +73,12 @@ p {
     word-break: break-word; //non-standard css for webkit
     word-wrap: break-word;
     font-size-adjust: auto;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 hr {
