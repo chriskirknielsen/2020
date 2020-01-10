@@ -6,6 +6,13 @@
 	{% include "assets/css/inline.css" %}
 	{% endset %}
 	<style>{{ css | cssmin | safe }}</style>
+
+	{% if ownstyles %}
+		{% set pagestylelink %}assets/css/{{ ownstyles }}.css{% endset %}
+		{% set pagestyle %}{% include pagestylelink %}{% endset %}
+		<style>{{ pagestyle | cssmin | safe }}</style>
+	{% endif %}
+
 	{% set js %}
 	{% include "assets/js/inline.js" %}
 	{% endset %}
