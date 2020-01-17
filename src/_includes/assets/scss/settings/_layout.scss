@@ -23,12 +23,12 @@ $base-line-height: 1.5;
 // Breakpoints used in fluid type
 //-- Content @ large
 $large-breakpoint-width-rem: $container-max-width; 
-$large-breakpoint-width: $large-breakpoint-width-rem * 1em;
+$large-breakpoint-width: $large-breakpoint-width-rem * 1rem;
 
 //-- Breakpoint @ medium
 $medium-breakpoint-width-rem: $container-max-width / 5 * 4;
-$medium-breakpoint-width: $medium-breakpoint-width-rem * 1em;
+$medium-breakpoint-width: $medium-breakpoint-width-rem * 1rem;
 
 //-- Breakpoint @ small
 $small-breakpoint-width-rem: $container-max-width / 2;
-$small-breakpoint-width: $small-breakpoint-width-rem * 1em;
+$small-breakpoint-width: $small-breakpoint-width-rem * 1rem;
