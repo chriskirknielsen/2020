@@ -1,4 +1,6 @@
 a:not([class]) {
+    text-decoration-color: var(--colour-grey);
+
     &:link,
     &:visited {
         color: var(--c, var(--colour-grey));
@@ -6,10 +8,6 @@ a:not([class]) {
 
     &:link {
         text-decoration-color: var(--colour-secondary);
-    }
-
-    &:visited {
-        text-decoration-color: var(--colour-grey);
     }
     
     text-decoration-thickness: .0625em;
