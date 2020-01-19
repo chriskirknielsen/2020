@@ -121,33 +121,41 @@
     }
 
     &__creativedeveloper-group {
-        $letters: 17;
-        $letter-mid: $letters / 2;
+        // $letters: 17;
+        // $letter-mid: $letters / 2;
         // opacity: 0;
         // transform: translate(25%, 0);
         // animation-duration: #{ $creadev-anim-time };
         // animation-delay: #{ $creadev-anim-delay };
         // animation-timing-function: cubic-bezier(0, 0, 0, 1);
 
-        > * {
-            opacity: 0.0001; // Firefox bug at 0
-            transform-origin: 50% 50%;
+        // > * {
+        //     opacity: 0.0001; // Firefox bug at 0
+        //     transform-origin: 50% 50%;
 
-            animation: inherit;
-            animation-duration: #{ $creadev-anim-time };
-            animation-delay: #{ $creadev-anim-delay };
-            // animation-timing-function: cubic-bezier(.5, 1.5, 0, 1);
-            animation-timing-function: cubic-bezier(0, 0, 0, 1);
-            will-change: transform, opacity;
-        }
+        //     animation: inherit;
+        //     animation-duration: #{ $creadev-anim-time };
+        //     animation-delay: #{ $creadev-anim-delay };
+        //     // animation-timing-function: cubic-bezier(.5, 1.5, 0, 1);
+        //     animation-timing-function: cubic-bezier(0, 0, 0, 1);
+        //     will-change: transform, opacity;
+        // }
 
-        @for $letter from 1 through $letters {
-            > *:nth-child(#{ $letter }) {
-                $letter-distance: ($letter - $letter-mid) * 2%;
+        // @for $letter from 1 through $letters {
+        //     > *:nth-child(#{ $letter }) {
+        //         $letter-distance: ($letter - $letter-mid) * 2%;
 
-                transform: translate(#{ $letter-distance }, 0);
-            }
-        }
+        //         transform: translate(#{ $letter-distance }, 0);
+        //     }
+        // }
+
+        opacity: 0.0001;
+        transform: scaleX(1.125);
+        transform-origin: 50% 50%;
+        animation-duration: #{ $creadev-anim-time };
+        animation-delay: #{ $creadev-anim-delay };
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+        will-change: transform, opacity;
     }
 
     // &__creativedeveloper-text {

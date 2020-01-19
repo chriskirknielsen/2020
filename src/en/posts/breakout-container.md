@@ -45,22 +45,24 @@ Additionally, if you want to really push the backward compatibility to avoid a b
 
 As a bonus, if you want to avoid having an absurdly large content on an ultra-wide viewport, use "dynamic" padding! This `calc` value will take the screen width (`100vw`) minus the maximum width of the content (`80em`) and divide the result by `2`.
 
-If the screen width is equal to `80em`, the padding will compute to `0`, but if `100vw` is worth `100em`, the padding will evaluate to `(100em - 40em) / 2 = 10em` on each side. Note that `* { box-sizing: border-box; }` is necessary to ensure the padding is subtracted from the full viewport width instead of added to it.
+If the screen width is equal to `80em`, the padding will compute to `0`, but if `100vw` is worth `100em`, the padding will evaluate to `(100em - 40em) / 2 = 10em` on each side. Note that `box-sizing: border-box;` is necessary to ensure the padding is subtracted from the full viewport width instead of added to it.
 
 ```css
 * { box-sizing: border-box; }
 
-@media (min-width: 80em) {
-  .breakout {
-    padding: 0 calc((100vw - 80em) / 2);
-  }
+.breakout {
+  padding-inline: calc((100vw - 80em) / 2);
+  /* Logical property, equivalent to setting this value to padding-left and padding-right in left-to-right contexts */
 }
 ```
 
 {% callout %}
-  The media query is redundant since negative padding values are ignored. I'm only leaving it to make everything crystal clear. If you do go that route and need padding for the block direction (`top` and `bottom`), be sure to define that after this rule, or use the long-hand syntax.
+  A media query is not required since negative padding values are invalid.
 {% endcallout %}
 
 Let's have a look at the complete code all together now:
 
 {% codepen "https://codepen.io/chriskirknielsen/pen/abzoJWr/", "html,css", "480", "33007"  %}
+
+## More reading
+- [Logical Properties on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)

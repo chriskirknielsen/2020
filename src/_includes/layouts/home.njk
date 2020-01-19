@@ -10,9 +10,9 @@ section: home
         </div>
 
         <div class="homescreen__svg-wrapper u-posRelative">
-            {% set ckn_mark %}
-            {% include "assets/img/home-mark.njk" %}
-            {% endset %}
+            {% set ckn_mark -%}
+            {%- include "assets/img/home-mark.njk" -%}
+            {%- endset -%}
             {{ ckn_mark | htmlmin | safe }}
         </div>
         
