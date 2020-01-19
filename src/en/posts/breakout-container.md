@@ -52,7 +52,7 @@ If the screen width is equal to `80em`, the padding will compute to `0`, but if 
 
 .breakout {
   padding-inline: calc((100vw - 80em) / 2);
-  /* Logical property, equivalent to setting this value to padding-left and padding-right */
+  /* Logical property, equivalent to setting this value to padding-left and padding-right in left-to-right contexts */
 }
 ```
 

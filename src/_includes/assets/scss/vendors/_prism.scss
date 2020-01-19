@@ -29,7 +29,7 @@ pre > code {
 pre[class*="language-"] code,
 :not(pre) > code {
 	background-color: var(--c-primary-max);
-	background-image: linear-gradient(to bottom right, transparent, rgba(255,255,255, 0.05));
+	background-image: linear-gradient(to bottom right, transparent, rgba(255,255,255, 0.075));
 
     mark {
         color: var(--c-secondary-med);
@@ -44,7 +44,10 @@ pre[class*="language-"] code,
 
 pre[class*="language-"] {
 	position: relative;
+	margin-left: -10rem;
+	margin-right: -10rem;
 }
+
 pre[class*="language-"] code {
 	// white-space: pre;
 	display: block;
@@ -56,9 +59,9 @@ pre[class*="language-"] code {
 	// Breakout:
 	position: relative;
 	width: 100vw;
-	max-width: $large-breakpoint-width;
-	margin-left: 50%;
-	transform: translateX(-50%); // Can't use the breakout container technique here since the width is cappd, and half can be less than 50vw
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 :not(pre) > code[class*="language-"] {

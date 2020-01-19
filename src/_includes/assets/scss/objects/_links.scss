@@ -2,7 +2,14 @@ a:not([class]) {
     &:link,
     &:visited {
         color: var(--c, var(--colour-grey));
+    }
+
+    &:link {
         text-decoration-color: var(--colour-secondary);
+    }
+
+    &:visited {
+        text-decoration-color: var(--colour-grey);
     }
     
     text-decoration-thickness: .0625em;
