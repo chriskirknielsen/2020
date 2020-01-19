@@ -3,13 +3,14 @@ title: Une réinitialisation CSS moderne
 summary: Andy Bell propose un reset CSS adapté aux navigateurs modernes.
 date: 2019-10-30
 original: https://hankchizljaw.com/wrote/a-modern-css-reset/
+originalTitle: Andy Bell - A Modern CSS Reset
 language: fr
 tags:
   - post
   - css
 ---
 
-J'utilise constamment une feuille de style pour réinitialiser de nombreux éléments dans mes projets ("_CSS reset_" ou "_reset_"). Je suis sûr que de nombreux développeur·eurs le font également, sans trop s'attarder sur le contenu : "J'ai importé `normalize.css`, c'est bon !" Il est donc agréable de voir que certaines personnes se penchent sur cette question dans le contexte de nous navigateurs actuels. Une de ces personnes est Andy Bell, qui propose un _reset_ moderne. Il nous explique chaque choix et j'ai pensé qu'une traduction en français pourrait servir pour certain·e·s francophones qui pourraient être un peu déboussolé·e·s par tant de termes anglais.
+J'utilise constamment une feuille de style pour réinitialiser de nombreux éléments dans mes projets ("_CSS reset_" ou "_reset_"). Je suis sûr que de nombreux développeur·eurs le font également, sans trop s'attarder sur le contenu : "J'ai importé `normalize.css`, c'est bon !" Il est donc agréable de voir que certaines personnes se penchent sur cette question dans le contexte de nous navigateurs actuels. Une de ces personnes est Andy Bell, qui propose un _reset_ moderne. Il nous explique chaque choix et j'ai pensé qu'une traduction en français pourrait servir la communauté francophone.
 
 <!-- excerpt -->
 

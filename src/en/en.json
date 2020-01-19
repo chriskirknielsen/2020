@@ -9,12 +9,14 @@
         "about",
         "contact"
     ],
+    "dateFormat": "DD MMMM Y",
     "localisedContent": {
         "skiplink": "Skip to content",
         "feed": {
             "subtitle": "Blog of a front-end developer who likes to tinker"
         },
-        "tagged": "Tagged"
+        "tagged": "Tagged",
+        "original": "Read the original article"
     },
     "langSwitchLabel": "Switch Language",
     "schemeSwitchLabel": "Toggle Colour Scheme"

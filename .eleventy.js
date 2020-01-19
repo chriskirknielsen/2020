@@ -8,6 +8,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const slugify = require("slugify");
 const Prism = require('prismjs');
 const blogTools = require("eleventy-plugin-blog-tools");
+const moment = require("moment");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -102,6 +103,12 @@ module.exports = function(eleventyConfig) {
   });
 
   /* DATES */
+
+  eleventyConfig.addNunjucksFilter("date", function(date, format, locale) {
+    locale = locale ? locale : "en";
+    moment.locale(locale);
+    return moment(date).format(format);
+  });
 
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {

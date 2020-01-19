@@ -6,23 +6,22 @@ section: post
 <article class="u-flow">
   <header>
     <h1>{{ title }}</h1>
-    <p>
-        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
-    </p>
+
+    <p><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
   </header>
 
   {% if original %}
-    <p>Consulter l'article original sur : <a href="{{ original | url }}" rel="nofollow">{{ original }}</a>
+    <p class="u-padding--half u-bg--primary-max"><span aria-hidden="true">&rarr;</span> {{ localisedContent.original}}{{ punctSp }}: <a href="{{ original | url }}" rel="nofollow">{{ originalTitle or original }}</a>
   {% endif %}
 
   {{ layoutContent | safe }}
 
   {% if tags %}
     <p>
-    <span class="u-fontBold">{{ localisedContent.tagged }}:</span>
+    <span class="u-fontBold">{{ localisedContent.tagged }}{{ punctSp }}:</span>
     {% for tag in tags %}
       {%- if tag != "post" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        {% set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset %}
         <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
       {%- endif -%}
     {% endfor %}
