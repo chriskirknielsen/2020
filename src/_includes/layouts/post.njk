@@ -11,10 +11,16 @@ section: post
   </header>
 
   {% if original %}
-    <p class="u-padding--half u-bg--primary-max"><span aria-hidden="true">&rarr;</span> {{ localisedContent.original}}{{ punctSp }}: <a href="{{ original | url }}" rel="nofollow">{{ originalTitle or original }}</a>
+    <p class="u-fontItalic">
+      <span aria-hidden="true">&rarr;</span>
+      {{ localisedContent.original}}{{ punctSp }}:
+      <a href="{{ original | url }}" rel="nofollow">{{ originalTitle or original }}</a>
+    </p>
   {% endif %}
 
   {{ layoutContent | safe }}
+
+  <hr>
 
   {% if tags %}
     <p>

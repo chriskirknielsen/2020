@@ -18,7 +18,7 @@ Andy pense bien trop souvent à des choses liées au CSS qui sont… ennuyeuses.
 
 Dans cette ère moderne de développement web, nous n'avons pas réellement besoin d'une réinitialisation complète — ou même du tout — car les problèmes de compatibilité entre navigateurs sont bien moindres comparés aux jours où Internet Explorer 6 dominait. Cette ère avait vu naître des réinitialisations comme `normalize.css` qui nous avait évité de nombreux maux de têtes. Ces jours sont loin derrière nous et nous pouvons désormais faire bien plus confiance à nos navigateurs. Les réinitialisations comme cela sont donc, pour la plupart, redondantes.
 
-# Une réinitialisation avec des valeurs par défaut raisonnables
+## Une réinitialisation avec des valeurs par défaut raisonnables
 
 Andy est un grand adepte de _reset CSS_ donc il a petit à petit assemblé son propre groupe de règles, avec une approche de "code golf" (le moins de code possible). Avant d'analyser chaque règle, voici le _reset_ proposé par Andy dans son intégralité :
 
@@ -105,7 +105,7 @@ select {
 }
 ```
 
-# Étape par étape
+## Étape par étape
 Commençons par `box-sizing`.  Absolument tous les éléments et pseudo-éléments sont réinitialisés en leur assignant `box-sizing: border-box`.
   
 ``` css
@@ -221,5 +221,5 @@ Dernièrement mais loin d'être triviale, est une règle `@media` qui réinitial
 
 _Note :_ Merci à [@atomiks](https://github.com/atomiks), désormais ceci ne cassera pas les écouteurs d'événements JavaScript sur `animationend` et `transitionend`.
 
-# En conclusion
+## En conclusion
 C'est tout, une toute petite réinitialisation qui simplifie grandement la vie. Si vous l'aimez, vous pouvez l'utiliser aussi ! Vous trouverez ce _reset_ sur [GitHub](https://github.com/hankchizljaw/modern-css-reset) ou [npm](https://www.npmjs.com/package/modern-css-reset).
