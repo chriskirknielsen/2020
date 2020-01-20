@@ -9,13 +9,12 @@ pagination:
     - nav
     - post
     - posts
-permalink: /tags/{{ tag }}/
+permalink: /tags/{{localeRoot}}{{ tag }}/
 layout: layouts/base.njk
 renderData:
   title: "{{ localisedContent.tagged }} “{{ tag }}”"
 ---
 
 <h1>{{ localisedContent.tagged }} “{{ tag }}”</h1>
-
-{% set postslist = collections[ tag ] %}
+{% set postslist = collections[ tag ] | tagLocale(locale) %}
 {% include "components/postslist.njk" %}

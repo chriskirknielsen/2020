@@ -10,7 +10,7 @@
 /* Content flow */
 
 .u-flow > * + * {
-    margin-top: #{ $spacing };
+    margin-top: #{ $base-flow-spacing };
     margin-bottom: 0;
 }
 

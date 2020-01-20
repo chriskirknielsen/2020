@@ -9,12 +9,14 @@
         "a-propos",
         "contact"
     ],
+    "dateFormat": "DD MMMM Y",
     "localisedContent": {
         "skiplink": "Sauter au contenu",
         "feed": {
             "subtitle": "Blog d'un développeur front-end qui aime bidouiller"
         },
-        "tagged": "Etiquettes"
+        "tagged": "Etiquettes",
+        "original": "Consulter l'article original"
     },
     "langSwitchLabel": "Changer de Langue",
     "schemeSwitchLabel": "Permuter la Palette de Couleurs"

@@ -12,7 +12,7 @@
 			</h3>
 
 			<p class="u-marginBlockStart--none">
-				<time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>: 
+				<time datetime="{{ post.date | machineDate }}">{{ post.date | date(dateFormat, locale) }}</time>: 
 
 				{% if post.data.summary %}
 					{{ post.data.summary }}
