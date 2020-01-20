@@ -3,6 +3,7 @@ $colour-weights: 100, 400, 900;
 html { // Min is lightest during dusk, Max is darkest
     --c-min: #{ c('min') };
     --c-max: #{ c('max') };
+    --c-alpha-lum: 100%;
 
     --c-grey-min: #{ c('grey', min) };
     --c-grey-med: #{ c('grey', med) };
@@ -25,6 +26,7 @@ html { // Min is lightest during dusk, Max is darkest
 html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --c-min: #{ c('max') };
     --c-max: #{ c('min') };
+    --c-alpha-lum: 0%;
     
     --c-grey-min: #{ c('grey', max) };
     --c-grey-med: #{ c('grey', min) };

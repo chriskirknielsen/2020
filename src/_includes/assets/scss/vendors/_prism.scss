@@ -29,7 +29,7 @@ pre > code {
 pre[class*="language-"] code,
 :not(pre) > code {
 	background-color: var(--c-primary-max);
-	background-image: linear-gradient(to bottom right, transparent, rgba(255,255,255, 0.075));
+	background-image: linear-gradient(to bottom right, transparent, hsla(0, 0%, var(--c-alpha-lum), 0.075));
 
     mark {
         color: var(--c-secondary-med);

@@ -19,6 +19,7 @@ $header-expected-height: $spacing * 2 + $header-brand-height;
 
 // Typography
 $base-line-height: 1.5;
+$base-flow-spacing: $spacing * $base-line-height;
 
 // Breakpoints used in fluid type
 //-- Content @ large
