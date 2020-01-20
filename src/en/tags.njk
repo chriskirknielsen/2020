@@ -16,6 +16,5 @@ renderData:
 ---
 
 <h1>{{ localisedContent.tagged }} “{{ tag }}”</h1>
-
-{% set postslist = collections[ tag ] %}
+{% set postslist = collections[ tag ] | tagLocale(locale) %}
 {% include "components/postslist.njk" %}
