@@ -3,7 +3,7 @@ a:not([class]) {
 
     &:link,
     &:visited {
-        color: var(--c, var(--colour-grey));
+        color: var(--c, var(--colour-text));
     }
 
     &:link {

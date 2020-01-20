@@ -29,7 +29,7 @@ pre > code {
 pre[class*="language-"] code,
 :not(pre) > code {
 	background-color: var(--c-primary-max);
-	background-image: linear-gradient(to bottom right, transparent, hsla(0, 0%, var(--c-alpha-lum), 0.075));
+	background-image: linear-gradient(to bottom right, var(--gradient-subtle));
 
     mark {
         color: var(--c-secondary-med);
@@ -54,7 +54,7 @@ pre[class*="language-"] code {
 
 	padding: #{ $spacing } #{ $spacing } #{ $spacing } #{ $spacing * 1.25 };
 	
-	box-shadow: inset #{ $spacing * .25 } 0 0 var(--c-grey-min);
+	box-shadow: inset #{ $spacing * .25 } 0 0 var(--c-grey-min, currentColor);
 
 	// Breakout:
 	position: relative;

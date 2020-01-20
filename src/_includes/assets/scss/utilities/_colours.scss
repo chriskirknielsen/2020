@@ -18,9 +18,12 @@ html { // Min is lightest during dusk, Max is darkest
     --c-secondary-max: #{ c('secondary', max) };
 
     --colour-bg: var(--c-grey-max);
+    --colour-text: var(--c-grey-min);
     --colour-grey: var(--c-grey-med);
     --colour-primary: var(--c-primary-med);
     --colour-secondary: var(--c-secondary-med);
+
+    --gradient-subtle: #{ gradient-stops($sc: c('min'), $sa: 0, $ec: c('min'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
 
 html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
@@ -41,9 +44,12 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --c-secondary-max: #{ c('secondary', min) };
 
     --colour-bg: var(--c-grey-min);
+    --colour-text: var(--c-grey-max);
     --colour-grey: var(--c-grey-med);
     --colour-primary: var(--c-primary-med);
     --colour-secondary: var(--c-secondary-med);
+
+    --gradient-subtle: #{ gradient-stops($sc: c('max'), $sa: 0, $ec: c('max'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
 
 @each $c in map-keys($colours) {
