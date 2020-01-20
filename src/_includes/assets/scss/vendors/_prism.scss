@@ -44,8 +44,8 @@ pre[class*="language-"] code,
 
 pre[class*="language-"] {
 	position: relative;
-	margin-left: -10rem;
-	margin-right: -10rem;
+	margin-left: #{ $spacing * -1 };
+	margin-right: #{ $spacing * -1 };
 }
 
 pre[class*="language-"] code {
@@ -58,7 +58,7 @@ pre[class*="language-"] code {
 
 	// Breakout:
 	position: relative;
-	width: 100vw;
+	width: 100%;
     max-width: 60rem;
     margin-left: auto;
     margin-right: auto;
