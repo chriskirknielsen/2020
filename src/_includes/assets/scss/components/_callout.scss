@@ -3,8 +3,9 @@
 
     background-image: linear-gradient(to bottom right, var(--gradient-subtle));
 
-    html[lang="en"] &::before { content: 'Note'; }
-    html[lang="fr"] &::before { content: 'N.B.'; }
+    html[lang="en"] &::before { content:"\00a0\00a0Note\00a0\00a0"; }
+    html[lang="fr"] &::before { content:"\00a0\00a0N.B.\00a0\00a0"; }
+    &[data-callout][class]::before { content:"\00a0\00a0" attr(data-callout) "\00a0\00a0"; } // If provided, override pseudo's text content
 
     &::before {
         position: absolute;
@@ -12,14 +13,18 @@
         top: 0;
 
         display: inline-block;
-        padding: .25em .5em;
+        padding: 1px;
         
+        font-size: .8em;
         font-weight: 700;
         text-align: center;
-        line-height: 1;
-        border-radius: .25em;
-        background-color: inherit;
+        line-height: 1.75; // Adds vertical "padding"
+        text-transform: uppercase;
+        border-radius: inherit;
         background-color: var(--colour-bg);
+        background:
+            linear-gradient(var(--colour-bg), var(--colour-bg)) content-box,
+            linear-gradient(180deg, var(--colour-bg) calc(50% - 1px), currentColor calc(50% - 1px)) padding-box;
 
         transform: translateY(-50%);
     }
