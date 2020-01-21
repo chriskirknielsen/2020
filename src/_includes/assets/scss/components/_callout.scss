@@ -18,9 +18,9 @@
         font-size: .8em;
         font-weight: 700;
         text-align: center;
-        line-height: 1.5;
-        text-transform: uppercase;;
-        border-radius: .5rem;
+        line-height: 1.75; // Adds vertical "padding"
+        text-transform: uppercase;
+        border-radius: inherit;
         background-color: var(--colour-bg);
         background:
             linear-gradient(var(--colour-bg), var(--colour-bg)) content-box,
