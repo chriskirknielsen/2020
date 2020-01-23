@@ -1,7 +1,8 @@
 body {
     overflow-x: hidden;
 
-    font-family: f('body', 'fallback');
+    // font-family: f('body', 'fallback');
+    font-family: sans-serif;
     --c: var(--colour-text);
     --bg: var(--colour-bg);
     color: var(--c);
