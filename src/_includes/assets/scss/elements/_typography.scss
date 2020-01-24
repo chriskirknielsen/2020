@@ -14,8 +14,12 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    font-family: f('heading');
+h6,
+.h {
+    @if (f('heading') != f('body')) {
+        // Don't declare the font family into heading elements if it's the same as the body
+        font-family: f('heading');
+    }
     font-weight: 700;
     line-height: 1.2;
 }
@@ -82,7 +86,7 @@ p {
 }
 
 hr {
-    height: 2px;
+    height: .0625rem;
 
     border: 0;
     background: var(--c-grey-med);

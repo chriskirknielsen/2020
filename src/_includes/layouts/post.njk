@@ -5,9 +5,11 @@ section: post
 
 <article class="u-flow">
   <header>
+    <p class="u-c--primary-med u-fontBold u-textUppercase"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+
     <h1>{{ title }}</h1>
 
-    <p><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+    <div class="u-sep u-bg--primary-med u-marginBlockStart" aria-hidden="true"></div>
   </header>
 
   {% if original %}
