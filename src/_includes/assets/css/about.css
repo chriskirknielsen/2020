@@ -1,1 +1,1 @@
-.about__image{width:8rem;max-width:30vw;border:0.125rem solid var(--c-min)}.about__download{width:1.25em;height:1.25em}
+.about__image{width:8rem;max-width:30vw;border:0.125rem solid var(--c-min);animation:about__profilePicture 2s ease-out 1 forwards}.about__download{width:1.25em;height:1.25em}@keyframes about__profilePicture{from{transform:translateX(50vw) rotate(720deg)}}
