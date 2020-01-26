@@ -28,7 +28,7 @@ pre > code {
 
 pre[class*="language-"] code,
 :not(pre) > code {
-	background-color: var(--c-primary-max);
+	background-color: var(--c-grey-max);
 
     mark {
         color: var(--c-secondary-med);
@@ -48,7 +48,7 @@ pre[class*="language-"] code {
 	padding: #{ $spacing } #{ $spacing } #{ $spacing } #{ $spacing * 1.25 };
 	
 	background-image: linear-gradient(to bottom right, var(--gradient-subtle));
-	box-shadow: inset #{ $spacing * .25 } 0 0 var(--c-grey-min, currentColor);
+	box-shadow: inset #{ $spacing * .25 } 0 0 var(--c-primary-min, currentColor);
 }
 
 :not(pre) > code[class*="language-"] {
