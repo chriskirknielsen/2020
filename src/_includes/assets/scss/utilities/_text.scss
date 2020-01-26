@@ -23,11 +23,15 @@
 
 .u-textUppercase { text-transform: uppercase; }
 .u-textDecoration--none { text-decoration: none; }
+.h\:u-textDecoration--none:hover,
+.h\:u-textDecoration--none:focus {
+    text-decoration: none;
+}
 .u-vAlign--middle { vertical-align: middle; }
 .u-letterSpacing { letter-spacing: .05em; }
 .u-lineHeight--1 { line-height: 1; }
 
-.u-sep {
+.u-sep { // Use this as <div aria-hidden=true"> to control colour and spacing individually
     width: 8rem;
     height: .25rem;
 }
