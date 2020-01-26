@@ -1,4 +1,33 @@
+@function grid-gradient-axis($dir: right, $cell-size: 8em, $line-width: .5px, $line-colour: red) {
+    @return repeating-linear-gradient(to #{$dir},
+        transparent calc(#{ $cell-size / 2 } - #{ $line-width }),
+        #{ $line-colour } calc(#{ $cell-size / 2 } - #{ $line-width }),
+        #{ $line-colour } calc(#{ $cell-size / 2 } + #{ $line-width }),
+        transparent calc(#{ $cell-size / 2 } + #{ $line-width }),
+        transparent #{ $cell-size }
+    );
+}
+
 .homescreen {
+    $sun-radius: 20vmin;
+    $sun-blind-size: $sun-radius / 12;
+    $screen-background: c('primary', 'max');
+    $screen-background: unquote('var(--c-primary-max)');
+    $sky-start: #0a0634;
+    $sky-start: c('primary', 'max');
+    $sky-start: unquote('var(--c-primary-max)');
+    $sky-end: #791e74;
+    $floor-start: #1e0347;
+    $floor-colour: c('secondary', 'med');
+    $floor-end: c('primary', 'max');
+    $sun-top: #ed23af;
+    $sun-middle: #ffafa3;
+    $sun-bottom: #ffffe9;
+    $sun-ref-top: #9d3472;
+    $sun-ref-bottom: #3c0328;
+    $sun-glow: $sun-top;
+    // Hardcode all colour values since we don't want this to be affected by colour schemes
+
     min-height: calc(100vh - #{ $header-expected-height*2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
     
     @include above-medium {
@@ -6,24 +35,6 @@
     }
 
     &__background {
-        $sun-radius: 20vmin;
-        $sun-blind-size: $sun-radius / 12;
-        $screen-background: c('primary', 'max');
-        $screen-background: unquote('var(--c-primary-max)');
-        $sky-start: #0a0634;
-        $sky-start: c('primary', 'max');
-        $sky-start: unquote('var(--c-primary-max)');
-        $sky-end: #791e74;
-        $floor-start: #1e0347;
-        $floor-end: c('primary', 'max');
-        $sun-top: #ed23af;
-        $sun-middle: #ffafa3;
-        $sun-bottom: #ffffe9;
-        $sun-ref-top: #9d3472;
-        $sun-ref-bottom: #3c0328;
-        $sun-glow: $sun-top;
-        // Hardcode all colour values since we don't want this to be affected by colour schemes
-
         $sun-fallback: radial-gradient(circle at 50% 100%,
                 #{ $sun-bottom } 0,
                 #{ $sun-middle } #{ $sun-radius / 2 },
@@ -107,6 +118,37 @@
             100% { --ckn-sun-mask-lines: #{ $sun-blind-size }; }
         }
 
+    }
+
+    &__scene {
+        $grid-cell-size: 8em;
+
+        transform-style: preserve-3d;
+        perspective: #{ $grid-cell-size };
+        
+        &::before,
+        &::after {
+            width: 100%;
+        }
+
+        &::before {
+            height: 100%;
+
+            background:
+                grid-gradient-axis(bottom, $grid-cell-size/4, .25px, $floor-colour),
+                grid-gradient-axis(right,  $grid-cell-size,   .5px, $floor-colour);
+            background-position: 50% 50%;
+
+            transform-origin: 50% 100%;
+            transform: rotateX(45deg);
+        }
+
+        &::after {
+            height: 2px;
+            margin: auto;
+
+            background: $floor-colour;
+        }
     }
 
     &__svg-wrapper {
