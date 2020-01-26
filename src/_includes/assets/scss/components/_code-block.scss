@@ -2,7 +2,7 @@
 
 pre[class*="language-"],
 .cp_embed_wrapper,
-.wide {
+.wide-block {
     position: relative;
     margin-left: #{ $code-breakout-size * -1 };
     margin-right: #{ $code-breakout-size * -1 };
@@ -10,7 +10,7 @@ pre[class*="language-"],
 
 pre[class*="language-"] code,
 .cp_embed_iframe,
-.wide__content {
+.wide-block__content {
     position: relative;
     width: 100%;
     max-width: 60rem;

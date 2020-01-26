@@ -1,14 +1,56 @@
 .header {
+    $logo-bleed-space: .25em;
     // outline: .0625em solid var(--c-secondary-max);
 
     &__svg {
         width: auto;
         height: $header-brand-height;
+        height: calc(#{ $header-brand-height } + #{ $logo-bleed-space * 2 });
+        margin-top: #{ $logo-bleed-space * -1 };
+        margin-bottom: #{ $logo-bleed-space * -1 };
     }
 
     &__logo {
-        &-path {
-            fill: var(--c, currentColor);
+        $p: &;
+
+        &-fill {
+            fill: var(--c-secondary-med);
+            transition: opacity #{ $logo-transition-time } #{ $easing-smooth };
+
+            #{ $p }-link:hover &,
+            #{ $p }-link:focus & {
+                opacity: 0;
+            }
+        }
+
+        &-stroke {
+            fill: none;
+            stroke: var(--c-primary-min);
+            stroke-width: 0;
+
+            transition-property: stroke-width, filter;
+            transition-duration: #{ $logo-transition-time };
+            transition-timing-function: #{ $easing-smooth };
+
+            #{ $p }-link:hover &,
+            #{ $p }-link:focus & {
+                stroke-width: .1875em;
+                filter: drop-shadow(0 0 #{ $logo-bleed-space } var(--c-primary-med));
+
+                animation: cknLogoNeon .3s ease-in-out both;
+
+                &--c { animation-delay: .1s; }
+                &--n { animation-delay: .3s; }
+            }
         }
     }
+}
+
+@keyframes cknLogoNeon {
+    0% { opacity: 0; }
+    20% { opacity: .5; }
+    40% { opacity: 0; }
+    60% { opacity: .75; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
 }
