@@ -1,17 +1,15 @@
 .header {
-    $logo-bleed-space: .25em;
-    // outline: .0625em solid var(--c-secondary-max);
-
-    &__svg {
-        width: auto;
-        height: $header-brand-height;
-        height: calc(#{ $header-brand-height } + #{ $logo-bleed-space * 2 });
-        margin-top: #{ $logo-bleed-space * -1 };
-        margin-bottom: #{ $logo-bleed-space * -1 };
-    }
-
     &__logo {
         $p: &;
+        $logo-bleed-space: .125em; // Logo is 2rem = 32px tall, the content takes up 28px, so we have 4px available, which is 4/32 = 12.5% = .125em
+
+        // The logo should take up more vertical space to compensate for the bleed area
+        width: auto;
+        height: #{ 1em + $logo-bleed-space * 2 };
+        margin-top: #{ $logo-bleed-space * -1 };
+        margin-bottom: #{ $logo-bleed-space * -1 };
+
+        font-size: $header-brand-height;
 
         &-fill {
             fill: var(--c-secondary-med);
@@ -34,7 +32,7 @@
 
             #{ $p }-link:hover &,
             #{ $p }-link:focus & {
-                stroke-width: .1875em;
+                stroke-width: .09375em; // Font size is 2rem = 32px, this results in a 1.5px stroke
                 filter: drop-shadow(0 0 #{ $logo-bleed-space } var(--c-primary-med));
 
                 animation: cknLogoNeon .3s ease-in-out both;
