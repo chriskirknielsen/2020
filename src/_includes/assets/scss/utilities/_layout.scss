@@ -14,6 +14,8 @@
     margin-bottom: 0;
 }
 
+/* Containers and breakout blocks */
+
 .u-container {
     width: 100%;
     max-width: $container-max-width-em;
@@ -25,6 +27,30 @@
     position: relative;
     left: calc(50% - 50vw);
     width: 100vw;
+}
+
+.u-oversized {
+    position: relative;
+    margin-left: #{ $code-breakout-size * -1 };
+    margin-right: #{ $code-breakout-size * -1 };
+}
+
+.u-oversized__content {
+    width: 100%;
+    max-width: calc(100vw - #{ $spacing * 2 }); // Ensure there still is a bit of space between the edges and the element
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Define common styles for Prism and Codepen blocks, that will be oversized beyond the main container
+pre[class*="language-"],
+.cp_embed_wrapper {
+    @extend .u-oversized;
+}
+
+pre[class*="language-"] code,
+.cp_embed_iframe {
+    @extend .u-oversized__content;
 }
 
 
