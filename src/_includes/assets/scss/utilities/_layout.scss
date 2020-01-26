@@ -104,6 +104,10 @@
     margin-left: #{ $spacing * -1 };
     margin-right: #{ $spacing * -1 };
 }
+.u-marginInline {
+    margin-left: #{ $spacing };
+    margin-right: #{ $spacing };
+}
 .u-marginInline--none {
     margin-left: 0;
     margin-right: 0;
