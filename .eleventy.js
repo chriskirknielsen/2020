@@ -68,8 +68,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('sortNavLocale', function(collection, navSet) {
     if (!Array.isArray(collection)) { return collection; }
 
+    let collectionFiltered = collection.filter(function(c) {
+      return navSet.indexOf(c.fileSlug) > -1;
+    });
+
     // Neat solution found on https://stackoverflow.com/a/44063445/3624336
-    let collectionSorted = collection.slice().sort(function(a, b){
+    let collectionSorted = collectionFiltered.slice().sort(function(a, b){
       return navSet.indexOf(a.fileSlug) - navSet.indexOf(b.fileSlug);
     });
     
