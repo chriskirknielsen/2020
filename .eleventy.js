@@ -57,7 +57,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode("callout", function(content, pseudo) {
     const md = new markdownIt();
-    return `<div class="callout u-padding u-border u-radius--half u-bg--secondary-max"${ typeof pseudo === 'string' ? 'data-callout="'+pseudo+'"' : '' }>
+    return `<div class="callout u-padding u-border u-radius--half u-c--primary-min u-bg--secondary-max"${ typeof pseudo === 'string' ? 'data-callout="'+pseudo+'"' : '' }>
       <p>${ md.renderInline(content) }</p>
     </div>`;
   });

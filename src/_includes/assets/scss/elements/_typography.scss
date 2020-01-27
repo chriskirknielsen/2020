@@ -91,3 +91,8 @@ hr {
     border: 0;
     background: var(--c-grey-med);
 }
+
+::selection {
+    color: var(--c-grey-max);
+    background-color: var(--c-secondary-min);
+}

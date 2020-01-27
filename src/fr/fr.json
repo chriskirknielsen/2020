@@ -15,8 +15,10 @@
         "feed": {
             "subtitle": "Blog d'un développeur front-end qui aime bidouiller"
         },
+        "latestPost": "Dernier Article",
         "tagged": "Etiquettes",
-        "original": "Consulter l'article original"
+        "original": "Consulter l'article original",
+        "external": "Consulter l'article complet sur"
     },
     "langSwitchLabel": "Changer de Langue",
     "schemeSwitchLabel": "Permuter la Palette de Couleurs"

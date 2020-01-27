@@ -10,7 +10,7 @@ permalink: /design-tokens/index.html
     <div class="u-displayFlex">
         {% for key, hex in items %}
             <figure class="u-marginInline">
-                <figcaption>{{ key }}: {{ hex }}</figcaption>
+                <figcaption class="u-fontCode">{{ key }}: {{ hex }}</figcaption>
                 <svg width="8em" height="8em" aria-label="{{ hex }}" class="u-border">
                     <rect fill="{{ hex }}" width="100%" height="100%"/>
                 </svg>

@@ -5,32 +5,41 @@ section: post
 
 <article class="u-flow">
   <header>
-    <p class="u-c--primary-med u-fontBold u-textUppercase"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
-
     <h1>{{ title }}</h1>
 
-    <div class="u-sep u-bg--primary-med u-marginBlockStart" aria-hidden="true"></div>
+    <p class="u-c--primary-med u-fontBold u-marginBlockEnd"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+
+    {# <div class="u-sep u-bg--primary-med" aria-hidden="true"></div> #}
   </header>
 
   {% if original %}
     <p class="u-fontItalic">
       <span aria-hidden="true">&rarr;</span>
-      {{ localisedContent.original}}{{ punctSp }}:
+      {{ localisedContent.original }}{{ punctSp }}:
       <a href="{{ original | url }}" rel="nofollow">{{ originalTitle or original }}</a>
     </p>
   {% endif %}
 
   {{ layoutContent | safe }}
 
+  {% if externalUrl %}
+    <p class="u-marginBlockStart--double">
+      <a href="{{ externalUrl }}" class="u-paddingBlock--half u-paddingInline u-textDecoration--none u-c--grey-max u-bg--grey-min h:u-c--grey-max h:u-bg--secondary-med u-lineHeight--1">
+        <span class="u-flex--alignSelfEnd u-fontBold">{{ localisedContent.external }} {{ externalHost or externalUrl }}</span>
+      </a>
+    </p>
+  {% endif %}
+
   <hr>
 
   {% if tags %}
     <p>
     <span class="u-fontBold">{{ localisedContent.tagged }}{{ punctSp }}:</span>
+    {% set comma = joiner() %}
     {% for tag in tags %}
       {%- if tag != "post" -%}
-        {% set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+        {%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
+        {{- comma() }} <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
       {%- endif -%}
     {% endfor %}
     </p>

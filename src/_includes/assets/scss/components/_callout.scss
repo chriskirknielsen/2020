@@ -9,8 +9,8 @@
 
     &::before {
         position: absolute;
-        left: #{ $spacing };
-        top: 0;
+        left: #{ $spacing / 2 };
+        top: .02em;
 
         display: inline-block;
         padding: 1px;
@@ -21,6 +21,7 @@
         line-height: 1.75; // Adds vertical "padding"
         text-transform: uppercase;
         border-radius: inherit;
+        color: var(--colour-text);
         background-color: var(--colour-bg);
         background:
             linear-gradient(var(--colour-bg), var(--colour-bg)) content-box,
