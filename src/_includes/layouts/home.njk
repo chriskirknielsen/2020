@@ -89,4 +89,31 @@ section: home
 
 <section class="u-padding--double u-flow">
     {{ layoutContent | safe }}
+
+    {% set latestpost = collections["posts_" + locale] | reverse | first %}
+    {% if latestpost %}
+        {# <h2>{{ localisedContent.latestPost }}</h2> #}
+
+        <article class="" {% if latestpost.url == url %} data-current="current item"{% endif %}>
+            <h3>
+                <a href="{{ latestpost.url | url }}">
+                    {% if latestpost.data.title %}
+                        {{ latestpost.data.title }}
+                    {% else %}
+                        Untitled Post
+                    {% endif %}
+                </a>
+            </h3>
+
+            <p class="u-marginBlockStart--half">
+                <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}{{ punctSp }}:</time>
+
+                {% if latestpost.data.summary %}
+                    {{ latestpost.data.summary }}
+                {% else %}
+                    {{ latestpost.excerpt }}
+                {% endif %}
+            </p>
+		</article>
+    {% endif %}
 </section>

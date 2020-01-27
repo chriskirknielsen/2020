@@ -15,8 +15,10 @@
         "feed": {
             "subtitle": "Blog of a front-end developer who likes to tinker"
         },
+        "latestPost": "Latest Post",
         "tagged": "Tagged",
-        "original": "Read the original article"
+        "original": "Read the original article",
+        "external": "Read the full article on"
     },
     "langSwitchLabel": "Switch Language",
     "schemeSwitchLabel": "Toggle Colour Scheme"
