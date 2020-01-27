@@ -57,7 +57,7 @@ If the screen width is equal to `80em`, the padding will compute to `0`, but if 
 ```
 
 {% callout %}
-  A media query is not required since negative padding values are invalid.
+  A media query is not necessary since negative padding values are invalid. 👍
 {% endcallout %}
 
 Let's have a look at the complete code all together now:
