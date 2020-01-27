@@ -6,7 +6,7 @@
         
         border: #{ $border-size } solid var(--c-min);
 
-        animation: about__profilePicture .75s ease-in-out 1 forwards;
+        animation: about__profilePicture 1s cubic-bezier(0.25, 0.66, 0.33, 1) 1 forwards;
     }
 
     &__download {
@@ -17,7 +17,9 @@
 
 @keyframes about__profilePicture {
     0% { transform: scale(0); }
-    50% { transform: scale(1.05); }
-    75% { transform: scale(.95); }
+    20% { transform: scale(1.1); }
+    40% { transform: scale(.9); }
+    60% { transform: scale(1.03); }
+    80% { transform: scale(.97); }
     100% { transform: scale(1); }
 }
