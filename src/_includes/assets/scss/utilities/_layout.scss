@@ -71,7 +71,7 @@ pre[class*="language-"] code,
 .u-displayInlineBlock { display: inline-block; }
 .u-displayInline { display: inline; }
 .u-displayFlex { display: flex; }
-.u-displayFlowRoot { display: flow-root; }
+.u-displayGrid { display: grid; }
 .u-displayInlineFlex { display: inline-flex; }
 
 @include above-medium { .md\:u-displayFlex { display: flex; } }
@@ -123,12 +123,19 @@ pre[class*="language-"] code,
 .u-marginBlockEnd {
     margin-bottom: #{ $spacing };
 }
+.u-marginBlockEnd--half {
+    margin-bottom: #{ $spacing / 2 };
+}
 .u-marginBlockEnd--double {
     margin-bottom: #{ $spacing * 2 };
 }
 .u-marginInline--negative {
     margin-left: #{ $spacing * -1 };
     margin-right: #{ $spacing * -1 };
+}
+.u-marginInline--negative-half {
+    margin-left: #{ $spacing * -.5 };
+    margin-right: #{ $spacing * -.5 };
 }
 .u-marginInline {
     margin-left: #{ $spacing };
