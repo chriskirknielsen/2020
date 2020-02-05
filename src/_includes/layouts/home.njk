@@ -1,9 +1,10 @@
 ---
 layout: layouts/base.njk
 section: home
+mainClasses: content
 ---
 
-<section class="homescreen u-displayFlex u-flex--stretch u-breakout" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
+<section class="content--full homescreen u-displayFlex u-flex--stretch" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
 	<div class="homescreen__wrapper u-displayFlex u-flex--centre u-posRelative u-afterCover u-width--100">
         <div class="homescreen__background u-displayFlex u-flex--centre u-absCover u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
             <canvas id="homescreen-scene" class="homescreen__grid u-posRelative"></canvas>
@@ -87,14 +88,14 @@ section: home
     </div>
 </section>
 
-<section class="u-padding--double u-flow">
+<section class="u-flow">
     {{ layoutContent | safe }}
 
     {% set latestpost = collections["posts_" + locale] | reverse | first %}
     {% if latestpost %}
         {# <h2>{{ localisedContent.latestPost }}</h2> #}
 
-        <article class="" {% if latestpost.url == url %} data-current="current item"{% endif %}>
+        <article {% if latestpost.url == url %} data-current="current item"{% endif %}>
             <h3>
                 <a href="{{ latestpost.url | url }}">
                     {% if latestpost.data.title %}

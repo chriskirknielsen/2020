@@ -43,15 +43,15 @@
 }
 
 // Define common styles for Prism and Codepen blocks, that will be oversized beyond the main container
-pre[class*="language-"],
-.cp_embed_wrapper {
-    @extend .u-oversized;
-}
+// pre[class*="language-"],
+// .cp_embed_wrapper {
+//     @extend .u-oversized;
+// }
 
-pre[class*="language-"] code,
-.cp_embed_iframe {
-    @extend .u-oversized__content;
-}
+// pre[class*="language-"] code,
+// .cp_embed_iframe {
+//     @extend .u-oversized__content;
+// }
 
 
 /* Position */
@@ -190,6 +190,10 @@ pre[class*="language-"] code,
     padding-top: #{ $spacing };
     padding-bottom: #{ $spacing };
 }
+.u-paddingBlock--double {
+    padding-top: #{ $spacing * 2 };
+    padding-bottom: #{ $spacing * 2 };
+}
 .u-paddingBlock--half {
     padding-top: #{ $spacing / 2 };
     padding-bottom: #{ $spacing / 2 };
@@ -199,6 +203,9 @@ pre[class*="language-"] code,
 }
 .u-paddingBlockStart--none {
     padding-top: 0;
+}
+.u-paddingBlockEnd--double {
+    padding-bottom: #{ $spacing * 2 };
 }
 .u-paddingInline {
     padding-left: #{ $spacing };
