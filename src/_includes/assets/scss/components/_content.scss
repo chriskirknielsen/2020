@@ -11,11 +11,11 @@
     @supports (display: grid) {
         display: grid;
         grid-template-columns:
-            minmax(#{ $spacing }, 1fr)
+            minmax(#{ $spacing }, 2fr)
             minmax(#{ $spacing }, 1fr)
             minmax(auto, calc(#{ $max } - #{ $gutter * 2 }))
             minmax(#{ $spacing }, 1fr)
-            minmax(#{ $spacing }, 1fr)
+            minmax(#{ $spacing }, 2fr)
         ;
         max-width: #{ $wide-content-max-width-em };
         padding-left: 0;
