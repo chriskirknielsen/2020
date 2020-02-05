@@ -12,7 +12,10 @@ $z-index: (
 $rem-in-px: 16px;
 $spacing: 1rem;
 $ratio: 1.2;
+$wide-content-max-width: 120;
+$wide-content-max-width-em: #{ $wide-content-max-width * 1em };
 $container-max-width: 60;
+$container-max-width-rem: #{ $container-max-width * 1rem };
 $container-max-width-em: #{ $container-max-width * 1em };
 $header-brand-height: 2rem;
 $header-expected-height: $spacing * 2 + $header-brand-height;
