@@ -33,7 +33,6 @@ pre[class*="language-"] code,
     mark {
         color: var(--c-secondary-med);
         background: var(--c-grey-max);
-        box-shadow: #{ $spacing * -1 } 0 0 var(--c-secondary-med);
     }
 }
 
@@ -48,7 +47,7 @@ pre[class*="language-"] code {
 	padding: #{ $spacing } #{ $spacing } #{ $spacing } #{ $spacing * 1.25 };
 	
 	background-image: linear-gradient(to bottom right, var(--gradient-subtle));
-	box-shadow: inset #{ $spacing * .25 } 0 0 var(--c-primary-min, currentColor);
+	border-left: #{ $spacing * .25 } solid var(--c-secondary-med, currentColor);
 }
 
 :not(pre) > code[class*="language-"] {
