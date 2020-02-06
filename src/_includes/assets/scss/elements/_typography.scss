@@ -16,6 +16,8 @@ h4,
 h5,
 h6,
 .h {
+    margin-left: -.0625em; // Compensate for the large font's space on the line start
+    
     @if (f('heading') != f('body')) {
         // Don't declare the font family into heading elements if it's the same as the body
         font-family: f('heading');
@@ -85,11 +87,34 @@ p {
     hyphens: auto;
 }
 
+blockquote {
+    border-left: #{ $spacing * .25 } solid var(--c-primary-min, currentColor);
+    padding-left: #{ $spacing * 1.25 };
+
+    > * + * {
+        margin-top: #{ $spacing };
+    }
+
+    > :first-child::before {
+        content: open-quote;
+    }
+    
+    > :last-child::after {
+        content: close-quote;
+    }
+
+    > :first-child::before,
+    > :last-child::after {
+        color: var(--c-primary-med, currentColor);
+    }
+}
+
 hr {
-    height: .0625rem;
+    width: 100%;
+    height: .03125rem;
 
     border: 0;
-    background: var(--c-grey-med);
+    background: var(--c-primary-min);
 }
 
 ::selection {
