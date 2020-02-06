@@ -6,18 +6,18 @@ mainClasses: u
 
 <article class="content u-flow">
   <header>
-    <h1>{{ title }}</h1>
+    <h1 id="{{ title | slug }}">{{ title }}</h1>
 
-    <p class="u-c--primary-med u-fontBold u-marginBlockEnd"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+    <p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
 
-    {# <div class="u-sep u-bg--primary-med" aria-hidden="true"></div> #}
+    {# <div class="u-sep u-bg--primary-med u-marginBlockStart" aria-hidden="true"></div> #}
   </header>
 
   {% if original %}
-    <p class="u-fontItalic">
-      <span aria-hidden="true">&rarr;</span>
-      {{ localisedContent.original }}{{ punctSp }}:
-      <a href="{{ original | url }}" rel="nofollow">{{ originalTitle or original }}</a>
+    <p class="u-paddingInline u-paddingBlock--half u-border u-bg--secondary-max">
+      {# <span aria-hidden="true">&rarr;</span> #}
+      <span class="u-fontItalic">{{ localisedContent.original }}{{ punctSp }}:</span>
+      <a href="{{ original | url }}" rel="nofollow"><span class="u-fontBold">{{ originalTitle or original }}</span></a>
     </p>
   {% endif %}
 
@@ -40,7 +40,8 @@ mainClasses: u
     {% for tag in tags %}
       {%- if tag != "post" -%}
         {%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
-        {{- comma() }} <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+        {# {{- comma() }} #}
+        <a href="{{ tagUrl | url }}" rel="tag" class="u-inlineBlock u-padding--quarter u-fontBold u-border h:u-c--primary-med u-bg--grey-max u-textDecoration--none">{{ tag }}</a>
       {%- endif -%}
     {% endfor %}
     </p>

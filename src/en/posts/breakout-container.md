@@ -11,7 +11,7 @@ tags:
 
 Here's a quick tip if you have your content limited to a certain width but you want an element to "break out".
 
-I did not in any way invent this concept, but I've seen methods out there with some `transform` to move the element back into place but that is not necessary, you can make it a lot easier with relative positioning.
+I've seen a few ways to do this, including one with `transform` which works great, but I ran into a case where I needed that `transform` for some animation. You can instead make use of relative positioning to achieve the same result.
 
 Say you have a `.container` class with a `max-width` value and `margin: 0 auto`:
 
@@ -32,6 +32,10 @@ You can break an element out of this container by making it take up the whole sc
 }
 ```
 
+**That's all you need for this trick to work.** However, you might want to improve this a bit, so let's go a bit further.
+
+## Improvements
+
 You should also add `overflow-x: hidden` to the `body` (or a main wrapper around your container that takes up 100% of the width) to help with breakout elements that might eat up extra space for the vertical scrollbar on some browsers/operating systems.
 
 ```css
@@ -41,9 +45,9 @@ You should also add `overflow-x: hidden` to the `body` (or a main wrapper around
 }
 ```
 
-Additionally, if you want to really push the backward compatibility to avoid a broken layout for the few browsers that support the `vw` unit but not `calc()`, you can use any variation of `calc(50vw * 2)` that results in `100vw`. This will ensure older browsers won't have content outside the viewport.
+Note that if you want to really push the backward compatibility, in order to avoid a broken layout for the few browsers that support the `vw` unit but not `calc()`, you can use any variation of `calc(50vw * 2)` that results in `100vw`. This will ensure older browsers won't have content outside the viewport.
 
-As a bonus, if you want to avoid having an absurdly large content on an ultra-wide viewport, use "dynamic" padding! This `calc` value will take the screen width (`100vw`) minus the maximum width of the content (`80em`) and divide the result by `2`. The block will still take up all the horizontal space but the content will remain at a reasonable width.
+As a bonus, if you want to avoid having an absurdly large content on an ultra-wide viewport, use "dynamic" padding! This `calc` value will take the screen width (`100vw`) minus the maximum width of the content you give it (let's say `80em`) and divide the result by `2`. The block will still take up all the horizontal space but the content will remain at a reasonable width.
 
 If the screen width is equal to `80em`, the padding will compute to `0`, but if `100vw` is worth `100em`, the padding will evaluate to `(100em - 80em) / 2 = 10em` on each side. Note that `box-sizing: border-box;` is necessary to ensure the padding is subtracted from the full viewport width instead of added to it.
 
