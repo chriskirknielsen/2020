@@ -5,26 +5,30 @@ section: contact
 <h1>{{ title }}</h1>
 
 <div class="u-margin--flexGap u-marginBlockStart--none md:u-displayFlex">
-    <div class="u-flex--grow-1 u-flex--basis-0 u-flow u-padding u-bg--grey-max">
-        <div class="u-textCentre h2" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="u-margin--auto">
-                <path fill="#fff" d="M14 20h36v24H14z" style="fill: var(--c);"/>
-                <path fill="none" stroke="#000" stroke-miterlimit="10" d="M14 44l18-24 18 24" style="stroke: var(--bg);"/>
-                <path fill="#fff" stroke="#000" stroke-miterlimit="10" d="M14 20l18 18 18-18" style="fill: var(--c); stroke: var(--bg);"/>
-            </svg>
-        </div>
+    <div class="u-flex--grow-1 u-flex--basis-0 u-padding u-bg--grey-max u-border u-c--grey-med">
+        <div class="u-c--primary-min u-flow ">
+            <div class="u-textCentre h2" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="u-margin--auto">
+                    <path fill="#fff" d="M14 20h36v24H14z" style="fill: var(--c);"/>
+                    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M14 44l18-24 18 24" style="stroke: var(--bg);"/>
+                    <path fill="#fff" stroke="#000" stroke-miterlimit="10" d="M14 20l18 18 18-18" style="fill: var(--c); stroke: var(--bg);"/>
+                </svg>
+            </div>
 
-        <h2 id="email">E-mail</h2>
-        <p><a href="mailto:chriskirknielsen@gmail.com">chriskirknielsen@gmail.com</a></p>
+            <h2 id="email">E-mail</h2>
+            <p><a href="mailto:chriskirknielsen@gmail.com">chriskirknielsen@gmail.com</a></p>
+        </div>
     </div>
 
-    <div class="u-flex--grow-1 u-flex--basis-0 u-flow u-padding u-bg--grey-max">
-        <div class="u-textCentre h2" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="u-margin--auto">
-                <path d="M26.29 25.3a4.008 4.008 0 000-5.66l-3.89-3.89a4.008 4.008 0 00-5.66 0l-1.53 1.53c-.33.33-.6.7-.79 1.12-1 2.25-2.77 9.67 9.23 21.67 11.98 11.98 19.44 10.29 21.73 9.31.44-.19.82-.47 1.16-.81l1.51-1.51a4.008 4.008 0 000-5.66l-3.89-3.89a4.008 4.008 0 00-5.66 0l-2.63 2.63s-4.36-2.03-7.31-4.98-4.91-7.24-4.91-7.24l2.64-2.62z" fill="#fff" style="fill: var(--c);"/>
-            </svg>
-        </div>
+    <div class="u-flex--grow-1 u-flex--basis-0 u-padding u-bg--grey-max u-border u-c--grey-med">
+        <div class="u-c--primary-min u-flow">
+            <div class="u-textCentre h2" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="u-margin--auto">
+                    <path d="M26.29 25.3a4.008 4.008 0 000-5.66l-3.89-3.89a4.008 4.008 0 00-5.66 0l-1.53 1.53c-.33.33-.6.7-.79 1.12-1 2.25-2.77 9.67 9.23 21.67 11.98 11.98 19.44 10.29 21.73 9.31.44-.19.82-.47 1.16-.81l1.51-1.51a4.008 4.008 0 000-5.66l-3.89-3.89a4.008 4.008 0 00-5.66 0l-2.63 2.63s-4.36-2.03-7.31-4.98-4.91-7.24-4.91-7.24l2.64-2.62z" fill="#fff" style="fill: var(--c);"/>
+                </svg>
+            </div>
 
-        {{ layoutContent | safe }}
+            {{ layoutContent | safe }}
+        </div>
     </div>
 </div>
