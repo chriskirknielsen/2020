@@ -6,9 +6,9 @@ mainClasses: u
 
 <article class="content u-flow">
   <header>
-    <h1 id="{{ title | slug }}">{{ title }}</h1>
-
     <p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+
+    <h1 id="{{ title | slug }}">{{ title }}</h1>
 
     {# <div class="u-sep u-bg--primary-med u-marginBlockStart" aria-hidden="true"></div> #}
   </header>

@@ -3,6 +3,7 @@
 
     background-image: linear-gradient(to bottom right, var(--gradient-subtle));
 
+    // Since the horizontal padding is used for a background-clip trick, using non-breaking spaces around the text to add padding
     html[lang="en"] &::before { content:"\00a0\00a0Note\00a0\00a0"; }
     html[lang="fr"] &::before { content:"\00a0\00a0N.B.\00a0\00a0"; }
     &[data-callout][class]::before { content:"\00a0\00a0" attr(data-callout) "\00a0\00a0"; } // If provided, override pseudo's text content
@@ -13,12 +14,12 @@
         top: .02em;
 
         display: inline-block;
-        padding: 1px;
+        padding: 1px; // Used for background-clip
         
         font-size: .8em;
         font-weight: 700;
         text-align: center;
-        line-height: 1.75; // Adds vertical "padding"
+        line-height: 1.5; // Adds vertical "padding"
         text-transform: uppercase;
         border-radius: inherit;
         color: var(--colour-text);
