@@ -22,13 +22,13 @@ a:not([class]),
 
     &[href^="http://"],
     &[href^="https://"] {
-        &::after {
+        &:not([data-quiet-external-url])::after {
             content: "\2060";
             
             display: inline-block;
             width: .75em;
             height: .75em;
-            margin-left: .5em;
+            margin-left: .3em;
             padding: .0625em;
 
             vertical-align: middle;
