@@ -1,16 +1,27 @@
 .about {
     &__image {
         $border-size: .125rem;
+        $sq-projection: ( // Coordinates of points projected past their container to obtain diagonal reveals
+            'bottom-left': (0 -100%, 200% 100%, 100% 200%, -100% 100%),
+            'bottom-right': (-100% 100%, 100% -100%, 200% 100%, 0 200%),
+        );
         border: #{ $border-size } solid var(--c-min);
 
         &::before {
+            --proj-xy1: #{ nth( map-get($sq-projection, 'bottom-right'), 1) };
+            --proj-xy2: #{ nth( map-get($sq-projection, 'bottom-right'), 2) };
+            --proj-xy3: #{ nth( map-get($sq-projection, 'bottom-right'), 3) };
+            --proj-xy4: #{ nth( map-get($sq-projection, 'bottom-right'), 4) };
+
             background: var(--c-primary-med);
         }
 
         &,
-        &::before,
         > img {
-            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            --proj-xy1: #{ nth( map-get($sq-projection, 'bottom-left'), 1) };
+            --proj-xy2: #{ nth( map-get($sq-projection, 'bottom-left'), 2) };
+            --proj-xy3: #{ nth( map-get($sq-projection, 'bottom-left'), 3) };
+            --proj-xy4: #{ nth( map-get($sq-projection, 'bottom-left'), 4) };
         }
 
         > img {
@@ -18,17 +29,30 @@
             max-width: 30vw;
         }
 
-        &--loaded,
-        &--loaded::before,
-        &--loaded > img {
-            animation: about__profilePicture .5s #{ $easing-out } 1 forwards;
-        }
-
         &--loaded::before {
-            animation-delay: .25s;
+            animation-delay: .375s;
         }
         &--loaded > img {
-            animation-delay: .5s;
+            animation-delay: .625s;
+        }
+        
+        @supports(clip-path: polygon(var(--a))) {
+            &--loaded,
+            &--loaded::before,
+            &--loaded > img {
+                animation: about__profilePicture .75s #{ $easing-out } .125s 1 forwards;
+            }
+
+            &,
+            &::before,
+            > img {
+                clip-path: polygon(
+                    var(--proj-xy1),
+                    var(--proj-xy2),
+                    var(--proj-xy2),
+                    var(--proj-xy1)
+                );
+            }
         }
     }
 
@@ -39,5 +63,12 @@
 }
 
 @keyframes about__profilePicture {
-    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    100% {
+        clip-path: polygon(
+            var(--proj-xy1),
+            var(--proj-xy2),
+            var(--proj-xy3),
+            var(--proj-xy4)
+        );
+    }
 }
