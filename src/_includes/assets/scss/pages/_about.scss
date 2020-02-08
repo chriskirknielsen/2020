@@ -1,12 +1,35 @@
 .about {
     &__image {
         $border-size: .125rem;
-        width: 8rem;
-        max-width: 30vw;
-        
         border: #{ $border-size } solid var(--c-min);
 
-        animation: about__profilePicture 1s cubic-bezier(0.25, 0.66, 0.33, 1) 1 forwards;
+        &::before {
+            background: var(--c-primary-med);
+        }
+
+        &,
+        &::before,
+        > img {
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        }
+
+        > img {
+            width: 8rem;
+            max-width: 30vw;
+        }
+
+        &--loaded,
+        &--loaded::before,
+        &--loaded > img {
+            animation: about__profilePicture .5s #{ $easing-out } 1 forwards;
+        }
+
+        &--loaded::before {
+            animation-delay: .25s;
+        }
+        &--loaded > img {
+            animation-delay: .5s;
+        }
     }
 
     &__download {
@@ -16,10 +39,5 @@
 }
 
 @keyframes about__profilePicture {
-    0% { transform: scale(0); }
-    20% { transform: scale(1.1); }
-    40% { transform: scale(.9); }
-    60% { transform: scale(1.03); }
-    80% { transform: scale(.97); }
-    100% { transform: scale(1); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
