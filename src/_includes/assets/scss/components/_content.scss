@@ -6,24 +6,29 @@
 
     display: grid;
     grid-template-columns:
-        minmax(#{ $spacing }, 1fr)
-        minmax(#{ $spacing }, 1fr)
-        minmax(0, calc(#{ $max } - #{ $gutter * 2 }))
-        minmax(#{ $spacing }, 1fr)
-        minmax(#{ $spacing }, 1fr)
+        [fullbleed-start]
+            minmax(#{ $spacing }, 1fr)
+        [wide-start]
+            minmax(#{ $spacing }, 1fr)
+        [container-start]
+            minmax(0, calc(#{ $max } - #{ $gutter * 2 }))
+        [container-end]
+            minmax(#{ $spacing }, 1fr)
+        [wide-end]
+            minmax(#{ $spacing }, 1fr)
+        [fullbleed-end]
     ;
 
-
     > * {
-        grid-column: 3;
+        grid-column: container-start / container-end;
+    }
+    
+    &--wide {
+        grid-column: wide-start / wide-end;
     }
 
     &--full {
-        grid-column: 1 / 6;
-    }
-
-    &--wide {
-        grid-column: 2 / 5;
+        grid-column: fullbleed-start / fullbleed-end;
     }
 
     &--wide-limited {
