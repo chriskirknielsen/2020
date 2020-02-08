@@ -1,12 +1,63 @@
 .about {
     &__image {
-        $border-size: .125rem;
+        $box-projection: ( // Coordinates of points projected past their container to obtain diagonal reveals (45deg in a square)
+            'bottom-left':  (   0 -100%,  200%  100%,    0   200%, -100%  100%),
+            'bottom-right': (-100% 100%,  100% -100%,  200%  100%,  100%  200%),
+            'top-left':     ( 200% 100%,  100%  200%, -100%  100%,  100% -100%),
+            'top-right':    ( 100% 200%, -100%    0 ,    0  -100%,  200%  100%),
+        );
+        $profile-image-border-size: .125rem;
+        $profile-image-anim-time: 1.5;
+        $profile-image-anim-delay: $profile-image-anim-time / 4;
+
+        --proj-xy1: #{ nth( map-get($box-projection, 'bottom-left'), 1) };
+        --proj-xy2: #{ nth( map-get($box-projection, 'bottom-left'), 2) };
+        --proj-xy3: #{ nth( map-get($box-projection, 'bottom-left'), 3) };
+        --proj-xy4: #{ nth( map-get($box-projection, 'bottom-left'), 4) };
+        
         width: 8rem;
         max-width: 30vw;
-        
-        border: #{ $border-size } solid var(--c-min);
+        padding: #{ $profile-image-border-size };
 
-        animation: about__profilePicture 1s cubic-bezier(0.25, 0.66, 0.33, 1) 1 forwards;
+        &::before {
+            --proj-xy1: #{ nth( map-get($box-projection, 'bottom-right'), 1) };
+            --proj-xy2: #{ nth( map-get($box-projection, 'bottom-right'), 2) };
+            --proj-xy3: #{ nth( map-get($box-projection, 'bottom-right'), 3) };
+            --proj-xy4: #{ nth( map-get($box-projection, 'bottom-right'), 4) };
+
+            padding: inherit;
+
+            background: var(--c-secondary-med) content-box;
+        }
+
+        & > img {
+            --proj-xy1: #{ nth( map-get($box-projection, 'top-right'), 1) };
+            --proj-xy2: #{ nth( map-get($box-projection, 'top-right'), 2) };
+            --proj-xy3: #{ nth( map-get($box-projection, 'top-right'), 3) };
+            --proj-xy4: #{ nth( map-get($box-projection, 'top-right'), 4) };
+        }
+        
+        @supports(clip-path: polygon(var(--a))) {
+            &--loaded,
+            &--loaded::before,
+            &--loaded > img {
+                animation: about__profilePicture #{ $profile-image-anim-time * 1s } #{ $easing-smooth } 1 forwards;
+            }
+
+            &--loaded::before { animation-delay: #{ $profile-image-anim-delay * .5s }; }
+            &--loaded > img { animation-delay: #{ $profile-image-anim-delay * 1.5s }; }
+
+            &,
+            &::before,
+            & > img {
+                clip-path: polygon(
+                    var(--proj-xy1),
+                    var(--proj-xy2),
+                    var(--proj-xy2),
+                    var(--proj-xy1)
+                );
+            }
+        }
     }
 
     &__download {
@@ -16,10 +67,12 @@
 }
 
 @keyframes about__profilePicture {
-    0% { transform: scale(0); }
-    20% { transform: scale(1.1); }
-    40% { transform: scale(.9); }
-    60% { transform: scale(1.03); }
-    80% { transform: scale(.97); }
-    100% { transform: scale(1); }
+    100% {
+        clip-path: polygon(
+            var(--proj-xy1),
+            var(--proj-xy2),
+            var(--proj-xy3),
+            var(--proj-xy4)
+        );
+    }
 }

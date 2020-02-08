@@ -9,7 +9,9 @@ tags:
   - nav
 ---
 
-{% figure "/assets/img/profile.jpg" "CKN profile" "" "" "u-floatRight u-marginBlock u-marginInlineStart u-radius--circle u-shape--circle about__image" "" "512x512" %}
+<div class="u-posRelative u-beforeCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
+  <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" onload="this.parentElement.className+=' about__image--loaded'">
+</div>
 
 I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn (and share!), which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!
 
