@@ -1,17 +1,17 @@
 @mixin above-large {
-    @media (min-width: #{$large-breakpoint-width}) {
+    @media (min-width: #{ $large-breakpoint-width }) {
         @content;
     }
 }
 
 @mixin above-medium {
-    @media (min-width: #{$medium-breakpoint-width}) {
+    @media (min-width: #{ $medium-breakpoint-width }) {
         @content;
     }
 }
 
 @mixin above-small {
-    @media (min-width: #{$small-breakpoint-width}) {
+    @media (min-width: #{ $small-breakpoint-width }) {
         @content;
     }
 }
