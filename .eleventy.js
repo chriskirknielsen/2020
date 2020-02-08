@@ -62,6 +62,13 @@ module.exports = function(eleventyConfig) {
     </div>`;
   });
 
+  /* FILTERS */
+
+  eleventyConfig.addFilter("split", function(string, delimiter) {
+    delimiter = delimiter || ',';
+    return string.trim().split(delimiter);
+  });
+
   /* LOCALISATION */
 
   // Sort a collection of pages for the navigation based on the locale's navSet setting

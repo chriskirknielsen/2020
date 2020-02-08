@@ -7,11 +7,16 @@
 	{%- endset %}
 	<style>{{ css | cssmin | safe }}</style>
 
-	{%- if ownstyles -%}
-	{%- set pagestylelink %}assets/css/{{ ownstyles }}.css{% endset -%}
-	{%- set pagestyle %}{% include pagestylelink %}{% endset %}
-	<style>{{ pagestyle | cssmin | safe }}</style>
-	{% endif -%}
+	{%- if ownstyles %}
+		{% set ownStylesList = ownstyles | split(",") -%}
+		{%- set pageStyleGroup = "" -%}
+		{%- for ownStyle in ownStylesList -%}
+			{%- set pagestylelink %}assets/css/{{ ownStyle }}.css{% endset -%}
+			{%- set pagestyle %}{% include pagestylelink %}{% endset %}
+			{%- set pageStyleGroup = pageStyleGroup + pagestyle -%}
+		{%- endfor -%}
+		<style>{{ pageStyleGroup | cssmin | safe }}</style>
+	{%- endif -%}
 
 	{% set js %}
 	{% include "assets/js/inline.js" %}
