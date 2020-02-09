@@ -15,8 +15,6 @@
         --proj-xy3: #{ nth( map-get($box-projection, 'bottom-left'), 3) };
         --proj-xy4: #{ nth( map-get($box-projection, 'bottom-left'), 4) };
         
-        width: 8rem;
-        max-width: 30vw;
         padding: #{ $profile-image-border-size };
 
         &::before {
@@ -31,6 +29,9 @@
         }
 
         & > img {
+            width: 8rem;
+            max-width: 30vw;
+
             --proj-xy1: #{ nth( map-get($box-projection, 'top-right'), 1) };
             --proj-xy2: #{ nth( map-get($box-projection, 'top-right'), 2) };
             --proj-xy3: #{ nth( map-get($box-projection, 'top-right'), 3) };
@@ -45,7 +46,7 @@
             }
 
             &--loaded::before { animation-delay: #{ $profile-image-anim-delay * .5s }; }
-            &--loaded > img { animation-delay: #{ $profile-image-anim-delay * 1.5s }; }
+            &--loaded > img { animation-delay: #{ $profile-image-anim-delay * 1s }; }
 
             &,
             &::before,
