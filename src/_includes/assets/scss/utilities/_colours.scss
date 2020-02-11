@@ -1,5 +1,3 @@
-$colour-weights: 100, 400, 900;
-
 html { // Min is lightest during dusk, Max is darkest
     --c-min: #{ c('min') };
     --c-max: #{ c('max') };
@@ -18,7 +16,7 @@ html { // Min is lightest during dusk, Max is darkest
     --c-secondary-max: #{ c('secondary', max) };
 
     --colour-bg: var(--c-primary-max);
-    --colour-text: var(--c-primary-min);
+    --colour-text: var(--c-grey-min);
     --colour-grey: var(--c-grey-med);
     --colour-primary: var(--c-primary-med);
     --colour-secondary: var(--c-secondary-med);
@@ -44,7 +42,7 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --c-secondary-max: #{ c('secondary', min) };
 
     --colour-bg: var(--c-primary-max);
-    --colour-text: var(--c-primary-min);
+    --colour-text: var(--c-grey-min);
     // --colour-grey: var(--c-grey-med);
     --colour-primary: var(--c-primary-med);
     --colour-secondary: var(--c-secondary-med);
@@ -85,6 +83,10 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
 .u-bg--currentColor {
     background-color: currentColor;
     --bg: currentColor;
+}
+
+.u-border--grey-min {
+    border-color: var(--c-grey-min);
 }
 
 .u-border--grey-med {
