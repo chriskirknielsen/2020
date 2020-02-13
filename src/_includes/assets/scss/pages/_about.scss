@@ -8,7 +8,7 @@
         );
         $profile-image-border-size: .125rem;
         $profile-image-anim-time: 1.625;
-        $profile-image-anim-delay: .375;
+        $profile-image-anim-delay: .25;
 
         --proj-xy1: #{ nth( map-get($box-projection, 'bottom-left'), 1) };
         --proj-xy2: #{ nth( map-get($box-projection, 'bottom-left'), 2) };
