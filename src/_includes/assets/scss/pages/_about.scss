@@ -7,8 +7,8 @@
             'top-right':    ( 100% 200%, -100%    0 ,    0  -100%,  200%  100%),
         );
         $profile-image-border-size: .125rem;
-        $profile-image-anim-time: 1.5;
-        $profile-image-anim-delay: $profile-image-anim-time / 4;
+        $profile-image-anim-time: 1.625;
+        $profile-image-anim-delay: .25;
 
         --proj-xy1: #{ nth( map-get($box-projection, 'bottom-left'), 1) };
         --proj-xy2: #{ nth( map-get($box-projection, 'bottom-left'), 2) };
@@ -17,39 +17,54 @@
         
         padding: #{ $profile-image-border-size };
 
+        &::before,
+        &::after {
+            padding: inherit;
+        }
+
         &::before {
             --proj-xy1: #{ nth( map-get($box-projection, 'bottom-right'), 1) };
             --proj-xy2: #{ nth( map-get($box-projection, 'bottom-right'), 2) };
             --proj-xy3: #{ nth( map-get($box-projection, 'bottom-right'), 3) };
             --proj-xy4: #{ nth( map-get($box-projection, 'bottom-right'), 4) };
 
-            padding: inherit;
-
             background: var(--c-secondary-med) content-box;
+        }
+
+        &::after {
+            --proj-xy1: #{ nth( map-get($box-projection, 'top-right'), 1) };
+            --proj-xy2: #{ nth( map-get($box-projection, 'top-right'), 2) };
+            --proj-xy3: #{ nth( map-get($box-projection, 'top-right'), 3) };
+            --proj-xy4: #{ nth( map-get($box-projection, 'top-right'), 4) };
+
+            background: var(--c-primary-max) content-box;
         }
 
         & > img {
             width: 8rem;
             max-width: 30vw;
 
-            --proj-xy1: #{ nth( map-get($box-projection, 'top-right'), 1) };
-            --proj-xy2: #{ nth( map-get($box-projection, 'top-right'), 2) };
-            --proj-xy3: #{ nth( map-get($box-projection, 'top-right'), 3) };
-            --proj-xy4: #{ nth( map-get($box-projection, 'top-right'), 4) };
+            --proj-xy1: #{ nth( map-get($box-projection, 'top-left'), 1) };
+            --proj-xy2: #{ nth( map-get($box-projection, 'top-left'), 2) };
+            --proj-xy3: #{ nth( map-get($box-projection, 'top-left'), 3) };
+            --proj-xy4: #{ nth( map-get($box-projection, 'top-left'), 4) };
         }
         
         @supports(clip-path: polygon(var(--a))) {
             &--loaded,
             &--loaded::before,
+            &--loaded::after,
             &--loaded > img {
                 animation: about__profilePicture #{ $profile-image-anim-time * 1s } #{ $easing-smooth } 1 forwards;
             }
 
             &--loaded::before { animation-delay: #{ $profile-image-anim-delay * .5s }; }
-            &--loaded > img { animation-delay: #{ $profile-image-anim-delay * 1s }; }
+            &--loaded::after { animation-delay: #{ $profile-image-anim-delay * 1s }; }
+            &--loaded > img { animation-delay: #{ $profile-image-anim-delay * 1.5s }; }
 
             &,
             &::before,
+            &::after,
             & > img {
                 clip-path: polygon(
                     var(--proj-xy1),

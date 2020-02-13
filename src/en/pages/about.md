@@ -9,8 +9,8 @@ tags:
   - nav
 ---
 
-<div class="u-posRelative u-beforeCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
-  <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" onload="this.parentElement.className+=' about__image--loaded'">
+<div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
+  <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div>
 
 I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn (and share!), which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!
@@ -69,7 +69,7 @@ Here is a bullet-list representation of me, if you're into that sort of thing:
 - [Chronoise](https://chronoise.com)
 
 <p class="u-marginBlockStart--double">
-  <a href="/assets/pdf/resume.pdf" download="chriskirknielsen.pdf" class="u-displayInlineFlex u-flex--centreBlock u-paddingBlock--half u-paddingInline u-textDecoration--none u-c--grey-max u-bg--grey-min h:u-c--grey-max h:u-bg--secondary-med u-lineHeight--1">
+  <a href="/assets/pdf/resume.pdf" download="chriskirknielsen.pdf" class="u-displayInlineFlex u-flex--centreBlock u-paddingBlock--half u-paddingInline u-textDecoration--none u-c--grey-max u-bg--grey-min u-border u-border--grey-min h:u-c--grey-min h:u-bg--grey-max u-lineHeight--1">
     <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="u-displayBlock u-marginInlineEnd--half about__download">
       <path d="M3 0v5c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V0h1l2 2v13c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1V1c0-.6.4-1 1-1h2zm10 15c.6 0 1-.4 1-1V8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v6c0 .6.4 1 1 1h10zM10 5V1h2v4h-2z" fill="currentColor" fill-rule="evenodd"/>
     </svg>
