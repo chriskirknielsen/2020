@@ -10,7 +10,7 @@
 
 .homescreen {
     $grid-size: .5;
-    $grid-line-anim-time: 6s;
+    $grid-line-anim-time: 4s;
     $sun-radius: 20vmin;
     $sun-blind-size: $sun-radius / 12;
     $screen-background: c('primary', 'max');
@@ -124,8 +124,10 @@
 
     &__grid {
         top: #{ $grid-size * 100% };
-
+        
         width: 100%;
+        
+        contain: content;
 
         // Fade out the grid at the bottom
         -webkit-mask-image: linear-gradient(gradient-stops());
@@ -134,8 +136,11 @@
         &-lines {
             fill: none;
             stroke: #{ $floor-colour };
-            stroke-width: 2px;
-            vector-effect: non-scaling-stroke;
+            stroke-width: 1.5px;
+            
+            > * {
+                vector-effect: non-scaling-stroke;
+            }
 
             &--h { // Horizontal lines
                 animation: gridHorizontalLines #{ $grid-line-anim-time } cubic-bezier(1, 0, 1, .67) infinite;
@@ -152,7 +157,7 @@
     &__svg-wrapper {
         > svg {
             width: 60rem;
-            contain: paint;
+            contain: content;
         }
     }
 }
