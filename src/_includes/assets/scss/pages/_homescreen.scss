@@ -9,6 +9,8 @@
 }
 
 .homescreen {
+    $grid-size: .5;
+    $grid-line-anim-time: 6s;
     $sun-radius: 20vmin;
     $sun-blind-size: $sun-radius / 12;
     $screen-background: c('primary', 'max');
@@ -28,7 +30,7 @@
     $sun-glow: $sun-top;
     // Hardcode all colour values since we don't want this to be affected by colour schemes
 
-    min-height: calc(100vh - #{ $header-expected-height*2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
+    min-height: calc(100vh - #{ $header-expected-height * 2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
     
     @include above-medium {
         min-height: calc(100vh - #{ $header-expected-height } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
@@ -120,40 +122,37 @@
 
     }
 
-    &__scene {
-        $grid-cell-size: 8em;
+    &__grid {
+        top: #{ $grid-size * 100% };
 
-        transform-style: preserve-3d;
-        perspective: #{ $grid-cell-size };
-        
-        &::before,
-        &::after {
-            width: 100%;
-        }
+        width: 100%;
 
-        &::before {
-            height: 100%;
+        // Fade out the grid at the bottom
+        -webkit-mask-image: linear-gradient(gradient-stops());
+        mask-image: linear-gradient(gradient-stops());
 
-            background:
-                grid-gradient-axis(bottom, $grid-cell-size/4, .25px, $floor-colour),
-                grid-gradient-axis(right,  $grid-cell-size,   .5px, $floor-colour);
-            background-position: 50% 50%;
+        &-lines {
+            fill: none;
+            stroke: #{ $floor-colour };
+            stroke-width: 2px;
+            vector-effect: non-scaling-stroke;
 
-            transform-origin: 50% 100%;
-            transform: rotateX(45deg);
-        }
-
-        &::after {
-            height: 2px;
-            margin: auto;
-
-            background: $floor-colour;
+            &--h { // Horizontal lines
+                animation: gridHorizontalLines #{ $grid-line-anim-time } cubic-bezier(1, 0, 1, .67) infinite;
+                animation-delay: calc(1 / (var(--t) - 1) * var(--l) * #{ $grid-line-anim-time } * -1);
+                @keyframes gridHorizontalLines {
+                    100% { transform: translateY(calc(
+                        (100vh - #{ $header-expected-height * 2 } - #{ $base-line-height * 2em }) * #{ $grid-size }
+                    )); }
+                }
+            }
         }
     }
 
     &__svg-wrapper {
         > svg {
             width: 60rem;
+            contain: paint;
         }
     }
 }

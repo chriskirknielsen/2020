@@ -1,4 +1,6 @@
 .svg-mark {
+    $mark-depth-factor-x: 1;
+    $mark-depth-factor-y: .9;
     $wire-count: 8;
     $wire-init-delay: .75s;
     $wire-step-delay: .0625s;
@@ -30,9 +32,10 @@
             &:nth-child(#{ $w }) {
                 $wpow: ($wire-count + 1) / ($w + 1);
                 $delay: $wire-step-delay * $w;
-                $scale: 1 + (1/10 * ($wire-count - $w)) * $wire-factor + .0125;
+                $scale-x: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-x * $wire-factor + .0125;
+                $scale-y: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-y * $wire-factor + .0125;
                 $translateY: $wpow * $wire-factor;
-                transform: scale(#{ $scale }) translateY(#{ $translateY * -1% });
+                transform: scale(#{ $scale-y }, #{ $scale-x }) translateY(#{ $translateY * -1% });
                 animation-delay: #{ $wire-init-delay + $delay };
             }
         }
