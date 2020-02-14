@@ -6,8 +6,11 @@ mainClasses: content
 
 <section class="content--full homescreen u-displayFlex u-flex--stretch" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
 	<div class="homescreen__wrapper u-displayFlex u-flex--centre u-posRelative u-afterCover u-width--100">
-        <div class="homescreen__background u-displayFlex u-flex--centre u-absCover u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
-            <canvas id="homescreen-scene" class="homescreen__grid u-posRelative"></canvas>
+        <div class="homescreen__background u-absCover u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
+            {% set ckn_grid -%}
+            {%- include "assets/img/home-grid.svg" -%}
+            {%- endset -%}
+            {{ ckn_grid | htmlmin | safe }}
             {# <div class="homescreen__scene u-absCover u-beforeCover u-afterCover" aria-hidden="true"></div> #}
         </div>
 
@@ -20,25 +23,7 @@ mainClasses: content
         
         <script type="text/javascript">
         {% set scene_script %}
-            (function(){
-                var pathInitialDelay = 2500;
-                var pathDrawDelay = 100;
-                var cknMarkKn = document.getElementById('ckn-mark-kn-draw');
-                if (!cknMarkKn) { return; }
-                var cknMarkKnPaths = cknMarkKn.children;
-                for (var p = 0, ps = cknMarkKnPaths.length; p < ps; p++) {
-                    var path = cknMarkKnPaths[p];
-                    var pathLength = path.getTotalLength();
-                    path.style.strokeDasharray = pathLength + ' ' + pathLength;
-                    path.style.strokeDashoffset = pathLength;
-                    
-                    setTimeout(function(pData) {
-                        var drawLength = pData.pathLength;
-                        pData.path.style.strokeDashoffset = 0; // pData.pathLength - drawLength;
-                    }, pathDrawDelay*p + pathInitialDelay, { path: path, pathLength: pathLength });
-                }
-            })();
-
+            // Register the sun's mask lines to animate them
             if (window.CSS.registerProperty) {
                 window.CSS.registerProperty({
                     name: '--ckn-sun-mask-lines',
@@ -47,41 +32,6 @@ mainClasses: content
                     initialValue: '0',
                 });
             }
-            (function(){
-                var scene = document.getElementById('homescreen-scene');
-                var sceneRender = 'webgl'; // Default value
-                var sceneCtx = null;//scene.getContext('webgl') || scene.getContext("experimental-webgl");
-                var addHomescreenSceneScript = function(ctx) {
-                    if (ctx === null) {
-                        scene.parentElement.removeChild(scene);
-                        return;
-                    }
-
-                    if (ctx === 'webgl') {
-                        sceneScriptUrl = "{{ '/assets/jsmin/homescreen-scene-webgl.min.js' | url }}";
-                    }
-                    else if (ctx === '2d') {
-                        sceneScriptUrl = "{{ '/assets/jsmin/homescreen-scene-2d.min.js' | url }}";
-                    }
-
-                    window.sceneCanvas = scene; // Accessible in the global scope
-
-                    var sceneScript = document.createElement('script');
-                    sceneScript.src = sceneScriptUrl;
-                    sceneScript.setAttribute('deferred', true);
-                    
-                    document.body.appendChild(sceneScript);
-                }
-
-                if (sceneCtx === null) {
-                    sceneRender = '2d';
-                    sceneCtx = scene.getContext('2d');
-
-                    if (sceneCtx === null) { sceneRender = null; }
-                }
-
-                addHomescreenSceneScript(sceneRender);
-            })();
         {% endset %}
         {{ scene_script | jsmin | safe }}
         </script>
