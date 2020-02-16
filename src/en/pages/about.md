@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: njk,md
 title: Hello, I'm Chris
 date: 2017-01-01T00:00:00.000Z
 permalink: /about/index.html
@@ -9,8 +10,14 @@ tags:
   - nav
 ---
 
-<div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
+{# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
+</div> #}
+<div class="u-posRelative u-floatRight about__profile">
+  {% set ckn_profile -%}
+  {%- include "assets/img/ckn-profile.svg" -%}
+  {%- endset -%}
+  {{ ckn_profile | htmlmin | safe }}
 </div>
 
 I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn (and share!), which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!

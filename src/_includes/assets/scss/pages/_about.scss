@@ -1,15 +1,91 @@
 .about {
-    &__image {
-        $box-projection: ( // Coordinates of points projected past their container to obtain diagonal reveals (45deg in a square)
-            'bottom-left':  (   0 -100%,  200%  100%,    0   200%, -100%  100%),
-            'bottom-right': (-100% 100%,  100% -100%,  200%  100%,  100%  200%),
-            'top-left':     ( 200% 100%,  100%  200%, -100%  100%,  100% -100%),
-            'top-right':    ( 100% 200%, -100%    0 ,    0  -100%,  200%  100%),
-        );
-        $profile-image-border-size: .125rem;
-        $profile-image-anim-time: 1.625;
-        $profile-image-anim-delay: .25;
+    /* Square image variables */
+    $box-projection: ( // Coordinates of points projected past their container to obtain diagonal reveals (45deg in a square)
+        'bottom-left':  (   0 -100%,  200%  100%,    0   200%, -100%  100%),
+        'bottom-right': (-100% 100%,  100% -100%,  200%  100%,  100%  200%),
+        'top-left':     ( 200% 100%,  100%  200%, -100%  100%,  100% -100%),
+        'top-right':    ( 100% 200%, -100%    0 ,    0  -100%,  200%  100%),
+    );
+    $profile-image-border-size: .125rem;
+    $profile-image-anim-time: 1.625;
+    $profile-image-anim-delay: .25;
+    
+    /* SVG illustration variables*/
+    $profile-anim-path-delay: .5s;
+    $profile-anim-path-duration: 1.25s;
+    $profile-anim-hair-delay: $profile-anim-path-delay + $profile-anim-path-duration * .75;
+    $profile-anim-hair-duration: 1s;
+    $profile-anim-glasses-delay: $profile-anim-hair-delay + $profile-anim-hair-duration * .5;
+    $profile-anim-glasses-duration: .5s;
 
+    &__profile {
+        width: 6rem;
+        max-width: 25vw;
+        margin-left: #{ $spacing };
+        shape-margin: #{ $spacing };
+        shape-outside: ellipse(100% 50% at 94% 53%);
+
+        &-path path {
+            fill: none;
+            stroke: var(--c-grey-min);
+            stroke-width: 2;
+            stroke-dasharray: 1 1;
+
+            animation: about__pathDraw #{ $profile-anim-path-duration } #{ $easing-out } #{ $profile-anim-path-delay } backwards 1;
+        }
+
+        &-hair path {
+            fill: none;
+            stroke: var(--c-primary-med);
+            stroke-linecap: round;
+            stroke-dasharray: 1 1;
+
+            animation: about__hairGrow #{ $profile-anim-hair-duration } #{ $easing-out } #{ $profile-anim-hair-delay } backwards 1;
+        }
+
+        &-glasses {
+            fill: var(--c-primary-min);
+            animation: about__glasses #{ $profile-anim-glasses-duration } #{ $easing-out } #{ $profile-anim-glasses-delay } backwards 1;
+        }
+
+        &-hair--brow {
+            transform-origin: 50% 50%;
+            transition: transform .25s ease-in-out;
+        }
+
+        &:hover &-hair--brow {
+            transform: translateY(-2%) rotate(3deg);
+            // animation: about__browTwitch .5s ease-in-out 1;
+        }
+
+        @keyframes about__pathDraw {
+            0% {
+                stroke-dashoffset: 1;
+            }
+        }
+
+        // @keyframes about__browTwitch {
+        //     0%, 100% { transform: none; }
+        //     50% { transform: translateY(-2%) rotate(3deg); }
+        // }
+
+        @keyframes about__hairGrow {
+            0% {
+                stroke-width: 0;
+                stroke-dashoffset: 1;
+            }
+        }
+
+        @keyframes about__glasses {
+            0% {
+                opacity: .0001;
+                transform: translateY(-15%);
+            }
+        }
+    }
+
+    /* // Square image animation
+    &__image {
         --proj-xy1: #{ nth( map-get($box-projection, 'bottom-left'), 1) };
         --proj-xy2: #{ nth( map-get($box-projection, 'bottom-left'), 2) };
         --proj-xy3: #{ nth( map-get($box-projection, 'bottom-left'), 3) };
@@ -74,21 +150,21 @@
                 );
             }
         }
-    }
+
+        @keyframes about__profilePicture {
+            100% {
+                clip-path: polygon(
+                    var(--proj-xy1),
+                    var(--proj-xy2),
+                    var(--proj-xy3),
+                    var(--proj-xy4)
+                );
+            }
+        }
+    } // */ // End:Square image animation
 
     &__download {
         width: 1.25em;
         height: 1.25em;
-    }
-}
-
-@keyframes about__profilePicture {
-    100% {
-        clip-path: polygon(
-            var(--proj-xy1),
-            var(--proj-xy2),
-            var(--proj-xy3),
-            var(--proj-xy4)
-        );
     }
 }
