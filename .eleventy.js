@@ -105,33 +105,49 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("pages_all", function(collection) {
     return [].concat(
       collection.getFilteredByGlob("./src/en/pages/*.md"),
-      collection.getFilteredByGlob("./src/fr/pages/*.md")
+      collection.getFilteredByGlob("./src/fr/pages/*.md"),
+      collection.getFilteredByGlob("./src/en/pages/*.njk"),
+      collection.getFilteredByGlob("./src/fr/pages/*.njk"),
     );
   });
 
   eleventyConfig.addCollection("posts_all", function(collection) {
     return [].concat(
       collection.getFilteredByGlob("./src/en/posts/*.md"),
-      collection.getFilteredByGlob("./src/fr/posts/*.md")
+      collection.getFilteredByGlob("./src/fr/posts/*.md"),
+      collection.getFilteredByGlob("./src/en/posts/*.njk"),
+      collection.getFilteredByGlob("./src/fr/posts/*.njk"),
     );
   });
 
   // English
   eleventyConfig.addCollection("pages_en", function(collection) {
-    return collection.getFilteredByGlob("./src/en/pages/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/en/pages/*.md"),
+      collection.getFilteredByGlob("./src/en/pages/*.njk"),
+    );
   });
 
   eleventyConfig.addCollection("posts_en", function(collection) {
-    return collection.getFilteredByGlob("./src/en/posts/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/en/posts/*.md"),
+      collection.getFilteredByGlob("./src/en/posts/*.njk"),
+    );
   });
 
   // French
   eleventyConfig.addCollection("pages_fr", function(collection) {
-    return collection.getFilteredByGlob("./src/fr/pages/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/fr/pages/*.md"),
+      collection.getFilteredByGlob("./src/fr/pages/*.njk"),
+    );
   });
 
   eleventyConfig.addCollection("posts_fr", function(collection) {
-    return collection.getFilteredByGlob("./src/fr/posts/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/fr/posts/*.md"),
+      collection.getFilteredByGlob("./src/fr/posts/*.njk"),
+    );
   });
 
   /* DATES */
