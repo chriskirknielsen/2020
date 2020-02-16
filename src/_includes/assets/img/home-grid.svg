@@ -1,4 +1,4 @@
-<svg class="homescreen__grid u-posRelative"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 544.782">
+<svg xmlns="http://www.w3.org/2000/svg" class="homescreen__grid u-posRelative" viewBox="0 0 1920 544.782">
     <g class="homescreen__grid-lines" style="--t:4">
         <path d="M1 1h1920" style="--l:0"/>
         <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:0"/>
