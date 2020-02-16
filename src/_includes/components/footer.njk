@@ -37,13 +37,13 @@
 				<ul class="footer__social u-displayFlex">
 					<li class="footer__social-item u-displayFlex">
 						{%- set svg_rss_classes = "header__svg header__rss" -%}
-						<a href="{{ localePath }}feed.xml" aria-label="{{ footer[locale].rssHint }}" class="footer__social-link u-displayInlineBlock u-padding--half u-c--grey-min h:u-c--grey-max h:u-bg--secondary-med">
+						<a href="{{ localePath }}feed.xml" aria-label="{{ footer[locale].rssHint }}" class="footer__social-link u-displayInlineBlock u-padding--half {{ utilities.glowBoxLink }}">
 							{% include "assets/img/rss.svg" %}
 						</a>
 					</li>
 				{% for social in social %}
 					<li class="footer__social-item u-displayFlex">
-						<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock u-padding--half u-c--grey-min h:u-c--grey-max h:u-bg--secondary-med">
+						<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock u-padding--half u-c--grey-min {{ utilities.glowBoxLink }}">
 							<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="u-displayBlock">
 								{{ social.icon | safe }}
 							</svg>
