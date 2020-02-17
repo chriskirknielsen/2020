@@ -13,7 +13,7 @@ tags:
 {# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div> #}
-<div class="u-posRelative u-floatRight about__profile">
+<div class="about__profile u-posRelative u-floatLeft u-marginInlineEnd--double">
   {% set ckn_profile -%}
   {%- include "assets/img/ckn-profile.svg" -%}
   {%- endset -%}

@@ -13,7 +13,7 @@
     /* SVG illustration variables */
     $profile-anim-line-delay: .2s;
     $profile-anim-line-duration: .6s;
-    $profile-anim-path-delay: $profile-anim-line-delay + $profile-anim-line-duration;
+    $profile-anim-path-delay: $profile-anim-line-delay + $profile-anim-line-duration * .625;
     $profile-anim-path-duration: 1.25s;
     $profile-anim-hair-delay: $profile-anim-path-delay + $profile-anim-path-duration * .75;
     $profile-anim-hair-duration: 1s;
@@ -23,9 +23,9 @@
     &__profile {
         width: 6rem;
         max-width: 25vw;
-        margin-left: #{ $spacing };
-        shape-margin: #{ $spacing };
-        shape-outside: ellipse(100% 50% at 94% 53%);
+        // margin-right: #{ $spacing };
+        // shape-margin: #{ $spacing };
+        // shape-outside: ellipse(100% 50% at 94% 53%);
 
         &::after {
             content: '';
@@ -38,7 +38,7 @@
             
             background-color: var(--c-grey-min);
 
-            transform-origin: 50% 0;
+            transform-origin: 50% 100%;
             animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
         }
 
