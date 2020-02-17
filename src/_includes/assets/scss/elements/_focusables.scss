@@ -17,3 +17,23 @@ button {
         outline: none;
     }
 }
+
+details {
+    > summary {
+        cursor: pointer;
+    
+        &::marker {
+            content: '►';
+
+            color: var(--colour-secondary);
+        }
+    }
+
+    &[open] > summary {    
+        &::marker {
+            content: '▼';
+
+            color: var(--colour-grey);
+        }
+    }
+}

@@ -39,7 +39,7 @@
             background-color: var(--c-grey-min);
 
             transform-origin: 50% 0;
-            animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-out } #{ $profile-anim-line-delay } backwards 1;
+            animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
         }
 
         &-path path {
@@ -48,7 +48,7 @@
             stroke-width: 2;
             stroke-dasharray: 1 1;
 
-            animation: about__pathDraw #{ $profile-anim-path-duration } #{ $easing-out } #{ $profile-anim-path-delay } backwards 1;
+            animation: about__pathDraw #{ $profile-anim-path-duration } #{ $easing-smooth } #{ $profile-anim-path-delay } backwards 1;
         }
 
         &-hair path {
@@ -57,7 +57,7 @@
             stroke-linecap: round;
             stroke-dasharray: 1 1;
 
-            animation: about__hairGrow #{ $profile-anim-hair-duration } #{ $easing-out } #{ $profile-anim-hair-delay } backwards 1;
+            animation: about__hairGrow #{ $profile-anim-hair-duration } #{ $easing-smooth } #{ $profile-anim-hair-delay } backwards 1;
         }
 
         &-glasses {
