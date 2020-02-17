@@ -51,6 +51,7 @@
     "moment": "^2.24.0",
     "netlify-cli": "^2.19.0",
     "prismjs": "^1.17.1",
+    "set-value": "2.0.1",
     "uglify-es": "^3.3.9"
   }
 }
