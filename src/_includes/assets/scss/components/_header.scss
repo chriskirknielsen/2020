@@ -1,13 +1,12 @@
 .header {
     &__logo {
         $p: &;
-        $logo-bleed-space: .125em; // Logo is 2rem = 32px tall, the content takes up 28px, so we have 4px available, which is 4/32 = 12.5% = .125em
+        $logo-glow-spread: .125em;
 
         // The logo should take up more vertical space to compensate for the bleed area
+        overflow: visible; // The glow when hovered will extend past the box, so ensure it is visible
         width: auto;
-        height: #{ 1em + $logo-bleed-space * 2 };
-        margin-top: #{ $logo-bleed-space * -1 };
-        margin-bottom: #{ $logo-bleed-space * -1 };
+        height: 1em;
 
         font-size: $header-brand-height;
 
@@ -33,7 +32,7 @@
             #{ $p }-link:hover &,
             #{ $p }-link:focus & {
                 stroke-width: .09375em; // Font size is 2rem = 32px, this results in a 1.5px stroke
-                filter: drop-shadow(0 0 #{ $logo-bleed-space } var(--c-primary-med));
+                filter: drop-shadow(0 0 #{ $logo-glow-spread } var(--c-primary-med));
 
                 animation: cknLogoNeon .3s ease-in-out both;
 

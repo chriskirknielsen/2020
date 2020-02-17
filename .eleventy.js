@@ -87,35 +87,67 @@ module.exports = function(eleventyConfig) {
     return collectionSorted;
   });
 
+  eleventyConfig.addFilter("tagLocale", function(collection, locale) {
+    if (!locale) { return collection; }
+    const filtered = collection.filter(item => item.data.language == locale);
+    return filtered;
+  });
+
+
+  eleventyConfig.addFilter("findVariants", function(collections, collectionName, key, locale) {
+    if (!collections || !collectionName || !locale || !key) { return []; }
+    if (!Object.keys(collections).includes(collectionName)) { return []; }
+    const collection = collections[collectionName];
+    const filtered = collection.filter(item => item.data.translationKey == key && item.data.locale != locale);
+    return filtered;
+  });
+
+  eleventyConfig.addCollection("pages_all", function(collection) {
+    return [].concat(
+      collection.getFilteredByGlob("./src/en/pages/*.md"),
+      collection.getFilteredByGlob("./src/fr/pages/*.md"),
+      collection.getFilteredByGlob("./src/en/pages/*.njk"),
+      collection.getFilteredByGlob("./src/fr/pages/*.njk"),
+    );
+  });
+
   eleventyConfig.addCollection("posts_all", function(collection) {
     return [].concat(
       collection.getFilteredByGlob("./src/en/posts/*.md"),
-      collection.getFilteredByGlob("./src/fr/posts/*.md")
+      collection.getFilteredByGlob("./src/fr/posts/*.md"),
+      collection.getFilteredByGlob("./src/en/posts/*.njk"),
+      collection.getFilteredByGlob("./src/fr/posts/*.njk"),
     );
   });
 
   // English
   eleventyConfig.addCollection("pages_en", function(collection) {
-    return collection.getFilteredByGlob("./src/en/pages/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/en/pages/*.md"),
+      collection.getFilteredByGlob("./src/en/pages/*.njk"),
+    );
   });
 
   eleventyConfig.addCollection("posts_en", function(collection) {
-    return collection.getFilteredByGlob("./src/en/posts/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/en/posts/*.md"),
+      collection.getFilteredByGlob("./src/en/posts/*.njk"),
+    );
   });
 
   // French
   eleventyConfig.addCollection("pages_fr", function(collection) {
-    return collection.getFilteredByGlob("./src/fr/pages/*.md");
+    return [].concat(
+      collection.getFilteredByGlob("./src/fr/pages/*.md"),
+      collection.getFilteredByGlob("./src/fr/pages/*.njk"),
+    );
   });
 
   eleventyConfig.addCollection("posts_fr", function(collection) {
-    return collection.getFilteredByGlob("./src/fr/posts/*.md");
-  });
-
-  eleventyConfig.addFilter("tagLocale", function(collection, locale) {
-    if (!locale) return collection;
-      const filtered = collection.filter(item => item.data.language == locale)
-      return filtered;
+    return [].concat(
+      collection.getFilteredByGlob("./src/fr/posts/*.md"),
+      collection.getFilteredByGlob("./src/fr/posts/*.njk"),
+    );
   });
 
   /* DATES */

@@ -4,6 +4,7 @@ title: Home
 permalink: /
 navtitle: Home
 ownstyles: home
+translationKey: "homePage"
 tags:
   - nav
 ---

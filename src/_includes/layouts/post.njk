@@ -41,7 +41,7 @@ mainClasses: u
       {%- if tag != "post" -%}
         {%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
         {# {{- comma() }} #}
-        <a href="{{ tagUrl | url }}" rel="tag" class="u-inlineBlock u-padding--quarter u-fontBold u-border h:u-c--primary-med u-bg--grey-max u-textDecoration--none">{{ tag }}</a>
+        <a href="{{ tagUrl | url }}" rel="tag" class="u-inlineBlock u-padding--quarter {{ utilities.glowBoxLink }}">{{ tag }}</a>
       {%- endif -%}
     {% endfor %}
     </p>

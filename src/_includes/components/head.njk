@@ -25,6 +25,13 @@
 
 	<link rel="icon" href="{{ '/assets/img/icon.png' | url }}" type="image/png">
 	<link rel="stylesheet" href="{{ '/assets/css/global.css' | url }}" />
+	{%- if translationKey and section -%}
+	{%- set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset -%}
+	{%- set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) -%}
+	{%- for variant in filteredVariants %}
+	<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}" />
+	{% endfor %}
+	{%- endif -%}
 
 	{# <script src="{{ '/assets/js/color-scheme-switcher.js' | url }}" deferred></script> #}
 </head>

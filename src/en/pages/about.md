@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: njk,md
 title: Hello, I'm Chris
 date: 2017-01-01T00:00:00.000Z
 permalink: /about/index.html
@@ -9,19 +10,35 @@ tags:
   - nav
 ---
 
-<div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
+{# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
+</div> #}
+<div class="u-posRelative u-floatRight about__profile">
+  {% set ckn_profile -%}
+  {%- include "assets/img/ckn-profile.svg" -%}
+  {%- endset -%}
+  {{ ckn_profile | htmlmin | safe }}
 </div>
 
-I'm a designer-turned-developer who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade. I've already learned a lot about front-end development, but there's always more to learn (and share!), which is why I cherish this field. Plus, I still get to flex my designer muscles here and there!
+I'm a **designer-turned-developer** who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade (I started on an *extremely* slow laptop in 2005). I cherish front-end development because you can always learn more, and share cool things. Plus, I still get to flex my designer muscles here and there!
 
-When I'm not doing web-related things, I might be making electronica music as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
+When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 
 <hr class="u-floatClear">
 
+<details class="u-flow">
+<summary class="h2">
+<div class="u-displayInlineBlock">
+
 ## Overly-Formal Résumé
 
-Here is a bullet-list representation of me, if you're into that sort of thing:
+</div>
+
+<p class="u-width-100">Click here to view a bullet-list representation of me, if you're into that sort of thing.</p>
+    
+</summary>
+
+<div>
 
 ### Skills
 
@@ -68,11 +85,5 @@ Here is a bullet-list representation of me, if you're into that sort of thing:
 - [Geekometric](https://geekometric.com) (static site built with Hugo, running on Netlify)
 - [Chronoise](https://chronoise.com)
 
-<p class="u-marginBlockStart--double">
-  <a href="/assets/pdf/resume.pdf" download="chriskirknielsen.pdf" class="u-displayInlineFlex u-flex--centreBlock u-paddingBlock--half u-paddingInline u-textDecoration--none u-c--grey-max u-bg--grey-min u-border u-border--grey-min h:u-c--grey-min h:u-bg--grey-max u-lineHeight--1">
-    <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="u-displayBlock u-marginInlineEnd--half about__download">
-      <path d="M3 0v5c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V0h1l2 2v13c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1V1c0-.6.4-1 1-1h2zm10 15c.6 0 1-.4 1-1V8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v6c0 .6.4 1 1 1h10zM10 5V1h2v4h-2z" fill="currentColor" fill-rule="evenodd"/>
-    </svg>
-    <span class="u-flex--alignSelfEnd u-fontBold">Download PDF</span>
-  </a>
-</p>
+</div>
+</details>
