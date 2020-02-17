@@ -23,9 +23,9 @@
     &__profile {
         width: 6rem;
         max-width: 25vw;
-        margin-left: #{ $spacing };
-        shape-margin: #{ $spacing };
-        shape-outside: ellipse(100% 50% at 94% 53%);
+        // margin-right: #{ $spacing };
+        // shape-margin: #{ $spacing };
+        // shape-outside: ellipse(100% 50% at 94% 53%);
 
         &::after {
             content: '';

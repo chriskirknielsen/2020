@@ -161,6 +161,9 @@
 .u-marginInlineEnd {
     margin-right: #{ $spacing };
 }
+.u-marginInlineEnd--double {
+    margin-right: #{ $spacing * 2 };
+}
 .u-marginInlineEnd--none {
     margin-right: 0;
 }
