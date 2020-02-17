@@ -4,7 +4,8 @@ a {
 }
 
 a,
-button {
+button,
+summary {
     &:focus {
         outline: 4px dashed var(--colour-secondary);
     }
@@ -23,17 +24,46 @@ details {
         cursor: pointer;
     
         &::marker {
-            content: '►';
+            content: '';
 
+            display: none;
+        }
+
+        &::before {
+            content: '';
+
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-right: .125em;
+
+            vertical-align: middle;
             color: var(--colour-secondary);
+            border-width: #{ (.25em * $sqrt3) / 2 } 0 #{ (.25em * $sqrt3) / 2 } .25em;
+            border-style: solid;
+            border-color: transparent transparent transparent currentColor;
+
+            transform-origin: 33.3% 50%;
+            transition: transform .3s #{ $easing-smooth };
+            transition-property: color, transform;
+        }
+
+        & ~ * {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            transition: clip-path .3s #{ $easing-smooth };
         }
     }
 
     &[open] > summary {    
-        &::marker {
-            content: '▼';
+        &::before {
+            transform: rotate(90deg);
 
             color: var(--colour-grey);
+        }
+
+        & ~ * {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
 }

@@ -13,14 +13,21 @@ tags:
 {# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div> #}
-<div class="about__profile u-posRelative u-floatLeft u-marginInlineEnd--double">
+<div class="about__profile u-posRelative u-floatLeft u-marginBlockEnd--double u-marginInlineEnd--double">
   {% set ckn_profile -%}
   {%- include "assets/img/ckn-profile.svg" -%}
   {%- endset -%}
   {{ ckn_profile | htmlmin | safe }}
 </div>
 
-I'm a **designer-turned-developer** who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade (I started on an *extremely* slow laptop in 2005). I cherish front-end development because you can always learn more, and share cool things. Plus, I still get to flex my designer muscles here and there!
+I'm a **designer turned developer** who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade (I started on an *extremely* slow laptop in 2005). I cherish front-end development because you can always learn more, and share cool things. Plus, I still get to flex my designer muscles here and there!
+
+<div class="about__lady-liberty u-posRelative u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
+  {% set lady_liberty -%}
+  {%- include "assets/img/lady-liberty.svg" -%}
+  {%- endset -%}
+  {{ lady_liberty | htmlmin | safe }}
+</div>
 
 When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 

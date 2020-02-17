@@ -152,6 +152,9 @@
 .u-marginInlineStart {
     margin-left: #{ $spacing };
 }
+.u-marginInlineStart--double {
+    margin-left: #{ $spacing * 2 };
+}
 .u-marginInlineStart--auto {
     margin-left: auto;
 }
