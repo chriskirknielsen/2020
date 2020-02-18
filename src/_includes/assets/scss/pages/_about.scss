@@ -20,9 +20,16 @@
     $profile-anim-glasses-delay: $profile-anim-hair-delay + $profile-anim-hair-duration * .5;
     $profile-anim-glasses-duration: .5s;
 
-    &__profile {
+    $profile-anim-ladyliberty-delay: $profile-anim-hair-delay;
+    $profile-anim-ladyliberty-duration: 1s;
+
+    &__profile,
+    &__lady-liberty {
         width: 6rem;
-        max-width: 25vw;
+        max-width: 20vw;
+    }
+
+    &__profile {
         // margin-right: #{ $spacing };
         // shape-margin: #{ $spacing };
         // shape-outside: ellipse(100% 50% at 94% 53%);
@@ -74,36 +81,66 @@
             transform: translateY(-2%) rotate(3deg);
             // animation: about__browTwitch .5s ease-in-out 1;
         }
+    }
 
-        @keyframes about__lineDraw {
-            0% {
-                transform: scaleY(0);
-            }
+    &__lady-liberty {
+        shape-margin: #{ $spacing * 2 };
+        shape-outside: polygon(
+            40.00% 0,
+            26.25% 28.50%,
+            35.95% 53.00%,
+            16.25% 70.50%,
+            16.25% 100%,
+            100% 100%,
+            100% 0
+        );
+
+        &-paths {
+            fill: none;
+            stroke: var(--c-secondary-med);
+            stroke-width: 5;
+            stroke-dasharray: 1 1;
+
+            animation: about__pathDraw #{ $profile-anim-ladyliberty-duration } #{ $easing-smooth } #{ $profile-anim-ladyliberty-delay } backwards 1;
         }
 
-        @keyframes about__pathDraw {
-            0% {
-                stroke-dashoffset: 1;
-            }
+        &-fire {
+            transition: stroke .25s ease-in-out;
         }
-
-        // @keyframes about__browTwitch {
-        //     0%, 100% { transform: none; }
-        //     50% { transform: translateY(-2%) rotate(3deg); }
-        // }
-
-        @keyframes about__hairGrow {
-            0% {
-                stroke-width: 0;
-                stroke-dashoffset: 1;
-            }
+        
+        &:hover &-fire {
+            stroke: var(--c-primary-med);
         }
+    }
 
-        @keyframes about__glasses {
-            0% {
-                opacity: .0001;
-                transform: translateY(-15%);
-            }
+    @keyframes about__lineDraw {
+        0% {
+            transform: scaleY(0);
+        }
+    }
+
+    @keyframes about__pathDraw {
+        0% {
+            stroke-dashoffset: 1;
+        }
+    }
+
+    // @keyframes about__browTwitch {
+    //     0%, 100% { transform: none; }
+    //     50% { transform: translateY(-2%) rotate(3deg); }
+    // }
+
+    @keyframes about__hairGrow {
+        0% {
+            stroke-width: 0;
+            stroke-dashoffset: 1;
+        }
+    }
+
+    @keyframes about__glasses {
+        0% {
+            opacity: .0001;
+            transform: translateY(-15%);
         }
     }
 
