@@ -23,29 +23,8 @@ details {
     > summary {
         cursor: pointer;
     
-        &::marker {
-            content: '';
-
-            display: none;
-        }
-
         &::before {
-            content: '';
-
-            display: inline-block;
-            width: 0;
-            height: 0;
-            margin-right: .125em;
-
-            vertical-align: middle;
-            color: var(--colour-secondary);
-            border-width: #{ (.25em * $sqrt3) / 2 } 0 #{ (.25em * $sqrt3) / 2 } .25em;
-            border-style: solid;
-            border-color: transparent transparent transparent currentColor;
-
-            transform-origin: 33.3% 50%;
-            transition: transform .3s #{ $easing-smooth };
-            transition-property: color, transform;
+            color: var(--c-secondary-med);
         }
 
         & ~ * {
@@ -57,13 +36,49 @@ details {
 
     &[open] > summary {    
         &::before {
-            transform: rotate(90deg);
-
             color: var(--colour-grey);
         }
 
         & ~ * {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+}
+
+@supports #{ unquote('selector(::marker)') } { // Hack around Sass selector error
+    details {
+        > summary {
+            cursor: pointer;
+        
+            &::marker {
+                content: '';
+    
+                display: none;
+            }
+    
+            &::before {
+                content: '';
+    
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin-right: .125em;
+    
+                vertical-align: middle;
+                border-width: #{ (.25em * $sqrt3) / 2 } 0 #{ (.25em * $sqrt3) / 2 } .25em;
+                border-style: solid;
+                border-color: transparent transparent transparent currentColor;
+    
+                transform-origin: 33.3% 50%;
+                transition: transform .3s #{ $easing-smooth };
+                transition-property: color, transform;
+            }
+        }
+
+        &[open] > summary {    
+            &::before {
+                transform: rotate(90deg);
+            }
         }
     }
 }

@@ -98,7 +98,7 @@
         &-paths {
             fill: none;
             stroke: var(--c-secondary-med);
-            stroke-width: 7;
+            stroke-width: 5;
             stroke-dasharray: 1 1;
 
             animation: about__pathDraw #{ $profile-anim-ladyliberty-duration } #{ $easing-smooth } #{ $profile-anim-ladyliberty-delay } backwards 1;
