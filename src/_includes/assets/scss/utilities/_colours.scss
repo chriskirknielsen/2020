@@ -50,6 +50,10 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --gradient-subtle: #{ gradient-stops($sc: c('max'), $sa: 0, $ec: c('max'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
 
+
+/* Palette */
+// Run through the palette for both color and background-color
+
 @each $c in map-keys($colours) {
     @each $n in (min,med,max) {
         .u-c--#{$c}-#{$n},
@@ -68,10 +72,16 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     }
 }
 
+
+/* Background */
+
 .u-bg--currentColor {
     background-color: currentColor;
     --bg: currentColor;
 }
+
+
+/* Border */
 
 .u-border--grey-min {
     border-color: var(--c-grey-min);
@@ -81,8 +91,19 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     border-color: var(--c-grey-med);
 }
 
+
+/* Box-shadow */
+
 .u-inner-glow--secondary-med,
 .h\:u-inner-glow--secondary-med:hover,
 .h\:u-inner-glow--secondary-med:focus {
     box-shadow: inset 0 0 0 .0625em var(--c-secondary-med), inset 0 0 2em -1em var(--c-secondary-med);
+}
+
+
+/* Text-shadow */
+
+.h\:text-shadow--currentBg:hover,
+.h\:text-shadow--currentBg:focus {
+    text-shadow: 0 0 .25em var(--bg);
 }
