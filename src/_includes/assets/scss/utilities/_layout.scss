@@ -90,6 +90,9 @@
 .u-margin--flexGap { margin: #{ $spacing * -.5 }; }
 .u-margin--flexGap > * { margin: #{ $spacing * .5 }; }
 
+.u-margin--flexGap-double { margin: #{ $spacing * -1 }; }
+.u-margin--flexGap-double > * { margin: #{ $spacing }; }
+
 .u-margin { margin: #{ $spacing }; }
 .u-margin--double { margin: #{ $spacing * 2 }; }
 .u-margin--none { margin: 0; }
