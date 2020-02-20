@@ -13,14 +13,22 @@ tags:
 {# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div> #}
-<div class="about__profile u-posRelative u-floatLeft u-marginBlockEnd--double u-marginInlineEnd--double">
+<div class="about__profile u-posRelative u-floatLeft u-marginBlock--double u-marginInlineEnd--double">
   {% set ckn_profile -%}
   {%- include "assets/img/ckn-profile.svg" -%}
   {%- endset -%}
   {{ ckn_profile | htmlmin | safe }}
 </div>
 
-I'm a **designer turned developer** who loves working on websites. What started as a little side project in middle school became an eye-opening experience, a hobby that has stuck with me for over a decade (I started on an *extremely* slow laptop in 2005). I cherish front-end development because you can always learn more, and share cool things. Plus, I still get to flex my designer muscles here and there!
+**I'm a designer turned developer who loves working on the web.**
+
+Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphical editing software (from MS Paint to Photoshop) and trying to make a little website to talk about a video game I liked. As that took off, I learned how to make dynamic websites, and built a community of people. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipiated.
+
+This lead me to study for graphic design for 4 years: typography, colour theory, composition, as well as animation were what I lived and breathed. That said, I still kept learning about the web, making blogs and such. I made my way into freelancing for a few years, balancing design and development, which was great for me.
+
+I eventually came to realise that making websites was where I'd rather be doing, because it's a constantly evolving field where growing, learning is part of the deal. And to me: what's there not to love?
+
+<div aria-hidden="true" class="u-floatClear"></div>
 
 <div class="about__lady-liberty u-posRelative u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
   {% set lady_liberty -%}
