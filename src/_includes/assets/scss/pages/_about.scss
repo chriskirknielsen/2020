@@ -37,11 +37,12 @@
         &::after {
             content: '';
             position: absolute;
-            top: #{ $spacing * -1 };
-            bottom: #{ $spacing * -1 };
+            top: #{ $spacing * -1.5 };
+            bottom: #{ $spacing * -1.5 };
             right: 0;
 
-            width: .0625em;
+            // width: .0625em;
+            width: .125em;
             
             background-color: var(--c-grey-min);
 
