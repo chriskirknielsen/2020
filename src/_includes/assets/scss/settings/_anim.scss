@@ -5,8 +5,5 @@ $easing-steep: cubic-bezier(.9,0,.1,1);
 $easing-bounce: cubic-bezier(.5,1.4,.1,1);
 
 $logo-transition-time: .42s;
-$menu-transition-time: .25s;
-$link-transition-time: .175s;
-$widget-transition-time: .2s;
-$social-transition-time: $widget-transition-time * 2;
-$article-transition-time: .3s;
+$toggle-anim-function: $easing-steep;
+$toggle-anim-duration: .6s;

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="436.2" height="1484.1" viewBox="0 0 436.2 1484.1">
     <g class="about__lady-liberty-paths">
         <path pathlength="1" d="M84.6 445.6l37.5-11.5 36.5-40.5"/>
-        <path pathlength="1" d="M95.1 507.1l21.2-50"/>
+        <!-- <path pathlength="1" d="M95.1 507.1l21.2-50"/> -->
         <path pathlength="1" d="M89.1 532.1l52-35 23-51.5"/>
         <path pathlength="1" d="M266.1 456.1l-42.5 90.5-79.5 67.5-20 54"/>
         <path pathlength="1" d="M116.1 589.1l108-100.2 19.6-34.6"/>
@@ -16,11 +16,11 @@
         <path pathlength="1" d="M15.5 1104.1h405.1v50.6H15.5z"/>
         <path pathlength="1" d="M3.5 1428.3h429.2v52.2H3.5z"/>
         <path pathlength="1" d="M341.2 850.1v218"/>
-        <path pathlength="1" d="M308.8 867.4v200.7"/>
+        <!-- <path pathlength="1" d="M308.8 867.4v200.7"/> -->
         <path pathlength="1" d="M276.4 925.4v142.7"/>
-        <path pathlength="1" d="M244 942.4v125.7"/>
+        <!-- <path pathlength="1" d="M244 942.4v125.7"/> -->
         <path pathlength="1" d="M211.6 959.5v108.6"/>
-        <path pathlength="1" d="M179.2 976.5v91.6"/>
+        <!-- <path pathlength="1" d="M179.2 976.5v91.6"/> -->
         <path pathlength="1" d="M121.6 868l-45.5 200.1"/>
         <path pathlength="1" d="M157.1 988.1l-24.7 80"/>
         <path pathlength="1" d="M93.1 358.1l5.7-174h27.8l11.9 158.5"/>
