@@ -30,7 +30,7 @@ details {
         & ~ * {
             clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
-            transition: clip-path .3s #{ $easing-smooth };
+            transition: clip-path #{ $toggle-anim-duration } #{ $toggle-anim-function };
         }
     }
 
@@ -58,19 +58,21 @@ details {
     
             &::before {
                 content: '';
+                position: relative;
+                top: -.125em;
     
                 display: inline-block;
                 width: 0;
                 height: 0;
-                margin-right: .125em;
+                margin-right: .5em;
     
                 vertical-align: middle;
-                border-width: #{ (.25em * $sqrt3) / 2 } 0 #{ (.25em * $sqrt3) / 2 } .25em;
+                border-width: #{ (.5em * $sqrt3) / 2 } 0 #{ (.5em * $sqrt3) / 2 } .5em;
                 border-style: solid;
                 border-color: transparent transparent transparent currentColor;
     
                 transform-origin: 33.3% 50%;
-                transition: transform .3s #{ $easing-smooth };
+                transition: transform #{ $toggle-anim-duration / 2 } #{ $easing-smooth };
                 transition-property: color, transform;
             }
         }

@@ -22,36 +22,29 @@ tags:
 
 **I'm a designer turned developer who loves working on the web.**
 
-Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphical editing software (from MS Paint to Photoshop) and trying to make a little website to talk about a video game I liked. As that took off, I learned how to make dynamic websites, and built a community of people. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipiated.
+Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphical editing software (from MS Paint to Photoshop) and trying to make a little website to talk about a video game I liked (and trying to style my MySpace page). As that took off, I learned how to make dynamic websites, and built a community of people. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipiated.
 
-This lead me to study for graphic design for 4 years: typography, colour theory, composition, as well as animation were what I lived and breathed. That said, I still kept learning about the web, making blogs and such. I made my way into freelancing for a few years, balancing design and development, which was great for me.
+This lead me to study for graphic design for 4 years, with notable interest in typography, colour theory, composition, as well as animation. That said, I still kept learning about the web, making blogs and such. I made my way into freelancing for a few years, balancing design and development, which was great for me.
 
-I eventually came to realise that making websites was where I'd rather be doing, because it's a constantly evolving field where growing, learning is part of the deal. And to me: what's there not to love?
+I eventually came to realise that making websites was what I'd rather be doing. At its core, this field is always growing, evolving, which means I can always learn new things. And that got me hooked.
 
 <div aria-hidden="true" class="u-floatClear"></div>
 
-<div class="about__lady-liberty u-posRelative u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
+{# <div class="about__lady-liberty u-posRelative u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
   {% set lady_liberty -%}
   {%- include "assets/img/lady-liberty.svg" -%}
   {%- endset -%}
   {{ lady_liberty | htmlmin | safe }}
-</div>
+</div> #}
 
-When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog, [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
+When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog (in French): [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 
 <hr class="u-floatClear">
 
-<details class="u-flow">
-<summary class="h2">
-<div class="u-displayInlineBlock">
-
 ## Overly-Formal Résumé
 
-</div>
-
-<p class="u-width-100">Click here to view a bullet-list representation of me, if you're into that sort of thing.</p>
-    
-</summary>
+<details class="u-flow">
+<summary class="fluid-type">Click here to view a bullet-list representation of me, if you're into that sort of thing.</summary>
 
 <div>
 
