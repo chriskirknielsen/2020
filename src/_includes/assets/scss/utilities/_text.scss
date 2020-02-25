@@ -22,12 +22,10 @@
 .u-fontBold { font-weight: 700; }
 
 .u-textUppercase { text-transform: uppercase; }
-.u-textDecoration--none { text-decoration: none; }
-.h\:u-textDecoration--none {
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
+.u-textDecoration--none,
+.h\:u-textDecoration--none:hover,
+.h\:u-textDecoration--none:focus {
+    text-decoration: none;
 }
 .u-vAlign--middle { vertical-align: middle; }
 .u-letterSpacing { letter-spacing: .05em; }

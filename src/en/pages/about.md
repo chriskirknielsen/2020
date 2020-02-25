@@ -22,7 +22,7 @@ tags:
 
 **I'm a designer turned developer who loves working on the web.**
 
-Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphical editing software (from MS Paint to Photoshop) and trying to make a little website to talk about a video game I liked (and trying to style my MySpace page). As that took off, I learned how to make dynamic websites, and built a community of people. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipiated.
+Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphic software (from MS Paint to Photoshop) and making a little website to talk about a video game I liked (and trying to style my MySpace page). As that took off, I learned how to make dynamic websites, and built a community. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated.
 
 This lead me to study for graphic design for 4 years, with notable interest in typography, colour theory, composition, as well as animation. That said, I still kept learning about the web, making blogs and such. I made my way into freelancing for a few years, balancing design and development, which was great for me.
 
