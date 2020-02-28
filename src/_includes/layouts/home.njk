@@ -41,30 +41,39 @@ mainClasses: content
 <section class="u-flow">
     {{ layoutContent | safe }}
 
-    {% set latestpost = collections["posts_" + locale] | reverse | first %}
-    {% if latestpost %}
+    {% set latestposts = collections["posts_" + locale] | reverse %}
+    {%- set latestpostslength = latestposts.length if latestposts.length < 2 else 2 -%}
+    {%- if latestpostslength > 0 -%}
         {# <h2>{{ localisedContent.latestPost }}</h2> #}
+    <div>
+        <ul class="u-displayFlex u-margin--flexGap u-flex--stretchBlock">
+            {%- for i in range(0, latestpostslength) -%}
+            {% set latestpost = latestposts[i] %}
+            <li class="u-displayFlex u-flex--stretchBlock u-width--50">
+                <a href="{{ latestpost.url | url }}" class="u-displayFlex u-flex--stretchBlock u-textDecoration--none">
+                    <article class="{{ utilities.card }}">
+                        <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 
-        <article {% if latestpost.url == url %} data-current="current item"{% endif %}>
-            <h3>
-                <a href="{{ latestpost.url | url }}">
-                    {% if latestpost.data.title %}
-                        {{ latestpost.data.title }}
-                    {% else %}
-                        Untitled Post
-                    {% endif %}
+                        <h3>
+                            {%- if latestpost.data.title -%}
+                                {{- latestpost.data.title -}}
+                            {%- else -%}
+                                Untitled Post
+                            {%- endif -%}
+                        </h3>
+
+                        <p class="u-marginBlockStart--half">
+                            {%- if latestpost.data.summary -%}
+                                {{- latestpost.data.summary -}}
+                            {%- else -%}
+                                {{- latestpost.excerpt -}}
+                            {%- endif -%}
+                        </p>
+                    </article>
                 </a>
-            </h3>
-
-            <p class="u-marginBlockStart--half">
-                <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}{{ punctSp }}:</time>
-
-                {% if latestpost.data.summary %}
-                    {{ latestpost.data.summary }}
-                {% else %}
-                    {{ latestpost.excerpt }}
-                {% endif %}
-            </p>
-		</article>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 </section>

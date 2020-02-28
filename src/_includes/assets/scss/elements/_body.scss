@@ -3,8 +3,8 @@ body {
 
     // font-family: f('body', 'fallback');
     font-family: sans-serif;
-    --c: var(--colour-text);
-    --bg: var(--colour-bg);
-    color: var(--c);
-    background-color: var(--bg);
+    --currentColor: var(--colour-text);
+    --currentBackground: var(--colour-bg);
+    color: var(--currentColor);
+    background-color: var(--currentBackground);
 }
