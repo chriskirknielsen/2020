@@ -1,6 +1,7 @@
 ---
 templateEngineOverride: njk,md
 title: Hello, I'm Chris
+summary: Learn more about Christopher Kirk-Nielsen
 date: 2017-01-01T00:00:00.000Z
 permalink: /about/index.html
 translationKey: "aboutPage"
