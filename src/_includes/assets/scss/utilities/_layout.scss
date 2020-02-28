@@ -87,10 +87,10 @@
 
 /* Margin */
 
-.u-margin--flexGap { margin: #{ $spacing * -.5 }; }
+.u-margin--flexGap[class] { margin: #{ $spacing * -.5 }; }
 .u-margin--flexGap > * { margin: #{ $spacing * .5 }; }
 
-.u-margin--flexGap-double { margin: #{ $spacing * -1 }; }
+.u-margin--flexGap-double[class] { margin: #{ $spacing * -1 }; }
 .u-margin--flexGap-double > * { margin: #{ $spacing }; }
 
 .u-margin { margin: #{ $spacing }; }
