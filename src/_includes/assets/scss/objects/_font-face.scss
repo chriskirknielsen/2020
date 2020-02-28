@@ -18,7 +18,10 @@
 
 @font-face {
 	font-family: "MarvinVisionsBig";
-	src: url('../fonts/MarvinVisionsBig-Bold.woff2') format("woff2"),
+	src: local('MarvinVisionsBig'),
+		 local('Marvin Visions Big'),
+		 local('Marvin Visions Big Bold'),
+		 url('../fonts/MarvinVisionsBig-Bold.woff2') format("woff2"),
 		 url('../fonts/MarvinVisionsBig-Bold.woff') format("woff");
 	font-style: normal;
 	font-weight: 700;

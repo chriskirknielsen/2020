@@ -45,13 +45,13 @@ mainClasses: content
     {%- set latestpostslength = latestposts.length if latestposts.length < 2 else 2 -%}
     {%- if latestpostslength > 0 -%}
         {# <h2>{{ localisedContent.latestPost }}</h2> #}
-    <div>
-        <ul class="u-displayFlex u-margin--flexGap u-flex--stretchBlock">
+    <div class="{{ utilities.bfc }}">
+        <ul class="u-displayBlock md:u-displayFlex u-margin--flexGap-double u-flex--stretchBlock">
             {%- for i in range(0, latestpostslength) -%}
             {% set latestpost = latestposts[i] %}
-            <li class="u-displayFlex u-flex--stretchBlock u-width--50">
-                <a href="{{ latestpost.url | url }}" class="u-displayFlex u-flex--stretchBlock u-textDecoration--none">
-                    <article class="{{ utilities.card }}">
+            <li class="u-displayFlex u-flex--stretchBlock {{ utilities.cardWrapper }}">
+                <a href="{{ latestpost.url | url }}" class="u-width--100 u-displayFlex u-flex--stretchBlock u-textDecoration--none">
+                    <article class="u-width--100 {{ utilities.card }}">
                         <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 
                         <h3>
