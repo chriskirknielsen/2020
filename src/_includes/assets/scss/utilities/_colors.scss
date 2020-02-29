@@ -16,7 +16,7 @@ html { // Min is lightest during dusk, Max is darkest
     --c-secondary-max: #{ c('secondary', max) };
 
     --color-bg: var(--c-primary-max);
-    --color-text: var(--c-grey-min);
+    --color-text: var(--c-primary-min);
     --color-grey: var(--c-grey-med);
     --color-primary: var(--c-primary-med);
     --color-secondary: var(--c-secondary-med);

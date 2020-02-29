@@ -8,6 +8,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const slugify = require("slugify");
 const blogTools = require("eleventy-plugin-blog-tools");
 const moment = require("moment");
+const cssUtilityClasses = require("./src/_data/utilities.js");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -57,7 +58,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode("callout", function(content, pseudo) {
     const md = new markdownIt();
-    return `<div class="callout u-padding u-border u-radius--half u-bg--secondary-max"${ typeof pseudo === 'string' ? 'data-callout="'+pseudo+'"' : '' }>
+    return `<div class="callout ${cssUtilityClasses.callout}"${ typeof pseudo === 'string' ? ' data-callout="'+pseudo+'"' : '' }>
       <p>${ md.renderInline(content) }</p>
     </div>`;
   });
