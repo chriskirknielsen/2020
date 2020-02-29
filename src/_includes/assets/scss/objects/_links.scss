@@ -1,16 +1,16 @@
 a:not([class]),
 .link {
-    text-decoration-color: var(--colour-grey);
+    text-decoration-color: var(--color-grey);
     text-decoration-thickness: .0625em;
     text-underline-offset: .125em;
 
     &:link,
     &:visited {
-        color: var(--currentColor, var(--colour-text));
+        color: var(--currentColor, var(--color-text));
     }
 
     &:link {
-        text-decoration-color: var(--colour-secondary);
+        text-decoration-color: var(--color-secondary);
     }
 
     &:hover,

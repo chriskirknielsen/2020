@@ -1,6 +1,6 @@
 <footer class="footer fluid-type u-marginBlockStart--auto">
-	<div class="u-container u-width--100 u-displayFlex u-flex--wrap u-flex--centreBlock u-padding--double">
-		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centreBlock">
+	<div class="u-container u-width--100 u-displayFlex u-flex--wrap u-flex--centerBlock u-padding--double">
+		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
 			<p>
 				{% set copyrightYear = (metadata.currentYear
 					if metadata.copyrightStart == metadata.currentYear
@@ -17,8 +17,8 @@
 			<p>{{ footer[locale].buildInfo | safe }}.</p>
 		</div>
 
-		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centreBlock">
-			<nav class="u-displayInlineFlex u-flex--centreBlock u-marginBlockStart u-marginInlineEnd">
+		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
+			<nav class="u-displayInlineFlex u-flex--centerBlock u-marginBlockStart u-marginInlineEnd">
 				<h2 class="u-textSizeInherit u-fontBody">{{ footer[locale].langLabel }}{{ punctSp }}:</h2>
 				&nbsp;
 				<ul class="u-displayInlineFlex">

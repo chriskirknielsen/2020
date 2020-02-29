@@ -1,6 +1,6 @@
-$colour-token: token-get("colours");
-$colours: map-merge(
-    $colour-token,
+$color-token: token-get("colors");
+$colors: map-merge(
+    $color-token,
     ( // Basic greyscale values
         "min": #ffffff,
         "med": #808080,
