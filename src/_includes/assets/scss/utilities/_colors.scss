@@ -97,6 +97,12 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     border-color: var(--c-grey-med);
 }
 
+.u-border--primary-med,
+.h\:u-border--primary-med:hover,
+.h\:u-border--primary-med:focus {
+    border-color: var(--c-primary-med);
+}
+
 .u-border--secondary-med,
 .h\:u-border--secondary-med:hover,
 .h\:u-border--secondary-med:focus {
