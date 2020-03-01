@@ -23,7 +23,7 @@ a:not([class]),
     &[href^="http://"],
     &[href^="https://"] {
         &:not([data-quiet-external-url])::after {
-            content: ""; // Narrow Non-Break Space
+            content: "";
             
             display: inline-block;
             width: .75em;

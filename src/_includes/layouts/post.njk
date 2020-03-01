@@ -35,17 +35,17 @@ mainClasses: .
   <hr>
 
   {% if tags %}
-  <p>
-    <span class="u-fontBold">{{ localisedContent.tagged }}{{ punctSp }}:</span>
-    {% set comma = joiner() %}
-    {% for tag in tags %}
-      {%- if tag != "post" -%}
-        {%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
-        {# {{- comma() }} #}
-        <a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-padding--quarter {{ utilities.glowBoxLink }}">{{ tag }}</a>
-      {%- endif -%}
-    {% endfor %}
-  </p>
+  <nav>
+    <h2 class="u-displayInline u-fontBody u-fontBold u-textNormal">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
+    <ul class="u-displayInline">
+      {% for tag in tags %}
+        {%- if tag != "post" -%}
+          {%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
+          <li class="u-displayInline"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
+        {%- endif -%}
+      {% endfor %}
+    </ul>
+  </nav>
   {% endif %}
 
 </article>

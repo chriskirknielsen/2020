@@ -64,6 +64,7 @@
 /* Overflow */
 
 .u-overflowHidden { overflow: hidden; }
+.u-overflowVisible { overflow: visible; }
 
 
 /* Display */
@@ -215,6 +216,10 @@
 .u-paddingBlock--half {
     padding-top: #{ $spacing / 2 };
     padding-bottom: #{ $spacing / 2 };
+}
+.u-paddingBlock--quarter {
+    padding-top: #{ $spacing / 4 };
+    padding-bottom: #{ $spacing / 4 };
 }
 .u-paddingBlockStart {
     padding-top: #{ $spacing };
