@@ -82,24 +82,24 @@
 
 /* COLOUR, FONT AND LAYER-ORDER HELPERS */
 
-// Returns a colour from the $colours map
+// Returns a color from the $colors map
 @function c($name, $weight: med, $opacity: 100) {
     $return: unquote($name);
 
-    @if (map-has-key($colours, $name)) { // If the colour exists in the list
-        $colour: map-get($colours, $name);
-        $weighted-colour: $colour !default; // Define default
+    @if (map-has-key($colors, $name)) { // If the color exists in the list
+        $color: map-get($colors, $name);
+        $weighted-color: $color !default; // Define default
 
-        @if is-map($colour) and map-has-key($colour, $weight) {
-            $weighted-colour: map-get($colour, $weight);
+        @if is-map($color) and map-has-key($color, $weight) {
+            $weighted-color: map-get($color, $weight);
         }
 
         @if $opacity < 100 { // return alpha value
             $opacity-decimal: $opacity / 100;
-            $return: rgba($weighted-colour, $opacity-decimal);
+            $return: rgba($weighted-color, $opacity-decimal);
         }
         @else { // returns opaque value
-            $return: $weighted-colour;
+            $return: $weighted-color;
         }
     }
     
@@ -185,15 +185,15 @@
         @if ($ease == 'in') { $easing-value: easeInNum($progress); }
         @else if ($ease == 'out') { $easing-value: easeOutNum($progress); }
         $mix-value: percentage($easing-value); // Compute the percentage
-        $colour-value: $sc;
-        @if ($sc != $ec) { // Only mix colours if they differ
-            $colour-value: mix($sc, $ec, $mix-value);
+        $color-value: $sc;
+        @if ($sc != $ec) { // Only mix colors if they differ
+            $color-value: mix($sc, $ec, $mix-value);
         }
         $alpha-value: remap-number($easing-value, 0, 1, $sa, $ea);
         $position-value: remap-number($progress, 0, 1, $sp, $ep);
         
         $stops: append($stops,
-            (#{ rgba($colour-value, $alpha-value) } #{ $position-value })
+            (#{ rgba($color-value, $alpha-value) } #{ $position-value })
         );
     }
 

@@ -48,7 +48,7 @@ collections:
           preview: false
         fields:
           - label: "Colours"
-            name: "colours"
+            name: "colors"
             widget: "object"
             fields: 
               - label: "Grey"

@@ -1,6 +1,6 @@
 <footer class="footer fluid-type u-marginBlockStart--auto">
-	<div class="u-container u-width--100 u-displayFlex u-flex--wrap u-flex--centreBlock u-padding--double">
-		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centreBlock">
+	<div class="u-container u-width--100 u-displayFlex u-flex--wrap u-flex--centerBlock u-padding--double">
+		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
 			<p>
 				{% set copyrightYear = (metadata.currentYear
 					if metadata.copyrightStart == metadata.currentYear
@@ -17,8 +17,8 @@
 			<p>{{ footer[locale].buildInfo | safe }}.</p>
 		</div>
 
-		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centreBlock">
-			<nav class="u-displayInlineFlex u-flex--centreBlock u-marginBlockStart u-marginInlineEnd">
+		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
+			<nav class="u-displayInlineFlex u-flex--centerBlock u-marginBlockStart u-marginInlineEnd">
 				<h2 class="u-textSizeInherit u-fontBody">{{ footer[locale].langLabel }}{{ punctSp }}:</h2>
 				&nbsp;
 				<ul class="u-displayInlineFlex">
@@ -43,7 +43,7 @@
 					</li>
 				{% for social in social %}
 					<li class="footer__social-item u-displayFlex">
-						<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock u-padding--half u-c--grey-min {{ utilities.glowBoxLink }}">
+						<a href="{{ social.url | url }}" aria-label="{{ social.name }}" class="footer__social-link u-displayInlineBlock u-padding--half u-c--primary-min {{ utilities.glowBoxLink }}">
 							<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="u-displayBlock">
 								{{ social.icon | safe }}
 							</svg>

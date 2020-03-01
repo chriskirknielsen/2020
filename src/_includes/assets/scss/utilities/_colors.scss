@@ -15,11 +15,11 @@ html { // Min is lightest during dusk, Max is darkest
     --c-secondary-med: #{ c('secondary', med) };
     --c-secondary-max: #{ c('secondary', max) };
 
-    --colour-bg: var(--c-primary-max);
-    --colour-text: var(--c-grey-min);
-    --colour-grey: var(--c-grey-med);
-    --colour-primary: var(--c-primary-med);
-    --colour-secondary: var(--c-secondary-med);
+    --color-bg: var(--c-primary-max);
+    --color-text: var(--c-primary-min);
+    --color-grey: var(--c-grey-med);
+    --color-primary: var(--c-primary-med);
+    --color-secondary: var(--c-secondary-med);
 
     --gradient-subtle: #{ gradient-stops($sc: c('min'), $sa: 0, $ec: c('min'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
@@ -41,11 +41,11 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --c-secondary-med: #{ c('secondary', med) };
     --c-secondary-max: #{ c('secondary', min) };
 
-    --colour-bg: var(--c-primary-max);
-    --colour-text: var(--c-grey-min);
-    // --colour-grey: var(--c-grey-med);
-    --colour-primary: var(--c-primary-med);
-    --colour-secondary: var(--c-secondary-med);
+    --color-bg: var(--c-primary-max);
+    --color-text: var(--c-grey-min);
+    // --color-grey: var(--c-grey-med);
+    --color-primary: var(--c-primary-med);
+    --color-secondary: var(--c-secondary-med);
 
     --gradient-subtle: #{ gradient-stops($sc: c('max'), $sa: 0, $ec: c('max'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
@@ -54,7 +54,7 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
 /* Palette */
 // Run through the palette for both color and background-color
 
-@each $c in map-keys($colours) {
+@each $c in map-keys($colors) {
     @each $n in (min,med,max) {
         .u-c--#{$c}-#{$n},
         .h\:u-c--#{$c}-#{$n}:hover,
@@ -95,6 +95,12 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
 
 .u-border--grey-med {
     border-color: var(--c-grey-med);
+}
+
+.u-border--primary-med,
+.h\:u-border--primary-med:hover,
+.h\:u-border--primary-med:focus {
+    border-color: var(--c-primary-med);
 }
 
 .u-border--secondary-med,

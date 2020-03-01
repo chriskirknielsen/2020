@@ -7,7 +7,7 @@ a,
 button,
 summary {
     &:focus {
-        outline: 4px dashed var(--colour-secondary);
+        outline: 4px dashed var(--color-secondary);
     }
 
     &:focus:not(:focus-visible) {
@@ -36,7 +36,7 @@ details {
 
     &[open] > summary {    
         &::before {
-            color: var(--colour-grey);
+            color: var(--color-grey);
         }
 
         & ~ * {

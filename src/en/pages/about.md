@@ -14,7 +14,7 @@ tags:
 {# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div> #}
-<div class="about__profile u-posRelative u-floatLeft u-marginBlock--double u-marginInlineEnd--double">
+<div class="about__profile u-posRelative u-floatRight u-marginBlock--double u-marginInlineStart--double">
   {% set ckn_profile -%}
   {%- include "assets/img/ckn-profile.svg" -%}
   {%- endset -%}
@@ -29,18 +29,16 @@ This lead me to study for graphic design for 4 years, with notable interest in t
 
 I eventually came to realise that making websites was what I'd rather be doing. At its core, this field is always growing, evolving, which means I can always learn new things. And that got me hooked.
 
-<div aria-hidden="true" class="u-floatClear"></div>
-
-{# <div class="about__lady-liberty u-posRelative u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
-  {% set lady_liberty -%}
-  {%- include "assets/img/lady-liberty.svg" -%}
+<div class="u-floatClear u-displayFlex u-flex--center">
+  {% set trinkets -%}
+  {%- include "assets/img/about-trinkets.svg" -%}
   {%- endset -%}
-  {{ lady_liberty | htmlmin | safe }}
-</div> #}
+  {{ trinkets | htmlmin | safe }}
+</div>
 
 When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog (in French): [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
 
-<hr class="u-floatClear">
+<hr>
 
 ## Overly-Formal Résumé
 

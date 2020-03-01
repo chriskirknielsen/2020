@@ -1,16 +1,16 @@
 a:not([class]),
 .link {
-    text-decoration-color: var(--colour-grey);
+    text-decoration-color: var(--color-grey);
     text-decoration-thickness: .0625em;
     text-underline-offset: .125em;
 
     &:link,
     &:visited {
-        color: var(--currentColor, var(--colour-text));
+        color: var(--currentColor, var(--color-text));
     }
 
     &:link {
-        text-decoration-color: var(--colour-secondary);
+        text-decoration-color: var(--color-secondary);
     }
 
     &:hover,
@@ -23,7 +23,7 @@ a:not([class]),
     &[href^="http://"],
     &[href^="https://"] {
         &:not([data-quiet-external-url])::after {
-            content: "\2060"; // Narrow Non-Break Space
+            content: "";
             
             display: inline-block;
             width: .75em;
@@ -37,8 +37,8 @@ a:not([class]),
             border-top-width: .125em;
             border-right-width: .125em;
             background: // Arrow box
-                linear-gradient(-45deg, transparent 43.25%, var(--currentColor) 43.25%, var(--currentColor) 56.75%, transparent 56.75%) border-box 100% 0% / 66.7% 66.7%, // Arrow line
-                linear-gradient(45deg, transparent 49.5%, var(--currentColor) 50.5%) border-box 100% 0% / 45% 45%, // Arrow head
+                linear-gradient(-45deg, transparent 45%, var(--currentColor) 45%, var(--currentColor) 55%, transparent 55%) border-box 100% 0% / 66.7% 66.7%, // Arrow line
+                linear-gradient(45deg, transparent 49.5%, var(--currentColor) 50.5%) border-box 100% 0% / 38% 38%, // Arrow head
                 linear-gradient(var(--currentBackground), var(--currentBackground)) content-box 0% 100% / 100% 100%, // Background square hollow
                 linear-gradient(var(--currentBackground), var(--currentBackground)) padding-box 100% 0% / 50% 50%, // Background top-right corner hollow
                 linear-gradient(var(--currentColor), var(--currentColor)) padding-box 0% 100% / 100% 100%; // Background square outline

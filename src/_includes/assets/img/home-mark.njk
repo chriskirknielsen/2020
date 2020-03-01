@@ -1,4 +1,4 @@
-{# Define the colour for the fake 3D name element #}
+{# Define the color for the fake 3D name element #}
 {% set depth_count = 16 %}
 {% set depth_min_scale = 0.9 %}
 {% set depth_hue = 244 %}
@@ -9,36 +9,36 @@
 {% set depth_factor_x = 1 %}
 {% set depth_factor_y = 0.9 %}
 
-{% set depth_colour1 = "#262261" %}
-{% set depth_colour2 = "#191642" %}
-{% set depth_colour3 = "#121023" %}
-{% set depth_colour4 = "#050404" %}
+{% set depth_color1 = "#262261" %}
+{% set depth_color2 = "#191642" %}
+{% set depth_color3 = "#121023" %}
+{% set depth_color4 = "#050404" %}
 
-{# Define the colour for the horizon #}
+{# Define the color for the horizon #}
 {% set horizon_flash = "#fff" %}
 
-{# Define the colour for the shiny parts #}
-{% set shine_colour = "#fff" %}
+{# Define the color for the shiny parts #}
+{% set shine_color = "#fff" %}
 
-{# Define the name's outline colours #}
+{# Define the name's outline colors #}
 {% set outline_midpoint = "#e04fab" %}
 {% set outline_endpoint = "#4f045f" %}
 
-{# Define the last name's colours #}
+{# Define the last name's colors #}
 {% set lastname_stroke = "#eb008b" %}
 {% set lastname_fill = "#f9ec31" %}
 
-{# Define the title's colour #}
+{# Define the title's color #}
 {% set title_fill = "#eaeaea" %}
 
 {# Define the name's wireframe #}
-{% set wire_colour = "#71d1cc" %}
+{% set wire_color = "#71d1cc" %}
 {% set wire_count = 8 %}
 
-{# Define the name's inner shadow colour #}
+{# Define the name's inner shadow color #}
 {% set firstname_inner = "#130026" %}
 
-{# Define the name's gradient fill colours #}
+{# Define the name's gradient fill colors #}
 {% set firstname_halfstart = "#130026" %}
 {% set firstname_halfmid1 = "#7a11ba" %}
 {% set firstname_halfmid2 = "#fd57b7" %}
@@ -46,7 +46,7 @@
 {% set firstname_endtop = "#7e004e" %}
 {% set firstname_endbottom = "#1f2aff" %}
 
-{# Define the name's lower "blinds" effect gradient colours #}
+{# Define the name's lower "blinds" effect gradient colors #}
 {% set blinds_startpoint = "#f856b4" %}
 {% set blinds_endpoint = "#474aff" %}
 
@@ -132,7 +132,7 @@
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
       <!-- <feGaussianBlur in="pinkGlow__thicken" stdDeviation="10" result="pinkGlow_blurred" /> -->
 
-      <!-- Change the colour -->
+      <!-- Change the color -->
       <feFlood flood-color="{{ lastname_stroke }}" result="pinkGlow_glowColor" />
 
       <!-- Color in the glows -->
@@ -160,8 +160,8 @@
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
       <feGaussianBlur in="flashGlow__thicken" stdDeviation="16" result="flashGlow_blurred" />
 
-      <!-- Change the colour -->
-      <feFlood flood-color="{{ wire_colour }}" result="flashGlow_glowColor" />
+      <!-- Change the color -->
+      <feFlood flood-color="{{ wire_color }}" result="flashGlow_glowColor" />
 
       <!-- Color in the glows -->
       <feComposite in="flashGlow_glowColor" in2="flashGlow_blurred" operator="in" result="flashGlow_colored" />
@@ -182,7 +182,7 @@
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
       <feGaussianBlur in="violetShadeGlow_thicken" stdDeviation="2" result="violetShadeGlow_blurred" />
 
-      <!-- Change the colour -->
+      <!-- Change the color -->
       <feFlood flood-color="{{ firstname_inner }}" result="violetShadeGlow_glowColor" />
 
       <!-- Color in the glows -->
@@ -203,7 +203,7 @@
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
       <feGaussianBlur in="violetShadeGlow2_thicken" stdDeviation="8" result="violetShadeGlow2_blurred" />
 
-      <!-- Change the colour -->
+      <!-- Change the color -->
       <feFlood flood-color="{{ firstname_inner }}" result="violetShadeGlow_glowColor" />
 
       <!-- Color in the glows -->
@@ -259,16 +259,16 @@
 
     <!-- GRADIENT: Shine Spots -->
     <radialGradient id="gradientShine">
-      <stop offset="0" stop-color="{{ shine_colour }}"/>
-      <stop offset=".75" stop-color="{{ shine_colour }}" stop-opacity="0"/>
-      <stop offset="1" stop-color="{{ shine_colour }}" stop-opacity="0"/>
+      <stop offset="0" stop-color="{{ shine_color }}"/>
+      <stop offset=".75" stop-color="{{ shine_color }}" stop-opacity="0"/>
+      <stop offset="1" stop-color="{{ shine_color }}" stop-opacity="0"/>
     </radialGradient>
 
     <!-- GRADIENT: Shine Overlay -->
     <linearGradient id="gradientShineOver" gradientUnits="userSpaceOnUse" x1="120.234" y1="-143.29" x2="684.493" y2="330.18">
-      <stop offset=".45" stop-color="{{ shine_colour }}" stop-opacity="0"/>
-      <stop offset=".5" stop-color="{{ shine_colour }}" stop-opacity="0.9"/>
-      <stop offset=".55" stop-color="{{ shine_colour }}" stop-opacity="0"/>
+      <stop offset=".45" stop-color="{{ shine_color }}" stop-opacity="0"/>
+      <stop offset=".5" stop-color="{{ shine_color }}" stop-opacity="0.9"/>
+      <stop offset=".55" stop-color="{{ shine_color }}" stop-opacity="0"/>
     </linearGradient>
 
     <!-- GRADIENT: Blinds -->
@@ -298,7 +298,7 @@
     <!-- Wires -->
     <g class="svg-mark__wires">
       {% for d in range(0, wire_count) -%}
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_colour }}" />
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_color }}" />
       {%- endfor %}
     </g>
     
@@ -370,8 +370,8 @@
     </g>
 
     <g class="svg-mark__chris-flash">
-      <use xlink:href="#svg-mark-chris-shape" fill="{{ shine_colour }}" stroke="{{ shine_colour }}" filter="url(#flashGlow)" />
-      {# <use xlink:href="#svg-mark-chris-shape"  fill="{{ shine_colour }}" stroke="{{ shine_colour }}" /> #}
+      <use xlink:href="#svg-mark-chris-shape" fill="{{ shine_color }}" stroke="{{ shine_color }}" filter="url(#flashGlow)" />
+      {# <use xlink:href="#svg-mark-chris-shape"  fill="{{ shine_color }}" stroke="{{ shine_color }}" /> #}
     </g>
 
   </g>

@@ -22,11 +22,11 @@
         line-height: 1.5; // Adds vertical "padding"
         text-transform: uppercase;
         border-radius: inherit;
-        color: var(--colour-text);
-        background-color: var(--colour-bg);
+        color: var(--color-text);
+        background-color: var(--color-bg);
         background:
-            linear-gradient(var(--colour-bg), var(--colour-bg)) content-box,
-            linear-gradient(180deg, var(--colour-bg) calc(50% - 1px), currentColor calc(50% - 1px)) padding-box;
+            linear-gradient(var(--color-bg), var(--color-bg)) content-box,
+            linear-gradient(180deg, var(--color-bg) calc(50% - 1px), currentColor calc(50% - 1px)) padding-box;
 
         transform: translateY(-50%);
     }

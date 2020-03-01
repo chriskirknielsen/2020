@@ -5,7 +5,7 @@ mainClasses: content
 ---
 
 <section class="content--full homescreen u-displayFlex u-flex--stretch" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
-	<div class="homescreen__wrapper u-displayFlex u-flex--centre u-posRelative u-afterCover u-width--100">
+	<div class="homescreen__wrapper u-displayFlex u-flex--center u-posRelative u-afterCover u-width--100">
         <div class="homescreen__background u-absCover u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
             {% set ckn_grid -%}
             {%- include "assets/img/home-grid.svg" -%}
@@ -46,11 +46,11 @@ mainClasses: content
     {%- if latestpostslength > 0 -%}
         {# <h2>{{ localisedContent.latestPost }}</h2> #}
     <div class="{{ utilities.bfc }}">
-        <ul class="u-displayBlock md:u-displayFlex u-margin--flexGap-double u-flex--stretchBlock">
+        <ul class="{{ utilities.cardContainer }}">
             {%- for i in range(0, latestpostslength) -%}
             {% set latestpost = latestposts[i] %}
-            <li class="u-displayFlex u-flex--stretchBlock {{ utilities.cardWrapper }}">
-                <a href="{{ latestpost.url | url }}" class="u-width--100 u-displayFlex u-flex--stretchBlock u-textDecoration--none">
+            <li class="u-displayFlex {{ utilities.cardFlex }}">
+                <a href="{{ latestpost.url | url }}" class="{{ utilities.cardBoxLink }} {{ utilities.cardFlex }}">
                     <article class="u-width--100 {{ utilities.card }}">
                         <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 

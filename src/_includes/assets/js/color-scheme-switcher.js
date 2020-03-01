@@ -1,5 +1,5 @@
 (function(){
-    const schemeStorageKey = 'colourScheme';
+    const schemeStorageKey = 'colorScheme';
     const schemeOptions = ['dusk','dawn'];
 
     const setScheme = function (scheme) {
