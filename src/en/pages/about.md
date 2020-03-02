@@ -14,18 +14,19 @@ tags:
 {# <div class="u-posRelative u-beforeCover u-afterCover u-floatRight u-displayInlineBlock u-marginBlockEnd--half u-marginInlineStart u-bg--currentColor about__image">
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div> #}
-<div class="about__profile u-posRelative u-floatRight u-marginBlock--double u-marginInlineStart--double">
+
+<p class="u-textLarger u-fontBold">I'm a designer turned developer who loves working on the web.</p>
+
+<div class="about__profile u-posRelative u-floatRight u-marginBlock--double u-marginInlineStart">
   {% set ckn_profile -%}
   {%- include "assets/img/ckn-profile.svg" -%}
   {%- endset -%}
   {{ ckn_profile | htmlmin | safe }}
 </div>
 
-**I'm a designer turned developer who loves working on the web.**
-
 Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphic software (from MS Paint to Photoshop) and making a little website to talk about a video game I liked (and trying to style my MySpace page). As that took off, I learned how to make dynamic websites, and built a community. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated.
 
-This lead me to study for graphic design for 4 years, with notable interest in typography, colour theory, composition, as well as animation. That said, I still kept learning about the web, making blogs and such. I made my way into freelancing for a few years, balancing design and development, which was great for me.
+This lead me to study for graphic design for 4 years, with notable interest in typography, colour theory, composition, as well as animation. That said, I still kept learning about the web, making blogs and other small projects. I made my way into freelancing for a few years, balancing design and development, which was great for me.
 
 I eventually came to realise that making websites was what I'd rather be doing. At its core, this field is always growing, evolving, which means I can always learn new things. And that got me hooked.
 
