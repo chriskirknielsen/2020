@@ -40,7 +40,7 @@
             // width: .0625em;
             width: .125em;
             
-            background-color: var(--c-grey-min);
+            background-color: var(--c-primary-min);
 
             transform-origin: 50% 100%;
             animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
@@ -48,7 +48,7 @@
 
         &-path path {
             fill: none;
-            stroke: var(--c-grey-min);
+            stroke: var(--c-primary-min);
             stroke-width: 2;
             stroke-dasharray: 1 1;
 
@@ -186,46 +186,21 @@
     } // */ // End:Square image animation
 }
 
-.about__landscape {
-    $landscape-shape-speed: 6s;
+.about__delorean {
+    &-container {
+        border-bottom: 1px solid var(--currentColor);
+    }
 
-    path,
-    circle {
+    width: 20rem;
+
+    &-stroke > * {
+        fill: none;
         stroke: var(--currentColor);
         stroke-width: 1;
         stroke-miterlimit: 10;
     }
 
-    &-shapes path {
-        animation: aboutLandscapeShape calc(#{ $landscape-shape-speed } * (1 + var(--d) / var(--t))) linear #{ $landscape-shape-speed * -.5 } infinite;
-    }
-
-    &-fillbg path,
-    &-fillbg circle {
-        fill: var(--currentBackground);
-    }
-
-    &-fill path,
-    &-fill circle {
+    &-fill > * {
         fill: var(--currentColor);
     }
-
-    &-stroke path,
-    &-stroke circle {
-        fill: none;
-    }
-
-    &-delorean-wheel {
-        transform-origin: calc(var(--cx) / var(--w) * 100%) calc(var(--cy) / var(--h) * 100%);
-        animation: aboutDeloreanWheel #{ $landscape-shape-speed / 3 } linear infinite;
-    }
-}
-
-@keyframes aboutLandscapeShape {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-
-@keyframes aboutDeloreanWheel {
-    to { transform: rotate(360deg); }
 }

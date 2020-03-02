@@ -13,15 +13,14 @@
     $grid-line-anim-time: 4s;
     $sun-radius: 20vmin;
     $sun-blind-size: $sun-radius / 12;
-    $screen-background: c('primary', 'max');
     $screen-background: unquote('var(--c-primary-max)');
     $sky-start: #0a0634;
-    $sky-start: c('primary', 'max');
+    $sky-start: unquote('var(--c-primary-max)');
     $sky-start: unquote('var(--c-primary-max)');
     $sky-end: #791e74;
     $floor-start: #1e0347;
-    $floor-color: c('secondary', 'med');
-    $floor-end: c('primary', 'max');
+    $floor-color: unquote('var(--c-secondary-med)');
+    $floor-end: unquote('var(--c-primary-max)');
     $sun-top: #ed23af;
     $sun-middle: #ffafa3;
     $sun-bottom: #ffffe9;
