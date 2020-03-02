@@ -92,11 +92,6 @@
         }
     }
 
-    // @keyframes about__browTwitch {
-    //     0%, 100% { transform: none; }
-    //     50% { transform: translateY(-2%) rotate(3deg); }
-    // }
-
     @keyframes about__hairGrow {
         0% {
             stroke-width: 0;
@@ -191,38 +186,46 @@
     } // */ // End:Square image animation
 }
 
-.trinket {
-    $trinklet-anim-duration: 8s;
-    $trinklet-anim-delay: $trinklet-anim-duration / 16;
+.about__landscape {
+    $landscape-shape-speed: 6s;
 
-    transform-origin: 50% 50%;
-    animation: aboutTrinketFloat 7s linear infinite;
-    animation-delay: calc(var(--trinklet) * #{ $trinklet-anim-delay * -1 });
-    will-change: transform;
-
-    &:nth-child(odd) { animation-direction: reverse; }
-
-    &__nofill,
-    &__roundstroke {
-        stroke: var(--c-primary-min);
+    path,
+    circle {
+        stroke: var(--currentColor);
         stroke-width: 1;
         stroke-miterlimit: 10;
     }
-    &__nofill {
+
+    &-shapes path {
+        animation: aboutLandscapeShape calc(#{ $landscape-shape-speed } * (1 + var(--d) / var(--t))) linear #{ $landscape-shape-speed * -.5 } infinite;
+    }
+
+    &-fillbg path,
+    &-fillbg circle {
+        fill: var(--currentBackground);
+    }
+
+    &-fill path,
+    &-fill circle {
+        fill: var(--currentColor);
+    }
+
+    &-stroke path,
+    &-stroke circle {
         fill: none;
     }
-    &__roundstroke {
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
-    &__roundstroke,
-    &__fill {
-        fill: #ffffff;
-        fill: var(--c-primary-min);
+
+    &-delorean-wheel {
+        transform-origin: calc(var(--cx) / var(--w) * 100%) calc(var(--cy) / var(--h) * 100%);
+        animation: aboutDeloreanWheel #{ $landscape-shape-speed / 3 } linear infinite;
     }
 }
 
-@keyframes aboutTrinketFloat {
-    0% { transform: rotate(0deg) translateY(2%) rotate(360deg); }
-    100% { transform: rotate(360deg) translateY(2%) rotate(0deg); }
+@keyframes aboutLandscapeShape {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes aboutDeloreanWheel {
+    to { transform: rotate(360deg); }
 }
