@@ -23,12 +23,12 @@
     $profile-anim-ladyliberty-delay: $profile-anim-hair-delay;
     $profile-anim-ladyliberty-duration: 1s;
 
-    &__profile{
+    &__profile {
         width: 6rem;
         max-width: 20vw;
 
-        shape-margin: #{ $spacing };
-        shape-outside: ellipse(100% 50% at 94% 53%);
+        // shape-margin: #{ $spacing };
+        shape-outside: ellipse(100% 50% at 100% 50%);
 
         &::after {
             content: '';
@@ -191,25 +191,6 @@
     } // */ // End:Square image animation
 }
 
-.trinket__nofill,
-.trinket__roundstroke {
-    stroke: var(--c-primary-min);
-    stroke-width: 1;
-    stroke-miterlimit: 10;
-}
-.trinket__nofill {
-    fill: none;
-}
-.trinket__roundstroke {
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-.trinket__roundstroke,
-.trinket__fill {
-    fill: #ffffff;
-    fill: var(--c-primary-min);
-}
-
 .trinket {
     $trinklet-anim-duration: 8s;
     $trinklet-anim-delay: $trinklet-anim-duration / 16;
@@ -220,6 +201,25 @@
     will-change: transform;
 
     &:nth-child(odd) { animation-direction: reverse; }
+
+    &__nofill,
+    &__roundstroke {
+        stroke: var(--c-primary-min);
+        stroke-width: 1;
+        stroke-miterlimit: 10;
+    }
+    &__nofill {
+        fill: none;
+    }
+    &__roundstroke {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+    &__roundstroke,
+    &__fill {
+        fill: #ffffff;
+        fill: var(--c-primary-min);
+    }
 }
 
 @keyframes aboutTrinketFloat {
