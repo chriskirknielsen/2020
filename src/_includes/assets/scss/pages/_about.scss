@@ -40,7 +40,7 @@
             // width: .0625em;
             width: .125em;
             
-            background-color: var(--c-grey-min);
+            background-color: var(--c-primary-min);
 
             transform-origin: 50% 100%;
             animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
@@ -48,7 +48,7 @@
 
         &-path path {
             fill: none;
-            stroke: var(--c-grey-min);
+            stroke: var(--c-primary-min);
             stroke-width: 2;
             stroke-dasharray: 1 1;
 
@@ -91,11 +91,6 @@
             stroke-dashoffset: 1;
         }
     }
-
-    // @keyframes about__browTwitch {
-    //     0%, 100% { transform: none; }
-    //     50% { transform: translateY(-2%) rotate(3deg); }
-    // }
 
     @keyframes about__hairGrow {
         0% {
@@ -191,38 +186,21 @@
     } // */ // End:Square image animation
 }
 
-.trinket {
-    $trinklet-anim-duration: 8s;
-    $trinklet-anim-delay: $trinklet-anim-duration / 16;
+.about__delorean {
+    &-container {
+        border-bottom: 1px solid var(--currentColor);
+    }
 
-    transform-origin: 50% 50%;
-    animation: aboutTrinketFloat 7s linear infinite;
-    animation-delay: calc(var(--trinklet) * #{ $trinklet-anim-delay * -1 });
-    will-change: transform;
+    width: 20rem;
 
-    &:nth-child(odd) { animation-direction: reverse; }
-
-    &__nofill,
-    &__roundstroke {
-        stroke: var(--c-primary-min);
+    &-stroke > * {
+        fill: none;
+        stroke: var(--currentColor);
         stroke-width: 1;
         stroke-miterlimit: 10;
     }
-    &__nofill {
-        fill: none;
-    }
-    &__roundstroke {
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
-    &__roundstroke,
-    &__fill {
-        fill: #ffffff;
-        fill: var(--c-primary-min);
-    }
-}
 
-@keyframes aboutTrinketFloat {
-    0% { transform: rotate(0deg) translateY(2%) rotate(360deg); }
-    100% { transform: rotate(360deg) translateY(2%) rotate(0deg); }
+    &-fill > * {
+        fill: var(--currentColor);
+    }
 }

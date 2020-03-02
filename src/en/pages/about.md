@@ -24,20 +24,31 @@ tags:
   {{ ckn_profile | htmlmin | safe }}
 </div>
 
-Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphic software (from MS Paint to Photoshop) and making a little website to talk about a video game I liked (and trying to style my MySpace page). As that took off, I learned how to make dynamic websites, and built a community. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated.
 
-This lead me to study for graphic design for 4 years, with notable interest in typography, colour theory, composition, as well as animation. That said, I still kept learning about the web, making blogs and other small projects. I made my way into freelancing for a few years, balancing design and development, which was great for me.
+## Origin Story
 
-I eventually came to realise that making websites was what I'd rather be doing. At its core, this field is always growing, evolving, which means I can always learn new things. And that got me hooked.
+Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphic editing software (from MS Paint to Photoshop), and trying to skin a MySpace page. After a while, I started making a little website to talk about a video game I liked.
 
-<div class="u-floatClear u-displayFlex u-flex--center">
-  {% set trinkets -%}
-  {%- include "assets/img/about-trinkets.svg" -%}
+As that took off, I learned how to make **dynamic websites**, and built a community — back when discussion forums were still a thing. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated.
+
+This lead me to study for **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I still kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
+
+I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
+
+<div class="about__delorean-container u-floatClear u-displayFlex u-flex--center">
+  {% set delorean -%}
+  {%- include "assets/img/about-delorean.svg" -%}
   {%- endset -%}
-  {{ trinkets | htmlmin | safe }}
+  {{ delorean | htmlmin | safe }}
 </div>
 
-When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). I enjoy movies and T.V. shows, as well as video games, which I sometimes review on my blog (in French): [Geekometric](https://geekometric.com). I also appreciate reading a nice book during my commute in New York City, but I'm originally from Lyon, in France. I speak English, French, Danish and some Italian — I love languages and wouldn't mind learning more!
+## Hobbies
+
+When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). Something about synthesizers really appeals to me. Maybe the neon colours just seep straight into my soul, or something.
+
+Like many other humans, I enjoy movies and T.V. shows, as well as video games, which I sometimes **review on my blog** (in French): [Geekometric](https://geekometric.com). While everyone has an opinion, it's nice to be able to just sit down and process the whole experience, break it down, and write about it.
+
+I also appreciate reading a nice book during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
 <hr>
 
