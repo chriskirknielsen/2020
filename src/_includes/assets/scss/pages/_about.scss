@@ -187,16 +187,12 @@
 }
 
 .about__delorean {
-    &-container {
-        border-bottom: 1px solid var(--currentColor);
-    }
-
-    width: 20rem;
+    width: 24rem;
 
     &-stroke > * {
         fill: none;
         stroke: var(--currentColor);
-        stroke-width: 1;
+        stroke-width: 1.25;
         stroke-miterlimit: 10;
     }
 

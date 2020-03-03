@@ -35,7 +35,7 @@ This lead me to study for **graphic design** for 4 years, with notable interest 
 
 I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
 
-<div class="about__delorean-container u-floatClear u-displayFlex u-flex--center">
+<div class="u-floatClear u-displayFlex u-flex--center">
   {% set delorean -%}
   {%- include "assets/img/about-delorean.svg" -%}
   {%- endset -%}
