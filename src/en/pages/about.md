@@ -31,13 +31,13 @@ Front-end development is my main focus nowadays, but it wasn't always the case. 
 
 As that took off, I learned how to make **dynamic websites**, and built a community — back when discussion forums were still a thing. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated.
 
-This lead me to study for **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I still kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
+This lead me to study for **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
 
 I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
 
 <div class="u-floatClear u-displayFlex u-flex--center">
   {% set delorean -%}
-  {%- include "assets/img/about-delorean.svg" -%}
+  {%- include "assets/img/delorean.svg" -%}
   {%- endset -%}
   {{ delorean | htmlmin | safe }}
 </div>
@@ -46,9 +46,23 @@ I eventually came to realise what I'd rather be doing: **working on the web to b
 
 When I'm not doing web-related things, I might be either making **electronica music** as [Chronoise](https://chronoise.com), or listening to some, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). Something about synthesizers really appeals to me. Maybe the neon colours just seep straight into my soul, or something.
 
-Like many other humans, I enjoy movies and T.V. shows, as well as video games, which I sometimes **review on my blog** (in French): [Geekometric](https://geekometric.com). While everyone has an opinion, it's nice to be able to just sit down and process the whole experience, break it down, and write about it.
+<div class="u-displayFlex u-flex--center">
+  {% set keyboard -%}
+  {%- include "assets/img/keyboard.svg" -%}
+  {%- endset -%}
+  {{ keyboard | htmlmin | safe }}
+</div>
 
-I also appreciate reading a nice book during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
+Like many other humans, I enjoy movies and T.V. shows, as well as video games, which I sometimes **review on my blog** (in French): [Geekometric](https://geekometric.com). Sure, everyone has an opinion, but still it's nice to be able to just sit down and process the whole experience, break it down, and write about it.
+
+<div class="u-displayFlex u-flex--center">
+  {% set headphones -%}
+  {%- include "assets/img/headphones.svg" -%}
+  {%- endset -%}
+  {{ headphones | htmlmin | safe }}
+</div>
+
+I also appreciate reading a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
 <hr>
 

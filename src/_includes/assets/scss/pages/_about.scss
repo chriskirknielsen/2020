@@ -186,9 +186,7 @@
     } // */ // End:Square image animation
 }
 
-.about__delorean {
-    width: 24rem;
-
+.about__trinket {
     &-stroke > * {
         fill: none;
         stroke: var(--currentColor);
@@ -200,3 +198,7 @@
         fill: var(--currentColor);
     }
 }
+
+.about__delorean { width: 24rem; }
+.about__keyboard { width: 16rem; }
+.about__headphones { width: 6rem; }
