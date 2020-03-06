@@ -15,7 +15,7 @@ tags:
   <img src="/assets/img/profile.jpg" alt="CKN profile" width="512" height="512" class="u-zIndex--1 u-posRelative" onload="this.parentElement.className+=' about__image--loaded'">
 </div> #}
 
-<p class="u-textLarger u-fontBold">I'm a designer turned developer who loves working on the web.</p>
+<p class="u-textLarger">I'm a designer turned developer who loves working on the web.</p>
 
 <div class="about__profile u-posRelative u-floatRight u-marginBlock--double u-marginInlineStart">
   {% set ckn_profile -%}
@@ -53,7 +53,7 @@ When I'm not doing web-related things, I might be either making **electronica mu
   {{ keyboard | htmlmin | safe }}
 </div>
 
-Like many other humans, I enjoy movies and T.V. shows, as well as video games, which I sometimes **review on my blog** (in French): [Geekometric](https://geekometric.com). Sure, everyone has an opinion, but still it's nice to be able to just sit down and process the whole experience, break it down, and write about it.
+Like many other humans, I enjoy movies and T.V. shows, as well as video games, which I sometimes **review on my blog** (in French): [Geekometric](https://geekometric.com), which was also a great excuse to migrate my WordPress to a static site generator, Hugo. Sure, everyone has an opinion, but still it's nice to be able to just sit down and process the whole experience, break it down, and write about it.
 
 <div class="u-displayFlex u-flex--center">
   {% set headphones -%}
@@ -115,7 +115,7 @@ I also appreciate reading a nice book & playlist combo during my hour-long commu
 - [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
 - [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
 - [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
-- [Geekometric](https://geekometric.com) (static site built with Hugo, running on Netlify)
+- [Geekometric](https://geekometric.com)
 - [Chronoise](https://chronoise.com)
 
 </div>

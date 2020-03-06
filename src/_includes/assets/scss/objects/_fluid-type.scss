@@ -1,5 +1,5 @@
 .fluid-type {
-    $min: .875rem;
-    $max: 1rem;
+    $min: 1rem;
+    $max: 1.125rem;
     @include fluid-type($min, $max);
 }
