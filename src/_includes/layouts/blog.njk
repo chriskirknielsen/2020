@@ -3,7 +3,9 @@ layout: layouts/base.njk
 section: blog
 permalink: /blog/index.html
 ---
-<h1>{{ title }}</h1>
+<h1>{{ title }} <a href="{{ localePath }}feed.xml" aria-label="{{ footer[locale].rssHint }}" class="footer__social-link u-displayInlineBlock u-padding--half {{ utilities.glowBoxLink }}">
+							{% include "assets/img/rss.svg" %}
+						</a></h1>
 
 {{ layoutContent | safe }}
 
