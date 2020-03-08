@@ -17,10 +17,13 @@
 }
 
 @font-face {
-	font-family: "RussoOne";
-	src: local('RussoOne'),
-		 url('../fonts/RussoOne.woff2') format("woff2");
+	font-family: "MarvinVisionsBig";
+	src: local('MarvinVisionsBig'),
+		local('Marvin Visions Big'),
+		local('Marvin Visions Big Bold'),
+		url('../fonts/MarvinVisionsBig-Bold.woff2') format("woff2"),
+		url('../fonts/MarvinVisionsBig-Bold.woff') format("woff");
 	font-style: normal;
-	font-weight: 900;
+	font-weight: 700;
 	font-display: swap;
 }
