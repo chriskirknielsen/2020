@@ -2,8 +2,7 @@
 templateEngineOverride: njk,md
 title: Hello, I'm Chris
 summary: Learn more about Christopher Kirk-Nielsen
-date: 2017-01-01T00:00:00.000Z
-permalink: /about/index.html
+permalink: /about/
 translationKey: "aboutPage"
 navtitle: About
 ownstyles: about
@@ -56,7 +55,7 @@ When I'm not doing web-related things, I might be either making **electronica mu
 
 Like many other humans, I enjoy movies and T.V. shows, as well as video games, which I sometimes **review on my blog** (in French): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but still it's nice to be able to just sit down and process the whole experience, break it down, and write about it.
 
-I also appreciate reading a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
+I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
 <hr>
 
@@ -104,7 +103,7 @@ I also appreciate reading a nice book & playlist combo during my hour-long commu
 
 - **Work:** United States "Green Card" holder
 
-### Online
+### On the Web
 
 - [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
 - [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)

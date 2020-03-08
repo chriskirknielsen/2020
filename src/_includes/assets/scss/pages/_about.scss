@@ -200,5 +200,8 @@
 }
 
 .about__delorean { width: 24rem; }
-.about__keyboard { width: 14rem; }
+.about__keyboard {
+    width: 14rem;
+    max-width: 30vw;
+}
 .about__headphones { width: 6rem; }

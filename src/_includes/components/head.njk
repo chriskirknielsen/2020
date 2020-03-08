@@ -33,6 +33,7 @@
 	<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}" />
 	{% endfor %}
 	{%- endif -%}
-
+	{% set localeRssUrl %}{{ localePath }}feed.xml{% endset %}
+	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
 	{# <script src="{{ '/assets/js/color-scheme-switcher.js' | url }}" deferred></script> #}
 </head>

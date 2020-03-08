@@ -82,6 +82,7 @@
 
 /* Size */
 
+.u-width--point75em { width: .75em; }
 .u-width--1em { width: 1em; }
 .u-width--50 { width: 50%; }
 .u-width--100 { width: 100%; }
@@ -227,8 +228,14 @@
 .u-paddingBlockStart--none {
     padding-top: 0;
 }
+.u-paddingBlockStart--double {
+    padding-top: #{ $spacing * 2 };
+}
 .u-paddingBlockEnd--double {
     padding-bottom: #{ $spacing * 2 };
+}
+.u-paddingBlockEnd {
+    padding-bottom: #{ $spacing };
 }
 .u-paddingInline {
     padding-left: #{ $spacing };
