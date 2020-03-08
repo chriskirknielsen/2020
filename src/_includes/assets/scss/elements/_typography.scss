@@ -24,9 +24,13 @@ h6,
         // Don't declare the font family into heading elements if it's the same as the body
         font-family: f('heading');
     }
+
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: .025em; // Keep the type tight, but not too tight
+
+    @if (map-get(map-get($fonts, 'heading'), 'main') == 'MarvinVisionsBig') {
+        letter-spacing: .025em; // Keep the type tight, but not too tight
+    }
 }
 
 h1,
