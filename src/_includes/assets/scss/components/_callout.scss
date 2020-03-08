@@ -1,33 +1,36 @@
 .callout {
-    position: relative;
+    border-left: .11em solid var(--c-primary-med);
+    background:
+        linear-gradient(90deg, transparent, var(--currentBackground)) 100% 0 repeat-y,
+        repeating-linear-gradient(var(--c-primary-med) 0, var(--c-primary-med) .11em, transparent .11em, transparent .33em) 0 0 repeat-x,
+        linear-gradient(90deg, var(--c-primary-med), var(--currentBackground)) 0 100% no-repeat;
+    background-size:
+        100% 1.25em,
+        100% 1.25em,
+        100% .11em;
 
-    background-image: linear-gradient(to bottom right, var(--gradient-subtle));
-
-    // Since the horizontal padding is used for a background-clip trick, using non-breaking spaces around the text to add padding
-    html[lang="en"] &::before { content:"\00a0\00a0Note\00a0\00a0"; }
-    html[lang="fr"] &::before { content:"\00a0\00a0N.B.\00a0\00a0"; }
-    &[data-callout][class]::before { content:"\00a0\00a0" attr(data-callout) "\00a0\00a0"; } // If provided, override pseudo's text content
+    html[lang="en"] &::before { content: "Note"; }
+    html[lang="fr"] &::before { content: "N.B."; }
+    &[data-callout][class]::before { content: attr(data-callout); } // If provided, override pseudo's text content
 
     &::before {
         position: absolute;
-        left: #{ $spacing / 2 };
-        top: .02em;
+        top: -.25em;
+        left: #{ $spacing };
 
         display: inline-block;
-        padding: 1px; // Used for background-clip
+        padding: 0 #{ $spacing };
         
-        font-size: .8em;
+        font-family: f('heading');
+        font-size: 1.75em;
         font-weight: 700;
-        text-align: center;
-        line-height: 1.5; // Adds vertical "padding"
-        text-transform: uppercase;
-        border-radius: inherit;
-        color: var(--color-text);
-        background-color: var(--color-bg);
-        background:
-            linear-gradient(var(--color-bg), var(--color-bg)) content-box,
-            linear-gradient(180deg, var(--color-bg) calc(50% - 1px), currentColor calc(50% - 1px)) padding-box;
+        line-height: 1;
+        letter-spacing: #{ $heading-font-letter-spacing };
 
-        transform: translateY(-50%);
+        color: var(--c-primary-min);
+        text-shadow:
+            .1em 0 0 var(--currentBackground),
+            .125em 0 0 var(--c-primary-med);
+        background-color: var(--currentBackground);
     }
 }

@@ -64,3 +64,5 @@ $fonts: (
         'fallback': map-get($font-fallback-list, map-deep-get($font-token, "code", "fallback"))
     )
 );
+
+$heading-font-letter-spacing: .025em !default;

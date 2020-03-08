@@ -228,8 +228,14 @@
 .u-paddingBlockStart--none {
     padding-top: 0;
 }
+.u-paddingBlockStart--double {
+    padding-top: #{ $spacing * 2 };
+}
 .u-paddingBlockEnd--double {
     padding-bottom: #{ $spacing * 2 };
+}
+.u-paddingBlockEnd {
+    padding-bottom: #{ $spacing };
 }
 .u-paddingInline {
     padding-left: #{ $spacing };
