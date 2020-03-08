@@ -63,6 +63,13 @@ module.exports = function(eleventyConfig) {
     </div>`;
   });
 
+  eleventyConfig.addPairedShortcode("markdown", (content, inline = null) => {
+    const md = new markdownIt();
+    return inline
+      ? md.renderInline(content)
+      : md.render(content);
+  });
+
   /* FILTERS */
 
   eleventyConfig.addFilter("split", function(string, delimiter) {
