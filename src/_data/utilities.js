@@ -12,5 +12,5 @@ module.exports = { // Define a list of utility classes that are commonly used to
     cardBoxLink: "u-width--100 u-displayFlex u-flex--stretchBlock u-textDecoration--none u-flow u-padding u-c--primary-min u-bg--grey-max u-border u-border--grey-med h:u-border--secondary-med h:u-innerShadow--secondary-med u-transition",
     
     // Callout block
-    callout: "u-posRelative u-paddingInline--double u-paddingBlockStart--double u-paddingBlockEnd",
+    callout: "u-posRelative u-paddingInline u-paddingBlockStart--double u-paddingBlockEnd",
 }
