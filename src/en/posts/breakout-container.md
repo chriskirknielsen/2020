@@ -47,7 +47,32 @@ You should also add `overflow-x: hidden` to the `body` (or a main wrapper around
 
 Note that if you want to really push the backward compatibility, in order to avoid a broken layout for the few browsers that support the `vw` unit but not `calc()`, you can use any variation of `calc(50vw * 2)` that results in `100vw`. This will ensure older browsers won't have content outside the viewport.
 
-As a bonus, if you want to avoid having an absurdly large content on an ultra-wide viewport, use "dynamic" padding! This `calc` value will take the screen width (`100vw`) minus the maximum width of the content you give it (let's say `80em`) and divide the result by `2`. The block will still take up all the horizontal space but the content will remain at a reasonable width.
+As a bonus, if you want to avoid having an absurdly large content on an ultra-wide viewport, you can restrict the max-width with two methods.
+
+### First method: Container
+
+This method involves wrapping the content in an element. Doing this will allow us to assign a maximum width and horizontally align the block in the middle:
+
+```html
+<div class="container">
+  <div class="breakout">
+    <div class="breakout--content">
+      Centred content goes here…
+    </div>
+  </div>
+</div>
+```
+
+```css
+.breakout--content {
+	max-width: 80em;
+	margin: 0 auto;
+}
+```
+
+### Second method: Dynamic Padding
+
+This `calc` value will take the screen width (`100vw`) minus the maximum width of the content you give it (let's say `80em`) and divide the result by `2`. The block will still take up all the horizontal space but the content will remain at a reasonable width.
 
 If the screen width is equal to `80em`, the padding will compute to `0`, but if `100vw` is worth `100em`, the padding will evaluate to `(100em - 80em) / 2 = 10em` on each side. Note that `box-sizing: border-box;` is necessary to ensure the padding is subtracted from the full viewport width instead of added to it.
 
