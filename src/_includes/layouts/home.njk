@@ -50,17 +50,11 @@ mainClasses: content
             {%- for i in range(0, latestpostslength) -%}
             {% set latestpost = latestposts[i] %}
             <li class="u-displayFlex {{ utilities.cardFlex }}">
-                <a href="{{ latestpost.url | url }}" class="{{ utilities.cardBoxLink }} {{ utilities.cardFlex }}">
+                <a href="{{ latestpost.url | url }}" class="{{ utilities.cardBoxLink }} {{ utilities.cardFlex }}" aria-label="{{ latestpost.date | date(dateFormat, locale) }}{{ punctSp }}: {{ latestpost.data.title }}">
                     <article class="u-width--100 {{ utilities.card }}">
                         <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 
-                        <h3>
-                            {%- if latestpost.data.title -%}
-                                {{- latestpost.data.title -}}
-                            {%- else -%}
-                                Untitled Post
-                            {%- endif -%}
-                        </h3>
+                        <h3>{{ latestpost.data.title }}</h3>
 
                         <p class="u-marginBlockStart--half">
                             {%- if latestpost.data.summary -%}
