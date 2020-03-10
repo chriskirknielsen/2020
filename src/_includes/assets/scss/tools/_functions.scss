@@ -83,23 +83,27 @@
 /* COLOUR, FONT AND LAYER-ORDER HELPERS */
 
 // Returns a color from the $colors map
-@function c($name, $weight: med, $opacity: 100) {
+@function c($name, $weight: med, $opacity: 100, $theme: 'all') {
     $return: unquote($name);
 
-    @if (map-has-key($colors, $name)) { // If the color exists in the list
-        $color: map-get($colors, $name);
-        $weighted-color: $color !default; // Define default
+    @if (map-has-key($colors, $theme)) { // If the theme exists in the list
+        $theme-colors: map-get($colors, $theme);
 
-        @if is-map($color) and map-has-key($color, $weight) {
-            $weighted-color: map-get($color, $weight);
-        }
+        @if (map-has-key($theme-colors, $name)) { // If the color exists in the list
+            $color: map-get($theme-colors, $name);
+            $weighted-color: $color !default; // Define default
 
-        @if $opacity < 100 { // return alpha value
-            $opacity-decimal: $opacity / 100;
-            $return: rgba($weighted-color, $opacity-decimal);
-        }
-        @else { // returns opaque value
-            $return: $weighted-color;
+            @if is-map($color) and map-has-key($color, $weight) {
+                $weighted-color: map-get($color, $weight);
+            }
+
+            @if $opacity < 100 { // return alpha value
+                $opacity-decimal: $opacity / 100;
+                $return: rgba($weighted-color, $opacity-decimal);
+            }
+            @else { // returns opaque value
+                $return: $weighted-color;
+            }
         }
     }
     

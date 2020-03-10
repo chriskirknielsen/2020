@@ -1,9 +1,10 @@
 $color-token: token-get("colors");
+$grayscale-colors: ("all": (
+    "min": #ffffff,
+    "med": #808080,
+    "max": #000000
+));
 $colors: map-merge(
     $color-token,
-    ( // Basic greyscale values
-        "min": #ffffff,
-        "med": #808080,
-        "max": #000000
-    )
+    $grayscale-colors
 );

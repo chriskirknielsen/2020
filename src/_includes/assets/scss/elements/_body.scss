@@ -1,19 +1,19 @@
 html { // Min is lightest during dusk, Max is darkest
-    --c-min: #{ c('min') };
-    --c-max: #{ c('max') };
+    --c-min: #{ c('min', $theme: 'all') };
+    --c-max: #{ c('max', $theme: 'all') };
     --c-alpha-lum: 100%;
 
-    --c-grey-min: #{ c('grey', min) };
-    --c-grey-med: #{ c('grey', med) };
-    --c-grey-max: #{ c('grey', max) };
+    --c-grey-min: #{ c('grey', min, $theme: 'dusk') };
+    --c-grey-med: #{ c('grey', med, $theme: 'dusk') };
+    --c-grey-max: #{ c('grey', max, $theme: 'dusk') };
 
-    --c-primary-min: #{ c('primary', min) };
-    --c-primary-med: #{ c('primary', med) };
-    --c-primary-max: #{ c('primary', max) };
+    --c-primary-min: #{ c('primary', min, $theme: 'dusk') };
+    --c-primary-med: #{ c('primary', med, $theme: 'dusk') };
+    --c-primary-max: #{ c('primary', max, $theme: 'dusk') };
 
-    --c-secondary-min: #{ c('secondary', min) };
-    --c-secondary-med: #{ c('secondary', med) };
-    --c-secondary-max: #{ c('secondary', max) };
+    --c-secondary-min: #{ c('secondary', min, $theme: 'dusk') };
+    --c-secondary-med: #{ c('secondary', med, $theme: 'dusk') };
+    --c-secondary-max: #{ c('secondary', max, $theme: 'dusk') };
 
     --color-bg: var(--c-primary-max);
     --color-text: var(--c-primary-min);
@@ -25,21 +25,21 @@ html { // Min is lightest during dusk, Max is darkest
 }
 
 html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
-    --c-min: #{ c('max') };
-    --c-max: #{ c('min') };
+    --c-min: #{ c('max', $theme: 'all') };
+    --c-max: #{ c('min', $theme: 'all') };
     --c-alpha-lum: 0%;
     
-    --c-grey-min: #{ c('grey', max) };
-    --c-grey-med: #{ c('grey', med) };
-    --c-grey-max: #{ c('grey', min) };
+    --c-grey-min: #{ c('grey', min, $theme: 'dawn') };
+    --c-grey-med: #{ c('grey', med, $theme: 'dawn') };
+    --c-grey-max: #{ c('grey', max, $theme: 'dawn') };
 
-    --c-primary-min: #{ c('primary', max) };
-    --c-primary-med: #{ c('primary', med) };
-    --c-primary-max: #{ c('primary', min) };
+    --c-primary-min: #{ c('primary', min, $theme: 'dawn') };
+    --c-primary-med: #{ c('primary', med, $theme: 'dawn') };
+    --c-primary-max: #{ c('primary', max, $theme: 'dawn') };
 
-    --c-secondary-min: #{ c('secondary', max) };
-    --c-secondary-med: #{ c('secondary', med) };
-    --c-secondary-max: #{ c('secondary', min) };
+    --c-secondary-min: #{ c('secondary', min, $theme: 'dawn') };
+    --c-secondary-med: #{ c('secondary', med, $theme: 'dawn') };
+    --c-secondary-max: #{ c('secondary', max, $theme: 'dawn') };
 
     --color-bg: var(--c-primary-max);
     --color-text: var(--c-grey-min);

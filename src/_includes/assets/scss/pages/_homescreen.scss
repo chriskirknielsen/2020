@@ -122,6 +122,8 @@
     }
 
     &__grid {
+        $mask-gradient: gradient-stops($ep: 95%);
+        
         top: #{ $grid-size * 100% };
         
         width: 100%;
@@ -129,8 +131,8 @@
         contain: content;
 
         // Fade out the grid at the bottom
-        -webkit-mask-image: linear-gradient(gradient-stops());
-        mask-image: linear-gradient(gradient-stops());
+        -webkit-mask-image: linear-gradient(#{ $mask-gradient });
+        mask-image: linear-gradient(#{ $mask-gradient });
 
         &-lines {
             fill: none;

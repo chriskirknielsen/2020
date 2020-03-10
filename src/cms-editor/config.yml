@@ -51,27 +51,56 @@ collections:
             name: "colors"
             widget: "object"
             fields: 
-              - label: "Grey"
-                name: "grey"
+              - label: "Dusk"
+                name: "dusk"
                 widget: "object"
                 fields:
-                  - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
-                  - {label: "Medium", name: "med", widget: "string", default: "#808080"}
-                  - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
-              - label: "Primary"
-                name: "primary"
+                  - label: "Grey"
+                    name: "grey"
+                    widget: "object"
+                    fields:
+                      - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
+                      - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                      - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
+                  - label: "Primary"
+                    name: "primary"
+                    widget: "object"
+                    fields:
+                      - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
+                      - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                      - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
+                  - label: "Secondary"
+                    name: "secondary"
+                    widget: "object"
+                    fields:
+                      - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
+                      - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                      - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
+              - label: "Dawn"
+                name: "dusk"
                 widget: "object"
                 fields:
-                  - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
-                  - {label: "Medium", name: "med", widget: "string", default: "#808080"}
-                  - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
-              - label: "Secondary"
-                name: "secondary"
-                widget: "object"
-                fields:
-                  - {label: "Minimum", name: "min", widget: "string", default: "#e6e6e6"}
-                  - {label: "Medium", name: "med", widget: "string", default: "#808080"}
-                  - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
+                  - label: "Grey"
+                    name: "grey"
+                    widget: "object"
+                    fields:
+                      - {label: "Minimum", name: "min", widget: "string", default: "#161616"}
+                      - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                      - {label: "Maximum", name: "max", widget: "string", default: "#e6e6e6"}
+                  - label: "Primary"
+                    name: "primary"
+                    widget: "object"
+                    fields:
+                      - {label: "Minimum", name: "min", widget: "string", default: "#161616"}
+                      - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                      - {label: "Maximum", name: "max", widget: "string", default: "#e6e6e6"}
+                  - label: "Secondary"
+                    name: "secondary"
+                    widget: "object"
+                    fields:
+                      - {label: "Minimum", name: "min", widget: "string", default: "#161616"}
+                      - {label: "Medium", name: "med", widget: "string", default: "#808080"}
+                      - {label: "Maximum", name: "max", widget: "string", default: "#e6e6e6"}
           - label: "Fonts"
             name: "fonts"
             widget: "object"
