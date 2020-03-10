@@ -1,20 +1,23 @@
 /* Palette */
 // Run through the palette for both color and background-color
 
-@each $c in map-keys($colors) {
-    @each $n in (min,med,max) {
-        .u-c--#{$c}-#{$n},
-        .h\:u-c--#{$c}-#{$n}:hover,
-        .h\:u-c--#{$c}-#{$n}:focus {
-            color: var(--c-#{$c}-#{$n});
-            --currentColor: var(--c-#{$c}-#{$n});
-        }
+@each $t in map-keys($colors) {
+    $theme-colors: map-get($colors, $t);
+    @each $c in map-keys($theme-colors) {
+        @each $n in (min,med,max) {
+            .u-c--#{$c}-#{$n},
+            .h\:u-c--#{$c}-#{$n}:hover,
+            .h\:u-c--#{$c}-#{$n}:focus {
+                color: var(--c-#{$c}-#{$n});
+                --currentColor: var(--c-#{$c}-#{$n});
+            }
 
-        .u-bg--#{$c}-#{$n},
-        .h\:u-bg--#{$c}-#{$n}:hover,
-        .h\:u-bg--#{$c}-#{$n}:focus {
-            background-color: var(--c-#{$c}-#{$n});
-            --currentBackground: var(--c-#{$c}-#{$n});
+            .u-bg--#{$c}-#{$n},
+            .h\:u-bg--#{$c}-#{$n}:hover,
+            .h\:u-bg--#{$c}-#{$n}:focus {
+                background-color: var(--c-#{$c}-#{$n});
+                --currentBackground: var(--c-#{$c}-#{$n});
+            }
         }
     }
 }
