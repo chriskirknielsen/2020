@@ -3,10 +3,14 @@
         $p: &;
         $logo-glow-spread: .125em;
 
-        // The logo should take up more vertical space to compensate for the bleed area
+        &-link {
+            min-width: 2.45rem;
+            max-width: 4.9rem;
+        }
+
         overflow: visible; // The glow when hovered will extend past the box, so ensure it is visible
-        width: auto;
-        height: 1em;
+        width: 100%;
+        height: auto;
 
         font-size: $header-brand-height;
 
