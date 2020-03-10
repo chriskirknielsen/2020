@@ -33,7 +33,7 @@ tags:
   I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
   {% endmarkdown %}
 
-  <div class="u-displayFlex u-flex--center">
+  <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}
     {%- include "assets/img/delorean.svg" -%}
     {%- endset -%}
@@ -57,7 +57,7 @@ Like many other humans, I enjoy movies and T.V. shows, as well as video games, w
 
 I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
-<hr>
+<hr class="u-floatClear">
 
 ## Overly-Formal Résumé
 
