@@ -2,6 +2,7 @@
     "locale": "fr",
     "localePath": "/fr/",
     "localeRoot": "fr/",
+    "localeRssUrl": "/fr/rss.xml",
     "punctSp": " ",
     "navSet": [
         "accueil",
