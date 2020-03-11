@@ -3,12 +3,18 @@ layout: layouts/base.njk
 section: blog
 permalink: /blog/index.html
 ---
-<h1>
-	{{ title }}
-	<a href="{{ localeRssUrl }}" aria-label="{{ footer[locale].rssHint }}" class="u-displayInlineBlock u-width--point75em u-padding--half {{ utilities.glowBoxLink }}">
-		{% include "assets/img/rss.svg" %}
-	</a>
-</h1>
+
+<header class="{{ utilities.bigboi }} u-breakout">
+    <div class="{{ utilities.bigboiContent }}">
+        <h1>
+			{{ title }}
+			
+			<a href="{{ localeRssUrl }}" aria-label="{{ footer[locale].rssHint }}" class="u-displayInlineBlock u-width--point75em u-padding--half {{ utilities.glowBoxLink }}">
+				{% include "assets/img/rss.svg" %}
+			</a>
+		</h1>
+    </div>
+</header>
 
 {{ layoutContent | safe }}
 

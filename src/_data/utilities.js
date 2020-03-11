@@ -13,4 +13,8 @@ module.exports = { // Define a list of utility classes that are commonly used to
     
     // Callout block
     callout: "u-posRelative u-paddingInline u-paddingBlockStart--double u-paddingBlockEnd",
+
+    // Hero component
+    bigboi: "bigboi u-posRelative u-paddingBlock--double u-bg--grey-max u-beforeCover u-afterCover",
+    bigboiContent: "bigboi-content u-posRelative u-zIndex--1 u-content u-paddingInline--double",
 }

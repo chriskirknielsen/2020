@@ -5,12 +5,12 @@ mainClasses: .
 ---
 
 <article class="content u-flow">
-  <header>
-    <p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+  <header class="{{ utilities.bigboi }} content-full">
+    <div class="{{ utilities.bigboiContent }}">
+      <p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
 
-    <h1 id="{{ title | slug }}">{{ title }}</h1>
-
-    {# <div class="u-sep u-bg--primary-med u-marginBlockStart" aria-hidden="true"></div> #}
+      <h1 id="{{ title | slug }}">{{ title }}</h1>
+    </div>
   </header>
 
   {% if original %}
