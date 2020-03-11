@@ -23,15 +23,15 @@
         grid-column: container-start / container-end;
     }
     
-    &--wide {
+    &-wide {
         grid-column: wide-start / wide-end;
     }
 
-    &--full {
+    &-full {
         grid-column: fullbleed-start / fullbleed-end;
     }
 
-    &--wide-limited {
+    &-wide-limited {
         max-width: #{ $wide-max };
         margin-left: auto;
         margin-right: auto;
@@ -41,10 +41,10 @@
 // Define common styles for Prism and Codepen blocks, that will be oversized beyond the main container
 pre[class*="language-"],
 .cp_embed_wrapper {
-    @extend .content--wide;
+    @extend .content-wide;
 }
 
 pre[class*="language-"] code,
 .cp_embed_iframe {
-    @extend .content--wide-limited;
+    @extend .content-wide-limited;
 }

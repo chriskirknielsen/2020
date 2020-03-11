@@ -1,0 +1,22 @@
+.bigboi {
+    background-image:
+        linear-gradient(var(--c-secondary-med) 1px, transparent 1px),
+        linear-gradient(90deg, var(--c-secondary-med) 1px, transparent 1px);
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-size: 2rem 2rem;
+
+    &::before {
+        background-color: inherit;
+        opacity: .75;
+    }
+
+    &::after {
+        background: radial-gradient(ellipse at center, transparent, var(--currentBackground) 80%);
+    }
+
+    &-content {
+        max-width: $container-max-width-rem;
+        margin: 0 auto;
+    }
+}

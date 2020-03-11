@@ -8,9 +8,13 @@ module.exports = { // Define a list of utility classes that are commonly used to
     // Card component
     cardFlex: "u-flex--grow-1 u-flex--basis-0",
     cardContainer: "u-margin--flexGap-double u-marginBlockStart--none md:u-displayFlex",
-    cardBox: "u-flow u-padding u-c--primary-min u-bg--grey-max u-border u-border--grey-med",
-    cardBoxLink: "u-width--100 u-displayFlex u-flex--stretchBlock u-textDecoration--none u-flow u-padding u-c--primary-min u-bg--grey-max u-border u-border--grey-med h:u-border--secondary-med h:u-innerShadow--secondary-med u-transition",
+    cardBox: "u-padding u-c--primary-min u-bg--grey-max u-border u-border--grey-med",
+    cardBoxLink: "h:u-border--secondary-med h:u-innerShadow--secondary-med",
     
     // Callout block
     callout: "u-posRelative u-paddingInline u-paddingBlockStart--double u-paddingBlockEnd",
+
+    // Hero component
+    bigboi: "bigboi u-posRelative u-paddingBlock--double u-bg--grey-max u-beforeCover u-afterCover",
+    bigboiContent: "bigboi-content u-posRelative u-zIndex--1 u-content u-paddingInline--double",
 }

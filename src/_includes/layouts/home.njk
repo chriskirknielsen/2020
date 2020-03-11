@@ -4,7 +4,7 @@ section: home
 mainClasses: content
 ---
 
-<section class="content--full homescreen u-displayFlex u-flex--stretch" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
+<section class="content-full homescreen u-displayFlex u-flex--stretch" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a big sun in the background">
 	<div class="homescreen__wrapper u-displayFlex u-flex--center u-posRelative u-width--100">
         <div class="homescreen__background u-absCover u-overflowHidden u-beforeCover u-afterCover" aria-hidden="true">
             {% set ckn_grid -%}
@@ -46,28 +46,28 @@ mainClasses: content
     {%- if latestpostslength > 0 -%}
         {# <h2>{{ localisedContent.latestPost }}</h2> #}
     <div class="{{ utilities.bfc }}">
-        <ul class="{{ utilities.cardContainer }}">
+        <div class="{{ utilities.cardContainer }}">
             {%- for i in range(0, latestpostslength) -%}
             {% set latestpost = latestposts[i] %}
-            <li class="u-displayFlex {{ utilities.cardFlex }}">
-                <a href="{{ latestpost.url | url }}" class="{{ utilities.cardBoxLink }} {{ utilities.cardFlex }}" aria-label="{{ latestpost.date | date(dateFormat, locale) }}{{ punctSp }}: {{ latestpost.data.title }}">
-                    <article class="u-width--100 {{ utilities.card }}">
-                        <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
+            <article class="u-posRelative {{ utilities.cardFlex }} {{ utilities.cardBox }} {{ utilities.cardBoxLink }}">
+                <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 
-                        <h3>{{ latestpost.data.title }}</h3>
+                <h3>
+                    <a href="{{ latestpost.url | url }}" class="u-textDecoration--none u-afterCover">
+                        {{ latestpost.data.title }}
+                    </a>
+                </h3>
 
-                        <p class="u-marginBlockStart--half">
-                            {%- if latestpost.data.summary -%}
-                                {{- latestpost.data.summary -}}
-                            {%- else -%}
-                                {{- latestpost.excerpt -}}
-                            {%- endif -%}
-                        </p>
-                    </article>
-                </a>
-            </li>
+                <p class="u-marginBlockStart--half">
+                    {%- if latestpost.data.summary -%}
+                        {{- latestpost.data.summary -}}
+                    {%- else -%}
+                        {{- latestpost.excerpt -}}
+                    {%- endif -%}
+                </p>
+            </article>
             {% endfor %}
-        </ul>
+        </div>
     </div>
     {% endif %}
 </section>
