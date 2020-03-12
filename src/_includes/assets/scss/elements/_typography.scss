@@ -28,6 +28,8 @@ h6,
 
     font-weight: 700;
     line-height: 1.2;
+    color: var(--c-primary-min);
+    --currentColor: var(--c-primary-min);
 
     @if (map-get(map-get($fonts, 'heading'), 'main') == 'MarvinVisionsBig') {
         // Keep the type tight, but not too tight

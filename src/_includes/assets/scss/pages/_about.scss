@@ -40,7 +40,7 @@
             // width: .0625em;
             width: .125em;
             
-            background-color: var(--c-primary-min);
+            background-color: currentColor;
 
             transform-origin: 50% 100%;
             animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
@@ -48,7 +48,7 @@
 
         &-path path {
             fill: none;
-            stroke: var(--c-primary-min);
+            stroke: currentColor;
             stroke-width: 2;
             stroke-dasharray: 1 1;
 
@@ -189,13 +189,13 @@
 .about__trinket {
     &-stroke > * {
         fill: none;
-        stroke: var(--currentColor);
+        stroke: currentColor;
         stroke-width: 1.25;
         stroke-miterlimit: 10;
     }
 
     &-fill > * {
-        fill: var(--currentColor);
+        fill: currentColor;
     }
 }
 

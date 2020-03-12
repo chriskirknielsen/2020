@@ -15,6 +15,11 @@ renderData:
   title: "{{ localisedContent.tagged }} “{{ tag }}”"
 ---
 
-<h1>{{ localisedContent.tagged }} “{{ tag }}”</h1>
+<header class="{{ utilities.bigboi }} u-breakout">
+    <div class="{{ utilities.bigboiContent }}">
+        <h1>{{ localisedContent.tagged }} “{{ tag }}”</h1>
+    </div>
+</header>
+
 {% set postslist = collections[ tag ] | tagLocale(locale) %}
 {% include "components/postslist.njk" %}

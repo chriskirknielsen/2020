@@ -19,7 +19,7 @@
 
 		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
 			<nav class="u-displayInlineFlex u-flex--centerBlock u-marginBlockStart u-marginInlineEnd">
-				<h2 class="u-textSizeInherit u-fontBody">{{ footer[locale].langLabel }}{{ punctSp }}:</h2>
+				<h2 class="u-textSizeInherit u-fontBody u-c--color-text">{{ footer[locale].langLabel }}{{ punctSp }}:</h2>
 				&nbsp;
 				<ul class="u-displayInlineFlex">
 				{% for langCode, langData in metadata.languages %}
@@ -43,7 +43,7 @@
 					</li>
 				{% for social in social %}
 					<li class="footer__social-item u-displayFlex">
-						<a href="{{ social.url | url }}" class="footer__social-link u-displayInlineBlock u-padding--half u-c--primary-min {{ utilities.glowBoxLink }}">
+						<a href="{{ social.url | url }}" class="footer__social-link u-displayInlineBlock u-padding--half {{ utilities.glowBoxLink }}">
 							<svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="u-displayBlock" aria-label="{{ social.name }}" role="img" focusable="false">
 								{{ social.icon | safe }}
 							</svg>

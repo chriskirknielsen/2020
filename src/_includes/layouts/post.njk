@@ -36,7 +36,7 @@ mainClasses: .
 
   {% if tags %}
   <nav>
-    <h2 class="u-displayInline u-fontBody u-fontBold u-textNormal">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
+    <h2 class="u-displayInline u-fontBody u-fontBold u-textNormal u-c--color-text">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
     <ul class="u-displayInline">
       {% for tag in tags %}
         {%- if tag != "post" -%}
