@@ -5,6 +5,7 @@
     background-position: 50% 50%;
     background-repeat: repeat;
     background-size: 2rem 2rem;
+    outline: .1em solid var(--c-max);
 
     &::before {
         background-color: inherit;

@@ -115,6 +115,10 @@
     margin-top: #{ $spacing * 2 };
     margin-bottom: #{ $spacing * 2 };
 }
+.u-marginBlock--negative-half {
+    margin-top: #{ $spacing * -.5 };
+    margin-bottom: #{ $spacing * -.5 };
+}
 // .u-marginBlock--none {
 //     margin-top: 0;
 //     margin-bottom: 0;
