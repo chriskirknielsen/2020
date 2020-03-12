@@ -1,8 +1,8 @@
 a:not([class]),
 .link {
     text-decoration-color: var(--color-grey);
-    text-decoration-thickness: .0625em;
-    text-underline-offset: .125em;
+    text-decoration-thickness: .1em;
+    text-underline-offset: .2em;
 
     &:link,
     &:visited {
@@ -16,7 +16,7 @@ a:not([class]),
     &:hover,
     &:focus,
     &:active {
-        text-decoration-thickness: .125em;
+        text-decoration-thickness: .2em;
         text-decoration-color: currentColor;
     }
 
@@ -29,7 +29,7 @@ a:not([class]),
             width: .75em;
             height: .75em;
             margin-left: .3em;
-            padding: .0625em;
+            padding: .1em;
 
             vertical-align: middle;
 
