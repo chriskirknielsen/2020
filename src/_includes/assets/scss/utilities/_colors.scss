@@ -23,6 +23,13 @@
 }
 
 
+/* Text */
+.u-c--color-text {
+    color: var(--color-text);
+    --currentColor: var(--color-text);
+}
+
+
 /* Background */
 
 .u-bg--currentColor {

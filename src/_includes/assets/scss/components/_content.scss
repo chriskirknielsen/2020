@@ -4,37 +4,47 @@
     $gutter: $spacing * 2;
     $column-width: $max - ($gutter * 2);
 
-    display: grid;
-    grid-template-columns:
-        [fullbleed-start]
-            minmax(#{ $spacing }, 1fr)
-        [wide-start]
-            minmax(#{ $spacing }, 1fr)
-        [container-start]
-            minmax(0, calc(#{ $max } - #{ $gutter * 2 }))
-        [container-end]
-            minmax(#{ $spacing }, 1fr)
-        [wide-end]
-            minmax(#{ $spacing }, 1fr)
-        [fullbleed-end]
-    ;
+    max-width: #{ $max };
+    margin-left: auto;
+    margin-right: auto;
 
-    > * {
-        grid-column: container-start / container-end;
-    }
-    
-    &-wide {
-        grid-column: wide-start / wide-end;
-    }
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns:
+            [fullbleed-start]
+                minmax(#{ $spacing }, 1fr)
+            [wide-start]
+                minmax(#{ $spacing }, 1fr)
+            [container-start]
+                minmax(0, calc(#{ $max } - #{ $gutter * 2 }))
+            [container-end]
+                minmax(#{ $spacing }, 1fr)
+            [wide-end]
+                minmax(#{ $spacing }, 1fr)
+            [fullbleed-end]
+        ;
 
-    &-full {
-        grid-column: fullbleed-start / fullbleed-end;
-    }
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
 
-    &-wide-limited {
-        max-width: #{ $wide-max };
-        margin-left: auto;
-        margin-right: auto;
+        > * {
+            grid-column: container-start / container-end;
+        }
+        
+        &-wide {
+            grid-column: wide-start / wide-end;
+        }
+
+        &-full {
+            grid-column: fullbleed-start / fullbleed-end;
+        }
+
+        &-wide-limited {
+            max-width: #{ $wide-max };
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
 
