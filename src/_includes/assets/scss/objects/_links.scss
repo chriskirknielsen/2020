@@ -19,23 +19,4 @@ a:not([class]),
         text-decoration-thickness: .2em;
         text-decoration-color: currentColor;
     }
-
-    &[href^="http://"],
-    &[href^="https://"] {
-        &:not([data-quiet-external-url])::after {
-            content: "";
-            
-            display: inline;
-            margin-left: .25em;
-            padding-right: .5em; // Simulate width on inline element
-            
-            line-height: 1em; // Simulate height on inline element
-            vertical-align: 0.05em;
-
-            background: // Arrow box
-                linear-gradient(-45deg, transparent calc(50% - 1px), var(--currentColor) calc(50% - 1px), var(--currentColor) calc(50% + 1px), transparent calc(50% + 1px)) 100% 62.5% / 100% 50%, // Arrow line
-                linear-gradient(45deg, transparent 49.5%, var(--currentColor) 50.5%) 100% 50% / 75% 37.5%; // Arrow head    
-            background-repeat: no-repeat;
-        }
-    }
 }
