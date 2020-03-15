@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "IBMPlexSans";
-	src: url('../fonts/IBMPlexSansVar-Roman.woff2') format('woff2 supports variations'),
-		 url('../fonts/IBMPlexSansVar-Roman.woff2') format('woff2-variations');
+	src: url('/assets/fonts/IBMPlexSansVar-Roman.woff2') format('woff2 supports variations'),
+		 url('/assets/fonts/IBMPlexSansVar-Roman.woff2') format('woff2-variations');
 	font-style: normal;
 	font-weight: 100 700;
 	font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
 	font-family: "IBMPlexSans";
-	src: url('../fonts/IBMPlexSansVar-Italic.woff2') format('woff2 supports variations'),
-		 url('../fonts/IBMPlexSansVar-Italic.woff2') format('woff2-variations');
+	src: url('/assets/fonts/IBMPlexSansVar-Italic.woff2') format('woff2 supports variations'),
+		 url('/assets/fonts/IBMPlexSansVar-Italic.woff2') format('woff2-variations');
 	font-style: italic;
 	font-weight: 100 700;
 	font-display: swap;
@@ -21,8 +21,8 @@
 	src: local('MarvinVisionsBig'),
 		local('Marvin Visions Big'),
 		local('Marvin Visions Big Bold'),
-		url('../fonts/MarvinVisionsBig-Bold.woff2') format("woff2"),
-		url('../fonts/MarvinVisionsBig-Bold.woff') format("woff");
+		url('/assets/fonts/MarvinVisionsBig-Bold.woff2') format("woff2"),
+		url('/assets/fonts/MarvinVisionsBig-Bold.woff') format("woff");
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
