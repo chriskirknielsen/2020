@@ -1,8 +1,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% if summary %}<meta name="description" content="{{ summary }}">{% endif %}
 	<title>{{ navtitle or title or renderData.title }} | {{ metadata.title }}</title>
+	{% if summary %}<meta name="description" content="{{ summary }}">{% endif %}
+	<meta property="og:title" content="{{ navtitle or title or renderData.title }} | {{ metadata.title }}">
+	{% if summary %}<meta name="og:description" content="{{ summary }}">{% endif %}
+	<meta property="og:site_name" content="{{ metadata.title }}">
+	<meta property="og:locale" content="{{ locale }}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ localePath | url | absoluteUrl(metadata.url) }}">
+	<meta property="og:image" content="{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}">
 	{%- set css -%}
 	{%- include "assets/css/inline.css" -%}
 	{%- endset %}
@@ -19,9 +26,9 @@
 		<style>{{ pageStyleGroup | cssmin | safe }}</style>
 	{%- endif -%}
 
-	{% set js %}
-	{% include "assets/js/inline.js" %}
-	{% endset %}
+	{% set js -%}
+	{%- include "assets/js/inline.js" -%}
+	{%- endset %}
 	<script>{{ js | jsmin | safe }}</script>
 
 	<link rel="icon" href="{{ '/assets/img/icon.png' | url }}" type="image/png">
