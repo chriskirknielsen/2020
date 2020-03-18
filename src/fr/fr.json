@@ -19,7 +19,8 @@
         "latestPost": "Dernier Article",
         "tagged": "Etiquettes",
         "original": "Consulter l'article original",
-        "external": "Consulter l'article complet sur"
+        "external": "Consulter l'article complet sur",
+        "homeMarkCreaDev": "Développeur créatif"
     },
     "langSwitchLabel": "Changer de Langue",
     "schemeSwitchLabel": "Permuter la Palette de Couleurs"

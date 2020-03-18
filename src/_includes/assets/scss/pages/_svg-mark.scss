@@ -1,9 +1,11 @@
 $creadev-font: 'Michroma';
-$creadev-font-file:  '/assets/fonts/' + $creadev-font + '-subset.woff2';
+$creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
 
 @font-face {
     font-family: #{ $creadev-font };
-    src: local(#{ $creadev-font }), url(#{ $creadev-font-file }) format("woff2");
+    src: local(#{ $creadev-font }),
+        url(#{ $creadev-font-filename + '.woff2' }) format("woff2"),
+        url(#{ $creadev-font-filename + '.woff' }) format("woff");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
