@@ -75,6 +75,8 @@ module.exports = function(eleventyConfig) {
     return string.trim().split(delimiter);
   });
 
+  eleventyConfig.addFilter('makeUppercase', function(string) { return string.toUpperCase() });
+
   /* LOCALISATION */
 
   // Sort a collection of pages for the navigation based on the locale's navSet setting

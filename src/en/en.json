@@ -19,7 +19,8 @@
         "latestPost": "Latest Post",
         "tagged": "Tagged",
         "original": "Read the original article",
-        "external": "Read the full article on"
+        "external": "Read the full article on",
+        "homeMarkCreaDev": "Creative Developer"
     },
     "langSwitchLabel": "Switch Language",
     "schemeSwitchLabel": "Toggle Colour Scheme"
