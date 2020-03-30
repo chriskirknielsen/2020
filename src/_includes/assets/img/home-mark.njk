@@ -23,8 +23,11 @@
 {% set lastname_stroke = "#eb008b" %}
 {% set lastname_fill = "#f9ec31" %}
 
-{# Define the title's color #}
-{% set title_fill = "var(--c-primary-min)" %}
+{# Define the greeting's color #}
+{% set greeting_fill = "var(--c-primary-min)" %}
+
+{# Define the creadev's color #}
+{% set creadev_fill = "var(--c-primary-min)" %}
 
 {# Define the name's wireframe #}
 {% set wire_color = "var(--c-secondary-med)" %}
@@ -34,7 +37,7 @@
 {% set firstname_inner = "#130026" %}
 
 {# Define the name's gradient fill colors #}
-{% set firstname_halfstart = "#130026" %}
+{% set firstname_halfstart = "#260039" %}
 {% set firstname_halfmid1 = "#7a11ba" %}
 {% set firstname_halfmid2 = "#fd57b7" %}
 {% set firstname_halfend = "#fddcc0" %}
@@ -287,6 +290,10 @@
   <!-- Horizon Flash -->
   <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="33%" ry="1%"/>
 
+  <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="svg-mark__text-group">
+    <text fill="{{ greeting_fill }}" class="svg-mark__greeting-text" text-anchor="middle" x="50%" y="128">{{ localisedContent.homeMarkGreeting }}</text>
+  </g>
+
   <!-- Chris -->
   <g class="svg-mark__chris-group svg-mark__group" role="img" aria-label="Chris">
 
@@ -348,7 +355,7 @@
         <ellipse fill="url(#gradientShine)" cx="363.35" cy="226.84" rx="40.05" ry="13.95"/>
         <circle fill="url(#gradientShine)" cx="299.35" cy="169.84" r="19.17"/>
         <ellipse fill="url(#gradientShine)" cx="222.35" cy="285.84" rx="40.05" ry="13.95"/>
-        <ellipse fill="url(#gradientShine)" cx="788.85" cy="285.84" rx="28.44" ry="13.95"/>
+        <ellipse fill="url(#gradientShine)" cx="769" cy="285.84" rx="28.44" ry="13.95"/>
         <circle fill="url(#gradientShine)" cx="626.35" cy="303.114" r="39.29"/>
         <ellipse fill="url(#gradientShine)" cx="563.72" cy="227.84" rx="26.79" ry="7.9"/>
         <ellipse fill="url(#gradientShine)" cx="790.35" cy="227.84" rx="29.94" ry="7.9"/>
@@ -420,12 +427,12 @@
 
   <!-- Creative Developer -->
   {# <g class="svg-mark__creativedeveloper-group svg-mark__group" aria-label="creative developer"> #}
-    {# <use xlink:href="#svg-mark-dev-shape" fill="{{ title_fill }}" /> #}
-    <g aria-label="{{ localisedContent.homeMarkCreaDev }}">
-      <text fill="{{ title_fill }}" class="svg-mark__creativedeveloper-text svg-mark__group svg-mark__creativedeveloper-group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
+    {# <use xlink:href="#svg-mark-dev-shape" fill="{{ creadev_fill }}" /> #}
+    <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__text-group">
+      <text fill="{{ creadev_fill }}" class="svg-mark__creativedeveloper-text svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
     </g>
   {# </g> #}
-  {# <g fill="{{ title_fill }}" class="svg-mark__creativedeveloper-group svg-mark__group">
+  {# <g fill="{{ creadev_fill }}" class="svg-mark__creativedeveloper-group svg-mark__group">
     <path d="M200.56,377.85c0-3.66,1.27-5.42,5.3-5.42h7.7c3.66,0,4.66,1.66,4.66,3.6v1.24h-1.77v-0.66 c0-2.46-1.56-2.58-3.41-2.58h-6.98c-1.93,0-3.49,0.56-3.49,3.08v5.44c0,2.52,1.56,3.08,3.49,3.08h7.04c2.71,0,3.49-0.56,3.49-2.52 v-0.9h1.89v0.98c0,2.62-0.86,4.04-5.03,4.04h-7.6c-4.03,0-5.3-1.76-5.3-5.42V377.85z"/>
     <path d="M236.41,372.59h11.89c4.29,0,4.97,1.38,4.97,4.1v1.18c0,2.04-1.19,2.6-2.73,2.74v0.04 c2.05,0.36,2.55,1.4,2.55,2.72v3.7h-1.89v-3.18c0-2.26-1.13-2.54-2.96-2.54h-9.82v5.72h-2.01V372.59z M248.08,379.75 c2.24,0,3.18-0.58,3.18-2.1v-1.32c0-1.62-0.72-2.14-3.68-2.14h-9.16v5.56H248.08z"/>
     <path d="M271.6,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6H271.6V372.59z"/>

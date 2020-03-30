@@ -1,7 +1,7 @@
 .header {
     &__logo {
         $p: &;
-        $logo-glow-spread: .125em;
+        $logo-glow-spread: .25em;
 
         &-link {
             min-width: 2.25rem;

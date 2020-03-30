@@ -1,3 +1,16 @@
+$greeting-font: 'RoadRage';
+$greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
+
+@font-face {
+    font-family: #{ $greeting-font };
+    src: local(#{ $greeting-font }),
+        url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
+        url(#{ $greeting-font-filename + '.woff' }) format("woff");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 $creadev-font: 'Michroma';
 $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
 
@@ -20,6 +33,8 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
     $wire-anim-time: 1s;
     $wire-factor: .33;
     $wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
+    $greeting-init-delay: $wire-init-delay * 2;
+    $greeting-anim-time: 1.25s;
     $flash-anim-delay: $wire-final-end - $wire-step-delay * $wire-count;
     $flash-anim-time: 1.25s;
     $chris-anim-time: 1.25s;
@@ -32,6 +47,23 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
     $shine-anim-delay: 1.25s + $creadev-anim-delay + $kn-anim-time;
     $glare-anim-time: 1s;
     $glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
+
+    &__text-group {
+        filter: drop-shadow(0 2px 0 var(--currentBackground));
+    }
+
+    &__greeting-text {
+        font-size: 3rem;
+        font-family: '#{ unquote($greeting-font) }', sans-serif;
+        
+        transform: skewY(-3deg);
+
+        animation-name: svgMarkGreeting;
+        animation-duration: #{ $greeting-anim-time };
+        animation-delay: #{ $greeting-init-delay };
+        animation-fill-mode: backwards;
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+    }
     
     &__wire {
         opacity: 0;
@@ -74,17 +106,6 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
         animation-timing-function: linear, ease;
     }
 
-    @keyframes svgMarkFadeInOut {
-        0% { opacity: 0; }
-        50% { opacity: 1; }
-        100% { opacity: 0; }
-    }
-
-    @keyframes scaleOut {
-        0% { transform: scale(.5); }
-        100% { transform: scale(1.5); }
-    }
-
     &__group {
         animation-name: svgMarkReset;
         animation-iteration-count: 1;
@@ -116,25 +137,25 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
         // animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
-    &__kirknielsen-group {
-        opacity: 0;
-        transform: translate(-8%, 25%);
-        animation-duration: #{ $kn-anim-time };
-        animation-delay: #{ $kn-anim-delay };
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
+    // &__kirknielsen-group {
+    //     opacity: 0;
+    //     transform: translate(-8%, 25%);
+    //     animation-duration: #{ $kn-anim-time };
+    //     animation-delay: #{ $kn-anim-delay };
+    //     animation-timing-function: cubic-bezier(0, 0, 0, 1);
+    // }
 
-    &__kirknielsen-paths {
-        > path {
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-            stroke-dashoffset: 0px;
+    // &__kirknielsen-paths {
+    //     > path {
+    //         fill: none;
+    //         stroke-linecap: round;
+    //         stroke-linejoin: round;
+    //         stroke-miterlimit: 10;
+    //         stroke-dashoffset: 0px;
             
-            transition: stroke-dashoffset .15s ease-out; 
-        }
-    }
+    //         transition: stroke-dashoffset .15s ease-out; 
+    //     }
+    // }
 
     // &__creativedeveloper-group {
     //     opacity: 0.0001;
@@ -168,20 +189,6 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 
-    @keyframes svgMarkReset {
-        100% {
-            opacity: 1;
-            transform: none;
-        }
-    }
-
-    @keyframes svgMarkCreaDev {
-        0% {
-            opacity: 0.0001;
-            letter-spacing: 1.25em;
-        }
-    }
-
 
 
     &__name-shineOver {
@@ -192,25 +199,56 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
         animation-duration: #{ $shine-anim-time - .125s };
         animation-delay: #{ $shine-anim-delay + .25s }
     }
+}
 
-    @keyframes shineOver {
-        0% {
-            transform: translateX(82.5%);
-            opacity: 0;
-            visibility: hidden;
-        }
-        1% {
-            opacity: 1;
-            visibility: visible;
-        }
-        99% {
-            opacity: 1;
-            visibility: visible;
-        }
-        100% {
-            transform: translateX(-82.5%);
-            opacity: 0;
-            visibility: hidden;
-        }
+
+@keyframes svgMarkGreeting {
+    0% { clip-path: polygon(0 0, 0 0, -2rem 100%, -2rem 100%); }
+    100% { clip-path: polygon(0 0, calc(100% + 2rem) 0, 100% 100%, -2rem 100%); }
+}
+
+@keyframes svgMarkFadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes scaleOut {
+    0% { transform: scale(.5); }
+    100% { transform: scale(1.5); }
+}
+
+@keyframes svgMarkReset {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes svgMarkCreaDev {
+    0% {
+        opacity: 0.0001;
+        letter-spacing: 1.25em;
+    }
+}
+
+@keyframes shineOver {
+    0% {
+        transform: translateX(82.5%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    1% {
+        opacity: 1;
+        visibility: visible;
+    }
+    99% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(-82.5%);
+        opacity: 0;
+        visibility: hidden;
     }
 }
