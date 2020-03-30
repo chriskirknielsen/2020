@@ -1,13 +1,3 @@
-@function grid-gradient-axis($dir: right, $cell-size: 8em, $line-width: .5px, $line-color: red) {
-    @return repeating-linear-gradient(to #{$dir},
-        transparent calc(#{ $cell-size / 2 } - #{ $line-width }),
-        #{ $line-color } calc(#{ $cell-size / 2 } - #{ $line-width }),
-        #{ $line-color } calc(#{ $cell-size / 2 } + #{ $line-width }),
-        transparent calc(#{ $cell-size / 2 } + #{ $line-width }),
-        transparent #{ $cell-size }
-    );
-}
-
 .homescreen {
     $grid-size: .5;
     $grid-line-anim-time: 4s;
@@ -141,16 +131,6 @@
             
             > * {
                 vector-effect: non-scaling-stroke;
-            }
-
-            &--h { // Horizontal lines
-                animation: gridHorizontalLines #{ $grid-line-anim-time } cubic-bezier(1, 0, 1, .67) infinite;
-                animation-delay: calc(1 / (var(--t) - 1) * var(--l) * #{ $grid-line-anim-time } * -1);
-                @keyframes gridHorizontalLines {
-                    100% { transform: translateY(calc(
-                        (100vh - #{ $header-expected-height * 2 } - #{ $base-line-height * 2em }) * #{ $grid-size }
-                    )); }
-                }
             }
         }
     }

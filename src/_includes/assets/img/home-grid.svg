@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="1920" height="544.782" class="homescreen__grid u-posRelative" viewBox="0 0 1920 544.782">
-    <g class="homescreen__grid-lines" style="--t:7">
+    <g class="homescreen__grid-lines">
         <path d="M1 1h1920"/>
-        
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:0"/>
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:1"/>
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:2"/>
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:3"/>
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:4"/>
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:5"/>
-        <path class="homescreen__grid-lines--h" d="M0 0h1920" style="--l:6"/>
+
+        <path d="M1923.2 544.8H0"/>
+        <path d="M0 200.5h1920"/>
+        <path d="M0 102.9h1920.5"/>
+        <path d="M0 56.8h1920.5"/>
+        <path d="M0 30h1919.5"/>
+        <path d="M0 12.4h1920.5"/>
 
         <path d="M1681.8 0l241.4 24.2M1441.7 0l481.5 72.5M1201.6 0L1920 216.5M1073.6 0l843.8 544.8M961.6 0v544.8M849.6 0L5.8 544.8M721.5 0L0 217.4M481.5 0L0 72.5M241.4 0L0 24.2"/>
     </g>
