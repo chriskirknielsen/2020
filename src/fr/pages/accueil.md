@@ -3,7 +3,7 @@ layout: layouts/home.njk
 title: Accueil
 summary: Christopher Kirk-Nielsen, développeur créatif
 permalink: /fr/
-navtitle: Home
+navtitle: Accueil
 ownstyles: home
 translationKey: "homePage"
 tags:

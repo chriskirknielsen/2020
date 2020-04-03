@@ -1,15 +1,15 @@
-// $greeting-font: 'RoadRage';
-// $greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
+$greeting-font: 'ThinkingOfBetty';
+$greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
 
-// @font-face {
-//     font-family: #{ $greeting-font };
-//     src: local(#{ $greeting-font }),
-//         url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
-//         url(#{ $greeting-font-filename + '.woff' }) format("woff");
-//     font-style: normal;
-//     font-weight: 400;
-//     font-display: swap;
-// }
+@font-face {
+    font-family: #{ $greeting-font };
+    src: local(#{ $greeting-font }),
+        url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
+        url(#{ $greeting-font-filename + '.woff' }) format("woff");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
 
 $creadev-font: 'Michroma';
 $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
@@ -54,11 +54,11 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
 
     &__greeting-text {
         font-size: 2rem;
-        // font-family: '#{ unquote($greeting-font) }', sans-serif;
-        font-family: f('body');
+        font-family: '#{ unquote($greeting-font) }', cursive;
         font-weight: 900;
         font-style: italic;
         
+        filter: drop-shadow(1px 1px 0 var(--c-primary-min));
         transform: skewY(-2deg);
 
         animation-name: svgMarkGreeting;
