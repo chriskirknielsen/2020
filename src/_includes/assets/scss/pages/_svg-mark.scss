@@ -1,15 +1,15 @@
-$greeting-font: 'RoadRage';
-$greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
+// $greeting-font: 'RoadRage';
+// $greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
 
-@font-face {
-    font-family: #{ $greeting-font };
-    src: local(#{ $greeting-font }),
-        url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
-        url(#{ $greeting-font-filename + '.woff' }) format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: #{ $greeting-font };
+//     src: local(#{ $greeting-font }),
+//         url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
+//         url(#{ $greeting-font-filename + '.woff' }) format("woff");
+//     font-style: normal;
+//     font-weight: 400;
+//     font-display: swap;
+// }
 
 $creadev-font: 'Michroma';
 $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
@@ -53,8 +53,10 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
     }
 
     &__greeting-text {
-        font-size: 3rem;
-        font-family: '#{ unquote($greeting-font) }', sans-serif;
+        font-size: 2rem;
+        // font-family: '#{ unquote($greeting-font) }', sans-serif;
+        font-family: f('body');
+        font-weight: 900;
         
         transform: skewY(-3deg);
 
@@ -93,6 +95,7 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
         animation-iteration-count: 1;
         animation-timing-function: ease;
         animation-delay: #{ $flash-anim-delay };
+        pointer-events: none;
     }
 
     &__chris-flash {
