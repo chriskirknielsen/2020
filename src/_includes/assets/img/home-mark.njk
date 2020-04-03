@@ -24,7 +24,7 @@
 {% set lastname_fill = "#f9ec31" %}
 
 {# Define the greeting's color #}
-{% set greeting_fill = "var(--c-primary-min)" %}
+{% set greeting_fill = "var(--c-primary-max)" %}
 
 {# Define the creadev's color #}
 {% set creadev_fill = "var(--c-primary-min)" %}
@@ -288,9 +288,9 @@
   </defs>
 
   <!-- Horizon Flash -->
-  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="33%" ry="1%"/>
+  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="67%" ry="1%"/>
 
-  <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="svg-mark__text-group">
+  <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="-svg-mark__text-group">
     <text fill="{{ greeting_fill }}" class="svg-mark__greeting-text" text-anchor="middle" x="50%" y="128">{{ localisedContent.homeMarkGreeting }}</text>
   </g>
 
@@ -378,9 +378,6 @@
 
   </g>
 
-  <!-- Horizon Glow -->
-  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="25%" ry="33%"/>
-
   <!-- Kirk-Nielsen -->
   {# <g class="svg-mark__kirknielsen-group svg-mark__group" role="img" aria-label="Kirk-Nielsen">
     <use xlink:href="#svg-mark-kirknielsen-shape" filter="url(#pinkGlow)" />
@@ -451,4 +448,7 @@
     <path d="M721.43,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6h-14.69V372.59z"/>
     <path d="M753.85,372.59h11.89c4.29,0,4.97,1.38,4.97,4.1v1.18c0,2.04-1.19,2.6-2.73,2.74v0.04 c2.05,0.36,2.55,1.4,2.55,2.72v3.7h-1.89v-3.18c0-2.26-1.13-2.54-2.96-2.54h-9.82v5.72h-2.01V372.59z M765.51,379.75 c2.24,0,3.18-0.58,3.18-2.1v-1.32c0-1.62-0.72-2.14-3.68-2.14h-9.16v5.56H765.51z"/>
   </g> #}
+
+  <!-- Horizon Glow -->
+  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="25%" ry="33%"/>
 </svg>
