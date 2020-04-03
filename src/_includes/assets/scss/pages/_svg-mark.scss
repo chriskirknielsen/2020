@@ -57,8 +57,9 @@ $creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
         // font-family: '#{ unquote($greeting-font) }', sans-serif;
         font-family: f('body');
         font-weight: 900;
+        font-style: italic;
         
-        transform: skewY(-3deg);
+        transform: skewY(-2deg);
 
         animation-name: svgMarkGreeting;
         animation-duration: #{ $greeting-anim-time };
