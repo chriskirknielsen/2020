@@ -49,16 +49,17 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
     $glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
 
     &__text-group {
-        filter: drop-shadow(0 2px 0 var(--currentBackground));
+        filter: drop-shadow(0 2px 0 c('primary', 'max', $theme: 'dusk'));
     }
 
     &__greeting-text {
+        fill: c('primary', 'max', $theme: 'dusk');
         font-size: 2rem;
         font-family: '#{ unquote($greeting-font) }', cursive;
         font-weight: 900;
         font-style: italic;
         
-        filter: drop-shadow(1px 1px 0 var(--c-primary-min));
+        filter: drop-shadow(1px 1px 0 c('primary', 'min', $theme: 'dusk'));
         transform: translateX(-.75%) skewY(-2deg);
 
         animation-name: svgMarkGreeting;
@@ -172,6 +173,7 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
     // }
 
     &__creativedeveloper-text {
+        fill: c('primary', 'min', $theme: 'dusk');
         font-size: 1.185rem;
         font-family: '#{ unquote($creadev-font) }', sans-serif;
 
