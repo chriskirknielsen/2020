@@ -23,9 +23,6 @@
 {% set lastname_stroke = "#eb008b" %}
 {% set lastname_fill = "#f9ec31" %}
 
-{# Define the greeting's color #}
-{% set greeting_fill = "var(--c-primary-max)" %}
-
 {# Define the creadev's color #}
 {% set creadev_fill = "var(--c-primary-min)" %}
 
@@ -291,7 +288,7 @@
   <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="67%" ry="1%"/>
 
   <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="-svg-mark__text-group">
-    <text fill="{{ greeting_fill }}" class="svg-mark__greeting-text" text-anchor="middle" x="50%" y="128">{{ localisedContent.homeMarkGreeting }}</text>
+    <text class="svg-mark__greeting-text" text-anchor="middle" x="50%" y="128">{{ localisedContent.homeMarkGreeting }}</text>
   </g>
 
   <!-- Chris -->
@@ -426,7 +423,7 @@
   {# <g class="svg-mark__creativedeveloper-group svg-mark__group" aria-label="creative developer"> #}
     {# <use xlink:href="#svg-mark-dev-shape" fill="{{ creadev_fill }}" /> #}
     <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__text-group">
-      <text fill="{{ creadev_fill }}" class="svg-mark__creativedeveloper-text svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
+      <text class="svg-mark__creativedeveloper-text svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
     </g>
   {# </g> #}
   {# <g fill="{{ creadev_fill }}" class="svg-mark__creativedeveloper-group svg-mark__group">
