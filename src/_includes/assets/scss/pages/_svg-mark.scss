@@ -1,5 +1,5 @@
-$greeting-font: 'ThinkingOfBetty';
-$greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
+$greeting-font: 'Thinking Of Betty';
+$greeting-font-filename:  '/assets/fonts/' + str-remove-whitespace($greeting-font) + '-subset';
 
 @font-face {
     font-family: #{ $greeting-font };
@@ -12,7 +12,7 @@ $greeting-font-filename:  '/assets/fonts/' + $greeting-font + '-subset';
 }
 
 $creadev-font: 'Michroma';
-$creadev-font-filename:  '/assets/fonts/' + $creadev-font + '-subset';
+$creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font) + '-subset';
 
 @font-face {
     font-family: #{ $creadev-font };

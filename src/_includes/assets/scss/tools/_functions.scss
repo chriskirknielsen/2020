@@ -66,6 +66,16 @@
     @return $string;
 }
 
+// Remove whitespace in a string
+@function str-remove-whitespace($str) {
+    @while (str-index($str, ' ') != null) {
+        $index: str-index($str, ' ');
+        $str: "#{str-slice($str, 0, $index - 1)}#{str-slice($str, $index + 1)}";
+    }
+    
+    @return $str;
+}
+
 // Finds nested map values
 @function map-deep-get($map, $keys...) {
     @each $key in $keys {
