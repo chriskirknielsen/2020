@@ -16,7 +16,7 @@ h4,
 h5,
 h6,
 .h {
-    @if (map-get(map-get($fonts, 'heading'), 'main') == 'IBMPlexSans') {
+    @if (map-get(map-get($fonts, 'heading'), 'main') == 'IBM Plex Sans') {
         // Compensate for the large font's space on the line start
         margin-left: -.0625em;
     }
@@ -31,7 +31,7 @@ h6,
     color: var(--c-primary-min);
     --currentColor: var(--c-primary-min);
 
-    @if (map-get(map-get($fonts, 'heading'), 'main') == 'MarvinVisionsBig') {
+    @if (map-get(map-get($fonts, 'heading'), 'main') == 'Marvin Visions Big') {
         // Keep the type tight, but not too tight
         letter-spacing: #{ $heading-font-letter-spacing };
     }

@@ -1,5 +1,5 @@
 @font-face {
-	font-family: "IBMPlexSans";
+	font-family: "IBM Plex Sans";
 	src: url('/assets/fonts/IBMPlexSansVar-Roman.woff2') format('woff2 supports variations'),
 		 url('/assets/fonts/IBMPlexSansVar-Roman.woff2') format('woff2-variations');
 	font-style: normal;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-	font-family: "IBMPlexSans";
+	font-family: "IBM Plex Sans";
 	src: url('/assets/fonts/IBMPlexSansVar-Italic.woff2') format('woff2 supports variations'),
 		 url('/assets/fonts/IBMPlexSansVar-Italic.woff2') format('woff2-variations');
 	font-style: italic;
@@ -17,9 +17,8 @@
 }
 
 @font-face {
-	font-family: "MarvinVisionsBig";
-	src: local('MarvinVisionsBig'),
-		local('Marvin Visions Big'),
+	font-family: "Marvin Visions Big";
+	src: local('Marvin Visions Big'),
 		local('Marvin Visions Big Bold'),
 		url('/assets/fonts/MarvinVisionsBig-Bold.woff2') format("woff2"),
 		url('/assets/fonts/MarvinVisionsBig-Bold.woff') format("woff");
