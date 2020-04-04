@@ -59,7 +59,7 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
         font-style: italic;
         
         filter: drop-shadow(1px 1px 0 var(--c-primary-min));
-        transform: skewY(-2deg);
+        transform: translateX(-.75%) skewY(-2deg);
 
         animation-name: svgMarkGreeting;
         animation-duration: #{ $greeting-anim-time };
