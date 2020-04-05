@@ -72,7 +72,7 @@ I also appreciate a nice book & playlist combo during my hour-long commute in **
 
 ### Skills
 
-- **Development:** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
+- **Development:** HTML5, CSS (Sass), JavaScript, PHP (OOP, WordPress), MySQL
 - **Tools:** Git, Gulp, JAMstack (static sites with Hugo or Eleventy, on Netlify)
 - **Design:** Photoshop, Illustrator, InDesign, Sketch
 - **Motion Design:** After Effects, Premiere Pro, Cinema 4D
