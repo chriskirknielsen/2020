@@ -28,7 +28,8 @@
     text-decoration: none;
 }
 .u-vAlign--middle { vertical-align: middle; }
-.u-letterSpacing { letter-spacing: .05em; }
+.u-letterSpacing--reset { letter-spacing: initial; }
+.u-letterSpacing--heading { letter-spacing: #{ $heading-font-letter-spacing }; }
 .u-lineHeight--1 { line-height: 1; }
 
 .u-sep { // Use this as <div aria-hidden=true"> to control colour and spacing individually
