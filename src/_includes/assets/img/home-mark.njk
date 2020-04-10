@@ -53,7 +53,7 @@
 
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="971.25" height="504.18" viewBox="0 0 971.25 504.18" class="svg-mark">
-  <title>Chris: creative developer</title>
+  <title>{{ localisedContent.homeMarkGreeting }} Chris, {{ localisedContent.homeMarkCreaDev | makeLowercase }}</title>
 
   <defs>
     <!-- SHAPE: Chris -->
@@ -287,7 +287,7 @@
   <!-- Horizon Flash -->
   <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="67%" ry="1%"/>
 
-  <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="-svg-mark__text-group">
+  <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="svg-mark__greeting-group">
     <text class="svg-mark__greeting-text" text-anchor="middle" x="50%" y="128">{{ localisedContent.homeMarkGreeting }}</text>
   </g>
 
@@ -422,7 +422,7 @@
   <!-- Creative Developer -->
   {# <g class="svg-mark__creativedeveloper-group svg-mark__group" aria-label="creative developer"> #}
     {# <use xlink:href="#svg-mark-dev-shape" fill="{{ creadev_fill }}" /> #}
-    <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__text-group">
+    <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__creativedeveloper-group">
       <text class="svg-mark__creativedeveloper-text svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
     </g>
   {# </g> #}

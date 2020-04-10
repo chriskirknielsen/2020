@@ -2,259 +2,263 @@ $greeting-font: 'Thinking Of Betty';
 $greeting-font-filename:  '/assets/fonts/' + str-remove-whitespace($greeting-font) + '-subset';
 
 @font-face {
-    font-family: #{ $greeting-font };
-    src: local(#{ $greeting-font }),
-        url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
-        url(#{ $greeting-font-filename + '.woff' }) format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
+	font-family: #{ $greeting-font };
+	src: local(#{ $greeting-font }),
+		url(#{ $greeting-font-filename + '.woff2' }) format("woff2"),
+		url(#{ $greeting-font-filename + '.woff' }) format("woff");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
 }
 
 $creadev-font: 'Michroma';
 $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font) + '-subset';
 
 @font-face {
-    font-family: #{ $creadev-font };
-    src: local(#{ $creadev-font }),
-        url(#{ $creadev-font-filename + '.woff2' }) format("woff2"),
-        url(#{ $creadev-font-filename + '.woff' }) format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
+	font-family: #{ $creadev-font };
+	src: local(#{ $creadev-font }),
+		url(#{ $creadev-font-filename + '.woff2' }) format("woff2"),
+		url(#{ $creadev-font-filename + '.woff' }) format("woff");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
 }
 
 .svg-mark {
-    $mark-depth-factor-x: 1;
-    $mark-depth-factor-y: .9;
-    $wire-count: 8;
-    $wire-init-delay: .75s;
-    $wire-step-delay: .0625s;
-    $wire-anim-time: 1s;
-    $wire-factor: .33;
-    $wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
-    $greeting-init-delay: $wire-init-delay * 2;
-    $greeting-anim-time: 1.25s;
-    $flash-anim-delay: $wire-final-end - $wire-step-delay * $wire-count;
-    $flash-anim-time: 1.25s;
-    $chris-anim-time: 1.25s;
-    $chris-anim-delay: $flash-anim-delay + $flash-anim-time/2;
-    $kn-anim-delay: $chris-anim-delay + $chris-anim-time/4;
-    $kn-anim-time: .75s;
-    $creadev-anim-delay: $kn-anim-delay + $kn-anim-time;
-    $creadev-anim-time: 1.5s;
-    $shine-anim-time: 1.5s;
-    $shine-anim-delay: 1.25s + $creadev-anim-delay + $kn-anim-time;
-    $glare-anim-time: 1s;
-    $glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
+	$mark-depth-factor-x: 1;
+	$mark-depth-factor-y: .9;
+	$wire-count: 8;
+	$wire-init-delay: .75s;
+	$wire-step-delay: .0625s;
+	$wire-anim-time: 1s;
+	$wire-factor: .33;
+	$wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
+	$greeting-init-delay: $wire-init-delay * 2;
+	$greeting-anim-time: 1.25s;
+	$flash-anim-delay: $wire-final-end - $wire-step-delay * $wire-count;
+	$flash-anim-time: 1.25s;
+	$chris-anim-time: 1.25s;
+	$chris-anim-delay: $flash-anim-delay + $flash-anim-time/2;
+	$kn-anim-delay: $chris-anim-delay + $chris-anim-time/4;
+	$kn-anim-time: .75s;
+	$creadev-anim-delay: $kn-anim-delay + $kn-anim-time;
+	$creadev-anim-time: 1.5s;
+	$shine-anim-time: 1.5s;
+	$shine-anim-delay: 1.25s + $creadev-anim-delay + $kn-anim-time;
+	$glare-anim-time: 1s;
+	$glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
 
-    &__text-group {
-        filter: drop-shadow(0 2px 0 c('primary', 'max', $theme: 'dusk'));
-    }
+	&__greeting-text {
+		fill: c('primary', 'max', $theme: 'dusk');
+		text-shadow:
+			.5px    .5px    0       c('primary', 'min', $theme: 'dusk'),
+			1px     1px     0       c('primary', 'min', $theme: 'dusk');
+		font-size: 2rem;
+		font-family: '#{ unquote($greeting-font) }', cursive;
+		font-weight: 900;
+		font-style: italic;
+		
+		filter: drop-shadow(1px 1px 0 c('primary', 'min', $theme: 'dusk'));
+		transform: translateX(-.75%) skewY(-2deg);
 
-    &__greeting-text {
-        fill: c('primary', 'max', $theme: 'dusk');
-        font-size: 2rem;
-        font-family: '#{ unquote($greeting-font) }', cursive;
-        font-weight: 900;
-        font-style: italic;
-        
-        filter: drop-shadow(1px 1px 0 c('primary', 'min', $theme: 'dusk'));
-        transform: translateX(-.75%) skewY(-2deg);
+		animation-name: svgMarkGreeting;
+		animation-duration: #{ $greeting-anim-time };
+		animation-delay: #{ $greeting-init-delay };
+		animation-fill-mode: backwards;
+		animation-timing-function: cubic-bezier(0, 0, 0, 1);
+	}
+	
+	&__wire {
+		opacity: 0;
+		animation-name: svgMarkFadeInOut;
+		animation-iteration-count: 1;
+		animation-fill-mode: both;
+		animation-duration: #{ $wire-anim-time };
+		animation-timing-function: steps(1);
 
-        animation-name: svgMarkGreeting;
-        animation-duration: #{ $greeting-anim-time };
-        animation-delay: #{ $greeting-init-delay };
-        animation-fill-mode: backwards;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
-    
-    &__wire {
-        opacity: 0;
-        animation-name: svgMarkFadeInOut;
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        animation-duration: #{ $wire-anim-time };
-        animation-timing-function: steps(1);
+		@for $w from 1 through $wire-count {
+			&:nth-child(#{ $w }) {
+				$wpow: ($wire-count + 1) / ($w + 1);
+				$delay: $wire-step-delay * $w;
+				$scale-x: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-x * $wire-factor + .0125;
+				$scale-y: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-y * $wire-factor + .0125;
+				$translateY: $wpow * $wire-factor;
+				transform: scale(#{ $scale-y }, #{ $scale-x }) translateY(#{ $translateY * -1% });
+				animation-delay: #{ $wire-init-delay + $delay };
+			}
+		}
+	}
 
-        @for $w from 1 through $wire-count {
-            &:nth-child(#{ $w }) {
-                $wpow: ($wire-count + 1) / ($w + 1);
-                $delay: $wire-step-delay * $w;
-                $scale-x: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-x * $wire-factor + .0125;
-                $scale-y: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-y * $wire-factor + .0125;
-                $translateY: $wpow * $wire-factor;
-                transform: scale(#{ $scale-y }, #{ $scale-x }) translateY(#{ $translateY * -1% });
-                animation-delay: #{ $wire-init-delay + $delay };
-            }
-        }
-    }
+	&__horizon-flash,
+	&__chris-flash {
+		opacity: 0.0001;
+		animation-name: svgMarkFadeInOut;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-delay: #{ $flash-anim-delay };
+		pointer-events: none;
+	}
 
-    &__horizon-flash,
-    &__chris-flash {
-        opacity: 0.0001;
-        animation-name: svgMarkFadeInOut;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
-        animation-delay: #{ $flash-anim-delay };
-        pointer-events: none;
-    }
+	&__chris-flash {
+		animation-fill-mode: both;
+		animation-duration: #{ $flash-anim-time };
+	}
 
-    &__chris-flash {
-        animation-fill-mode: both;
-        animation-duration: #{ $flash-anim-time };
-    }
+	&__horizon-flash {
+		animation-name: svgMarkFadeInOut, scaleOut;
+		animation-duration: #{ $flash-anim-time };
+		animation-timing-function: linear, ease;
+	}
 
-    &__horizon-flash {
-        animation-name: svgMarkFadeInOut, scaleOut;
-        animation-duration: #{ $flash-anim-time };
-        animation-timing-function: linear, ease;
-    }
+	&__group {
+		animation-name: svgMarkReset;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
 
-    &__group {
-        animation-name: svgMarkReset;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
+	&__chris-depth {
+		animation-fill-mode: backwards;
+		animation-direction: reverse;
+		animation-duration: 1s;
+		animation-delay: #{ $chris-anim-delay - $wire-step-delay*($wire-count/2) };
+		animation-timing-function: cubic-bezier(.75, 0, 1, 1);
+	}
 
-    &__chris-depth {
-        animation-fill-mode: backwards;
-        animation-direction: reverse;
-        animation-duration: 1s;
-        animation-delay: #{ $chris-anim-delay - $wire-step-delay*($wire-count/2) };
-        animation-timing-function: cubic-bezier(.75, 0, 1, 1);
-    }
+	&__chris-main {
+		opacity: 0;
+		animation-name: svgMarkReset;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		animation-duration: 0.1s;
+		animation-delay: #{ $chris-anim-delay };
+		animation-timing-function: steps(1);
+	}
 
-    &__chris-main {
-        opacity: 0;
-        animation-name: svgMarkReset;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-duration: 0.1s;
-        animation-delay: #{ $chris-anim-delay };
-        animation-timing-function: steps(1);
-    }
+	&__chris-group {
+		// transform: scale(.8);
+		// animation-duration: 1.25s;
+		// animation-delay: 1.5s;
+		// animation-timing-function: cubic-bezier(0, 0, 0, 1);
+	}
 
-    &__chris-group {
-        // transform: scale(.8);
-        // animation-duration: 1.25s;
-        // animation-delay: 1.5s;
-        // animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
+	// &__kirknielsen-group {
+	//     opacity: 0;
+	//     transform: translate(-8%, 25%);
+	//     animation-duration: #{ $kn-anim-time };
+	//     animation-delay: #{ $kn-anim-delay };
+	//     animation-timing-function: cubic-bezier(0, 0, 0, 1);
+	// }
 
-    // &__kirknielsen-group {
-    //     opacity: 0;
-    //     transform: translate(-8%, 25%);
-    //     animation-duration: #{ $kn-anim-time };
-    //     animation-delay: #{ $kn-anim-delay };
-    //     animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    // }
+	// &__kirknielsen-paths {
+	//     > path {
+	//         fill: none;
+	//         stroke-linecap: round;
+	//         stroke-linejoin: round;
+	//         stroke-miterlimit: 10;
+	//         stroke-dashoffset: 0px;
+			
+	//         transition: stroke-dashoffset .15s ease-out; 
+	//     }
+	// }
 
-    // &__kirknielsen-paths {
-    //     > path {
-    //         fill: none;
-    //         stroke-linecap: round;
-    //         stroke-linejoin: round;
-    //         stroke-miterlimit: 10;
-    //         stroke-dashoffset: 0px;
-            
-    //         transition: stroke-dashoffset .15s ease-out; 
-    //     }
-    // }
+	// &__creativedeveloper-group {
+	//     opacity: 0.0001;
+	//     transform: scaleX(1.125);
+	//     transform-origin: 50% 50%;
+	//     animation-duration: #{ $creadev-anim-time };
+	//     animation-delay: #{ $creadev-anim-delay };
+	//     animation-timing-function: cubic-bezier(0, 0, 0, 1);
+	//     will-change: transform, opacity;
+	// }
 
-    // &__creativedeveloper-group {
-    //     opacity: 0.0001;
-    //     transform: scaleX(1.125);
-    //     transform-origin: 50% 50%;
-    //     animation-duration: #{ $creadev-anim-time };
-    //     animation-delay: #{ $creadev-anim-delay };
-    //     animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    //     will-change: transform, opacity;
-    // }
+	&__creativedeveloper-text {
+		fill: c('primary', 'min', $theme: 'dusk');
+		text-shadow:
+			0       1px     0       c('primary', 'max', $theme: 'dusk'),
+			-1px    1px     0       c('primary', 'max', $theme: 'dusk'),
+			1px     1px     0       c('primary', 'max', $theme: 'dusk'),
+			0       0       .5em    c('primary', 'max', $theme: 'dusk');
+		font-size: 1.185rem;
+		font-family: '#{ unquote($creadev-font) }', sans-serif;
 
-    &__creativedeveloper-text {
-        fill: c('primary', 'min', $theme: 'dusk');
-        font-size: 1.185rem;
-        font-family: '#{ unquote($creadev-font) }', sans-serif;
+		animation-name: svgMarkCreaDev;
+		animation-duration: #{ $creadev-anim-time };
+		animation-delay: #{ $creadev-anim-delay };
+		animation-fill-mode: both;
+		animation-timing-function: cubic-bezier(0, 0, 0, 1);
+	}
 
-        animation-name: svgMarkCreaDev;
-        animation-duration: #{ $creadev-anim-time };
-        animation-delay: #{ $creadev-anim-delay };
-        animation-fill-mode: both;
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
-
-    &__glare-group {
-        transform-origin: 0 0; // Keep this at 0 0 since the glare is placed relative to the top-left corner so the element's rotation is anchored properly
-        transform: translate(76%, 34.5%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
-    }
-    &__glare {
-        transform: scale(0, 0) rotate(-270deg);
-        animation-duration: #{ $glare-anim-time };
-        animation-delay: #{ $glare-anim-delay };
-        animation-timing-function: cubic-bezier(0, 0, 0, 1);
-    }
+	&__glare-group {
+		transform-origin: 0 0; // Keep this at 0 0 since the glare is placed relative to the top-left corner so the element's rotation is anchored properly
+		transform: translate(76%, 34.5%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
+	}
+	&__glare {
+		transform: scale(0, 0) rotate(-270deg);
+		animation-duration: #{ $glare-anim-time };
+		animation-delay: #{ $glare-anim-delay };
+		animation-timing-function: cubic-bezier(0, 0, 0, 1);
+	}
 
 
 
-    &__name-shineOver {
-        animation: shineOver #{ $shine-anim-time } ease-in-out #{ $shine-anim-delay } 1 both;
-    }
+	&__name-shineOver {
+		animation: shineOver #{ $shine-anim-time } ease-in-out #{ $shine-anim-delay } 1 both;
+	}
 
-    &__name-shineOver--delayed {
-        animation-duration: #{ $shine-anim-time - .125s };
-        animation-delay: #{ $shine-anim-delay + .25s }
-    }
+	&__name-shineOver--delayed {
+		animation-duration: #{ $shine-anim-time - .125s };
+		animation-delay: #{ $shine-anim-delay + .25s }
+	}
 }
 
 
 @keyframes svgMarkGreeting {
-    0% { clip-path: polygon(0 0, 0 0, -2rem 100%, -2rem 100%); }
-    100% { clip-path: polygon(0 0, calc(100% + 2rem) 0, 100% 100%, -2rem 100%); }
+	0% { clip-path: polygon(0 0, 0 0, -2rem 100%, -2rem 100%); }
+	100% { clip-path: polygon(0 0, calc(100% + 2rem) 0, 100% 100%, -2rem 100%); }
 }
 
 @keyframes svgMarkFadeInOut {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 0; }
 }
 
 @keyframes scaleOut {
-    0% { transform: scale(.5); }
-    100% { transform: scale(1.5); }
+	0% { transform: scale(.5); }
+	100% { transform: scale(1.5); }
 }
 
 @keyframes svgMarkReset {
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+	100% {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 @keyframes svgMarkCreaDev {
-    0% {
-        opacity: 0.0001;
-        letter-spacing: 1.25em;
-    }
+	0% {
+		opacity: 0.0001;
+		letter-spacing: 1.25em;
+	}
 }
 
 @keyframes shineOver {
-    0% {
-        transform: translateX(82.5%);
-        opacity: 0;
-        visibility: hidden;
-    }
-    1% {
-        opacity: 1;
-        visibility: visible;
-    }
-    99% {
-        opacity: 1;
-        visibility: visible;
-    }
-    100% {
-        transform: translateX(-82.5%);
-        opacity: 0;
-        visibility: hidden;
-    }
+	0% {
+		transform: translateX(82.5%);
+		opacity: 0;
+		visibility: hidden;
+	}
+	1% {
+		opacity: 1;
+		visibility: visible;
+	}
+	99% {
+		opacity: 1;
+		visibility: visible;
+	}
+	100% {
+		transform: translateX(-82.5%);
+		opacity: 0;
+		visibility: hidden;
+	}
 }

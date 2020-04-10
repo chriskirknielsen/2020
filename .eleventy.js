@@ -76,6 +76,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter('makeUppercase', function(string) { return string.toUpperCase() });
+  eleventyConfig.addFilter('makeLowercase', function(string) { return string.toLowerCase() });
 
   /* LOCALISATION */
 
