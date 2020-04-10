@@ -129,8 +129,6 @@ hr {
     border: 0;
     background: linear-gradient(90deg, transparent, var(--color-text), transparent) no-repeat 50% 50% / 100% 1px;
 
-    transform: scaleX(1.25);
-
     &::after {
         content: '';
         position: absolute;
