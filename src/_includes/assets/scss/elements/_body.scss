@@ -52,9 +52,7 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
 
 body {
     overflow-x: hidden;
-
-    // font-family: f('body', 'fallback');
-    font-family: sans-serif;
+    
     --currentColor: var(--color-text);
     --currentBackground: var(--color-bg);
     color: var(--currentColor);

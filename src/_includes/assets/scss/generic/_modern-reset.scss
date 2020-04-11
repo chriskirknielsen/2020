@@ -48,6 +48,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: #{ $base-line-height };
+    font-family: sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
