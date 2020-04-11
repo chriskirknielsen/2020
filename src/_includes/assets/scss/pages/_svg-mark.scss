@@ -54,18 +54,14 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 			.015em	.015em	0	c('primary', 'min', $theme: 'dusk'),
 			.030em  .030em	0	c('primary', 'min', $theme: 'dusk');
 		font-size: 2rem;
-		font-family: '#{ unquote($greeting-font) }', cursive;
+		font-family: '#{ unquote($greeting-font) }', 'Brush Script MT', cursive;
 		font-weight: 900;
 		font-style: italic;
 		
 		filter: drop-shadow(1px 1px 0 c('primary', 'min', $theme: 'dusk'));
 		transform: translateX(-.75%) skewY(-2deg);
 
-		animation-name: svgMarkGreeting;
-		animation-duration: #{ $greeting-anim-time };
-		animation-delay: #{ $greeting-init-delay };
-		animation-fill-mode: backwards;
-		animation-timing-function: cubic-bezier(0, 0, 0, 1);
+		animation: svgMarkGreeting #{ $greeting-anim-time } cubic-bezier(0, 0, 0, 1) #{ $greeting-init-delay } backwards;
 	}
 	
 	&__wire {
