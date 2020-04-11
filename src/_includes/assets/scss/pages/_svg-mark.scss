@@ -51,8 +51,8 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	&__greeting-text {
 		fill: c('primary', 'max', $theme: 'dusk');
 		text-shadow:
-			.5px    .5px    0       c('primary', 'min', $theme: 'dusk'),
-			1px     1px     0       c('primary', 'min', $theme: 'dusk');
+			.015em	.015em	0	c('primary', 'min', $theme: 'dusk'),
+			.030em  .030em	0	c('primary', 'min', $theme: 'dusk');
 		font-size: 2rem;
 		font-family: '#{ unquote($greeting-font) }', cursive;
 		font-weight: 900;

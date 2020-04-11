@@ -122,15 +122,17 @@
 
 // Returns a font from the $fonts map
 @function f($stack, $layer: false) {
-    @if map-has-key($fonts, $stack) { // If the font exists in the list
+    @if (map-has-key($fonts, $stack)) { // If the font exists in the list
         $font: map-get($fonts, $stack);
 
-        @if $layer != false and map-has-key($font, $layer) {
-            @return map-get($font, $layer);
+        @if ($layer != false and map-has-key($font, $layer)) {
+            $font-value: map-get($font, $layer);
+            
+            @if (unquote($font-value) != null) {
+                @return $font-value;
+            }
         }
-        @else {
-            @return map-values($font);
-        }
+        @return map-values($font);
     }
     @else {
         @return 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;

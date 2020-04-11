@@ -109,18 +109,18 @@ collections:
                 name: "heading"
                 widget: "object"
                 fields:
-                  - {label: "Main", name: "main", widget: "string", default: "IBMPlexSans"}
+                  - {label: "Main", name: "main", widget: "string", default: "null"}
                   - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "sans"}
               - label: "Body Font"
                 name: "body"
                 widget: "object"
                 fields:
-                  - {label: "Main", name: "main", widget: "string", default: "IBMPlexSans"}
+                  - {label: "Main", name: "main", widget: "string", default: "null"}
                   - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "sans"}
               - label: "Code Font"
                 name: "code"
                 widget: "object"
                 fields:
-                  - {label: "Main", name: "main", widget: "string", default: "Menlo"}
+                  - {label: "Main", name: "main", widget: "string", default: "null"}
                   - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "mono"}
           

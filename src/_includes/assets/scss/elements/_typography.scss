@@ -16,11 +16,6 @@ h4,
 h5,
 h6,
 .h {
-    @if (map-get(map-get($fonts, 'heading'), 'main') == 'IBM Plex Sans') {
-        // Compensate for the large font's space on the line start
-        margin-left: -.0625em;
-    }
-    
     @if (f('heading') != f('body')) {
         // Don't declare the font family into heading elements if it's the same as the body
         font-family: f('heading');
@@ -127,10 +122,8 @@ hr {
     height: .5rem;
 
     border: 0;
-    background: linear-gradient(90deg, transparent, var(--color-text), transparent) no-repeat 50% 50% / 100% 1px;
 
-    transform: scaleX(1.25);
-
+    &::before,
     &::after {
         content: '';
         position: absolute;
@@ -139,10 +132,15 @@ hr {
 
         width: 100%;
         height: 100%;
+    }
 
-        background: radial-gradient(closest-side, var(--c-secondary-med), transparent) 50% 50% / 100% 100%;
-
-        opacity: .75;
+    &::before {
+        background: radial-gradient(closest-side, var(--c-secondary-med), transparent) no-repeat 50% 50% / 100% 100%;
+    }
+    
+    &::after {
+        background: linear-gradient(90deg, transparent, var(--c-secondary-min), transparent) no-repeat 50% 50% / 80% 1px;
+        // opacity: .75;
     }
 }
 
