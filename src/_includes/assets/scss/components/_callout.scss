@@ -29,8 +29,8 @@
 
         color: var(--c-primary-min);
         text-shadow:
-            .1em 0 0 var(--currentBackground),
-            .125em 0 0 var(--c-primary-med);
+            .1em    .1em    0 var(--currentBackground),
+            .125em  .125em  0 var(--c-primary-med);
         background-color: var(--currentBackground);
     }
 }
