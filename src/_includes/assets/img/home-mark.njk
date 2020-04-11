@@ -295,9 +295,9 @@
   <g class="svg-mark__chris-group svg-mark__group" role="img" aria-label="Chris">
 
     <!-- Wires -->
-    <g class="svg-mark__wires">
-      {% for d in range(0, wire_count) -%}
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_color }}" />
+    <g class="svg-mark__wires" style="--wire-count: {{ wire_count }};">
+      {% for w in range(0, wire_count) -%}
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_color }}" style="--w: {{ w }};" />
       {%- endfor %}
     </g>
     

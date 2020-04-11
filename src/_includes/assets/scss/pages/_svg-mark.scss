@@ -65,24 +65,22 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	}
 	
 	&__wire {
+
+		--w-pow: calc((var(--wire-count) + 1) / (var(--w) + 1));
+		--w-delay: calc(#{ $wire-step-delay } * var(--w));
+		--w-scale-x: calc(1 + (1/10 * (var(--wire-count) - var(--w))) * #{ $mark-depth-factor-x } * #{ $wire-factor } + .0125);
+		--w-scale-y: calc(1 + (1/10 * (var(--wire-count) - var(--w))) * #{ $mark-depth-factor-y } * #{ $wire-factor } + .0125);
+		// --w-translateY: calc(var(--w-pow) * #{ $wire-factor });
+
 		opacity: 0;
+		transform: scale(var(--w-scale-x), var(--w-scale-y));// translateY(calc(var(--w-translateY) * -1%));
+		
 		animation-name: svgMarkFadeInOut;
 		animation-iteration-count: 1;
 		animation-fill-mode: both;
 		animation-duration: #{ $wire-anim-time };
 		animation-timing-function: steps(1);
-
-		@for $w from 1 through $wire-count {
-			&:nth-child(#{ $w }) {
-				$wpow: ($wire-count + 1) / ($w + 1);
-				$delay: $wire-step-delay * $w;
-				$scale-x: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-x * $wire-factor + .0125;
-				$scale-y: 1 + (1/10 * ($wire-count - $w)) * $mark-depth-factor-y * $wire-factor + .0125;
-				$translateY: $wpow * $wire-factor;
-				transform: scale(#{ $scale-y }, #{ $scale-x }) translateY(#{ $translateY * -1% });
-				animation-delay: #{ $wire-init-delay + $delay };
-			}
-		}
+		animation-delay: calc(#{ $wire-init-delay } + var(--w-delay));
 	}
 
 	&__horizon-flash,
