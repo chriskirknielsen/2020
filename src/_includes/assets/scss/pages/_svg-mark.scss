@@ -31,7 +31,7 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	$wire-init-delay: .75s;
 	$wire-step-delay: .0625s;
 	$wire-anim-time: 1s;
-	$wire-factor: .33;
+	$wire-factor: .25;
 	$wire-final-end: $wire-init-delay + $wire-step-delay * ($wire-count - 1) + $wire-anim-time;
 	$greeting-init-delay: $wire-init-delay * 2;
 	$greeting-anim-time: 1.25s;
@@ -65,7 +65,6 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	}
 	
 	&__wire {
-
 		--w-pow: calc((var(--wire-count) + 1) / (var(--w) + 1));
 		--w-delay: calc(#{ $wire-step-delay } * var(--w));
 		--w-scale-x: calc(1 + (1/10 * (var(--wire-count) - var(--w))) * #{ $mark-depth-factor-x } * #{ $wire-factor } + .0125);
