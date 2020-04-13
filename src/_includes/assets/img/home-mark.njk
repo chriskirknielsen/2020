@@ -211,6 +211,18 @@
 
     </filter>
 
+    <!-- FILTER: Displacement Map -->
+    <filter id="horizonTurbulence">
+      <!-- Set up the factal noise turbulence -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.025 0.01" numOctaves="2" result="displaceTurbulence"/>
+
+      <!-- Apply the displacement map to the input -->
+      <feDisplacementMap in2="displaceTurbulence" in="SourceGraphic" xChannelSelector="none" yChannelSelector="G" scale="24" result="displaceMap" />
+
+      <!-- Blur the result slightly to avoid jagged edges -->
+      <feGaussianBlur in="displaceMap" stdDeviation=".5" result="displaceBlur" />
+    </filter>
+
     <!-- GRADIENT: Outline -->
     <linearGradient id="gradientPinkPurple" gradientUnits="userSpaceOnUse" x1="480" y1="169.998" x2="480" y2="334.06">
       <stop offset=".42" stop-color="{{ outline_endpoint }}"/>
@@ -219,14 +231,25 @@
     </linearGradient>
 
     <!-- GRADIENT: Main -->
-    <linearGradient id="gradientDusk" gradientUnits="userSpaceOnUse" x1="480" y1="169.998" x2="480" y2="334.06">
+    <linearGradient id="gradientDuskTop" gradientUnits="userSpaceOnUse" x1="480" y1="169.998" x2="480" y2="334.06">
       <stop offset="0" stop-color="{{ firstname_halfstart }}"/>
       <stop offset=".167" stop-color="{{ firstname_halfmid1 }}"/>
       <stop offset=".333" stop-color="{{ firstname_halfmid2 }}"/>
       <stop offset=".5" stop-color="{{ firstname_halfend }}"/>
-      <stop offset=".5125" stop-color="{{ firstname_endtop }}"/>
+      <stop offset="1" stop-color="{{ firstname_halfend }}"/>
+    </linearGradient>
+
+    <linearGradient id="gradientDuskBottom" gradientUnits="userSpaceOnUse" x1="480" y1="169.998" x2="480" y2="334.06">
+      <stop offset="0" stop-color="transparent"/>
+      <stop offset=".49" stop-color="transparent"/>
+      <stop offset=".5" stop-color="{{ firstname_endtop }}"/>
       <stop offset="1" stop-color="{{ firstname_endbottom }}"/>
     </linearGradient>
+
+    <g id="gradientDuskFinal">
+      <rect x="0%" y="0" width="100%" height="100%" fill="url(#gradientDuskTop)" />
+      <rect x="0%" y="0" width="100%" height="100%" fill="url(#gradientDuskBottom)" filter="url(#horizonTurbulence)" />
+    </g>
 
     <!-- GRADIENT: Horizon Shine -->
     <radialGradient id="horizonFlash">
@@ -284,6 +307,8 @@
     </mask>
   </defs>
 
+
+
   <!-- Horizon Flash -->
   <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="67%" ry="1%"/>
 
@@ -323,10 +348,10 @@
       <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="url(#gradientPinkPurple)" stroke-width="3" />
 
       <!-- Gradient -->
-      <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientDusk)" />
+      <use xlink:href="#gradientDuskFinal" mask="url(#svg-mark-chris-mask)" />
 
       <!-- Gradient Blinds -->
-      <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientBlinds)" mask="url(#maskBlinds)" />
+      {# <use xlink:href="#svg-mark-chris-shape" fill="url(#gradientBlinds)" mask="url(#maskBlinds)" /> #}
 
       <!-- Inner Shadow  -->
       <g mask="url(#svg-mark-chris-mask)">
