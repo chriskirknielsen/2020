@@ -165,12 +165,12 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	// }
 
 	&__creativedeveloper-text {
-		fill: c('primary', 'min', $theme: 'dusk');
+		fill: var(--c-primary-min);//c('primary', 'min', $theme: 'dusk');
 		text-shadow:
-			0       1px     0       c('primary', 'max', $theme: 'dusk'),
-			-1px    1px     0       c('primary', 'max', $theme: 'dusk'),
-			1px     1px     0       c('primary', 'max', $theme: 'dusk'),
-			0       0       .5em    c('primary', 'max', $theme: 'dusk');
+			0       1px     0       var(--c-primary-max),
+			-1px    1px     0       var(--c-primary-max),
+			1px     1px     0       var(--c-primary-max),
+			0       0       .5em    var(--c-primary-max);
 		font-size: 1.185rem;
 		font-family: '#{ unquote($creadev-font) }', sans-serif;
 
