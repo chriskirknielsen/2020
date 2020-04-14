@@ -214,13 +214,13 @@
     <!-- FILTER: Displacement Map -->
     <filter id="horizonTurbulence">
       <!-- Set up the factal noise turbulence -->
-      <feTurbulence type="fractalNoise" baseFrequency="0.025 0.01" numOctaves="2" result="displaceTurbulence"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.025 0.01" numOctaves="2" result="displaceTurbulence" seed="2"/>
 
       <!-- Apply the displacement map to the input -->
-      <feDisplacementMap in2="displaceTurbulence" in="SourceGraphic" xChannelSelector="none" yChannelSelector="G" scale="24" result="displaceMap" />
+      <feDisplacementMap in2="displaceTurbulence" in="SourceGraphic" xChannelSelector="G" yChannelSelector="G" scale="24" result="displaceMap" />
 
       <!-- Blur the result slightly to avoid jagged edges -->
-      <feGaussianBlur in="displaceMap" stdDeviation=".5" result="displaceBlur" />
+      <feGaussianBlur in="displaceMap" stdDeviation=".42" result="displaceBlur" />
     </filter>
 
     <!-- GRADIENT: Outline -->
@@ -448,7 +448,8 @@
   {# <g class="svg-mark__creativedeveloper-group svg-mark__group" aria-label="creative developer"> #}
     {# <use xlink:href="#svg-mark-dev-shape" fill="{{ creadev_fill }}" /> #}
     <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__creativedeveloper-group">
-      <text class="svg-mark__creativedeveloper-text svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
+      <text class="svg-mark__creativedeveloper-text svg-mark__creativedeveloper-text--stroke svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em" aria-hidden="true">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
+      <text class="svg-mark__creativedeveloper-text svg-mark__creativedeveloper-text--fill svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
     </g>
   {# </g> #}
   {# <g fill="{{ creadev_fill }}" class="svg-mark__creativedeveloper-group svg-mark__group">

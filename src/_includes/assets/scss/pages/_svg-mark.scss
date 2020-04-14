@@ -165,12 +165,6 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	// }
 
 	&__creativedeveloper-text {
-		fill: var(--c-primary-min);//c('primary', 'min', $theme: 'dusk');
-		text-shadow:
-			0       1px     0       var(--c-primary-max),
-			-1px    1px     0       var(--c-primary-max),
-			1px     1px     0       var(--c-primary-max),
-			0       0       .5em    var(--c-primary-max);
 		font-size: 1.185rem;
 		font-family: '#{ unquote($creadev-font) }', sans-serif;
 
@@ -179,6 +173,15 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 		animation-delay: #{ $creadev-anim-delay };
 		animation-fill-mode: both;
 		animation-timing-function: cubic-bezier(0, 0, 0, 1);
+		
+		&--stroke {
+			stroke: c('primary', 'max', $theme: 'dusk');
+			stroke-width: .125em;
+		}
+
+		&--fill {
+			fill: c('primary', 'min', $theme: 'dusk');
+		}
 	}
 
 	&__glare-group {
