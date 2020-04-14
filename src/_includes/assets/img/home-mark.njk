@@ -39,7 +39,7 @@
 {% set firstname_halfmid2 = "#fd57b7" %}
 {% set firstname_halfend = "#fddcc0" %}
 {% set firstname_endtop = "#7e004e" %}
-{% set firstname_endbottom = "#1f2aff" %}
+{% set firstname_endbottom = "#ed23af" %}
 
 {# Define the name's lower "blinds" effect gradient colors #}
 {% set blinds_startpoint = "#f856b4" %}
@@ -310,7 +310,7 @@
 
 
   <!-- Horizon Flash -->
-  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="67%" ry="1%"/>
+  <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="50%" ry="1%"/>
 
   <g aria-label="{{ localisedContent.homeMarkGreeting }}" class="svg-mark__greeting-group">
     <text class="svg-mark__greeting-text" text-anchor="middle" x="50%" y="128">{{ localisedContent.homeMarkGreeting }}</text>
@@ -355,8 +355,8 @@
 
       <!-- Inner Shadow  -->
       <g mask="url(#svg-mark-chris-mask)">
-        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow2)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="2" filter="url(#violetShadeGlow)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="2" filter="url(#violetShadeGlow2)" />
       </g>
 
       <!-- Shine Overlay (hide initially, show with CSS) -->
