@@ -27,7 +27,7 @@
 {% set creadev_fill = "var(--c-primary-min)" %}
 
 {# Define the name's wireframe #}
-{% set wire_color = "var(--c-secondary-med)" %}
+{% set wire_color = "cyan" %}
 {% set wire_count = 8 %}
 
 {# Define the name's inner shadow color #}
@@ -220,7 +220,7 @@
       <feDisplacementMap in2="displaceTurbulence" in="SourceGraphic" xChannelSelector="G" yChannelSelector="G" scale="24" result="displaceMap" />
 
       <!-- Blur the result slightly to avoid jagged edges -->
-      <feGaussianBlur in="displaceMap" stdDeviation=".42" result="displaceBlur" />
+      <feGaussianBlur in="displaceMap" stdDeviation=".3" result="displaceBlur" />
     </filter>
 
     <!-- GRADIENT: Outline -->
@@ -241,7 +241,7 @@
 
     <linearGradient id="gradientDuskBottom" gradientUnits="userSpaceOnUse" x1="480" y1="169.998" x2="480" y2="334.06">
       <stop offset="0" stop-color="transparent"/>
-      <stop offset=".49" stop-color="transparent"/>
+      <stop offset=".497" stop-color="transparent"/>
       <stop offset=".5" stop-color="{{ firstname_endtop }}"/>
       <stop offset="1" stop-color="{{ firstname_endbottom }}"/>
     </linearGradient>
@@ -355,8 +355,8 @@
 
       <!-- Inner Shadow  -->
       <g mask="url(#svg-mark-chris-mask)">
-        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="2" filter="url(#violetShadeGlow)" />
-        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="2" filter="url(#violetShadeGlow2)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow)" />
+        <use xlink:href="#svg-mark-chris-shape" fill="none" stroke="{{ firstname_inner }}" stroke-width="1" filter="url(#violetShadeGlow2)" />
       </g>
 
       <!-- Shine Overlay (hide initially, show with CSS) -->
@@ -397,7 +397,6 @@
       <use xlink:href="#svg-mark-chris-shape" fill="{{ shine_color }}" stroke="{{ shine_color }}" filter="url(#flashGlow)" />
       {# <use xlink:href="#svg-mark-chris-shape"  fill="{{ shine_color }}" stroke="{{ shine_color }}" /> #}
     </g>
-
   </g>
 
   <!-- Kirk-Nielsen -->
@@ -445,32 +444,10 @@
   </g> #}
 
   <!-- Creative Developer -->
-  {# <g class="svg-mark__creativedeveloper-group svg-mark__group" aria-label="creative developer"> #}
-    {# <use xlink:href="#svg-mark-dev-shape" fill="{{ creadev_fill }}" /> #}
-    <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__creativedeveloper-group">
-      <text class="svg-mark__creativedeveloper-text svg-mark__creativedeveloper-text--stroke svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em" aria-hidden="true">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
-      <text class="svg-mark__creativedeveloper-text svg-mark__creativedeveloper-text--fill svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
-    </g>
-  {# </g> #}
-  {# <g fill="{{ creadev_fill }}" class="svg-mark__creativedeveloper-group svg-mark__group">
-    <path d="M200.56,377.85c0-3.66,1.27-5.42,5.3-5.42h7.7c3.66,0,4.66,1.66,4.66,3.6v1.24h-1.77v-0.66 c0-2.46-1.56-2.58-3.41-2.58h-6.98c-1.93,0-3.49,0.56-3.49,3.08v5.44c0,2.52,1.56,3.08,3.49,3.08h7.04c2.71,0,3.49-0.56,3.49-2.52 v-0.9h1.89v0.98c0,2.62-0.86,4.04-5.03,4.04h-7.6c-4.03,0-5.3-1.76-5.3-5.42V377.85z"/>
-    <path d="M236.41,372.59h11.89c4.29,0,4.97,1.38,4.97,4.1v1.18c0,2.04-1.19,2.6-2.73,2.74v0.04 c2.05,0.36,2.55,1.4,2.55,2.72v3.7h-1.89v-3.18c0-2.26-1.13-2.54-2.96-2.54h-9.82v5.72h-2.01V372.59z M248.08,379.75 c2.24,0,3.18-0.58,3.18-2.1v-1.32c0-1.62-0.72-2.14-3.68-2.14h-9.16v5.56H248.08z"/>
-    <path d="M271.6,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6H271.6V372.59z"/>
-    <path d="M311.31,372.59h2.51l8.83,14.48h-2.28l-1.85-3.06h-11.91l-1.85,3.06h-2.28L311.31,372.59z M312.56,374.19 l-4.99,8.22h9.98L312.56,374.19z"/>
-    <path d="M344.1,374.19h-7.52v-1.6h17.05v1.6h-7.52v12.88h-2.01V374.19z"/>
-    <path d="M370.81,372.59h2.01v14.48h-2.01V372.59z"/>
-    <path d="M390.08,372.59h2.26l7.21,12.72l7.21-12.72h2.26l-8.24,14.48h-2.46L390.08,372.59z"/>
-    <path d="M426.21,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6h-14.68V372.59z"/>
-    <path d="M483.33,372.59h12.01c4.99,0,6.35,1.52,6.35,7.24c0,5.32-1.36,7.24-6.41,7.24h-11.95V372.59z M499.67,379.13 c0-4.18-1.33-4.94-3.8-4.94h-10.54v11.28h10.21c2.44,0,4.13-0.52,4.13-4.86V379.13z"/>
-    <path d="M520.04,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6h-14.68V372.59z"/>
-    <path d="M551.04,372.59h2.26l7.21,12.72l7.21-12.72h2.26l-8.24,14.48h-2.46L551.04,372.59z"/>
-    <path d="M587.17,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6h-14.69V372.59z"/>
-    <path d="M619.72,372.59h2.01v12.88h11.54v1.6h-13.55V372.59z"/>
-    <path d="M649.83,377.85c0-3.66,1.27-5.42,5.3-5.42h8.56c4.03,0,5.3,1.76,5.3,5.42v3.96c0,3.66-1.27,5.42-5.3,5.42 h-8.56c-4.03,0-5.3-1.76-5.3-5.42V377.85z M666.98,377.11c0-2.52-1.56-3.08-3.49-3.08h-8.15c-1.93,0-3.49,0.56-3.49,3.08v5.44 c0,2.52,1.56,3.08,3.49,3.08h8.15c1.93,0,3.49-0.56,3.49-3.08V377.11z"/>
-    <path d="M687.35,372.59h12.24c2.71,0,4.25,0.56,4.25,3.94c0,3.22-0.27,4.84-4.64,4.84h-9.84v5.7h-2.01V372.59z M701.83,376.33c0-1.72-0.96-2.14-2.71-2.14h-9.76v5.58h9.92c1.6,0,2.55-0.56,2.55-2.06V376.33z"/>
-    <path d="M721.43,372.59h14.6v1.6h-12.59v4.62h12.1v1.6h-12.1v5.06h12.67v1.6h-14.69V372.59z"/>
-    <path d="M753.85,372.59h11.89c4.29,0,4.97,1.38,4.97,4.1v1.18c0,2.04-1.19,2.6-2.73,2.74v0.04 c2.05,0.36,2.55,1.4,2.55,2.72v3.7h-1.89v-3.18c0-2.26-1.13-2.54-2.96-2.54h-9.82v5.72h-2.01V372.59z M765.51,379.75 c2.24,0,3.18-0.58,3.18-2.1v-1.32c0-1.62-0.72-2.14-3.68-2.14h-9.16v5.56H765.51z"/>
-  </g> #}
+  <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__creativedeveloper-group">
+    <text class="svg-mark__creativedeveloper-text svg-mark__creativedeveloper-text--stroke svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em" aria-hidden="true">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
+    <text class="svg-mark__creativedeveloper-text svg-mark__creativedeveloper-text--fill svg-mark__group" text-anchor="middle" x="50%" y="387" letter-spacing=".7em">{{ localisedContent.homeMarkCreaDev | makeUppercase }}</text>
+  </g>
 
   <!-- Horizon Glow -->
   <ellipse class="svg-mark__horizon-flash" fill="url(#horizonFlash)" cx="50%" cy="50%" rx="25%" ry="33%"/>
