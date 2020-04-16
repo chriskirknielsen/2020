@@ -19,6 +19,10 @@
     $sun-glow: $sun-top;
     // Hardcode all color values since we don't want this to be affected by color schemes
 
+    html.js-on:not(.global-styles-loaded) & * {
+		opacity: 0;
+	}
+
     min-height: calc(100vh - #{ $header-expected-height * 2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
     
     @include above-medium {
