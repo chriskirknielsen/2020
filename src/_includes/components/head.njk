@@ -16,7 +16,14 @@
 	<style>{{ css | cssmin | safe }}</style>
 	{% set globalStyles = '/assets/css/global.css' | url %}
 	<link rel="preload" href="{{ globalStyles }}" as="style">
-	<link rel="stylesheet" href="{{ globalStyles }}"  media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="{{ globalStyles }}" media="print" id="global-styles">
+	<script>
+		{%- set gStylesLoader -%}
+			var gStyles = document.getElementById('global-styles');
+			gStyles.onload = function () { gStyles.media = 'all'; }
+		{%- endset -%}
+		{{ gStylesLoader | jsmin | safe }}
+	</script>
 	
 	{# <link rel="preload" href="/assets/fonts/IBMPlexSansVar-Roman.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/assets/fonts/IBMPlexSansVar-Italic.woff2" as="font" type="font/woff2" crossorigin> #}
