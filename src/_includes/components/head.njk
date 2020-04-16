@@ -14,6 +14,9 @@
 	{%- include "assets/css/inline.css" -%}
 	{%- endset %}
 	<style>{{ css | cssmin | safe }}</style>
+	{% set globalStyles = '/assets/css/global.css' | url %}
+	<link rel="preload" href="{{ globalStyles }}" as="style">
+	<link rel="stylesheet" href="{{ globalStyles }}"  media="print" onload="this.media='all'">
 	
 	{# <link rel="preload" href="/assets/fonts/IBMPlexSansVar-Roman.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/assets/fonts/IBMPlexSansVar-Italic.woff2" as="font" type="font/woff2" crossorigin> #}
@@ -36,12 +39,11 @@
 	<script>{{ js | jsmin | safe }}</script>
 
 	<link rel="icon" href="{{ '/assets/img/icon.png' | url }}" type="image/png">
-	<link rel="stylesheet" href="{{ '/assets/css/global.css' | url }}" />
 	{%- if translationKey and section -%}
 	{%- set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset -%}
 	{%- set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) -%}
 	{%- for variant in filteredVariants %}
-	<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}" />
+	<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}">
 	{% endfor %}
 	{%- endif -%}
 	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
