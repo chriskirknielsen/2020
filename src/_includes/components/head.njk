@@ -18,12 +18,22 @@
 	<link rel="preload" href="{{ globalStyles }}" as="style">
 	<link rel="stylesheet" href="{{ globalStyles }}" media="print" id="global-styles">
 	<script>
-		{%- set gStylesLoader -%}
+		{%- set stylesInitLoader -%}
+			// Add a CSS hook to see if JS is enabled
+			document.documentElement.classList.add('js-on');
+
+			// Using this JS block as the code output on Netlify seems to mangle the `onload` attribute on the `<link>` element 🤷‍♂️
 			var gStyles = document.getElementById('global-styles');
-			gStyles.onload = function () { gStyles.media = 'all'; }
+			gStyles.onload = function () {
+				gStyles.media = 'all';
+				document.documentElement.classList.add('global-styles-loaded');
+			}
 		{%- endset -%}
-		{{ gStylesLoader | jsmin | safe }}
+		{{ stylesInitLoader | jsmin | safe }}
 	</script>
+	<noscript>
+		<link rel="stylesheet" href="{{ globalStyles }}" media="all">
+	</noscript>
 	
 	{# <link rel="preload" href="/assets/fonts/IBMPlexSansVar-Roman.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/assets/fonts/IBMPlexSansVar-Italic.woff2" as="font" type="font/woff2" crossorigin> #}
