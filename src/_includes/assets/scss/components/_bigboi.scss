@@ -1,7 +1,9 @@
 .bigboi {
+    $grid-line-width: 1.5px;
+
     background-image:
-        linear-gradient(var(--c-secondary-med) 1px, transparent 1px),
-        linear-gradient(90deg, var(--c-secondary-med) 1px, transparent 1px);
+        linear-gradient(var(--c-secondary-med) #{ $grid-line-width }, transparent #{ $grid-line-width }),
+        linear-gradient(90deg, var(--c-secondary-med) #{ $grid-line-width }, transparent #{ $grid-line-width });
     background-position: 50% 50%;
     background-repeat: repeat;
     background-size: 2rem 2rem;
