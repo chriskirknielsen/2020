@@ -1,4 +1,7 @@
 .homescreen {
+    --homescreen-sky-end: #791e74;
+    --homescreen-floor-start: #1e0347;
+    
     $grid-size: .5;
     $grid-line-anim-time: 4s;
     $sun-radius: 20vmin;
@@ -6,8 +9,8 @@
     $screen-background: unquote('var(--c-primary-max)');
     $sky-start: #0a0634;
     $sky-start: unquote('var(--c-primary-max)');
-    $sky-end: #791e74;
-    $floor-start: #1e0347;
+    $sky-end: unquote('var(--homescreen-sky-end)');
+    $floor-start: unquote('var(--homescreen-floor-start)');
     // $floor-start: unquote('var(--c-grey-max)');
     $floor-color: unquote('var(--c-secondary-med)');
     $floor-end: unquote('var(--c-primary-max)');
@@ -22,6 +25,11 @@
     html.js-on:not(.global-styles-loaded) & * {
 		opacity: 0;
 	}
+    
+    html[data-scheme="dawn"] & {
+        --homescreen-sky-end: #ecb43a;
+        --homescreen-floor-start: #261172;
+    }
 
     min-height: calc(100vh - #{ $header-expected-height * 2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
     
