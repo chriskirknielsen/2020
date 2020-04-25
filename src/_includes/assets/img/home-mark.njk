@@ -220,7 +220,15 @@
       <feDisplacementMap in2="displaceTurbulence" in="SourceGraphic" xChannelSelector="G" yChannelSelector="G" scale="24" result="displaceMap" />
 
       <!-- Blur the result slightly to avoid jagged edges -->
-      <feGaussianBlur in="displaceMap" stdDeviation=".3" result="displaceBlur" />
+      <feGaussianBlur in="displaceMap" stdDeviation="1.5" result="displaceBlur" />
+
+      <feConvolveMatrix preserveAlpha="false" order="3" kernelUnitLength="1"
+        kernelMatrix=" 
+        0.5  -0.5    0.5
+        -0.5  -0.1 -0.5
+        0.5  -0.5    0.5
+        "
+      />
     </filter>
 
     <!-- GRADIENT: Outline -->
