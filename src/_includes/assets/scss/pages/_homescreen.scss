@@ -31,53 +31,44 @@
         --homescreen-floor-start: #261172;
     }
 
-    min-height: calc(100vh - #{ $header-expected-height * 2 } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
-    
-    @include above-medium {
-        min-height: calc(100vh - #{ $header-expected-height } - #{ $base-line-height * 2em }); // Take up the whole screen, minus menu and minus two lines of text
-    }
+    min-height: #{ $sun-radius * 3 };
 
     &__background {
+        $mask-gradient: gradient-stops($sc: #000, $sa: 1, $ec: #000, $ea: 0, $sp: 50%, $ep: 95%);
+
         $sun-fallback: radial-gradient(circle at 50% 100%,
-                #{ $sun-bottom } 0,
-                #{ $sun-middle } #{ $sun-radius / 2 },
-                #{ $sun-top } #{ $sun-radius },
-                #{ rgba($sun-glow, .5) } #{ $sun-radius },
-                transparent #{ $sun-radius * 1.0625 }
-            ) no-repeat 50% 0 / 100% 50%;
+            #{ $sun-bottom } 0,
+            #{ $sun-middle } #{ $sun-radius / 2 },
+            #{ $sun-top } #{ $sun-radius },
+            #{ rgba($sun-glow, .5) } #{ $sun-radius },
+            transparent #{ $sun-radius * 1.0625 },
+        ) no-repeat 50% 0 / 100% 50%;
 
         $sun-mask-disk: radial-gradient(circle at 50% 50%,
-                red #{ $sun-radius * 0.999 },
-                transparent #{ $sun-radius * 1.001 }
-            ) no-repeat 50% 50%;
+            red #{ $sun-radius * 0.99 },
+            transparent #{ $sun-radius * 1.01 }
+        ) no-repeat 50% 50%;
         $sun-mask-lines: repeating-linear-gradient(
-                red var(--ckn-sun-mask-lines),
-                red calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size } ),
-                transparent calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size } ),
-                transparent calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size * 2 } )
-            ) repeat-x 50% 100% / 100% 50%;
+            red var(--ckn-sun-mask-lines),
+            red calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size } ),
+            transparent calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size } ),
+            transparent calc( var(--ckn-sun-mask-lines) + #{ $sun-blind-size * 2 } ),
+        ) repeat-x 50% 100% / 100% 50%;
 
-        $sun-gradient:
-            // radial-gradient(circle at 50% 100%,
-            //     #{ rgba($sun-glow, 0) } #{ $sun-radius * .75 },
-            //     #{ rgba($sun-glow, .5) } #{ $sun-radius }
-            // ) no-repeat 50% 0 / 100% 50%,
-            
-            linear-gradient(180deg,
-                #{ $sun-top } 0,
-                #{ $sun-middle } 30%,
-                #{ $sun-bottom } 50%,
-                #{ $sun-ref-top } 50%,
-                #{ $sun-ref-bottom } 100%
-            ) no-repeat 50% 50% / 100% #{ $sun-radius * 2 };
-        $sun-glow-gradient:
-            radial-gradient(circle at 50% 100%,
-                #{ rgba($sun-glow, 0) } #{ $sun-radius * .875 },
-                gradient-stops($sc: $sun-glow, $sa: 0, $ec: $sun-glow, $ea: .5, $sp: $sun-radius * .875, $ep: $sun-radius, $s: 6, $xb: true, $ease: 'in'),
-                #{ rgba($sun-glow, .75) } #{ $sun-radius },
-                gradient-stops($sc: $sun-glow, $sa: .75, $ec: $sun-glow, $ea: 0, $sp: $sun-radius, $ep: $sun-radius * 1.375, $s: 8, $xb: true, $ease: 'out'),
-                #{ rgba($sun-glow, 0) } #{ $sun-radius * 1.25 }
-            ) no-repeat 50% 0 / 100% 50%;
+        $sun-gradient: linear-gradient(180deg,
+            #{ $sun-top } 0,
+            #{ $sun-middle } 30%,
+            #{ $sun-bottom } 50%,
+            #{ $sun-ref-top } 50%,
+            #{ $sun-ref-bottom } 100%,
+        ) no-repeat 50% 50% / 100% #{ $sun-radius * 2 };
+        $sun-glow-gradient: radial-gradient(circle at 50% 100%,
+            #{ rgba($sun-glow, 0) } #{ $sun-radius * .875 },
+            gradient-stops($sc: $sun-glow, $sa: 0, $ec: $sun-glow, $ea: .5, $sp: $sun-radius * .875, $ep: $sun-radius, $s: 6, $xb: true, $ease: 'in'),
+            #{ rgba($sun-glow, .75) } #{ $sun-radius },
+            gradient-stops($sc: $sun-glow, $sa: .75, $ec: $sun-glow, $ea: 0, $sp: $sun-radius, $ep: $sun-radius * 1.375, $s: 8, $xb: true, $ease: 'out'),
+            #{ rgba($sun-glow, 0) } #{ $sun-radius * 1.25 },
+        ) no-repeat 50% 0 / 100% 50%;
 
         /* Sky layer */
         background:
@@ -91,9 +82,13 @@
                 #{ $sky-start } 0%,
                 #{ $sky-end } 50%,
                 #{ $floor-start } 50%,
-                #{ $floor-end } 100%
+                #{ $floor-end } 100%,
             );
         background-color: $screen-background;
+
+        // Fade out the grid at the bottom
+        -webkit-mask-image: linear-gradient(#{ $mask-gradient });
+        mask-image: linear-gradient(#{ $mask-gradient });
 
         /* Sun layer */
         &::before {
@@ -124,17 +119,12 @@
     }
 
     &__grid {
-        $mask-gradient: gradient-stops($ep: 95%);
         
         top: #{ $grid-size * 100% };
         
         width: 100%;
         
         contain: content;
-
-        // Fade out the grid at the bottom
-        -webkit-mask-image: linear-gradient(#{ $mask-gradient });
-        mask-image: linear-gradient(#{ $mask-gradient });
 
         &-lines {
             fill: none;
