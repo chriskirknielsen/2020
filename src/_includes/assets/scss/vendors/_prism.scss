@@ -44,10 +44,28 @@ pre[class*="language-"] code {
 	// white-space: pre;
 	display: block;
 
-	padding: #{ $spacing } #{ $spacing } #{ $spacing } #{ $spacing * 1.25 };
+	padding: #{ $spacing } #{ $spacing * 2 };
 	
 	background-image: linear-gradient(to bottom right, var(--gradient-subtle));
-	border-left: #{ $spacing * .25 } solid var(--c-secondary-med, currentColor);
+	box-shadow: inset #{ $spacing * .25 } 0 0 var(--c-secondary-med, currentColor);
+}
+
+pre[class*="language-"] {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: .125em;
+		left: .125em;
+
+		font-size: .75em;
+		letter-spacing: .0625em;
+		writing-mode: vertical-lr;
+	}
+
+	&.language-html::before { content: 'HTML'; }
+	&.language-css::before { content: 'CSS'; }
+	&.language-js::before { content: 'JS'; }
 }
 
 :not(pre) > code[class*="language-"] {
