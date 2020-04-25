@@ -12,15 +12,15 @@
         display: grid;
         grid-template-columns:
             [fullbleed-start]
-                minmax(#{ $spacing }, 1fr)
+                1fr
             [wide-start]
-                minmax(#{ $spacing }, 1fr)
+                #{ $spacing * 2 }
             [container-start]
                 minmax(0, calc(#{ $max } - #{ $gutter * 2 }))
             [container-end]
-                minmax(#{ $spacing }, 1fr)
+                #{ $spacing * 2 }
             [wide-end]
-                minmax(#{ $spacing }, 1fr)
+                1fr
             [fullbleed-end]
         ;
 
