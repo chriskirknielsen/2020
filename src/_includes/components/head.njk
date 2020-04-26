@@ -60,6 +60,7 @@
 	<link rel="mask-icon" href="{{ '/assets/img/mask-icon.svg' | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
 	<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | url }}">
 	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}">
+	<link rel="manifest" href="{{ '/manifest.json' | url }}">
 	
 	{% if translationKey and section -%}
 	{%- set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset -%}
