@@ -53,6 +53,13 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 		animation-play-state: paused !important;
 	}
 
+	// Safari specific hack
+	@media not all and (min-resolution:.001dpcm){
+		@supports (-webkit-appearance:none) and (stroke-color:transparent) {
+			#gradientDuskFinal > rect { filter: none !important; }
+		}
+	}
+
 	&__greeting-text {
 		fill: c('primary', 'max', $theme: 'dusk');
 		text-shadow:
@@ -115,15 +122,19 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	}
 
 	&__chris-depth {
+		opacity: 1;
+		
+		// Backfill from 100% scale to the faked depth
+		animation-name: svgMarkUnreset;
 		animation-fill-mode: backwards;
-		animation-direction: reverse;
 		animation-duration: 1s;
 		animation-delay: #{ $chris-anim-delay - $wire-step-delay*($wire-count/2) };
-		animation-timing-function: cubic-bezier(.75, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, .25, 1);
 	}
 
 	&__chris-main {
 		opacity: 0;
+
 		animation-name: svgMarkReset;
 		animation-iteration-count: 1;
 		animation-fill-mode: forwards;
@@ -131,43 +142,6 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 		animation-delay: #{ $chris-anim-delay };
 		animation-timing-function: steps(1);
 	}
-
-	&__chris-group {
-		// transform: scale(.8);
-		// animation-duration: 1.25s;
-		// animation-delay: 1.5s;
-		// animation-timing-function: cubic-bezier(0, 0, 0, 1);
-	}
-
-	// &__kirknielsen-group {
-	//     opacity: 0;
-	//     transform: translate(-8%, 25%);
-	//     animation-duration: #{ $kn-anim-time };
-	//     animation-delay: #{ $kn-anim-delay };
-	//     animation-timing-function: cubic-bezier(0, 0, 0, 1);
-	// }
-
-	// &__kirknielsen-paths {
-	//     > path {
-	//         fill: none;
-	//         stroke-linecap: round;
-	//         stroke-linejoin: round;
-	//         stroke-miterlimit: 10;
-	//         stroke-dashoffset: 0px;
-			
-	//         transition: stroke-dashoffset .15s ease-out; 
-	//     }
-	// }
-
-	// &__creativedeveloper-group {
-	//     opacity: 0.0001;
-	//     transform: scaleX(1.125);
-	//     transform-origin: 50% 50%;
-	//     animation-duration: #{ $creadev-anim-time };
-	//     animation-delay: #{ $creadev-anim-delay };
-	//     animation-timing-function: cubic-bezier(0, 0, 0, 1);
-	//     will-change: transform, opacity;
-	// }
 
 	&__creativedeveloper-text {
 		stroke: c('primary', 'max', $theme: 'dusk');
@@ -177,6 +151,8 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 
 		font-size: 1.185rem;
 		font-family: '#{ unquote($creadev-font) }', sans-serif;
+
+		opacity: 1;
 
 		animation-name: svgMarkCreaDev;
 		animation-duration: #{ $creadev-anim-time };
@@ -189,6 +165,7 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 		transform-origin: 0 0; // Keep this at 0 0 since the glare is placed relative to the top-left corner so the element's rotation is anchored properly
 		transform: translate(76%, 34.5%) rotate(30deg); // Translate coordinate are hard-coded based on SVG viewBox
 	}
+
 	&__glare {
 		transform: scale(0, 0) rotate(-270deg);
 		animation-duration: #{ $glare-anim-time };
@@ -225,6 +202,13 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	100% { transform: scale(1.5); }
 }
 
+@keyframes svgMarkUnreset {
+	0% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 @keyframes svgMarkReset {
 	100% {
 		opacity: 1;
@@ -236,6 +220,9 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	0% {
 		opacity: 0.0001;
 		letter-spacing: 1.25em;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 

@@ -1,5 +1,5 @@
 {# Define the color for the fake 3D name element #}
-{% set depth_count = 16 %}
+{% set depth_count = 14 %}
 {% set depth_min_scale = 0.9 %}
 {% set depth_hue = 244 %}
 {% set depth_close_sat = 48 %}
@@ -406,50 +406,6 @@
       {# <use xlink:href="#svg-mark-chris-shape"  fill="{{ shine_color }}" stroke="{{ shine_color }}" /> #}
     </g>
   </g>
-
-  <!-- Kirk-Nielsen -->
-  {# <g class="svg-mark__kirknielsen-group svg-mark__group" role="img" aria-label="Kirk-Nielsen">
-    <use xlink:href="#svg-mark-kirknielsen-shape" filter="url(#pinkGlow)" />
-    <use xlink:href="#svg-mark-kirknielsen-shape" stroke="{{ lastname_stroke }}" stroke-width="4" />
-    <use xlink:href="#svg-mark-kirknielsen-shape" fill="{{ lastname_fill }}" />
-  </g> #}
-  {# <g id="ckn-mark-kn-draw" class="svg-mark__kirknielsen-paths" stroke="{{ lastname_fill }}" filter="url(#pinkGlow)" role="img" aria-label="Kirk-Nielsen">
-    <path mask="url(#kn-mask-k1-a)" id="kn-path-k1-a" stroke-width="14" d="M430.25 417.43l77.09-110.95"/>
-    <path mask="url(#kn-mask-k1-b)" id="kn-path-k1-b" stroke-width="13" d="M473.36 366.1l36.84-20.33"/>
-    <path mask="url(#kn-mask-k1-c)" id="kn-path-k1-c" stroke-width="16" d="M465.29 373.93l42.72 21.11"/>
-    <path mask="url(#kn-mask-i1-a)" id="kn-path-i1-a" stroke-width="10" d="M518.64 347.47l6.46-1.79"/>
-    <path mask="url(#kn-mask-i1-b)" id="kn-path-i1-b" stroke-width="12" d="M517.23 354.27l-14.68 23.96"/>
-    <path mask="url(#kn-mask-i1-c)" id="kn-path-i1-c" stroke-width="4" d="M502.55 380.9s4.91 3.53 16.85-10.46"/>
-    <path mask="url(#kn-mask-r-a)"  id="kn-path-r-a"  stroke-width="9" d="M540.93 349.02l-21.86 30.9"/>
-    <path mask="url(#kn-mask-r-b)"  id="kn-path-r-b"  stroke-width="9" d="M522.58 374.79s21.52-23.45 36.55-26.75"/>
-    <path mask="url(#kn-mask-r-c)"  id="kn-path-r-c"  stroke-width="9" d="M560.13 349.04l-6.84 9.75"/>
-    <path mask="url(#kn-mask-k2-a)" id="kn-path-k2-a" stroke-width="15" d="M554.55 375.67l51.16-79.57"/>
-    <path mask="url(#kn-mask-k2-b)" id="kn-path-k2-b" stroke-width="9" d="M570.79 358.05s10.81-13.11 20.14-7.57c3.48 2.06-16.68 13.99-16.68 13.99"/>
-    <path mask="url(#kn-mask-k2-c)" id="kn-path-k2-c" stroke-width="9" d="M571.51 362.98l17.43 18.94"/>
-    <path mask="url(#kn-mask-hyphen)" id="kn-path-hyphen" stroke-width="9" d="M599.41 357.53l39.83-4.5"/>
-    <path mask="url(#kn-mask-n1-a)" id="kn-path-n1-a" stroke-width="14" d="M617.83 392.62l85.82-97.47"/>
-    <path mask="url(#kn-mask-n1-b)" id="kn-path-n1-b" stroke-width="13" d="M699.87 301.13c-14.53 34.2-28.12 78.91-28.12 78.91"/>
-    <path mask="url(#kn-mask-n1-c)" id="kn-path-n1-c" stroke-width="13" d="M666.5 388.1s66.69-82.82 76.34-105.9"/>
-    <path mask="url(#kn-mask-i2-a)" id="kn-path-i2-a" stroke-width="10" d="M729.71 325.14l6.47-1.79"/>
-    <path mask="url(#kn-mask-i2-b)" id="kn-path-i2-b" stroke-width="12" d="M729.3 331.94l-14.68 23.96"/>
-    <path mask="url(#kn-mask-i2-c)" id="kn-path-i2-c" stroke-width="4" d="M713.62 358.57s5.24 2.34 18.04-10.45"/>
-    <path mask="url(#kn-mask-e1-a)" id="kn-path-e1-a" stroke-width="3" d="M748.34 339.18s8.68.2 14.19-1.54"/>
-    <path mask="url(#kn-mask-e1-b)" id="kn-path-e1-b" stroke-width="11" d="M761.53 337.64s11.89-10.55 12.03-16.97"/>
-    <path mask="url(#kn-mask-e1-c)" id="kn-path-e1-c" stroke-width="11" d="M768.05 323.12s-23.01 6.54-33.2 28.95"/>
-    <path mask="url(#kn-mask-e1-c)" id="kn-path-e1-d" stroke-width="7" d="M736.92 351.8s2.65 5.34 13.91.63c11.26-4.7 25.73-10.5 25.73-10.5"/>
-    <path mask="url(#kn-mask-l-a)"  id="kn-path-l-a"  stroke-width="12" d="M819.33 280.61l-46.77 72.19"/>
-    <path mask="url(#kn-mask-l-b)"  id="kn-path-l-b"  stroke-width="5" d="M775.78 355l21.34-16.56"/>
-    <path mask="url(#kn-mask-s-a)"  id="kn-path-s-a"  stroke-width="11" d="M822.1 315.67s-22.36 9.78-22.36 14.49"/>
-    <path mask="url(#kn-mask-s-b)"  id="kn-path-s-b"  stroke-width="11" d="M800.57 330.91c7.08 1.11 17.04 1.52 20.32 4.45"/>
-    <path mask="url(#kn-mask-s-c)"  id="kn-path-s-c"  stroke-width="11" d="M820.38 337.88s-16.64 8.7-26.41 11.99"/>
-    <path mask="url(#kn-mask-e2-a)" id="kn-path-e2-a" stroke-width="3" d="M844.01 328.8s11.84-.56 17.35-2.31"/>
-    <path mask="url(#kn-mask-e2-b)" id="kn-path-e2-b" stroke-width="11" d="M858.21 327.26s10.65-11.77 11.03-16.97"/>
-    <path mask="url(#kn-mask-e2-c)" id="kn-path-e2-c" stroke-width="11" d="M863.72 312.74s-23.01 6.54-33.21 28.95"/>
-    <path mask="url(#kn-mask-e2-c)" id="kn-path-e2-d" stroke-width="7" d="M832.59 341.42s2.65 5.34 13.91.63 25.73-10.5 25.73-10.5"/>
-    <path mask="url(#kn-mask-n2-a)" id="kn-path-n2-a" stroke-width="12" d="M871.23 341.22l19.21-31.25"/>
-    <path mask="url(#kn-mask-n2-b)" id="kn-path-n2-b" stroke-width="12" d="M883.44 325.6s15.76-10.29 23.7-10.66"/>
-    <path mask="url(#kn-mask-n2-c)" id="kn-path-n2-c" stroke-width="12" d="M908.84 316.35L878.3 362"/>
-  </g> #}
 
   <!-- Creative Developer -->
   <g aria-label="{{ localisedContent.homeMarkCreaDev }}" class="svg-mark__creativedeveloper-group">
