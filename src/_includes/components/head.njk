@@ -56,7 +56,12 @@
 	<script>{{ js | jsmin | safe }}</script>
 
 	<link rel="icon" href="{{ '/assets/img/icon.png' | url }}" type="image/png">
-	{%- if translationKey and section -%}
+	<link rel="icon" href="{{ '/assets/img/favicon.svg' | url }}">
+	<link rel="mask-icon" href="{{ '/assets/img/mask-icon.svg' | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
+	<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | url }}">
+	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}">
+	
+	{% if translationKey and section -%}
 	{%- set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset -%}
 	{%- set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) -%}
 	{%- for variant in filteredVariants %}

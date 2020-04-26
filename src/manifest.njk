@@ -1,0 +1,14 @@
+---
+permalink: /manifest.json
+---
+{
+    "name": "{{ metadata.title }}",
+    "short_name": "{{ metadata.title }}",
+    "icons": [{
+        "src": "{{ '/assets/img/google-touch-icon.png' | url }}",
+        "sizes": "512x512"
+    }],
+    "background_color": "{{ tokens.colors.dusk.primary.max }}",
+    "theme_color": "{{ tokens.colors.dusk.primary.max }}",
+    "display": "fullscreen"
+}
