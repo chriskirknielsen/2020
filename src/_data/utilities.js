@@ -3,13 +3,13 @@ module.exports = { // Define a list of utility classes that are commonly used to
     bfc : "u-displayFlowRoot",
 
     // Global link with box hover effect
-    glowBoxLink: "u-fontBold h:u-c--grey-min h:u-bg--grey-max u-border u-border--transparent h:u-border--secondary-med h:u-innerShadow--secondary-med h:u-textShadow--currentBg h:u-textDecoration--none",
+    glowBoxLink: "u-fontBold h:u-c--grey-min h:u-bg--grey-max u-border u-border--transparent h:u-border--secondary-med h:u-glowBox--secondary-med h:u-textShadow--currentBg h:u-textDecoration--none",
 
     // Card component
     cardFlex: "u-flex--grow-1 u-flex--basis-0",
     cardContainer: "u-margin--flexGap-double u-marginBlockStart--none md:u-displayFlex",
     cardBox: "u-padding u-c--text-color u-bg--grey-max u-border u-border--grey-med",
-    cardBoxLink: "h:u-border--secondary-med h:u-innerShadow--secondary-med",
+    cardBoxLink: "h:u-border--secondary-med h:u-glowBox--secondary-med",
     
     // Callout block
     callout: "u-posRelative u-paddingInline u-paddingBlockStart--double u-paddingBlockEnd",
