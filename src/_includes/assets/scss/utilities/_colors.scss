@@ -69,10 +69,12 @@
 
 /* Box-shadow */
 
-.u-innerShadow--secondary-med,
-.h\:u-innerShadow--secondary-med:hover,
-.h\:u-innerShadow--secondary-med:focus {
-    box-shadow: inset 0 0 2em -1em var(--c-secondary-med);
+.u-glowBox--secondary-med,
+.h\:u-glowBox--secondary-med:hover,
+.h\:u-glowBox--secondary-med:focus {
+    box-shadow:
+        0 0 1.5em -.5em var(--c-secondary-med),
+        inset 0 0 2em -1em var(--c-secondary-med);
 }
 
 
