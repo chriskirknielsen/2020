@@ -66,54 +66,54 @@ I also appreciate a nice book & playlist combo during my hour-long commute in **
 ## Overly-Formal Résumé
 
 <details class="u-flow">
-<summary class="fluid-type">Click here to view a bullet-list representation of me, if you're into that sort of thing.</summary>
+  <summary class="fluid-type">Click here to view a bullet-list representation of me, if you're into that sort of thing.</summary>
 
-<div>
+  <div>
+  {% markdown %}
+  ### Skills
 
-### Skills
+  - **Development:** HTML5, CSS (Sass), JavaScript, PHP (OOP, WordPress), MySQL
+  - **Tools:** Git, Gulp, JAMstack (static sites with Hugo or Eleventy, on Netlify)
+  - **Design:** Photoshop, Illustrator, InDesign, Sketch
+  - **Motion Design:** After Effects, Premiere Pro, Cinema 4D
 
-- **Development:** HTML5, CSS (Sass), JavaScript, PHP (OOP, WordPress), MySQL
-- **Tools:** Git, Gulp, JAMstack (static sites with Hugo or Eleventy, on Netlify)
-- **Design:** Photoshop, Illustrator, InDesign, Sketch
-- **Motion Design:** After Effects, Premiere Pro, Cinema 4D
+  ### Experience
 
-### Experience
+  - **2020:** senior front-end developer at MOJO PSG
+  - **2018–2019:** front-end developer at MOJO PSG
+  - **2015–2018:** freelance activity in digital marketing
 
-- **2020:** senior front-end developer at MOJO PSG
-- **2018–2019:** front-end developer at MOJO PSG
-- **2015–2018:** freelance activity in digital marketing
+  ### Education
 
-### Education
+  - **2015:** Digital Transformation Certificate from HEC Paris
+  - **2014–2015:** motion design studies at e-artsup Paris
+  - **2011–2014:** graphic design studies at e-artsup Lyon
 
-- **2015:** Digital Transformation Certificate from HEC Paris
-- **2014–2015:** motion design studies at e-artsup Paris
-- **2011–2014:** graphic design studies at e-artsup Lyon
+  ### Languages
 
-### Languages
+  - **English:** fluent
+  - **French:** fluent
+  - **Danish:** fluent
+  - **Italian:** intermediate
+  - *Also reads Cyrillic, Hiragana and Katakana*
 
-- **English:** fluent
-- **French:** fluent
-- **Danish:** fluent
-- **Italian:** intermediate
-- *Also reads Cyrillic, Hiragana and Katakana*
+  ### Interests
 
-### Interests
+  - **Daily intake:** tea or coffee, music, books, video games, movies, and T.V. shows
+  - **Geekometric:** personal blog reviewing movies, music, and games (since 2013)
+  - **Chronoise:** creating electronica music (since 2010)
 
-- **Daily intake:** tea or coffee, music, books, video games, movies, and T.V. shows
-- **Geekometric:** personal blog reviewing movies, music, and games (since 2013)
-- **Chronoise:** creating electronica music (since 2010)
+  ### Legal Documents
 
-### Legal Documents
+  - **Work:** United States "Green Card" holder
 
-- **Work:** United States "Green Card" holder
+  ### On the Web
 
-### On the Web
-
-- [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
-- [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
-- [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
-- [Geekometric](https://geekometric.com)
-- [Chronoise](https://chronoise.com)
-
-</div>
+  - [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
+  - [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
+  - [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
+  - [Geekometric](https://geekometric.com)
+  - [Chronoise](https://chronoise.com)
+  {% endmarkdown %}
+  </div>
 </details>
