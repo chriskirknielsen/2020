@@ -17,16 +17,25 @@
         &-fill {
             fill: var(--c-secondary-med);
             transition: opacity #{ $logo-transition-time } #{ $easing-smooth };
+            
+            html[data-scheme="dawn"] & {
+                transition-property: opacity, fill;
+            }
 
             #{ $p }-link:hover &,
             #{ $p }-link:focus & {
                 opacity: 0;
+
+                html[data-scheme="dawn"] & {
+                    fill: var(--c-primary-min);
+                    opacity: .25;
+                }
             }
         }
 
         &-stroke {
             fill: none;
-            stroke: var(--c-primary-min);
+            stroke: c('primary', 'min', $theme: 'dusk');
             stroke-width: 0;
 
             transition-property: stroke-width, filter;
