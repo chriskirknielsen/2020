@@ -102,12 +102,18 @@ module.exports = function(eleventyConfig) {
     return filtered;
   });
 
-
   eleventyConfig.addFilter("findVariants", function(collections, collectionName, key, locale) {
     if (!collections || !collectionName || !locale || !key) { return []; }
     if (!Object.keys(collections).includes(collectionName)) { return []; }
     const collection = collections[collectionName];
     const filtered = collection.filter(item => item.data.translationKey == key && item.data.locale != locale);
+    return filtered;
+  });
+
+  eleventyConfig.addFilter("getLocalisedPage", function(collections, key, locale) {
+    if (!collections || !locale || !key) { return false; }
+    const collection = collections['pages_all'];
+    const filtered = collection.find(item => item.data.translationKey == key && item.data.locale == locale);
     return filtered;
   });
 

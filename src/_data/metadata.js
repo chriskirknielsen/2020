@@ -1,6 +1,7 @@
 module.exports = {
   title: "chriskirknielsen",
   url: "https://ckn2020.netlify.app",
+  repo: "https://github.com/chriskirknielsen/2020",
   author: {
     name: "Christopher Kirk-Nielsen",
     email: "chriskirknielsen@gmail.com",

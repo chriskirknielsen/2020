@@ -139,7 +139,7 @@ hr {
     }
     
     &::after {
-        background: linear-gradient(90deg, transparent, var(--c-secondary-min), transparent) no-repeat 50% 50% / 80% 1px;
+        background: linear-gradient(90deg, transparent, white, transparent) no-repeat 50% 50% / 80% 1px;
         // opacity: .75;
     }
 }

@@ -88,6 +88,7 @@
 .u-width--4em { width: 4em; }
 // .u-width--50 { width: 50%; }
 .u-width--100 { width: 100%; }
+// .u-height--1em { height: 1em; }
 // .u-height--100 { height: 100%; }
 
 
@@ -163,9 +164,6 @@
 //     margin-left: 0;
 //     margin-right: 0;
 // }
-// .u-marginInlineStart--auto {
-//     margin-left: auto;
-// }
 // .u-marginInlineStart {
 //     margin-left: #{ $spacing };
 // }
@@ -190,12 +188,12 @@
 // .u-marginInlineEnd--none {
 //     margin-right: 0;
 // }
-// .u-marginInlineEnd--half {
-//     margin-right: #{ $spacing / 2 };
-// }
-// .u-marginInlineEnd--auto {
-//     margin-right: auto;
-// }
+.u-marginInlineEnd--half {
+    margin-right: #{ $spacing / 2 };
+}
+.u-marginInlineEnd--auto {
+    margin-right: auto;
+}
 // .u-marginInline--auto {
 //     margin-left: auto;
 //     margin-right: auto;
