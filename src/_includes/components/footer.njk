@@ -9,15 +9,18 @@
 				<span class="u-fontBold">{{ metadata.author.name }}</span>
 
 				&copy; {{ copyrightYear }}
-				{# {{ footer[locale].allRights }} #}
+				{# {{ localisedContent.allRights }} #}
 			</p>
 			
-			<p>{{ footer[locale].buildInfo | safe }}.</p>
+			<p>
+				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgementsPage', locale) -%}
+				<a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a>
+			</p>
 		</div>
 
 		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
 			<nav class="u-displayInlineFlex u-flex--centerBlock u-marginBlockStart u-marginInlineEnd">
-				<h2 class="u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset">{{ footer[locale].langLabel }}{{ punctSp }}:</h2>
+				<h2 class="u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
 				&nbsp;
 				<ul class="u-displayInlineFlex">
 				{% for langCode, langData in metadata.languages %}
@@ -30,12 +33,12 @@
 			</nav>
 
 			<nav class="u-marginBlockStart u-marginInline--negative-half" aria-labelledby="footer-external-links-title">
-				<h2 class="visually-hidden" id="footer-external-links-title">{{ footer[locale].externalLinks }}</h2>
+				<h2 class="visually-hidden" id="footer-external-links-title">{{ localisedContent.externalLinks }}</h2>
 
 				<ul class="footer__social u-displayFlex">
 					<li class="footer__social-item u-displayFlex">
 						{%- set svg_rss_classes = "header__svg header__rss" -%}
-						<a href="{{ localeRssUrl }}" aria-label="{{ footer[locale].rssHint }}" class="footer__social-link u-displayInlineBlock u-padding--half {{ utilities.glowBoxLink }}">
+						<a href="{{ localeRssUrl }}" aria-label="{{ localisedContent.rssHint }}" class="footer__social-link u-displayInlineBlock u-padding--half {{ utilities.glowBoxLink }}">
 							{% include "assets/img/rss.svg" %}
 						</a>
 					</li>
