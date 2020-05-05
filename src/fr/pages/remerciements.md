@@ -26,6 +26,6 @@ Beaucoup d'icônes qui ne sont pas des marques sur ce site sont fournies par l'e
 
 Merci à mon bon ami Youcef pour ses retours constructifs à chaque fois que je l'embête pour savoir si un pixel avait l'air louche.
 
-Et merci à ma femme Ilona pour sa patience à chaque fois que je disais "Deux secondes, je corrige juste un truc sute mon site !", même si ça finissait par me prendre une demi-heure.
+Et merci à ma femme Ilona pour sa patience à chaque fois que je disais "Deux secondes, je corrige juste un truc sur mon site !", même si ça finissait par me prendre une demi-heure.
 
 Je vous remercie aussi d'être passés ici, ça me fait très plaisir !
