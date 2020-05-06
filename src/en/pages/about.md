@@ -61,7 +61,7 @@ I run **a blog where I review** movies, music, shows and video games (in French!
 
 Like many other humans,listening to music is a big part of my life, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
 
-I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continent! As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
+I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continents! As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
 ## Overly-Formal Résumé
 
