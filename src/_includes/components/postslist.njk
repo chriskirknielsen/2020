@@ -6,20 +6,20 @@
 			<div class="postlist__content u-flex--grow-3">
 				<h2 class="h3">
 					<a href="{{ post.url | url }}">
-						{% if post.data.title %}
-							{{ post.data.title }}
-						{% else %}
+						{%- if post.data.title -%}
+							{{- post.data.title -}}
+						{%- else -%}
 							Untitled Post
-						{% endif %}
+						{%- endif -%}
 					</a>
 				</h2>
 
 				<p class="u-marginBlockStart--half">
-					{% if post.data.summary %}
-						{{ post.data.summary }}
-					{% else %}
-						{{ post.excerpt }}
-					{% endif %}
+					{%- if post.data.summary -%}
+						{{- post.data.summary -}}
+					{%- else -%}
+						{{- post.excerpt -}}
+					{%- endif -%}
 				</p>
 			</div>
 		</article>
