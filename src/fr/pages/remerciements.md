@@ -12,7 +12,7 @@ Ce site est bâti avec [Eleventy](https://www.11ty.dev/), un superbe générateu
 
 L'hébergement est fourni par [Netlify](https://netlify.com/), gratuitement, puisque je ne génère que peu de trafic… Pour autant, ça reste une bonne idée de les soutenirs !
 
-Bien que j'écite la plupart de ce contenu sur VS Code, j'ai un accès avec [Netlify CMS](https://www.netlifycms.org/) pour les modifications non-stylistiques (puisque j'exécute Gulp pour compiler mes fichiers Sass avant de faire tourner 11ty).
+Bien que j'écite la plupart de ce contenu sur VS Code (avec le fabuleux [thème SynthWave '84](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode)), j'ai un accès avec [Netlify CMS](https://www.netlifycms.org/) pour les modifications non-stylistiques (puisque j'exécute Gulp pour compiler mes fichiers Sass avant de faire tourner 11ty).
 
 ## Esthétique
 
