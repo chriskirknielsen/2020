@@ -16,7 +16,7 @@ While I edit most of this on VS Code (with the shiny [SynthWave '84 theme](https
 
 ## Aesthetics
 
-Thanks for all the designers who create '80s-infused visuals that fueled my inspiration.
+Thanks for all the designers who create '80s-infused visuals that fuelled my inspiration.
 
 The font used for headings is the beautiful [Marvin Visions Bold](https://www.readvisions.com/marvin) (free for personal use), that perfectly fit this site's aesthetic.
 
