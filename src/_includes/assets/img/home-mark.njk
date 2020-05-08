@@ -27,7 +27,8 @@
 {% set creadev_fill = "var(--c-primary-min)" %}
 
 {# Define the name's wireframe #}
-{% set wire_color = "cyan" %}
+{% set wire_color_lum_start = 100 %}
+{% set wire_color_lum_end = 50 %}
 {% set wire_count = 8 %}
 
 {# Define the name's inner shadow color #}
@@ -330,7 +331,8 @@
     <!-- Wires -->
     <g class="svg-mark__wires" style="--wire-count: {{ wire_count }};">
       {% for w in range(0, wire_count) -%}
-        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="{{ wire_color }}" style="--w: {{ w }};" />
+        {% set wire_lum = wire_color_lum_end + (wire_color_lum_start - wire_color_lum_end) * (w/wire_count) %}
+        <use xlink:href="#svg-mark-chris-shape" class="svg-mark__wire" fill="none" stroke="hsla(180, 100%, {{ wire_lum }}%, .8)" stroke-width="2" style="--w: {{ w }};" />
       {%- endfor %}
     </g>
     
