@@ -224,13 +224,8 @@
       <!-- Blur the result slightly to avoid jagged edges -->
       <feGaussianBlur in="displaceMap" stdDeviation="1.5" result="displaceBlur" />
 
-      <feConvolveMatrix preserveAlpha="false" order="3" kernelUnitLength="1"
-        kernelMatrix=" 
-        0.5  -0.5    0.5
-        -0.5  -0.1 -0.5
-        0.5  -0.5    0.5
-        "
-      />
+      <!-- Sharpen the blurred result for a smooth line -->
+      <feColorMatrix in="displaceBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 8 -6" result="displaceSharp" />
     </filter>
 
     <!-- GRADIENT: Outline -->
