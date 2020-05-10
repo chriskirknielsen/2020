@@ -159,6 +159,10 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 		animation-delay: #{ $creadev-anim-delay };
 		animation-fill-mode: both;
 		animation-timing-function: cubic-bezier(0, 0, 0, 1);
+
+		& > tspan {
+			letter-spacing: 0.55em; // Tighten kerning for A in "CREATI…"
+		}
 	}
 
 	&__glare-group {
