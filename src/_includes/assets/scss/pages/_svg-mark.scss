@@ -53,13 +53,6 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 		animation-play-state: paused !important;
 	}
 
-	// Safari specific hack
-	@media not all and (min-resolution:.001dpcm){
-		@supports (-webkit-appearance:none) and (stroke-color:transparent) {
-			#gradientDuskFinal > rect { filter: none !important; }
-		}
-	}
-
 	&__greeting-text {
 		fill: c('primary', 'max', $theme: 'dusk');
 		text-shadow:
