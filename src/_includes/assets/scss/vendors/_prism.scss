@@ -65,6 +65,7 @@ pre[class*="language-"] {
 
 	&.language-html::before { content: 'HTML'; }
 	&.language-css::before { content: 'CSS'; }
+	&.language-scss::before { content: 'SCSS'; }
 	&.language-js::before { content: 'JS'; }
 }
 

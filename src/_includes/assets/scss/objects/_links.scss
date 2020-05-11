@@ -1,7 +1,7 @@
 a:not([class]),
 .link {
     text-decoration-color: var(--color-grey);
-    text-decoration-thickness: .1em;
+    text-decoration-thickness: .075em;
     text-underline-offset: .2em;
 
     &:link,
@@ -16,7 +16,7 @@ a:not([class]),
     &:hover,
     &:focus,
     &:active {
-        text-decoration-thickness: .2em;
+        text-decoration-thickness: .15em;
         text-decoration-color: currentColor;
     }
 }
