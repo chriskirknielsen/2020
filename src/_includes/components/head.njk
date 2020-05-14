@@ -10,30 +10,14 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ localePath | url | absoluteUrl(metadata.url) }}">
 	<meta property="og:image" content="{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}">
+	
+	<link rel="preload" href="{{ globalStyles }}" as="style">
 	{%- set css -%}
 	{%- include "assets/css/inline.css" -%}
 	{%- endset %}
 	<style>{{ css | cssmin | safe }}</style>
 	{% set globalStyles = '/assets/css/global.css' | url %}
-	<link rel="preload" href="{{ globalStyles }}" as="style">
-	<link rel="stylesheet" href="{{ globalStyles }}" media="print" id="global-styles">
-	<script>
-		{%- set stylesInitLoader -%}
-			// Add a CSS hook to see if JS is enabled
-			document.documentElement.classList.add('js-on');
-
-			// Using this JS block as the code output on Netlify seems to mangle the `onload` attribute on the `<link>` element 🤷‍♂️
-			var gStyles = document.getElementById('global-styles');
-			gStyles.onload = function () {
-				gStyles.media = 'all';
-				document.documentElement.classList.add('global-styles-loaded');
-			}
-		{%- endset -%}
-		{{ stylesInitLoader | jsmin | safe }}
-	</script>
-	<noscript>
-		<link rel="stylesheet" href="{{ globalStyles }}" media="all">
-	</noscript>
+	<link rel="stylesheet" href="{{ globalStyles }}" media="all" id="global-styles">
 	
 	{# <link rel="preload" href="/assets/fonts/IBMPlexSansVar-Roman.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/assets/fonts/IBMPlexSansVar-Italic.woff2" as="font" type="font/woff2" crossorigin> #}

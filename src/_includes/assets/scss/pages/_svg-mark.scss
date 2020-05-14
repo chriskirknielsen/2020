@@ -48,11 +48,6 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	$glare-anim-time: 1s;
 	$glare-anim-delay: $creadev-anim-delay + $kn-anim-time + ($shine-anim-time - $glare-anim-time);
 
-	// Only run animations once the global styles have loaded, if this is JS-enabled
-	html.js-on:not(.global-styles-loaded) & * {
-		animation-play-state: paused !important;
-	}
-
 	&__greeting-text {
 		fill: c('primary', 'max', $theme: 'dusk');
 		text-shadow:
