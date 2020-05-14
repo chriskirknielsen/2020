@@ -21,10 +21,6 @@
     $sun-ref-bottom: #3c0328;
     $sun-glow: $sun-top;
     // Hardcode all color values since we don't want this to be affected by color schemes
-
-    html.js-on:not(.global-styles-loaded) & * {
-		opacity: 0;
-	}
     
     html[data-scheme="dawn"] & {
         --homescreen-sky-end: #ecb43a;
