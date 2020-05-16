@@ -29,6 +29,7 @@ h6,
     @if (map-get(map-get($fonts, 'heading'), 'main') == 'Marvin Visions Big') {
         // Keep the type tight, but not too tight
         letter-spacing: #{ $heading-font-letter-spacing };
+        font-feature-settings: "kern";
     }
 }
 
@@ -88,9 +89,19 @@ p {
 
     overflow-wrap: break-word;
     word-wrap: break-word;
+    
+    // cleaning up the ragged lines and breaks
     -webkit-hyphens: auto;
-    -ms-hyphens: auto;
+    -moz-hyphens: auto;
     hyphens: auto;
+    
+    // sets a minimum number of characters before and after the break
+    -webkit-hyphenate-before: 2;
+    -webkit-hyphenate-after: 3;
+    hyphenate-lines: 3;
+
+    // enabling fancy ligatures when available
+    font-feature-settings: "liga", "dlig";
 }
 
 blockquote {
