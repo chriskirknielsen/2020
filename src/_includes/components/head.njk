@@ -13,7 +13,6 @@
 	
 	{% set globalStyles = '/assets/css/global.css' | url %}
 	<link rel="preload" href="{{ globalStyles }}" as="style">
-	<link rel="preload" href="{{ '/assets/fonts/MarvinVisionsBig-Bold.woff2' | url | absoluteUrl(metadata.url) }}" as="font" type="font/woff2">
 	
 	{%- set css -%}
 	{%- include "assets/css/inline.css" -%}
