@@ -175,20 +175,19 @@ Now we set up our `.navbar` styles, and the sibling's offset:
   position: fixed;
   position: sticky;
   left: 0;
-  top: var(--wp-admin-bar, 0);
+  top: var(--wp-admin-bar, 0px);
   
   height: var(--navbar-height);
 }
 
 .navbar + * {
-  margin-top: calc(var(--navbar-height) + var(--wp-admin-bar));
+  margin-top: calc(var(--navbar-height));
 }
 ```
 
-All that's left is to assign the admin bar height.
+All that's left is to assign the admin bar height based on the viewport size.
 
 ```css
-/* Fallback styles */
 body.admin-bar {
   --wp-admin-bar: 46px;
 }
@@ -205,7 +204,7 @@ body.admin-bar {
   }
 }
 
-/* Sticky support styles*/
+/* Sticky support styles */
 @supports (position: sticky) {
   body.admin-bar {
     --wp-admin-bar: 0px;
