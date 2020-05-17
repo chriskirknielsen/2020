@@ -28,7 +28,7 @@ tags:
 
   As that took off, I learned how to make **dynamic websites**, and built a community — back when discussion forums were still a thing. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated. I was one of those antiquated "webmasters"…
 
-  This lead me to study for **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
+  This led me to study **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
 
   I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
   {% endmarkdown %}
@@ -44,7 +44,11 @@ tags:
 
 ## Projects
 
-When I write code, I use VS Code, but I sometimes miss features from other editors, like a CSS easing preview, so I took it upon myself to make a plugin for that. The result is [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), which will allow you to preview a CSS animation when hovering the timing function/easing keyword. I am not a fan of TypeScript, and being my first venture into making an extension for VS Code, it was quite a challenge, but it is satisfying to see it work.
+### VisuBezier
+
+When I write code, I use VS Code, but I sometimes miss features from other editors, like a CSS easing preview, so I took it upon myself to make a plugin for that. The result is [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), which will allow you to preview a CSS animation when hovering the timing function/easing keyword. I am not really into TypeScript (though I understand how it can be useful), and being my first venture into making an extension for VS Code, it was quite a challenge, but it certainly is satisfying to see it in action!
+
+### Chronoise
 
 <div class="u-displayFlex u-flex--center u-floatRight u-marginBlock--double u-marginInlineStart--double">
   {% set keyboard -%}
@@ -55,11 +59,13 @@ When I write code, I use VS Code, but I sometimes miss features from other edito
 
 If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
 
+### Geekometric
+
 I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
 ## Hobbies
 
-Like many other humans,listening to music is a big part of my life, mainly rock, metal, and synthwave (I'm infatuated with '80s aesthetics). Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
+Like many other humans, listening to music is a big part of my life, mainly rock, metal, and synthwave — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
 
 I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continents! As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
