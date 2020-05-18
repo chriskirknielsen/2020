@@ -32,7 +32,7 @@
 
     @if ($clamp == true) {
         $calc-val: fluid-unit($breakpoint-min, $breakpoint-max, $min, $max);
-        $val: clamp(#{ $min }, #{ $calc-val }, #{ $max });
+        $val: clamp(#{ if($min>$max, $max, $min) }, #{ $calc-val }, #{ if($min>$max, $min, $max) });
         #{$prop}: #{ $min }; // Fallback for browsers that don't support clamp
         #{$prop}: template-value($val, $template, $tag);
     }
