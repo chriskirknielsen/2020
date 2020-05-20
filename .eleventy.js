@@ -167,20 +167,20 @@ module.exports = function(eleventyConfig) {
 
   /* DATES */
 
-  eleventyConfig.addNunjucksFilter("date", function(date, format, locale) {
+  eleventyConfig.addFilter("date", function(date, format, locale) {
     locale = locale ? locale : "en";
     moment.locale(locale);
-    return moment(date).format(format);
+    return moment(date).utc().format(format); // Adjust for UTC
   });
 
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
+    return DateTime.fromJSDate(dateObj).toUTC().toFormat("dd LLL yyyy");
   });
 
   // Date formatting (machine readable)
   eleventyConfig.addFilter("machineDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+    return DateTime.fromJSDate(dateObj).toUTC().toFormat("yyyy-MM-dd");
   });
 
   /* MINIFICATION */
