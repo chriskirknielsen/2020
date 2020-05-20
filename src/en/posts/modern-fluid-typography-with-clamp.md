@@ -24,7 +24,7 @@ You'd probably be using a pre-processor to define these in the past, like so (st
 ```scss
 @mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
     $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
-    $calc-value: #{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor };
+    $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
 
     font-size: $min-value;
 
@@ -45,7 +45,7 @@ What would you say about getting the best of both worlds? We can reuse our code 
 ```scss
 @mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
     $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
-    $calc-value: #{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor };
+    $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
 
     font-size: $min-value; // Fallback for older browsers
     font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
