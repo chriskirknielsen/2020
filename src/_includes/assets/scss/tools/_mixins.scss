@@ -25,23 +25,31 @@
     }
 }
 
-@mixin fluid($min, $max, $prop: 'font-size', $template: false, $tag: '{{value}}') {
+@mixin fluid($min, $max, $prop: 'font-size', $template: false, $tag: '{{value}}', $clamp: false) {
     $breakpoint-min: $small-breakpoint-width-rem * 1rem;
     $breakpoint-max: $large-breakpoint-width-rem * 1rem;
     $prop: unquote($prop);
 
-    #{$prop}: template-value($min, $template, $tag);
-
-    @media screen and (min-width: #{$breakpoint-min}) {
-        $val: fluid-unit($breakpoint-min, $breakpoint-max, $min, $max);
+    @if ($clamp == true) {
+        $calc-val: fluid-unit($breakpoint-min, $breakpoint-max, $min, $max);
+        $val: clamp(#{ if($min>$max, $max, $min) }, #{ $calc-val }, #{ if($min>$max, $min, $max) });
+        #{$prop}: #{ $min }; // Fallback for browsers that don't support clamp
         #{$prop}: template-value($val, $template, $tag);
     }
+    @else {
+        #{$prop}: template-value($min, $template, $tag);
 
-    @media screen and (min-width: #{$breakpoint-max}) {
-        #{$prop}: template-value($max, $template, $tag);
+        @media screen and (min-width: #{$breakpoint-min}) {
+            $val: fluid-unit($breakpoint-min, $breakpoint-max, $min, $max);
+            #{$prop}: template-value($val, $template, $tag);
+        }
+
+        @media screen and (min-width: #{$breakpoint-max}) {
+            #{$prop}: template-value($max, $template, $tag);
+        }
     }
 }
 
 @mixin fluid-type($min: 1rem, $max: 1.5rem) {
-    @include fluid($min, $max);
+    @include fluid($min, $max, $clamp: true);
 }
