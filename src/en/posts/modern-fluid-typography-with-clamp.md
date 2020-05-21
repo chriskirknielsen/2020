@@ -65,7 +65,7 @@ p {
 
     // … outputs the following:
     font-size: 1rem;
-    font-size: clamp(1rem, calc(0.5454545455rem + 2.2727272727vw), 2rem);
+    font-size: clamp(1rem, 0.5454545455rem + 2.2727272727vw, 2rem);
 }
 ```
 
