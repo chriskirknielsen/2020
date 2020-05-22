@@ -1,0 +1,26 @@
+// CDIV is 404 in Roman numerals, if you were wondering.
+.cdiv-clock {
+    &__numerals,
+    &__hands {
+        fill: var(--c-primary-min);
+    }
+
+    &__rings {
+        fill: none;
+        stroke: var(--c-primary-min);
+        stroke-width: 3;
+    }
+
+    &__hands {
+        stroke: var(--currentBackground);
+        stroke-width: 2;
+        
+        & > * {
+            animation: cdivHands 4.04s #{ $easing-out };
+        }
+    }
+}
+
+@keyframes cdivHands {
+    from { transform: rotate(calc((-180deg * var(--cdiv-min) / 60) - var(--cdiv-min) / 60 * 360deg)); }
+}
