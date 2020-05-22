@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+section: 404
+mainClasses: u-container u-container--narrow u-flow--double u-padding--double
+---
+
+{% set clock_404 -%}
+{%- include "assets/img/clock-404.njk" -%}
+{%- endset -%}
+{{ clock_404 | htmlmin | safe }}
+
+{{ layoutContent | safe }}
+
+<p class="u-textCentre">
+    <a href="{{ localePath | url }}" class="u-displayInlineBlock u-padding--half {{ utilities.glowBoxLink }}">{{ localisedContent.logoLink }}</a>
+</p>
