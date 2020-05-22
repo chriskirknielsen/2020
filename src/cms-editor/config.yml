@@ -238,8 +238,8 @@ collections:
             default: "Toggle Colour Scheme"
 
       - label: "French Localisation 🇫🇷"
-        name: "locale_en"
-        file: "src/en/en.json"
+        name: "locale_fr"
+        file: "src/en/fr.json"
         delete: false
         editor: 
           preview: false
