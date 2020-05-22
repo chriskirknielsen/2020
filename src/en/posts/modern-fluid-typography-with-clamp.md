@@ -38,7 +38,7 @@ You'd probably be using a pre-processor to define these in the past, like so (st
 }
 ```
 
-What is nice about this technique is that it results in a linear range that scales with the target size, instead of using the viewport size, which might be excessive or too small to work across the board. You might have your viewport breakpoints defined as global variables — that's fine, too!
+What is nice about this technique is that it results in a linear range that scales with the target size, instead of using the viewport size, which might be excessive or too small to work across the board. I suppose you could simplify the mixin call by having your viewport breakpoints defined as global variables.
 
 What would you say about getting the best of both worlds? We can reuse our code from before, but strip away a few bits and pieces, to get a condensed Sass mixin, *and* a condensed CSS output:
 
