@@ -239,7 +239,7 @@ collections:
 
       - label: "French Localisation 🇫🇷"
         name: "locale_fr"
-        file: "src/en/fr.json"
+        file: "src/fr/fr.json"
         delete: false
         editor: 
           preview: false
