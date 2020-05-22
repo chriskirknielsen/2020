@@ -7,7 +7,7 @@ body {
 
 // Set quote style
 :lang(en) > q { quotes: '\201C' '\201D' '\2018' '\2019'; }
-:lang(fr) > q { quotes: '« ' ' »'; }
+:lang(fr) > q { quotes: '«\00A0' '\00A0»'; }
 
 h1,
 h2,
@@ -119,6 +119,9 @@ blockquote {
     > :last-child::after {
         content: close-quote;
     }
+
+    :lang(fr) & > :first-child::before { padding-right: .25em; }
+    :lang(fr) & > :last-child::after { padding-left: .25em; }
 
     > :first-child::before,
     > :last-child::after {
