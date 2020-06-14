@@ -3,6 +3,7 @@ module.exports = { // Define a list of utility classes that are commonly used to
     bfc : "u-displayFlowRoot",
 
     // Global link with box hover effect
+    boxLink: "u-fontBold u-textDecoration--none u-border--double u-border--secondary-med u-bg--grey-max h:u-c--grey-max h:u-bg--secondary-med",
     glowBoxLink: "u-fontBold h:u-c--grey-min h:u-bg--grey-max u-border u-border--transparent h:u-border--secondary-med h:u-glowBox--secondary-med h:u-textShadow--currentBg h:u-textDecoration--none",
 
     // Card component
