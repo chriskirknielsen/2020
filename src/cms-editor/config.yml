@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: chriskirknielsen/2020
-  branch: dev # Branch to update (optional; defaults to master)
+  branch: dev
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
