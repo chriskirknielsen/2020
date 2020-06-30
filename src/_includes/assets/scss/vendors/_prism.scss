@@ -43,6 +43,7 @@ pre[class*="language-"] code,
 pre[class*="language-"] code {
 	// white-space: pre;
 	display: block;
+	overflow: auto; // Let users scroll in case of a long string
 
 	padding: #{ $spacing } #{ $spacing * 2 };
 	
@@ -67,6 +68,7 @@ pre[class*="language-"] {
 	&.language-css::before { content: 'CSS'; }
 	&.language-scss::before { content: 'SCSS'; }
 	&.language-js::before { content: 'JS'; }
+	&.language-json::before { content: 'JSON'; }
 }
 
 :not(pre) > code[class*="language-"] {
