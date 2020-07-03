@@ -13,10 +13,7 @@ gulp.task('css', function () {
         './'+root+'/_includes/assets/scss/*.scss',
         '!_*.scss',
     ])
-        .pipe(sass({
-                outputStyle: 'compressed'
-            })
-            .on('error', sass.logError))
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(gulp.dest('./'+root+'/_includes/assets/css'));
 });
 
@@ -24,11 +21,9 @@ gulp.task('js', function () {
     return gulp.src([
         './'+root+'/_includes/assets/js/*.js',
     ])
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
+        .pipe(babel({ presets: ['@babel/env'] }))
         .pipe(uglify())
-        .pipe(rename({suffix: ".min"}))
+        .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest('./'+root+'/_includes/assets/jsmin'));
 });
 
