@@ -16,6 +16,25 @@
     }
 }
 
+@mixin below-medium {
+    @media (max-width: #{ $medium-breakpoint-width - 0.02 }) {
+        @content;
+    }
+}
+
+// Color Scheme
+@mixin light-mode {
+    html[data-scheme="dawn"] & {
+        @content;
+    }
+}
+
+@mixin dark-mode {
+    html[data-scheme="dusk"] & {
+        @content;
+    }
+}
+
 // Function to automate the output based on the presence of a template string
 @function template-value($value, $template: false, $tag: '{{value}}') {
     @if $template != false {

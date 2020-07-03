@@ -80,7 +80,7 @@
 /* Position */
 
 .u-posRelative { position: relative; }
-// .u-posAbsolute { position: absolute; }
+.u-posAbsolute { position: absolute; }
 .u-zIndex--1 { z-index: 1; }
 
 
@@ -106,13 +106,18 @@
 /* Size */
 
 .u-width--point75em { width: .75em; }
-.u-width--1em { width: 1em; }
-.u-width--4em { width: 4em; }
-.u-width--16em { width: 16em; }
 // .u-width--50 { width: 50%; }
 .u-width--100 { width: 100%; }
 .u-maxwidth--100 { max-width: 100%; }
-// .u-height--1em { height: 1em; }
+
+.u-width--1em,
+.u-size--1em { width: 1em; }
+
+.u-width--4em { width: 4em; }
+.u-width--16em { width: 16em; }
+
+.u-height--1em,
+.u-size--1em { height: 1em; }
 // .u-height--100 { height: 100%; }
 
 
@@ -130,7 +135,7 @@
 
 // .u-margin { margin: #{ $spacing }; }
 // .u-margin--double { margin: #{ $spacing * 2 }; }
-// .u-margin--none { margin: 0; }
+.u-margin--none { margin: 0; }
 .u-margin--auto { margin: auto; }
 // .u-marginBlock {
 //     margin-top: #{ $spacing };
@@ -176,6 +181,9 @@
 //     margin-left: #{ $spacing * -1 };
 //     margin-right: #{ $spacing * -1 };
 // }
+.u-marginInlineStart--negative-half {
+    margin-left: #{ $spacing * -.5 };
+}
 .u-marginInline--negative-half {
     margin-left: #{ $spacing * -.5 };
     margin-right: #{ $spacing * -.5 };
@@ -192,9 +200,9 @@
     margin-left: auto;
     margin-right: auto;
 }
-// .u-marginInlineStart {
-//     margin-left: #{ $spacing };
-// }
+.u-marginInlineStart {
+    margin-left: #{ $spacing };
+}
 .u-marginInlineStart--half {
     margin-left: #{ $spacing / 2 };
 }

@@ -81,7 +81,7 @@ J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon
   ### Compétences
 
   - **Développement :** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
-  - **Outils :** Git, Gulp, JAMstack (sites statiques avec Hugo ou Eleventy, sur Netlify)
+  - **Outils :** Git, Gulp, JAMstack (sites statiques avec Eleventy ou Hugo, sur Netlify)
   - **Design :** Photoshop, Illustrator, InDesign, Sketch
   - **Motion Design :** After Effects, Premiere Pro, Cinema 4D
 
@@ -114,6 +114,7 @@ J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon
   ### Documents
 
   - **Travail :** détenteur de "Green Card" américaine
+  - **Nationalité:** double-nationalité franco-danoise
 
   ### Sur la toile
 

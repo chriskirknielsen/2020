@@ -18,7 +18,7 @@
             fill: var(--c-secondary-med);
             transition: opacity #{ $logo-transition-time } #{ $easing-smooth };
             
-            html[data-scheme="dawn"] & {
+            @include light-mode {
                 transition-property: opacity, fill;
             }
 
@@ -26,9 +26,9 @@
             #{ $p }-link:focus & {
                 opacity: 0;
 
-                html[data-scheme="dawn"] & {
+                @include light-mode {
                     fill: var(--c-primary-min);
-                    opacity: .25;
+                    opacity: .5;
                 }
             }
         }
@@ -52,6 +52,22 @@
                 &--c { animation-delay: .1s; }
                 &--n { animation-delay: .3s; }
             }
+        }
+    }
+
+    @include below-medium {
+        &__nav[class] {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: z('nav', 1);
+
+            margin: 0;
+            padding: #{ $small-viewport-nav-padding };
+
+            background-color: var(--c-grey-max);
+            outline: .25em solid var(--c-primary-med);
         }
     }
 }

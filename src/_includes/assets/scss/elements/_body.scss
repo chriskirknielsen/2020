@@ -57,4 +57,9 @@ body {
     --currentBackground: var(--color-bg);
     color: var(--currentColor);
     background-color: var(--currentBackground);
+
+    // On smaller viewports, the menu is at the bottom: add padding to heep it
+    @include below-medium {
+        padding-bottom: #{ $small-viewport-nav-height };
+    }
 }

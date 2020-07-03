@@ -79,7 +79,7 @@ I also appreciate a nice book & playlist combo during my hour-long commute in **
   ### Skills
 
   - **Development:** HTML5, CSS (Sass), JavaScript, PHP (OOP, WordPress), MySQL
-  - **Tools:** Git, Gulp, JAMstack (static sites with Hugo or Eleventy, on Netlify)
+  - **Tools:** Git, Gulp, JAMstack (static sites with Eleventy or Hugo, on Netlify)
   - **Design:** Photoshop, Illustrator, InDesign, Sketch
   - **Motion Design:** After Effects, Premiere Pro, Cinema 4D
 
@@ -112,6 +112,7 @@ I also appreciate a nice book & playlist combo during my hour-long commute in **
   ### Legal Documents
 
   - **Work:** United States "Green Card" holder
+  - **Citizenship:** dual French/Danish citizenship
 
   ### On the Web
 

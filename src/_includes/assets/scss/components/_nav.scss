@@ -5,6 +5,9 @@
     &__item {
     }
 
-    &__link {
+    @include below-medium {
+        &__link[class] {
+            height: #{ $small-viewport-nav-item-height };
+        }
     }
 }

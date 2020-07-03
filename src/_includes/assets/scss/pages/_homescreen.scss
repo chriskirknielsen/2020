@@ -22,9 +22,9 @@
     $sun-glow: $sun-top;
     // Hardcode all color values since we don't want this to be affected by color schemes
     
-    html[data-scheme="dawn"] & {
+    @include light-mode {
         --homescreen-sky-end: #ecb43a;
-        --homescreen-floor-start: #261172;
+        --homescreen-floor-start: #c54bb5;
     }
 
     min-height: #{ $sun-radius * 3 };
