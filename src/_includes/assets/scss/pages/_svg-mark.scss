@@ -110,6 +110,20 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	}
 
 	&__chris-depth {
+		&-group {
+			--home-svg-mark-depth-hue: calc(var(--home-svg-mark-depth-hue-group) + var(--home-svg-mark-depth-hue-mod, 0));
+
+			@include light-mode {
+				--home-svg-mark-depth-hue-mod: 30;
+				--home-svg-mark-depth-sat: 2;
+				--home-svg-mark-depth-lux-factor: 1;
+				--home-svg-mark-depth-lux: 5%;
+			}
+		}
+
+		fill: currentColor;
+		stroke: currentColor;
+
 		opacity: 1;
 		
 		// Backfill from 100% scale to the faked depth
@@ -133,8 +147,10 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 
 	&__creativedeveloper-text {
 		stroke: c('primary', 'max', $theme: 'dusk');
+		// stroke: var(--c-primary-max);
 		stroke-width: .125em;
 		fill: c('primary', 'min', $theme: 'dusk');
+		// fill: var(--c-primary-min);
 		paint-order: stroke;
 
 		font-size: 1.185rem;

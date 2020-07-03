@@ -334,7 +334,7 @@
     
     <g class="svg-mark__chris-main">
       <!-- Fake depth layers -->
-      <g stroke-width="2.5">
+      <g stroke-width="2.5" class="svg-mark__chris-depth-group" style="--home-svg-mark-depth-hue-group: {{ depth_hue }};">
       {% for d in range(0, depth_count) -%}
         {% set depth_sat = depth_far_sat + (depth_close_sat - depth_far_sat) * (d/depth_count) %}
         {% set depth_lux = depth_far_lux + (depth_close_lux - depth_far_lux) * (d/depth_count) %}
@@ -342,10 +342,13 @@
         {% set depth_scale_y = (1 - depth_min_scale * depth_factor_y) * (d/depth_count) + depth_min_scale * depth_factor_y %}
         <use
           xlink:href="#svg-mark-chris-shape"
-          fill="hsl({{ depth_hue }}, {{ depth_sat }}%, {{ depth_lux }}%)"
-          stroke="hsl({{ depth_hue }}, {{ depth_sat }}%, {{ depth_lux }}%)"
           class="svg-mark__group svg-mark__chris-depth"
-          style="transform: scale({{ depth_scale_x }}, {{ depth_scale_y }})"
+          style="transform: scale({{ depth_scale_x }}, {{ depth_scale_y }});
+            color: hsl(
+              calc(var(--home-svg-mark-depth-hue, {{ depth_hue }})),
+              calc({{ depth_sat }}% * var(--home-svg-mark-depth-sat, 1)),
+              calc(var(--home-svg-mark-depth-lux, 0%) + {{ depth_lux }}%)
+            );"
         />
       {%- endfor %}
       </g>
