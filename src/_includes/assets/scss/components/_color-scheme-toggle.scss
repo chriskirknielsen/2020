@@ -1,0 +1,93 @@
+// With a little help from: https://piccalil.li/tutorial/solution-002-toggle-switch/
+.color-scheme-toggle {
+	$thumb-size: 1.4rem;
+	$thumb-space: 0.25rem;
+	$icon-space: 0.4rem;
+
+	&__element {
+		opacity: 0;
+	}
+
+	&__decor {
+		width: #{ $thumb-size * 2 + $thumb-space * 2 };
+		height: #{ $thumb-size + $thumb-space * 2 };
+		
+		background: var(--color-text);
+		border-radius: #{ $thumb-size };
+
+		transition: background 250ms #{ $easing-smooth };
+	}
+
+	&__thumb {
+		top: #{ $thumb-space };
+		left: #{ $thumb-space };
+
+		width: #{ $thumb-size };
+		height: #{ $thumb-size };
+
+		color: var(--c-primary-min);
+		border-radius: #{ $thumb-size };
+
+		transform: none;
+
+		transition: transform 250ms #{ $easing-smooth };
+		will-change: transform;
+		z-index: 1;
+
+		&::before {
+			content: '';
+
+			display: none;
+			width: #{ $thumb-size - $thumb-space };
+			height: #{ $thumb-size - $thumb-space };
+			border: 2px solid var(--c-primary-med);
+			border-radius: #{ $thumb-size - $thumb-space };
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		font-size: 0.9em;
+
+		&[data-state='checked'] {
+			left: #{ $icon-space };
+			fill: var(--c-primary-max);
+			opacity: 0;
+			transform: translateY(-1rem);
+		}
+
+		&[data-state='un-checked'] {
+			right: #{ $icon-space };
+			fill: var(--c-primary-max);
+			transition: all 250ms;
+		}
+	}
+
+	:checked + &__decor {
+		// background: var(--c-grey-med);
+	}
+	
+	:checked + &__decor > &__thumb {
+		transform: translateX(#{ $thumb-size });
+		// box-shadow: 0 0 #{ $thumb-space } var(--c-grey-max);
+	}
+	
+	:checked + &__decor > &__icon[data-state='checked'] {
+		opacity: 1;
+		transform: translateY(0);
+		transition: all 250ms;
+	}
+	
+	:checked + &__decor > &__icon[data-state='un-checked'] {
+		opacity: 0;
+		transform: translateY(1rem);
+		transition: none;
+	}
+
+	:focus + &__decor > &__thumb::before {
+		display: block;
+	}
+}

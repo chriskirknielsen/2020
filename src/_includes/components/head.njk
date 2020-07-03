@@ -33,6 +33,7 @@
 
 	{% set js -%}
 	{%- include "assets/js/inline.js" -%}
+	{%- include "assets/js/color-scheme-switcher.js" -%}
 	{%- endset %}
 	<script>{{ js | jsmin | safe }}</script>
 
@@ -51,5 +52,4 @@
 	{% endfor %}
 	{%- endif -%}
 	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
-	{# <script src="{{ '/assets/js/color-scheme-switcher.js' | url }}" deferred></script> #}
 </head>

@@ -42,3 +42,8 @@ $medium-breakpoint-width: $medium-breakpoint-width-rem * 1rem;
 //-- Breakpoint @ small
 $small-breakpoint-width-rem: $container-max-width / 2;
 $small-breakpoint-width: $small-breakpoint-width-rem * 1rem;
+
+// Small viewport
+$small-viewport-nav-padding: $spacing / 2;
+$small-viewport-nav-item-height: 2rem;
+$small-viewport-nav-height: $small-viewport-nav-padding * 2 + $small-viewport-nav-item-height;
