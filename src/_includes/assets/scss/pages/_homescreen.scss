@@ -12,7 +12,8 @@
     $sky-end: unquote('var(--homescreen-sky-end)');
     $floor-start: unquote('var(--homescreen-floor-start)');
     // $floor-start: unquote('var(--c-grey-max)');
-    $floor-color: unquote('var(--c-secondary-med)');
+    // $floor-color: unquote('var(--c-secondary-med)');
+    $floor-color: c(secondary, med, 100, 'dusk');
     $floor-end: unquote('var(--c-primary-max)');
     $sun-top: #ed23af;
     $sun-middle: #ffafa3;
@@ -24,7 +25,7 @@
     
     @include light-mode {
         --homescreen-sky-end: #ecb43a;
-        --homescreen-floor-start: #c54bb5;
+        --homescreen-floor-start: hotpink;
     }
 
     min-height: #{ $sun-radius * 3 };
@@ -130,6 +131,10 @@
 
             filter: drop-shadow(0 0 .5vmin cyan);
             
+            @include light-mode {
+                stroke: c(secondary, max, 100, 'dawn');
+            }
+
             > * {
                 vector-effect: non-scaling-stroke;
             }
