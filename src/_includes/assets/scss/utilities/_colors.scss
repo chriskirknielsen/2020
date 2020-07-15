@@ -32,6 +32,13 @@
 
 /* Background */
 
+.u-bg--accent,
+.h\:u-bg--accent:hover,
+.h\:u-bg--accent:focus {
+    background-color: var(--c-accent);
+    --currentBackground: var(--c-accent);
+}
+
 .u-bg--currentColor {
     background-color: currentColor;
     --currentBackground: currentColor;
@@ -66,6 +73,12 @@
     border-color: var(--c-secondary-med);
 }
 
+.u-border--accent,
+.h\:u-border--accent:hover,
+.h\:u-border--accent:focus {
+    border-color: var(--c-accent);
+}
+
 
 /* Box-shadow */
 
@@ -75,6 +88,14 @@
     box-shadow:
         0 0 1.5em -.5em var(--c-secondary-med),
         inset 0 0 2em -1em var(--c-secondary-med);
+}
+
+.u-glowBox--accent,
+.h\:u-glowBox--accent:hover,
+.h\:u-glowBox--accent:focus {
+    box-shadow:
+        0 0 1.5em -.5em var(--c-accent),
+        inset 0 0 2em -1em var(--c-accent);
 }
 
 
