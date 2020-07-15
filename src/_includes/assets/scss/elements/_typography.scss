@@ -149,7 +149,7 @@ hr {
     }
 
     &::before {
-        background: radial-gradient(closest-side, var(--c-secondary-med), transparent) no-repeat 50% 50% / 100% 100%;
+        background: radial-gradient(closest-side, var(--c-primary-med), transparent) no-repeat 50% 50% / 100% 100%;
     }
     
     &::after {

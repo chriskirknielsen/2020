@@ -3,14 +3,14 @@ module.exports = { // Define a list of utility classes that are commonly used to
     bfc : "u-displayFlowRoot",
 
     // Global link with box hover effect
-    boxLink: "u-fontBold u-textDecoration--none u-border--double u-border--secondary-med u-bg--grey-max h:u-c--grey-max h:u-bg--secondary-med",
-    glowBoxLink: "u-fontBold h:u-c--grey-min h:u-bg--grey-max u-border u-border--transparent h:u-border--secondary-med h:u-glowBox--secondary-med h:u-textShadow--currentBg h:u-textDecoration--none",
+    boxLink: "u-fontBold u-textDecoration--none u-border--double u-border--accent u-bg--grey-max h:u-c--grey-max h:u-bg--accent",
+    glowBoxLink: "u-fontBold h:u-c--grey-min h:u-bg--grey-max u-border u-border--transparent h:u-border--accent h:u-glowBox--accent h:u-textShadow--currentBg h:u-textDecoration--none",
 
     // Card component
     cardFlex: "u-flex--grow-1 u-flex--basis-0",
     cardContainer: "u-margin--flexGap-double u-marginBlockStart--none md:u-displayFlex",
     cardBox: "u-padding u-c--text-color u-bg--grey-max u-border u-border--grey-med",
-    cardBoxLink: "h:u-border--secondary-med h:u-glowBox--secondary-med",
+    cardBoxLink: "h:u-border--accent h:u-glowBox--accent",
     
     // Callout block
     callout: "u-posRelative u-paddingInline u-paddingBlockStart--double u-paddingBlockEnd",
