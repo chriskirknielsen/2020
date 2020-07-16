@@ -14,6 +14,7 @@
 
         Array.from(document.querySelectorAll(schemeToggleSelector)).forEach(s => { // Ensure all toggles are set to the right value
             s.checked = !!schemeOptions.indexOf(scheme); // Will return 0 for the dawn (unchecked), 1 for dusk (checked), cast to boolean
+            s.setAttribute('aria-checked', s.checked.toString());
         });
     }
 
