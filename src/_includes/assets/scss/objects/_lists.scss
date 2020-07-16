@@ -4,11 +4,16 @@ ul {
         padding-left: 0;
         // padding-inline-start: 0;
         list-style: none;
+    }
+}
 
-        > li:before { // Bugfix to prevent webkit from removing list semantics
-            content: "\200B"; // Add a non-breaking space
-            position: absolute; // Make sure it doesn't mess up the DOM flow
-        }
+ // If markup isn't totally messed up, <li> will always be the direct
+ // child of <ol> or <ul> so we can simply target the class attribute
+ // and the element can be omitted.
+[class] > li {
+    &::before { // Bugfix to prevent webkit from removing list semantics
+        content: "\200B"; // Add a non-breaking space
+        position: absolute; // Make sure it doesn't mess up the DOM flow
     }
 }
 

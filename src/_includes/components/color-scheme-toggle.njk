@@ -1,7 +1,7 @@
 <label class="color-scheme-toggle | u-posRelative u-displayFlex u-flex--centerBlock" for="color-scheme-toggle-element">
     <span class="visually-hidden">{{ schemeSwitchLabel }}</span>
 
-    <input type="checkbox" role="switch" class="color-scheme-toggle__element | u-absCover | u-displayBlock u-margin--none" id="color-scheme-toggle-element" data-scheme-switcher />
+    <input type="checkbox" role="switch" aria-checked="true" class="color-scheme-toggle__element | u-absCover | u-displayBlock u-margin--none" id="color-scheme-toggle-element" data-scheme-switcher />
 
     <div class="color-scheme-toggle__decor | u-displayBlock u-posRelative u-overflowHidden | u-marginInlineStart" aria-hidden="true">
         <div class="color-scheme-toggle__thumb | u-posAbsolute | u-displayFlex u-flex--center | u-bg--grey-max"></div>
@@ -13,8 +13,8 @@
 
         <svg class="color-scheme-toggle__icon | u-size--1em" data-state="un-checked" focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             {# <path d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z"></path> #}
-  <path d="M5.4 18.9c.3 1 .7 2 1.3 2.9h18.6c.6-.9 1-1.9 1.3-2.9H5.4zM9.4 24.8c1.8 1.4 4.1 2.2 6.6 2.2s4.8-.8 6.6-2.2H9.4zM16 5C9.9 5 5 9.9 5 16h22c0-6.1-4.9-11-11-11zM2.5 17.5h-1C.7 17.5 0 16.8 0 16s.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z"/>
-  <path d="M5.4 7.5l-.7-.7c-.6-.6-.6-1.5 0-2.1.6-.6 1.5-.6 2.1 0l.7.7c.6.6.6 1.5 0 2.1-.6.6-1.5.6-2.1 0zM14.5 2.5v-1c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5zM24.5 5.4l.7-.7c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-.7.7c-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1zM29.5 14.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5z"/>
+            <path d="M5.4 18.9c.3 1 .7 2 1.3 2.9h18.6c.6-.9 1-1.9 1.3-2.9H5.4zM9.4 24.8c1.8 1.4 4.1 2.2 6.6 2.2s4.8-.8 6.6-2.2H9.4zM16 5C9.9 5 5 9.9 5 16h22c0-6.1-4.9-11-11-11zM2.5 17.5h-1C.7 17.5 0 16.8 0 16s.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z"/>
+            <path d="M5.4 7.5l-.7-.7c-.6-.6-.6-1.5 0-2.1.6-.6 1.5-.6 2.1 0l.7.7c.6.6.6 1.5 0 2.1-.6.6-1.5.6-2.1 0zM14.5 2.5v-1c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5zM24.5 5.4l.7-.7c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-.7.7c-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1zM29.5 14.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5z"/>
         </svg>
     </div>
 </label>
