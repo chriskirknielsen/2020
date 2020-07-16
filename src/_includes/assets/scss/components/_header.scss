@@ -14,6 +14,19 @@
 
         font-size: $header-brand-height;
 
+        transition-property: filter;
+
+        &,
+        &-stroke {
+            transition-duration: #{ $logo-transition-time };
+            transition-timing-function: #{ $easing-smooth };
+        }
+
+        &-link:hover &,
+        &-link:focus & {
+            filter: drop-shadow(0 0 #{ $logo-glow-spread } var(--c-primary-med));
+        }
+
         &-fill {
             fill: var(--c-secondary-med);
             transition: opacity #{ $logo-transition-time } #{ $easing-smooth };
@@ -38,14 +51,11 @@
             stroke: c('primary', 'min', $theme: 'dusk');
             stroke-width: 0;
 
-            transition-property: stroke-width, filter;
-            transition-duration: #{ $logo-transition-time };
-            transition-timing-function: #{ $easing-smooth };
+            transition-property: stroke-width;
 
             #{ $p }-link:hover &,
             #{ $p }-link:focus & {
                 stroke-width: .09375em; // Font size is 2rem = 32px, this results in a 1.5px stroke
-                filter: drop-shadow(0 0 #{ $logo-glow-spread } var(--c-primary-med));
 
                 animation: cknLogoNeon .3s ease-in-out both;
 

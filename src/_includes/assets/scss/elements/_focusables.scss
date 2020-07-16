@@ -20,15 +20,42 @@ summary {
 }
 
 details {
-    > summary {
+    & > summary {
         cursor: pointer;
+
+        &::-webkit-details-marker {
+            content: '';
+            display: none;
+        }
     
+        &::marker {
+            content: '';
+            display: none;
+        }
+
         &::before {
+            content: '';
+            position: relative;
+            top: -.125em;
+
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-right: .5em;
+            
             color: var(--c-secondary-med);
+            vertical-align: middle;
+            border-width: #{ (.5em * $sqrt3) / 2 } 0 #{ (.5em * $sqrt3) / 2 } .5em;
+            border-style: solid;
+            border-color: transparent transparent transparent currentColor;
+
+            transform-origin: 33.3% 50%;
+            transition: transform #{ $toggle-anim-duration / 2 } #{ $easing-smooth };
+            transition-property: color, transform;
         }
 
         & ~ * {
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); // Left Top, Right Top, Right Top, Left Top
 
             transition: clip-path #{ $toggle-anim-duration } #{ $toggle-anim-function };
         }
@@ -37,50 +64,12 @@ details {
     &[open] > summary {    
         &::before {
             color: var(--color-grey);
+
+            transform: rotate(90deg);
         }
 
         & ~ * {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
-    }
-}
-
-@supports #{ unquote('selector(::marker)') } { // Hack around Sass selector error
-    details {
-        > summary {
-            cursor: pointer;
-        
-            &::marker {
-                content: '';
-    
-                display: none;
-            }
-    
-            &::before {
-                content: '';
-                position: relative;
-                top: -.125em;
-    
-                display: inline-block;
-                width: 0;
-                height: 0;
-                margin-right: .5em;
-    
-                vertical-align: middle;
-                border-width: #{ (.5em * $sqrt3) / 2 } 0 #{ (.5em * $sqrt3) / 2 } .5em;
-                border-style: solid;
-                border-color: transparent transparent transparent currentColor;
-    
-                transform-origin: 33.3% 50%;
-                transition: transform #{ $toggle-anim-duration / 2 } #{ $easing-smooth };
-                transition-property: color, transform;
-            }
-        }
-
-        &[open] > summary {    
-            &::before {
-                transform: rotate(90deg);
-            }
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); // Left Top, Right Top, Right Bottom, Left Bottom
         }
     }
 }

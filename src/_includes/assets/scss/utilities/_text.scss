@@ -1,38 +1,33 @@
 .u-fontBody { font-family: f('body'); }
-.u-fontHeading { font-family: f('heading'); }
-.u-fontCode { font-family: f('code'); }
+// .u-fontHeading { font-family: f('heading'); }
+// .u-fontCode { font-family: f('code'); }
 
-.u-textLeft { text-align: left; }
+// .u-textLeft { text-align: left; }
 .u-textCentre { text-align: center; }
-.u-textRight { text-align: right; }
+// .u-textRight { text-align: right; }
 
-.u-textHuge { font-size: 2rem; }
+// .u-textHuge { font-size: 2rem; }
 .u-textLarge { font-size: 1.2rem; }
 .u-textSmall { font-size: .875rem; }
-.u-textTiny { font-size: .625rem; }
+// .u-textTiny { font-size: .625rem; }
 .u-textNormal { font-size: 1rem; }
 .u-textSizeInherit { font-size: 1em; }
-.u-textLarger { font-size: 1.2em; }
-.u-textSmaller { font-size: .875em; }
+// .u-textLarger { font-size: 1.2em; }
+// .u-textSmaller { font-size: .875em; }
 
-.u-fontRegular { font-style: normal; }
+// .u-fontRegular { font-style: normal; }
 .u-fontItalic { font-style: italic; }
 
-.u-fontNormal { font-weight: 400; }
+// .u-fontNormal { font-weight: 400; }
 .u-fontBold { font-weight: 700; }
 
-.u-textUppercase { text-transform: uppercase; }
+// .u-textUppercase { text-transform: uppercase; }
 .u-textDecoration--none,
 .h\:u-textDecoration--none:hover,
 .h\:u-textDecoration--none:focus {
     text-decoration: none;
 }
-.u-vAlign--middle { vertical-align: middle; }
+// .u-vAlign--middle { vertical-align: middle; }
 .u-letterSpacing--reset { letter-spacing: initial; }
-.u-letterSpacing--heading { letter-spacing: #{ $heading-font-letter-spacing }; }
+// .u-letterSpacing--heading { letter-spacing: #{ $heading-font-letter-spacing }; }
 .u-lineHeight--1 { line-height: 1; }
-
-.u-sep { // Use this as <div aria-hidden=true"> to control colour and spacing individually
-    width: 4rem;
-    height: .25rem;
-}
