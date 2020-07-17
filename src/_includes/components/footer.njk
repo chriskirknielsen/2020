@@ -1,7 +1,7 @@
 <footer class="footer fluid-type u-marginBlockStart--auto">
 	<div class="u-container u-width--100 u-displayFlex u-flex--wrap u-flex--centerBlock u-padding--double">
 		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
-			<p>
+			<p class="u-marginInlineEnd">
 				{% set copyrightYear = (metadata.currentYear
 					if metadata.copyrightStart == metadata.currentYear
 					else metadata.copyrightStart + "&ndash;" + metadata.currentYear
@@ -11,23 +11,22 @@
 				&copy; {{ copyrightYear }}
 				{# {{ localisedContent.allRights }} #}
 			</p>
-			
-			<p>
+
+			<ul class="o-inlineList | u-displayInlineBlock">
 				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgementsPage', locale) -%}
-				<a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a>
-			</p>
+				<li class="u-displayInline"><a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a></li>
+				<li class="u-displayInline"><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
+			</ul>
 		</div>
 
 		<div class="u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock">
-			<nav class="u-displayInlineFlex u-flex--centerBlock u-marginBlockStart u-marginInlineEnd">
+			<nav class="u-displayInlineFlex u-flex--baselineBlock u-marginBlockStart u-marginInlineEnd">
 				<h2 class="u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
 				&nbsp;
-				<ul class="u-displayInlineFlex">
+				<ul class="o-inlineList | u-displayInlineBlock">
 				{% for langCode, langData in metadata.languages %}
-					{% set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path %}
-					<li class="footer__language-item">
-						<a href="{{ langUrl | url }}" hreflang="{{ langCode }}">{{ langData.label }}</a>
-					</li>
+					{%- set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path -%}
+					<li class="u-displayInline"><a href="{{ langUrl | url }}" hreflang="{{ langCode }}">{{ langData.label }}</a></li>
 				{% endfor %}
 				</ul>
 			</nav>
