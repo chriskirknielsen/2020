@@ -12,16 +12,10 @@
 
 /* Remove default padding */
 /* Remove list styles on ul, ol elements with a class attribute */
-/* Reinstate list-like behaviour for screen readers */
 ul[class],
 ol[class] {
     padding: 0;
     list-style: none;
-
-    &::before {
-        content: "\200B";
-        position: absolute;
-    }
 }
 
 /* Remove default margin */

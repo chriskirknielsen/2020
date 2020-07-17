@@ -1,22 +1,3 @@
-ol,
-ul {
-    &[class] {
-        padding-left: 0;
-        // padding-inline-start: 0;
-        list-style: none;
-    }
-}
-
- // If markup isn't totally messed up, <li> will always be the direct
- // child of <ol> or <ul> so we can simply target the class attribute
- // and the element can be omitted.
-[class] > li {
-    &::before { // Bugfix to prevent webkit from removing list semantics
-        content: "\200B"; // Add a non-breaking space
-        position: absolute; // Make sure it doesn't mess up the DOM flow
-    }
-}
-
 // .o-inlineList {
 //     > li {
 //         display: inline-block;
@@ -40,3 +21,15 @@ ul {
 //         list-style-position: inside;
 //     }
 // }
+
+.o-inlineList {
+    & > li:not(:last-child) {
+        &::after {
+            content: " ";
+            
+            letter-spacing: 0.75em;
+            background: linear-gradient(90deg, transparent calc(50% - 0.03125em), currentColor 0, currentColor calc(50% + 0.03125em), transparent 0);
+            opacity: 0.75;
+        }
+    }
+}

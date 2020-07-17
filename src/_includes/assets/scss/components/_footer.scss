@@ -1,19 +1,6 @@
 .footer {
     outline: .125em solid var(--c-grey-med);
 
-    &__language {
-        &-item {
-            $lang-space: .5em;
-            &:not(:last-child) {
-                padding-right: #{ $lang-space };
-            }
-            &:not(:first-child) {
-                padding-left: #{ $lang-space };
-                border-left: 1px solid var(--c-grey-med);
-            }
-        }
-    }
-
     &__social {
         &-link > svg {
             fill: currentColor;
