@@ -1,4 +1,4 @@
-# chriskirknielsen.com
+# [chriskirknielsen.com](https://chriskirknielsen.com)
 
 Personal website for Christopher Kirk-Nielsen. All the interesting parts are either located in the [.eleventy.js](./.eleventy.js) file or on the site's [Acknowledgements](https://chriskirknielsen.com/acknowledgements/) page.
 
