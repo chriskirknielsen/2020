@@ -146,11 +146,9 @@ $creadev-font-filename:  '/assets/fonts/' + str-remove-whitespace($creadev-font)
 	}
 
 	&__creativedeveloper-text {
-		stroke: c('primary', 'max', $theme: 'dusk');
-		// stroke: var(--c-primary-max);
-		stroke-width: .125em;
-		fill: c('primary', 'min', $theme: 'dusk');
-		// fill: var(--c-primary-min);
+		stroke: var(--c-primary-max);
+		stroke-width: .25em;
+		fill: var(--c-primary-min);
 		paint-order: stroke;
 
 		font-size: 1.185rem;
