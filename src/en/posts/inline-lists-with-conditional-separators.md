@@ -26,24 +26,26 @@ Here's the whole setup, using a pipe as a separator, similar to what I use on my
 ```css
 /*
     1: Not essential but good to do to if your list lives alongside other content
-    2: This is required to ensure all items flow next to each other
-    3: The whitespace required for this trick to work — no other character should be used
-    4: Setting a larger letter-spacing effectively provides a wider whitespace
-    5: Apply a background image to fake any kind of bullet or pipe character, or any other separator you can think of
+    2: If you don't have a reset in place, this will remove the user-agent stylesheet default padding
+    3: This is required to ensure all items flow next to each other
+    4: The whitespace required for this trick to work — no other character should be used
+    5: Setting a larger letter-spacing effectively provides a wider whitespace
+    6: Apply a background image to fake any kind of bullet or pipe character, or any other separator you can think of
 */
 
 .inline-list {
     display: inline-block; /* 1 */
+    padding: 0; /* 2 */
 }
 
 .inline-list > li {
-    display: inline; /* 2 */
+    display: inline; /* 3 */
 }
 
 .inline-list > li::after {
-    content: " "; /* 3 */
-    letter-spacing: 1em; /* 4 */
-    background: linear-gradient(90deg, transparent calc(50% - 0.03125em), currentColor 0, currentColor calc(50% + 0.03125em), transparent 0); /* 5 */
+    content: " "; /* 4 */
+    letter-spacing: 1em; /* 5 */
+    background: linear-gradient(90deg, transparent calc(50% - 0.03125em), currentColor 0, currentColor calc(50% + 0.03125em), transparent 0); /* 6 */
 }
 ```
 
@@ -88,3 +90,7 @@ The line break and tab between `</a>` and `</li>` will be counted as whitespace 
 ```
 
 I'd recommend the first one.
+
+## Demo
+
+{% codepen "https://codepen.io/chriskirknielsen/pen/KKVryZB/", "result", "480", "33007"  %}
