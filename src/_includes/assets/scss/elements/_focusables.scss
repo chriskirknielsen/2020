@@ -7,7 +7,7 @@ a,
 button,
 summary {
     &:focus {
-        outline: 4px dashed var(--color-secondary);
+        outline: 4px dashed var(--color-accent);
     }
 
     &:focus:not(:focus-visible) {
@@ -43,7 +43,7 @@ details {
             height: 0;
             margin-right: .5em;
             
-            color: var(--c-secondary-med);
+            color: var(--color-accent);
             vertical-align: middle;
             border-width: #{ (.5em * $sqrt3) / 2 } 0 #{ (.5em * $sqrt3) / 2 } .5em;
             border-style: solid;
@@ -63,7 +63,7 @@ details {
 
     &[open] > summary {    
         &::before {
-            color: var(--color-grey);
+            color: var(--c-grey-med);
 
             transform: rotate(90deg);
         }
