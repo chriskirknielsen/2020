@@ -35,8 +35,8 @@ $theme-colors: map-get($colors, "dusk");
 .u-bg--accent,
 .h\:u-bg--accent:hover,
 .h\:u-bg--accent:focus {
-    background-color: var(--c-accent);
-    --currentBackground: var(--c-accent);
+    background-color: var(--color-accent);
+    --currentBackground: var(--color-accent);
 }
 
 // .u-bg--currentColor {
@@ -76,7 +76,7 @@ $theme-colors: map-get($colors, "dusk");
 .u-border--accent,
 .h\:u-border--accent:hover,
 .h\:u-border--accent:focus {
-    border-color: var(--c-accent);
+    border-color: var(--color-accent);
 }
 
 
@@ -94,8 +94,8 @@ $theme-colors: map-get($colors, "dusk");
 .h\:u-glowBox--accent:hover,
 .h\:u-glowBox--accent:focus {
     box-shadow:
-        0 0 1.5em -.5em var(--c-accent),
-        inset 0 0 2em -1em var(--c-accent);
+        0 0 1.5em -.5em var(--color-accent),
+        inset 0 0 2em -1em var(--color-accent);
 }
 
 
