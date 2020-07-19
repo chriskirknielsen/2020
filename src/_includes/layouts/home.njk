@@ -14,12 +14,12 @@ mainClasses: content
             {# <div class="homescreen__scene u-absCover u-beforeCover u-afterCover" aria-hidden="true"></div> #}
         </div>
 
-        <div class="homescreen__svg-wrapper u-posRelative">
+        <h1 class="homescreen__svg-wrapper u-posRelative">
             {% set ckn_mark -%}
             {%- include "assets/img/home-mark.njk" -%}
             {%- endset -%}
             {{ ckn_mark | htmlmin | safe }}
-        </div>
+        </h1>
         
         <script>
             {% set home_script -%}
@@ -44,11 +44,11 @@ mainClasses: content
             <article class="u-posRelative {{ utilities.cardFlex }} {{ utilities.cardBox }} {{ utilities.cardBoxLink }}">
                 <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 
-                <h3>
+                <h2 class="h3">
                     <a href="{{ latestpost.url | url }}" class="u-textDecoration--none u-afterCover">
                         {{- latestpost.data.title -}}
                     </a>
-                </h3>
+                </h2>
 
                 <p class="u-marginBlockStart--half">
                     {%- if latestpost.data.summary -%}
