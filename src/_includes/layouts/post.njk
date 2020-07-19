@@ -35,8 +35,8 @@ mainClasses: .
 	<hr>
 
 	{% if tags %}
-	<nav>
-		<h2 class="u-displayInline u-fontBody u-fontBold u-textNormal u-c--color-text">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
+	<nav aria-labelledby="article-tags-heading">
+		<h2 class="u-displayInline u-fontBody u-fontBold u-textNormal u-c--color-text" id="article-tags-heading">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
 		<ul class="u-displayInline">
 		{% for tag in tags %}
 			{%- if tag != "post" -%}
