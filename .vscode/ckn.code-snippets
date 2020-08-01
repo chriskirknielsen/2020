@@ -1,0 +1,16 @@
+{
+	"Create front-matter for new post": {
+		"scope": "markdown",
+		"prefix": "newpost",
+		"body": ["---",
+			"title: ${1:}",
+			"summary: ${2:}",
+			"date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"language: ${3|en,fr|}",
+			"tags:",
+			"\t- post",
+			"\t- ${4:}",
+		"---"],
+		"description": "Insert a front-matter template for a new post"
+	},
+}
