@@ -9,7 +9,7 @@ tags:
   - quick-tip
 ---
 
-Here's a quick tip that my superior shared with me (thanks Matthew! — and you can find a version of it on [StackOverflow](https://stackoverflow.com/questions/15306108/css-styling-for-horizontal-list-with-bullet-only-between-elements/40162380#40162380), by Tom Robinson from 2016!). I always keep coming back to it, looking in repositories for old projects: I figured it's about time I had an easy way to find it.
+Here's a quick tip that my manager shared with me (thanks Matthew! — and you can find a version of it on [StackOverflow](https://stackoverflow.com/questions/15306108/css-styling-for-horizontal-list-with-bullet-only-between-elements/40162380#40162380), by Tom Robinson from 2016!). I always keep coming back to it, looking in repositories for old projects: I figured it's about time I had an easy way to find it.
 
 Say you have an inline list of items that are next to each other, but the list is long or the container is narrow — whichever, as long as it's at risk of wrapping to a new line. And what if you wanted to have a separator between each item? Sounds easy, right? Add a pseudo-element on each `li` that has a sibling, like `li + li::after`, and you're done!
 
