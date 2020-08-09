@@ -51,7 +51,7 @@
     "markdown-it-footnote": "^3.0.2",
     "moment": "^2.25.1",
     "netlify-cli": "^2.48.0",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "set-value": "3.0.2",
     "uglify-es": "^3.3.9"
   }
