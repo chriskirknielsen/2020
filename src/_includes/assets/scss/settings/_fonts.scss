@@ -63,3 +63,4 @@ $fonts: (
 );
 
 $heading-font-letter-spacing: .025em !default;
+$quotation-mark-font: map-get($font-fallback-list, serif);
