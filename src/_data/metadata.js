@@ -5,7 +5,7 @@ module.exports = {
   author: {
     name: "Christopher Kirk-Nielsen",
     email: "chriskirknielsen@gmail.com",
-    twitter: "https://twitter.com/ckirknielsen"
+    twitter: "https://twitter.com/ckirknielsen",
   },
   copyrightStart: 2019,
   currentYear: (new Date()).getFullYear(),
@@ -14,12 +14,24 @@ module.exports = {
     "en": {
       label: "English",
       path: "/",
-      root: ""
+      root: "",
     },
     "fr": {
       label: "Français",
       path: "/fr",
-      root: "fr/"
+      root: "fr/",
     }
+  },
+  assetUrl: {
+    manifest: "manifest.json",
+    icons: {
+      faviconPng: "assets/img/icon.png",
+      faviconSvg: "assets/img/favicon.svg",
+      maskIcon: "assets/img/mask-icon.svg",
+      appleTouchIcon: "assets/img/apple-touch-icon.png",
+      googleIcon: "assets/img/google-touch-icon.png",
+    },
+    globalStyles: "assets/css/global.css",
+    fontFaceStyles: "assets/css/font-face.css",
   }
 };

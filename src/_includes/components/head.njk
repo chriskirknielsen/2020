@@ -10,15 +10,15 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ localePath | url | absoluteUrl(metadata.url) }}">
 	<meta property="og:image" content="{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}">
-	
-	{% set globalStyles = '/assets/css/global.css' | url %}
-	<link rel="preload" href="{{ globalStyles }}" as="style">
-	
+	{# Add a slash in the final markup for root access #}
+	{% set globalStylesPath = "/" + metadata.assetUrl.globalStyles -%}
+	<link rel="preload" href="{{ globalStylesPath | url }}" as="style">
+
 	{%- set css -%}
 	{%- include "assets/css/inline.css" -%}
 	{%- endset %}
 	<style>{{ css | cssmin | safe }}</style>
-	<link rel="stylesheet" href="{{ globalStyles }}" media="all" id="global-styles">
+	<link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles">
 
 	{%- if ownstyles %}
 		{% set ownStylesList = ownstyles | split(",") -%}
@@ -37,12 +37,12 @@
 	{%- endset %}
 	<script>{{ js | jsmin | safe }}</script>
 
-	<link rel="icon" href="{{ '/assets/img/icon.png' | url }}" type="image/png">
-	<link rel="icon" href="{{ '/assets/img/favicon.svg' | url }}">
-	<link rel="mask-icon" href="{{ '/assets/img/mask-icon.svg' | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
-	<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | url }}">
+	<link rel="icon" href="{{ "/" + metadata.assetUrl.icons.faviconPng | url }}" type="image/png">
+	<link rel="icon" href="{{ "/" + metadata.assetUrl.icons.faviconSvg | url }}">
+	<link rel="mask-icon" href="{{ "/" + metadata.assetUrl.icons.maskIcon | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
+	<link rel="apple-touch-icon" href="{{ "/" + metadata.assetUrl.icons.appleTouchIcon | url }}">
 	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}">
-	<link rel="manifest" href="{{ '/manifest.json' | url }}">
+	<link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}">
 	
 	{% if translationKey and section -%}
 	{%- set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset -%}
