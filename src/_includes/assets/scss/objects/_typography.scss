@@ -56,6 +56,15 @@ hr {
     }
 }
 
+.header-anchor {
+    visibility: hidden;
+    color: var(--color-accent);
+
+    *:hover > & { // Should always be within a heading, no need to specify the tag
+        visibility: visible;
+    }
+}
+
 ::selection {
     color: var(--c-grey-max);
     background-color: var(--c-primary-min);

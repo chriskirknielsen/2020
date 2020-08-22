@@ -21,7 +21,7 @@ tags:
   </div>
 
   <div class="u-flow">
-  {% markdown %}
+
   ## Débuts
 
   Le développement front-end est actuellement mon activité principale mais ce n'a pas toujours été le cas. J'avais passé beaucoup de temps au collège à me divertir sur des logiciels graphiques (de MS Paint à Photoshop) et à tenter de personnaliser ma page MySpace. Après un temps, j'avais commencé à faire un petit site Internet sur un jeu vidéo que j'aimais.
@@ -31,7 +31,6 @@ tags:
   Ceci m'avait poussé faire des études en **graphisme** pendant 4 ans, avec un intérêt particulier pour **la typographie, la théorie des couleurs, la composition, ainsi que l'animation**. J'avais cependant continué d'apprendre des choses sur le domaine du web, créant des blogs et d'autres petits projets. J'avais, par la suite, **travaillé en freelance pendant quelques années**, jonglant entre graphisme et développement — un équilibre enrichissant.
 
   J'ai fini par réaliser ce que je souhaitais vraiment faire : **travailler sur le web pour bénéficier tout le monde** (ou en tout cas, contribuer ma pierre à l'édifice). Essentiellement, ce domaine est en constante évolution, ce qui signifie que je peux toujours approfondir mes connaissances. Avec ça, je ne peux plus lâcher prise !
-  {% endmarkdown %}
 
   <div class="u-displayFlex u-flex--center">
     {% set delorean -%}
@@ -42,7 +41,7 @@ tags:
   </div>
 </div>
 
-## Projects
+## Projets
 
 ### VisuBezier
 
@@ -77,7 +76,7 @@ J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon
   <summary class="fluid-type">Voici une auto-représentation sous forme de liste, si ça peut apaiser votre curiosité.</summary>
 
   <div>
-  {% markdown %}
+
   ### Compétences
 
   - **Développement :** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
@@ -114,7 +113,7 @@ J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon
   ### Documents
 
   - **Travail :** détenteur de "Green Card" américaine
-  - **Nationalité:** double-nationalité franco-danoise
+  - **Nationalité :** double-nationalité franco-danoise
 
   ### Sur la toile
 
@@ -123,6 +122,6 @@ J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon
   - [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
   - [Geekometric](https://geekometric.com)
   - [Chronoise](https://chronoise.com)
-  {% endmarkdown %}
+
   </div>
 </details>

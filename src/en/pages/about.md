@@ -21,7 +21,7 @@ tags:
   </div>
 
   <div class="u-flow">
-  {% markdown %}
+
   ## Origin Story
 
   Front-end development is my main focus nowadays, but it wasn't always the case. I spent a lot of my free time in middle school playing around with graphic editing software (from MS Paint to Photoshop), and trying to skin a MySpace page. After a while, I started making a little website to talk about a video game I liked.
@@ -31,7 +31,6 @@ tags:
   This led me to study **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
 
   I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
-  {% endmarkdown %}
 
   <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}
@@ -75,7 +74,7 @@ I also appreciate a nice book & playlist combo during my hour-long commute in **
   <summary class="fluid-type">Click here to view a bullet-list representation of me, if you're into that sort of thing.</summary>
 
   <div>
-  {% markdown %}
+
   ### Skills
 
   - **Development:** HTML5, CSS (Sass), JavaScript, PHP (OOP, WordPress), MySQL
@@ -121,6 +120,6 @@ I also appreciate a nice book & playlist combo during my hour-long commute in **
   - [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
   - [Geekometric](https://geekometric.com)
   - [Chronoise](https://chronoise.com)
-  {% endmarkdown %}
+
   </div>
 </details>
