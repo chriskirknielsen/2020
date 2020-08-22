@@ -49,12 +49,12 @@
 }
 
 // Define common styles for Prism and Codepen blocks, that will be oversized beyond the main container
-pre[class*="language-"],
+pre:nth-child(n), // Ensure specificity is higher than .content>*
 .cp_embed_wrapper {
     @extend .content-wide;
 }
 
-pre[class*="language-"] code,
+pre:nth-child(n) code, // Ensure specificity is higher than .content>*
 .cp_embed_iframe {
     @extend .content-wide-limited;
 }

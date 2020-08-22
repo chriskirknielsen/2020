@@ -22,12 +22,7 @@ pre {
     text-shadow: none;
 }
 
-pre > code {
-	font-size: 1em;
-}
-
-pre[class*="language-"] code,
-:not(pre) > code {
+code {
 	background-color: var(--c-grey-max);
 
     mark {
@@ -40,7 +35,7 @@ pre[class*="language-"] code,
 	padding: .0625em .125em;
 }
 
-pre[class*="language-"] code {
+pre > code {
 	// white-space: pre;
 	display: block;
 	overflow: auto; // Let users scroll in case of a long string

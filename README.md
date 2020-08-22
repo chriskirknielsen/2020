@@ -1,5 +1,5 @@
 # [chriskirknielsen.com](https://chriskirknielsen.com)
 
-Personal website for Christopher Kirk-Nielsen. All the interesting parts are either located in the [.eleventy.js](./.eleventy.js) file or on the site's [Acknowledgements](https://chriskirknielsen.com/acknowledgements/) page.
+Personal website for Christopher Kirk-Nielsen. All the interesting parts are either located in the [.eleventy.js](./.eleventy.js) file or on the site's [Acknowledgements](https://chriskirknielsen.com/acknowledgements/) page. Makes use of [Dan Urbanowicz's boilerplate](https://templates.netlify.com/template/eleventy-netlify-boilerplate/).
 
 Feel free to submit a pull request if you find errors (typos, styling issues) or if you have a suggestion that would improve this humble website!
