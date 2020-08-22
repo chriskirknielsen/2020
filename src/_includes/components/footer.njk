@@ -55,7 +55,8 @@
 		</div>
 	</div>
 </footer>
+
 {%- set fontFace -%}
-{%- include "assets/css/font-face.css" -%}
+{%- include (metadata.assetUrl.fontFaceStyles | url) -%}
 {%- endset %}
 <style>{{ fontFace | cssmin | safe }}</style>
