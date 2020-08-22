@@ -187,11 +187,17 @@
 }
 
 .about__trinket {
+    overflow: visible;
+    
     &-stroke > * {
         fill: none;
         stroke: currentColor;
-        stroke-width: 1.25;
+        stroke-width: 1.5;
         stroke-miterlimit: 10;
+    }
+
+    &-stroke--thick {
+        stroke-width: 2.5;
     }
 
     &-fill > * {
@@ -199,7 +205,7 @@
     }
 }
 
-.about__delorean { width: 24rem; }
+.about__delorean { width: 28rem; }
 .about__keyboard {
     width: 14rem;
     max-width: 30vw;
