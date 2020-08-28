@@ -189,6 +189,12 @@ $creadev-font-filename: '/assets/fonts/' + str-remove-whitespace($creadev-font) 
 		animation-duration: #{ $shine-anim-time - .125s };
 		animation-delay: #{ $shine-anim-delay + .25s }
 	}
+
+	@include below-medium {
+		&__gradient-dusk-bottom-filter {
+			filter: none;
+		}
+	}
 }
 
 
