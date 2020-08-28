@@ -21,12 +21,12 @@ mainClasses: content
             {{ ckn_mark | htmlmin | safe }}
         </h1>
         
-        <script>
+        {# <script>
             {% set home_script -%}
             {%- include "assets/jsmin/home.min.js" -%}
             {%- endset %}
             {{ home_script | safe }}
-        </script>
+        </script> #}
     </div>
 </section>
 

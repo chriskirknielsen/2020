@@ -1,3 +1,12 @@
+// Check for Houdini support, then register property for animation
+@supports (background: paint(a)) {
+    @property --ckn-sun-mask-lines {
+        syntax: '<length-percentage>';
+        initial-value: 0;
+        inherits: true;
+    }
+}
+
 .homescreen {
     --homescreen-sky-end: #791e74;
     --homescreen-floor-start: #1e0347;
@@ -106,8 +115,9 @@
         }
 
         /* Animating the sun's blinds */
-        --ckn-sun-mask-lines: #{ $sun-blind-size * 0 }; // Set the default to 50% for browser who don't support animatable custom properties
+        --ckn-sun-mask-lines: #{ $sun-blind-size * 0 }; // Set the default to 50% (0 because it is multiplied between [-1;1]) for browser who don't support animatable custom properties
         animation: sunMaskLines 2s linear infinite;
+        
         @keyframes sunMaskLines {
             0% { --ckn-sun-mask-lines: #{ $sun-blind-size * -1 }; }
             100% { --ckn-sun-mask-lines: #{ $sun-blind-size }; }
