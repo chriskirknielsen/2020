@@ -69,7 +69,7 @@
     }
 }
 
-@mixin fluid-type($min-value, $max-value, $min-vw: $small-breakpoint-width-rem * 1rem, $max-vw: $large-breakpoint-width-rem * 1rem) {
+@mixin fluid-type($min-value: 1rem, $max-value: 1.125rem, $min-vw: $small-breakpoint-width-rem * 1rem, $max-vw: $large-breakpoint-width-rem * 1rem) {
     $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
     $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
 
