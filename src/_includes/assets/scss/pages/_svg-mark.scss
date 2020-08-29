@@ -198,7 +198,7 @@ $creadev-font-filename: '/assets/fonts/' + str-remove-whitespace($creadev-font) 
 }
 
 
-@keyframes svgMarkGreeting {
+@keyframes svgMarkGreeting { // Extends to ensure descenders/text-shadow don't get clipped too eagerly
 	0% { clip-path: polygon(0 0, 0 0, -2rem 100%, -2rem 100%); }
 	100% { clip-path: polygon(0 0, calc(100% + 2rem) 0, 100% 100%, -2rem 100%); }
 }
