@@ -15,14 +15,19 @@
 	<link rel="preload" href="{{ globalStylesPath | url }}" as="style">
 
 	{% if section == "home" %}
-	{% for fontPurpose, fontName in tokens.fonts.home_mark %}
-	{% set fontPath = "/" + metadata.assetUrl.fontFaceFolder + "/" + (fontName | replace(" ", "")) + "-subset.woff2" %}
-	{# <link rel="preload" href="{{ fontPath | url }}" as="font"> #}
-	{% endfor %}
+		{% set homeFontStylesPath = "/" + metadata.assetUrl.stylesFolder + "/home-fontface.css" %}
+		<link rel="preload" href="{{ homeFontStylesPath | url }}" as="style">
+
+		{% for fontPurpose, fontName in tokens.fonts.home_mark %}
+			{% set fontAssetUrl = "/"+ metadata.assetUrl.fontFaceFolder + "/" + (fontName | replace(" ", "")) + "-subset.woff2" %}
+			<link rel="preload" href="{{ fontAssetUrl | url }}" as="font" type="font/woff2" crossorigin="anonymous">
+		{% endfor %}
+
+		<link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="print" onload="this.media='all'">
 	{% endif %}
 
 	{% set css %}
-	{% include "assets/css/inline.css" %}
+		{% include "assets/css/inline.css" %}
 	{% endset %}
 	<style>{{ css | cssmin | safe }}</style>
 	<link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles">
@@ -30,17 +35,19 @@
 	{% if ownstyles %}
 		{% set ownStylesList = ownstyles | split(",") %}
 		{% set pageStyleGroup = "" %}
+
 		{% for ownStyle in ownStylesList %}
 			{% set pagestylelink %}{{ metadata.assetUrl.stylesFolder }}/{{ ownStyle }}.css{% endset %}
 			{% set pagestyle %}{% include pagestylelink %}{% endset %}
 			{% set pageStyleGroup = pageStyleGroup + pagestyle %}
 		{% endfor -%}
+
 		<style>{{ pageStyleGroup | cssmin | safe }}</style>
 	{% endif %}
 
 	{% set js %}
-	{% include "assets/js/inline.js" %}
-	{% include "assets/js/color-scheme-switcher.js" %}
+		{% include "assets/js/inline.js" %}
+		{% include "assets/js/color-scheme-switcher.js" %}
 	{% endset %}
 	<script>{{ js | jsmin | safe }}</script>
 
@@ -52,11 +59,12 @@
 	<link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}">
 	
 	{% if translationKey and section %}
-	{% set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset %}
-	{% set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) %}
-	{% for variant in filteredVariants %}
-	<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}">
-	{% endfor %}
+		{% set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset %}
+		{% set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) %}
+		
+		{% for variant in filteredVariants %}
+			<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}">
+		{% endfor %}
 	{% endif %}
 	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
 </head>
