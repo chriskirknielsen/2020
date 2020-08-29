@@ -1,43 +1,47 @@
 <footer class="footer fluid-type u-marginBlockStart--auto">
-	<div class="u-container u-width--100 u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock u-gap u-padding--double">
-		<p class="">
-			{% set copyrightYear = (metadata.currentYear
-				if metadata.copyrightStart == metadata.currentYear
-				else metadata.copyrightStart + "&ndash;" + metadata.currentYear
-			) | safe %}
-			<span class="u-fontBold">{{ metadata.author.name }}</span>
+	<div class="u-container u-padding--double">
+		<div class="u-displayFlex u-flex--wrap u-flex--justifyInline u-flex--centerBlock u-margin--flexGap">
+			<p class="">
+				{% set copyrightYear = (metadata.currentYear
+					if metadata.copyrightStart == metadata.currentYear
+					else metadata.copyrightStart + "&ndash;" + metadata.currentYear
+				) | safe %}
+				<span class="u-fontBold">{{ metadata.author.name }}</span>
 
-			&copy; {{ copyrightYear }}
-			{# {{ localisedContent.allRights }} #}
-		</p>
+				&copy; {{ copyrightYear }}
+				{# {{ localisedContent.allRights }} #}
+			</p>
 
-		<ul class="o-inlineList | u-displayInlineBlock">
-			{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgementsPage', locale) -%}
-			<li class="u-displayInline"><a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a></li>
-			<li class="u-displayInline"><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
-		</ul>
+			<nav class="u-displayInlineFlex u-flex--baselineBlock">
+				<ul class="o-inlineList | u-displayInlineBlock">
+					{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgementsPage', locale) -%}
+					<li class="u-displayInline"><a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a></li>
+					<li class="u-displayInline"><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
+				</ul>
+			</nav>
 
-		<nav class="u-displayInlineFlex u-flex--baselineBlock">
-			<h2 class="u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
-			&nbsp;
-			<ul class="o-inlineList | u-displayInlineBlock">
-			{% for langCode, langData in metadata.languages %}
-				{%- set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path -%}
-				<li class="u-displayInline"><a href="{{ langUrl | url }}" hreflang="{{ langCode }}">{{ langData.label }}</a></li>
-			{% endfor %}
-			</ul>
-		</nav>
+			<nav class="u-displayInlineFlex u-flex--baselineBlock">
+				<h2 class="u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
+				&nbsp;
+				<ul class="o-inlineList | u-displayInlineBlock">
+				{% for langCode, langData in metadata.languages %}
+					{%- set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path -%}
+					<li class="u-displayInline"><a href="{{ langUrl | url }}" hreflang="{{ langCode }}">{{ langData.label }}</a></li>
+				{% endfor %}
+				</ul>
+			</nav>
 
-		<nav class="" aria-labelledby="footer-external-links-title">
-			<h2 class="visually-hidden" id="footer-external-links-title">{{ localisedContent.externalLinks }}</h2>
+			<nav class="" aria-labelledby="footer-external-links-title">
+				<h2 class="visually-hidden" id="footer-external-links-title">{{ localisedContent.externalLinks }}</h2>
 
-			<ul class="o-inlineList | u-displayInlineBlock">
-				<li class="u-displayInline"><a href="{{ localeRssUrl }}" aria-label="{{ localisedContent.rssHint }}">RSS</a></li>
-			{% for social in social %}
-				<li class="u-displayInline"><a href="{{ social.url | url }}">{{ social.name }}</a></li>
-			{% endfor %}
-			</ul>
-		</nav>
+				<ul class="o-inlineList | u-displayInlineBlock">
+					<li class="u-displayInline"><a href="{{ localeRssUrl }}" aria-label="{{ localisedContent.rssHint }}">RSS</a></li>
+				{% for social in social %}
+					<li class="u-displayInline"><a href="{{ social.url | url }}">{{ social.name }}</a></li>
+				{% endfor %}
+				</ul>
+			</nav>
+		</div>
 	</div>
 </footer>
 

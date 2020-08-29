@@ -29,29 +29,6 @@
     margin-top: #{ $base-flow-spacing * 2 };
 }
 
-/* Containers and breakout blocks */
-
-.u-container {
-    width: 100%;
-    max-width: $container-max-width-rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    &--narrow {
-        width: 100%;
-        max-width: $narrow-max-width-rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-// Breakout container
-.u-breakout {
-    position: relative;
-    left: calc(50% - 50vw);
-    width: 100vw;
-}
-
 // .u-oversized {
 //     position: relative;
 //     margin-left: #{ $code-breakout-size * -1 };
@@ -332,4 +309,25 @@
 .u-beforeCover::before, // Creates a ::before pseudo-element that covers the parent element
 .u-afterCover::after { // Creates an ::after pseudo-element that covers the parent element
     content: '';
+}
+
+/* Containers and breakout blocks */
+
+.u-container {
+    max-width: $container-max-width-rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    &--narrow {
+        max-width: $narrow-max-width-rem;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+// Breakout container
+.u-breakout {
+    position: relative;
+    left: calc(50% - 50vw);
+    width: 100vw;
 }
