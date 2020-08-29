@@ -3,6 +3,9 @@
 	$thumb-size: 1.4rem;
 	$thumb-space: 0.25rem;
 	$icon-space: 0.4rem;
+	
+	user-select: none;
+	cursor: pointer;
 
 	&__element {
 		opacity: 0;

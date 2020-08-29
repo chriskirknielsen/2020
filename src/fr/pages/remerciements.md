@@ -28,4 +28,4 @@ Merci à mon bon ami Youcef pour ses retours constructifs à chaque fois que je 
 
 Et merci à ma femme Ilona pour sa patience à chaque fois que je disais "Deux secondes, je corrige juste un truc sur mon site !", même si ça finissait par me prendre une demi-heure.
 
-Je vous remercie aussi d'être passés ici, ça me fait très plaisir !
+Je vous remercie aussi d'être passé·e ici, ça me fait très plaisir !
