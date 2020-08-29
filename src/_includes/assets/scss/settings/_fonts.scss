@@ -59,6 +59,10 @@ $fonts: (
     'code': (
         'main': (#{ map-deep-get($font-token, "code", "main") }),
         'fallback': map-get($font-fallback-list, map-deep-get($font-token, "code", "fallback"))
+    ),
+    'home_mark': (
+        'greeting': map-get-deep($font-token, "home_mark", "greeting"),
+        'creadev': map-get-deep($font-token, "home_mark", "creadev"),
     )
 );
 

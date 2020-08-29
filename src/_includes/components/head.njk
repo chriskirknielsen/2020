@@ -11,30 +11,37 @@
 	<meta property="og:url" content="{{ localePath | url | absoluteUrl(metadata.url) }}">
 	<meta property="og:image" content="{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}">
 	{# Add a slash in the final markup for root access #}
-	{% set globalStylesPath = "/" + metadata.assetUrl.globalStyles -%}
+	{% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
 	<link rel="preload" href="{{ globalStylesPath | url }}" as="style">
 
-	{%- set css -%}
-	{%- include "assets/css/inline.css" -%}
-	{%- endset %}
+	{% if section == "home" %}
+	{% for fontPurpose, fontName in tokens.fonts.home_mark %}
+	{% set fontPath = "/" + metadata.assetUrl.fontFaceFolder + "/" + (fontName | replace(" ", "")) + "-subset.woff2" %}
+	{# <link rel="preload" href="{{ fontPath | url }}" as="font"> #}
+	{% endfor %}
+	{% endif %}
+
+	{% set css %}
+	{% include "assets/css/inline.css" %}
+	{% endset %}
 	<style>{{ css | cssmin | safe }}</style>
 	<link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles">
 
-	{%- if ownstyles %}
-		{% set ownStylesList = ownstyles | split(",") -%}
-		{%- set pageStyleGroup = "" -%}
-		{%- for ownStyle in ownStylesList -%}
-			{%- set pagestylelink %}assets/css/{{ ownStyle }}.css{% endset -%}
-			{%- set pagestyle %}{% include pagestylelink %}{% endset %}
-			{%- set pageStyleGroup = pageStyleGroup + pagestyle -%}
-		{%- endfor -%}
+	{% if ownstyles %}
+		{% set ownStylesList = ownstyles | split(",") %}
+		{% set pageStyleGroup = "" %}
+		{% for ownStyle in ownStylesList %}
+			{% set pagestylelink %}{{ metadata.assetUrl.stylesFolder }}/{{ ownStyle }}.css{% endset %}
+			{% set pagestyle %}{% include pagestylelink %}{% endset %}
+			{% set pageStyleGroup = pageStyleGroup + pagestyle %}
+		{% endfor -%}
 		<style>{{ pageStyleGroup | cssmin | safe }}</style>
-	{%- endif -%}
+	{% endif %}
 
-	{% set js -%}
-	{%- include "assets/js/inline.js" -%}
-	{%- include "assets/js/color-scheme-switcher.js" -%}
-	{%- endset %}
+	{% set js %}
+	{% include "assets/js/inline.js" %}
+	{% include "assets/js/color-scheme-switcher.js" %}
+	{% endset %}
 	<script>{{ js | jsmin | safe }}</script>
 
 	<link rel="icon" href="{{ "/" + metadata.assetUrl.icons.faviconPng | url }}" type="image/png">
@@ -44,12 +51,12 @@
 	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}">
 	<link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}">
 	
-	{% if translationKey and section -%}
-	{%- set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset -%}
-	{%- set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) -%}
-	{%- for variant in filteredVariants %}
+	{% if translationKey and section %}
+	{% set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset %}
+	{% set filteredVariants = collections | findVariants(resourceVariants, translationKey, locale) %}
+	{% for variant in filteredVariants %}
 	<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}">
 	{% endfor %}
-	{%- endif -%}
+	{% endif %}
 	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
 </head>
