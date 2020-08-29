@@ -12,7 +12,7 @@
 	{%- if mainClasses -%}
 		{%- if mainClasses != "." %}{{ mainClasses }}{%- endif -%}
 	{%- else -%}
-		u-container u-paddingInline--double
+		u-container u-width--100 u-paddingInline--double
 	{%- endif -%}
 	{%- endset %}
 	<main class="main {{ mainClassOutput }} {{ mainAddClass if mainAddClass }} {% if section != 'home' %}u-paddingBlockEnd--double u-flow{% else %}u-paddingBlockEnd--double{% endif %} fluid-type" id="content" tabindex="-1">
