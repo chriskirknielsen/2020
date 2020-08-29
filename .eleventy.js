@@ -222,6 +222,14 @@ module.exports = function(eleventyConfig) {
 		return content;
 	});
 
+	// Minify JSON output (this can get heavy for big JSON files)
+	eleventyConfig.addTransform("jsonmin", function(content, outputPath) {
+		if (outputPath.endsWith(".json")) {
+			return JSON.stringify(JSON.parse(content));
+		}
+		return content;
+	});
+
 	eleventyConfig.setFrontMatterParsingOptions({
 		excerpt: true,
 		// Optional, default is "---"
