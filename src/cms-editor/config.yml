@@ -174,6 +174,12 @@ collections:
                 fields:
                   - {label: "Main", name: "main", widget: "string", default: "null"}
                   - {label: "Fallback List", name: "fallback", widget: "select", options: ['sans','serif','mono'], default: "mono"}
+              - label: "Homepage SVG Mark"
+                name: "home_mark"
+                widget: "object"
+                fields:
+                  - {label: "Greeting Font", name: "greeting", widget: "string", default: "cursive"}
+                  - {label: "Creative Developer Font", name: "creadev", widget: "string", default: "sans-serif"}
       
       - label: "English Localisation"
         name: "locale_en"

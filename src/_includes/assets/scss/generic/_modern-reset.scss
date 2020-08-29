@@ -53,9 +53,9 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 svg {
+    display: block;
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */

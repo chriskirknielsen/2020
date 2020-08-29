@@ -31,7 +31,9 @@ module.exports = {
       appleTouchIcon: "assets/img/apple-touch-icon.png",
       googleIcon: "assets/img/google-touch-icon.png",
     },
+    stylesFolder: "assets/css",
     globalStyles: "assets/css/global.css",
+    fontFaceFolder: "assets/fonts",
     fontFaceStyles: "assets/css/font-face.css",
   }
 };
