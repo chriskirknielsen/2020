@@ -225,11 +225,7 @@
       <feGaussianBlur in="displaceMap" stdDeviation="1.25" result="displaceBlur" />
 
       <!-- Sharpen the blurred result for a smooth line -->
-      <feColorMatrix in="displaceBlur" type="matrix" values="
-      1 0 0 0  0
-      0 1 0 0  0
-      0 0 1 0  0
-      0 0 0 8 -1" result="displaceSharp" />
+      <feColorMatrix in="displaceBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 8 -6" result="displaceSharp" />
     </filter>
 
     <!-- GRADIENT: Outline -->
