@@ -23,7 +23,9 @@
 			<link rel="preload" href="{{ fontAssetUrl | url }}" as="font" type="font/woff2" crossorigin="anonymous">
 		{% endfor %}
 
-		<link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="print" id="home-fonts">
+		<script>document.getElementById('home-fonts').onload=function(){this.media='all'}</script>
+		<noscript><link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="all"></noscript>
 	{% endif %}
 
 	{% set css %}
