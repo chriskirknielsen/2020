@@ -210,17 +210,17 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Minify HTML output
-	// eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-	//   if (outputPath.endsWith(".html")) {
-	//     let minified = htmlmin.minify(content, {
-	//       useShortDoctype: true,
-	//       removeComments: true,
-	//       collapseWhitespace: true
-	//     });
-	//     return minified;
-	//   }
-	//   return content;
-	// });
+	eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+		if (outputPath.endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true
+			});
+			return minified;
+		}
+		return content;
+	});
 
 	eleventyConfig.setFrontMatterParsingOptions({
 		excerpt: true,
