@@ -135,7 +135,7 @@
         @return map-values($font);
     }
     @else {
-        @return 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
+        @return sans-serif;
     }
 }
 

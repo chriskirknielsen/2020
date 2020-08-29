@@ -1,7 +1,7 @@
 
 .svg-mark {
-	$greeting-font: map-get($fonts, "home_mark_greeting");
-	$creadev-font: map-get($fonts, "home_mark_creadev");
+	$greeting-font: f("home_mark", "greeting");
+	$creadev-font: f("home_mark", "creadev");
 	
 	$mark-depth-factor-x: 1;
 	$mark-depth-factor-y: .9;

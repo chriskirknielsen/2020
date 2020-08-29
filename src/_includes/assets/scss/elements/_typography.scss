@@ -26,7 +26,7 @@ h6,
     color: var(--c-primary-min);
     --currentColor: var(--c-primary-min);
 
-    @if (map-get(map-get($fonts, 'heading'), 'main') == 'Marvin Visions Big') {
+    @if (map-deep-get($fonts, 'heading', 'main') == 'Marvin Visions Big') {
         // Keep the type tight, but not too tight
         letter-spacing: #{ $heading-font-letter-spacing };
         font-feature-settings: "kern";
