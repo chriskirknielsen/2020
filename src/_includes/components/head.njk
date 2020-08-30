@@ -58,7 +58,7 @@
 	<link rel="mask-icon" href="{{ "/" + metadata.assetUrl.icons.maskIcon | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
 	<link rel="apple-touch-icon" href="{{ "/" + metadata.assetUrl.icons.appleTouchIcon | url }}">
 	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}">
-	<link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}">
+	{# <link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}"> #}
 	
 	{% if translationKey and section %}
 		{% set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset %}
