@@ -11,7 +11,7 @@
 			{# {{ localisedContent.allRights }} #}
 		</p>
 
-		<nav>
+		<nav aria-label="{{ localisedContent.footerAdditionalLinks }}">
 			<ul class="o-inlineList | u-displayInlineBlock">
 				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgementsPage', locale) -%}
 				<li class="u-displayInline"><a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a></li>
@@ -19,8 +19,8 @@
 			</ul>
 		</nav>
 
-		<nav>
-			<h2 class="u-displayInline u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
+		<nav aria-labelledby="footer-language-links-title">
+			<h2 class="u-displayInline u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset" id="footer-language-links-title">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
 			&nbsp;
 			<ul class="o-inlineList | u-displayInlineBlock">
 			{% for langCode, langData in metadata.languages %}
