@@ -31,10 +31,11 @@
 	{% set css %}
 		{% include "assets/css/inline.css" %}
 	{% endset %}
-	<style>{{ css | cssmin | safe }}</style>
-	<link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles">
+	<style>
+	{{- css | cssmin | safe }}
 
-	{% if ownstyles %}
+	{% if ownstyles -%}
+		{# Add page-specific styles inline #}
 		{% set ownStylesList = ownstyles | split(",") %}
 		{% set pageStyleGroup = "" %}
 
@@ -44,8 +45,11 @@
 			{% set pageStyleGroup = pageStyleGroup + pagestyle %}
 		{% endfor -%}
 
-		<style>{{ pageStyleGroup | cssmin | safe }}</style>
-	{% endif %}
+		{{- pageStyleGroup | cssmin | safe -}}
+	{%- endif -%}
+	</style>
+
+	<link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles">
 
 	{% set js %}
 		{% include "assets/js/inline.js" %}
