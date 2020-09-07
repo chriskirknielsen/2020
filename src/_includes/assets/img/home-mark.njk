@@ -222,10 +222,10 @@
       <feDisplacementMap in2="displaceTurbulence" in="SourceGraphic" xChannelSelector="G" yChannelSelector="G" scale="20" result="displaceMap" />
 
       <!-- Blur the result slightly to avoid jagged edges -->
-      <feGaussianBlur in="displaceMap" stdDeviation="1.25" result="displaceBlur" />
+      <feGaussianBlur in="displaceMap" stdDeviation="2" result="displaceBlur" />
 
       <!-- Sharpen the blurred result for a smooth line -->
-      <feColorMatrix in="displaceBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 8 -6" result="displaceSharp" />
+      <feColorMatrix in="displaceBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -4" result="displaceSharp" />
     </filter>
 
     <!-- GRADIENT: Outline -->

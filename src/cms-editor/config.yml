@@ -128,7 +128,7 @@ collections:
                       - {label: "Medium", name: "med", widget: "string", default: "#808080"}
                       - {label: "Maximum", name: "max", widget: "string", default: "#161616"}
               - label: "Dawn ☀️"
-                name: "dusk"
+                name: "dawn"
                 widget: "object"
                 fields:
                   - label: "Grey"
@@ -209,7 +209,7 @@ collections:
             widget: "hidden"
             default: ""
           - label: "Navbar Pages"
-            name: "dateFormat"
+            name: "navSet"
             widget: "list"
             default: ["home", "blog", "about", "contact"]
           - label: "Date Format"
@@ -321,7 +321,7 @@ collections:
             widget: "hidden"
             default: " "
           - label: "Navbar Pages"
-            name: "dateFormat"
+            name: "navSet"
             widget: "list"
             default: ["accueil", "blog", "a-propos", "contact"]
           - label: "Date Format"
