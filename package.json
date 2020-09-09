@@ -54,6 +54,7 @@
     "netlify-cli": "^2.61.2",
     "prismjs": "^1.21.0",
     "set-value": "3.0.2",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.9",
+    "yargs-parser": "^19.0.4"
   }
 }
