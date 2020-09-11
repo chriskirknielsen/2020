@@ -2,7 +2,6 @@
 title: How to Handle a Sticky-Positioned Navbar in WordPress
 summary: Ensure a sticky navbar never overlaps anything, nor gets overlapped in WordPress
 date: 2020-05-16
-language: en
 tags:
   - post
   - css

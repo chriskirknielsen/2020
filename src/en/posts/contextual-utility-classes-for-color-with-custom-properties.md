@@ -4,7 +4,6 @@ summary: Use the cascade to colour links in their context.
 externalHost: CSS-Tricks
 externalUrl: https://css-tricks.com/contextual-utility-classes-for-color-with-custom-properties/
 date: 2019-08-14
-language: en
 tags:
   - post
   - css

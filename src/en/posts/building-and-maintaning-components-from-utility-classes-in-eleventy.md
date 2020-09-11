@@ -2,7 +2,6 @@
 title: Building and maintaining components from utility classes in Eleventy
 summary: Use a collection of utilities to form components without additional CSS.
 date: 2020-06-29
-language: en
 tags:
   - post
   - css
