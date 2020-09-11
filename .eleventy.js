@@ -246,7 +246,12 @@ module.exports = function(eleventyConfig) {
 
 	// Don't process folders with static assets e.g. images
 	eleventyConfig.addPassthroughCopy(root+"/cms-editor");
-	eleventyConfig.addPassthroughCopy({ [`${root}/_includes/assets/`]: "/assets/" });
+	eleventyConfig.addPassthroughCopy({
+		[`${root}/_includes/assets/fonts`]: "/assets/fonts",
+		[`${root}/_includes/assets/img`]: "/assets/img",
+		[`${root}/_includes/assets/css`]: "/assets/css",
+		[`${root}/_includes/assets/jsmin`]: "/assets/js",
+	});
 
 	/* Markdown Plugins */
 	let markdownIt = require("markdown-it");
