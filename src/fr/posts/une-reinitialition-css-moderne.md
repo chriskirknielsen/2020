@@ -4,7 +4,6 @@ summary: Andy Bell propose un reset CSS adapté aux navigateurs modernes.
 date: 2019-10-30
 original: https://hankchizljaw.com/wrote/a-modern-css-reset/
 originalTitle: Andy Bell - A Modern CSS Reset
-language: fr
 tags:
   - post
   - css

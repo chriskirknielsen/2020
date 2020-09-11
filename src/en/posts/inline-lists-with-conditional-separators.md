@@ -2,7 +2,6 @@
 title: Inline lists with conditional separators
 summary: Only show a separator when two items are next to each other, and skip for new lines.
 date: 2020-07-18
-language: en
 tags:
   - post
   - css

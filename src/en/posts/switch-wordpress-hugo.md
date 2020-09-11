@@ -4,7 +4,6 @@ summary: Running a simple blog doesn't require a large CMS.
 externalHost: Smashing Magazine
 externalUrl: https://www.smashingmagazine.com/2019/05/switch-wordpress-hugo/
 date: 2019-05-22
-language: en
 tags:
   - post
   - wordpress
