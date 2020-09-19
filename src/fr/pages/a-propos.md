@@ -68,6 +68,8 @@ Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, 
 
 J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon trajet d'une heure à **New York City** mais je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et je suis actuellement en train de me remettre au japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
 
+Parfois, je retourne à mes origines de graphiste et crée de petits projets. [Sur TeePublic, vous povez trouver quelques illustrations](https://www.teepublic.com/user/ckn/) que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire. Votre soutien signifierait beaucoup à mes yeux !
+
 <hr>
 
 ## C.V. bien trop formel
