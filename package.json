@@ -1,7 +1,7 @@
 {
   "name": "chriskirknielsen-2020",
   "version": "1.0.0",
-  "description": "An 11ty-generated portfolio/blog",
+  "description": "Eleventy build of my personal portfolio.",
   "scripts": {
     "build": "npx eleventy",
     "fullbuild": "gulp watch & npx eleventy --serve",
@@ -17,11 +17,11 @@
     "url": "https://github.com/chriskirknielsen/2020"
   },
   "author": {
-    "name": "Dan Urbanowicz",
-    "email": "dan.urbanowicz@gmail.com",
-    "url": "https://www.danurbanowicz.com/"
+    "name": "Christopher Kirk-Nielsen",
+    "email": "chriskirknielsen@gmail.com",
+    "url": "https://chriskirknielsen.com/"
   },
-  "license": "MIT",
+  "license": "ACSL",
   "bugs": {
     "url": "https://github.com/chriskirknielsen/2020/issues"
   },
