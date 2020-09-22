@@ -22,6 +22,10 @@ module.exports = {
       root: "fr/",
     }
   },
+  merch: {
+    "TeePublic": "https://www.teepublic.com/user/ckn",
+    "RedBubble": "https://www.redbubble.com/people/ckirknielsen/shop"
+  },
   assetUrl: {
     manifest: "manifest.json",
     icons: {
@@ -36,4 +40,4 @@ module.exports = {
     fontFaceFolder: "assets/fonts",
     fontFaceStyles: "assets/css/font-face.css",
   }
-};
+}
