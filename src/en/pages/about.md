@@ -62,13 +62,19 @@ If I'm not doing web-related things, I might be making **electronica music** as 
 
 I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
+### T-Shirts & Such
+
+I'll occasionally go back to my designer roots and make some little projects. I've made a few designs you can buy on shirts and the like — if you like CSS and '80s style, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
+  {{- ", " if not loop.first -}}
+  {{- andWord + " " if loop.last -}}
+  <a href="{{ link }}">{{ store }}</a>
+{%- endfor %}. Your support would mean a lot!
+
 ## Hobbies
 
 Like many other humans, listening to music is a big part of my life, mainly rock, metal, and synthwave — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
 
 I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continents! As a result, I speak English, French and Danish fluently. I also learned some Italian, and am currently getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
-
-I'll occasionally go back to my designer roots and make some little projects. [On TeePublic, you can find a few designs](https://www.teepublic.com/user/ckn/) I've made you can buy on shirts and the like — if you like CSS and '80s style, you just might enjoy it. Your support would mean a lot!
 
 ## Overly-Formal Résumé
 

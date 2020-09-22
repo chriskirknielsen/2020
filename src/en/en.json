@@ -4,6 +4,7 @@
     "localeRoot": "",
     "localeRssUrl": "/rss.xml",
     "punctSp": "",
+    "andWord": "and",
     "navSet": [
         "home",
         "blog",

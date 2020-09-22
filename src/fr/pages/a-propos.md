@@ -62,13 +62,19 @@ Quand je ne suis pas occupé à faire des choses sur le web, je suis potentielle
 
 Je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
 
+### T-Shirts & Compagnie
+
+Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
+  {{- ", " if (not loop.first and not loop.last) -}}
+  {{- " " + andWord + " " if loop.last -}}
+  <a href="{{ link }}">{{ store }}</a>
+{%- endfor %}. Votre soutien signifierait beaucoup à mes yeux !
+
 ## Hobbies
 
 Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, surtout de la musique rock, metal et synthwave — je suis obsédé par l'esthétique des années 80. Quelque chose avec les synthés m'attire beaucoup — peut-être que les couleurs néon baignent en harmonie au plus profond de moi !
 
 J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon trajet d'une heure à **New York City** mais je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et je suis actuellement en train de me remettre au japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
-
-Parfois, je retourne à mes origines de graphiste et crée de petits projets. [Sur TeePublic, vous povez trouver quelques illustrations](https://www.teepublic.com/user/ckn/) que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire. Votre soutien signifierait beaucoup à mes yeux !
 
 <hr>
 
