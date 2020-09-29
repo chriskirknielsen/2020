@@ -23,7 +23,7 @@ module.exports = {
     }
   },
   merch: {
-    "TeePublic": "https://www.teepublic.com/user/ckn",
+    "TeePublic": "https://www.teepublic.com/user/chriskirknielsen",
     "RedBubble": "https://www.redbubble.com/people/ckirknielsen/shop"
   },
   assetUrl: {
