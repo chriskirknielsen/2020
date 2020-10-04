@@ -1,7 +1,7 @@
 ---
 title: Remerciements & Colophon
 summary: Quelques mercis sont en ordre…
-permalink: /remerciements/
+permalink: /fr/remerciements/
 navtitle: Remerciements
 translationKey: "acknowledgementsPage"
 date: 2020-05-02
