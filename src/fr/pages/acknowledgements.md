@@ -4,7 +4,6 @@ summary: Quelques mercis sont en ordre…
 permalink: /fr/remerciements/
 navtitle: Remerciements
 translationKey: "acknowledgementsPage"
-date: 2020-05-02
 ---
 
 ## Techniques

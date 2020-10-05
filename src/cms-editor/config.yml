@@ -3,10 +3,9 @@ backend:
   repo: chriskirknielsen/2020
   branch: dev
 
-# Uncomment below to enable drafts
-# publish_mode: editorial_workflow
+# local_backend: true
 
-media_folder: "src/_includes/assets/img" # Media files will be stored in the repo under images/uploads
+media_folder: "src/_includes/assets/img"
 
 collections:
   # English
@@ -23,7 +22,6 @@ collections:
       - { label: "Page Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Permalink", name: "permalink", widget: "string", default: "", required: false }
-      - { label: "Translation Key", name: "translationKey", widget: "string", required: false }
       - { label: "Language", name: "language", widget: "hidden", default: "en" }
       - { label: "Additional Stylesheets (comma separated)", name: "ownstyles", widget: "string", default: ".", required: false }
       - { label: "Tags", name: "tags", widget: "list", default: ["nav"], required: false }
@@ -62,7 +60,6 @@ collections:
       - { label: "Page Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Permalink", name: "permalink", widget: "string", default: "", required: false }
-      - { label: "Translation Key", name: "translationKey", widget: "string", required: false }
       - { label: "Language", name: "language", widget: "hidden", default: "fr" }
       - { label: "Additional Stylesheets (comma separated)", name: "ownstyles", widget: "string", default: ".", required: false }
       - { label: "Tags", name: "tags", widget: "list", default: ["nav"], required: false }
