@@ -5,12 +5,6 @@
     "localeRssUrl": "/fr/rss.xml",
     "punctSp": " ",
     "andWord": "et",
-    "navSet": [
-        "accueil",
-        "blog",
-        "a-propos",
-        "contact"
-    ],
     "dateFormat": "DD MMMM Y",
     "localisedContent": {
         "skiplink": "Sauter au contenu",

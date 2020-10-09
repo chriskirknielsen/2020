@@ -209,10 +209,6 @@ collections:
             name: "andWord"
             widget: "hidden"
             default: "and"
-          - label: "Navbar Pages"
-            name: "navSet"
-            widget: "list"
-            default: ["home", "blog", "about", "contact"]
           - label: "Date Format"
             name: "dateFormat"
             widget: "string"
@@ -333,10 +329,6 @@ collections:
             name: "andWord"
             widget: "hidden"
             default: "et"
-          - label: "Navbar Pages"
-            name: "navSet"
-            widget: "list"
-            default: ["accueil", "blog", "a-propos", "contact"]
           - label: "Date Format"
             name: "dateFormat"
             widget: "string"
