@@ -1,4 +1,4 @@
-{% set navList = collections['pages_'+locale] | sortNavLocale(navSet) %}
+{% set navList = collections['pages_'+locale] | sortNavLocale(metadata.navSet) %}
 <ul class="nav__list | u-displayFlex u-flex--wrap u-flex--stretchBlock">
 {% for nav in navList %}
 	<li class="nav__item | u-displayFlex u-flex--stretchBlock">
