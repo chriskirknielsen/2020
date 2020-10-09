@@ -4,7 +4,6 @@ title: Fancy a chat?
 summary: Get in touch with Christopher Kirk-Nielsen via email
 navtitle: Contact
 translationKey: "contactPage"
-date: 2020-01-01
 tags:
   - nav
 ---

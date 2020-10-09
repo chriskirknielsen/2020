@@ -4,7 +4,6 @@ summary: Some info about this site
 permalink: /acknowledgements/
 navtitle: Acknowledgements
 translationKey: "acknowledgementsPage"
-date: 2020-05-02
 ---
 
 ## Technical

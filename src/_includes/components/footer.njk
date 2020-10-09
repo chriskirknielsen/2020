@@ -13,7 +13,7 @@
 
 		<nav aria-label="{{ localisedContent.footerAdditionalLinks }}">
 			<ul class="o-inlineList | u-displayInlineBlock">
-				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgementsPage', locale) -%}
+				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgements', locale) -%}
 				<li class="u-displayInline"><a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a></li>
 				<li class="u-displayInline"><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
 			</ul>
