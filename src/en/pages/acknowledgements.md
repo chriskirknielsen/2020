@@ -3,7 +3,6 @@ title: Acknowledgements & Colophon
 summary: Some info about this site
 permalink: /acknowledgements/
 navtitle: Acknowledgements
-translationKey: "acknowledgementsPage"
 ---
 
 ## Technical

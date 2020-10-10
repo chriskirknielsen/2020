@@ -3,7 +3,6 @@ title: Remerciements & Colophon
 summary: Quelques mercis sont en ordre…
 permalink: /fr/remerciements/
 navtitle: Remerciements
-translationKey: "acknowledgementsPage"
 ---
 
 ## Techniques

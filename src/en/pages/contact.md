@@ -3,7 +3,6 @@ layout: layouts/contact.njk
 title: Fancy a chat?
 summary: Get in touch with Christopher Kirk-Nielsen via email
 navtitle: Contact
-translationKey: "contactPage"
 tags:
   - nav
 ---

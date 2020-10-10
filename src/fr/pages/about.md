@@ -3,7 +3,6 @@ templateEngineOverride: njk,md
 title: Salut, moi c'est Chris
 summary: En apprendre plus sur Christopher Kirk-Nielsen
 permalink: /fr/a-propos/
-translationKey: "aboutPage"
 navtitle: À Propos
 ownstyles: about
 tags:
