@@ -5,7 +5,6 @@ summary: Christopher Kirk-Nielsen, développeur créatif
 permalink: /fr/
 navtitle: Accueil
 ownstyles: home
-translationKey: "homePage"
 tags:
   - nav
 ---

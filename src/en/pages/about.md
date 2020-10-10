@@ -3,7 +3,6 @@ templateEngineOverride: njk,md
 title: Hello, I'm Chris
 summary: Learn more about Christopher Kirk-Nielsen
 permalink: /about/
-translationKey: "aboutPage"
 navtitle: About
 ownstyles: about
 tags:

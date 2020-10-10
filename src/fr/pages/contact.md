@@ -2,7 +2,6 @@
 layout: layouts/contact.njk
 title: Me joindre
 navtitle: Contact
-translationKey: "contactPage"
 tags:
   - nav
 ---
