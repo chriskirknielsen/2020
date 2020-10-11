@@ -65,12 +65,12 @@
 	{# <link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}"> #}
 	
 	{% if page.fileSlug and section %}
-		<meta name="test-has-slug-variant" content="{{ page.fileSlug }}">
 		{% set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset %}
 		{% set filteredVariants = collections | findVariants(resourceVariants, page.fileSlug, locale) %}
 		
+		<link rel="alternate" href="{{ permalink | url }}" hreflang="{{ locale }}">
 		{% for variant in filteredVariants %}
-			<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}">
+		<link rel="alternate" href="{{ variant.url | url }}" hreflang="{{ variant.data.locale }}">
 		{% endfor %}
 	{% endif %}
 	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
