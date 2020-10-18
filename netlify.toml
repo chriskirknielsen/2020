@@ -1,3 +1,23 @@
+## Netlify build settings
 [build]
   publish = "_site"
   command = "eleventy"
+
+## Cache control for CSS files
+[[headers]]
+  for = "/assets/css/*.css"
+  [headers.values]
+    cache-control = '''
+    public,
+    max-age=1209600'''
+
+## Error 404 redirects
+[[redirects]]
+  from = "/*"
+  to = "/en/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/fr/*"
+  to = "/fr/404.html"
+  status = 404
