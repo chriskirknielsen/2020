@@ -40,5 +40,11 @@ module.exports = {
     globalStyles: "assets/css/global.css",
     fontFaceFolder: "assets/fonts",
     fontFaceStyles: "assets/css/font-face.css",
+  },
+  cloudinary: {
+    url: 'https://res.cloudinary.com/chriskirknielsen',
+    logo: 'ckn_logo',
+    image: 'ckn_post_bg',
+    font: 'MarvinVisionsBigBold.otf'
   }
 }

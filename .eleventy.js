@@ -74,6 +74,10 @@ module.exports = function(eleventyConfig) {
 		return string.replace(/[\u0020-\u007E]/g, (v) => '&#'+v.charCodeAt()+';');
 	});
 
+	eleventyConfig.addFilter("cloudinaryEscape", function(string) {
+		return encodeURIComponent(string);
+	});
+
 	eleventyConfig.addFilter("split", function(string, delimiter) {
 		delimiter = delimiter || ',';
 		return string.trim().split(delimiter);
