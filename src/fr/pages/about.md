@@ -79,56 +79,54 @@ J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon
 
 ## C.V. bien trop formel
 
-<details class="u-flow">
-  <summary class="fluid-type">Voici une auto-représentation sous forme de liste, si ça peut apaiser votre curiosité.</summary>
+Voici une auto-représentation sous forme de liste, si ça peut apaiser votre curiosité.
 
-  <div>
+### Compétences
 
-  ### Compétences
+- **Développement :** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
+- **Outils :** Git, Gulp, JAMstack (sites statiques avec Eleventy ou Hugo, sur Netlify)
+- **Design :** Photoshop, Illustrator, InDesign, Sketch
+- **Motion Design :** After Effects, Premiere Pro, Cinema 4D
 
-  - **Développement :** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
-  - **Outils :** Git, Gulp, JAMstack (sites statiques avec Eleventy ou Hugo, sur Netlify)
-  - **Design :** Photoshop, Illustrator, InDesign, Sketch
-  - **Motion Design :** After Effects, Premiere Pro, Cinema 4D
+### Expérience
 
-  ### Expérience
+- **2020 :** développeur front-end senior chez MOJO PSG
+- **2018–2019 :** développeur front-end chez MOJO PSG
+- **2015–2018 :** activité freelance en marketing numérique
 
-  - **2020 :** développeur front-end senior chez MOJO PSG
-  - **2018–2019 :** développeur front-end chez MOJO PSG
-  - **2015–2018 :** activité freelance en marketing numérique
+### Éducation
 
-  ### Éducation
+- **2015 :** Certificat Digital Transformation de HEC Paris
+- **2014–2015 :** études en motion design à e-artsup Paris
+- **2011–2014 :** études en design graphique à e-artsup Lyon
 
-  - **2015 :** Certificat Digital Transformation de HEC Paris
-  - **2014–2015 :** études en motion design à e-artsup Paris
-  - **2011–2014 :** études en design graphique à e-artsup Lyon
+### Langues
 
-  ### Langues
+- **Français :** courant
+- **Anglais :** courant
+- **Danish :** courant
+- **Italian :** moyen
+- *Lit également les caractères cyrilliques, hiragana et katakana*
 
-  - **Français :** courant
-  - **Anglais :** courant
-  - **Danish :** courant
-  - **Italian :** moyen
-  - *Lit également les caractères cyrilliques, hiragana et katakana*
+### Intérêts
 
-  ### Intérêts
+- **Dose quotidienne :** thé ou café, musique, livres, jeux vidéos, films et séries T.V.
+- **Geekometric :** blog personnel de critique de films/jeux vidéo (depuis 2013)
+- **Chronoise :** création de musique électronique (depuis 2010)
 
-  - **Dose quotidienne :** thé ou café, musique, livres, jeux vidéos, films et séries T.V.
-  - **Geekometric :** blog personnel de critique de films/jeux vidéo (depuis 2013)
-  - **Chronoise :** création de musique électronique (depuis 2010)
+### Documents
 
-  ### Documents
+- **Travail :** détenteur de "Green Card" américaine
+- **Nationalité :** double-nationalité franco-danoise
 
-  - **Travail :** détenteur de "Green Card" américaine
-  - **Nationalité :** double-nationalité franco-danoise
+### Sur la toile
 
-  ### Sur la toile
+- [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
+- [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
+- [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
+- [Geekometric](https://geekometric.com)
+- [Chronoise](https://chronoise.com)
 
-  - [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
-  - [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
-  - [CodePen: chriskirknielsen](https://codepen.io/chriskirknielsen)
-  - [Geekometric](https://geekometric.com)
-  - [Chronoise](https://chronoise.com)
+## Me joindre
 
-  </div>
-</details>
+Je préfère communiquer par écrit, donc veuillez m'envoyer un message à <a href="mailto:{{ metadata.author.email | charToHtml | safe }}">{{ metadata.author.email | charToHtml | safe }}</a>. Si vous souhaitez discuter par téléphone, merci de m'envoyer un e-mail afin d'organiser un appel. Merci !

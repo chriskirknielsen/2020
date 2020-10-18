@@ -10,7 +10,7 @@ module.exports = {
   copyrightStart: 2019,
   currentYear: (new Date()).getFullYear(),
   primaryLanguage: "en",
-  navSet: ["home", "blog", "about", "contact"],
+  navSet: ["home", "blog", "about"],
   languages: {
     "en": {
       label: "English",
