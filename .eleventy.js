@@ -70,6 +70,10 @@ module.exports = function(eleventyConfig) {
 
 	/* FILTERS */
 
+	eleventyConfig.addFilter("charToHtml", function(string) {
+		return string.replace(/[\u0020-\u007E]/g, (v) => '&#'+v.charCodeAt()+';');
+	});
+
 	eleventyConfig.addFilter("split", function(string, delimiter) {
 		delimiter = delimiter || ',';
 		return string.trim().split(delimiter);
