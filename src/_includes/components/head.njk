@@ -12,7 +12,7 @@
 
 	{# Add a dynamic image for blog posts, based on https://www.juanfernandes.uk/blog/automated-open-graph-images-with-11ty-and-cloudinary/ #}
 	{% if section == 'post' %}
-	<meta name="twitter:image" property="og:image" content="{{ metadata.cloudinary.url }}/w_1200,f_auto/l_{{ metadata.cloudinary.logo }},w_128,g_south_east,x_64,y_42/l_text:{{ metadata.cloudinary.font }}_80_center:{{ navtitle or title or renderData.title | cloudinaryEscape }},co_rgb:ffe4c2,c_fit,w_600/{{ metadata.cloudinary.image }}" />
+	<meta name="twitter:image" property="og:image" content="{{ metadata.cloudinary.url }}/w_1200,f_auto/l_{{ metadata.cloudinary.logo }},w_128,g_south_east,x_64,y_42/l_text:{{ metadata.cloudinary.font }}_100_center:{{ navtitle or title or renderData.title | cloudinaryEscape }},co_rgb:ffe4c2,c_fit,w_900/{{ metadata.cloudinary.image }}" />
 	<meta name="twitter:image:alt" property="og:image:alt" content="{{ navtitle or title or renderData.title }}" />
 	{% else %}
 	<meta property="og:image" content="{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}">
