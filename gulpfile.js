@@ -27,7 +27,7 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./'+root+'/_includes/assets/jsmin'));
 });
 
-gulp.task("watch", function () {
+gulp.task('watch', function () {
     gulp.watch('./'+root+'/_data/tokens.json', gulp.parallel('tokens'));
     gulp.watch('./'+root+'/_includes/assets/scss/**/*.scss', gulp.parallel('css'));
     gulp.watch('./'+root+'/_includes/assets/js/**/*.js', gulp.parallel('js'));

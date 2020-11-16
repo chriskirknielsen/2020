@@ -60,10 +60,10 @@
 	<link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles">
 
 	{% set js %}
-		{% include "assets/js/inline.js" %}
-		{% include "assets/js/color-scheme-switcher.js" %}
+		{% include "assets/jsmin/inline.min.js" %}
+		{% include "assets/jsmin/color-scheme-switcher.min.js" %}
 	{% endset %}
-	<script>{{ js | jsmin | safe }}</script>
+	<script>{{ js | safe }}</script>
 
 	<link rel="icon" href="{{ "/" + metadata.assetUrl.icons.faviconPng | url }}" type="image/png">
 	<link rel="icon" href="{{ "/" + metadata.assetUrl.icons.faviconSvg | url }}">
