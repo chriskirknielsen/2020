@@ -1,6 +1,8 @@
 body {
     font-family: f('body');
     font-size: 100%;
+    font-kerning: normal; // Safari needs this one to enable proper kerning
+    font-feature-settings: "kern";
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
@@ -29,7 +31,6 @@ h6,
     @if (map-deep-get($fonts, 'heading', 'main') == 'Marvin Visions Big') {
         // Keep the type tight, but not too tight
         letter-spacing: #{ $heading-font-letter-spacing };
-        font-feature-settings: "kern";
     }
 }
 
@@ -85,6 +86,4 @@ p {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
-    
-    font-feature-settings: "kern";
 }
