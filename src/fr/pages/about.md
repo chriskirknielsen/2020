@@ -106,7 +106,7 @@ Voici une auto-représentation sous forme de liste, si ça peut apaiser votre cu
 - **Anglais :** courant
 - **Danish :** courant
 - **Italian :** moyen
-- *Lit également les caractères cyrilliques, hiragana et katakana*
+- *Lit également les caractères cyrilliques russes, hiragana et katakana*
 
 ### Intérêts
 
