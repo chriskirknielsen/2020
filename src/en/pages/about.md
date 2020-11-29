@@ -104,7 +104,7 @@ Here's a bullet-list representation of me, if you're into that sort of thing.
 - **French:** fluent
 - **Danish:** fluent
 - **Italian:** intermediate
-- *Also reads Cyrillic, Hiragana and Katakana*
+- *Also reads Russian Cyrillic, Hiragana and Katakana*
 
 ### Interests
 
