@@ -1,3 +1,5 @@
+$about-delorean-transition-duration: 800;
+
 .about {
     /* Square image variables */
     $box-projection: ( // Coordinates of points projected past their container to obtain diagonal reveals (45deg in a square)
@@ -200,12 +202,31 @@
         stroke-width: 2.5;
     }
 
+    &-stroke--round {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
     &-fill > * {
         fill: currentColor;
     }
 }
 
-.about__delorean { width: 28rem; }
+.about__delorean {
+    width: 28rem;
+    pointer-events: none;
+
+    &-hook {
+        transition-property: opacity, transform;
+        transition-duration: #{ $about-delorean-transition-duration * 1ms };
+        transition-timing-function: #{ $easing-steep };
+    }
+    
+    &:not(&--with-hook) &-hook {
+        transform: translate(-4rem, -4rem);
+        opacity: 0;
+    }
+}
 .about__keyboard {
     width: 14rem;
     max-width: 30vw;
