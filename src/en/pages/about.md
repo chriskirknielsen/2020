@@ -29,7 +29,7 @@ tags:
 
   This led me to study **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
 
-  I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me hooked.
+  I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me <span data-about-action="hooked-delorean">hooked</span>.
 
   <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}

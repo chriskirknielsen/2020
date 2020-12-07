@@ -29,9 +29,9 @@ tags:
 
   Ceci m'avait poussé faire des études en **graphisme** pendant 4 ans, avec un intérêt particulier pour **la typographie, la théorie des couleurs, la composition, ainsi que l'animation**. J'avais cependant continué d'apprendre des choses sur le domaine du web, créant des blogs et d'autres petits projets. J'avais, par la suite, **travaillé en freelance pendant quelques années**, jonglant entre graphisme et développement — un équilibre enrichissant.
 
-  J'ai fini par réaliser ce que je souhaitais vraiment faire : **travailler sur le web pour bénéficier tout le monde** (ou en tout cas, contribuer ma pierre à l'édifice). Essentiellement, ce domaine est en constante évolution, ce qui signifie que je peux toujours approfondir mes connaissances. Avec ça, je ne peux plus lâcher prise !
+  J'ai fini par réaliser ce que je souhaitais vraiment faire : **travailler sur le web pour bénéficier tout le monde** (ou en tout cas, contribuer ma pierre à l'édifice). Essentiellement, ce domaine est en constante évolution, ce qui signifie que je peux toujours approfondir mes connaissances. Avec ça, je suis totalement <span data-about-action="hooked-delorean">accro</span> !
 
-  <div class="u-displayFlex u-flex--center">
+  <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}
     {%- include "assets/img/delorean.svg" -%}
     {%- endset -%}
