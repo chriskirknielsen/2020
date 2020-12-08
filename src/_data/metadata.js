@@ -37,6 +37,8 @@ module.exports = {
       googleIcon: "assets/img/google-touch-icon.png",
     },
     stylesFolder: "assets/css",
+    allStyles: "assets/css/style.css",
+    inlineStyles: "assets/css/inline.css",
     globalStyles: "assets/css/global.css",
     fontFaceFolder: "assets/fonts",
     fontFaceStyles: "assets/css/font-face.css",

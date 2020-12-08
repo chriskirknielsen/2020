@@ -46,4 +46,4 @@
 {%- set fontFace -%}
 {%- include (metadata.assetUrl.fontFaceStyles | url) -%}
 {%- endset %}
-<style>{{ fontFace | cssmin | safe }}</style>
+<style>{{ fontFace | safe }}</style>

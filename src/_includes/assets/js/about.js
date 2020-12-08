@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var initialClasses = deLorean.getAttribute('class');
             var modifiedClass = 'about__delorean--with-hook';
             var btn = aboutActions[a];
-            var animationDuration = 800; // Matches `$about-delorean-transition-duration` in src/_includes/assets/scss/pages/_about.scss
+            var animationDuration = 400; // Matches `$about-delorean-transition-duration` in src/_includes/assets/scss/pages/_about.scss
 
             var toggleViewBox = function() {
                 var w = parseFloat(deLorean.getAttribute('width'));
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var isInitial = (deLorean.getAttribute('class').indexOf(modifiedClass) < 0);
                 var xOffset = 0.16;
                 var yOffset = 1.36;
-                var animInterval = targetFrameRate / animationDuration;
+                var animInterval = targetFrameRate / (animationDuration * 2); // The CSS transition needs to be faster, so this transition can be twice as long
                 var animProgress = 0;
                 
                 // Determine new state: if it is not in its initial state, return to initial state
@@ -66,22 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     animProgress += animInterval;
                     requestAnimationFrame(animateViewBox);
                 }
-                var setSvgClass = function() {
-                    deLorean.setAttribute('class', classes);
-                }
-
-                // Set the functions to run in order
-                var functions = [setSvgClass, animateViewBox];
-
-                // If switching back to the inital state, run the functions in the reverse order
-                if (!isInitial) { 
-                    functions.reverse();
-                }
-
-                for (var f = 0; f < functions.length; f++) {
-                    var fn = functions[f];
-                    fn(); // Run callback
-                }
+                
+                // Trigger the changes
+                deLorean.setAttribute('class', classes);
+                animateViewBox();
             };
 
             btn.addEventListener('click', toggleViewBox, false);

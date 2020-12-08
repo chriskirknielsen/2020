@@ -19,8 +19,8 @@
 	{% endif %}
 
 	{# Add a slash in the final markup for root access #}
-	{% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
-	<link rel="preload" href="{{ globalStylesPath | url }}" as="style">
+	{# {% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
+	<link rel="preload" href="{{ globalStylesPath | url }}" as="style"> #}
 
 	{% if section == "home" %}
 		{% set homeFontStylesPath = "/" + metadata.assetUrl.stylesFolder + "/home-fontface.css" %}
@@ -37,21 +37,21 @@
 	{% endif %}
 
 	{% set css %}
-		{% include "assets/css/inline.css" %}
+		{%- include metadata.assetUrl.allStyles -%}
 	{% endset %}
 	<style>
-	{{- css | cssmin | safe }}
+	{{- css | safe -}}
 
-	{% if ownstyles -%}
+	{%- if ownstyles -%}
 		{# Add page-specific styles inline #}
-		{% set ownStylesList = ownstyles | split(",") %}
-		{% set pageStyleGroup = "" %}
+		{%- set ownStylesList = ownstyles | split(",") -%}
+		{%- set pageStyleGroup = "" -%}
 
-		{% for ownStyle in ownStylesList %}
-			{% set pagestylelink %}{{ metadata.assetUrl.stylesFolder }}/{{ ownStyle }}.css{% endset %}
-			{% set pagestyle %}{% include pagestylelink %}{% endset %}
-			{% set pageStyleGroup = pageStyleGroup + pagestyle %}
-		{% endfor -%}
+		{%- for ownStyle in ownStylesList -%}
+			{%- set pagestylelink %}{{ metadata.assetUrl.stylesFolder }}/{{ ownStyle }}.css{% endset -%}
+			{%- set pagestyle %}{% include pagestylelink %}{% endset -%}
+			{%- set pageStyleGroup = pageStyleGroup + pagestyle -%}
+		{%- endfor -%}
 
 		{{- pageStyleGroup | cssmin | safe -}}
 	{%- endif -%}
