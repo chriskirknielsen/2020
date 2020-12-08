@@ -29,7 +29,7 @@
 
     document.addEventListener('change', function (e) {
         const schemeToggle = e.target.closest(schemeToggleSelector);
-        if (!schemeToggle) { return; } // If the "change" was trigger by our toggle, bail
+        if (!schemeToggle) { return; } // If the "change" event wasn't triggered by our toggle, bail
         const currentSchemeIndex = schemeOptions.findIndex(s => s === getScheme());
         const newSchemeIndex = 1 - currentSchemeIndex; // 1-0 = 1 == dusk | 1-1 = 0 == dawn
 
