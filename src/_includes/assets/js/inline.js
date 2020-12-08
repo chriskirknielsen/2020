@@ -1,6 +1,6 @@
 // Get user's preferences
-window.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-window.prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// window.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// window.prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 // Handle skip link
 document.addEventListener('click', function (e) {
@@ -14,6 +14,3 @@ document.addEventListener('click', function (e) {
   
   skipTarget.focus();
 }, false);
-
-// Init rAF
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };

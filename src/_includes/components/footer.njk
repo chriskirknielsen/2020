@@ -47,3 +47,10 @@
 {%- include (metadata.assetUrl.fontFaceStyles | url) -%}
 {%- endset %}
 <style>{{ fontFace | safe }}</style>
+
+{% set js %}
+	{% include "assets/jsmin/inline.min.js" %}
+	{% include "assets/jsmin/color-scheme-switcher.min.js" %}
+	{% if page.fileSlug == 'about' %}{% include "assets/jsmin/about.min.js" %}{% endif %}
+{% endset %}
+<script>{{ js | safe }}</script>

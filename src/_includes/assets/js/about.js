@@ -1,3 +1,6 @@
+// Init rAF
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };
+
 document.addEventListener('DOMContentLoaded', function() {
     var aboutActionAttr = 'data-about-action';
     var aboutActions = document.querySelectorAll('['+aboutActionAttr+']');
