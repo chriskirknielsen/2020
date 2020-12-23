@@ -5,6 +5,7 @@ module.exports = { // Define a list of utility classes that are commonly used to
     // Global link with box hover effect
     boxLink: "u-fontBold u-textDecoration--none u-border--double u-border--accent u-bg--grey-max h:u-c--grey-max h:u-bg--accent",
     glowBoxLink: "u-fontBold h:u-c--grey-min h:u-bg--grey-max u-border u-border--transparent h:u-border--accent h:u-glowBox--accent h:u-textShadow--currentBg h:u-textDecoration--none",
+    flexBoxLink: "u-displayInlineFlex u-flex--centerBlock u-padding",
 
     // Card component
     cardFlex: "u-flex--grow-1 u-flex--basis-0",

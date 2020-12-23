@@ -23,7 +23,7 @@ section: post
 
 {% if externalUrl %}
 <p class="u-marginBlockStart--double">
-	<a href="{{ externalUrl }}" class="u-displayInlineFlex u-padding {{ utilities.boxLink }} u-textLarge u-lineHeight--1">
+	<a href="{{ externalUrl }}" class="{{ utilities.flexBoxLink }} {{ utilities.boxLink }} u-textLarge u-lineHeight--1">
 		{{ localisedContent.external }} {{ externalHost or externalUrl }}
 		<svg class="u-displayInlineBlock u-marginInlineStart--half u-width--1em" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
 	</a>
