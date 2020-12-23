@@ -327,9 +327,6 @@
     }
 }
 
-// Breakout container
-.u-breakout {
-    position: relative;
-    left: calc(50% - 50vw);
-    width: 100vw;
+.u-bfc { // `column-span: all` creates a new block-formatting context despite not being in a multicol layout: https://github.com/w3c/csswg-drafts/commit/a8634b96900279916bd6c505fda88dda71d8ec51
+    column-span: all;
 }
