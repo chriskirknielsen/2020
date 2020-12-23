@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
 section: home
-mainClasses: content
 ---
 
 <section class="content-full homescreen u-displayFlex u-flex--stretch" aria-label="Chris Kirk-Nielsen: creative developer, in a heavily eighties-inspired graphical style with neon colours, a perspective grid, and a large sun in the background">
@@ -29,7 +28,6 @@ mainClasses: content
     {% set latestposts = collections["posts_" + locale] | reverse %}
     {%- set latestpostslength = latestposts.length if latestposts.length < 2 else 2 -%}
     {%- if latestpostslength > 0 -%}
-        {# <h2>{{ localisedContent.latestPost }}</h2> #}
     <div class="{{ utilities.bfc }}">
         <div class="{{ utilities.cardContainer }}">
             {%- for i in range(0, latestpostslength) -%}

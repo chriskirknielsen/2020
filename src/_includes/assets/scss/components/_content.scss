@@ -1,3 +1,9 @@
+.content-full {
+    position: relative;
+    left: calc(50% - 50vw);
+    width: 100vw;
+}
+
 .content {
     $max: $container-max-width-rem;
     $wide-max: $wide-content-max-width-rem;
@@ -16,7 +22,7 @@
             [wide-start]
                 #{ $spacing * 2 }
             [container-start]
-                minmax(0, calc(#{ $max } - #{ $gutter * 2 }))
+                minmax(0, #{ $max })
             [container-end]
                 #{ $spacing * 2 }
             [wide-end]
@@ -31,6 +37,34 @@
         > * {
             grid-column: container-start / container-end;
         }
+
+        &-sub {
+            & > * {
+                max-width: $container-max-width-rem;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: #{ $spacing * 2 };
+                padding-right: #{ $spacing * 2 };
+            }
+
+            @supports (grid-template-columns: subgrid) {
+                display: grid;
+                grid-template-columns: subgrid;
+                grid-template-rows: 1fr;
+
+                & > * {
+                    grid-column: container-start / container-end;
+
+                    // Reset the no-subgrid fallback
+                    max-width: 100%;
+                    width: 100%;
+                    margin-left: initial;
+                    margin-right: initial;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
         
         &-wide {
             grid-column: wide-start / wide-end;
@@ -38,6 +72,10 @@
 
         &-full {
             grid-column: fullbleed-start / fullbleed-end;
+
+            // Reset the no-grid fallback
+            left: initial;
+            width: initial;
         }
 
         &-wide-limited {

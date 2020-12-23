@@ -9,14 +9,8 @@
 
 	{% include "components/header.njk" %}
 	
-	{% set mainClassOutput -%}
-	{%- if mainClasses -%}
-		{%- if mainClasses != "." %}{{ mainClasses }}{%- endif -%}
-	{%- else -%}
-		u-container u-width--100 u-paddingInline--double
-	{%- endif -%}
-	{%- endset %}
-	<main class="main {{ mainClassOutput }} {{ mainAddClass if mainAddClass }} {% if section != 'home' %}u-paddingBlockEnd--double u-flow{% else %}u-paddingBlockEnd--double{% endif %} fluid-type" id="content" tabindex="-1">
+	{% set mainClassOutput = mainClasses if mainClasses else "" %}
+	<main class="main content {{ mainClassOutput }} u-paddingBlockEnd--double u-flow fluid-type" id="content" tabindex="-1">
 		{{ layoutContent | safe }}
 	</main>
 

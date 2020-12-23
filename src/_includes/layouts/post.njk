@@ -1,50 +1,47 @@
 ---
 layout: layouts/base.njk
 section: post
-mainClasses: .
 ---
 
-<article class="content u-flow">
-	<header class="{{ utilities.bigboi }} content-full">
-		<div class="{{ utilities.bigboiContent }}">
-			<p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+<header class="{{ utilities.bigboi }}">
+	<div class="{{ utilities.bigboiContent }}">
+		<h1 id="{{ title | slug }}">{{ title }}</h1>
 
-			<h1 id="{{ title | slug }}">{{ title }}</h1>
-		</div>
-	</header>
+		<p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+	</div>
+</header>
 
-	{% if original %}
-	<p class="u-paddingInline u-paddingBlock u-border--double u-border--primary-med u-bg--grey-max">
-		{# <span aria-hidden="true">&rarr;</span> #}
-		<span class="u-fontItalic">{{ localisedContent.original }}{{ punctSp }}:</span>
-		<a href="{{ original | url }}" rel="nofollow"><span class="u-fontBold">{{ originalTitle or original }}</span></a>
-	</p>
-	{% endif %}
+{% if original %}
+<p class="u-paddingInline u-paddingBlock u-border--double u-border--primary-med u-bg--grey-max">
+	{# <span aria-hidden="true">&rarr;</span> #}
+	<span class="u-fontItalic">{{ localisedContent.original }}{{ punctSp }}:</span>
+	<a href="{{ original | url }}" rel="nofollow"><span class="u-fontBold">{{ originalTitle or original }}</span></a>
+</p>
+{% endif %}
 
-	{{ layoutContent | safe }}
+{{ layoutContent | safe }}
 
-	{% if externalUrl %}
-	<p class="u-marginBlockStart--double">
-		<a href="{{ externalUrl }}" class="u-displayInlineFlex u-padding {{ utilities.boxLink }} u-textLarge u-lineHeight--1">
-			{{ localisedContent.external }} {{ externalHost or externalUrl }}
-			<svg class="u-displayInlineBlock u-marginInlineStart--half u-width--1em" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
-		</a>
-	</p>
-	{% endif %}
+{% if externalUrl %}
+<p class="u-marginBlockStart--double">
+	<a href="{{ externalUrl }}" class="u-displayInlineFlex u-padding {{ utilities.boxLink }} u-textLarge u-lineHeight--1">
+		{{ localisedContent.external }} {{ externalHost or externalUrl }}
+		<svg class="u-displayInlineBlock u-marginInlineStart--half u-width--1em" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
+	</a>
+</p>
+{% endif %}
 
-	<hr>
+<hr>
 
-	{% if tags %}
-	<nav aria-labelledby="article-tags-heading">
-		<h2 class="u-displayInline u-fontBody u-fontBold u-textNormal u-c--color-text" id="article-tags-heading">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
-		<ul class="u-displayInline">
-		{% for tag in tags %}
-			{%- if tag != "post" -%}
-			{%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
-			<li class="u-displayInline"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
-			{%- endif -%}
-		{% endfor %}
-		</ul>
-	</nav>
-	{% endif %}
-</article>
+{% if tags %}
+<nav aria-labelledby="article-tags-heading">
+	<h2 class="u-displayInline u-fontBody u-fontBold u-textNormal u-c--color-text" id="article-tags-heading">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
+	<ul class="u-displayInline">
+	{% for tag in tags %}
+		{%- if tag != "post" -%}
+		{%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
+		<li class="u-displayInline"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
+		{%- endif -%}
+	{% endfor %}
+	</ul>
+</nav>
+{% endif %}
