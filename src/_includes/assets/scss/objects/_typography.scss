@@ -1,26 +1,24 @@
-
-
 blockquote {
     border-left: #{ $spacing * .25 } solid var(--c-primary-min, currentColor);
     padding-left: #{ $spacing * 1.25 };
 
-    > * + * {
+    & > * + * {
         margin-top: #{ $spacing };
     }
 
-    > :first-child::before {
+    & > :first-child::before {
         content: open-quote;
     }
     
-    > :last-child::after {
+    & > :last-child::after {
         content: close-quote;
     }
 
     :lang(fr) & > :first-child::before { padding-right: .25em; }
     :lang(fr) & > :last-child::after { padding-left: .25em; }
 
-    > :first-child::before,
-    > :last-child::after {
+    & > :first-child::before,
+    & > :last-child::after {
         color: var(--c-secondary-med, currentColor);
         font-weight: bold;
         font-family: #{ $quotation-mark-font };
