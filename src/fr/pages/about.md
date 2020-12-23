@@ -48,14 +48,17 @@ Quand je code, j'utilise VS Code mais parfois, j'aimerais retrouver des fonction
 
 ### Chronoise
 
-<div class="u-displayFlex u-flex--center u-floatRight u-marginBlock--double u-marginInlineStart--double">
-  {% set keyboard -%}
-  {%- include "assets/img/keyboard.svg" -%}
-  {%- endset -%}
-  {{ keyboard | htmlmin | safe }}
-</div>
+<div>
+  <div class="u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
+    {% set keyboard -%}
+    {%- include "assets/img/keyboard.svg" -%}
+    {%- endset -%}
+    {{ keyboard | htmlmin | safe }}
+  </div>
 
 Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com) , qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique !
+
+</div>
 
 ### Geekometric
 

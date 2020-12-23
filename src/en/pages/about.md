@@ -48,14 +48,17 @@ When I write code, I use VS Code, but I sometimes miss features from other edito
 
 ### Chronoise
 
-<div class="u-displayFlex u-flex--center u-floatRight u-marginBlock--double u-marginInlineStart--double">
-  {% set keyboard -%}
-  {%- include "assets/img/keyboard.svg" -%}
-  {%- endset -%}
-  {{ keyboard | htmlmin | safe }}
-</div>
+<div>
+  <div class="u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
+    {% set keyboard -%}
+    {%- include "assets/img/keyboard.svg" -%}
+    {%- endset -%}
+    {{ keyboard | htmlmin | safe }}
+  </div>
 
 If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
+
+</div>
 
 ### Geekometric
 
