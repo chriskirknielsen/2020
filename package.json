@@ -37,6 +37,7 @@
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "axios": "^0.21.1",
     "bl": "^4.0.3",
     "clean-css": "^4.2.3",
     "eleventy-plugin-blog-tools": "^0.3.1",
