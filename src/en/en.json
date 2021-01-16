@@ -28,5 +28,6 @@
         "rssHint": "Subscribe to chriskirknielsen's RSS feed"
     },
     "langSwitchLabel": "Switch Language",
-    "schemeSwitchLabel": "Toggle between dusk and dawn mode"
+    "schemeSwitchLabel": "Toggle between dusk and dawn mode",
+    "schemeSwitchTip": "Dusk/Dawn"
 }
