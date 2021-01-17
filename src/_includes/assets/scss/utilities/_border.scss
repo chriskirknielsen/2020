@@ -1,12 +1,9 @@
 /* Border */
 
-.u-border { border: 1px solid currentColor; }
-.u-border--double { border: 2px solid currentColor; }
+.u-border { border: #{ $border-base-size } solid currentColor; }
+.u-border--double { border: #{ $border-base-size * 2 } solid currentColor; }
 
 
 /* Border radius */
 
-// .u-radius { border-radius: #{ $spacing }; }
-// .u-radius--half { border-radius: #{ $spacing / 2 }; }
-// .u-radius--quarter { border-radius: #{ $spacing / 4 }; }
-// .u-radius--circle { border-radius: 50%; }
+.u-border-radius { border-radius: #{ $border-base-radius }; }
