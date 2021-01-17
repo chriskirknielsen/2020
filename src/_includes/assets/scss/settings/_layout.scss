@@ -30,6 +30,10 @@ $code-breakout-size: 4rem;
 $base-line-height: 1.5;
 $base-flow-spacing: $spacing * $base-line-height;
 
+// Borders
+$border-base-size: 1px;
+$border-base-radius: 2px;
+
 // Breakpoints used in fluid type
 //-- Content @ large
 $large-breakpoint-width-rem: $container-max-width; 

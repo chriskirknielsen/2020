@@ -38,7 +38,7 @@ section: post
 	<ul class="u-displayInline">
 	{% for tag in tags %}
 		{%- if tag != "post" -%}
-		{%- set tagUrl %}/tags/{{ localeRoot }}{{ tag }}/{% endset -%}
+		{%- set tagUrl %}/{{ localeRoot }}tags/{{ tag }}/{% endset -%}
 		<li class="u-displayInline"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
 		{%- endif -%}
 	{% endfor %}

@@ -7,6 +7,22 @@
 	user-select: none;
 	cursor: pointer;
 
+	&:hover,
+	&:focus-within {
+		&::after {
+			content: attr(data-tip);
+
+			position: absolute;
+			top: calc(100% + 0.25em);
+			right: 0;
+			padding: 0 0.25em;
+
+			color: var(--color-bg);
+			background: var(--color-text);
+			border-radius: #{ $border-base-radius };
+		}
+	}
+
 	&__element {
 		opacity: 0;
 	}

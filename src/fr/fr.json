@@ -28,5 +28,6 @@
         "rssHint": "S'inscrire au flux RSS de chriskirknielsen"
     },
     "langSwitchLabel": "Changer de Langue",
-    "schemeSwitchLabel": "Basculer entre les modes crépuscule et aube"
+    "schemeSwitchLabel": "Basculer entre les modes crépuscule et aube",
+    "schemeSwitchTip": "Crépuscule/Aube"
 }
