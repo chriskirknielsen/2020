@@ -7,12 +7,24 @@ section: post
 	<div class="{{ utilities.bigboiContent }}">
 		<h1 id="{{ title | slug }}">{{ title }}</h1>
 
-		<p class="u-c--primary-med u-fontBold"><time datetime="{{ date | machineDate }}">{{ date | date(dateFormat, locale) }}</time></p>
+		<time datetime="{{ date | machineDate }}" class="u-displayInlineBlock u-marginInlineEnd | u-c--primary-med u-fontBold">{{ date | date(dateFormat, locale) }}</time>
+		
+		{%- if tags %}
+		<h2 class="visually-hidden" id="article-tags-heading">{{ localisedContent.tagged }}</h2>
+		<ul class="u-displayInline" aria-labelledby="article-tags-heading">
+		{% for tag in tags %}
+			{%- if tag != "post" -%}
+			{%- set tagUrl %}/{{ localeRoot }}tags/{{ tag }}/{% endset -%}
+			<li class="u-displayInlineBlock"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half | u-textDecoration--none | {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
+			{%- endif -%}
+		{% endfor %}
+		</ul>
+		{% endif %}
 	</div>
 </header>
 
 {% if original %}
-<p class="u-paddingInline u-paddingBlock u-border--double u-border--primary-med u-bg--grey-max">
+<p class="u-paddingInline u-paddingBlock u-border--double u-border--primary-med u-border-radius u-bg--grey-max">
 	{# <span aria-hidden="true">&rarr;</span> #}
 	<span class="u-fontItalic">{{ localisedContent.original }}{{ punctSp }}:</span>
 	<a href="{{ original | url }}" rel="nofollow"><span class="u-fontBold">{{ originalTitle or original }}</span></a>
@@ -28,20 +40,4 @@ section: post
 		<svg class="u-displayInlineBlock u-marginInlineStart--half u-width--1em" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
 	</a>
 </p>
-{% endif %}
-
-<hr>
-
-{% if tags %}
-<nav aria-labelledby="article-tags-heading">
-	<h2 class="u-displayInline u-fontBody u-fontBold u-textNormal u-c--color-text" id="article-tags-heading">{{ localisedContent.tagged }}{{ punctSp }}:</h2>
-	<ul class="u-displayInline">
-	{% for tag in tags %}
-		{%- if tag != "post" -%}
-		{%- set tagUrl %}/{{ localeRoot }}tags/{{ tag }}/{% endset -%}
-		<li class="u-displayInline"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
-		{%- endif -%}
-	{% endfor %}
-	</ul>
-</nav>
 {% endif %}
