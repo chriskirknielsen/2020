@@ -55,7 +55,9 @@ body {
     color: var(--currentColor);
     background-color: var(--currentBackground);
 
-    // On smaller viewports, the menu is at the bottom: add padding to heep it
+    @include custom-scrollbar;
+
+    // On smaller viewports, the menu is at the bottom: add padding to prevent it overlaping content
     @include below-medium {
         padding-bottom: #{ $small-viewport-nav-height };
     }
