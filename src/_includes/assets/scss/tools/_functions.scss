@@ -27,7 +27,7 @@
     @return strip-unit($rem) * strip-unit($rem-in-px) * 1px;
 }
 
-// Get a cubic-eased number, with $t beloging to [0,1]
+// Get a cubic-eased number, with $t belonging to [0,1]
 // Based on the formulas from gre (Gaëtan Renaudeau): https://gist.github.com/gre/1650294
 @function easeInOutNum($t) {
     @if $t < .5 { @return 4 * $t * $t * $t; }
