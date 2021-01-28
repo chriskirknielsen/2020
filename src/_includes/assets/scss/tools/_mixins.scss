@@ -1,3 +1,4 @@
+// Responsive breakpoints
 @mixin above-large {
     @media (min-width: #{ $large-breakpoint-width }) {
         @content;
@@ -35,7 +36,7 @@
     }
 }
 
-// Function to automate the output based on the presence of a template string
+/** Automate the output based on the presence of a template string. */
 @function template-value($value, $template: false, $tag: '{{value}}') {
     @if $template != false {
         @return #{ unquote(str-replace($template, $tag, $value)) };
@@ -44,6 +45,7 @@
     }
 }
 
+/** Return a property-value pair with fluid scaling based on viewport size. */
 @mixin fluid($min, $max, $prop: 'font-size', $template: false, $tag: '{{value}}', $clamp: false) {
     $breakpoint-min: $small-breakpoint-width-rem * 1rem;
     $breakpoint-max: $large-breakpoint-width-rem * 1rem;
@@ -69,10 +71,55 @@
     }
 }
 
+/** Wrapper for the fluid mixin specifically for font-size. */
 @mixin fluid-type($min-value: 1rem, $max-value: 1.125rem, $min-vw: $small-breakpoint-width-rem * 1rem, $max-vw: $large-breakpoint-width-rem * 1rem) {
     $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
     $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
 
     font-size: $min-value; // Fallback for older browsers
     font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
+}
+
+/** Return the necessary styles to customise scrollbars. */
+@mixin custom-scrollbar($dir: vertical, $size: 1rem) {
+    scrollbar-color: var(--c-primary-med);
+    scrollbar-width: #{ $size };
+
+    &::-webkit-scrollbar {
+        width: if($dir == horizontal, 1rem, $size);
+        height: if($dir == vertical, 1rem, $size);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        @if ($dir == horizontal) { // The horizontal scrollbar has a simpler look
+            background: var(--c-primary-med);
+            box-shadow: inset 0 1px 0 var(--c-grey-min);
+        }
+        @else { // The main vertical one has more detail
+            background: var(--c-primary-med) linear-gradient(
+                to bottom,
+                var(--c-primary-min) 0.125rem,
+
+                transparent 0,
+                transparent calc(50% - 0.0625rem),
+
+                var(--c-primary-min) 0,
+                var(--c-primary-min) calc(50% + 0.0625rem),
+
+                transparent 0,
+                transparent calc(100% - 0.125rem),
+
+                var(--c-primary-min) 0,
+                var(--c-primary-min) calc(50% + 0.125rem)
+            ) center / calc(100% - 0.5rem) 0.5rem no-repeat; // Creates three horizontal lines in the middle of the scrollbar thumb
+            box-shadow:
+                inset 1px 0 0 var(--c-primary-min), // Left-side line on inside
+                inset -1px 0 0 var(--c-primary-min), // Ride-side line on inside
+                0 0 0 1px var(--c-primary-min); // Top- and bottom-side lines on outside
+        }
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: linear-gradient(if($dir == horizontal, 180deg, 90deg), var(--c-grey-med) 1px, var(--c-grey-max) 0);
+    }
 }
