@@ -1,5 +1,6 @@
 a:not([class]),
 .link {
+    text-decoration-line: underline;
     text-decoration-color: var(--c-grey-med);
     text-decoration-thickness: .075em;
     text-underline-offset: .2em;

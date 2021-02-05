@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var a = 0; a < aboutActions.length; a++) {
         var elementHtml = aboutActions[a].innerHTML;
         var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
-        var newElement = '<button class="button--reset u-textDecoration--underline" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
+        var newElement = '<button class="button--reset link" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
         aboutActions[a].outerHTML = newElement;
     }
 
