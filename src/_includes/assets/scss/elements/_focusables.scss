@@ -13,10 +13,6 @@ summary {
     &:focus:not(:focus-visible) {
         outline: none;
     }
-        
-    &:focus:not(:-moz-focusring) {
-        outline: none;
-    }
 }
 
 details {
