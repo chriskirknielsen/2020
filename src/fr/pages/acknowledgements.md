@@ -7,7 +7,7 @@ navtitle: Remerciements
 
 ## Techniques
 
-Ce site est bâti avec [Eleventy](https://www.11ty.dev/), un superbe générateur de site statique (que je supporte financièrement). Je me suis basé sur le [*boilerplate* de Dan Urbanowicz](https://templates.netlify.com/template/eleventy-netlify-boilerplate/) comme point de départ. Je me sers de [gulp](https://gulpjs.com/) pour compiler mon Sass en CSS et minifier styles comme scripts.
+Ce site est bâti avec [Eleventy](https://www.11ty.dev/), un superbe générateur de site statique (que je soutiens financièrement). Je me suis basé sur le [*boilerplate* de Dan Urbanowicz](https://templates.netlify.com/template/eleventy-netlify-boilerplate/) comme point de départ. Je me sers de [gulp](https://gulpjs.com/) pour compiler mon Sass en CSS et minifier styles comme scripts.
 
 L'hébergement est fourni par [Netlify](https://netlify.com/), gratuitement, puisque je ne génère que peu de trafic… Pour autant, ça reste une bonne idée de les soutenirs !
 
@@ -23,7 +23,7 @@ J'utilise un [MacBook Pro 16 pouces de 2019](https://www.apple.com/macbook-pro-1
 
 Niveau programmes, j'utilise [VS Code](https://code.visualstudio.com/) avec le brillant [thème SynthWave '84](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode) et quelques extensions, comme [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) ou celle que j'ai développée, [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier). Je travaille souvent avec [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) pour mes besoins illustrations vectorielles, nettoyées avec [SVGOMG](https://jakearchibald.github.io/svgomg/) puis ajustées manuellement pour être _pile poil_ comme je les veux.
 
-Bien que mon minuscule appartment n'accomode qu'un petit [bureau Micke de IKEA](https://www.ikea.com/us/en/p/micke-desk-black-brown-20244747/), je recommande chaudement la chaise [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (lien de parrainage pour une réduction !). J'utilise aussi les [écouteurs Sony MDR-XB50AP](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap) pour une écoute "confortable" ou le [casque Sony MDR-XB950N1](https://www.sony.com/electronics/headband-headphones/mdr-xb950n1) pour une écoute plus "concentrée" (la fonction anti-bruit est sympa).
+Bien que mon minuscule appartment n'accomode qu'un petit [bureau Micke de IKEA](https://www.ikea.com/us/en/p/micke-desk-black-brown-20244747/), je recommande chaudement la chaise [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (ce lien est parrainé et vous offrira une réduction). J'utilise aussi les [écouteurs Sony MDR-XB50AP](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap) pour une écoute "confortable" ou le [casque Sony MDR-XB950N1](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1) pour une écoute plus "concentrée" (la fonction anti-bruit est sympa).
 
 ## Personnes
 
