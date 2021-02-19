@@ -25,7 +25,8 @@ module.exports = {
   },
   merch: {
     "TeePublic": "https://www.teepublic.com/user/chriskirknielsen",
-    "RedBubble": "https://www.redbubble.com/people/ckirknielsen/shop"
+    "RedBubble": "https://www.redbubble.com/people/ckirknielsen/shop",
+    "Society6": "https://society6.com/chriskirknielsen/prints"
   },
   assetUrl: {
     manifest: "manifest.json",

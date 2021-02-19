@@ -64,7 +64,7 @@ Quand je ne suis pas occupé à faire des choses sur le web, je suis potentielle
 
 Je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
 
-### T-Shirts & Compagnie
+### T-Shirts, Affiches & Compagnie
 
 Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
   {{- ", " if (not loop.first and not loop.last) -}}

@@ -64,9 +64,9 @@ If I'm not doing web-related things, I might be making **electronica music** as 
 
 I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
-### T-Shirts & Such
+### T-Shirts, Posters & More
 
-I'll occasionally go back to my designer roots and make some little projects. I've made a few designs you can buy on shirts and the like — if you like CSS and '80s style, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
+I'll occasionally go back to my designer roots and make some little projects. I've made a few designs you can buy on shirts, posters and the like — if you like CSS and '80s style, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
   {{- ", " if not loop.first -}}
   {{- andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
