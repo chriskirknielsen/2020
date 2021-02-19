@@ -1,7 +1,7 @@
 const root = 'src'; // Root folder
 const gulp = require("gulp");
-//const sass = require("gulp-sass");
-const sass = require('gulp-dart-sass');
+const sass = require("gulp-sass");
+sass.compiler = require("sass"); // dart-sass
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
