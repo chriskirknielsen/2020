@@ -152,6 +152,7 @@
     }
 
     &__svg-wrapper {
+        max-width: 100%; // Counter the default h1's max-width of 60ch
         > svg {
             width: 60rem;
             contain: content;

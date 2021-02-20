@@ -25,9 +25,8 @@
     margin-bottom: 0;
 }
 
-.u-flow--double > * + * {
-    margin-top: #{ $base-flow-spacing * 2 };
-}
+.u-flow > :is(h2, h3) + * { margin-top: #{ $base-flow-spacing / 4 }; }
+.u-flow > h2 + h3 { margin-top: #{ $base-flow-spacing / 8 }; }
 
 // .u-oversized {
 //     position: relative;
