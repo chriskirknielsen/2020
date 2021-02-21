@@ -191,11 +191,15 @@ $about-delorean-transition-duration: 400;
 .about__trinket {
     overflow: visible;
     
-    &-stroke > * {
+    &-strokes > * {
         fill: none;
-        stroke: currentColor;
         stroke-width: 1.5;
         stroke-miterlimit: 10;
+    }
+
+    &-strokes > *,
+    &-stroke {
+        stroke: currentColor;
     }
 
     &-stroke--thick {
@@ -227,9 +231,13 @@ $about-delorean-transition-duration: 400;
         opacity: 0;
     }
 }
-.about__keyboard,
-.about__shirt {
+.about__keyboard {
     width: 14rem;
     max-width: 30vw;
 }
 .about__headphones { width: 6rem; }
+.about__keyboard,
+.about__shirt {
+    width: 8rem;
+    max-width: 20vw;
+}

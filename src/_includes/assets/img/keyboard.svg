@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="204.8" height="54.4" viewBox="0 0 204.8 54.4" class="about__trinket about__keyboard" aria-label="MIDI keyboard">
-    <g class="about__trinket-stroke">
+    <g class="about__trinket-strokes">
         <rect x="0.5" y="0.5" width="203.8" height="53.4" rx="3.25"/>
         <path d="M9.3 12.3h186.1v41.6H9.3z"/>
         <path d="M189.3 16v34.9c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1V16M47.9 38.9v12c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1V16M41.4 38.9v12c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1v-12M35 38.9v12c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1v-12M28.6 16v34.9c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1v-12M22.2 38.9v12c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1V16M15.7 38.9v12c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1v-12M9.3 16v34.9c0 .6.5 1.1 1.1 1.1h4c.6 0 1.1-.5 1.1-1.1v-12"/>

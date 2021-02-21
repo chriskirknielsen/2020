@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="225.3" height="229.2" viewBox="0 0 225.3 229.2" class="about__headphones" aria-label="Over-ear headphones">
-    <g class="about__trinket-stroke">
+    <g class="about__trinket-strokes">
         <path d="M6.2 93.4c-.4 6.3-.5 12.9 0 19.3M11.4 93.6c-.2 3-.3 5.2-.3 8.5 0 .2.1.4.2.6l4.5 9"/>
         <circle cx="12.2" cy="122.6" r="11.5"/>
         <circle cx="12.2" cy="122.6" r="8.2"/>
@@ -19,7 +19,7 @@
 </svg>
 
 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="233.3" height="149.9" viewBox="0 0 233.3 149.9" class="about__headphones" aria-label="PlayStation controller">
-    <g class="about__trinket-stroke">
+    <g class="about__trinket-strokes">
         <path d="M63.8 6.2s-.3-2.4-.9-2.8C62.3 3.1 58.5.6 49.8.6S37.3 3.1 36.7 3.4c-.6.3-.9 2.9-.9 2.9"/>
         <path d="M197.2 6.2s-.3-2.4-.9-2.7c-.6-.3-4.4-2.8-13.1-2.8s-12.5 2.5-13.1 2.8-.9 2.9-.9 2.9"/>
         <path d="M27.9 26.7l2.2-13.9s1-9 19-9 19.7 6.9 19.7 6.9l4.8 18.2"/>
