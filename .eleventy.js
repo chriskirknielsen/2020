@@ -272,7 +272,7 @@ module.exports = function(eleventyConfig) {
 	};
 	let markdownItAnchorOptions = {
 		permalink: true,
-		permalinkSpace: true,
+		permalinkSpace: false,
 		permalinkSymbol: '#',
 		slugify: (s) => encodeURIComponent(String(s).trim().normalize('NFD').replace(/([\u0300-\u036f]|[,;:.'"?!&])/g, '').toLowerCase().replace(/\s+/g, '-')), // Remove accents/punctuation in addition to regular slugification
 	};
