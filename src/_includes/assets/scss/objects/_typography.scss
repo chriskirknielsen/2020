@@ -65,6 +65,10 @@ hr {
     }
 }
 
+[id] { // Add some space above scroll anchors
+    scroll-margin-top: 2em;
+}
+
 ::selection {
     color: var(--c-grey-max);
     background-color: var(--c-primary-min);
