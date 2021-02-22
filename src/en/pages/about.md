@@ -66,11 +66,20 @@ I run **a blog where I review** movies, music, shows and video games (in French!
 
 ### T-Shirts, Posters & More
 
+<div>
+  <div class="u-floatLeft u-marginBlockEnd u-marginInlineEnd--double">
+    {% set shirt -%}
+    <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
+    {%- endset -%}
+    {{ shirt | htmlmin | safe }}
+  </div>
+
 I'll occasionally go back to my designer roots and make some little projects. I've made a few designs you can buy on shirts, posters and the like — if you like CSS and '80s style, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
   {{- ", " if not loop.first -}}
   {{- andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
 {%- endfor %}. Your support would mean a lot!
+</div>
 
 ## Hobbies
 

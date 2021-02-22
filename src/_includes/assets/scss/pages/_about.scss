@@ -211,7 +211,8 @@ $about-delorean-transition-duration: 400;
         stroke-linejoin: round;
     }
 
-    &-fill > * {
+    &-fills > *,
+    &-fill {
         fill: currentColor;
     }
 }
@@ -231,13 +232,41 @@ $about-delorean-transition-duration: 400;
         opacity: 0;
     }
 }
+
 .about__keyboard {
     width: 14rem;
     max-width: 30vw;
 }
-.about__headphones { width: 6rem; }
-.about__keyboard,
+
+.about__headphones {
+    width: 6rem;
+}
+
 .about__shirt {
     width: 8rem;
     max-width: 20vw;
+
+    transform-origin: 50% 4%; // 4% is a magic number and corresponds closely to the vertical center of the hanger's hook
+    
+    &.animating {
+        animation: about__shirtHanger 2s ease-in-out forwards;
+    }
+
+    &-hanger {
+        fill: var(--c-grey-max);
+    }
+}
+
+@keyframes about__shirtHanger {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-20deg); }
+    20% { transform: rotate(18deg); }
+    30% { transform: rotate(-12deg); }
+    40% { transform: rotate(8deg); }
+    50% { transform: rotate(-6deg); }
+    60% { transform: rotate(5deg); }
+    70% { transform: rotate(-4deg); }
+    80% { transform: rotate(3deg); }
+    90% { transform: rotate(-1.5deg); }
+    100% { transform: rotate(0deg); }
 }

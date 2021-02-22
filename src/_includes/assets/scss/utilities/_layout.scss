@@ -160,9 +160,9 @@
 .u-marginBlockStart--none {
     margin-top: 0;
 }
-// .u-marginBlockEnd {
-//     margin-bottom: #{ $spacing };
-// }
+.u-marginBlockEnd {
+    margin-bottom: #{ $spacing };
+}
 .u-marginBlockEnd--half {
     margin-bottom: #{ $spacing / 2 };
 }

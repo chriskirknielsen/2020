@@ -66,11 +66,20 @@ Je maintiens **un blog où je critique des films, de la musique ou des jeux vid�
 
 ### T-Shirts, Affiches & Compagnie
 
+<div>
+  <div class="u-floatLeft u-marginBlockEnd u-marginInlineEnd--double">
+    {% set shirt -%}
+    <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
+    {%- endset -%}
+    {{ shirt | htmlmin | safe }}
+  </div>
+
 Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
   {{- ", " if (not loop.first and not loop.last) -}}
   {{- " " + andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
 {%- endfor %}. Votre soutien signifierait beaucoup à mes yeux !
+</div>
 
 ## Hobbies
 
