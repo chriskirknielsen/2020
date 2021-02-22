@@ -126,7 +126,6 @@
     }
 
     &__grid {
-        
         top: #{ $grid-size * 100% };
         
         width: 100%;
@@ -145,7 +144,7 @@
                 stroke: c(secondary, max, 100, 'dawn');
             }
 
-            > * {
+            & > * {
                 vector-effect: non-scaling-stroke;
             }
         }
@@ -153,6 +152,7 @@
 
     &__svg-wrapper {
         max-width: 100%; // Counter the default h1's max-width of 60ch
+
         > svg {
             width: 60rem;
             contain: content;

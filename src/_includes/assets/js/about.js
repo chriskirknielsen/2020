@@ -1,6 +1,26 @@
 // Init rAF
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };
 
+// Handle Animated t-shirt illustration on hover/tap
+document.addEventListener('DOMContentLoaded', function() {
+    var tShirt = document.querySelector('.about__shirt');
+    if (!tShirt) { return; }
+
+    function animateTShirt() {
+        if (tShirt.classList.contains('animating')) { return; }
+
+        tShirt.classList.add('animating');
+
+        tShirt.addEventListener('animationend', function () {
+            tShirt.classList.remove('animating');
+        });
+    }
+
+    tShirt.addEventListener('mouseenter', animateTShirt);
+    tShirt.addEventListener('touchstart', animateTShirt);
+});
+
+// Handle DeLorean animation on button toggle
 document.addEventListener('DOMContentLoaded', function() {
     var aboutActionAttr = 'data-about-action';
     var aboutActions = document.querySelectorAll('['+aboutActionAttr+']');
