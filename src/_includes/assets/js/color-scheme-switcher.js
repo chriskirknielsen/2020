@@ -2,6 +2,7 @@
     const schemeStorageKey = 'colorScheme';
     const schemeOptions = ['dawn','dusk']; // 0 = off = light = dawn | 1 = on = dark = dusk
     const schemeDefault = schemeOptions[1]; // Site aesthetic is by default dark mode for maximum neon goodiness
+    const schemeToggleParentSelector = '.color-scheme-toggle';
     const schemeToggleSelector = '[data-scheme-switcher]';
 
     const setScheme = function (scheme) {
@@ -23,6 +24,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        Array.from(document.querySelectorAll(schemeToggleParentSelector)).forEach(s => {
+            s.classList.replace('u-displayNone', 'u-displayFlex');
+        });
+
         const initScheme = window.localStorage.getItem(schemeStorageKey); // Retrieve the current scheme from localStorage
         setScheme(initScheme || null);
     }, false);
