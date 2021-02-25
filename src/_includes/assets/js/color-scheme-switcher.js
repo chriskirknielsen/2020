@@ -13,7 +13,7 @@
         window.localStorage.setItem(schemeStorageKey, scheme); // Set/update the localStorage value
         document.documentElement.dataset.scheme = scheme; // Update the <html>'s data attribute'
 
-        Array.from(document.querySelectorAll(schemeToggleSelector)).forEach(s => { // Ensure all toggles are set to the right value
+        [].slice.call(document.querySelectorAll(schemeToggleSelector)).forEach(s => { // Ensure all toggles are set to the right value
             s.checked = !!schemeOptions.indexOf(scheme); // Will return 0 for the dawn (unchecked), 1 for dusk (checked), cast to boolean
             s.setAttribute('aria-checked', s.checked.toString());
         });
@@ -24,7 +24,8 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        Array.from(document.querySelectorAll(schemeToggleParentSelector)).forEach(s => {
+        // If a toggle is hidden due to lack of JS, reveal it now
+        [].slice.call(document.querySelectorAll(schemeToggleParentSelector+'.u-displayNone')).forEach(s => {
             s.classList.replace('u-displayNone', 'u-displayFlex');
         });
 
