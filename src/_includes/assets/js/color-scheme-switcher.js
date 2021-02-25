@@ -2,7 +2,7 @@
     const schemeStorageKey = 'colorScheme';
     const schemeOptions = ['dawn','dusk']; // 0 = off = light = dawn | 1 = on = dark = dusk
     const schemeDefault = schemeOptions[1]; // Site aesthetic is by default dark mode for maximum neon goodiness
-    const schemeToggleParentSelector = '.color-scheme-toggle';
+    const schemeToggleMainSelector = '.color-scheme-toggle'; // Navbar toggle, should be unique
     const schemeToggleSelector = '[data-scheme-switcher]';
 
     const setScheme = function (scheme) {
@@ -25,12 +25,12 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         // If a toggle is hidden due to lack of JS, reveal it now
-        [].slice.call(document.querySelectorAll(schemeToggleParentSelector+'.u-displayNone')).forEach(s => {
-            s.classList.replace('u-displayNone', 'u-displayFlex');
-        });
+        let mainToggleWrap = document.querySelector(schemeToggleMainSelector+'.u-displayNone');
+        if (mainToggleWrap) { mainToggleWrap.classList.replace('u-displayNone', 'u-displayFlex'); }
 
-        const initScheme = window.localStorage.getItem(schemeStorageKey); // Retrieve the current scheme from localStorage
-        setScheme(initScheme || null);
+        // Retrieve and apply the current scheme from localStorage
+        const initScheme = window.localStorage.getItem(schemeStorageKey) || null;
+        setScheme(initScheme);
     }, false);
 
     document.addEventListener('change', function (e) {
