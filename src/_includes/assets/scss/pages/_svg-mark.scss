@@ -203,10 +203,11 @@
 @keyframes svgMarkCreaDev {
 	0% {
 		opacity: 0.0001;
-		letter-spacing: 1.25em;
+		transform: scaleX(1.25);
 	}
 	100% {
 		opacity: 1;
+		transform: scaleX(1);
 	}
 }
 
