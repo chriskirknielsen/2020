@@ -4,6 +4,8 @@
     "localeRoot": "fr/",
     "localeRssUrl": "/fr/rss.xml",
     "punctSp": " ",
+    "quoteOpen": "« ",
+    "quoteClose": " »",
     "andWord": "et",
     "dateFormat": "DD MMMM Y",
     "localisedContent": {
