@@ -48,38 +48,33 @@ When I write code, I use VS Code, but I sometimes miss features from other edito
 
 ### Chronoise
 
-<div>
-  <div class="u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
-    {% set keyboard -%}
-    {%- include "assets/img/keyboard.svg" -%}
-    {%- endset -%}
-    {{ keyboard | htmlmin | safe }}
-  </div>
-
 If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
 
+<div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center">
+  {% set keyboard -%}
+  {%- include "assets/img/keyboard.svg" -%}
+  {%- endset -%}
+  {{ keyboard | htmlmin | safe }}
 </div>
 
 ### Geekometric
 
 I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
-### T-Shirts, Posters & More
+<div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
+  {% set shirt -%}
+  <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
+  {%- endset -%}
+  {{ shirt | htmlmin | safe }}
+</div>
 
-<div>
-  <div class="u-floatLeft u-marginBlockEnd u-marginInlineEnd--double">
-    {% set shirt -%}
-    <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
-    {%- endset -%}
-    {{ shirt | htmlmin | safe }}
-  </div>
+### T-Shirts, Posters & More
 
 I'll occasionally go back to my designer roots and make some little projects. I've made a few designs you can buy on shirts, posters and the like — if you like CSS and '80s style, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
   {{- ", " if not loop.first -}}
   {{- andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
 {%- endfor %}. Your support would mean a lot!
-</div>
 
 ## Hobbies
 
