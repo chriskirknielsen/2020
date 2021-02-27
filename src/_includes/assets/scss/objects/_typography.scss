@@ -55,52 +55,35 @@ hr {
 }
 
 .heading-anchor {
+    $p: &;
+
+    position: relative;
+    
     text-decoration: none;
     color: inherit;
 
     &:hover,
     &:focus {
         text-decoration: underline;
-
-        &::before,
-        &::after {
-            visibility: visible;
-            
-            text-shadow: 0 0 0 var(--c-secondary-med);
-        }
     }
 
-    &::before,
-    &::after {
+    &-symbol {
         visibility: hidden;
 
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 0 var(--currentColor);
-    }
-
-    &::after {
-        content: '\00A0#';
+        position: absolute;
+        right: calc(100% + 0.25em);
+        top: 0.75em;
         
-        font-size: 0.5em;
-        vertical-align: 0.325em;
-        letter-spacing: 1ch;
-    }
+        width: 1em;
+        height: 1em;
 
-    @include above-medium {
-        position: relative;
+        font-size: 1ex;
 
-        &::before {
-            content: '#';
+        stroke: var(--color-accent);
 
-            position: absolute;
-            right: calc(100% + 1ch);
-            top: 1.25em;
-
-            font-size: 0.325em;
-        }
-
-        &::after {
-            content: none;
+        #{$p}:hover & ,
+        #{$p}:focus & {
+            visibility: visible;
         }
     }
 }

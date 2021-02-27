@@ -4,6 +4,8 @@
 {% include "components/head.njk" %}
 
 <body class="u-displayFlex u-flex--column">
+	{% set anchorLinkSvgClass = "u-displayNone" -%}
+	{%- include "assets/img/anchor-link.njk" %}
 
 	<a class="visually-hidden visually-hidden--focusable u-zIndex--2 u-padding--half h:u-c--grey-min h:u-bg--secondary-max" href="#content" data-skiplink>{{ localisedContent.skiplink }}</a>
 
