@@ -1,6 +1,7 @@
 ---
 templateEngineOverride: njk,md
 title: Hello, I'm Chris
+subtitle: I'm a designer turned developer who loves working on the web.
 summary: Learn more about Christopher Kirk-Nielsen
 permalink: /about/
 navtitle: About
@@ -8,8 +9,6 @@ ownstyles: about
 tags:
   - nav
 ---
-
-<p class="u-fontBold">I'm a designer turned developer who loves working on the web.</p>
 
 <div class="md:u-displayFlex u-flex--startBlock">
   <div class="about__profile u-floatLeft u-posRelative u-flex--shrink-0 u-marginBlock--double u-marginInlineEnd--double">
