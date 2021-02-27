@@ -274,6 +274,28 @@ module.exports = function(eleventyConfig) {
 		permalink: true,
 		permalinkSpace: false,
 		permalinkSymbol: '#',
+		permalinkClass: 'heading-anchor',
+		renderPermalink: (slug, opts, state, idx) => {
+			// Based on https://nicolas-hoizey.com/articles/2021/02/25/accessible-anchor-links-with-markdown-it-and-eleventy/
+			// Itself based on fifth version from https://amberwilson.co.uk/blog/are-your-anchor-links-accessible/
+		
+			// Create the openning <a> for the wrapper
+			const headingAnchorTokenOpen = Object.assign(new state.Token('link_open', 'a', 1), {
+				attrs: [
+					...(opts.permalinkClass ? [['class', opts.permalinkClass]] : []),
+					['href', opts.permalinkHref(slug, state)],
+					...Object.entries(opts.permalinkAttrs(slug, state)),
+				],
+			})
+			// Create the closing </a> for the wrapper
+			const headingAnchorTokenClose = Object.assign(new state.Token('link_close', 'a', -1));
+
+			// idx is the index of the heading's first token
+			// insert the anchor opening inside the heading, before the content token
+			state.tokens.splice(idx + 1, 0, headingAnchorTokenOpen);
+			// insert the anchor closing after the opening anchor and the content tokens
+			state.tokens.splice(idx + 3, 0, headingAnchorTokenClose);
+		},
 		slugify: (s) => encodeURIComponent(String(s).trim().normalize('NFD').replace(/([\u0300-\u036f]|[,;:.'"?!&])/g, '').toLowerCase().replace(/\s+/g, '-')), // Remove accents/punctuation in addition to regular slugification
 	};
 

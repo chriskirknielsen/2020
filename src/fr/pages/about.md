@@ -48,38 +48,33 @@ Quand je code, j'utilise VS Code mais parfois, j'aimerais retrouver des fonction
 
 ### Chronoise
 
-<div>
-  <div class="u-floatRight u-marginBlockEnd--double u-marginInlineStart--double">
-    {% set keyboard -%}
-    {%- include "assets/img/keyboard.svg" -%}
-    {%- endset -%}
-    {{ keyboard | htmlmin | safe }}
-  </div>
-
 Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com) , qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique !
 
+<div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center">
+  {% set keyboard -%}
+  {%- include "assets/img/keyboard.svg" -%}
+  {%- endset -%}
+  {{ keyboard | htmlmin | safe }}
 </div>
 
 ### Geekometric
 
 Je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
 
-### T-Shirts, Affiches & Compagnie
+<div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
+  {% set shirt -%}
+  <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
+  {%- endset -%}
+  {{ shirt | htmlmin | safe }}
+</div>
 
-<div>
-  <div class="u-floatLeft u-marginBlockEnd u-marginInlineEnd--double">
-    {% set shirt -%}
-    <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
-    {%- endset -%}
-    {{ shirt | htmlmin | safe }}
-  </div>
+### T-Shirts, Affiches & Compagnie
 
 Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
   {{- ", " if (not loop.first and not loop.last) -}}
   {{- " " + andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
 {%- endfor %}. Votre soutien signifierait beaucoup à mes yeux !
-</div>
 
 ## Hobbies
 

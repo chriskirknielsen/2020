@@ -1,0 +1,25 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - language
+    - nav
+    - post
+    - posts
+permalink: /{{ localeRoot }}tags/{{ tag }}/
+layout: layouts/base.njk
+renderData:
+  title: "{{ localisedContent.tagged }} {{ quoteOpen }}{{ tag }}{{ quoteClose }}"
+---
+
+<header class="{{ utilities.bigboi }}">
+    <div class="{{ utilities.bigboiContent }}">
+        <h1>{{ localisedContent.tagged }} {{ quoteOpen }}{{ tag }}{{ quoteClose }}</h1>
+    </div>
+</header>
+
+{% set postslist = collections[ tag ] | tagLocale(locale) %}
+{% include "components/postslist.njk" %}
