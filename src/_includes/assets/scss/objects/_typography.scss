@@ -54,14 +54,54 @@ hr {
     }
 }
 
-.header-anchor {
-    visibility: hidden;
-    margin-left: 0.25em;
-    
-    color: var(--color-accent);
+.heading-anchor {
+    text-decoration: none;
+    color: inherit;
 
-    *:hover > & { // Should always be within a heading, no need to specify the tag
-        visibility: visible;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+
+        &::before,
+        &::after {
+            visibility: visible;
+            
+            text-shadow: 0 0 0 var(--c-secondary-med);
+        }
+    }
+
+    &::before,
+    &::after {
+        visibility: hidden;
+
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 0 var(--currentColor);
+    }
+
+    &::after {
+        content: '\00A0#';
+        
+        font-size: 0.5em;
+        vertical-align: 0.325em;
+        letter-spacing: 1ch;
+    }
+
+    @include above-medium {
+        position: relative;
+
+        &::before {
+            content: '#';
+
+            position: absolute;
+            right: calc(100% + 1ch);
+            top: 1.25em;
+
+            font-size: 0.325em;
+        }
+
+        &::after {
+            content: none;
+        }
     }
 }
 
