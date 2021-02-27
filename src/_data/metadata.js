@@ -37,6 +37,9 @@ module.exports = {
       appleTouchIcon: "assets/img/apple-touch-icon.png",
       googleIcon: "assets/img/google-touch-icon.png",
     },
+    fonts: {
+      heading: "assets/fonts/MarvinVisionsBig-Bold.woff2"
+    },
     stylesFolder: "assets/css",
     allStyles: "assets/css/style.css",
     inlineStyles: "assets/css/inline.css",
