@@ -215,19 +215,19 @@
 	0% {
 		transform: translateX(82.5%);
 		opacity: 0;
-		visibility: hidden;
+		// visibility: hidden;
 	}
 	1% {
 		opacity: 1;
-		visibility: visible;
+		// visibility: visible;
 	}
 	99% {
 		opacity: 1;
-		visibility: visible;
+		// visibility: visible;
 	}
 	100% {
 		transform: translateX(-82.5%);
 		opacity: 0;
-		visibility: hidden;
+		// visibility: hidden;
 	}
 }
