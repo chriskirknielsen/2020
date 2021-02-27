@@ -1,6 +1,7 @@
 ---
 templateEngineOverride: njk,md
 title: Salut, moi c'est Chris
+subtitle: Je suis un graphiste devenu développeur qui adore coder pour le web.
 summary: En apprendre plus sur Christopher Kirk-Nielsen
 permalink: /fr/a-propos/
 navtitle: À Propos
@@ -8,8 +9,6 @@ ownstyles: about
 tags:
   - nav
 ---
-
-<p class="u-fontBold">Je suis un graphiste devenu développeur qui adore coder pour le web.</p>
 
 <div class="md:u-displayFlex u-flex--startBlock">
   <div class="about__profile u-floatLeft u-posRelative u-flex--shrink-0 u-marginBlock--double u-marginInlineEnd--double">
