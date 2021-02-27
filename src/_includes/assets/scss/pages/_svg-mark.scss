@@ -140,7 +140,7 @@
 		animation-fill-mode: both;
 		animation-timing-function: cubic-bezier(0, 0, 0, 1);
 
-		& > tspan {
+		& > text > tspan {
 			letter-spacing: 0.55em; // Tighten kerning for A in "CREATI…"
 		}
 	}
