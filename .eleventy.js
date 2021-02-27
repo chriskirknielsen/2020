@@ -279,22 +279,39 @@ module.exports = function(eleventyConfig) {
 			// Based on https://nicolas-hoizey.com/articles/2021/02/25/accessible-anchor-links-with-markdown-it-and-eleventy/
 			// Itself based on fifth version from https://amberwilson.co.uk/blog/are-your-anchor-links-accessible/
 		
-			// Create the openning <a> for the wrapper
+			// Create the opening/closing <a> and the <svg><use /></svg> tokens
 			const headingAnchorTokenOpen = Object.assign(new state.Token('link_open', 'a', 1), {
 				attrs: [
 					...(opts.permalinkClass ? [['class', opts.permalinkClass]] : []),
 					['href', opts.permalinkHref(slug, state)],
 					...Object.entries(opts.permalinkAttrs(slug, state)),
 				],
-			})
-			// Create the closing </a> for the wrapper
+			});
+			const svgSymbolTokenOpen = Object.assign(new state.Token('svg_open', 'svg', 1), {
+				attrs: [
+					['width', 16],
+					['height', 16],
+					['class', 'heading-anchor-symbol'],
+					['aria-hidden', 'true'],
+					['focusable', 'false'],
+				]
+			});
+			const svgUseTokenOpen = Object.assign(new state.Token('use_open', 'use', 1), {
+				attrs: [
+					['xlink:href', '#anchor-link'],
+				]
+			});
+			const svgUseTokenClose = Object.assign(new state.Token('use_close', 'svg', -1));
+			const svgSymbolTokenClose = Object.assign(new state.Token('svg_close', 'svg', -1));
 			const headingAnchorTokenClose = Object.assign(new state.Token('link_close', 'a', -1));
 
 			// idx is the index of the heading's first token
+			const tokensBeforeContent = [headingAnchorTokenOpen, svgSymbolTokenOpen, svgUseTokenOpen, svgUseTokenClose, svgSymbolTokenClose];
+			const tokensAfterContent = [headingAnchorTokenClose];
 			// insert the anchor opening inside the heading, before the content token
-			state.tokens.splice(idx + 1, 0, headingAnchorTokenOpen);
-			// insert the anchor closing after the opening anchor and the content tokens
-			state.tokens.splice(idx + 3, 0, headingAnchorTokenClose);
+			state.tokens.splice(idx + 1, 0, ...tokensBeforeContent);
+			// insert the anchor closing after the heading opening and the content token + the tokens before the content
+			state.tokens.splice(idx + 2 + tokensBeforeContent.length, 0, ...tokensAfterContent);
 		},
 		slugify: (s) => encodeURIComponent(String(s).trim().normalize('NFD').replace(/([\u0300-\u036f]|[,;:.'"?!&])/g, '').toLowerCase().replace(/\s+/g, '-')), // Remove accents/punctuation in addition to regular slugification
 	};
