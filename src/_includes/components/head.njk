@@ -22,7 +22,7 @@
 	{# {% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
 	<link rel="preload" href="{{ globalStylesPath | url }}" as="style"> #}
 	{% set globalFontFilePath = "/" + metadata.assetUrl.fonts.heading %}
-	<link rel="preload" href="{{ globalFontFilePath | url }}" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ globalFontFilePath | url }}" as="font" type="font/woff2" crossorigin>
 
 	{% if section == "home" %}
 		{% set homeFontStylesPath = "/" + metadata.assetUrl.stylesFolder + "/home-fontface.css" %}
@@ -30,7 +30,7 @@
 
 		{% for fontPurpose, fontName in tokens.fonts.home_mark %}
 			{% set fontAssetUrl = "/"+ metadata.assetUrl.fontFaceFolder + "/" + (fontName | replace(" ", "")) + "-subset.woff2" %}
-			<link rel="preload" href="{{ fontAssetUrl | url }}" as="font" type="font/woff2" crossorigin="anonymous">
+			<link rel="preload" href="{{ fontAssetUrl | url }}" as="font" type="font/woff2" crossorigin>
 		{% endfor %}
 
 		<link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="print" id="home-fonts">

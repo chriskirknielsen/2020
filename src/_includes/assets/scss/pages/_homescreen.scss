@@ -37,7 +37,10 @@
         --homescreen-floor-start: hotpink;
     }
 
+    width: 100%;
     min-height: #{ $sun-radius * 3 };
+
+    contain: content;
 
     &__background {
         $mask-gradient: gradient-stops($sc: #000, $sa: 1, $ec: #000, $ea: 0, $sp: 50%, $ep: 95%);
