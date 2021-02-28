@@ -21,8 +21,9 @@
 	{# Add a slash in the final markup for root access #}
 	{# {% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
 	<link rel="preload" href="{{ globalStylesPath | url }}" as="style"> #}
-	{% set globalFontFilePath = "/" + metadata.assetUrl.fonts.heading %}
-	<link rel="preload" href="{{ globalFontFilePath | url }}" as="font" type="font/woff2" crossorigin>
+	{# Preload main heading font #}
+	{# {% set globalFontFilePath = "/" + metadata.assetUrl.fonts.heading %}
+	<link rel="preload" href="{{ globalFontFilePath | url }}" as="font" type="font/woff2" crossorigin> #}
 
 	{% if section == "home" %}
 		{% set homeFontStylesPath = "/" + metadata.assetUrl.stylesFolder + "/home-fontface.css" %}
