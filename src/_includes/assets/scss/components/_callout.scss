@@ -1,4 +1,9 @@
 .callout {
+    &,
+    & + * { // Provide more space around this element
+        --flow-margin: #{ $generous-spacing };
+    }
+
     border-left: .11em solid var(--c-primary-med);
     background:
         linear-gradient(90deg, transparent, var(--currentBackground)) 100% 0 repeat-y,
