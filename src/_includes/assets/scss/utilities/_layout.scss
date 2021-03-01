@@ -21,12 +21,12 @@
 /* Content flow */
 
 .u-flow > * + * {
-    margin-top: #{ $base-flow-spacing };
+    margin-top: var(--flow-margin, #{ $base-flow-spacing });
     margin-bottom: 0;
 }
 
-.u-flow > :is(h2, h3) + * { margin-top: #{ $base-flow-spacing / 4 }; }
-.u-flow > h2 + h3 { margin-top: #{ $base-flow-spacing / 8 }; }
+.u-flow > :is(h2, h3) + * { --flow-margin: #{ $base-flow-spacing / 4 }; }
+.u-flow > h2 + h3 { --flow-margin: #{ $base-flow-spacing / 8 }; }
 
 // .u-oversized {
 //     position: relative;
