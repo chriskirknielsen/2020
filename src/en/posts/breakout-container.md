@@ -90,7 +90,7 @@ If the screen width is equal to `80em`, the padding will compute to `0`, but if 
 
 Let's have a look at the complete code all together now:
 
-{% codepen "https://codepen.io/chriskirknielsen/pen/abzoJWr/", "html,css", "480", "33007"  %}
+{% codepen "https://codepen.io/chriskirknielsen/pen/abzoJWr/", "html,css", "480", metadata.codepen.themeId  %}
 
 ## More reading
 - [Logical Properties on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)
