@@ -27,7 +27,8 @@
         "footerAdditionalLinks": "Quelques liens en plus…",
         "fixErrorPR": "Éditer sur GitHub",
         "externalLinks": "Retrouvez-moi sur ces autres sites",
-        "rssHint": "S'inscrire au flux RSS de chriskirknielsen"
+        "rssHint": "S'inscrire au flux RSS de chriskirknielsen",
+        "postAuthorFormat": "Article rédigé par {0}. Si ceci vous a plu, vous pouvez <a href=\"{2}\">me soutenir sur Ko-fi</a>. Si vous avez un commentaire, <a href=\"{1}\">taggez-moi sur Twitter</a>. Merci infiniment !"
     },
     "langSwitchLabel": "Changer de Langue",
     "schemeSwitchLabel": "Basculer entre les modes crépuscule et aube",

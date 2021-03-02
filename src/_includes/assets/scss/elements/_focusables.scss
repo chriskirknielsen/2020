@@ -19,12 +19,10 @@ details {
     & > summary {
         cursor: pointer;
 
-        &::-webkit-details-marker { color: var(--color-accent); }
         &::marker { color: var(--color-accent); }
     }
 
     &[open] > summary {
-        &::-webkit-details-marker { color: var(--c-grey-med); }
         &::marker { color: var(--c-grey-med); }
     }
 }

@@ -20,15 +20,6 @@ module.exports = function(eleventyConfig) {
 		templateFormats: ["md","html","njk"]
 	});
 
-	eleventyConfig.addFilter("slug", (input) => {
-		const options = {
-			replacement: "-",
-			remove: /[&,+()$~%.'":*?!<>{}]/g,
-			lower: true
-		};
-		return slugify(input, options);
-	});
-
 	/* SHORTCODES */
 
 	eleventyConfig.addShortcode("figure", function(imageUrl, altText, caption, figureClass, imageClass, captionClass, dimensions) {
@@ -67,8 +58,21 @@ module.exports = function(eleventyConfig) {
 			? md.renderInline(content)
 			: md.render(content);
 	});
+	
+	eleventyConfig.addPairedShortcode("printf", (content, ...values) => {
+		return content.replace(/{(\d+)}/g, (match, index) => (typeof values[index] !== 'undefined') ? values[index] : match);
+	});
 
 	/* FILTERS */
+
+	eleventyConfig.addFilter("slug", (input) => {
+		const options = {
+			replacement: "-",
+			remove: /[&,+()$~%.'":*?!<>{}]/g,
+			lower: true
+		};
+		return slugify(input, options);
+	});
 
 	eleventyConfig.addFilter("charToHtml", function(string) {
 		return string.replace(/[\u0020-\u007E]/g, (v) => '&#'+v.charCodeAt()+';');

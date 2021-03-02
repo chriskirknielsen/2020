@@ -28,8 +28,12 @@ module.exports = {
     "RedBubble": "https://www.redbubble.com/people/ckirknielsen/shop",
     "Society6": "https://society6.com/chriskirknielsen/prints"
   },
+  support: {
+    "kofi": "https://ko-fi.com/chriskirknielsen"
+  },
   assetUrl: {
     manifest: "manifest.json",
+    authorAvatar: "assets/img/avatar.png",
     icons: {
       faviconPng: "assets/img/icon.png",
       faviconSvg: "assets/img/favicon.svg",
@@ -52,5 +56,6 @@ module.exports = {
     logo: 'ckn_logo',
     image: 'ckn_post_bg',
     font: 'MarvinVisionsBigBold.otf'
-  }
+  },
+  showPostAuthor: false
 }

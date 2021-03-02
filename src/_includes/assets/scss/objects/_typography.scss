@@ -26,6 +26,11 @@ blockquote {
 }
 
 hr {
+    &,
+    & + * { // Provide more space around this element
+        --flow-margin: #{ $generous-spacing };
+    }
+
     position: relative;
 
     width: 100%; // Required in a grid context

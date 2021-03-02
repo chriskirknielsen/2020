@@ -7,3 +7,4 @@
 /* Border radius */
 
 .u-border-radius { border-radius: #{ $border-base-radius }; }
+.u-border-radius--circle { border-radius: 50%; }

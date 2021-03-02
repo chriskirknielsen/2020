@@ -41,3 +41,12 @@ section: post
 	</a>
 </p>
 {% endif %}
+
+{% if not original and metadata.showPostAuthor %}
+<hr>
+
+<footer class="u-displayFlex u-flex--startBlock">
+	<img src="{{ "/" + metadata.assetUrl.authorAvatar }}" alt="" width="64" height="64" class="u-width--4em u-marginInlineEnd--double u-border-radius--circle u-border--double u-border--accent">
+	<p>{% printf metadata.author.name, metadata.author.twitter, metadata.support.kofi %}{{ localisedContent.postAuthorFormat | safe }}{% endprintf %}</p>
+</footer>
+{% endif %}
