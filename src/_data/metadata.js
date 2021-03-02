@@ -56,5 +56,6 @@ module.exports = {
     logo: 'ckn_logo',
     image: 'ckn_post_bg',
     font: 'MarvinVisionsBigBold.otf'
-  }
+  },
+  showPostAuthor: false
 }
