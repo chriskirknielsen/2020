@@ -24,7 +24,7 @@ module.exports = {
     }
   },
   merch: {
-    "TeePublic": "https://www.teepublic.com/user/chriskirknielsen",
+    "TeePublic": "https://www.teepublic.com/user/chriskirknielsen/albums/113954-web-development",
     "RedBubble": "https://www.redbubble.com/people/ckirknielsen/shop",
     "Society6": "https://society6.com/chriskirknielsen/prints"
   },
