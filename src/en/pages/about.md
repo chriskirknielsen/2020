@@ -6,6 +6,7 @@ summary: Learn more about Christopher Kirk-Nielsen
 permalink: /about/
 navtitle: About
 ownstyles: about
+ownscripts: about
 tags:
   - nav
 ---

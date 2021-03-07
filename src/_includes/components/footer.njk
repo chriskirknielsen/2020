@@ -51,6 +51,17 @@
 {% set js %}
 	{% include "assets/jsmin/inline.min.js" %}
 	{% include "assets/jsmin/color-scheme-switcher.min.js" %}
-	{% if page.fileSlug == 'about' %}{% include "assets/jsmin/about.min.js" %}{% endif %}
+	{%- if ownscripts -%}
+		{# Add page-specific scripts inline #}
+		{%- set pageScriptGroup = ";" -%}
+
+		{%- for ownScript in (ownscripts | split(",")) -%}
+			{%- set pagescriptlink %}{{ metadata.assetUrl.scriptsFolder }}/{{ ownScript | trim(' ') }}.min.js{% endset -%}
+			{%- set pagescript %}{% include pagescriptlink %}{% endset -%}
+			{%- set pageScriptGroup = pageScriptGroup + pagescript + ";" -%}
+		{%- endfor -%}
+
+		{{- pageScriptGroup | replace(";;", ";") | safe -}}
+	{%- endif -%}
 {% endset %}
-<script>{{ js | safe }}</script>
+<script>"use strict";{{ js | replace('"use strict";', "") | safe }}</script>

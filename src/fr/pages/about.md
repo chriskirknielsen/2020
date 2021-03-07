@@ -6,6 +6,7 @@ summary: En apprendre plus sur Christopher Kirk-Nielsen
 permalink: /fr/a-propos/
 navtitle: À Propos
 ownstyles: about
+ownscripts: about
 tags:
   - nav
 ---
