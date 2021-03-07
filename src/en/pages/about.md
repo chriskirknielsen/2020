@@ -6,6 +6,7 @@ summary: Learn more about Christopher Kirk-Nielsen
 permalink: /about/
 navtitle: About
 ownstyles: about
+ownscripts: about
 tags:
   - nav
 ---
@@ -62,7 +63,7 @@ I run **a blog where I review** movies, music, shows and video games (in French!
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
-  <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
+  <a href="{{ metadata.merch.TeePublic }}">{%- include "assets/img/shirt.svg" -%}</a>
   {%- endset -%}
   {{ shirt | htmlmin | safe }}
 </div>

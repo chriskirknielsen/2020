@@ -6,6 +6,7 @@ summary: En apprendre plus sur Christopher Kirk-Nielsen
 permalink: /fr/a-propos/
 navtitle: À Propos
 ownstyles: about
+ownscripts: about
 tags:
   - nav
 ---
@@ -62,7 +63,7 @@ Je maintiens **un blog où je critique des films, de la musique ou des jeux vid�
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
-  <a href="https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603">{%- include "assets/img/shirt.svg" -%}</a>
+  <a href="{{ metadata.merch.TeePublic }}">{%- include "assets/img/shirt.svg" -%}</a>
   {%- endset -%}
   {{ shirt | htmlmin | safe }}
 </div>

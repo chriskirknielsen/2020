@@ -44,6 +44,7 @@ module.exports = {
     fonts: {
       heading: "assets/fonts/MarvinVisionsBig-Bold.woff2"
     },
+    scriptsFolder: "assets/jsmin",
     stylesFolder: "assets/css",
     allStyles: "assets/css/style.css",
     inlineStyles: "assets/css/inline.css",
