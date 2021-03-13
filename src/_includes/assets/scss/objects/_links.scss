@@ -3,14 +3,17 @@ a:not([class]),
     color: var(--currentColor, var(--color-text));
     text-decoration-line: underline;
     text-decoration-color: var(--color-accent);
-    text-decoration-thickness: .075em;
+    text-decoration-thickness: .15em;
     text-underline-offset: .2em;
+
+    &:visited {
+        text-decoration-thickness: .075em;
+    }
 
     &:hover,
     &:focus,
     &:active {
         color: var(--color-accent, currentColor);
-        text-decoration-thickness: .15em;
         text-decoration-color: var(--currentColor, var(--color-text));
     }
 }

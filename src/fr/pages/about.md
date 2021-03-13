@@ -84,7 +84,7 @@ Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, 
 
 ## Oui oui, je suis un pro
 
-Si vous voulez en apprendre plus sur mes compétences, je n'ai pas de C.V. formel ici, mais vous pouvez consulter [mon profil LinkedIn](https://www.linkedin.com/in/chriskirknielsen/) (je ne suis pas à la recherche de nouvelles opportunités). Je sais programmer en HTML, CSS, JavaScript, PHP et MySQL, j'aime la JAMstack pour les sites statiques, comme Eleventy ou Hugo, mais je suis aussi très à l'aise avec WordPress. La suite Adobe (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) me tient à cœur, ainsi que Sketch et Cinema 4D. Je détiens la double-nationalité franco-danoise et une "Green Card" américaine — quel processus ce fut !
+Si vous voulez en apprendre plus sur mes compétences, je n'ai pas de C.V. formel ici, mais vous pouvez consulter [mon profil LinkedIn](https://www.linkedin.com/in/chriskirknielsen/?locale=fr_FR) (je ne suis pas à la recherche de nouvelles opportunités). Je sais programmer en HTML, CSS, JavaScript, PHP et MySQL, j'aime la JAMstack pour les sites statiques, comme Eleventy ou Hugo, mais je suis aussi très à l'aise avec WordPress. La suite Adobe (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) me tient à cœur, ainsi que Sketch et Cinema 4D. Je détiens la double-nationalité franco-danoise et une "Green Card" américaine — quel processus ce fut !
 
 ## Sur la toile
 
