@@ -8,7 +8,6 @@ tags:
   - sass
   - clamp
   - typography
-  - font
   - quick-tip
 ---
 

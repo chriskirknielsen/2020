@@ -1,6 +1,6 @@
 .content-full {
     position: relative;
-    left: calc(50% - 50vw);
+    inset-inline-start: calc(50% - 50vw);
     width: 100vw;
 }
 
@@ -11,8 +11,7 @@
     $column-width: $max - ($gutter * 2);
 
     max-width: #{ $max };
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 
     @supports (display: grid) {
         display: grid;
@@ -31,8 +30,7 @@
         ;
 
         max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        margin-inline: 0;
 
         > * {
             grid-column: container-start / container-end;
@@ -41,10 +39,8 @@
         &-sub {
             & > * {
                 max-width: $container-max-width-rem;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: #{ $spacing * 2 };
-                padding-right: #{ $spacing * 2 };
+                margin-inline: auto;
+                padding-inline: #{ $spacing * 2 };
             }
 
             @supports (grid-template-columns: subgrid) {
@@ -58,10 +54,8 @@
                     // Reset the no-subgrid fallback
                     max-width: 100%;
                     width: 100%;
-                    margin-left: initial;
-                    margin-right: initial;
-                    padding-left: 0;
-                    padding-right: 0;
+                    margin-inline: initial;
+                    padding-inline: 0;
                 }
             }
         }
@@ -74,14 +68,13 @@
             grid-column: fullbleed-start / fullbleed-end;
 
             // Reset the no-grid fallback
-            left: initial;
+            inset-inline-start: initial;
             width: initial;
         }
 
         &-wide-limited {
             max-width: #{ $wide-max };
-            margin-left: auto;
-            margin-right: auto;
+            margin-inline: auto;
         }
     }
 }

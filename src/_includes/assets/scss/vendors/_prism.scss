@@ -57,7 +57,7 @@ pre[class*="language-"] {
 	&::before {
 		position: absolute;
 		top: .25em;
-		left: .25em;
+		inset-inline-start: .25em;
 
 		font-size: .75em;
 		letter-spacing: .0625em;
