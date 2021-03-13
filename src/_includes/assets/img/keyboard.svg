@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="204.8" height="54.4" viewBox="0 0 204.8 54.4" class="about__trinket about__keyboard" aria-label="MIDI keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" width="10.24em" height="2.72em" viewBox="0 0 204.8 54.4" class="about__trinket about__keyboard" aria-label="MIDI keyboard">
     <g class="about__trinket-strokes">
         <rect x="0.5" y="0.5" width="203.8" height="53.4" rx="3.25"/>
         <path d="M9.3 12.3h186.1v41.6H9.3z"/>
