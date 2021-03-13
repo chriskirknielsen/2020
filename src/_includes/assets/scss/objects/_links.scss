@@ -1,23 +1,16 @@
 a:not([class]),
 .link {
+    color: var(--currentColor, var(--color-text));
     text-decoration-line: underline;
-    text-decoration-color: var(--c-grey-med);
+    text-decoration-color: var(--color-accent);
     text-decoration-thickness: .075em;
     text-underline-offset: .2em;
-
-    &:link,
-    &:visited {
-        color: var(--currentColor, var(--color-text));
-    }
-
-    &:link {
-        text-decoration-color: var(--color-accent);
-    }
 
     &:hover,
     &:focus,
     &:active {
+        color: var(--color-accent, currentColor);
         text-decoration-thickness: .15em;
-        text-decoration-color: currentColor;
+        text-decoration-color: var(--currentColor, var(--color-text));
     }
 }

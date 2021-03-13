@@ -63,7 +63,7 @@ Je maintiens **un blog o√π je critique des films, de la musique ou des jeux vid√
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
-  <a href="{{ metadata.merch.TeePublic }}">{%- include "assets/img/shirt.svg" -%}</a>
+  <a href="{{ metadata.merch.TeePublic }}" class="u-c--grey-min">{%- include "assets/img/shirt.svg" -%}</a>
   {%- endset -%}
   {{ shirt | htmlmin | safe }}
 </div>
