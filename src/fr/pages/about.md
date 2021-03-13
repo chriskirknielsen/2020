@@ -27,9 +27,9 @@ tags:
 
   Après un début raisonnable, je m'étais plongé dans la création de **sites dynamiques** et j'avais créé une communauté — à cette époque, les forums de discussion étaient encore populaires. Concevoir l'apparence et développer ce site était un passe-temps qui finirai par être un projet nourri par une vraie passion, qui grandirait bien au-delà de mes espérances d'adolescent. J'étais un de ces fameux "webmasters" à l'époque…
 
-  Ceci m'avait poussé faire des études en **graphisme** pendant 4 ans, avec un intérêt particulier pour **la typographie, la théorie des couleurs, la composition, ainsi que l'animation**. J'avais cependant continué d'apprendre des choses sur le domaine du web, créant des blogs et d'autres petits projets. J'avais, par la suite, **travaillé en freelance pendant quelques années**, jonglant entre graphisme et développement — un équilibre enrichissant.
+  Ceci m'avait poussé faire des études en **graphisme et motion design** pendant 4 ans, avec un intérêt particulier pour **la typographie, la théorie des couleurs, la composition, ainsi que l'animation**. J'avais cependant continué d'apprendre des choses sur le domaine du web, créant des blogs et d'autres petits projets. J'avais, par la suite, **travaillé en freelance pendant quelques années**, jonglant entre graphisme et développement — un équilibre enrichissant.
 
-  J'ai fini par réaliser ce que je souhaitais vraiment faire : **travailler sur le web pour bénéficier tout le monde** (ou en tout cas, contribuer ma pierre à l'édifice). Essentiellement, ce domaine est en constante évolution, ce qui signifie que je peux toujours approfondir mes connaissances. Avec ça, je suis totalement <span data-about-action="hooked-delorean">accro</span> !
+  J'ai fini par réaliser ce que je souhaitais vraiment faire : **travailler sur le web pour bénéficier tout le monde** (ou en tout cas, contribuer ma pierre à l'édifice), désormais au poste de développeur front-end senior chez MOJO PSG. Essentiellement, ce domaine est en constante évolution, ce qui signifie que je peux toujours approfondir mes connaissances. Avec ça, je suis totalement <span data-about-action="hooked-delorean">accro</span> !
 
   <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}
@@ -59,11 +59,11 @@ Quand je ne suis pas occupé à faire des choses sur le web, je suis potentielle
 
 ### Geekometric
 
-Je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
+Depuis 2013, je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
-  <a href="{{ metadata.merch.TeePublic }}">{%- include "assets/img/shirt.svg" -%}</a>
+  <a href="{{ metadata.merch.TeePublic }}" class="u-c--grey-min">{%- include "assets/img/shirt.svg" -%}</a>
   {%- endset -%}
   {{ shirt | htmlmin | safe }}
 </div>
@@ -80,53 +80,13 @@ Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vo
 
 Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, surtout de la musique rock, metal et synthwave — je suis obsédé par l'esthétique des années 80. Quelque chose avec les synthés m'attire beaucoup — peut-être que les couleurs néon baignent en harmonie au plus profond de moi !
 
-J'aime aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon trajet d'une heure à **New York City** mais je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et j'aimerais reprendre le japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
+<del>J'aime</del> <ins>J'aimais</ins> aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon trajet d'une heure à **New York City** mais je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et j'aimerais reprendre le japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
 
-<hr>
+## Oui oui, je suis un pro
 
-## C.V. bien trop formel
+Si vous voulez en apprendre plus sur mes compétences, je n'ai pas de C.V. formel ici, mais vous pouvez consulter [mon profil LinkedIn](https://www.linkedin.com/in/chriskirknielsen/) (je ne suis pas à la recherche de nouvelles opportunités). Je sais programmer en HTML, CSS, JavaScript, PHP et MySQL, j'aime la JAMstack pour les sites statiques, comme Eleventy ou Hugo, mais je suis aussi très à l'aise avec WordPress. La suite Adobe (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) me tient à cœur, ainsi que Sketch et Cinema 4D. Je détiens la double-nationalité franco-danoise et une "Green Card" américaine — quel processus ce fut !
 
-Voici une auto-représentation sous forme de liste, si ça peut apaiser votre curiosité.
-
-### Compétences
-
-- **Développement :** HTML5, CSS, JavaScript, PHP (OOP, WordPress), MySQL
-- **Outils :** Git, Gulp, JAMstack (sites statiques avec Eleventy ou Hugo, sur Netlify)
-- **Design :** Photoshop, Illustrator, InDesign, Sketch
-- **Motion Design :** After Effects, Premiere Pro, Cinema 4D
-
-### Expérience
-
-- **2020 :** développeur front-end senior chez MOJO PSG
-- **2018–2019 :** développeur front-end chez MOJO PSG
-- **2015–2018 :** activité freelance en marketing numérique
-
-### Éducation
-
-- **2015 :** Certificat Digital Transformation de HEC Paris
-- **2014–2015 :** études en motion design à e-artsup Paris
-- **2011–2014 :** études en design graphique à e-artsup Lyon
-
-### Langues
-
-- **Français :** courant
-- **Anglais :** courant
-- **Danish :** courant
-- **Italian :** moyen
-- *Lit également les caractères cyrilliques russes, hiragana et katakana*
-
-### Intérêts
-
-- **Dose quotidienne :** thé ou café, musique, livres, jeux vidéos, films et séries T.V.
-- **Geekometric :** blog personnel de critique de films/jeux vidéo (depuis 2013)
-- **Chronoise :** création de musique électronique (depuis 2010)
-
-### Documents
-
-- **Travail :** détenteur de "Green Card" américaine
-- **Nationalité :** double-nationalité franco-danoise
-
-### Sur la toile
+## Sur la toile
 
 - [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
 - [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
