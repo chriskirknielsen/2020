@@ -27,9 +27,9 @@ tags:
 
   As that took off, I learned how to make **dynamic websites**, and built a community — back when discussion forums were still a thing. Designing and developing that was a hobby that became a passion project of mine, and grew far bigger than my teenage self could ever have anticipated. I was one of those antiquated "webmasters"…
 
-  This led me to study **graphic design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
+  This led me to study **graphic and motion design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
 
-  I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part). At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me <span data-about-action="hooked-delorean">hooked</span>.
+  I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part), landing a senior front-end developer role at MOJO PSG. At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me <span data-about-action="hooked-delorean">hooked</span>.
 
   <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}
@@ -59,7 +59,7 @@ If I'm not doing web-related things, I might be making **electronica music** as 
 
 ### Geekometric
 
-I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
+Since 2013, I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
@@ -80,51 +80,13 @@ I'll occasionally go back to my designer roots and make some little projects. I'
 
 Like many other humans, listening to music is a big part of my life, mainly rock, metal, and synthwave — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
 
-I also appreciate a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continents! As a result, I speak English, French and Danish fluently. I also learned some Italian, and would like to get back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
+I also <del>appreciate</del> <ins>used to appreciate</ins> a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continents! As a result, I speak English, French and Danish fluently. I also learned some Italian, can read the Cyrillic alphabet, and would like to get back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
-## Overly-Formal Résumé
+## Sure, I'm a professional
 
-Here's a bullet-list representation of me, if you're into that sort of thing.
+If you want to learn more about my skills, I don't have a formal résumé here, but you can take a peek at [my LinkedIn profile](https://www.linkedin.com/in/chriskirknielsen/) (I'm not looking for new opportunities). I can program in HTML, CSS, JavaScript, PHP, and MySQL, I love the JAMstack for static sites, like Eleventy or Hugo, but I'm also very comfortable with WordPress. The Adobe Creative Suite (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) is dear to me, as well as Sketch and Cinema 4D. I'm a French/Danish dual-citizen, and US "Green Card" holder — what a process that is!
 
-### Skills
-
-- **Development:** HTML5, CSS (Sass), JavaScript, PHP (OOP, WordPress), MySQL
-- **Tools:** Git, Gulp, JAMstack (static sites with Eleventy or Hugo, on Netlify)
-- **Design:** Photoshop, Illustrator, InDesign, Sketch
-- **Motion Design:** After Effects, Premiere Pro, Cinema 4D
-
-### Experience
-
-- **2020:** senior front-end developer at MOJO PSG
-- **2018–2019:** front-end developer at MOJO PSG
-- **2015–2018:** freelance activity in digital marketing
-
-### Education
-
-- **2015:** Digital Transformation Certificate from HEC Paris
-- **2014–2015:** motion design studies at e-artsup Paris
-- **2011–2014:** graphic design studies at e-artsup Lyon
-
-### Languages
-
-- **English:** fluent
-- **French:** fluent
-- **Danish:** fluent
-- **Italian:** intermediate
-- *Also reads Russian Cyrillic, Hiragana and Katakana*
-
-### Interests
-
-- **Daily intake:** tea or coffee, music, books, video games, movies, and T.V. shows
-- **Geekometric:** personal blog reviewing movies, music, and games (since 2013)
-- **Chronoise:** creating electronica music (since 2010)
-
-### Legal Documents
-
-- **Work:** United States "Green Card" holder
-- **Citizenship:** dual French/Danish citizenship
-
-### On the Web
+## Find me on the web
 
 - [Twitter: @ckirknielsen](https://twitter.com/ckirknielsen)
 - [GitHub: chriskirknielsen](https://github.com/chriskirknielsen)
