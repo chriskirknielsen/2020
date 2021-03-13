@@ -14,7 +14,7 @@
 
 			position: absolute;
 			top: calc(100% + 0.25em);
-			inset-inline-end: 0;
+			right: 0;
 			padding: 0 0.25em;
 
 			color: var(--color-bg);
@@ -39,7 +39,7 @@
 
 	&__thumb {
 		top: #{ $thumb-space };
-		inset-inline-start: #{ $thumb-space };
+		left: #{ $thumb-space };
 
 		width: #{ $thumb-size };
 		height: #{ $thumb-size };
@@ -72,14 +72,14 @@
 		font-size: 0.9em;
 
 		&[data-state='checked'] {
-			inset-inline-start: #{ $icon-space };
+			left: #{ $icon-space };
 			fill: var(--c-primary-max);
 			opacity: 0;
 			transform: translateY(-1rem);
 		}
 
 		&[data-state='un-checked'] {
-			inset-inline-end: #{ $icon-space };
+			right: #{ $icon-space };
 			fill: var(--c-primary-max);
 			transition: all 250ms;
 		}
@@ -91,7 +91,6 @@
 	
 	:checked + &__decor > &__thumb {
 		transform: translateX(#{ $thumb-size });
-		.translated-rtl & { transform: translateX(#{ $thumb-size * -1 }); }
 		// box-shadow: 0 0 #{ $thumb-space } var(--c-grey-max);
 	}
 	

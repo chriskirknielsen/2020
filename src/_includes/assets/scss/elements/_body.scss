@@ -50,10 +50,6 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --gradient-subtle: #{ gradient-stops($sc: c('max'), $sa: 0, $ec: c('max'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
 
-.translated-rtl {
-    direction: rtl;
-}
-
 body {
     overflow: hidden auto;
     

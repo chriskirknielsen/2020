@@ -1,6 +1,6 @@
 blockquote {
-    border-inline-start: #{ $spacing * .25 } solid var(--c-primary-min, currentColor);
-    padding-inline-start: #{ $spacing * 1.25 };
+    border-left: #{ $spacing * .25 } solid var(--c-primary-min, currentColor);
+    padding-left: #{ $spacing * 1.25 };
 
     & > * + * {
         margin-top: #{ $spacing };
@@ -14,8 +14,8 @@ blockquote {
         content: close-quote;
     }
 
-    :lang(fr) & > :first-child::before { padding-inline-end: .25em; }
-    :lang(fr) & > :last-child::after { padding-inline-end: .25em; }
+    :lang(fr) & > :first-child::before { padding-right: .25em; }
+    :lang(fr) & > :last-child::after { padding-left: .25em; }
 
     & > :first-child::before,
     & > :last-child::after {
@@ -42,7 +42,7 @@ hr {
     &::after {
         content: '';
         position: absolute;
-        inset-inline-start: 0;
+        left: 0;
         top: 0;
 
         width: 100%;
@@ -76,8 +76,8 @@ hr {
         visibility: hidden;
 
         position: absolute;
+        right: calc(100% + 0.25em);
         top: 0.75em;
-        inset-inline-end: calc(100% + 0.25em);
         
         width: 1em;
         height: 1em;

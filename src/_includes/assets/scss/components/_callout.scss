@@ -4,7 +4,7 @@
         --flow-margin: #{ $generous-spacing };
     }
 
-    border-inline-start: .11em solid var(--c-primary-med);
+    border-left: .11em solid var(--c-primary-med);
     background:
         linear-gradient(90deg, transparent, var(--currentBackground)) 100% 0 repeat-y,
         repeating-linear-gradient(var(--c-primary-med) 0, var(--c-primary-med) .11em, transparent .11em, transparent .33em) 0 0 repeat-x,
@@ -21,7 +21,7 @@
     &::before {
         position: absolute;
         top: -.25em;
-        inset-inline-start: #{ $spacing };
+        left: #{ $spacing };
 
         display: inline-block;
         padding: 0 #{ $spacing };
