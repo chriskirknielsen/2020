@@ -46,21 +46,6 @@ tags:
 
 When I write code, I use VS Code, but I sometimes miss features from other editors, like a CSS easing preview, so I took it upon myself to make a plugin for that. The result is [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), which will allow you to preview a CSS animation when hovering the timing function/easing keyword. I am not really into TypeScript (though I understand how it can be useful), and being my first venture into making an extension for VS Code, it was quite a challenge, but it certainly is satisfying to see it in action!
 
-### Chronoise
-
-If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
-
-<div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center">
-  {% set keyboard -%}
-  {%- include "assets/img/keyboard.svg" -%}
-  {%- endset -%}
-  {{ keyboard | htmlmin | safe }}
-</div>
-
-### Geekometric
-
-Since 2013, I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
-
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
   <a href="{{ metadata.merch.TeePublic }}" class="u-c--grey-min">{%- include "assets/img/shirt.svg" -%}</a>
@@ -75,6 +60,21 @@ I'll occasionally go back to my designer roots and make some little projects. I'
   {{- andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
 {%- endfor %}. Your support would mean a lot!
+
+### Chronoise
+
+If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
+
+<div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center">
+  {% set keyboard -%}
+  {%- include "assets/img/keyboard.svg" -%}
+  {%- endset -%}
+  {{ keyboard | htmlmin | safe }}
+</div>
+
+### Geekometric
+
+Since 2013, I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
 ## Hobbies
 
