@@ -46,21 +46,6 @@ tags:
 
 Quand je code, j'utilise VS Code mais parfois, j'aimerais retrouver des fonctionnalités d'autres logiciels, comme un aperçu des courbes d'accélération CSS, j'ai donc créé une extension ! Le résultat est [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), qui permet d'avoir un aperçu d'une animation CSS lorsque l'on survole une fonction ou un mot-clé de lissage. Je ne suis pas vraiment investi dans TypeScript (mais je comprends son utilité) et ceci étant ma première tentative d'extension pour VS Code, ce fut un défi mais au bout du compte, c'est plaisant de voir mon extension fonctionner.
 
-### Chronoise
-
-Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com) , qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique !
-
-<div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center">
-  {% set keyboard -%}
-  {%- include "assets/img/keyboard.svg" -%}
-  {%- endset -%}
-  {{ keyboard | htmlmin | safe }}
-</div>
-
-### Geekometric
-
-Depuis 2013, je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
-
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
   <a href="{{ metadata.merch.TeePublic }}" class="u-c--grey-min">{%- include "assets/img/shirt.svg" -%}</a>
@@ -75,6 +60,21 @@ Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vo
   {{- " " + andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>
 {%- endfor %}. Votre soutien signifierait beaucoup à mes yeux !
+
+### Chronoise
+
+Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique !
+
+<div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center">
+  {% set keyboard -%}
+  {%- include "assets/img/keyboard.svg" -%}
+  {%- endset -%}
+  {{ keyboard | htmlmin | safe }}
+</div>
+
+### Geekometric
+
+Depuis 2013, je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
 
 ## Hobbies
 
