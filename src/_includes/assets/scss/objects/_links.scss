@@ -6,10 +6,6 @@ a:not([class]),
     text-decoration-thickness: .15em;
     text-underline-offset: .2em;
 
-    &:visited {
-        text-decoration-thickness: .075em;
-    }
-
     &:hover,
     &:focus,
     &:active {
