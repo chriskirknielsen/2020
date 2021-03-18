@@ -24,6 +24,13 @@ $theme-colors: map-get($colors, "dusk");
 
 
 /* Text */
+.u-c--color-accent,
+.h\:u-c--color-accent:hover,
+.h\:u-c--color-accent:focus {
+    color: var(--color-accent);
+    --currentColor: var(--color-accent);
+}
+
 .u-c--color-text {
     color: var(--color-text);
     --currentColor: var(--color-text);

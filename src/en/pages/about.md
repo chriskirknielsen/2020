@@ -7,8 +7,6 @@ permalink: /about/
 navtitle: About
 ownstyles: about
 ownscripts: about
-tags:
-  - nav
 ---
 
 <div class="md:u-displayFlex u-flex--startBlock">

@@ -7,8 +7,6 @@ permalink: /fr/a-propos/
 navtitle: À Propos
 ownstyles: about
 ownscripts: about
-tags:
-  - nav
 ---
 
 <div class="md:u-displayFlex u-flex--startBlock">
