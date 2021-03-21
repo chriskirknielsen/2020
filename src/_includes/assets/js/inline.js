@@ -1,3 +1,6 @@
+// Add CSS hook for JS availablity
+document.documentElement.classList.remove('no-js');
+
 // Get user's preferences
 // window.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 // window.prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
