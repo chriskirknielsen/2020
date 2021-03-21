@@ -3,6 +3,9 @@
 	$thumb-size: 1.4rem;
 	$thumb-space: 0.25rem;
 	$icon-space: 0.4rem;
+
+	// Don't show if JS is disabled
+	html.no-js & { display: none !important; }
 	
 	user-select: none;
 	cursor: pointer;

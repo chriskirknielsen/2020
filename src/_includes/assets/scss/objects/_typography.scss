@@ -84,8 +84,6 @@ hr {
 
         font-size: 0.5em;
 
-        stroke: var(--color-accent);
-
         #{$p}:hover & ,
         #{$p}:focus & {
             visibility: visible;
