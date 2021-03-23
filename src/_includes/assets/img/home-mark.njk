@@ -72,10 +72,10 @@
     <!-- FILTER: Flash Glow -->
     <filter id="flashGlow" height="300%" width="300%" x="-75%" y="-75%">
       <!-- Thicken out the original shape -->
-      <feMorphology operator="dilate" radius="8" in="SourceAlpha" result="flashGlow__thicken" />
+      <feMorphology operator="dilate" radius="8" in="SourceAlpha" result="flashGlow_thicken" />
 
       <!-- Use a gaussian blur to create the soft blurriness of the glow -->
-      <feGaussianBlur in="flashGlow__thicken" stdDeviation="16" result="flashGlow_blurred" />
+      <feGaussianBlur in="flashGlow_thicken" stdDeviation="16" result="flashGlow_blurred" />
 
       <!-- Change the color -->
       <feFlood flood-color="{{ wire_color }}" result="flashGlow_glowColor" />
