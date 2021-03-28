@@ -11,6 +11,8 @@ pagination:
     - posts
 permalink: /{{ localeRoot }}tags/{{ tag }}/
 layout: layouts/base.njk
+ownstyles:
+  - blog
 renderData:
   title: "{{ localisedContent.tagged }} {{ quoteOpen }}{{ tag }}{{ quoteClose }}"
 ---

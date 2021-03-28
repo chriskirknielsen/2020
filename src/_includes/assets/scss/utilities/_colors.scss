@@ -93,16 +93,16 @@ $theme-colors: map-get($colors, "dusk");
 .h\:u-glowBox--secondary-med:hover,
 .h\:u-glowBox--secondary-med:focus {
     box-shadow:
-        0 0 1.5em -.5em var(--c-secondary-med),
-        inset 0 0 2em -1em var(--c-secondary-med);
+        0 0 1.5rem -0.5rem var(--c-secondary-med),
+        inset 0 0 2rem -1rem var(--c-secondary-med);
 }
 
 .u-glowBox--accent,
 .h\:u-glowBox--accent:hover,
 .h\:u-glowBox--accent:focus {
     box-shadow:
-        0 0 1.5em -.5em var(--color-accent),
-        inset 0 0 2em -1em var(--color-accent);
+        0 0 1.5rem -0.5rem var(--color-accent),
+        inset 0 0 2rem -1rem var(--color-accent);
 }
 
 

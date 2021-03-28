@@ -1,0 +1,92 @@
+blockquote {
+    border-left: #{ $spacing * .25 } solid var(--c-primary-min, currentColor);
+    padding-left: #{ $spacing * 1.25 };
+
+    & > * + * {
+        margin-top: #{ $spacing };
+    }
+
+    & > :first-child::before {
+        content: open-quote;
+    }
+    
+    & > :last-child::after {
+        content: close-quote;
+    }
+
+    :lang(fr) & > :first-child::before { padding-right: .25em; }
+    :lang(fr) & > :last-child::after { padding-left: .25em; }
+
+    & > :first-child::before,
+    & > :last-child::after {
+        color: var(--c-secondary-med, currentColor);
+        font-weight: bold;
+        font-family: #{ $quotation-mark-font };
+    }
+}
+
+hr {
+    &,
+    & + * { // Provide more space around this element
+        --flow-margin: #{ $generous-spacing };
+    }
+
+    position: relative;
+
+    width: 100%; // Required in a grid context
+    height: .5rem;
+
+    border: 0;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &::before {
+        background: radial-gradient(closest-side, var(--c-primary-med), transparent) no-repeat 50% 50% / 100% 100%;
+    }
+    
+    &::after {
+        background: linear-gradient(90deg, transparent, white, transparent) no-repeat 50% 50% / 80% 1px;
+        // opacity: .75;
+    }
+}
+
+.heading-anchor {
+    $p: &;
+
+    position: relative;
+    
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+
+    &-symbol {
+        visibility: hidden;
+
+        position: absolute;
+        right: calc(100% + 0.25em);
+        top: 0.75em;
+        
+        width: 1em;
+        height: 1em;
+
+        font-size: 0.5em;
+
+        #{$p}:hover & ,
+        #{$p}:focus & {
+            visibility: visible;
+        }
+    }
+}

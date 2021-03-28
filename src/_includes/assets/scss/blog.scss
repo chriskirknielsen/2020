@@ -1,6 +1,5 @@
 // Import all variables and mixins
 @import "meta-importer";
 
-@import "objects/article";
-
-@import "pages/cdiv"; // 404
+@import "components/postlist";
+@import "components/bigboi";

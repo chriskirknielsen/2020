@@ -4,8 +4,8 @@ a {
 }
 
 a,
-button,
-summary {
+button/*,
+summary*/ {
     &:focus {
         outline: 4px dashed var(--color-accent);
     }
@@ -15,14 +15,14 @@ summary {
     }
 }
 
-details {
-    & > summary {
-        cursor: pointer;
+// details {
+//     & > summary {
+//         cursor: pointer;
 
-        &::marker { color: var(--color-accent); }
-    }
+//         &::marker { color: var(--color-accent); }
+//     }
 
-    &[open] > summary {
-        &::marker { color: var(--c-grey-med); }
-    }
-}
+//     &[open] > summary {
+//         &::marker { color: var(--c-grey-med); }
+//     }
+// }
