@@ -39,7 +39,7 @@
 		<noscript><link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="all"></noscript>
 	{% endif %}
 
-	{% set css %}{% include metadata.assetUrl.allStyles %}{% endset %}
+	{% set css %}{% include metadata.assetUrl.globalStyles %}{% endset %}
 	<style>
 	{{- css | safe -}}
 
@@ -47,7 +47,7 @@
 		{# Add page-specific styles inline #}
 		{%- set pageStyleGroup = "" -%}
 
-		{%- for ownStyle in (ownstyles | split(",")) -%}
+		{%- for ownStyle in ownstyles -%}
 			{%- set pagestylelink %}{{ metadata.assetUrl.stylesFolder }}/{{ ownStyle | trim(' ') }}.css{% endset -%}
 			{%- set pagestyle %}{% include pagestylelink %}{% endset -%}
 			{%- set pageStyleGroup = pageStyleGroup + pagestyle -%}
@@ -56,6 +56,7 @@
 		{{- pageStyleGroup | cssmin | safe -}}
 	{%- endif -%}
 	</style>
+	<meta property="cknOwnStyles" values="global + {{ ownstyles | dump }}" />
 
 	{# <link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles"> #}
 

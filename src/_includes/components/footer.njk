@@ -55,7 +55,7 @@
 		{# Add page-specific scripts inline #}
 		{%- set pageScriptGroup = ";" -%}
 
-		{%- for ownScript in (ownscripts | split(",")) -%}
+		{%- for ownScript in ownscripts -%}
 			{%- set pagescriptlink %}{{ metadata.assetUrl.scriptsFolder }}/{{ ownScript | trim(' ') }}.min.js{% endset -%}
 			{%- set pagescript %}{% include pagescriptlink %}{% endset -%}
 			{%- set pageScriptGroup = pageScriptGroup + pagescript + ";" -%}

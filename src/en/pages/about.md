@@ -1,12 +1,11 @@
 ---
+layout: layouts/about.njk
 templateEngineOverride: njk,md
 title: Hello, I'm Chris
 subtitle: I'm a designer turned developer who loves working on the web.
 summary: Learn more about Christopher Kirk-Nielsen
 permalink: /about/
 navtitle: About
-ownstyles: about
-ownscripts: about
 ---
 
 <div class="md:u-displayFlex u-flex--startBlock">

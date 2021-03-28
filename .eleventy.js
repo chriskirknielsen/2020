@@ -11,6 +11,8 @@ const moment = require("moment");
 const cssUtilityClasses = require("./src/_data/utilities.js");
 
 module.exports = function(eleventyConfig) {
+	eleventyConfig.setDataDeepMerge(true); // Ensure `ownstyles` are merged together
+	
 	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
 	/* PLUGINS */
