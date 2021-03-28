@@ -22,8 +22,6 @@ html { // Min is lightest during dusk, Max is darkest
     --color-bg: var(--c-primary-max);
     --color-text: var(--c-grey-min);
     --color-accent: var(--c-secondary-med);
-
-    --gradient-subtle: #{ gradient-stops($sc: c('min'), $sa: 0, $ec: c('min'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
 
 html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
@@ -46,8 +44,6 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --color-bg: var(--c-primary-max);
     --color-text: var(--c-grey-min);
     --color-accent: var(--c-primary-med);
-
-    --gradient-subtle: #{ gradient-stops($sc: c('max'), $sa: 0, $ec: c('max'), $ea: 0.05, $sp: 0%, $ep: 100%, $s: 4, $xb: false, $ease: 'in-out') };
 }
 
 .translated-rtl { direction: rtl; }
