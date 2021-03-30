@@ -40,7 +40,7 @@
 	{% endif %}
 
 	{% set css %}{% include metadata.assetUrl.globalStyles %}{% endset %}
-	<style>
+	<style id="inline-styles">
 	{{- css | safe -}}
 
 	{%- if ownstyles -%}
@@ -56,7 +56,6 @@
 		{{- pageStyleGroup | cssmin | safe -}}
 	{%- endif -%}
 	</style>
-	<meta property="cknOwnStyles" values="global + {{ ownstyles | dump }}" />
 
 	{# <link rel="stylesheet" href="{{ globalStylesPath | url }}" media="all" id="global-styles"> #}
 

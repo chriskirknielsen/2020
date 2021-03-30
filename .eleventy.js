@@ -224,21 +224,22 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Minify HTML output
-	eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-		if (outputPath.endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true
-			});
-			return minified;
+	eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+		if (!outputPath.endsWith('.html')) {
+			return content;
 		}
-		return content;
+
+		let minified = htmlmin.minify(content, {
+			useShortDoctype: true,
+			removeComments: true,
+			collapseWhitespace: true
+		});
+		return minified;
 	});
 
 	// Minify JSON output (this can get heavy for big JSON files)
-	eleventyConfig.addTransform("jsonmin", function(content, outputPath) {
-		if (outputPath.endsWith(".json")) {
+	eleventyConfig.addTransform('jsonmin', function(content, outputPath) {
+		if (outputPath.endsWith('.json')) {
 			return JSON.stringify(JSON.parse(content));
 		}
 		return content;
