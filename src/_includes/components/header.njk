@@ -1,18 +1,16 @@
 <header class="header u-displayFlex u-flex--center">
-    <div class="u-container u-width--100 u-paddingBlock u-paddingInline--double">
-        <div class="header__wrap | u-displayFlex u-flex--centerBlock u-flex--wrap | u-margin--flexGap">
-            {%- set ckn_logo_classes = "header__logo" -%}
-            {%- set ckn_logo_fill_classes = "header__logo-fill" -%}
-            {%- set ckn_logo_stroke_classes = "header__logo-stroke header__logo-stroke" -%}
-            <a href="{{ metadata.languages[locale].path | url }}" class="header__logo-link | u-flex--shrink-1 u-flex--grow-1 u-flex--basis-0 | u-overflowVisible | u-marginInlineEnd--auto | u-c--secondary-med h:u-c--grey-min" aria-label="{{ localisedContent.logoLink }}">
-                {% include "assets/img/ckn-logo.svg" %}
-            </a>
+    <div class="header__wrap | u-container u-displayFlex u-flex--centerBlock u-flex--wrap u-width--100 u-paddingBlock">
+        {%- set ckn_logo_classes = "header__logo" -%}
+        {%- set ckn_logo_fill_classes = "header__logo-fill" -%}
+        {%- set ckn_logo_stroke_classes = "header__logo-stroke header__logo-stroke" -%}
+        <a href="{{ metadata.languages[locale].path | url }}" class="header__logo-link | u-flex--shrink-1 u-flex--grow-1 u-flex--basis-0 | u-overflowVisible | u-marginInlineEnd--auto | u-c--secondary-med h:u-c--grey-min" aria-label="{{ localisedContent.logoLink }}">
+            {% include "assets/img/ckn-logo.svg" %}
+        </a>
 
-            <nav class="header__nav nav | u-flex--alignSelfStretch u-flex--centerInline u-displayFlex u-flex--stretchBlock u-marginInline--negative-half" aria-label="{{ localisedContent.navLabel }}">
-                {% include "components/nav.njk" %}
-            </nav>
+        <nav class="header__nav nav | u-flex--alignSelfStretch u-flex--centerInline u-displayFlex u-flex--stretchBlock" aria-label="{{ localisedContent.navLabel }}">
+            {% include "components/nav.njk" %}
+        </nav>
 
-            {% include "components/color-scheme-toggle.njk" %}
-        </div>
+        {% include "components/color-scheme-toggle.njk" %}
     </div>
 </header>

@@ -5,14 +5,19 @@
 }
 
 .content {
+    $gutter: $spacing * 2;
     $max: $container-max-width-rem;
     $wide-max: $wide-content-max-width-rem;
-    $gutter: $spacing * 2;
     $column-width: $max - ($gutter * 2);
 
     max-width: #{ $max };
     margin-left: auto;
     margin-right: auto;
+
+    & > * {
+        padding-left: #{ $gutter };
+        padding-right: #{ $gutter };
+    }
 
     @supports (display: grid) {
         display: grid;
@@ -34,36 +39,10 @@
         margin-left: 0;
         margin-right: 0;
 
-        > * {
+        & > * {
             grid-column: container-start / container-end;
-        }
-
-        &-sub {
-            & > * {
-                max-width: $container-max-width-rem;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: #{ $spacing * 2 };
-                padding-right: #{ $spacing * 2 };
-            }
-
-            @supports (grid-template-columns: subgrid) {
-                display: grid;
-                grid-template-columns: subgrid;
-                grid-template-rows: 1fr;
-
-                & > * {
-                    grid-column: container-start / container-end;
-
-                    // Reset the no-subgrid fallback
-                    max-width: 100%;
-                    width: 100%;
-                    margin-left: initial;
-                    margin-right: initial;
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-            }
+            padding-left: 0;
+            padding-right: 0;
         }
         
         &-wide {
@@ -82,6 +61,34 @@
             max-width: #{ $wide-max };
             margin-left: auto;
             margin-right: auto;
+        }
+    }
+
+    &-sub {
+        & > * {
+            max-width: $container-max-width-rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: #{ $gutter };
+            padding-right: #{ $gutter };
+        }
+
+        @supports (grid-template-columns: subgrid) {
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-template-rows: 1fr;
+
+            & > * {
+                grid-column: container-start / container-end;
+
+                // Reset the no-subgrid fallback
+                max-width: 100%;
+                width: 100%;
+                margin-left: initial;
+                margin-right: initial;
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
     }
 }

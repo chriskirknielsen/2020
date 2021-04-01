@@ -9,7 +9,7 @@ module.exports = { // Define a list of utility classes that are commonly used to
 
     // Card component
     cardFlex: "u-flex--grow-1 u-flex--basis-0",
-    cardContainer: "u-margin--flexGap-double u-marginBlockStart--none md:u-displayFlex",
+    cardContainer: "u-margin--flexGap u-marginBlockStart--none md:u-displayFlex",
     cardBox: "u-padding u-c--text-color u-bg--grey-max u-border u-border--grey-med u-border-radius",
     cardBoxLink: "h:u-border--accent h:u-glowBox--accent",
     
