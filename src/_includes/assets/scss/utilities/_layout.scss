@@ -117,11 +117,6 @@
 /* Margin */
 
 .u-margin--flexGap {
-    &[class] { margin: #{ $spacing * -.5 }; }
-    & > * { margin: #{ $spacing * .5 }; }
-}
-
-.u-margin--flexGap-double {
     &[class] { margin: #{ $spacing * -1 }; }
     & > * { margin: #{ $spacing }; }
 }
@@ -138,10 +133,10 @@
     margin-top: #{ $spacing * 2 };
     margin-bottom: #{ $spacing * 2 };
 }
-.u-marginBlock--negative-half {
-    margin-top: #{ $spacing * -.5 };
-    margin-bottom: #{ $spacing * -.5 };
-}
+// .u-marginBlock--negative-half {
+//     margin-top: #{ $spacing * -.5 };
+//     margin-bottom: #{ $spacing * -.5 };
+// }
 // .u-marginBlock--none {
 //     margin-top: 0;
 //     margin-bottom: 0;
@@ -174,13 +169,13 @@
 //     margin-left: #{ $spacing * -1 };
 //     margin-right: #{ $spacing * -1 };
 // }
-.u-marginInlineStart--negative-half {
-    margin-left: #{ $spacing * -.5 };
-}
-.u-marginInline--negative-half {
-    margin-left: #{ $spacing * -.5 };
-    margin-right: #{ $spacing * -.5 };
-}
+// .u-marginInlineStart--negative-half {
+//     margin-left: #{ $spacing * -.5 };
+// }
+// .u-marginInline--negative-half {
+//     margin-left: #{ $spacing * -.5 };
+//     margin-right: #{ $spacing * -.5 };
+// }
 .u-marginInline {
     margin-left: #{ $spacing };
     margin-right: #{ $spacing };
@@ -323,17 +318,15 @@
 
 /* Containers and breakout blocks */
 
-.u-container {
-    max-width: $container-max-width-rem;
+.u-container,
+.u-container--narrow {
     margin-left: auto !important;
     margin-right: auto !important;
-
-    &--narrow {
-        max-width: $narrow-max-width-rem;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
+    padding-left: #{ $container-padding-rem };
+    padding-right: #{ $container-padding-rem };
 }
+.u-container { max-width: #{ $container-max-width-rem + $container-padding-rem*2 }; }
+.u-container--narrow { max-width: #{ $narrow-max-width-rem + $container-padding-rem*2 }; }
 
 .u-bfc { // `column-span: all` creates a new block-formatting context despite not being in a multicol layout: https://github.com/w3c/csswg-drafts/commit/a8634b96900279916bd6c505fda88dda71d8ec51
     column-span: all;

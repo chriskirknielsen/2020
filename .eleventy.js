@@ -1,6 +1,8 @@
 const root = 'src'; // Root folder
+const outputDir = '_site'; // Build destination folder
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
+const { PurgeCSS } = require("purgecss");
 const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -8,7 +10,27 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const slugify = require("slugify");
 const blogTools = require("eleventy-plugin-blog-tools");
 const moment = require("moment");
+const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
+const purgeCssSafeList = [
+	// Box-sizing
+	'*',
+
+	// Skip-link
+	'h:u-bg--secondary-max',
+
+	// Translation class
+	'translated-rtl',
+
+	// Navbar links
+	'h:u-textDecoration--none', 'h:u-glowBox--accent', 'h:u-textShadow--currentBg', 'h:u-border--accent',
+	
+	// Article list links and external article button
+	'h:u-c--color-accent', 'h:u-c--grey-max', 'h:u-bg--accent',
+
+	// About page
+	'md:u-displayFlex',
+];
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true); // Ensure `ownstyles` are merged together
@@ -223,6 +245,22 @@ module.exports = function(eleventyConfig) {
 		return minified.code;
 	});
 
+	// PurgeCSS
+	eleventyConfig.addTransform('purge-and-inline-css', async (content, outputPath) => {
+		if (!outputPath.endsWith('.html')) {
+			return content;
+		}
+
+		const purgeCSSResults = await new PurgeCSS().purge({
+			content: [{ raw: content }],
+			css: [`${outputDir}/${metadata.assetUrl.allStyles}`],
+			keyframes: true,
+			safelist: purgeCssSafeList,
+		});
+
+		return content.replace('/*INLINE_CSS*/', (purgeCSSResults[0].css || ''));
+	});
+
 	// Minify HTML output
 	eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
 		if (!outputPath.endsWith('.html')) {
@@ -260,7 +298,6 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Don't process folders with static assets e.g. images
-	eleventyConfig.addPassthroughCopy(root+"/cms-editor");
 	eleventyConfig.addPassthroughCopy({
 		[`${root}/_includes/assets/fonts`]: "/assets/fonts",
 		[`${root}/_includes/assets/img`]: "/assets/img",
@@ -343,10 +380,10 @@ module.exports = function(eleventyConfig) {
 		dataTemplateEngine: "njk",
 		passthroughFileCopy: true,
 		dir: {
-			input: "./src/",
+			input: `./${root}/`,
 			includes: "_includes",
 			data: "_data",
-			output: "_site"
+			output: outputDir
 		}
 	};
 };

@@ -39,10 +39,8 @@
 		<noscript><link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="all"></noscript>
 	{% endif %}
 
-	{% set css %}{% include metadata.assetUrl.globalStyles %}{% endset %}
 	<style id="inline-styles">
-	{{- css | safe -}}
-
+	/*INLINE_CSS*/
 	{%- if ownstyles -%}
 		{# Add page-specific styles inline #}
 		{%- set pageStyleGroup = "" -%}

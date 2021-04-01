@@ -3,23 +3,10 @@ pagination:
   data: collections
   size: 1
   alias: tag
-  filter:
-    - all
-    - language
-    - nav
-    - post
-    - posts
-    - posts_all
-    - posts_en
-    - posts_fr
-    - pages
-    - pages_all
-    - pages_en
-    - pages_fr
+  filter: ['all', 'language', 'nav', 'post', 'posts', 'posts_all', 'posts_en', 'posts_fr', 'pages', 'pages_all', 'pages_en', 'pages_fr']
 permalink: /{{ localeRoot }}tags/{{ tag }}/
 layout: layouts/base.njk
-ownstyles:
-  - blog
+ownstyles: []
 renderData:
   title: "{{ localisedContent.tagged }} {{ quoteOpen }}{{ tag }}{{ quoteClose }}"
 ---
