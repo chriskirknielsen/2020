@@ -25,11 +25,11 @@
             [fullbleed-start]
                 1fr
             [wide-start]
-                #{ $spacing * 2 }
+                #{ $gutter }
             [container-start]
                 minmax(0, #{ $max })
             [container-end]
-                #{ $spacing * 2 }
+                #{ $gutter }
             [wide-end]
                 1fr
             [fullbleed-end]
@@ -66,9 +66,13 @@
 
     &-sub {
         & > * {
+            --content-sub-padding: max(0px, min((#{ $max + $gutter*2 } - 100%), #{ $gutter }));
+
             max-width: $container-max-width-rem;
             margin-left: auto;
             margin-right: auto;
+            padding-left: var(--content-sub-padding, #{ $gutter });
+            padding-right: var(--content-sub-padding, #{ $gutter });
         }
 
         @supports (grid-template-columns: subgrid) {
@@ -84,6 +88,8 @@
                 width: 100%;
                 margin-left: initial;
                 margin-right: initial;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     }
