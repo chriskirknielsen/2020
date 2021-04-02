@@ -18,5 +18,5 @@ module.exports = { // Define a list of utility classes that are commonly used to
 
     // Hero component
     bigboi: "bigboi content-full content-sub u-posRelative u-paddingBlock--double u-bg--grey-max u-beforeCover u-afterCover",
-    bigboiContent: "bigboi-content u-posRelative u-zIndex--1 u-content",
+    bigboiContent: "bigboi-content u-posRelative u-zIndex--1",
 }
