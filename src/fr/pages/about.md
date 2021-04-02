@@ -8,7 +8,7 @@ permalink: /fr/a-propos/
 navtitle: À Propos
 ---
 
-<div class="md:u-displayFlex u-flex--startBlock">
+<div class="md_u-displayFlex u-flex--startBlock">
   <div class="about__profile u-floatLeft u-posRelative u-flex--shrink-0 u-marginBlock--double u-marginInlineEnd--double">
     {% set ckn_profile -%}
     {%- include "assets/img/ckn-profile.svg" -%}
