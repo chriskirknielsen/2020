@@ -12,25 +12,15 @@ const blogTools = require("eleventy-plugin-blog-tools");
 const moment = require("moment");
 const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
-const purgeCssSafeList = [
-	// Box-sizing
-	'*',
-
-	// Skip-link
-	'h:u-bg--secondary-max',
-
-	// Translation class
-	'translated-rtl',
-
-	// Navbar links
-	'h:u-textDecoration--none', 'h:u-glowBox--accent', 'h:u-textShadow--currentBg', 'h:u-border--accent',
-	
-	// Article list links and external article button
-	'h:u-c--color-accent', 'h:u-c--grey-max', 'h:u-bg--accent',
-
-	// About page
-	'md:u-displayFlex',
-];
+const purgeCssSafeList = { // PurgeCSS has trouble with escaped colons in selectors, so add them to a safelist
+	_global: [
+		'h:u-bg--secondary-max', // Skip-link
+		'translated-rtl', // Translation class
+		'h:u-textDecoration--none', 'h:u-glowBox--accent', 'h:u-bg--accent', 'h:u-textShadow--currentBg', 'h:u-border--accent', // Navbar links
+	],
+	blog: ['h:u-c--color-accent', 'h:u-c--grey-max', 'h:u-bg--grey-max'], // Article list links and external article button
+	about: ['md:u-displayFlex'],
+};
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true); // Ensure `ownstyles` are merged together
@@ -251,11 +241,15 @@ module.exports = function(eleventyConfig) {
 			return content;
 		}
 
+		let safeSelectors = purgeCssSafeList._global;
+		if (/\/(about|fr\/a-propos)/.exec(outputPath)) { safeSelectors = safeSelectors.concat(purgeCssSafeList.about); }
+		else if (/\/(blog|tags)\//.exec(outputPath)) { safeSelectors = safeSelectors.concat(purgeCssSafeList.blog); }
+
 		const purgeCSSResults = await new PurgeCSS().purge({
 			content: [{ raw: content }],
 			css: [`${outputDir}/${metadata.assetUrl.allStyles}`],
 			keyframes: true,
-			safelist: purgeCssSafeList,
+			safelist: safeSelectors,
 		});
 
 		return content.replace('/*INLINE_CSS*/', (purgeCSSResults[0].css || ''));
