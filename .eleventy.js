@@ -14,13 +14,11 @@ const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
 const purgeCssSafeList = { // PurgeCSS has trouble with escaped colons in selectors, so add them to a safelist
 	_global: [
-		'h:u-bg--secondary-max', // Skip-link
 		'translated-rtl', // Translation class
-		'h:u-textDecoration--none', 'h:u-glowBox--accent', 'h:u-bg--accent', 'h:u-textShadow--currentBg', 'h:u-border--accent', // Navbar links
 	],
-	home: ['md:u-displayFlex'],
-	blog: ['h:u-c--color-accent', 'h:u-c--grey-max', 'h:u-bg--grey-max'], // Article list links and external article button
-	about: ['md:u-displayFlex'],
+	home: [],
+	blog: [], // Article list links and external article button
+	about: [],
 };
 
 module.exports = function(eleventyConfig) {

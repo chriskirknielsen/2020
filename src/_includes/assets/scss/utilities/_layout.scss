@@ -78,7 +78,7 @@
 .u-displayInlineFlex { display: inline-flex; }
 .u-displayFlowRoot { display: flow-root; }
 
-@include above-medium { .md\:u-displayFlex { display: flex; } }
+@include above-medium { .md_u-displayFlex { display: flex; } }
 
 
 /* Size */
@@ -224,7 +224,7 @@
 // }
 
 // @include above-medium {
-//     .md\:u-marginInline {
+//     .md_u-marginInline {
 //         margin-left: #{ $spacing };
 //         margin-right: #{ $spacing };
 //     }
