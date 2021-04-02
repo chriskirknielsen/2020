@@ -18,6 +18,7 @@ const purgeCssSafeList = { // PurgeCSS has trouble with escaped colons in select
 		'translated-rtl', // Translation class
 		'h:u-textDecoration--none', 'h:u-glowBox--accent', 'h:u-bg--accent', 'h:u-textShadow--currentBg', 'h:u-border--accent', // Navbar links
 	],
+	home: ['md:u-displayFlex'],
 	blog: ['h:u-c--color-accent', 'h:u-c--grey-max', 'h:u-bg--grey-max'], // Article list links and external article button
 	about: ['md:u-displayFlex'],
 };
@@ -242,7 +243,8 @@ module.exports = function(eleventyConfig) {
 		}
 
 		let safeSelectors = purgeCssSafeList._global;
-		if (/\/(about|fr\/a-propos)/.exec(outputPath)) { safeSelectors = safeSelectors.concat(purgeCssSafeList.about); }
+		if (/\/(index\.html|fr\/index\.html)/.exec(outputPath)) { safeSelectors = safeSelectors.concat(purgeCssSafeList.home); }
+		else if (/\/(about|fr\/a-propos)/.exec(outputPath)) { safeSelectors = safeSelectors.concat(purgeCssSafeList.about); }
 		else if (/\/(blog|tags)\//.exec(outputPath)) { safeSelectors = safeSelectors.concat(purgeCssSafeList.blog); }
 
 		const purgeCSSResults = await new PurgeCSS().purge({
