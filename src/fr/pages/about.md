@@ -52,7 +52,7 @@ Quand je code, j'utilise VS Code mais parfois, j'aimerais retrouver des fonction
 
 ### T-Shirts, Affiches & Compagnie
 
-Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez le CSS et le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
+Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations inspirées du monde du développement web que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez les boîtiers VHS ou le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
   {{- ", " if (not loop.first and not loop.last) -}}
   {{- " " + andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>

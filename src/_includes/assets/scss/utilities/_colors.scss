@@ -1,25 +1,25 @@
 /* Palette */
 // Run through the palette for both color and background-color
-    
+	
 // Since we use CSS custom properties instead of hardcoded values, we can run through a single colour scheme and get all the required colour keys and codes
 $theme-colors: map-get($colors, "dusk");
 
 @each $c in map-keys($theme-colors) {
-    @each $n in (min, med, max) {
-        .u-c--#{$c}-#{$n},
-        .h_u-c--#{$c}-#{$n}:hover,
-        .h_u-c--#{$c}-#{$n}:focus {
-            color: var(--c-#{$c}-#{$n});
-            --currentColor: var(--c-#{$c}-#{$n});
-        }
+	@each $n in (min, med, max) {
+		.u-c--#{$c}-#{$n},
+		.h_u-c--#{$c}-#{$n}:hover,
+		.h_u-c--#{$c}-#{$n}:focus {
+			color: var(--c-#{$c}-#{$n});
+			--currentColor: var(--c-#{$c}-#{$n});
+		}
 
-        .u-bg--#{$c}-#{$n},
-        .h_u-bg--#{$c}-#{$n}:hover,
-        .h_u-bg--#{$c}-#{$n}:focus {
-            background-color: var(--c-#{$c}-#{$n});
-            --currentBackground: var(--c-#{$c}-#{$n});
-        }
-    }
+		.u-bg--#{$c}-#{$n},
+		.h_u-bg--#{$c}-#{$n}:hover,
+		.h_u-bg--#{$c}-#{$n}:focus {
+			background-color: var(--c-#{$c}-#{$n});
+			--currentBackground: var(--c-#{$c}-#{$n});
+		}
+	}
 }
 
 
@@ -27,13 +27,13 @@ $theme-colors: map-get($colors, "dusk");
 .u-c--color-accent,
 .h_u-c--color-accent:hover,
 .h_u-c--color-accent:focus {
-    color: var(--color-accent);
-    --currentColor: var(--color-accent);
+	color: var(--color-accent);
+	--currentColor: var(--color-accent);
 }
 
 .u-c--color-text {
-    color: var(--color-text);
-    --currentColor: var(--color-text);
+	color: var(--color-text);
+	--currentColor: var(--color-text);
 }
 
 
@@ -42,8 +42,8 @@ $theme-colors: map-get($colors, "dusk");
 .u-bg--accent,
 .h_u-bg--accent:hover,
 .h_u-bg--accent:focus {
-    background-color: var(--color-accent);
-    --currentBackground: var(--color-accent);
+	background-color: var(--color-accent);
+	--currentBackground: var(--color-accent);
 }
 
 // .u-bg--currentColor {
@@ -57,7 +57,7 @@ $theme-colors: map-get($colors, "dusk");
 .u-border--transparent,
 .h_u-border--transparent:hover,
 .h_u-border--transparent:focus {
-    border-color: transparent;
+	border-color: transparent;
 }
 
 // .u-border--grey-min {
@@ -65,25 +65,25 @@ $theme-colors: map-get($colors, "dusk");
 // }
 
 .u-border--grey-med {
-    border-color: var(--c-grey-med);
+	border-color: var(--c-grey-med);
 }
 
 .u-border--primary-med,
 .h_u-border--primary-med:hover,
 .h_u-border--primary-med:focus {
-    border-color: var(--c-primary-med);
+	border-color: var(--c-primary-med);
 }
 
 .u-border--secondary-med,
 .h_u-border--secondary-med:hover,
 .h_u-border--secondary-med:focus {
-    border-color: var(--c-secondary-med);
+	border-color: var(--c-secondary-med);
 }
 
 .u-border--accent,
 .h_u-border--accent:hover,
 .h_u-border--accent:focus {
-    border-color: var(--color-accent);
+	border-color: var(--color-accent);
 }
 
 
@@ -92,17 +92,17 @@ $theme-colors: map-get($colors, "dusk");
 .u-glowBox--secondary-med,
 .h_u-glowBox--secondary-med:hover,
 .h_u-glowBox--secondary-med:focus {
-    box-shadow:
-        0 0 1.5rem -0.5rem var(--c-secondary-med),
-        inset 0 0 2rem -1rem var(--c-secondary-med);
+	box-shadow:
+		0 0 1.5rem -0.5rem var(--c-secondary-med),
+		inset 0 0 2rem -1rem var(--c-secondary-med);
 }
 
 .u-glowBox--accent,
 .h_u-glowBox--accent:hover,
 .h_u-glowBox--accent:focus {
-    box-shadow:
-        0 0 1.5rem -0.5rem var(--color-accent),
-        inset 0 0 2rem -1rem var(--color-accent);
+	box-shadow:
+		0 0 1.5rem -0.5rem var(--color-accent),
+		inset 0 0 2rem -1rem var(--color-accent);
 }
 
 
@@ -110,5 +110,5 @@ $theme-colors: map-get($colors, "dusk");
 
 .h_textShadow--currentBg:hover,
 .h_textShadow--currentBg:focus {
-    text-shadow: 0 0 .25em var(--currentBackground);
+	text-shadow: 0 0 .25em var(--currentBackground);
 }
