@@ -52,7 +52,7 @@ When I write code, I use VS Code, but I sometimes miss features from other edito
 
 ### T-Shirts, Posters & More
 
-I'll occasionally go back to my designer roots and make some little projects. I've made a few designs you can buy on shirts, posters and the like — if you like CSS and '80s style, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
+I'll occasionally go back to my designer roots and make some little projects. I've made a few dev-inspired designs you can buy on shirts, posters and the like — if you like blank VHS artwork or the '80s aesthetic, you just might enjoy it: check them out on {% for store, link in metadata.merch -%}
   {{- ", " if not loop.first -}}
   {{- andWord + " " if loop.last -}}
   <a href="{{ link }}">{{ store }}</a>

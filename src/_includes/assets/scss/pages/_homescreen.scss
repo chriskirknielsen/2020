@@ -1,11 +1,11 @@
 // Check for Houdini support, then register property for animation
-@supports (background: paint(a)) {
-    @property --ckn-sun-mask-lines {
-        syntax: '<length-percentage>';
-        initial-value: 0;
-        inherits: true;
-    }
-}
+// @supports (background: paint(a)) {
+//     @property --ckn-sun-mask-lines {
+//         syntax: "<length-percentage>";
+//         initial-value: 0;
+//         inherits: true;
+//     }
+// }
 
 .homescreen {
     --homescreen-sky-end: #791e74;
