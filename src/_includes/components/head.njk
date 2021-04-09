@@ -2,21 +2,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ navtitle or title or renderData.title }} | {{ metadata.title }}</title>
-	{% if summary %}<meta name="description" content="{{ summary }}">{% endif %}
+	
+	{% if summary %}
+	<meta name="description" content="{{ summary }}">
+	<meta name="og:description" content="{{ summary }}">
+	{% endif %}
+	
 	<meta property="og:title" content="{{ navtitle or title or renderData.title }} | {{ metadata.title }}">
-	{% if summary %}<meta name="og:description" content="{{ summary }}">{% endif %}
 	<meta property="og:site_name" content="{{ metadata.title }}">
 	<meta property="og:locale" content="{{ locale }}">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="{% if section == "post" %}article{% else %}website{% endif %}">
 	<meta property="og:url" content="{{ localePath | url | absoluteUrl(metadata.url) }}">
-
+	
 	{# Add a dynamic image for blog posts, based on https://www.juanfernandes.uk/blog/automated-open-graph-images-with-11ty-and-cloudinary/ #}
-	{% if section == 'post' %}
-	<meta name="twitter:image" property="og:image" content="{{ metadata.cloudinary.url }}/w_1200,f_auto/l_{{ metadata.cloudinary.logo }},w_128,g_south_east,x_64,y_42/l_text:{{ metadata.cloudinary.font }}_100_center:{{ navtitle or title or renderData.title | cloudinaryEscape }},co_rgb:ffe4c2,c_fit,w_900/{{ metadata.cloudinary.image }}" />
-	{% else %}
-	<meta name="twitter:image" property="og:image" content="{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}">
-	{% endif %}
+	{% set meta_image_url %}
+		{% if section == "post" %}
+			{{ metadata.cloudinary.url }}/w_1200,f_auto/l_{{ metadata.cloudinary.logo }},w_128,g_south_east,x_64,y_42/l_text:{{ metadata.cloudinary.font }}_100_center:{{ navtitle or title or renderData.title | cloudinaryEscape }},co_rgb:ffe4c2,c_fit,w_900/{{ metadata.cloudinary.image }}
+		{% else %}
+			{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}
+		{% endif %}
+	{% endset %}
+	<meta name="twitter:image" property="og:image" content="{{ meta_image_url | trim }}">
 	<meta name="twitter:image:alt" property="og:image:alt" content="{{ navtitle or title or renderData.title }}" />
+	<meta name="twitter:card" content="summary_large_image" />
 
 	{# Add a slash in the final markup for root access #}
 	{# {% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
@@ -65,7 +73,7 @@
 	{# <link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}"> #}
 	
 	{% if page.fileSlug and section %}
-		{% set resourceVariants %}{% if section == 'post' %}posts_all{% else %}pages_all{% endif %}{% endset %}
+		{% set resourceVariants %}{% if section == "post" %}posts_all{% else %}pages_all{% endif %}{% endset %}
 		{% set filteredVariants = collections | findVariants(resourceVariants, page.fileSlug, locale) %}
 		
 		<link rel="alternate" href="{{ permalink | url | absoluteUrl(metadata.url) }}" hreflang="{{ locale }}">
