@@ -11,6 +11,12 @@
     public,
     max-age=1209600'''
 
+## Opt out of Google's FLoC
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
+
 ## Error 404 redirects
 [[redirects]]
   from = "/fr/*"
