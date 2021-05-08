@@ -48,6 +48,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
+    "handlebars": "^4.7.7",
     "html-minifier": "^4.0.0",
     "json-to-scss": "^1.6.2",
     "markdown-it-footnote": "^3.0.2",
@@ -58,6 +59,7 @@
     "purgecss": "^4.0.3",
     "sass": "^1.32.7",
     "set-value": "3.0.2",
+    "ua-parser-js": "^0.7.24",
     "uglify-es": "^3.3.9",
     "xmlhttprequest-ssl": "^1.6.2",
     "yargs-parser": "^19.0.4"
