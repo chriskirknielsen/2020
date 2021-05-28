@@ -1,3 +1,4 @@
+var utilityButtonLink = 'u-displayInlineFlex u-flex--centerBlock u-paddingInline--half u-fontBold u-c--grey-min u-bg--grey-max h_u-c--grey-min h_u-bg--grey-max u-border u-border--grey-med h_u-border--accent u-border-radius h_u-glowBox--accent h_u-textShadow--currentBg';
 // Init rAF
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };
 
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var a = 0; a < aboutActions.length; a++) {
         var elementHtml = aboutActions[a].innerHTML;
         var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
-        var newElement = '<button class="button--reset link" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
+        var newElement = '<button class="button--reset '+utilityButtonLink+'" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
         aboutActions[a].outerHTML = newElement;
     }
 
