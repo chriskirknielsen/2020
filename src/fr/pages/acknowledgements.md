@@ -7,7 +7,7 @@ navtitle: Remerciements
 
 ## Techniques
 
-Ce site est bâti avec [Eleventy](https://www.11ty.dev/), un superbe générateur de site statique (que je soutiens financièrement). Je me suis basé sur le [*boilerplate* de Dan Urbanowicz](https://templates.netlify.com/template/eleventy-netlify-boilerplate/) comme point de départ. Je me sers de [gulp](https://gulpjs.com/) pour compiler mon Sass en CSS et minifier styles comme scripts.
+Ce site est bâti avec [Eleventy](https://www.11ty.dev/), un superbe générateur de site statique (que je soutiens financièrement). Je me suis basé sur le [*boilerplate* de Dan Urbanowicz](https://templates.netlify.com/template/eleventy-netlify-boilerplate/) comme point de départ. Je me sers de [gulp](https://gulpjs.com/) pour compiler mon Sass en CSS et minifier styles comme scripts, injectés dans la page pour réduire les requêtes HTTP.
 
 L'hébergement est fourni par [Netlify](https://netlify.com/), gratuitement, puisque je ne génère que peu de trafic… Pour autant, ça reste une bonne idée de les soutenirs !
 

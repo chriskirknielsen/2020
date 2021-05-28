@@ -7,7 +7,7 @@ navtitle: Acknowledgements
 
 ## Technical
 
-This site is built with [Eleventy](https://www.11ty.dev/) (of which I am an official supporter!), a fantastic static site generator. I used [Dan Urbanowicz's boilerplate](https://templates.netlify.com/template/eleventy-netlify-boilerplate/) as a starting point. I run [gulp](https://gulpjs.com/) in front of my build to compile my Sass to CSS and minify styles and scripts alike.
+This site is built with [Eleventy](https://www.11ty.dev/) (of which I am an official supporter!), a fantastic static site generator. I used [Dan Urbanowicz's boilerplate](https://templates.netlify.com/template/eleventy-netlify-boilerplate/) as a starting point. I run [gulp](https://gulpjs.com/) in front of my build to compile my Sass to CSS and minify styles and scripts alike, then inline them to reduce HTTP requests.
 
 Hosting is provided by [Netlify](https://netlify.com/), free of charge, since I don't generate much traffic… Still good to support these fine folks, though!
 
