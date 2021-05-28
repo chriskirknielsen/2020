@@ -1,4 +1,4 @@
-blockquote {
+blockquote:not([hack-specificity]) {
     border-left: #{ $spacing * .25 } solid var(--c-primary-min, currentColor);
     padding-left: #{ $spacing * 1.25 };
 

@@ -17,6 +17,15 @@
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
 
+## Uses redirect
+[[redirects]]
+  from = "/uses"
+  to = "/acknowledgements#uses"
+
+[[redirects]]
+  from = "/fr/usages"
+  to = "/fr/remerciements/#usages"
+
 ## Error 404 redirects
 [[redirects]]
   from = "/fr/*"
@@ -27,11 +36,3 @@
   from = "/*"
   to = "/en/404.html"
   status = 404
-
-[[redirects]]
-  from = "/uses"
-  to = "/acknowledgements#uses"
-
-[[redirects]]
-  from = "/fr/usages"
-  to = "/fr/remerciements/#usages"
