@@ -75,9 +75,11 @@ Depuis 2013, je maintiens **un blog où je critique des films, de la musique ou 
 
 ## Hobbies
 
-Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, surtout de la musique rock, metal et synthwave — je suis obsédé par l'esthétique des années 80. Quelque chose avec les synthés m'attire beaucoup — peut-être que les couleurs néon baignent en harmonie au plus profond de moi !
+Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, surtout de la musique rock, metal, électronique et tout ce qu'il y a entre ça — je suis obsédé par l'esthétique des années 80. Quelque chose avec les synthés m'attire beaucoup — peut-être que les couleurs néon baignent en harmonie au plus profond de moi !
 
-<del>J'aime</del> <ins>J'aimais</ins> aussi lire un bon bouquin avec de la musique sur les oreilles pendant mon trajet d'une heure à **New York City** mais je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et j'aimerais reprendre le japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
+Si vous avez des recommandations de livres de fantaisie ou de science-fiction, je suis à votre écoute car c'est quelque chose que j'adore ! Je suis aussi très intéressé par le cinéma et les séries, tant que ce n'est pas de l'horreur (très peu pour moi) et en version originale s'il-vous-plaît !
+
+Je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark et j'ai passé quelques temps en Australie durant mon enfance. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et j'aimerais reprendre le japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
 
 ## Oui oui, je suis un pro
 
