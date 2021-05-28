@@ -75,13 +75,15 @@ Since 2013, I run **a blog where I review** movies, music, shows and video games
 
 ## Hobbies
 
-Like many other humans, listening to music is a big part of my life, mainly rock, metal, and synthwave — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
+Like many other humans, listening to music is a big part of my life, mainly rock, metal, electronica, and everything in between — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
 
-I also <del>appreciate</del> <ins>used to appreciate</ins> a nice book & playlist combo during my hour-long commute in **New York City**, but **I'm originally from Lyon, France**, with immigrant parents from Denmark. I moved to the Big Apple to be with my wonderful wife Ilona — a nice reason to change continents! As a result, I speak English, French and Danish fluently. I also learned some Italian, can read the Cyrillic alphabet, and would like to get back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
+If you like some fantasy or science-fiction books, let me know because I love that stuff. I'm also very much into movies and TV shows, not too picky on the type there but horror is not my cup of tea — as long as it is in the original language.
+
+**I'm originally from Lyon, France**, with immigrant parents from Denmark, and I spent some time in Australia growing up. As a result, I speak English, French and Danish fluently. I also learned some Italian, can read the Cyrillic alphabet, and would like to get back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
 ## Sure, I'm a professional
 
-If you want to learn more about my skills, I don't have a formal résumé here, but you can take a peek at [my LinkedIn profile](https://www.linkedin.com/in/chriskirknielsen/) (I'm not looking for new opportunities). I can program in HTML, CSS, JavaScript, PHP, and MySQL, I love the JAMstack for static sites, like Eleventy or Hugo, but I'm also very comfortable with WordPress. The Adobe Creative Suite (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) is dear to me, as well as Sketch and Cinema 4D. I'm a French/Danish dual-citizen, and US "Green Card" holder — what a process that is!
+If you want to learn more about my skills, I don't have a formal résumé here, but you can take a peek at [my LinkedIn profile](https://www.linkedin.com/in/chriskirknielsen/) (I am **not** looking for new opportunities). I can program in HTML, CSS, JavaScript, PHP, and MySQL, I love the JAMstack for static sites, like Eleventy or Hugo, but I'm also very comfortable with WordPress. The Adobe Creative Suite (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) is dear to me, as well as Sketch and Cinema 4D. I'm a French/Danish dual-citizen, and US "Green Card" holder — what a process that is!
 
 ## Find me on the web
 
