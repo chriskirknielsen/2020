@@ -1,6 +1,6 @@
 ---
 title: Rotating floating animation with chained transforms
-summary: Using chained CSS transforms to get a rotation without
+summary: Using chained CSS transforms to get a rotation without rotating the element itself.
 date: 2021-06-12
 tags:
   - post
