@@ -82,10 +82,7 @@ h3,
 //     @include fluid-type($min, $max);
 // }
 
-h1 {
-    max-width: 24ch;
-}
-
+h1,
 h2,
 h3 {
     max-width: 32ch;
