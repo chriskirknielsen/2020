@@ -92,4 +92,4 @@ I'd recommend the first one.
 
 ## Demo
 
-{% codepen "https://codepen.io/chriskirknielsen/pen/KKVryZB/", "result", "480"  %}
+{% codepen "https://codepen.io/chriskirknielsen/pen/KKVryZB/", "result", "480" %}
