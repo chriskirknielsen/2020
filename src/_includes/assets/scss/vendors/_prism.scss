@@ -63,6 +63,7 @@ pre[class*="language-"] {
 		writing-mode: vertical-lr;
 	}
 
+	// &::before { content: attr(data-lang); }
 	&.language-html::before { content: 'HTML'; }
 	&.language-css::before { content: 'CSS'; }
 	&.language-scss::before { content: 'SCSS'; }

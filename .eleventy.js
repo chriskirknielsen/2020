@@ -12,10 +12,8 @@ const blogTools = require("eleventy-plugin-blog-tools");
 const moment = require("moment");
 const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
-const purgeCssSafeList = { // PurgeCSS has trouble with escaped colons in selectors, so add them to a safelist
-	_global: [
-		'translated-rtl', // Translation class
-	],
+const purgeCssSafeList = {
+	_global: ['translated-rtl'], // Translation class
 	home: [],
 	blog: [], // Article list links and external article button
 	about: [],
@@ -30,7 +28,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(blogTools);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		templateFormats: ["md","html","njk"]
+		templateFormats: ["md","html","njk"],
+		preAttributes: {
+			tabindex: 0,
+			// 'data-lang': function (context) { return context.language.toUpperCase(); }
+		}
 	});
 
 	/* SHORTCODES */
