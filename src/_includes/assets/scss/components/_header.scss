@@ -75,6 +75,7 @@
 
             margin: 0;
             padding: #{ $small-viewport-nav-padding };
+            padding-bottom: calc(#{ $small-viewport-nav-padding } + env(safe-area-inset-bottom));
 
             background-color: var(--c-grey-max);
             outline: .25em solid var(--c-primary-med);
