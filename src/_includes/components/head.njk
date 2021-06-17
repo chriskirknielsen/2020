@@ -69,7 +69,10 @@
 	<link rel="icon" href="{{ "/" + metadata.assetUrl.icons.faviconSvg | url }}">
 	<link rel="mask-icon" href="{{ "/" + metadata.assetUrl.icons.maskIcon | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
 	<link rel="apple-touch-icon" href="{{ "/" + metadata.assetUrl.icons.appleTouchIcon | url }}">
-	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}">
+
+	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}" media="(prefers-color-scheme: dark)">
+	<meta name="theme-color" content="{{ tokens.colors.dawn.primary.max }}" media="(prefers-color-scheme: light)">
+
 	{# <link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}"> #}
 	
 	{% if page.fileSlug and section %}
