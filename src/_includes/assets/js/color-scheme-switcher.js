@@ -3,6 +3,7 @@
     const schemeOptions = ['dawn','dusk']; // 0 = off = light = dawn | 1 = on = dark = dusk
     const schemeDefault = schemeOptions[1]; // Site aesthetic is by default dark mode for maximum neon goodiness
     const schemeToggleSelector = '[data-scheme-switcher]';
+    const metaThemeColor = document.documentElement.querySelector('meta[name="theme-color"]'); // Theme color <meta> tag
 
     const setScheme = function (scheme) {
         if (!schemeOptions.includes(scheme)) {
@@ -10,7 +11,11 @@
         }
 
         window.localStorage.setItem(schemeStorageKey, scheme); // Set/update the localStorage value
-        document.documentElement.dataset.scheme = scheme; // Update the <html>'s data attribute'
+        document.documentElement.dataset.scheme = scheme; // Update the <html>'s data attribute
+        
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', metaThemeColor.getAttribute('data-'+scheme)); // Update the "theme-color" <meta>'s "content" attribute
+        }
 
         [].slice.call(document.querySelectorAll(schemeToggleSelector)).forEach(s => { // Ensure all toggles are set to the right value
             s.checked = !!schemeOptions.indexOf(scheme); // Will return 0 for the dawn (unchecked), 1 for dusk (checked), cast to boolean
