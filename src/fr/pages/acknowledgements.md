@@ -19,11 +19,38 @@ La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](
 
 ## Usages
 
-J'utilise un [MacBook Pro 16 pouces de 2019](https://www.apple.com/macbook-pro-16/) avec des options relativement basiques : Intel Core i7, 16 GB de mémoire et 500 GB de stockage SSD. C'est un superbe ordinateur et je suis tellement content d'avoir une vraie touche Échap. après toutes ces années avec une touche virtuelle.
+### Le bureau
 
-Niveau programmes, j'utilise [VS Code](https://code.visualstudio.com/) avec le brillant [thème SynthWave '84](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode) et quelques extensions, comme [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) ou celle que j'ai développée, [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier). Je travaille souvent avec [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) pour mes besoins illustrations vectorielles, nettoyées avec [SVGOMG](https://jakearchibald.github.io/svgomg/) puis ajustées manuellement pour être _pile poil_ comme je les veux.
+- [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB de RAM et SDD de 500 GB)
+    Un bon ordinateur avec une vraie touche Échap, après toutes ces années avec une touche virtuelle.
+- [Dell U2518D](https://amzn.to/3dgLwYT)
+    Un grand écran pour du grand code.
+- [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (_attention :_ ceci contient un ID de parrainage vous offrant une réduction)
+    Je crois que ceci est récemment devenu la ErgoChair Pro mais c'est vraiment une **bonne** chaise.
+- [Fully's Remi Standing Desk](https://www.fully.com/standing-desks/remi-standing-desk.html)
+    Je suis souvent assis, du coup avoir un bureau qui change facilement entre position assise et debout est très pratique.
+- [ErGear Dual Monitor Arms](https://amzn.to/35Y3rQm)
+    Libère de l'espace sur mon bureau avec un positionnement facile à régler.
+- [Sony MDR-XB50AP in-ear headphones](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap)
+    Des écouteurs simples et durables pour une écoute détendue, et pratique pour les réunions vidéo.
+- [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
+    Un casque de qualité pour une écoute "concentrée", avec fonction anti-bruit.
 
-Bien que mon minuscule appartment n'accomode qu'un petit [bureau Micke de IKEA](https://www.ikea.com/us/en/p/micke-desk-black-brown-20244747/), je recommande chaudement la chaise [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (ce lien est parrainé et vous offrira une réduction). J'utilise aussi les [écouteurs Sony MDR-XB50AP](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap) pour une écoute "détendue" ou le [casque Sony MDR-XB950N1](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1) pour une écoute plus "concentrée" (la fonction anti-bruit est sympa).
+### Les applis
+
+- [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
+    J'utilise Firefox depuis la version 3 je crois, et je n'ai jamais été déçu — j'adore leur DevTools !
+- [Visual Studio Code](https://code.visualstudio.com/)
+    J'aime comment cet éditeur est puissant et personnalisable ! J'utilise notamment :
+    - [SynthWave '84](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode) : Un magnifique thème saveur néon.
+    - [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) : Une façon pratique de garder un œil sur mon indentation.
+    - [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier) : Mon propre outil de prévisualisation de courbes de lissage CSS.
+- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
+    J'adore travailler en vectoriel ! J'optimise mes travaux avec [SVGOMG](https://jakearchibald.github.io/svgomg/) puis j'ajuste manuellement pour que tout soit _pile poil_ comme je veux.
+- [Fork](https://fork.dev/)
+    Un petit outil git pour m'éviter de grosses erreurs.
+- [ImageOptim](https://imageoptim.com/mac)
+    Superbe outil pour mieux compresser mes images.
 
 ## Personnes
 
