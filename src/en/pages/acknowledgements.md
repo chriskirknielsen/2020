@@ -13,17 +13,44 @@ Hosting is provided by [Netlify](https://netlify.com/), free of charge, since I 
 
 ## Aesthetics
 
-Thanks for all the designers who create '80s-infused visuals that fuelled my inspiration. You provide invaluable visuals to the world.
+Thanks to all the designers who create '80s-infused visuals that fuelled my inspiration. You provide invaluable visuals to the world.
 
-The font used for headings is the beautiful [Marvin Visions Bold](https://www.readvisions.com/marvin) (free for personal use), that perfectly fit this site's aesthetic. The other fonts you see here are your system's default — yay, performance!
+The font used for headings is the beautiful [Marvin Visions Bold](https://www.readvisions.com/marvin) (free for personal use), that perfectly fits this site's aesthetic. The other fonts you see here are your system's default — yay, performance!
 
 ## Uses
 
-I use a [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) with pretty basic options: Intel Core i7, 16 GB RAM and 500 GB SSD storage. It's a fantastic computer, and I am so happy to have an Escape key after all these years with the virtual key.
+### The desk
 
-In terms of software, I use [VS Code](https://code.visualstudio.com/) with the shiny [SynthWave '84 theme](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode) and a few extensions, such as [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2), or my own [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier). I also use quite a bit of [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) for my vector needs, cleaned up with [SVGOMG](https://jakearchibald.github.io/svgomg/) and then made _just right_ with manual tweaks.
+- [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB RAM and 500 GB SSD)
+    A good computer with a real Escape key, after all these years with a virtual one.
+- [Dell U2518D](https://www.amazon.com/Dell-LED-Lit-Monitor-U2518D-Compatibility/dp/B075KGLYRL?linkCode=as2&tag=ratcgala-20)
+    A big screen for big code.
+- [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (_disclaimer:_ contains a referral ID, gives you a discount)
+    I think they recently changed this to be ErgoChair Pro but it's a **good** chair.
+- [Fully's Remi Standing Desk](https://www.fully.com/standing-desks/remi-standing-desk.html)
+    I sit a lot, so having a desk that easily goes from sitting to standing is really helpful.
+- [ErGear Dual Monitor Arms](https://www.amazon.com/gp/product/B085Y4HW8S?linkCode=as2&tag=ratcgala-20)
+    Frees up some space on my desk with easily adjusted position, good stuff.
+- [Sony MDR-XB50AP in-ear headphones](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap)
+    Simple, reliable earbuds for "casual" audio listening, and useful for video meetings.
+- [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
+    Quality earphones for more "focused" listening, with noise-cancelling.
 
-While my tiny apartment doesn't allow much other than a small [IKEA Micke desk](https://www.ikea.com/us/en/p/micke-desk-black-brown-20244747/), I'd definitely recommend the [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (contains a referral ID for a discount!). I also use the [Sony MDR-XB50AP in-ear headphones](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap) for "casual" audio listening, or the [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1) for more "focused" listening (noise-cancelling is nice).
+### The apps
+
+- [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
+    I've been using Firefox since version 3 or something, and it's never disappointed me — love the DevTools!
+- [Visual Studio Code](https://code.visualstudio.com/)
+    Love how powerful and extendable this editor is! I notably use these additions:
+    - [SynthWave '84](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode): A beautiful neon-infused theme.
+    - [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2): A useful way to keep track of indentation.
+    - [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier): My own CSS easing preview tool.
+- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
+    I love working with vectors! I optimise my work with [SVGOMG](https://jakearchibald.github.io/svgomg/) and then manually tweak them to be _just right_.
+- [Fork](https://fork.dev/)
+    A little git tool that helps me avoid making big mistakes.
+- [ImageOptim](https://imageoptim.com/mac)
+    Beautiful tool to compress images better, you won't regret it.
 
 ## People
 
