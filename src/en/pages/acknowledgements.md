@@ -19,7 +19,7 @@ The font used for headings is the beautiful [Marvin Visions Bold](https://www.re
 
 ## Uses
 
-### The desk
+### The Gear
 
 - [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB RAM and 500 GB SSD)
     A good computer with a real Escape key, after all these years with a virtual one.
