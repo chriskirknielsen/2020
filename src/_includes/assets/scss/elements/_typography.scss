@@ -93,3 +93,7 @@ p {
     -moz-hyphens: auto;
     hyphens: auto;
 }
+
+:not([class]) > li + li {
+    margin-top: 0.5em;
+}
