@@ -19,7 +19,7 @@ La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](
 
 ## Usages
 
-### Le bureau
+### Le Matos
 
 - [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB de RAM et SDD de 500 GB)
     Un bon ordinateur avec une vraie touche Échap, après toutes ces années avec une touche virtuelle.
@@ -36,7 +36,7 @@ La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](
 - [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
     Un casque de qualité pour une écoute "concentrée", avec fonction anti-bruit.
 
-### Les applis
+### Les Applis
 
 - [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
     J'utilise Firefox depuis la version 3 je crois, et je n'ai jamais été déçu — j'adore leur DevTools !
