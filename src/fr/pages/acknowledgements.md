@@ -23,7 +23,7 @@ La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](
 
 - [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB de RAM et SDD de 500 GB)
     Un bon ordinateur avec une vraie touche Échap, après toutes ces années avec une touche virtuelle.
-- [Dell U2518D](https://amzn.to/3dgLwYT)
+- [Écran Dell U2518D](https://amzn.to/3dgLwYT)
     Un grand écran pour du grand code.
 - [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) _(attention : ceci contient un ID de parrainage vous offrant une réduction)_
     Je crois que ceci est récemment devenu la ErgoChair Pro mais c'est vraiment une **bonne** chaise.

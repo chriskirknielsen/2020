@@ -23,7 +23,7 @@ The font used for headings is the beautiful [Marvin Visions Bold](https://www.re
 
 - [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB RAM and 500 GB SSD)
     A good computer with a real Escape key, after all these years with a virtual one.
-- [Dell U2518D](https://www.amazon.com/Dell-LED-Lit-Monitor-U2518D-Compatibility/dp/B075KGLYRL?linkCode=as2&tag=ratcgala-20)
+- [Dell U2518D Monitor](https://www.amazon.com/Dell-LED-Lit-Monitor-U2518D-Compatibility/dp/B075KGLYRL?linkCode=as2&tag=ratcgala-20)
     A big screen for big code.
 - [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) _(disclaimer: contains a referral ID, gives you a discount)_
     I think they recently renamed this to be ErgoChair Pro but it's a **good** chair.
