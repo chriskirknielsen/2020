@@ -31,9 +31,9 @@ La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](
     Je suis souvent assis, du coup avoir un bureau qui change facilement entre position assise et debout est très pratique.
 - [ErGear Dual Monitor Arms](https://amzn.to/35Y3rQm)
     Libère de l'espace sur mon bureau avec un positionnement facile à régler.
-- [Sony MDR-XB50AP in-ear headphones](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap)
+- [Sony MDR-XB50AP in-ear headphones](https://amzn.to/3x6jtDt)
     Des écouteurs simples et durables pour une écoute détendue, et pratique pour les réunions vidéo.
-- [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
+- [Sony MDR-XB950N1 over-ear headphones](https://amzn.to/3h0jhAe)
     Un casque de qualité pour une écoute "concentrée", avec fonction anti-bruit.
 
 ### Applis
