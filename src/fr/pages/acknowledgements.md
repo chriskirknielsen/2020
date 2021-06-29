@@ -15,7 +15,7 @@ L'hébergement est fourni par [Netlify](https://netlify.com/), gratuitement, pui
 
 Merci à tou·tes ces graphistes qui créent des visuels style années 80 qui ont nourri mon inspiration. Vos images représentent un bien précieux dans ce monde.
 
-La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](https://www.readvisions.com/marvin) (gratuite pour usage personel), qui complimente parfaitement l'esthétique de ce site. Les autres que vous voyez ici sont les polices installées par défaut sur votre système — quel gain de performance !
+La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](https://www.readvisions.com/marvin) (gratuite pour usage personnel), qui complimente parfaitement l'esthétique de ce site. Les autres que vous voyez ici sont les polices installées par défaut sur votre système — quel gain de performance !
 
 ## Usages
 
