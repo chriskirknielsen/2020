@@ -19,14 +19,14 @@ The font used for headings is the beautiful [Marvin Visions Bold](https://www.re
 
 ## Uses
 
-### The Gear
+### Gear
 
 - [2019 16" MacBook Pro](https://www.apple.com/macbook-pro-16/) (Intel Core i7, 16 GB RAM and 500 GB SSD)
     A good computer with a real Escape key, after all these years with a virtual one.
 - [Dell U2518D](https://www.amazon.com/Dell-LED-Lit-Monitor-U2518D-Compatibility/dp/B075KGLYRL?linkCode=as2&tag=ratcgala-20)
     A big screen for big code.
-- [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) (_disclaimer:_ contains a referral ID, gives you a discount)
-    I think they recently changed this to be ErgoChair Pro but it's a **good** chair.
+- [Autonomous AI ErgoChair 2](https://www.autonomous.ai/office-chairs/ergonomic-chair/?rid=7a4b2c) _(disclaimer: contains a referral ID, gives you a discount)_
+    I think they recently renamed this to be ErgoChair Pro but it's a **good** chair.
 - [Fully's Remi Standing Desk](https://www.fully.com/standing-desks/remi-standing-desk.html)
     I sit a lot, so having a desk that easily goes from sitting to standing is really helpful.
 - [ErGear Dual Monitor Arms](https://www.amazon.com/gp/product/B085Y4HW8S?linkCode=as2&tag=ratcgala-20)
@@ -36,7 +36,7 @@ The font used for headings is the beautiful [Marvin Visions Bold](https://www.re
 - [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
     Quality earphones for more "focused" listening, with noise-cancelling.
 
-### The apps
+### Apps
 
 - [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
     I've been using Firefox since version 3 or something, and it's never disappointed me — love the DevTools!
