@@ -15,7 +15,7 @@ L'hébergement est fourni par [Netlify](https://netlify.com/), gratuitement, pui
 
 Merci à tou·tes ces graphistes qui créent des visuels style années 80 qui ont nourri mon inspiration. Vos images représentent un bien précieux dans ce monde.
 
-La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](https://www.readvisions.com/marvin) (gratuite pour usage personel), qui complimente parfaitement l'esthétique de ce site. Les autres que vous voyez ici sont les polices installées par défaut sur votre système — quel gain de performance !
+La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](https://www.readvisions.com/marvin) (gratuite pour usage personnel), qui complimente parfaitement l'esthétique de ce site. Les autres que vous voyez ici sont les polices installées par défaut sur votre système — quel gain de performance !
 
 ## Usages
 
@@ -31,9 +31,9 @@ La police d'écriture pour les titrages est la magnifique [Marvin Visions Bold](
     Je suis souvent assis, du coup avoir un bureau qui change facilement entre position assise et debout est très pratique.
 - [ErGear Dual Monitor Arms](https://amzn.to/35Y3rQm)
     Libère de l'espace sur mon bureau avec un positionnement facile à régler.
-- [Sony MDR-XB50AP in-ear headphones](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap)
+- [Sony MDR-XB50AP in-ear headphones](https://amzn.to/3x6jtDt)
     Des écouteurs simples et durables pour une écoute détendue, et pratique pour les réunions vidéo.
-- [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
+- [Sony MDR-XB950N1 over-ear headphones](https://amzn.to/3h0jhAe)
     Un casque de qualité pour une écoute "concentrée", avec fonction anti-bruit.
 
 ### Applis

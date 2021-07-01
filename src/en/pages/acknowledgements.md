@@ -31,9 +31,9 @@ The font used for headings is the beautiful [Marvin Visions Bold](https://www.re
     I sit a lot, so having a desk that easily goes from sitting to standing is really helpful.
 - [ErGear Dual Monitor Arms](https://www.amazon.com/gp/product/B085Y4HW8S?linkCode=as2&tag=ratcgala-20)
     Frees up some space on my desk with easily adjusted position, good stuff.
-- [Sony MDR-XB50AP in-ear headphones](https://www.sony.com/electronics/in-ear-headphones/mdr-xb50ap)
+- [Sony MDR-XB50AP in-ear headphones](https://www.amazon.com/Sony-MDRXB50AP-Extra-Earbud-Headset/dp/B00JRD13T8?linkCode=as2&tag=ratcgala-20)
     Simple, reliable earbuds for "casual" audio listening, and useful for video meetings.
-- [Sony MDR-XB950N1 over-ear headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/mdr-xb950n1)
+- [Sony MDR-XB950N1 over-ear headphones](https://www.amazon.com/Sony-Wireless-Headphones-Bluetooth-Canceling/dp/B07KKMGG6H?linkCode=as2&tag=ratcgala-20)
     Quality earphones for more "focused" listening, with noise-cancelling.
 
 ### Apps
