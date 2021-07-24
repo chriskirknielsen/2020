@@ -154,7 +154,7 @@ a {
     gap: 0.5em;
 
     & > * {
-        flex: 1 1 10ch;
+        flex: 1 1 0;
     }
 
     & > input[type="text"] { flex: 4 1 30ch; }
@@ -236,7 +236,6 @@ a {
     --flow: #{ $gutter };
 
     display: inline-block;
-    padding: 0.5em 2em;
 
     font-size: 2rem;
     font-size: clamp(1.5rem, calc(1.5rem + (2.5 - 1.5) * ((100vw - 20rem) / (64 - 20))), 2.5rem);
