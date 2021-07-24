@@ -1,0 +1,7 @@
+{
+    "layout": "layouts/font-specimen.njk",
+    "templateEngineOverride": "njk",
+    "eleventyExcludeFromCollections": true,
+    "copyLocalAssets": "*",
+    "isMicrosite": "true"
+}

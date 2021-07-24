@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+{% set hasFullCustomStyles = true %}
+{% include "components/head.njk" %}
+
+<body>
+	<main class="content flow" id="content" tabindex="-1">
+		{{ layoutContent | safe }}
+	</main>
+
+	<footer>
+		Font built with {{ fontLove or 'love' }} by <a href="{{ metadata.url | url }}">Christopher Kirk-Nielsen</a> | <a href="{{ '/fonts' | url }}">More fonts</a>
+	</footer>
+
+	<script>
+	{% set fontSpecimenScripts %}
+		var fontPreviewerForm = document.getElementById('font-previewer');
+		var fontPreviewInput = document.getElementById('preview-input');
+		var fontPreviewOutput = document.getElementById('preview-output');
+		var fontPreviewSvg = document.getElementById('preview-svg');
+		var fontPreviewSave = document.getElementById('save-preview');
+
+		function updateFontPreviewText() { 
+			fontPreviewOutput.textContent = fontPreviewInput.value.trim() || '{{ fontSpecimenSampleDefault }}';
+		}
+
+		function updateFontPreviewOptions (e) {
+			var previewOptions = e.target.closest('[data-preview-option]') || false;
+			if (!previewOptions) { previewOptions = [].slice.call(document.querySelectorAll('[data-preview-option]')); }
+			else { previewOptions = [previewOptions]; }
+
+			previewOptions.forEach(function (previewOption) {
+				var classToToggle = previewOption.getAttribute('name');
+				var isToggleAdd = previewOption.checked;
+
+				if (isToggleAdd) { fontPreviewOutput.classList.add('specimen-'+classToToggle); }
+				else { fontPreviewOutput.classList.remove('specimen-'+classToToggle); }
+			});
+		}
+
+		document.getElementById('preview-update').addEventListener('click', function (e) {
+			updateFontPreviewText();
+			updateFontPreviewOptions(e);
+		});
+		fontPreviewerForm.addEventListener('keyup', updateFontPreviewText);
+		fontPreviewerForm.addEventListener('change', updateFontPreviewOptions);
+		fontPreviewerForm.addEventListener('submit', function (e) {
+			updateFontPreviewText();
+			e.preventDefault();
+			return false;
+		});
+		{# fontPreviewSave.addEventListener('click', function (e) {
+			var svgElementInfo = fontPreviewSvg.getBBox(); 
+			var width = svgElementInfo.width;
+			var height = svgElementInfo.height;
+			var clonedSvgElement = fontPreviewSvg.cloneNode(true);
+			var outerSvgElement = clonedSvgElement.outerHTML;
+			var blob = new Blob([ outerSvgElement ], { type: 'image/svg+xml;charset=utf-8' });
+			var URL = window.URL || window.webkitURL || window;
+			var blobURL = URL.createObjectURL(blob);
+			var image = new Image();
+			image.onload = function () {
+				var canvas = document.createElement('canvas');
+				canvas.width = width;
+				canvas.height = height;
+				var context = canvas.getContext('2d'); // draw image in canvas starting left-0 , top - 0
+				context.drawImage(image, 0, 0, width, height);
+				// Trigger DL
+				var link = document.createElement('a');
+				link.download = "ottselesque-preview.png";
+console.log(link)
+				link.style.opacity = "0";
+				document.documentElement.append(link);
+				link.href = canvas.toDataURL();
+				link.click();
+				link.remove();
+			}
+			image.src = blobURL;
+			console.log(image);
+		}) #}
+	{% endset %}
+	{{ fontSpecimenScripts | jsmin | safe }}
+	</script>
+</body>
+
+</html>

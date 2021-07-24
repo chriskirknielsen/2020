@@ -47,8 +47,25 @@
 		<noscript><link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="all"></noscript>
 	{% endif %}
 
+	{% if fontSpecimenFile %}<link rel="preload" href="{{ './' + fontSpecimenFile | url }}" as="font" type="font/woff2" crossorigin>{% endif %}
+
 	<style id="inline-styles">
-	/*INLINE_CSS*/
+	{% if not hasFullCustomStyles %}/*INLINE_CSS*/{% endif %}
+	{%- if fontSpecimens -%}
+	{%- set fontSpecimenFaces -%}
+	{%- for fontSpecimenName, fontSpecimenFile in fontSpecimens -%}
+	@font-face {
+		font-family: '{{ fontSpecimenName }}';
+		src: url('{{ './' + fontSpecimenFile | url }}') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	.specimen{% if loop.index > 1 %}{{ loop.index }}{% endif %} { font-family: '{{ fontSpecimenName }}', {{ fontSpecimenFallback or 'sans-serif' }}; }
+	{%- endfor -%}
+	{%- endset -%}
+	{{- fontSpecimenFaces | cssmin | safe -}}
+	{%- endif -%}
 	{%- if ownstyles -%}
 		{# Add page-specific styles inline #}
 		{%- set pageStyleGroup = "" -%}

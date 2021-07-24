@@ -29,7 +29,8 @@ module.exports = {
     "Society6": "https://society6.com/chriskirknielsen/prints"
   },
   support: {
-    "kofi": "https://ko-fi.com/chriskirknielsen"
+    "kofi": "https://ko-fi.com/chriskirknielsen",
+    "paypal": "https://paypal.me/ckn92usd?locale.x=en_US"
   },
   assetUrl: {
     manifest: "manifest.json",

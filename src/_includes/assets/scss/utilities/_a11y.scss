@@ -1,0 +1,18 @@
+.visually-hidden { // For accessibility
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+
+    &--focusable:focus {
+        position: fixed;
+
+        display: inline-block;
+        height: auto;
+        width: auto;
+        margin: auto;
+
+        clip: initial;
+    }
+}

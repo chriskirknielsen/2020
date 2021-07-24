@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /* INTERNAL HELPERS */
 
 // Determines if the variable is a map
@@ -7,18 +9,18 @@
 
 // Remaps a number `n` from range `[in_min, in_max]` to range `[out_min, out_max]`
 @function remap-number($n, $in_min, $in_max, $out_min, $out_max) {
-    @return ($n - $in_min) * ($out_max - $out_min) / ($in_max - $in_min) + $out_min;
+    @return ($n - $in_min) * math.div(($out_max - $out_min), ($in_max - $in_min)) + $out_min;
 }
 
 // Removes the unit from a given value
 @function strip-unit($value) {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value, ($value * 0 + 1));
 }
 
 // Converts px values to rem values
 @function px2rem($px) {
     @if unit($px) == 'rem' { @return $px; }
-    @return strip-unit($px) / strip-unit($rem-in-px) * 1rem;
+    @return math.div(strip-unit($px), strip-unit($rem-in-px)) * 1rem;
 }
 
 // Converts rem values to px values
@@ -108,7 +110,7 @@
             }
 
             @if $opacity < 100 { // return alpha value
-                $opacity-decimal: $opacity / 100;
+                $opacity-decimal: math.div($opacity, 100);
                 $return: rgba($weighted-color, $opacity-decimal);
             }
             @else { // returns opaque value
@@ -166,7 +168,7 @@
         $fac: strip-unit($max-value - $min-value); // Determine factor
         $div: strip-unit($max-vw - $min-vw); // Determine divider
         // @return calc(#{px2rem($min-value)} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-        @return calc(#{px2rem($min-value - ($min-vw / $div * $fac))} + #{100vw / $div * $fac}); // Simplified from the above
+        @return calc(#{ px2rem($min-value - (math.div($min-vw, $div) * $fac)) } + #{ math.div(100vw, $div) * $fac }); // Simplified from the above
     }
     @else { // Return bigger font size
         @return $max-value;
@@ -196,7 +198,7 @@
 
     // Add stops
     @for $stop from 1 to $s {
-        $progress: $stop / $s; // Returns a decimal belonging to ]0,1[
+        $progress: math.div($stop, $s); // Returns a decimal belonging to ]0,1[
         $easing-value: easeInOutNum($progress); // Get the ease-mapped value
         @if ($ease == 'in') { $easing-value: easeInNum($progress); }
         @else if ($ease == 'out') { $easing-value: easeOutNum($progress); }
