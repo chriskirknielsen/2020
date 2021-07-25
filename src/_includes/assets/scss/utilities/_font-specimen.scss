@@ -240,6 +240,7 @@ a {
     font-size: 2rem;
     font-size: clamp(1.5rem, calc(1.5rem + (2.5 - 1.5) * ((100vw - 20rem) / (64 - 20))), 2.5rem);
     text-align: center;
+    line-height: 1.25;
 }
 
 // Text
