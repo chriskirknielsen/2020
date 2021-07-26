@@ -38,6 +38,10 @@ $gutter: 2rem;
     font-feature-settings: var(--specimen-aalt), var(--specimen-dlig), var(--specimen-ss01), "salt" on;
 }
 
+.specimen-italic {
+    font-style: italic;
+}
+
 .preview-svg {
     width: 100%;
     height: auto;
@@ -83,7 +87,7 @@ a {
     & > * { margin-top: 0; margin-bottom: 0; }
     & > * + * { margin-top: var(--flow, 2em); }
 
-    & > h2 + :is(p, ul, ol) { --flow: 0.325em; }
+    & > h2 + :is(p, ul, ol) { --flow: 0.25em; }
     & > .small-heading + * { --flow: 0; }
 }
 
@@ -261,6 +265,4 @@ footer {
     font-family: var(--body-font, sans-serif);
     text-align: center;
     outline: 2px solid currentColor;
-    color: var(--color-alt, #ffe4c2);
-    background: var(--bg-alt, #1d122f);
 }

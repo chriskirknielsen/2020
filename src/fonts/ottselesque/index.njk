@@ -3,7 +3,8 @@ title: Ottselesque
 summary: A Jak and Daxter-inspired font
 fontLove: 'powercells'
 ownstyles: ['specimen-ottselesque']
-fontSpecimens: {'Ottselesque': 'Ottselesque-Regular.woff2'}
+customMetaImage: ottselesque.png
+fontSpecimen: { 'Ottselesque': [ { 'file': 'Ottselesque-Regular.woff2' } ] }
 fontSpecimenSampleDefault: 'Naughty Ottsel'
 fontSpecimenFallback: 'fantasy'
 ---
@@ -72,7 +73,7 @@ fontSpecimenFallback: 'fantasy'
         <output for="preview-input">
             <svg id="preview-svg" class="preview-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1000 300" width="1000" height="300">
                 <defs>
-                    <linearGradient id="orangeGradient" x1="0" y1="0" x2="0" y2="100%" gradientUnits="objectBoundingBox">
+                    <linearGradient id="specimenPreviewFill" x1="0" y1="0" x2="0" y2="100%" gradientUnits="objectBoundingBox">
                         <stop offset="0.2" stop-color="#ff361a"/>
                         <stop offset="0.5" stop-color="#ecd237"/>
                         <stop offset="0.8" stop-color="#ff361a"/>
@@ -99,7 +100,7 @@ fontSpecimenFallback: 'fantasy'
                 
                 <use xlink:href="#sample-text" fill="#ffffff" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
                 <use xlink:href="#sample-text" fill="#262425" stroke="#262425" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#noise)" transform="translate(-0.5 -0.5)"/>
-                <use xlink:href="#sample-text" fill="url(#orangeGradient)" filter="url(#bevel)" />
+                <use xlink:href="#sample-text" fill="url(#specimenPreviewFill)" filter="url(#bevel)" />
             </svg>
         </output>
 
@@ -138,14 +139,14 @@ fontSpecimenFallback: 'fantasy'
 <h2>Stylistic Alternates</h2>
 <p class="specimen-set-demo specimen specimen-aalt specimen-ss01">I M N O R X e i l n o r s u x 3</p>
 
-<div class="full color-main bg-alt padding-block">
+<div class="full padding-block">
     <div class="full-content flow">
-        <h2>Why make this now? The ship has sailed, no?</h2>
+        <h2>Why make this now?</h2>
         <p>
             Some backstory: I've always been a huge Jak and Daxter fan (I still use the username JaKhris — very original, I know), and I used to run a J&amp;D fansite called <strong>JAKPRO</strong> back in the day, which closed (I won't lie, it was a bitter experience). It got revived as "The Naughty Kennel", a fansite more broadly about Naughty Dog games, but then it closed as well as my available time dwindled once more. Maintaining a dying breed of websites is no small feat — hats off to my friends at <a href="https://ratchet-galaxy.com">Ratchet-Galaxy</a>!
         </p>
         <p>
-            I'm not sure why, but some time during July 2021, I had a nostalgic feeling for these games, thinking back to my webmastering days. I always thought to myself "How come we never got some font based on this logo?" I wanted to make one myself all those years ago, but my graphic design skills were terrible, and my font-making skills were non-existent. Nowadays, I can handle it (well, you can be the judge of that), so I set out to make it! It's based on the logo and various promotional material or concept art I found, and then lots of creative liberty.
+            I'm not sure why, but some time during July 2021, I had a nostalgic feeling for these games, thinking back to my webmastering days, and making J&amp;D-based fanart and whatnot. I always thought to myself "How come we never got some font based on this logo?" I wanted to make one myself all those years ago, but my graphic design skills were terrible, and my font-making skills were non-existent. Nowadays, I can handle it (well, you can be the judge of that), so I set out to make it! It's based on the logo and various promotional material or concept art I found, and then lots of creative liberty.
         </p>
         <p>
             The joys of writing your username with the font of your favourite video game are real. I've always been a bit of a typeface nerd, so this was a really fun project! I hope you enjoy using this to make your own J&amp;D-themed creations, and <a href="https://twitter.com/JaKhris">please share them with me on Twitter</a>!
@@ -169,11 +170,11 @@ fontSpecimenFallback: 'fantasy'
     I'm always open to feedback! I might have messed up a kerning pair or perhaps you have an idea for a ligature or alternate character. If you want to contribute, <a href="https://twitter.com/JaKhris">please reach out on Twitter</a>!
 </p>
 <p>
-    This is a font made totally <em>free of charge</em>, but if you'd like to <a href="{{ metadata.support.kofi | url }}">buy me a coffee</a> or <a href="{{ metadata.support.paypal | url }}">donate</a> to help reimburse the costs for the licence key to the font program, Glyphs App v3 (300 bucks, yikes), I'd truly appreciate it!
+    This is a font made totally <em>free of charge</em>, but if you'd like to <a href="{{ metadata.support.kofi | url }}">buy me a coffee</a> or <a href="{{ metadata.support.paypal | url }}">donate</a> to help reimburse the costs for the licence key to the font-making program (Glyphs App 3), I'd truly appreciate it! Also if you know where to snag that anniversary Precursor Orb, message me…
 </p>
 
 <h2>Rights &amp; Distribution</h2>
-<p>While this is a free font for personal use, it may not be modified or redistributed without permission. To share this font, please link to this page.</p>
+<p>While this is a free font for personal use, it may not be modified or redistributed without permission. To share this font, please link to this page. That's all I ask!</p>
 
 <p class="text-center">
     <a href="./Ottselesque-Regular.otf" download="Ottselesque.otf" id="download" class="download-button">Download {{ title }}</a>

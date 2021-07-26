@@ -264,6 +264,9 @@
     padding-left: #{ $spacing * 0.5 };
     padding-right: #{ $spacing * 0.5 };
 }
+.u-paddingInlineEnd {
+    padding-right: #{ $spacing };
+}
 // .u-paddingInlineStart--half {
 //     padding-left: #{ $spacing * 0.5 };
 // }

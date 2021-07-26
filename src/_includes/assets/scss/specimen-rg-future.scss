@@ -2,15 +2,14 @@
 @import "utilities/font-specimen";
 
 :root {
-    --palette-01: #f5edda;
-    --palette-02: #dac292;
-    --palette-03: #37200e;
-    --palette-04: #ad1202;
-    --palette-05: #ff361a;
-    --palette-06: #ec9d37;
+    --palette-01: #fff8fc;
+    --palette-02: #b5e5f8;
+    --palette-03: #180e30;
+    --palette-04: #2d4f79;
+    --palette-05: #973e26;
+    --palette-06: #dda969;
     --palette-07: #ecd237;
-    --texture-bg: url('./texture.jpg') 50% 50% / 64px 64px;  // Texture taken from https://unsplash.com/photos/3bb9RUp86M0
-    --body-font: Georgia, Cambria, 'Times New Roman', Times, serif;
+    --body-font: Roboto, Helvetica, Arial, sans-serif;
     --color-main: var(--palette-01);
     --color-alt: var(--palette-02);
     --bg-main: var(--palette-03);
@@ -31,20 +30,16 @@ h2 {
     line-height: 1.2;
 
     &::before {
-        content: '';
+        content: '⬡';
 
         position: absolute;
-        top: 0.125em;
+        top: 0;
         left: -1.125em;
 
-        width: 0.7452em; // Precursor Orb proportions
+        width: 0.75em;
         height: 1em;
-
-        font-size: 1.325rem;
-
-        border-radius: 50% 50% 50% 50% / 54% 54% 46% 46%; // Precursor Orb shape
-        background: radial-gradient(ellipse farthest-side at top left, var(--palette-02) 0%, var(--palette-07) 33%, var(--palette-06) 67%, var(--palette-04) 100%);
-        box-shadow: 0 0 0 1px var(--bg-main);
+        
+        line-height: 1;
     }
 }
 
@@ -57,7 +52,7 @@ ul {
     padding: 0;
 
     & > li::marker {
-        content: '◆ \0020';
+        content: '⬢ \0020';
     }
 }
 
@@ -75,34 +70,58 @@ li + li {
 }
 
 .main-heading-bg {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
 
     width: 75%;
     max-width: 32rem;
     max-width: min(32rem, 50vw);
     height: auto;
     margin: auto;
+}
+
+.cogwheel {
+    width: 100%;
 
     @media (prefers-reduced-motion: no-preference) {
         animation: revealScale 1s cubic-bezier(0.215, 0.610, 0.355, 1) 1;    
     }
 }
 
-.jak-daxter-silhouettes {
-    position: relative;
+.cogwheel * {
+    fill: none;
+    stroke: var(--color-main);
+    stroke-width: 1.5;
+}
 
-    width: 33.3%;
-    max-width: 50vw;
-    height: auto;
-    margin: 2rem auto 1rem;
+.cogwheel-rings {
+    transform-origin: 50% 50%;
+
+    @media (prefers-reduced-motion: no-preference) {
+        animation: cogwheelRing 60s linear infinite;
+    }
+}
+
+@keyframes cogwheelRing {
+    to { transform: rotate(360deg); }
+}
+
+
+.lombax-silhouette {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 50%;
+    margin: auto;
 
     fill: currentColor;
     stroke: var(--bg-main);
-    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
     paint-order: stroke;
 
     @media (prefers-reduced-motion: no-preference) {
@@ -116,58 +135,29 @@ li + li {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--bg-main);
 }
 
 .main-heading-title {
-    position: relative;
+    margin: 2rem auto 0;
 
-    margin: 0 auto;
-	padding-bottom: 0.1em;
-
-    &::before {
-        content: '';
-
-        display: block;
-        margin: 0 2rem;
-
-        border-top: 2px solid currentColor;
-    }
+    line-height: 1;
 }
 
 .main-heading-sub {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     &::before,
     &::after {
-        flex: 1 1 auto;
-        content: '';
-        display: block;
-        height: 2px;
-        margin: 0 2rem;
+        content: '⬢';
 
-        background: currentColor;
+        display: inline-block;
+
+        font-size: 0.75em;
+        font-style: normal;
+        vertical-align: 0.25em;
+        color: var(--color-alt);
     }
-}
 
-.portal * {
-    fill: none;
-    stroke: var(--color-main);
-    stroke-width: 1.5;
-}
-.portal-ring {
-    transform-origin: 50% 50%;
-
-    @media (prefers-reduced-motion: no-preference) {
-        animation: portalRing 60s linear infinite;
-    }
-}
-.portal-ring-outer { animation-direction: reverse; }
-
-@keyframes portalRing {
-    to { transform: rotate(360deg); }
+    &::before { padding-right: 1em; }
+    &::after { padding-left: 1em; }
 }
 
 .preview-input-wrap {
@@ -196,7 +186,7 @@ li + li {
         text-transform: uppercase;
 
         text-shadow: 0 1px 0 var(--palette-01);
-        background: var(--palette-02) var(--texture-bg);
+        background: var(--palette-02);
         box-shadow:
             inset 0 0 0 2px var(--color-alt, white),
             inset 0 0 0 4px var(--bg-main, black),
@@ -246,8 +236,8 @@ li + li {
 
     font-weight: bold;
     text-decoration: none;
-    color: var(--palette-04);
-    text-shadow: 0 1px 0 var(--palette-01), 0 -1px 0 var(--palette-03);
+    color: var(--palette-01);
+    text-shadow: 0 1px 0 var(--palette-07), 0 -1px 0 var(--palette-05);
     border-radius: 4px;
 
     transform: translateY(var(--dl-button-offset, 0px));
@@ -269,47 +259,26 @@ li + li {
 
         transition: inherit;
         clip-path: polygon(
-            0 0.2em, /* Top Left */
-            2% 0.1em,
-            22% 0,
-            30% 0.2em,
-            51.5% 0,
-            52% 0.3em,
-            53% 0,
-            94% 0.1em,
-            99% 0.3em, /* Top Right */
-            calc(100% - 0.1em) 20%,
-            calc(100% - 1.3em) 27%,
-            calc(100% - 0.4em) 35%,
-            100% 56%,
-            calc(100% - 0.2em) 77%,
-            100% 89%,
-            calc(100% - 0.6em) 100%, /* Bottom Right */
-            59% calc(100% - 0.2em),
-            42% 100%,
-            37% calc(100% - 0.1em),
-            16% 100%,
-            2% calc(100% - 0.3em),
-            0 calc(100% - 0.1em), /* Bottom Left */
-            0.2em 78%,
-            0.7em 72%,
-            0.4em 66%,
-            0 26%,
-            0.2em 20%
+            0 50%,
+            1em 0,
+            calc(100% - 1em) 0,
+            100% 50%,
+            calc(100% - 1em) 100%,
+            1em 100%
         );
     }
 
     &::before { // Button Face
         z-index: -1;
 
-        background: var(--palette-02) var(--texture-bg);
+        background: var(--palette-06);
         box-shadow: inset 0 -1px 4px rgba(255,255,255,0), inset 0 -0.25em 2em rgba(0,0,0,0.25);
     }
 
     &::after { // Button Depth
         z-index: -2;
 
-        background: var(--palette-02) linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+        background: var(--palette-07) linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
         box-shadow: inset 0 calc(var(--dl-button-depth) * -1) calc(var(--dl-button-depth) * 2) rgba(0,0,0,0.25);
 
         transform: translateY(calc(var(--dl-button-depth) + var(--dl-button-offset) * -1));
@@ -319,7 +288,7 @@ li + li {
     &:focus {
         --dl-button-offset: calc(var(--dl-button-depth) * 0.5);
         
-        color: var(--palette-04);
+        color: var(--palette-01);
     }
     
     &:focus {
