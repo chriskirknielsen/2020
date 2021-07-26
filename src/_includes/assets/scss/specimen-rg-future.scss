@@ -40,6 +40,7 @@ h2 {
         height: 1em;
         
         line-height: 1;
+        color: var(--palette-06);
     }
 }
 
@@ -94,8 +95,8 @@ code {
 
 .cogwheel * {
     fill: none;
-    stroke: var(--color-main);
-    stroke-width: 1.5;
+    stroke: var(--color-alt);
+    stroke-width: 0.5;
 }
 
 .cogwheel-rings {
@@ -174,17 +175,22 @@ code {
     
     input[type="text"],
     button {
-        padding: 0.25em;
+        --inner-glow: inset 0 0 16px var(--bg-alt, black);
+        --outer-glow: 0 0 8px var(--color-alt, white);
+        
+        padding: 0.25em 0.75em;
         
         font: inherit;
         color: var(--bg-alt, black);
         border: 2px solid var(--bg-main, black);
-        border-radius: 4px;
+        border-radius: 4em;
         background: var(--color-alt, white);
-        box-shadow: 
-            inset 0 0 4px var(--bg-main, black),
-            0 0 4px var(--color-main, white),
-        ;
+        box-shadow: var(--inner-glow);
+
+        &:hover,
+        &:focus {
+            box-shadow: var(--inner-glow), var(--outer-glow);
+        }
 
         &:focus {
             outline: 2px solid var(--color-alt, yellow);
@@ -195,7 +201,7 @@ code {
         padding: 0.25em 1.5em;
 
         text-transform: uppercase;
-
+        font-weight: 500;
         text-shadow: 0 1px 0 var(--palette-01);
         background: var(--palette-02);
     }
@@ -209,7 +215,10 @@ code {
 
 [xlink\:href="#sample-text"][stroke] { user-select: none; }
 
-.specimen { font-weight: 400; }
+.specimen {
+    font-weight: 400;
+    line-height: 0.9;
+}
 .specimen-set-demo { font-size: 3rem; }
 
 code,
@@ -221,10 +230,15 @@ code,
 
 
 .full {
+    position: relative;
+
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54.923' height='95.129' viewBox='0 0 54.923 95.129'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.15)'%3E%3Cpolygon points='54.923 63.42 54.923 31.71 27.462 15.855 0 31.71 0 63.42 27.462 79.275 54.923 63.42'/%3E%3Cline x1='27.462' x2='27.462' y2='15.855'/%3E%3Cline x1='27.462' y1='79.275' x2='27.462' y2='95.129'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 56px auto;
     background-repeat: repeat;
     background-position: 50% 50%;
+    box-shadow:
+        inset 0 0 1rem -0.25rem var(--bg-main),
+        0 0 2rem var(--color-alt);
 }
 
 .download-button {

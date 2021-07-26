@@ -168,6 +168,9 @@ a {
     $cbox-size: 1.25rem;
     $check-size: 0.25rem;
 
+    --cbox-hover: 0 0 8px var(--color-main, white);
+    --cbox-focus: 0 0 0 2px var(--bg-main, black), 0 0 0 4px var(--color-alt, white);
+
     display: flex;
     align-items: stretch;
     
@@ -211,11 +214,12 @@ a {
         background: var(--color-alt, white);
     }
 
+    input[type="checkbox"]:hover + label::before {
+        box-shadow: var(--cbox-hover);
+    }
+
     input[type="checkbox"]:focus + label::before {
-        box-shadow:
-            0 0 0 2px var(--bg-main, black),
-            0 0 0 4px var(--color-alt, white),
-        ;
+        box-shadow: var(--cbox-focus);
         outline: none;
     }
 
