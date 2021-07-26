@@ -60,6 +60,11 @@ li + li {
     margin-top: 0.75em;
 }
 
+code {
+    border: 1px solid currentColor;
+    padding: 0.25em 0.5em;
+}
+
 .main-heading-block {
     position: relative;
 
@@ -139,8 +144,10 @@ li + li {
 
 .main-heading-title {
     margin: 2rem auto 0;
+    padding: 0 0.5em;
 
-    line-height: 1;
+    color: var(--palette-01);
+    text-shadow: 0 4px 0 var(--palette-04);
 }
 
 .main-heading-sub {
@@ -174,6 +181,10 @@ li + li {
         border: 2px solid var(--bg-main, black);
         border-radius: 4px;
         background: var(--color-alt, white);
+        box-shadow: 
+            inset 0 0 4px var(--bg-main, black),
+            0 0 4px var(--color-main, white),
+        ;
 
         &:focus {
             outline: 2px solid var(--color-alt, yellow);
@@ -187,10 +198,6 @@ li + li {
 
         text-shadow: 0 1px 0 var(--palette-01);
         background: var(--palette-02);
-        box-shadow:
-            inset 0 0 0 2px var(--color-alt, white),
-            inset 0 0 0 4px var(--bg-main, black),
-        ;
     }
 }
 
@@ -205,29 +212,23 @@ li + li {
 .specimen { font-weight: 400; }
 .specimen-set-demo { font-size: 3rem; }
 
+code,
 .full,
 .footer {
     color: var(--color-main);
     background-color: var(--bg-alt);
 }
 
-@media screen and (min-width: #{ $content-max + $gutter * 4 }) {
-    .full {
-        background-image: url(./bg-gutter.png), url(./bg-gutter.png);
-        background-size: #{ $gutter } auto;
-        background-repeat: repeat-y;
-        background-position:
-            calc(50% - #{ $content-max * -.5 - $gutter * 2 }) 0,
-            calc(50% + #{ $content-max * -.5 - $gutter * 2 }) 0;
-        
-        @media (prefers-reduced-motion: no-preference) {
-            background-attachment: fixed;
-        }
-    }
+
+.full {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54.923' height='95.129' viewBox='0 0 54.923 95.129'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.15)'%3E%3Cpolygon points='54.923 63.42 54.923 31.71 27.462 15.855 0 31.71 0 63.42 27.462 79.275 54.923 63.42'/%3E%3Cline x1='27.462' x2='27.462' y2='15.855'/%3E%3Cline x1='27.462' y1='79.275' x2='27.462' y2='95.129'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 56px auto;
+    background-repeat: repeat;
+    background-position: 50% 50%;
 }
 
 .download-button {
-    --dl-button-depth: 0.5rem;
+    --dl-button-depth: 0.375rem;
     --dl-button-offset: 0px;
 
     position: relative;
@@ -236,8 +237,8 @@ li + li {
 
     font-weight: bold;
     text-decoration: none;
-    color: var(--palette-01);
-    text-shadow: 0 1px 0 var(--palette-07), 0 -1px 0 var(--palette-05);
+    color: var(--palette-03);
+    text-shadow: 0 1px 0 var(--palette-01), 0 -1px 0 var(--palette-05);
     border-radius: 4px;
 
     transform: translateY(var(--dl-button-offset, 0px));
@@ -271,14 +272,14 @@ li + li {
     &::before { // Button Face
         z-index: -1;
 
-        background: var(--palette-06);
+        background: var(--palette-07);
         box-shadow: inset 0 -1px 4px rgba(255,255,255,0), inset 0 -0.25em 2em rgba(0,0,0,0.25);
     }
 
     &::after { // Button Depth
         z-index: -2;
 
-        background: var(--palette-07) linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+        background: var(--palette-06) linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
         box-shadow: inset 0 calc(var(--dl-button-depth) * -1) calc(var(--dl-button-depth) * 2) rgba(0,0,0,0.25);
 
         transform: translateY(calc(var(--dl-button-depth) + var(--dl-button-offset) * -1));
@@ -288,7 +289,7 @@ li + li {
     &:focus {
         --dl-button-offset: calc(var(--dl-button-depth) * 0.5);
         
-        color: var(--palette-01);
+        color: var(--palette-03);
     }
     
     &:focus {

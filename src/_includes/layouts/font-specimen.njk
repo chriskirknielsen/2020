@@ -21,7 +21,7 @@
 		var fontPreviewSave = document.getElementById('save-preview');
 
 		function updateFontPreviewText() { 
-			fontPreviewOutput.textContent = fontPreviewInput.value.trim() || '{{ fontSpecimenSampleDefault }}';
+			fontPreviewOutput.textContent = fontPreviewInput.value.trim() || '{{ fontSpecimenSampleDefault | safe }}';
 		}
 
 		function updateFontPreviewOptions (e) {
