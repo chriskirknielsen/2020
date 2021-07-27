@@ -8,10 +8,10 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
 
 {% set fontslist = collections.fonts %}
 <section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
-{% for font in collections.fonts %}
+{% for font in fontslist %}
   <article class="card u-posRelative u-displayFlex u-flex--column">
     <a class="card__image u-flex--shrink-0" href="{{ font.url | url }}">
-      <img src="{{ font.data.customMetaImage + '?nf_resize=fit&w=320' | url }}" alt="" width="1200" height="1200">
+      <img src="{{ font.data.customMetaImage + '?nf_resize=fit&w=400' | url }}" alt="" width="1200" height="1200">
     </a>
     <div class="card__content u-padding u-flex--grow-1 u-textCenter u-bg--grey-max">
       <h2 class="h3">
