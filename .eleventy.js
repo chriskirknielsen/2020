@@ -215,6 +215,8 @@ module.exports = function(eleventyConfig) {
 		return collection.getAllSorted().filter(function(item) {
 			var postsRegExp = new RegExp("^\.\/"+(root ? (root+'/') : '')+"fonts\/");
 			return item.inputPath.match(postsRegExp) !== null;
+		}).sort(function(a, b) {
+			return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
 		});
 	});
 
