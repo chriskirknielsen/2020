@@ -7,14 +7,13 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
 ---
 
 {% set fontslist = collections.fonts %}
-<section class="postlist u-marginBlockStart">
+<section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
 {% for font in collections.fonts %}
-  <!-- {{ font.data | console | safe }} -->
-  <article class="postlist__post u-posRelative u-displayFlex u-flex--wrap u-flex--centerBlock u-paddingBlock">
-    <div class="u-paddingInlineEnd">
-      <img src="{{ font.data.customMetaImage | url }}" alt="Font preview" width="120" height="120" class="u-border u-border-radius--circle">
-    </div>
-    <div class="postlist__content u-flex--grow-3">
+  <article class="card u-posRelative u-displayFlex u-flex--column">
+    <a class="card__image u-flex--shrink-0" href="{{ font.url | url }}">
+      <img src="{{ font.data.customMetaImage + '?nf_resize=fit&w=320' | url }}" alt="" width="1200" height="1200">
+    </a>
+    <div class="card__content u-padding u-flex--grow-1 u-textCenter u-bg--grey-max">
       <h2 class="h3">
         <a href="{{ font.url | url }}" class="u-c--primary-min h_u-c--color-accent u-textDecoration--underline">
           {{- font.data.title -}}
