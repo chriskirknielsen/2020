@@ -129,10 +129,10 @@ fontSpecimenFallback: 'fantasy'
 <p class="specimen-set-demo specimen">1 2 3 4 5 6 7 8 9 0 _ : - . , ' &</p>
 
 <h2>Ligatures</h2>
-{% set ligaList = ['JaKandDAXTER', 'JaK', ' and ', 'DAXTER', 'JaKh', 'XTER', 'II', 'III', 'IV', 'KrI', 'Pro', 'TER', 'ER', 'KI', 'Kh', 'Ko', 'Kr', 'LA', 'LE', 'Le', 'Ll', 'Lo', 'RO', 'TE', 'XT', 'le', 'li', 'll', 'ls', 'lu', 'rI', 'ri', 'rr', 'ss', 'tt'] %}
+{% set ligaList = ['JaKandDAXTER', 'JaK', '&nbsp;and&nbsp;', 'DAXTER', 'JaKh', 'XTER', 'II', 'III', 'IV', 'KrI', 'Pro', 'TER', 'ER', 'KI', 'Kh', 'Ko', 'Kr', 'LA', 'LE', 'Le', 'Ll', 'Lo', 'RO', 'TE', 'XT', 'le', 'li', 'll', 'ls', 'lu', 'rI', 'ri', 'rr', 'ss', 'tt'] %}
 <p class="specimen-set-demo specimen specimen-dlig">
     {% for liga in ligaList %}
-    <span title="{{ liga }}">{{ liga }}</span>
+    <span title="&quot;{{ liga | safe }}&quot;">{{ liga | safe }}</span>
     {% endfor %}
 </p>
 
