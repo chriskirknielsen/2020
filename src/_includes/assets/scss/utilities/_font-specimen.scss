@@ -161,7 +161,15 @@ a {
         flex: 1 1 0;
     }
 
-    & > input[type="text"] { flex: 4 1 30ch; }
+    & > input[type="text"] {
+        flex: 4 1 30ch;
+        
+        &::placeholder {
+            color: inherit;
+            
+            opacity: 0.7;
+        }
+    }
 }
 
 .preview-option {
