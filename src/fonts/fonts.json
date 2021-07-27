@@ -2,7 +2,6 @@
     "layout": "layouts/font-specimen.njk",
     "templateEngineOverride": "njk",
     "copyLocalAssets": "*",
-    "isMicrosite": "true",
     "eleventyComputed": {
         "customMetaImage": "{{ page.url }}/{{ customMetaImage }}"
     }
