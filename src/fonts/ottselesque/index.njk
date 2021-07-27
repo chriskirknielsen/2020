@@ -1,0 +1,183 @@
+---
+title: Ottselesque
+summary: A Jak and Daxter-inspired font
+fontLove: 'powercells'
+ownstyles: ['specimen-ottselesque']
+customMetaImage: ottselesque.png
+fontSpecimen: { 'Ottselesque': [ { 'file': 'Ottselesque-Regular.woff2' } ] }
+fontSpecimenSampleDefault: 'Naughty Ottsel'
+fontSpecimenFallback: 'fantasy'
+---
+
+<div class="main-heading-block">
+    {% set svgPortalViewBoxSize = 643.668 %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 {{ svgPortalViewBoxSize }} {{ svgPortalViewBoxSize }}" class="main-heading-bg">
+        <defs>
+            <symbol id="portal-parallelogram">
+                <path d="M308.417 13.018h26.834a2 2 0 011.825 1.181l10.207 22.752a2 2 0 01-1.824 2.819h-47.25a2 2 0 01-1.824-2.819L306.592 14.2a2 2 0 011.825-1.18z"/>
+            </symbol>
+            <symbol id="portal-triangle">
+                <path d="M326.012 97.607l20.583-31.314a5 5 0 00-4.178-7.746h-41.165a5 5 0 00-4.179 7.746l20.583 31.314a5 5 0 008.356 0z"/>
+            </symbol>
+        </defs>
+
+        <g class="portal">
+            <circle cx="321.834" cy="321.834" r="205.963" />
+            <g class="portal-ring portal-ring-inner">
+                <circle cx="321.834" cy="321.834" r="216.046" />
+                <circle cx="321.834" cy="321.834" r="269.684" />
+                {% for i in range(0, (360/20)) %}
+                    <use xlink:href="#portal-triangle" transform="rotate({{ i * 20 }} {{ svgPortalViewBoxSize / 2 }} {{ svgPortalViewBoxSize / 2 }})"/>
+                {% endfor %}
+            </g>
+            <g class="portal-ring portal-ring-outer">
+                <circle cx="321.834" cy="321.834" r="274.364" />
+                <circle cx="321.834" cy="321.834" r="315.747" />
+                {% for i in range(0, (360/20)) %}
+                    <use xlink:href="#portal-parallelogram" transform="rotate({{ i * 20 }} {{ svgPortalViewBoxSize / 2 }} {{ svgPortalViewBoxSize / 2 }})"/>
+                {% endfor %}
+            </g>
+            <circle cx="321.834" cy="321.834" r="321.334" />
+        </g>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="352.1655" height="380.52175" viewBox="0 0 1408.662 1522.087" class="jak-daxter-silhouettes">
+        <path d="M486.847 298.228l.908 10.172s-18.89 3.632-23.248 5.448-21.795 2.18-29.06 2.906-33.42 17.436-38.505 18.89-16.346 7.264-16.346 7.264-1.09 11.624-3.996 17.436a10.461 10.461 0 000 10.171s12.35-11.624 16.71-11.624 48.313-22.521 50.855-23.974 17.073-10.534 24.701-10.534c0 0-21.068 22.158-29.786 26.517s-42.5 26.517-42.137 28.697 6.901 25.064 9.08 27.243 5.45-8.718 11.262-14.53 42.137-39.594 45.043-44.316 23.974-28.697 25.427-29.423 8.355 3.632 8.355 3.632-12.35 51.945-13.803 65.385-3.996 27.244-1.453 33.42 2.093 14.53-2.041 23.61-16.485 84.275-18.665 97.715-6.538 33.056-6.538 48.676-6.902 30.876-6.902 38.867-4.722 13.077-6.902 16.347-3.632 3.562-1.816 11.044 1.816 27.823-1.816 37.268-11.987 17.8-10.534 24.338-4.36 39.594 1.09 47.222c0 0-7.629 9.445-9.808 15.257s-3.633 25.427-6.902 34.872-11.987 33.42-10.534 34.146-2.906 10.534-5.812 13.44a11.393 11.393 0 00-3.27 6.175s9.445 0 7.266 2.543-6.176 7.991-9.445 8.718-5.449.726-10.534 10.534-15.62 29.423-18.163 33.419-9.081 19.615-14.53 25.064-23.611 27.97-27.97 32.33-11.26 13.077-11.26 13.077-13.44 1.453-19.253 3.632-23.138 29.119-22.521 32.33c2.826 14.711 26.517 19.978 26.517 19.978s-15.438 23.248-18.708 25.973-53.216 64.113-53.216 67.383 5.267 7.265 13.44 8.173 16.71 7.991 16.71 7.991-10.534 9.263-13.077 15.802c0 0-8.355 2.36-11.079 5.085s-5.267 3.27-5.267 6.72 2.906 13.44-.727 15.257-4.903 5.267-11.26 4.359-15.802 14.348-17.981 15.256-3.633 5.812 0 9.263 22.34 18.526 22.34 21.432-6.72 13.622-6.72 18.163-21.25 13.258-21.069 17.436 4.54 15.801 5.63 16.346c0 0-8.536 4.722-9.444 6.902 0 0-10.08-6.902-12.26-6.357s-10.08 2.996-14.167 8.173-13.622 11.987-15.53 16.619-8.445 13.621-10.624 13.894-19.07 8.99-23.702 8.718-2.18-18.798-2.18-18.798-35.962.272-36.507 1.362-2.724 15.801 8.99 43.318c0 0-13.077 7.628-18.253 8.445s-20.705 8.446-23.975 8.446-19.07 1.362-24.52 1.362-7.355-3.542-7.355 0 3.542 15.529 7.083 16.074 19.071 6.266 26.972 4.086 53.125-1.09 56.667-1.362 56.667 5.449 64.295 5.449a19.675 19.675 0 0012.805-5.176s35.962-8.719 38.686-9.808 8.173-.545 11.442-1.907 10.898-37.597 4.36-55.578c0 0-10.08-15.529 4.086-27.788l19.888-1.09s-4.904-25.065 14.984-38.959 50.674-34.6 53.398-35.962 11.987-7.628 11.987-7.628-9.808-9.808-11.987-20.433 3.814-13.622 3.542-17.98 2.996-13.623 2.996-13.623 28.606 4.904 38.687 5.45 15.529-56.123 21.522-73.56a207.332 207.332 0 0115.53-33.51s14.983 8.719 17.98 8.99 4.36 5.177 6.811 4.905 2.452-5.994 4.904-11.443 7.356-13.35 7.356-19.343 12.532-63.205 16.619-67.292 9.807 1.907 10.08 5.994 9.807 28.606 11.442 35.417 3.82 18.253 6.677 22.612 3.948 8.99 1.496 10.898-5.176 8.173.272 16.346 14.985 19.615 14.985 19.615 13.894-17.163 18.525-18.526c0 0 5.994 16.892 8.718 21.523s13.622 27.244 14.167 32.148 12.532 28.606 13.077 36.779.273 20.978 4.904 19.888 39.776-8.99 39.776-8.99 8.718 12.26 8.718 19.615a35.024 35.024 0 003.27 13.895s-12.533 12.804-12.533 16.89c0 17.71 31.875 9.536 56.94 35.963s26.426 30.24 26.426 30.24-5.449 8.99 0 11.443 16.619 2.18 18.798-1.09c0 0 6.266 12.26 7.629 16.89s-1.635 21.796-2.452 22.613-6.266 9.808-4.904 12.805 2.18 27.244 2.18 27.244 21.522 12.532 25.336 13.349a15.12 15.12 0 019.808 6.539c2.997 4.086 1.634 7.083 16.074 7.083s38.958.817 40.865-2.452 19.888-.272 21.795 0 31.058 1.635 36.507.817 22.34 1.635 28.334-.545 13.894.818 16.346-1.362 10.897-16.89 4.359-19.615-19.07.272-22.067-1.907-12.533-2.997-17.709-7.084-17.709-12.532-17.709-12.532-4.903-9.535-4.903-15.529 2.724-24.52 1.09-29.423-4.36-9.263-5.994-9.263-4.904 4.904-2.997 13.35 1.635 26.698-2.724 25.609-6.539-7.901-9.536-9.263-17.163-5.721-19.888-8.173-14.711-16.892-17.708-22.885-11.442-12.532-19.616-15.802-2.724-7.083-10.625-.272-18.253-5.994-18.253-5.994 3.542-12.532 5.176-13.894 3.27-3.814-9.807-10.08-12.26-7.356-8.174-11.715 7.901 3.814 21.25 2.997c0 0 2.18-10.353 4.36-13.622s-1.363-13.894-1.363-13.894-14.439-9.536-17.163-16.62-10.08 3.815-10.08 3.815-10.353 1.09-10.353-1.907 4.904-30.785 0-33.782-13.077-12.26-16.619-14.712-17.436-17.98-17.436-19.888 26.154-10.353 27.516-13.077 6.267-8.718 0-16.346-62.66-61.571-67.02-71.107c0 0 13.895-8.99 17.436-16.346s1.09-19.343 3.27-22.612 2.18-8.446 2.18-8.446-17.164-20.16-18.798-24.247-9.263 1.907-24.247.273c0 0-36.507-26.154-44.68-33.783s-13.077-17.98-16.892-25.336-.544-26.972-4.086-29.969-17.709-.817-16.074-17.436c0 0 6.266 0 8.173-4.631a6.325 6.325 0 01-4.086-5.994c0-4.631-1.635-14.166 2.179-16.618s3.814-19.071 3.27-25.337 1.09-8.173 5.993-9.808 31.875-.272 46.042 9.263c3.314 2.23 3.974-.503 3.041-6 0 0 13.85 8.724 23.93-3.808 0 0 10.625 1.09 18.254-.272 0 0 2.996 36.507 6.266 52.853s9.807 58.846 22.884 77.372c0 0 4.723 18.526 9.445 26.88s19.252 22.522 19.252 22.522-4.722 12.35-3.995 14.167 46.496 23.248 61.389 25.79c0 0 3.542 10.898 1.907 14.167s-16.619 16.891-11.715 20.433 25.064.545 32.965-4.36 7.356-2.996 9.535-2.179 10.898 15.53 21.25 15.53c0 0-3.541 46.314-1.907 55.032s3.27 5.994-4.086 16.619-12.805 26.426-11.17 31.602-8.31 1.908-3.27 10.49c0 0 1.363-4.905 4.087-4.632s2.724-3.133 4.223-2.18 5.04 6.13 5.04 6.13 2.316-9.4.68-11.443 3.134-5.448 3.134-5.448 5.04 2.315 5.04 6.81-.545 9.945-1.907 12.941 1.498 9.944 1.498 9.944 2.86-7.628 4.36-8.309 10.488-11.034 10.488-17.436-2.86-14.167-2.86-14.167 6.447-.408 12.986-7.492c0 0-.545 6.72 10.17 6.72s12.533-9.081 12.533-9.081 1.453 4.54 5.812 2.361 12.714-3.27 12.714-8.718 1.09-16.891 1.09-16.891 13.44-6.175 13.622-11.806-9.082-22.158-16.165-30.331-15.983-15.62-17.254-19.979-21.069-34.145-25.246-39.231-15.439-13.622-16.347-16.891c0 0 6.176-1.272 4.36-5.086s-22.704-21.25-26.155-27.607-43.227-51.218-43.227-57.212-1.271-12.895-5.812-13.077-.181 4.904-6.175 9.808-8.173 9.081-11.442 8.718-9.081 1.453-8.718-3.27-3.451-83.184-4.722-93.355-2.27-32.828 1.18-37.006c0 0 17.164-5.449 26.835-10.352s39.368-16.62 39.504-19.888-4.495-7.765-8.582-11.307-10.761 2.86-16.483 4.632-22.612 7.356-28.606 5.449c0 0-11.442-19.48-25.745-31.74 0 0 3.27-6.81 6.13-10.08s1.498-7.628-1.907-11.033-15.393-19.752-20.705-24.928c0 0 22.612-12.941 73.694 19.343 0 0-25.337-29.469-50.583-50.72 0 0 34.782-12.894 41.32-18.616s32.148-16.618 38.959-22.884 54.76-18.799 83.911-8.718-38.686-38.142-38.686-38.142 52.035-5.721 82.549-3.814c5.448 1.09 2.451 11.715 17.436 11.17s14.711-6.81 12.532-7.628-12.532-.817-14.984-2.18a187.848 187.848 0 00-19.888-8.445c-7.084-2.452-62.661-21.25-108.976-32.148 0 0-21.25-44.68-27.243-49.584s-35.962-16.618-53.126-23.702-22.885-1.907-22.885-1.907V439.35s-20.705-5.449-28.878 8.173l4.631 8.446-6.81 11.442s-21.25-2.997-32.693.817l-11.987-23.702s-38.959 13.895-53.126 38.959l19.07 19.888 7.63 16.619s-6.812 7.083-12.26 12.532-16.892 12.26-9.536 29.695c0 0-6.539 3.542-10.353-1.907s-14.44-8.173-19.888-9.807-10.08-7.356-10.08-7.356 3.542-15.53 4.904-19.616 5.449-31.603 6.539-48.494-2.997-45.77-2.997-45.77 4.631-13.622 3.814-26.154-8.173-74.648-8.173-74.648 5.993-6.266 11.715-7.9 17.163-11.443 21.795-11.443 18.253-1.362 25.064-4.359 8.718-1.635 9.808-8.173.272-8.99-2.997-10.353a31.455 31.455 0 00-8.446-1.634s-21.522-.545-28.606 0-11.442 1.634-23.974 0-40.866 0-44.68 3.814a69.038 69.038 0 00-7.628 9.81z" />
+        <path d="M490.88 235.891l-.308-.226-7.8-8.44-4.476-13.426-9.59-11.38-2.302-7.928-3.324-26.597 11.865-20.413a73.403 73.403 0 0133.583-30.16l1.864-.831 9.462-2.558 14.452 3.325 14.451-3.325 9.463 2.558 1.864.83a73.404 73.404 0 0133.583 30.16l11.865 20.414-3.325 26.597-2.301 7.928-9.59 11.38-4.476 13.427-7.8 8.439-.309.226a73.404 73.404 0 01-43.425 14.223 73.403 73.403 0 01-43.426-14.223z" />
+        <path d="M571.774 11.977S557.704 0 534.305 0s-37.468 11.977-37.468 11.977l-4.433 17.901c2.899 11.253 41.901 31.712 41.901 31.712s39.003-20.459 41.901-31.712z" />
+        <path d="M662.04 297.897s17.408-6.196 29.107-26.46 8.362-38.436 8.362-38.436l-13.287-12.79c-11.194-3.117-48.414 20.431-48.414 20.431s-1.783 44.007 6.513 52.143z" />
+        <path d="M407.539 297.897s-17.407-6.196-29.106-26.46-8.362-38.436-8.362-38.436l13.287-12.79c11.194-3.117 48.413 20.431 48.413 20.431s1.784 44.007-6.512 52.143z" />
+        <path d="M1369.815 1472.83c-7.414 0-23.047 3.384-28.043 3.384s-66.08-2.257-74.622-2.901-22.724-22.886-22.724-22.886 76.474-42.871 88.804-90.013 26.834-96.718 26.834-96.718-34.812 24.192-40.615 37.247-37.713 95.009-94.283 95.009-95.372-22.484-98.998-28.648-13.055-20.307-19.945-25.022-51.856-40.614-51.856-46.416 7.978-22.846 5.802-45.329c0 0 7.987 6.56 18.188 14.656-4.069 11.203-7.673 21.725-8.155 25.032-1.128 7.736-.161 19.179 4.674 21.435s13.055 5.802 18.857-2.74c2.784-4.099 8.941-11.323 13.867-21.424 5.676 4.033 10.234 6.95 12.403 7.644 9.066 2.901 66.724 16.681 66.724 16.681s-4.714 5.802-3.989 9.066 8.945-2.901 8.945-2.901 11.242 2.78 18.978 9.912-5.923-2.297-5.923 2.538 3.022 14.022 5.318 14.989 25.868 6.648 27.318 4.593.726-5.44 2.78-6.406 6.77-4.714 6.406-6.89-6.647-5.319-3.988-7.495c0 0 18.615 7.011 24.296 10.275s10.637 8.461 16.56 8.461 10.637-4.23 10.637-5.923-1.209-7.373-4.593-8.945-20.066-1.813-23.45-3.021-19.34-10.033-19.34-10.033 1.813-1.45-2.66-2.539-38.56-12.812-41.219-13.417-2.78-9.55-5.801-9.55-4.957 3.385-4.957 3.385-41.823-26.109-47.746-31.548c-2.288-2.102-15.13-8.64-30.027-15.874a69.62 69.62 0 00-.877-5.723 66.86 66.86 0 00-10.069-24.267c5.96-2.493 11.197-4.905 11.197-4.905s14.666 6.447 16.6 6.447 24.66-10.153 13.539-31.75c0 0 .16-1.692-5.238-4.593 0 0 5.56-8.784 2.337-15.553s-8.601-21.78-20.307-37.713c-3.67-4.994-4.03-24.982-23.853-35.941-8.659-4.787-19.624-2.871-29.228.806 0 0-27.987-1.128-31.855 1.29s-42.066 28.112-42.066 55.925c0 10.2 28.85 26.27 28.85 26.27l-2.256 4.19s-23.048-19.34-30.622-22.724-7.253.967-6.608 3.706.161 6.447 5.802 9.026 28.526 15.31 30.622 18.373c0 0-22.08 19.34-26.754 25.948 0 0-15.311-53.83-19.18-64.306s-28.526-61.566-28.526-61.566 8.22-3.063 8.058-4.513-1.29-6.93-4.029-7.575c0 0 .967-7.897.806-9.67s9.67-14.989 8.864-18.212-3.384-3.224-2.095-7.898 6.608-21.435 4.835-28.204-15.472 9.348-15.472 11.604 1.772 22.402-4.432 15.23c0 0-6.165-19.582-6.165-25.747s-5.44-9.428-9.066-9.065-7.253 8.34-6.165 9.065 15.23 23.934 15.23 27.56-2.009 5.802-4.63 3.264-9.754-8.099-11.809-8.099-4.835 4.473-4.835 4.473-4.11-1.693-6.406 3.505c0 0-6.044 2.539-6.044 5.681s-1.45 12.571 0 13.78 9.307 6.89 10.395 5.802a33.856 33.856 0 002.901-3.868 19.572 19.572 0 013.505 4.006c1.21 2.038 7.978 14.368 9.066 15.576s-2.659 10.033-1.813 10.033a9.87 9.87 0 007.857-1.813s4.352 44.483 6.165 50.647 15.23 31.186 20.67 39.527 16.359 28.85 16.198 31.428 3.223 15.31 5.801 16.761c0 0-5.801 30.139-4.673 38.52s7.736 15.955 13.538 32.717 14.827 41.26 17.084 45.61 37.552 72.85 37.552 72.85-16.6 4.35-21.274 4.512-18.857-4.03-21.274-3.385-10.315 9.187-9.026 10.799a413.518 413.518 0 0048.995 46.739s-26.754-3.062-36.424-5.641-25.626-5.158-32.395-9.187-12.732-7.736-17.567-5.48-34.33 26.593-36.747 31.106-4.835 6.769 10.154 6.285 51.574 1.257 55.764.065 76.072-2.321 79.94-2.321 5.48-1.29 2.095-3.224-11.604-10.153-15.31-13.377-30.3-38.68-28.85-39.97 115.075 20.952 119.426 21.436 57.537-3.868 63.34-5.64c0 0 40.13 12.893 46.9 13.054s-5.641 4.03-5.641 5.48-.311 2.095 7.66 4.19 98.227 38.358 123.53 40.13c4.745.333 8.039-.173 10.26-1.215 0 0 17.945.249 18.429-2.491s-31.427-45.449-38.841-45.449zm-307.591-251.968s20.187 5.077 25.021 5.077a13.874 13.874 0 003.357-.666c.516 2.145.99 5.124.23 6.93-.246.585-1.109 2.778-2.35 5.995-14.81-6.964-26.742-12.441-26.742-12.441s-1.208-4.23.484-4.895z" />
+    </svg>
+    
+    <div class="main-heading-text">
+        <h1 class="main-heading-title text-center specimen specimen-dlig">{{ title }}</h1>
+        <p class="main-heading-sub text-center font-italic">A Jak and Daxter-inspired font</p>
+    </div>
+
+</div>
+
+<p>
+    The Jak and Daxter logo is emblematic, but many fans would have loved to write things in the same style… and that is now possible!
+    Play around with it here, more info on it below, and of course a download link at the end. If you see the Papyrus font, something went wrong…
+</p>
+
+<div class="full color-alt bg-alt padding-block">
+    <form class="full-content preview" id="font-previewer">
+        <div class="preview-input-wrap">
+            <label for="preview-input">Preview:</label>
+            <input type="text" placeholder="Type anything" id="preview-input" />
+            <button type="button" id="preview-update">Update</button>
+        </div>
+
+        <output for="preview-input">
+            <svg id="preview-svg" class="preview-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1000 300" width="1000" height="300">
+                <defs>
+                    <linearGradient id="specimenPreviewFill" x1="0" y1="0" x2="0" y2="100%">
+                        <stop offset="0.2" stop-color="#ff361a"/>
+                        <stop offset="0.5" stop-color="#ecd237"/>
+                        <stop offset="0.8" stop-color="#ff361a"/>
+                    </linearGradient>
+
+                    <filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="120%" height="120%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="0.75" result="blur"/>
+                        <feSpecularLighting in="blur" surfaceScale="10" specularConstant="1" specularExponent="10" result="specOut" lighting-color="#ffffff">
+                            <fePointLight x="50%" y="-500" z="0"/>
+                        </feSpecularLighting>
+                        <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+                        <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
+                    </filter>
+
+                    <filter id="noise" x="-10%" y="-10%" width="120%" height="120%">
+                        <feTurbulence baseFrequency="0.05 0.05" result="NOISE" numOctaves="2" />
+                        <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="5" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>
+                    </filter>
+
+                    <symbol id="sample-text">
+                        <text class="specimen specimen-dlig" style="font-size:128px" text-anchor="middle" x="50%" y="200" id="preview-output">{{ fontSpecimenSampleDefault }}</text>
+                    </symbol>
+                </defs>
+                
+                <use xlink:href="#sample-text" fill="#ffffff" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                <use xlink:href="#sample-text" fill="#262425" stroke="#262425" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#noise)" transform="translate(-0.5 -0.5)"/>
+                <use xlink:href="#sample-text" fill="url(#specimenPreviewFill)" filter="url(#bevel)" />
+            </svg>
+        </output>
+
+        <div class="preview-options flow" style="--flow: 0.5rem;">
+            <p class="preview-option">
+                <input type="checkbox" name="dlig" data-preview-option id="preview-option-dlig" checked />
+                <label for="preview-option-dlig">Enable Ligatures</label>
+            </p>
+            <p class="preview-option">
+                <input type="checkbox" name="ss01" data-preview-option id="preview-option-ss01" />
+                <label for="preview-option-ss01">Enable Stylistic Alternates</label>
+            </p>
+        </div>
+
+        {# <button type="button" id="save-preview">Save as PNG</button> #}
+    </form>
+</div>
+
+<h2>Uppercase</h2>
+<p class="specimen-set-demo specimen">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+
+<h2>Lowercase</h2>
+<p class="specimen-set-demo specimen">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+
+<h2>Numbers &amp; Punctuation</h2>
+<p class="specimen-set-demo specimen">1 2 3 4 5 6 7 8 9 0 _ : - . , ' &</p>
+
+<h2>Ligatures</h2>
+{% set ligaList = ['JaKandDAXTER', 'JaK', ' and ', 'DAXTER', 'JaKh', 'XTER', 'II', 'III', 'IV', 'KrI', 'Pro', 'TER', 'ER', 'KI', 'Kh', 'Ko', 'Kr', 'LA', 'LE', 'Le', 'Ll', 'Lo', 'RO', 'TE', 'XT', 'le', 'li', 'll', 'ls', 'lu', 'rI', 'ri', 'rr', 'ss', 'tt'] %}
+<p class="specimen-set-demo specimen specimen-dlig">
+    {% for liga in ligaList %}
+    <span title="{{ liga }}">{{ liga }}</span>
+    {% endfor %}
+</p>
+
+<h2>Stylistic Alternates</h2>
+<p class="specimen-set-demo specimen specimen-aalt specimen-ss01">I M N O R X e i l n o r s u x 3</p>
+
+<div class="full padding-block">
+    <div class="full-content flow">
+        <h2>Why make this now?</h2>
+        <p>
+            Some backstory: I've always been a huge Jak and Daxter fan (I still use the username JaKhris — very original, I know), and I used to run a J&amp;D fansite called <strong>JAKPRO</strong> back in the day, which closed (I won't lie, it was a bitter experience). It got revived as "The Naughty Kennel", a fansite more broadly about Naughty Dog games, but then it closed as well as my available time dwindled once more. Maintaining a dying breed of websites is no small feat — hats off to my friends at <a href="https://ratchet-galaxy.com">Ratchet-Galaxy</a>!
+        </p>
+        <p>
+            I'm not sure why, but some time during July 2021, I had a nostalgic feeling for these games, thinking back to my webmastering days, and making J&amp;D-based fanart and whatnot. I always thought to myself "How come we never got some font based on this logo?" I wanted to make one myself all those years ago, but my graphic design skills were terrible, and my font-making skills were non-existent. Nowadays, I can handle it (well, you can be the judge of that), so I set out to make it! It's based on the logo and various promotional material or concept art I found, and then lots of creative liberty.
+        </p>
+        <p>
+            The joys of writing your username with the font of your favourite video game are real. I've always been a bit of a typeface nerd, so this was a really fun project! I hope you enjoy using this to make your own J&amp;D-themed creations, and <a href="https://twitter.com/JaKhris">please share them with me on Twitter</a>!
+        </p>
+    </div>
+</div>
+
+<h2>Notes</h2>
+<p>
+    This is meant to be a "helper" to make it easy to design a custom title in your favourite design program — I've done my best but it might not look perfect for every word. Make sure to leverage uppercase and lowercase letters, ligatures and alternates separately to compose your ideal custom logo!
+</p>
+
+<h2>Fun Facts</h2>
+<ul>
+    <li>The "8" and "&amp;" characters were designed with the Seal of Mar in mind, while the other numbers drew inspiration from the "Precursor Alpha" font you see in-game.</li>
+    <li>The "Pro" ligature is a reproduction of part of the JAKPRO logo made by Nicolas Mrikhi (a.k.a. NicoJak), who also created the <a href="https://www.deviantart.com/nicojak/art/Jak-and-Daxter-logo-121180174">fan-made "The Lost Frontier" logo</a> with the Mar symbol you might have seen around. He helped me get into graphic design, so as a little homage to him I decided to include it!</li>
+</ul>
+
+<h2>Feedback &amp; Support</h2>
+<p>
+    I'm always open to feedback! I might have messed up a kerning pair or perhaps you have an idea for a ligature or alternate character. If you want to contribute, <a href="https://twitter.com/JaKhris">please reach out on Twitter</a>!
+</p>
+<p>
+    This is a font made totally <em>free of charge</em>, but if you'd like to <a href="{{ metadata.support.kofi | url }}">buy me a coffee</a> or <a href="{{ metadata.support.paypal | url }}">donate</a> to help reimburse the costs for the licence key to the font-making program (Glyphs App 3), I'd truly appreciate it! Also if you know where to snag that anniversary Precursor Orb, message me…
+</p>
+
+<h2>Rights &amp; Distribution</h2>
+<p>While this is a free font for personal use, it may not be modified or redistributed without permission. To share this font, please link to this page. That's all I ask!</p>
+
+<p class="text-center">
+    <a href="./Ottselesque-Regular.otf" download="Ottselesque.otf" id="download" class="download-button">Download {{ title }}</a>
+</p>
+
+<p class="text-center font-italic">Jak and Daxter is a licence developed by Naughty Dog and published by Sony Interactive Entertainment Inc.</p>

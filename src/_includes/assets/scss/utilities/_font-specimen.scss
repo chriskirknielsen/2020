@@ -1,0 +1,280 @@
+$content-max: 64rem;
+$gutter: 2rem;
+
+/* Set custom properties for each layout feature */
+:root {
+    --specimen-aalt: "aalt" off;
+    --specimen-dlig: "dlig" off;
+    --specimen-ss01: "ss01" off;
+}
+
+/* If class is applied, update custom property and
+   apply modern font-variant-* when supported */
+.specimen-aalt {
+    --specimen-aalt: "aalt" on;
+}
+
+.specimen-dlig {
+    --specimen-dlig: "dlig" on;
+}
+
+@supports (font-variant-ligatures: discretionary-ligatures) {
+    .specimen-dlig {
+        --specimen-dlig: "____";
+        font-variant-ligatures: discretionary-ligatures;
+    }
+}
+
+.specimen-ss01 {
+    --specimen-ss01: "ss01" on;
+}
+
+/* Apply current state of all custom properties
+   whenever a class is being applied */
+.specimen,
+.specimen-aalt,
+.specimen-dlig,
+.specimen-ss01 {
+    font-feature-settings: var(--specimen-aalt), var(--specimen-dlig), var(--specimen-ss01), "salt" on;
+}
+
+.specimen-italic {
+    font-style: italic;
+}
+
+.preview-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+// Basic reset
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    line-height: 1.6;
+}
+
+// Bascic styles
+body {
+    font-family: var(--body-font, serif);
+    color: var(--color-main);
+    background: var(--bg-main);
+}
+
+a {
+    color: var(--link);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        color: var(--link-active);
+        text-decoration: none;
+    }
+
+    &:focus { outline: 2px dashed currentColor; }
+    &:focus:not(:focus-visible) { outline: none; }
+}
+
+// Layout
+.padding-block {
+    padding-block: $gutter;
+}
+
+.flow {
+    --flow: 2em;
+
+    & > * { margin-top: 0; margin-bottom: 0; }
+    & > * + * { margin-top: var(--flow, 2em); }
+
+    & > h2 + :is(p, ul, ol) { --flow: 0.25em; }
+    & > .small-heading + * { --flow: 0; }
+}
+
+.content {
+    max-width: #{ $content-max };
+    margin: 0 auto;
+    padding: #{ $gutter };
+
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns:
+            [fullbleed-start]
+                1fr
+            [wide-start]
+                #{ $gutter }
+            [container-start]
+                minmax(0, #{ $content-max })
+            [container-end]
+                #{ $gutter }
+            [wide-end]
+                1fr
+            [fullbleed-end]
+        ;
+        max-width: initial;
+        padding: #{ $gutter } 0; // Remove inline padding
+
+        & > * {
+            grid-column: container-start / container-end;
+        }
+
+        & > .full {
+            outline: 2px solid var(--color-alt);
+            grid-column: fullbleed-start / fullbleed-end;
+        }
+    }
+}
+
+.full-content {
+    max-width: #{ $content-max };
+    margin: 0 auto;
+    padding: 0 #{ $gutter };
+}
+
+@supports (grid-template-columns: subgrid) {
+    .full {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: 1fr;
+
+        & > &-content {
+            grid-column: container-start / container-end;
+
+            // Reset the no-subgrid fallback
+            max-width: 100%;
+            width: 100%;
+            margin-left: initial;
+            margin-right: initial;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.preview-input-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5em;
+
+    & > * {
+        flex: 1 1 0;
+    }
+
+    & > input[type="text"] {
+        flex: 4 1 30ch;
+        
+        &::placeholder {
+            color: inherit;
+            
+            opacity: 0.7;
+        }
+    }
+}
+
+.preview-option {
+    $cbox-size: 1.25rem;
+    $check-size: 0.25rem;
+
+    --cbox-hover: 0 0 8px var(--color-main, white);
+    --cbox-focus: 0 0 0 2px var(--bg-main, black), 0 0 0 4px var(--color-alt, white);
+
+    display: flex;
+    align-items: stretch;
+    
+    input[type="checkbox"] {
+        flex: 0 0 auto;
+        width: $cbox-size;
+        height: $cbox-size;
+        margin: 0;
+        padding: 0;
+
+        opacity: 0.0001;
+    }
+    
+    input[type="checkbox"] + label {
+        position: relative;
+
+        padding-left: 0.5rem;
+    }
+
+    input[type="checkbox"] + label::before,
+    input[type="checkbox"] + label::after {
+        pointer-events: none;
+        content: '';
+
+        position: absolute;
+    }
+
+    input[type="checkbox"] + label::before {
+        top: 0;
+        left: #{ $cbox-size * -1 };
+
+        width: $cbox-size;
+        height: $cbox-size;
+
+        border: 1px solid var(--color-alt, white);
+        background: var(--bg-main, black);
+    }
+
+    input[type="checkbox"]:checked + label::before {
+        border: 1px solid var(--color-alt, white);
+        background: var(--color-alt, white);
+    }
+
+    input[type="checkbox"]:hover + label::before {
+        box-shadow: var(--cbox-hover);
+    }
+
+    input[type="checkbox"]:focus + label::before {
+        box-shadow: var(--cbox-focus);
+        outline: none;
+    }
+
+    input[type="checkbox"]:checked + label::after {
+        content: '';
+
+        left: #{ $cbox-size * -0.5 - $check-size*1.25 };
+        top: #{ $cbox-size * 0.25 - $check-size };
+
+        width: #{ $cbox-size * 0.5 };
+        height: #{ $cbox-size * 0.75 };
+
+        border-width: 0 #{ $check-size } #{ $check-size } 0;
+        border-style: solid;
+        border-color: var(--bg-main, black);
+
+        transform: rotate(45deg);
+    }
+}
+
+.download-button {
+    --flow: #{ $gutter };
+
+    display: inline-block;
+
+    font-size: 2rem;
+    font-size: clamp(1.5rem, calc(1.5rem + (2.5 - 1.5) * ((100vw - 20rem) / (64 - 20))), 2.5rem);
+    text-align: center;
+    line-height: 1.25;
+}
+
+// Text
+.text-center { text-align: center; }
+.font-italic { font-style: italic; }
+.small-heading { font-size: 1.25rem; }
+
+// Colours
+.color-main { color: var(--color-main, #ffe4c2); }
+.color-alt { color: var(--color-alt, #ffe4c2); }
+.bg-main { background: var(--bg-main, #1d122f); }
+.bg-alt { background: var(--bg-alt, #1d122f); }
+
+// Footer
+footer {
+    padding: $gutter;
+
+    font-family: var(--body-font, sans-serif);
+    text-align: center;
+    outline: 2px solid currentColor;
+}

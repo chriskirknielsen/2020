@@ -16,8 +16,8 @@
 	$flash-anim-delay: $wire-final-end - $wire-step-delay * $wire-count;
 	$flash-anim-time: 1.25s;
 	$chris-anim-time: 1.25s;
-	$chris-anim-delay: $flash-anim-delay + $flash-anim-time/2;
-	$kn-anim-delay: $chris-anim-delay + $chris-anim-time/4;
+	$chris-anim-delay: $flash-anim-delay + $flash-anim-time*0.5;
+	$kn-anim-delay: $chris-anim-delay + $chris-anim-time*0.25;
 	$kn-anim-time: .75s;
 	$creadev-anim-delay: $kn-anim-delay + $kn-anim-time;
 	$creadev-anim-time: 1.5s;
@@ -108,7 +108,7 @@
 		animation-name: svgMarkUnreset;
 		animation-fill-mode: backwards;
 		animation-duration: 1s;
-		animation-delay: #{ $chris-anim-delay - $wire-step-delay*($wire-count/2) };
+		animation-delay: #{ $chris-anim-delay - $wire-step-delay * ($wire-count * 0.5) };
 		animation-timing-function: cubic-bezier(0, 0, .25, 1);
 	}
 

@@ -1,3 +1,4 @@
+@use 'sass:math';
 // Check for Houdini support, then register property for animation
 // @supports (background: paint(a)) {
 //     @property --ckn-sun-mask-lines {
@@ -14,7 +15,7 @@
     $grid-size: .5;
     $grid-line-anim-time: 4s;
     $sun-radius: 20vmin;
-    $sun-blind-size: $sun-radius / 12;
+    $sun-blind-size: math.div($sun-radius, 12);
     $screen-background: unquote('var(--c-primary-max)');
     $sky-start: #0a0634;
     $sky-start: unquote('var(--c-primary-max)');
@@ -47,7 +48,7 @@
 
         $sun-fallback: radial-gradient(circle at 50% 100%,
             #{ $sun-bottom } 0,
-            #{ $sun-middle } #{ $sun-radius / 2 },
+            #{ $sun-middle } #{ $sun-radius * 0.5 },
             #{ $sun-top } #{ $sun-radius },
             #{ rgba($sun-glow, .5) } #{ $sun-radius },
             transparent #{ $sun-radius * 1.0625 },

@@ -1,5 +1,6 @@
 const root = 'src'; // Root folder
 const outputDir = '_site'; // Build destination folder
+const util = require("util");
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const { PurgeCSS } = require("purgecss");
@@ -12,6 +13,7 @@ const blogTools = require("eleventy-plugin-blog-tools");
 const moment = require("moment");
 const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
+const copyLocalAssets = require("eleventy-plugin-copy-local-assets");
 const purgeCssSafeList = {
 	_global: ['translated-rtl'], // Translation class
 	home: [],
@@ -34,6 +36,7 @@ module.exports = function(eleventyConfig) {
 			// 'data-lang': function (context) { return context.language.toUpperCase(); }
 		}
 	});
+	eleventyConfig.addPlugin(copyLocalAssets, { verbose: true });
 
 	/* SHORTCODES */
 
@@ -105,6 +108,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter('makeUppercase', function(string) { return string.toUpperCase() });
 	eleventyConfig.addFilter('makeLowercase', function(string) { return string.toLowerCase() });
 
+	eleventyConfig.addFilter('console', function(value) {
+		const str = util.inspect(value);
+		return `<div style="white-space: pre-wrap;">${ unescape(str) }</div>`;
+	});
+
 	/* LOCALISATION */
 
 	// Sort a collection of pages for the navigation based on the locale's navSet setting
@@ -143,6 +151,8 @@ module.exports = function(eleventyConfig) {
 		const filtered = collection.find(item => item.fileSlug == fileSlug && item.data.locale == locale);
 		return filtered;
 	});
+
+	/* COLLECTIONS */
 
 	eleventyConfig.addCollection("pages_all", function(collection) {
 		return [].concat(
@@ -190,6 +200,22 @@ module.exports = function(eleventyConfig) {
 			collection.getFilteredByGlob("./src/fr/posts/*.md"),
 			collection.getFilteredByGlob("./src/fr/posts/*.njk"),
 		);
+	});
+
+	// only content in the `posts/` directory
+	eleventyConfig.addCollection("posts", function(collection) {
+		return collection.getAllSorted().filter(function(item) {
+			var postsRegExp = new RegExp("^\.\/"+(root ? (root+'/') : '')+"posts\/");
+			return item.inputPath.match(postsRegExp) !== null;
+		});
+	});
+
+	// only content in the `fonts/` directory
+	eleventyConfig.addCollection("fonts", function(collection) {
+		return collection.getAllSorted().filter(function(item) {
+			var postsRegExp = new RegExp("^\.\/"+(root ? (root+'/') : '')+"fonts\/");
+			return item.inputPath.match(postsRegExp) !== null;
+		});
 	});
 
 	/* DATES */
@@ -285,13 +311,7 @@ module.exports = function(eleventyConfig) {
 		excerpt_separator: "<!-- excerpt -->"
 	});
 
-	// only content in the `posts/` directory
-	eleventyConfig.addCollection("posts", function(collection) {
-		return collection.getAllSorted().filter(function(item) {
-			var postsRegExp = new RegExp("^\.\/"+(root ? (root+'/') : '')+"posts\/");
-			return item.inputPath.match(postsRegExp) !== null;
-		});
-	});
+	
 
 	// Don't process folders with static assets e.g. images
 	eleventyConfig.addPassthroughCopy({

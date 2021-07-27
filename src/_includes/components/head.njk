@@ -10,13 +10,15 @@
 	
 	<meta property="og:title" content="{{ navtitle or title or renderData.title }} | {{ metadata.title }}">
 	<meta property="og:site_name" content="{{ metadata.title }}">
-	<meta property="og:locale" content="{{ locale }}">
+	<meta property="og:locale" content="{{ locale or 'en' }}">
 	<meta property="og:type" content="{% if section == "post" %}article{% else %}website{% endif %}">
-	<meta property="og:url" content="{{ localePath | url | absoluteUrl(metadata.url) }}">
+	<meta property="og:url" content="{{ localePath or '/' | url | absoluteUrl(metadata.url) }}">
 	
 	{# Add a dynamic image for blog posts, based on https://www.juanfernandes.uk/blog/automated-open-graph-images-with-11ty-and-cloudinary/ #}
 	{% set meta_image_url %}
-		{% if section == "post" %}
+		{% if customMetaImage %}
+			{{ customMetaImage | url | absoluteUrl(metadata.url) }}
+		{% elif section == "post" %}
 			{{ metadata.cloudinary.url }}/w_1200,f_auto/l_{{ metadata.cloudinary.logo }},w_128,g_south_east,x_64,y_42/l_text:{{ metadata.cloudinary.font }}_100_center:{{ navtitle or title or renderData.title | cloudinaryEscape }},co_rgb:ffe4c2,c_fit,w_900/{{ metadata.cloudinary.image }}
 		{% else %}
 			{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}
@@ -47,8 +49,36 @@
 		<noscript><link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="all"></noscript>
 	{% endif %}
 
+	{%- if fontSpecimen -%}
+		{# Initialise variable outside loop scope #}
+		{%- set fontSpecimenStyles = '' -%}
+
+		{%- for fontSpecimenName, fontSpecimensFaces in fontSpecimen -%}
+			{# Preload the "default" font #}
+			<link rel="preload" href="{{ './' + fontSpecimensFaces[0].file | url }}" as="font" type="font/woff2" crossorigin>
+			
+			{%- set fontSpecimenStyles -%}
+				{%- for fontSpecimenFace in fontSpecimensFaces -%}
+				@font-face {
+					font-family: '{{ fontSpecimenName }}';
+					src: url('{{ './' + fontSpecimenFace.file | url }}') format('woff2');
+					font-weight: {{ fontSpecimenFace.weight or '400' }};
+					font-style: {{ fontSpecimenFace.style or 'normal' }};
+					font-display: swap;
+				}
+				{%- endfor -%}
+				.specimen { font-family: '{{ fontSpecimenName }}', {{ fontSpecimenFallback or 'sans-serif' }}; }
+			{%- endset -%}
+		{%- endfor -%}
+	{%- endif -%}
+
 	<style id="inline-styles">
-	/*INLINE_CSS*/
+	{%- if not hasFullCustomStyles %}/*INLINE_CSS*/{% endif -%}
+	
+	{%- if fontSpecimenStyles -%}
+		{{- fontSpecimenStyles | cssmin | safe -}}
+	{%- endif -%}
+
 	{%- if ownstyles -%}
 		{# Add page-specific styles inline #}
 		{%- set pageStyleGroup = "" -%}
@@ -83,5 +113,5 @@
 		<link rel="alternate" href="{{ variant.url | url | absoluteUrl(metadata.url) }}" hreflang="{{ variant.data.locale }}">
 		{% endfor %}
 	{% endif %}
-	<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">
+	{% if localeRssUrl %}<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ localeRssUrl }}">{% endif %}
 </head>

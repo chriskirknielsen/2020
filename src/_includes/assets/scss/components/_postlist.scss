@@ -2,6 +2,7 @@
     $site-max-width: $container-max-width * 1rem;
     $site-content-padding: $spacing * 2;
     $site-content-max-width: $site-max-width - ($site-content-padding * 2);
+
     &__date,
     &__content {
         flex-basis: calc((#{ $site-content-max-width } - 100%) * 999);
@@ -18,5 +19,31 @@
 
             background-color: var(--c-grey-min);
         }
+    }
+}
+
+.cards[class] {
+    gap: #{ $spacing * 2 };
+
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+.card {
+    flex: 1 1 0;
+    min-width: 200px;
+    
+    @supports (display: grid) {
+        min-width: auto;
+    }
+
+    &__image img {
+        width: 100%;
+    }
+
+    &__content {
+
     }
 }

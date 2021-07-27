@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Layer ordering
 $z-index: (
     'main': 20,
@@ -42,14 +44,14 @@ $large-breakpoint-width-rem: $container-max-width;
 $large-breakpoint-width: $large-breakpoint-width-rem * 1rem;
 
 //-- Breakpoint @ medium
-$medium-breakpoint-width-rem: $container-max-width / 5 * 4;
+$medium-breakpoint-width-rem: math.div($container-max-width, 5) * 4;
 $medium-breakpoint-width: $medium-breakpoint-width-rem * 1rem;
 
 //-- Breakpoint @ small
-$small-breakpoint-width-rem: $container-max-width / 2;
+$small-breakpoint-width-rem: math.div($container-max-width, 2);
 $small-breakpoint-width: $small-breakpoint-width-rem * 1rem;
 
 // Small viewport
-$small-viewport-nav-padding: $spacing / 2;
+$small-viewport-nav-padding: math.div($spacing, 2);
 $small-viewport-nav-item-height: 2rem;
 $small-viewport-nav-height: $small-viewport-nav-padding * 2 + $small-viewport-nav-item-height;
