@@ -1,6 +1,6 @@
 ---
 title: RG Future
-summary: A Ratchet & Clank font
+summary: A Ratchet & Clank Future font
 fontLove: 'raritanium'
 ownstyles: ['specimen-rg-future']
 customMetaImage: rg-future.jpg
@@ -57,7 +57,7 @@ fontSpecimenFallback: 'Impact'
         <output for="preview-input">
             <svg id="preview-svg" class="preview-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1000 300" width="1000" height="300">
                 <defs>
-                    <linearGradient id="specimenPreviewFill" x1="0" y1="0" x2="0" y2="100%" gradientUnits="objectBoundingBox">
+                    <linearGradient id="specimenPreviewFill" x1="0" y1="0" x2="0" y2="100%" gradientTransform="scale(2 1)">
                         <stop offset="0.1" stop-color="#a2340f"/>
                         <stop offset="0.225" stop-color="#d57f36"/>
                         <stop offset="0.35" stop-color="#ead2a4"/>
@@ -75,7 +75,7 @@ fontSpecimenFallback: 'Impact'
                     </filter>
 
                     <symbol id="sample-text">
-                        <text class="specimen specimen-dlig" style="font-size:128px" text-anchor="middle" x="50%" y="200" id="preview-output">{{ fontSpecimenSampleDefault }}</text>
+                        <text class="specimen" style="font-size:128px" text-anchor="middle" x="50%" y="200"><tspan id="preview-output" class="specimen-italic">{{ fontSpecimenSampleDefault }}</tspan><tspan>&nbsp;</tspan></text>
                     </symbol>
                 </defs>
                 
@@ -87,7 +87,7 @@ fontSpecimenFallback: 'Impact'
 
         <div class="preview-options flow" style="--flow: 0.5rem;">
             <p class="preview-option">
-                <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" />
+                <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" checked />
                 <label for="preview-option-italic">Enable Italics</label>
             </p>
         </div>
