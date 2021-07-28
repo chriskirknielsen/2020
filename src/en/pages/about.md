@@ -73,6 +73,10 @@ If I'm not doing web-related things, I might be making **electronica music** as 
 
 Since 2013, I run **a blog where I review** movies, music, shows and video games (in French!): [Geekometric](https://geekometric.com) (which was also a great excuse to migrate my WordPress site to a static site generator: Hugo). Sure, everyone has an opinion, but it's still nice to be able to sit down and process the whole experience, break it down, and write about it.
 
+### Typefaces
+
+I've always been a bit of a nerd for fonts. And a video game nerd… So when my favourite games have a cool logo, it's time to make a font! You can check out [my fonts and play with them over here](/fonts).
+
 ## Hobbies
 
 Like many other humans, listening to music is a big part of my life, mainly rock, metal, electronica, and everything in between — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
