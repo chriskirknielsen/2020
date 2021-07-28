@@ -73,6 +73,10 @@ Quand je ne suis pas occupé à faire des choses sur le web, je suis potentielle
 
 Depuis 2013, je maintiens **un blog où je critique des films, de la musique ou des jeux vidéo** : [Geekometric](https://geekometric.com) (qui était une excellente excuse pour migrer mon site WordPress à un générateur de site statique dénommé Hugo). Bien entendu, tout le monde a sa propre opinion mais toujours est-il que de se poser, remâcher l'expérience et écrire est très agréable.
 
+### Polices d'Écriture
+
+J'ai toujours eu un penchant pour les polices d'écritures. Et un penchant pour les jeux vidéo… Alors quand mes jeux vidéo préférés ont un logo sympa, c'est l'heure d'en faire une typo ! Vous pouvez voir [mes polices d'écriture et les tester par ici](/fonts).
+
 ## Hobbies
 
 Comme de nombreux humains, écouter de la musique fait partie de mon quotidien, surtout de la musique rock, metal, électronique et tout ce qu'il y a entre ça — je suis obsédé par l'esthétique des années 80. Quelque chose avec les synthés m'attire beaucoup — peut-être que les couleurs néon baignent en harmonie au plus profond de moi !
