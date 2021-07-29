@@ -68,7 +68,7 @@ fontSpecimenFallback: 'Impact'
                     <filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="120%" height="120%">
                         <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
                         <feSpecularLighting in="blur" surfaceScale="10" specularConstant="1" specularExponent="10" result="specOut" lighting-color="#ffffff">
-                            <fePointLight x="50%" y="-500" z="0"/>
+                            <fePointLight x="-2000" y="-5000" z="0"/>
                         </feSpecularLighting>
                         <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
                         <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
@@ -85,11 +85,15 @@ fontSpecimenFallback: 'Impact'
             </svg>
         </output>
 
-        <div class="preview-options flow" style="--flow: 0.5rem;">
-            <p class="preview-option">
-                <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" checked />
-                <label for="preview-option-italic">Enable Italics</label>
-            </p>
+        <div class="preview-actions">
+            <div class="preview-options flow" style="--flow: 0.5rem;">
+                <p class="preview-option">
+                    <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" checked />
+                    <label for="preview-option-italic">Enable Italics</label>
+                </p>
+            </div>
+
+            <button type="button" id="save-preview" class="preview-save" hidden>Save as PNG</button>
         </div>
     </form>
 </div>

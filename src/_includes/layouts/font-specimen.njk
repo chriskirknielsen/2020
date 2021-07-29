@@ -19,6 +19,7 @@
 		var fontPreviewOutput = document.getElementById('preview-output');
 		var fontPreviewSvg = document.getElementById('preview-svg');
 		var fontPreviewSave = document.getElementById('save-preview');
+		var fontNameSlug = '{{ title | slug }}';
 
 		function updateFontPreviewText() { 
 			fontPreviewOutput.textContent = fontPreviewInput.value.trim() || '{{ fontSpecimenSampleDefault | safe }}';
@@ -49,38 +50,10 @@
 			e.preventDefault();
 			return false;
 		});
-		{# fontPreviewSave.addEventListener('click', function (e) {
-			var svgElementInfo = fontPreviewSvg.getBBox(); 
-			var width = svgElementInfo.width;
-			var height = svgElementInfo.height;
-			var clonedSvgElement = fontPreviewSvg.cloneNode(true);
-			var outerSvgElement = clonedSvgElement.outerHTML;
-			var blob = new Blob([ outerSvgElement ], { type: 'image/svg+xml;charset=utf-8' });
-			var URL = window.URL || window.webkitURL || window;
-			var blobURL = URL.createObjectURL(blob);
-			var image = new Image();
-			image.onload = function () {
-				var canvas = document.createElement('canvas');
-				canvas.width = width;
-				canvas.height = height;
-				var context = canvas.getContext('2d'); // draw image in canvas starting left-0 , top - 0
-				context.drawImage(image, 0, 0, width, height);
-				// Trigger DL
-				var link = document.createElement('a');
-				link.download = "ottselesque-preview.png";
-console.log(link)
-				link.style.opacity = "0";
-				document.documentElement.append(link);
-				link.href = canvas.toDataURL();
-				link.click();
-				link.remove();
-			}
-			image.src = blobURL;
-			console.log(image);
-		}) #}
 	{% endset %}
 	{{ fontSpecimenScripts | jsmin | safe }}
 	</script>
+	<script src="../download-preview.js" defer></script>
 </body>
 
 </html>
