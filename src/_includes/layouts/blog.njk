@@ -9,12 +9,11 @@ ownstyles: ['blog']
     <div class="{{ utilities.bigboiContent }}">
         <h1 class="u-width--100 u-displayFlex u-flex--centerBlock">
 			{{ title }}
-			
-			<a href="{{ localeRssUrl }}" class="u-textNormal u-letterSpacing--reset u-fontBody u-displayInlineFlex u-marginInlineStart u-padding--half | h_u-textDecoration--none | {{ utilities.glowBoxLink }}">
-				{% include "assets/img/rss.svg" %}
-				<span class="u-marginInlineStart--half">{{ localisedContent.rssHint }}</span>
-			</a>
 		</h1>
+		<a href="{{ localeRssUrl }}" class="u-displayInlineFlex u-marginInlineEnd | u-c--grey-min u-fontBold h_u-textDecoration--none">
+			{% include "assets/img/rss.svg" %}
+			<span class="u-marginInlineStart--half">{{ localisedContent.rssHint }}</span>
+		</a>
     </div>
 </header>
 
