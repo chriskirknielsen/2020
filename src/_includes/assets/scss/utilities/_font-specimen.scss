@@ -251,6 +251,36 @@ a {
     }
 }
 
+.preview-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5em;
+}
+
+.preview-save {
+    padding: 0.5em 1em;
+
+    font: inherit;
+    color: var(--bg-main, black);
+    background: var(--color-alt, white);
+    border: 1px solid var(--bg-main, black);
+
+    &:hover {
+        background: var(--color-main, lightgray);
+        box-shadow: 0 0 0.5em var(--color-main);
+    }
+
+    &:focus {
+        outline: 4px solid var(--bg-main, black);
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
 .download-button {
     --flow: #{ $gutter };
 

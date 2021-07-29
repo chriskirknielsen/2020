@@ -85,11 +85,15 @@ fontSpecimenFallback: 'Impact'
             </svg>
         </output>
 
-        <div class="preview-options flow" style="--flow: 0.5rem;">
-            <p class="preview-option">
-                <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" checked />
-                <label for="preview-option-italic">Enable Italics</label>
-            </p>
+        <div class="preview-actions">
+            <div class="preview-options flow" style="--flow: 0.5rem;">
+                <p class="preview-option">
+                    <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" checked />
+                    <label for="preview-option-italic">Enable Italics</label>
+                </p>
+            </div>
+
+            <button type="button" id="save-preview" class="preview-save" hidden>Save as PNG</button>
         </div>
     </form>
 </div>

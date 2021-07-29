@@ -104,18 +104,20 @@ fontSpecimenFallback: 'fantasy'
             </svg>
         </output>
 
-        <div class="preview-options flow" style="--flow: 0.5rem;">
-            <p class="preview-option">
-                <input type="checkbox" name="dlig" data-preview-option id="preview-option-dlig" checked />
-                <label for="preview-option-dlig">Enable Ligatures</label>
-            </p>
-            <p class="preview-option">
-                <input type="checkbox" name="ss01" data-preview-option id="preview-option-ss01" />
-                <label for="preview-option-ss01">Enable Stylistic Alternates</label>
-            </p>
-        </div>
+        <div class="preview-actions">
+            <div class="preview-options flow" style="--flow: 0.5rem;">
+                <p class="preview-option">
+                    <input type="checkbox" name="dlig" data-preview-option id="preview-option-dlig" checked />
+                    <label for="preview-option-dlig">Enable Ligatures</label>
+                </p>
+                <p class="preview-option">
+                    <input type="checkbox" name="ss01" data-preview-option id="preview-option-ss01" />
+                    <label for="preview-option-ss01">Enable Stylistic Alternates</label>
+                </p>
+            </div>
 
-        {# <button type="button" id="save-preview">Save as PNG</button> #}
+            <button type="button" id="save-preview" class="preview-save" hidden>Save as PNG</button>
+        </div>
     </form>
 </div>
 
