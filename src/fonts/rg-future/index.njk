@@ -68,7 +68,7 @@ fontSpecimenFallback: 'Impact'
                     <filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="120%" height="120%">
                         <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
                         <feSpecularLighting in="blur" surfaceScale="10" specularConstant="1" specularExponent="10" result="specOut" lighting-color="#ffffff">
-                            <fePointLight x="50%" y="-500" z="0"/>
+                            <fePointLight x="-2000" y="-5000" z="0"/>
                         </feSpecularLighting>
                         <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
                         <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
