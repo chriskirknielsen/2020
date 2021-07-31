@@ -9,7 +9,7 @@
     --palette-05: #ff361a;
     --palette-06: #ec9d37;
     --palette-07: #ecd237;
-    --texture-bg: url('./texture.jpg') 50% 50% / 64px 64px;  // Texture taken from https://unsplash.com/photos/3bb9RUp86M0
+    --texture-bg: url('texture.jpg') 50% 50% / 64px 64px;  // Texture taken from https://unsplash.com/photos/3bb9RUp86M0
     --body-font: Georgia, Cambria, 'Times New Roman', Times, serif;
     --color-main: var(--palette-01);
     --color-alt: var(--palette-02);
@@ -232,7 +232,7 @@ li + li {
 
 @media screen and (min-width: #{ $content-max + $gutter * 4 }) {
     .full {
-        background-image: url(./bg-gutter.png), url(./bg-gutter.png);
+        background-image: url('bg-gutter.png'), url('bg-gutter.png');
         background-size: #{ $gutter } auto;
         background-repeat: repeat-y;
         background-position:
