@@ -10,7 +10,7 @@ tags:
 
 Okay, so this is an old trick. I've used it a few times over the years, but I keep forgetting about how it works. When I keep forgetting about a technique, I need to write about it.
 
-The idea is that you move an element away from its anchor point, rotate it clockwise, move it back, and rotate it counter-clockwise so that its "horizon" is anchored. As they say, a stylised animated demo is worth a thousand words:
+The idea is that you rotate an element clockwise, move it away from its anchor point, and rotate it counter-clockwise so that its "horizon" is stable. As they say, a stylised animated demo is worth a thousand words:
 
 {% codepen "https://codepen.io/chriskirknielsen/pen/MWpPJYM/", "result", "480" %}
 
