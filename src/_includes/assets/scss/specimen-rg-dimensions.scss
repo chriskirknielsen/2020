@@ -3,15 +3,15 @@
 
 :root {
     --palette-01: #fff8fc;
-    --palette-02: #b5e5f8;
-    --palette-03: #180e30;
-    --palette-04: #2d4f79;
-    --palette-05: #973e26;
-    --palette-06: #dda969;
-    --palette-07: #ecd237;
+    --palette-02: #6dfefb;
+    --palette-03: #071a42;
+    --palette-04: #32255b;
+    --palette-05: #c84823;
+    --palette-06: #ffa22e;
+    --palette-07: #ffcf3f;
     --body-font: Roboto, Helvetica, Arial, sans-serif;
     --color-main: var(--palette-01);
-    --color-alt: var(--palette-02);
+    --color-alt: var(--palette-07);
     --bg-main: var(--palette-03);
     --bg-alt: var(--palette-04);
     --link: var(--palette-07);
@@ -19,8 +19,8 @@
 }
 
 h1 {
-    font-size: 8rem;
-    font-size: clamp(4rem, calc(4rem + (8 - 4) * ((100vw - 20rem) / (64 - 20))), 8rem);
+    font-size: 5rem;
+    font-size: clamp(2rem, calc(2rem + (5 - 2) * ((100vw - 20rem) / (64 - 20))), 5rem);
     line-height: 1;
 }
 
@@ -40,7 +40,7 @@ h2 {
         height: 1em;
         
         line-height: 1;
-        color: var(--palette-06);
+        color: var(--palette-02);
     }
 }
 
@@ -120,7 +120,7 @@ code {
     left: 0;
     right: 0;
 
-    width: 50%;
+    width: 66.7%;
     margin: auto;
 
     fill: currentColor;
@@ -148,7 +148,10 @@ code {
     padding: 0 0.5em;
 
     color: var(--palette-01);
-    text-shadow: 0 4px 0 var(--palette-04);
+    text-shadow:
+        -2px 2px 0 var(--palette-03),
+        -3px 3px 0 var(--palette-04),
+    ;
 }
 
 .main-heading-sub {
