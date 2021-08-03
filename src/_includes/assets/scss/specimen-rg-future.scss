@@ -148,7 +148,12 @@ code {
     padding: 0 0.5em;
 
     color: var(--palette-01);
-    text-shadow: 0 4px 0 var(--palette-04);
+    text-shadow:
+        0 1px 0 var(--palette-04),
+        0 2px 0 var(--palette-04),
+        0 3px 0 var(--palette-04),
+        0 4px 0 var(--palette-04),
+    ;
 }
 
 .main-heading-sub {

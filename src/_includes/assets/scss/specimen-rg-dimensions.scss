@@ -9,6 +9,7 @@
     --palette-05: #c84823;
     --palette-06: #ffa22e;
     --palette-07: #ffcf3f;
+    --palette-08: #424eaa;
     --body-font: Roboto, Helvetica, Arial, sans-serif;
     --color-main: var(--palette-01);
     --color-alt: var(--palette-07);
@@ -149,8 +150,8 @@ code {
 
     color: var(--palette-01);
     text-shadow:
-        -2px 2px 0 var(--palette-03),
-        -3px 3px 0 var(--palette-04),
+        -2px 2px 0 var(--bg-main),
+        -3px 3px 0 var(--palette-08),
     ;
 }
 
@@ -257,7 +258,7 @@ code,
 
     font-weight: bold;
     text-decoration: none;
-    color: var(--palette-03);
+    color: var(--palette-04);
     text-shadow: 0 1px 0 var(--palette-01), 0 -1px 0 var(--palette-05);
     border-radius: 4px;
 
@@ -309,7 +310,7 @@ code,
     &:focus {
         --dl-button-offset: calc(var(--dl-button-depth) * 0.5);
         
-        color: var(--palette-03);
+        color: var(--palette-04);
     }
     
     &:focus {
