@@ -29,29 +29,27 @@ ownstyles: ['home']
     {% set latestposts = collections["posts_" + locale] | reverse %}
     {%- set latestpostslength = latestposts.length if latestposts.length < 2 else 2 -%}
     {%- if latestpostslength > 0 -%}
-    <div class="{{ utilities.bfc }}">
-        <div class="{{ utilities.cardContainer }}">
-            {%- for i in range(0, latestpostslength) -%}
-            {% set latestpost = latestposts[i] %}
-            <article class="u-posRelative {{ utilities.cardFlex }} {{ utilities.cardBox }} {{ utilities.cardBoxLink }}">
-                <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
+    <div class="{{ utilities.cardContainer }}">
+        {%- for i in range(0, latestpostslength) -%}
+        {% set latestpost = latestposts[i] %}
+        <article class="u-posRelative {{ utilities.cardFlex }} {{ utilities.cardBox }} {{ utilities.cardBoxLink }}">
+            <time class="u-c--primary-med u-fontBold" datetime="{{ latestpost.date | machineDate }}">{{ latestpost.date | date(dateFormat, locale) }}</time>
 
-                <h2 class="h3">
-                    <a href="{{ latestpost.url | url }}" class="u-textDecoration--none u-afterCover">
-                        {{- latestpost.data.title -}}
-                    </a>
-                </h2>
+            <h2 class="h3">
+                <a href="{{ latestpost.url | url }}" class="u-textDecoration--none u-afterCover">
+                    {{- latestpost.data.title -}}
+                </a>
+            </h2>
 
-                <p class="u-marginBlockStart--half">
-                    {%- if latestpost.data.summary -%}
-                        {{- latestpost.data.summary -}}
-                    {%- else -%}
-                        {{- latestpost.excerpt -}}
-                    {%- endif -%}
-                </p>
-            </article>
-            {% endfor %}
-        </div>
+            <p class="u-marginBlockStart--half">
+                {%- if latestpost.data.summary -%}
+                    {{- latestpost.data.summary -}}
+                {%- else -%}
+                    {{- latestpost.excerpt -}}
+                {%- endif -%}
+            </p>
+        </article>
+        {% endfor %}
     </div>
     {% endif %}
 </section>

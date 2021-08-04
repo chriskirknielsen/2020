@@ -96,11 +96,6 @@
 
 /* Margin */
 
-.u-margin--flexGap {
-    &[class] { margin: #{ $spacing * -1 }; }
-    & > * { margin: #{ $spacing }; }
-}
-
 // .u-margin { margin: #{ $spacing }; }
 // .u-margin--double { margin: #{ $spacing * 2 }; }
 .u-margin--none { margin: 0; }
@@ -310,7 +305,3 @@
 }
 .u-container { max-width: #{ $container-max-width-rem + $container-padding-rem*2 }; }
 .u-container--narrow { max-width: #{ $narrow-max-width-rem + $container-padding-rem*2 }; }
-
-.u-bfc { // `column-span: all` creates a new block-formatting context despite not being in a multicol layout: https://github.com/w3c/csswg-drafts/commit/a8634b96900279916bd6c505fda88dda71d8ec51
-    column-span: all;
-}
