@@ -15,7 +15,7 @@
     }
 
     &::after {
-        background: radial-gradient(ellipse at center, transparent, var(--currentBackground) 80%);
+        background: radial-gradient(ellipse at center, var(--c-grey-max-alpha), var(--currentBackground) 80%);
     }
 
     &-content {
