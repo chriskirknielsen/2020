@@ -79,7 +79,7 @@ code {
 .main-heading-bg {
     position: relative;
 
-    width: 75%;
+    width: 90%;
     max-width: 32rem;
     max-width: min(32rem, 50vw);
     height: auto;
@@ -112,7 +112,6 @@ code {
     to { transform: rotate(360deg); }
 }
 
-
 .lombax-silhouette {
     position: absolute;
 
@@ -121,7 +120,7 @@ code {
     left: 0;
     right: 0;
 
-    width: 66.7%;
+    width: 75%;
     margin: auto;
 
     fill: currentColor;
@@ -223,7 +222,7 @@ code {
 [xlink\:href="#sample-text"][stroke] { user-select: none; }
 
 .specimen {
-    font-weight: 400;
+    font-weight: 900;
     line-height: 0.9;
 }
 .specimen-set-demo { font-size: 3rem; }

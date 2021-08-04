@@ -62,12 +62,12 @@
 				@font-face {
 					font-family: '{{ fontSpecimenName }}';
 					src: url('{{ './' + fontSpecimenFace.file | url }}') format('woff2');
-					font-weight: {{ fontSpecimenFace.weight or '400' }};
+					font-weight: {{ fontSpecimenFace.weight or 400 }};
 					font-style: {{ fontSpecimenFace.style or 'normal' }};
 					font-display: swap;
 				}
 				{%- endfor -%}
-				.specimen { font-family: '{{ fontSpecimenName }}', {{ fontSpecimenFallback or 'sans-serif' }}; }
+				.specimen { font-family: '{{ fontSpecimenName }}', {{ (fontSpecimenFallback | safe) or 'sans-serif' }}; }
 			{%- endset -%}
 		{%- endfor -%}
 	{%- endif -%}
