@@ -210,11 +210,12 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	// only content in the `fonts/` directory
+	// only _published_ content in the `fonts/` directory
 	eleventyConfig.addCollection("fonts", function(collection) {
 		return collection.getAllSorted().filter(function(item) {
 			var postsRegExp = new RegExp("^\.\/"+(root ? (root+'/') : '')+"fonts\/");
-			return item.inputPath.match(postsRegExp) !== null;
+			var isDraft = Boolean(item.data.draft);
+			return item.inputPath.match(postsRegExp) !== null && !isDraft;
 		}).sort(function(a, b) {
 			return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
 		});
