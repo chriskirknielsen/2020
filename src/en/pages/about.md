@@ -2,7 +2,7 @@
 layout: layouts/about.njk
 templateEngineOverride: njk,md
 title: Hello, I'm Chris
-subtitle: I'm a designer turned developer who loves working on the web.
+subtitle: I'm a designer turned developer who loves building for the web.
 summary: Learn more about Christopher Kirk-Nielsen
 permalink: /about/
 navtitle: About

@@ -2,7 +2,7 @@
 layout: layouts/about.njk
 templateEngineOverride: njk,md
 title: Salut, moi c'est Chris
-subtitle: Je suis un graphiste devenu développeur qui adore coder pour le web.
+subtitle: Je suis un graphiste devenu développeur qui adore construire pour le web.
 summary: En apprendre plus sur Christopher Kirk-Nielsen
 permalink: /fr/a-propos/
 navtitle: À Propos
