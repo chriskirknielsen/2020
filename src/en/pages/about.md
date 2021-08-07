@@ -87,7 +87,7 @@ If you like some fantasy or science-fiction books, let me know because I love th
 
 ## Sure, I'm a professional
 
-If you want to learn more about my skills, I don't have a formal résumé here, but you can take a peek at [my LinkedIn profile](https://www.linkedin.com/in/chriskirknielsen/) (I am **not** looking for new opportunities). I can program in HTML, CSS, JavaScript, PHP, and MySQL, I love the JAMstack for static sites, like Eleventy or Hugo, but I'm also very comfortable with WordPress. The Adobe Creative Suite (<abbr title="Photoshop">Ps</abbr>, <abbr title="Illustrator">Ai</abbr>, <abbr title="InDesign">Id</abbr>, <abbr title="After Effects">Ae</abbr>, <abbr title="Premiere Pro">Pr</abbr>) is dear to me, as well as Sketch and Cinema 4D. I'm a French/Danish dual-citizen, and a US "Green Card" holder — what a process that is!
+If you want to learn more about my skills, I don't have a formal résumé here, but you can take a peek at [my LinkedIn profile](https://www.linkedin.com/in/chriskirknielsen/) (I am **not** looking for new opportunities). I can program in HTML, CSS, JavaScript, PHP, and MySQL, I love the JAMstack for static sites, like Eleventy or Hugo, but I'm also very comfortable with a WordPress site. The Adobe Creative Suite (my usual suspects are Photoshop, Illustrator, InDesign, After Effects and Premiere Pro) is dear to me, as well as Sketch and Cinema 4D. I'm a French/Danish dual-citizen, and a US "Green Card" holder (what a process that is!), and… that about covers it.
 
 ## Find me on the web
 

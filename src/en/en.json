@@ -28,7 +28,8 @@
         "fixErrorPR": "Edit on GitHub",
         "externalLinks": "Find me on these other sites",
         "rssHint": "Subscribe to RSS feed",
-        "postAuthorFormat": "Post written by {0}. If you liked this content, you can <a href=\"{2}\">support me on Ko-fi</a>. If you have a comment, <a href=\"{1}\">tag me on Twitter</a>. Thanks a ton!"
+        "postAuthorFormat": "Post written by {0}",
+        "postSupportFormat": "If you have a comment, <a href=\"{0}\">tag me on Twitter</a>. If you liked this content, you can <a href=\"{1}\">support me on Ko-fi</a> or get a <a href=\"{2}\">shirt design of mine</a>. Thanks a ton!"
     },
     "langSwitchLabel": "Switch Language",
     "schemeSwitchLabel": "Toggle between dusk and dawn mode",
