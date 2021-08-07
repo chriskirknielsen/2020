@@ -100,7 +100,11 @@
 	<link rel="mask-icon" href="{{ "/" + metadata.assetUrl.icons.maskIcon | url }}" color="{{ tokens.colors.dusk.secondary.med }}">
 	<link rel="apple-touch-icon" href="{{ "/" + metadata.assetUrl.icons.appleTouchIcon | url }}">
 
+	{% if metaThemeColorOverride %}
+	<meta name="theme-color" content="{{ metaThemeColorOverride | safe }}">
+	{% else %}
 	<meta name="theme-color" content="{{ tokens.colors.dusk.primary.max }}" data-dusk="{{ tokens.colors.dusk.primary.max }}" data-dawn="{{ tokens.colors.dawn.primary.max }}">
+	{% endif %}
 
 	{# <link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}"> #}
 	
