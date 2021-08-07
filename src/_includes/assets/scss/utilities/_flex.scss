@@ -1,4 +1,5 @@
 .u-flex--column { flex-direction: column; }
+@include above-medium { .md_u-flex--row { flex-direction: row; } }
 .u-flex--wrap { flex-wrap: wrap; }
 .u-flex--stretch,
 .u-flex--stretchInline {

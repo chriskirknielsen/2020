@@ -48,7 +48,7 @@ This chain only moves the element by `X`, but if you animate the `A` value in th
 
 _*wherever custom property declarations are accepted._
 
-A circular orbit is fun but an infinity symbol? That's
+A circular orbit is fun but an infinity symbol? That's way more fun!
 
 We can set up some `--x` and `--y` properties to independently move our element in the shape of an infinity symbol, and register them with `@property`. I added a bit of trickery to make it easier for us:
 

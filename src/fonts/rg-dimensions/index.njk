@@ -1,0 +1,145 @@
+---
+draft: true
+title: RG Dimensions
+summary: A dimensional Ratchet & Clank font
+fontLove: 'raritanium'
+ownstyles: ['specimen-rg-dimensions']
+customMetaImage: rg-dimensions.jpg
+metaThemeColorOverride: '#071a42'
+fontSpecimen: { 'RGDimensions': [
+        {
+            'style': 'normal',
+            'weight': 900,
+            'file': 'RGDimensions-Regular.woff2'
+        },
+        {
+            'style': 'italic',
+            'weight': 900,
+            'file': 'RGDimensions-Italic.woff2'
+        }
+    ]
+}
+fontSpecimenSampleDefault: 'Dimensionator'
+fontSpecimenFallback: '"Helvetica Extended Black", "Helvetica Extended", "Helvetica Black", Helvetica'
+---
+
+<div class="main-heading-block">
+    <div class="main-heading-bg">
+        {% set svgCogwheelViewBoxSize = 113.653 %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 {{ svgCogwheelViewBoxSize }} {{ svgCogwheelViewBoxSize }}" class="cogwheel">
+            <g class="cogwheel-rings">
+                <circle cx="56.827" cy="56.827" r="32.216" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+                <path d="M113.153 60.64v-7.628l-12.463-8.015a45.132 45.132 0 00-4.485-10.811l3.147-14.491-5.394-5.394-14.49 3.147a45.152 45.152 0 00-10.812-4.485L60.641.5h-7.629l-8.015 12.463a45.13 45.13 0 00-10.81 4.485L19.694 14.3 14.3 19.695l3.147 14.491a45.136 45.136 0 00-4.485 10.81L.5 53.013v7.629l12.463 8.015a45.145 45.145 0 004.485 10.811L14.3 93.96l5.394 5.393 14.49-3.147a45.154 45.154 0 0010.812 4.485l8.015 12.463h7.629l8.015-12.463a45.16 45.16 0 0010.811-4.485l14.491 3.147 5.394-5.393-3.147-14.492a45.134 45.134 0 004.485-10.81zM56.826 98.442a41.615 41.615 0 1141.615-41.614A41.615 41.615 0 0156.826 98.44z"/>
+            </g>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg"width="170" height="140" viewBox="0 0 170 140" class="lombax-silhouette">
+            <path d="M133.353 64.065c-1.9-1.266-2.057-4.907-2.057-4.907 4.748-5.104 14.244-36.007 14.244-39.173s-1.9-11.158-1.9-11.158c-11.395 1.583-35.136 18.043-35.136 18.043-3.166-2.215-11.396-5.381-11.396-5.381l-5.698-7.597H78.59l-5.698 7.597s-8.23 3.166-11.396 5.381c0 0-23.741-16.46-35.137-18.043 0 0-1.899 7.993-1.899 11.158s9.496 34.069 14.245 39.173c0 0-.159 3.64-2.058 4.907a31.507 31.507 0 00-4.59 4.392V87.49l8.863 7.598s7.674 36.086 44.08 36.086 44.08-36.086 44.08-36.086l8.863-7.598V68.457a31.484 31.484 0 00-4.59-4.392zM71.63 40.976l7.754-16.244h11.23l7.754 16.244a.872.872 0 01-1.572.752l-7.282-15.253h-9.03l-7.282 15.253a.872.872 0 01-1.572-.752zm22.866 1.089a32.364 32.364 0 01-18.994 0l6.173-12.98h6.648zM39.06 18.6s8.606 1.859 22.554 12.068L58.29 35.06S45.064 21.765 39.06 18.6zM85 116.138c-41.075 0-41.31-39.596-41.31-47.68 0-4.393.475-20.932 9.734-20.932s24.69 19.823 24.69 19.823h13.77s15.433-19.823 24.692-19.823 9.734 16.539 9.734 20.931c0 8.085-.235 47.68-41.31 47.68zm26.709-81.077l-3.324-4.392C122.333 20.46 130.939 18.6 130.939 18.6c-6.003 3.164-19.23 16.46-19.23 16.46z"/>
+        </svg>
+
+    </div>
+    
+    <div class="main-heading-text">
+        <h1 class="main-heading-title text-center specimen specimen-italic">{{ title }}</h1>
+        <p class="main-heading-sub text-center font-italic">A dimensional Ratchet &amp; Clank font</p>
+    </div>
+
+</div>
+
+<p>
+    With the recent Ratchet &amp; Clank: Rift Apart game and its new logo, it was too tempting not to make a font out of it… What's more, it's based on a pretty standard Swiss-like typeface, making it easy to fill in the gaps for missing characters. Try it out and find the download link below!
+</p>
+
+<div class="full color-alt bg-alt padding-block">
+    <form class="full-content preview" id="font-previewer">
+        <div class="preview-input-wrap">
+            <label for="preview-input">Preview:</label>
+            <input type="text" placeholder="Type anything" id="preview-input" />
+            <button type="button" id="preview-update">Update</button>
+        </div>
+
+        <output for="preview-input">
+            <svg id="preview-svg" class="preview-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1000 300" width="1000" height="300">
+                <defs>
+                    <linearGradient id="specimenPreviewFill" x1="0" y1="0" x2="100%" y2="0" gradientTransform="scale(1 2)">
+                        <stop offset="0.1" stop-color="#c84823"/>
+                        <stop offset="0.5" stop-color="#f9af68"/>
+                        <stop offset="0.9" stop-color="#c84823"/>
+                    </linearGradient>
+
+                    <filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="120%" height="120%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
+                        <feSpecularLighting in="blur" surfaceScale="10" specularConstant="1" specularExponent="10" result="specOut" lighting-color="#ffffff">
+                            <fePointLight x="-2000" y="-5000" z="0"/>
+                        </feSpecularLighting>
+                        <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+                        <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
+                    </filter>
+
+                    <symbol id="sample-text">
+                        <text class="specimen" style="font-size:72px" text-anchor="middle" x="50%" y="200"><tspan id="preview-output" class="specimen-italic specimen-dlig specimen-ss01">{{ fontSpecimenSampleDefault }}</tspan><tspan>&nbsp;</tspan></text>
+                    </symbol>
+                </defs>
+                
+                <use xlink:href="#sample-text" fill="#cbcbcb" stroke="#cbcbcb" stroke-width="18" stroke-linecap="butt" stroke-linejoin="butt"/>
+                <use xlink:href="#sample-text" fill="#1a1c1c" stroke="#1a1c1c" stroke-width="16" stroke-linecap="butt" stroke-linejoin="butt"/>
+                <use xlink:href="#sample-text" fill="#424eaa" transform="translate(-2 2)" />
+                <use xlink:href="#sample-text" fill="#1a1c1c" transform="translate(-1 1)"/>
+                <use xlink:href="#sample-text" fill="url(#specimenPreviewFill)" filter="url(#bevel)" />
+            </svg>
+        </output>
+
+        <div class="preview-actions">
+            <div class="preview-options flow" style="--flow: 0.5rem;">
+                <p class="preview-option">
+                    <input type="checkbox" name="italic" data-preview-option id="preview-option-italic" checked />
+                    <label for="preview-option-italic">Enable Italics</label>
+                </p>
+                <p class="preview-option">
+                    <input type="checkbox" name="dlig" data-preview-option id="preview-option-dlig" checked />
+                    <label for="preview-option-dlig">Enable Ligatures</label>
+                </p>
+                <p class="preview-option">
+                    <input type="checkbox" name="ss01" data-preview-option id="preview-option-ss01" checked />
+                    <label for="preview-option-ss01">Enable Stylistic Alternates</label>
+                </p>
+            </div>
+
+            <button type="button" id="save-preview" class="preview-save" hidden>Save as PNG</button>
+        </div>
+    </form>
+</div>
+
+<h2>Uppercase</h2>
+<p class="specimen-set-demo specimen">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+
+<h2>Lowercase</h2>
+<p class="specimen-set-demo specimen">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+
+<h2>Numbers &amp; Punctuation</h2>
+<p class="specimen-set-demo specimen">1 2 3 4 5 6 7 8 9 0 _ - &</p>
+
+<h2>Ligatures &amp; Stylistic Alternate</h2>
+<p class="specimen-set-demo specimen">
+    <span class="specimen-dlig" title="et">et</span>
+    <span class="specimen-dlig" title="an">an</span>
+    <span class="specimen-ss01" title="t">t</span>
+</p>
+
+<div class="full padding-block">
+    <div class="full-content flow">
+        <h2>Shouldn't there be more stylised ligatures?</h2>
+        <p>
+            There are quite a few ligatures I left out, like <code>LA</code>, or the <code>A</code> or <code>N</code> being "truncated" by neighbouring characters. While I could create a large set of lignatures like that, it would end up being a lot of work that I just don't have time for right now. If you're using vector programs, you can use tools like Adobe Illustrator's Pathfinder to cut out part of a letter with another one to get that result.
+        </p>
+    </div>
+</div>
+
+<h2>Rights &amp; Distribution</h2>
+<p>While this is a free font for personal use, it may not be modified or redistributed without permission. To share this font, please refer to this page or use the link below.</p>
+
+<p class="text-center">
+    <a href="https://ratchet-galaxy.com/en/multimedia/fonts/rg-dimensions/italic" id="download" class="download-button">Download {{ title }} on Ratchet-Galaxy</a>
+</p>
+
+<p class="text-center font-italic">Ratchet &amp; Clank is a licence developed by Insomniac Games and published by Sony Interactive Entertainment Inc.</p>

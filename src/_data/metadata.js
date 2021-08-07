@@ -34,7 +34,7 @@ module.exports = {
   },
   assetUrl: {
     manifest: "manifest.json",
-    authorAvatar: "assets/img/avatar.png",
+    authorAvatar: "assets/img/profile.jpg",
     icons: {
       faviconPng: "assets/img/icon.png",
       faviconSvg: "assets/img/favicon.svg",

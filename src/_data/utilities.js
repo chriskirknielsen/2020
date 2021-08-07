@@ -1,7 +1,4 @@
 module.exports = { // Define a list of utility classes that are commonly used together to form a basic component/object
-    // Block formatting context
-    bfc : "u-bfc",
-    
     // Global link with box hover effect
     boxLink: "u-fontBold u-textDecoration--none u-border--double u-border--accent u-bg--grey-max h_u-c--grey-max h_u-bg--accent",
     glowBoxLink: "u-fontBold h_u-c--grey-min h_u-bg--grey-max u-border u-border--transparent h_u-border--accent u-border-radius h_u-glowBox--accent h_u-textShadow--currentBg",
@@ -9,7 +6,7 @@ module.exports = { // Define a list of utility classes that are commonly used to
 
     // Card component
     cardFlex: "u-flex--grow-1 u-flex--basis-0",
-    cardContainer: "u-margin--flexGap u-marginBlockStart--none md_u-displayFlex",
+    cardContainer: "u-gap u-displayFlex u-flex--column md_u-flex--row",
     cardBox: "u-padding u-c--text-color u-bg--grey-max u-border u-border--grey-med u-border-radius",
     cardBoxLink: "h_u-border--accent h_u-glowBox--accent",
     

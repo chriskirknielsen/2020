@@ -46,8 +46,10 @@ ownstyles: []
 {% if not original and metadata.showPostAuthor %}
 <hr>
 
-<footer class="u-displayFlex u-flex--startBlock">
-	<img src="{{ "/" + metadata.assetUrl.authorAvatar }}" alt="" width="64" height="64" class="u-width--4em u-marginInlineEnd--double u-border-radius--circle u-border--double u-border--accent">
-	<p>{% printf metadata.author.name, metadata.author.twitter, metadata.support.kofi %}{{ localisedContent.postAuthorFormat | safe }}{% endprintf %}</p>
+<footer class="u-padding u-border u-bg--grey-max u-c--grey-min">
+	<img src="{{ "/" + metadata.assetUrl.authorAvatar }}" alt="" width="64" height="64" class="u-width--4em u-floatLeft u-marginInlineEnd--double u-border-radius--circle u-border--double u-border--accent">
+	
+	<p class="u-textSmall u-fontItalic u-c--primary-min">{% printf metadata.author.name %}{{ localisedContent.postAuthorFormat }}{% endprintf %}</p>
+	<p>{% printf metadata.author.twitter, metadata.support.kofi, metadata.merch.TeePublic %}{{ localisedContent.postSupportFormat | safe }}{% endprintf %}</p>
 </footer>
 {% endif %}

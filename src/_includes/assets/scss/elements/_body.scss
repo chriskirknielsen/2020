@@ -10,6 +10,7 @@ html { // Min is lightest during dusk, Max is darkest
     --c-grey-min: #{ c('grey', 'min', $theme: 'dusk') };
     --c-grey-med: #{ c('grey', 'med', $theme: 'dusk') };
     --c-grey-max: #{ c('grey', 'max', $theme: 'dusk') };
+    --c-grey-max-alpha: #{ c('grey', 'max', 0, 'dusk') };
 
     --c-primary-min: #{ c('primary', 'min', $theme: 'dusk') };
     --c-primary-med: #{ c('primary', 'med', $theme: 'dusk') };
@@ -34,6 +35,7 @@ html[data-scheme="dawn"] { // Min is darkest during dawn, Max is brightest
     --c-grey-min: #{ c('grey', 'min', $theme: 'dawn') };
     --c-grey-med: #{ c('grey', 'med', $theme: 'dawn') };
     --c-grey-max: #{ c('grey', 'max', $theme: 'dawn') };
+    --c-grey-max-alpha: #{ c('grey', 'max', 0, 'dawn') };
 
     --c-primary-min: #{ c('primary', 'min', $theme: 'dawn') };
     --c-primary-med: #{ c('primary', 'med', $theme: 'dawn') };
