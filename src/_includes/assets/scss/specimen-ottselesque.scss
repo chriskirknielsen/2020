@@ -139,16 +139,18 @@ li + li {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 
-    &::before,
-    &::after {
-        flex: 1 1 auto;
-        content: '';
-        display: block;
-        height: 2px;
-        margin: 0 2rem;
+    @media screen and (min-width: 380px) {
+        &::before,
+        &::after {
+            flex: 1 1 auto;
+            content: '';
+            display: block;
+            height: 2px;
 
-        background: currentColor;
+            background: currentColor;
+        }
     }
 }
 

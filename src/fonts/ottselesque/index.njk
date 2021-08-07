@@ -90,8 +90,10 @@ fontSpecimenFallback: 'fantasy'
                     </filter>
 
                     <filter id="noise" x="-10%" y="-10%" width="120%" height="120%">
-                        <feTurbulence baseFrequency="0.05 0.05" result="NOISE" numOctaves="2" />
-                        <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="5" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>
+                        <feTurbulence baseFrequency="0.05 0.05" result="turb" numOctaves="2" />
+                        <feDisplacementMap in="SourceGraphic" in2="turb" result="displace" scale="5" xChannelSelector="R" yChannelSelector="R"/>
+                        <feGaussianBlur in="displace" stdDeviation="2" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -12" result="goo" />
                     </filter>
 
                     <symbol id="sample-text">
