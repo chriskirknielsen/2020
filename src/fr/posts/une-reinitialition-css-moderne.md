@@ -5,7 +5,6 @@ date: 2019-10-30
 original: https://hankchizljaw.com/wrote/a-modern-css-reset/
 originalTitle: Andy Bell - A Modern CSS Reset
 tags:
-  - post
   - css
 ---
 

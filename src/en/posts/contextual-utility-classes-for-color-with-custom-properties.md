@@ -5,7 +5,6 @@ externalHost: CSS-Tricks
 externalUrl: https://css-tricks.com/contextual-utility-classes-for-color-with-custom-properties/
 date: 2019-08-14
 tags:
-  - post
   - css
 ---
 

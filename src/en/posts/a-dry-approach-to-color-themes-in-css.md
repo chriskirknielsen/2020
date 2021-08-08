@@ -5,7 +5,6 @@ externalHost: CSS-Tricks
 externalUrl: https://css-tricks.com/a-dry-approach-to-color-themes-in-css/
 date: 2021-02-24
 tags:
-  - post
   - css
 ---
 

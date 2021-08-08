@@ -5,7 +5,6 @@ externalHost: Smashing Magazine
 externalUrl: https://www.smashingmagazine.com/2019/05/switch-wordpress-hugo/
 date: 2019-05-22
 tags:
-  - post
   - wordpress
   - hugo
   - static site generator
