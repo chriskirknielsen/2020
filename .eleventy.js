@@ -97,7 +97,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("cloudinaryEscape", function(string) {
-		return encodeURIComponent(string);
+		return encodeURIComponent(string).replaceAll(',', "%252C"); // Double-escape commas to avoid being seens as a parameter-separating comma
 	});
 
 	eleventyConfig.addFilter("split", function(string, delimiter) {
