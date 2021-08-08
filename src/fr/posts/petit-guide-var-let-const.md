@@ -36,7 +36,7 @@ Envelopper toutes nos opérations dans une fonction pour protéger nos déclarat
 
 ## Les nouveaux venus
 
-Avec `let` et `const`, ce problème est réglé : les variables déclarées dans un _scope_ ne sont accessibles que depuis ce même _scope_. Donc pour revenir à notre premier exemple avec `let` à la place de `var` :
+Avec `let` et `const`, plus de problème : les variables déclarées dans un _scope_ ne sont accessibles que depuis ce même _scope_. Donc pour revenir à notre premier exemple avec `let` à la place de `var` :
 
 ```js
 for (var i = 1; i <= 10; i++) {
@@ -49,7 +49,7 @@ console.log(txt); // Renvoie une erreur, "`txt` is undefined" car `txt` n'existe
 J'ai également utilisé la syntaxe moderne appelée _template literals_ (ou en français [littéraux de gabarits](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals)) car si nous pouvons nous permettre `let`, nous pouvons aussi nous permettre cette syntaxe !
 {% endcallout %}
 
-Avec `let` ici, nou évitons le besoin de recourir à une fonction pour protéger notre variable de fuiter en-dehors de son cadre.
+Avec `let` ici, nous évitons le besoin de recourir à une fonction pour protéger notre variable de fuiter en-dehors de son cadre.
 
 Vous pouvez employer l'exact même méthodologie que `let` avec `const`, mais avec une différence clé.
 
