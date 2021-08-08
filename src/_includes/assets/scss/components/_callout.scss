@@ -15,7 +15,7 @@
         100% .11em;
 
     html[lang="en"] &::before { content: "Note"; }
-    html[lang="fr"] &::before { content: "N.B."; }
+    html[lang="fr"] &::before { content: "Nota Bene"; }
     &[data-callout][class]::before { content: attr(data-callout); } // If provided, override pseudo's text content
 
     &::before {
