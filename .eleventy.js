@@ -28,7 +28,9 @@ module.exports = function(eleventyConfig) {
 
 	/* PLUGINS */
 	eleventyConfig.addPlugin(pluginRss);
+
 	eleventyConfig.addPlugin(blogTools);
+
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		templateFormats: ["md","html","njk"],
 		preAttributes: {
@@ -36,6 +38,7 @@ module.exports = function(eleventyConfig) {
 			// 'data-lang': function (context) { return context.language.toUpperCase(); }
 		}
 	});
+
 	eleventyConfig.addPlugin(copyLocalAssets, { verbose: true });
 
 	/* SHORTCODES */
@@ -113,8 +116,24 @@ module.exports = function(eleventyConfig) {
 		return `<div style="white-space: pre-wrap;">${ unescape(str) }</div>`;
 	});
 
-	/* LOCALISATION */
+	// -- DATE FILTERS
+	// Date formatting (custom)
+	eleventyConfig.addFilter("date", function(date, format, locale = 'en') {
+		moment.locale(locale);
+		return moment(date).utc().format(format); // Adjust for UTC
+	});
 
+	// Date formatting (human readable)
+	eleventyConfig.addFilter("readableDate", dateObj => {
+		return DateTime.fromJSDate(dateObj).toUTC().toFormat("dd LLL yyyy");
+	});
+
+	// Date formatting (machine readable)
+	eleventyConfig.addFilter("machineDate", dateObj => {
+		return DateTime.fromJSDate(dateObj).toUTC().toFormat("yyyy-MM-dd");
+	});
+
+	// -- LOCALISATION FILTERS
 	// Sort a collection of pages for the navigation based on the locale's navSet setting
 	eleventyConfig.addFilter('sortNavLocale', function(collection, navSet) {
 		if (!Array.isArray(collection)) { return collection; }
@@ -152,6 +171,31 @@ module.exports = function(eleventyConfig) {
 		return filtered;
 	});
 
+	// -- MINIFICATION FILTERS
+	// Minify HTML/SVG
+	eleventyConfig.addFilter("htmlmin", function(code) {
+		return htmlmin.minify(code, {
+			useShortDoctype: true,
+			removeComments: true,
+			collapseWhitespace: true
+		});
+	});
+
+	// Minify CSS
+	eleventyConfig.addFilter("cssmin", function(code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
+
+	// Minify JS
+	eleventyConfig.addFilter("jsmin", function(code) {
+		let minified = UglifyJS.minify(code);
+		if (minified.error) {
+			console.log("UglifyJS error: ", minified.error);
+			return code;
+		}
+		return minified.code;
+	});
+
 	/* COLLECTIONS */
 
 	eleventyConfig.addCollection("pages_all", function(collection) {
@@ -172,7 +216,7 @@ module.exports = function(eleventyConfig) {
 		);
 	});
 
-	// English
+	// -- ENGLISH
 	eleventyConfig.addCollection("pages_en", function(collection) {
 		return [].concat(
 			collection.getFilteredByGlob("./src/en/pages/*.md"),
@@ -187,7 +231,7 @@ module.exports = function(eleventyConfig) {
 		);
 	});
 
-	// French
+	// -- FRENCH
 	eleventyConfig.addCollection("pages_fr", function(collection) {
 		return [].concat(
 			collection.getFilteredByGlob("./src/fr/pages/*.md"),
@@ -221,49 +265,7 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	/* DATES */
-
-	eleventyConfig.addFilter("date", function(date, format, locale) {
-		locale = locale ? locale : "en";
-		moment.locale(locale);
-		return moment(date).utc().format(format); // Adjust for UTC
-	});
-
-	// Date formatting (human readable)
-	eleventyConfig.addFilter("readableDate", dateObj => {
-		return DateTime.fromJSDate(dateObj).toUTC().toFormat("dd LLL yyyy");
-	});
-
-	// Date formatting (machine readable)
-	eleventyConfig.addFilter("machineDate", dateObj => {
-		return DateTime.fromJSDate(dateObj).toUTC().toFormat("yyyy-MM-dd");
-	});
-
-	/* MINIFICATION */
-
-	// Minify HTML/SVG
-	eleventyConfig.addFilter("htmlmin", function(code) {
-		return htmlmin.minify(code, {
-			useShortDoctype: true,
-			removeComments: true,
-			collapseWhitespace: true
-		});
-	});
-
-	// Minify CSS
-	eleventyConfig.addFilter("cssmin", function(code) {
-		return new CleanCSS({}).minify(code).styles;
-	});
-
-	// Minify JS
-	eleventyConfig.addFilter("jsmin", function(code) {
-		let minified = UglifyJS.minify(code);
-		if (minified.error) {
-			console.log("UglifyJS error: ", minified.error);
-			return code;
-		}
-		return minified.code;
-	});
+	/* TRANSFORMS */
 
 	// PurgeCSS
 	eleventyConfig.addTransform('purge-and-inline-css', async (content, outputPath) => {
@@ -308,13 +310,13 @@ module.exports = function(eleventyConfig) {
 		return content;
 	});
 
+	/* MISC OPTIONS */
+
 	eleventyConfig.setFrontMatterParsingOptions({
 		excerpt: true,
 		// Optional, default is "---"
 		excerpt_separator: "<!-- excerpt -->"
 	});
-
-	
 
 	// Don't process folders with static assets e.g. images
 	eleventyConfig.addPassthroughCopy({
@@ -385,15 +387,11 @@ module.exports = function(eleventyConfig) {
 		.use(markdownItFootnote)
 	);
 
+	/* TIME TO JAM */
+
 	return {
 		templateFormats: ["md", "njk", "html", "liquid"],
-
-		// If your site lives in a different subdirectory, change this.
-		// Leading or trailing slashes are all normalized away, so don’t worry about it.
-		// If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-		// This is only used for URLs (it does not affect your file structure)
 		pathPrefix: "/",
-
 		markdownTemplateEngine: "liquid",
 		htmlTemplateEngine: "njk",
 		dataTemplateEngine: "njk",
