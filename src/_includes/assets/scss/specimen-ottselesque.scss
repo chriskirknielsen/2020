@@ -44,7 +44,7 @@ h2 {
 
         border-radius: 50% 50% 50% 50% / 54% 54% 46% 46%; // Precursor Orb shape
         background: radial-gradient(ellipse farthest-side at top left, var(--palette-02) 0%, var(--palette-07) 33%, var(--palette-06) 67%, var(--palette-04) 100%);
-        box-shadow: 0 0 0 1px var(--bg-main);
+        box-shadow: 0 0 3px var(--bg-main);
     }
 }
 
