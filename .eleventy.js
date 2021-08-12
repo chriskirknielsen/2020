@@ -321,6 +321,7 @@ module.exports = function(eleventyConfig) {
 	// Don't process folders with static assets e.g. images
 	eleventyConfig.addPassthroughCopy({
 		[`${root}/_includes/assets/fonts`]: "/assets/fonts",
+		[`${root}/_includes/assets/img/designs`]: "/assets/img/designs",
 		[`${root}/_includes/assets/img`]: "/assets/img",
 		[`${root}/_includes/assets/css`]: "/assets/css",
 		[`${root}/_includes/assets/jsmin`]: "/assets/js",
