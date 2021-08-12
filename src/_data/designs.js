@@ -19,7 +19,7 @@ module.exports = {
     },
     vhsCss: {
         name: 'Blank VHS CSS',
-        note: 'For this poster, avoid TeePublic',
+        note: 'For posters, use RedBubble or Society6',
         img: 'vhs-css.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-CSS-by-ckirknielsen/72710420.6VDG0',
@@ -30,7 +30,7 @@ module.exports = {
     },
     vhsHtml: {
         name: 'Blank VHS HTML',
-        note: 'For this poster, avoid TeePublic',
+        note: 'For posters, use RedBubble or Society6',
         img: 'vhs-html.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-HTML-by-ckirknielsen/73662806.CW2C9.XYZ',
@@ -41,7 +41,7 @@ module.exports = {
     },
     vhsSvg: {
         name: 'Blank VHS SVG',
-        note: 'For this poster, avoid TeePublic',
+        note: 'For posters, use RedBubble or Society6',
         img: 'vhs-svg.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-SVG-by-ckirknielsen/80893683.DYMRA',
@@ -52,7 +52,7 @@ module.exports = {
     },
     vhsJs: {
         name: 'Blank VHS JS',
-        note: 'For this poster, avoid TeePublic',
+        note: 'For posters, use RedBubble or Society6',
         img: 'vhs-js.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-JavaScript-ECMAScript-by-ckirknielsen/85189202.CW2C9.XYZ',
