@@ -23,6 +23,10 @@
 // }
 
 .o-inlineList {
+    display: inline-block;
+
+    & > li { display: inline; }
+    
     & > li:not(:last-child) {
         &::after {
             content: " ";

@@ -12,8 +12,8 @@
 
 /* Remove default padding */
 /* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
+ul:where([class]),
+ol:where([class]) {
     padding: 0;
     list-style: none;
 }
@@ -25,8 +25,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul:where([class]),
+ol:where([class]),
 li,
 figure,
 figcaption,
