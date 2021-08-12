@@ -8,7 +8,7 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
 <section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
 
 {% for key, design in designs %}
-  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border u-border--primary-med">
+  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med">
     {% if design.img %}
     <div class="card__image u-flex--shrink-0 u-bg--grey-med">
         <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">

@@ -45,18 +45,14 @@ Quand je code, j'utilise VS Code mais parfois, j'aimerais retrouver des fonction
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
-  <a href="{{ metadata.merch.TeePublic }}" class="u-c--grey-min">{%- include "assets/img/shirt.svg" -%}</a>
+  <a href="/designs" class="u-c--grey-min">{%- include "assets/img/shirt.svg" -%}</a>
   {%- endset -%}
   {{ shirt | htmlmin | safe }}
 </div>
 
 ### T-Shirts, Affiches & Compagnie
 
-Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations inspirées du monde du développement web que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez les boîtiers VHS ou le style rétro des années 80, ça pourrait bien vous plaire : retrouvez-les sur {% for store, link in metadata.merch -%}
-  {{- ", " if (not loop.first and not loop.last) -}}
-  {{- " " + andWord + " " if loop.last -}}
-  <a href="{{ link }}">{{ store }}</a>
-{%- endfor %}. Votre soutien signifierait beaucoup à mes yeux !
+Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vous pouvez trouver quelques illustrations inspirées du monde du développement web que j'ai réalisées que vous pouvez acheter sur des t-shirts et divers autres formats — si vous aimez les boîtiers VHS ou le style rétro des années 80, ça pourrait bien vous plaire : j'ai une [galerie de t-shirts et posters](/designs) sur plusieurs sites. Votre soutien signifierait beaucoup à mes yeux !
 
 ### Chronoise
 
