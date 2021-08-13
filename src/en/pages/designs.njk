@@ -5,10 +5,32 @@ subtitle: A collection of art prints and shirt designs I've made
 summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
 ---
 
-<section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
+<fieldset class="u-displayFlex u-margin--none u-padding--none | u-border--none | filtering">
+  <legend class="u-padding--none | u-fontBold">Filter:</legend>
+  {% set tagClasses = "u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half | u-fontBold u-border u-border--accent u-border-radius" %}
+  <div class="u-posRelative u-displayFlex u-gap--small u-flex--wrap filtering-list">
+    <div>
+      <input type="radio" name="filter" class="visually-hidden" id="filter-all" value="" checked>
+      <label for="filter-all" class="{{ tagClasses }}">All</label>
+    </div>
 
+    {% for tag in designs | pluck('tags') | flatten | unique | sort %}
+    <div>
+      <input type="radio" name="filter" id="filter-{{ tag }}" class="visually-hidden" value="{{ tag | makeLowercase }}">
+      <label for="filter-{{ tag }}" class="{{ tagClasses }}">{{ tag }}</label>
+    </div>
+    {% endfor %}
+  </div>
+</fieldset>
+
+<section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
 {% for key, design in designs %}
-  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med">
+  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med" data-tags="
+    {%- for tag in design.tags -%}
+    {{ tag }}
+    {%- if not loop.last %},{% endif -%}
+    {%- endfor-%}
+  ">
     {% if design.img %}
     <div class="card__image u-flex--shrink-0 u-bg--grey-med">
         <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">
@@ -31,3 +53,38 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
   </article>
 {% endfor %}
 </section>
+
+<script>
+  {% set designsFilter %}
+  var hashIndicator = 'filter:';
+  var initialHash = window.location.hash.slice(1);
+  var items = [].slice.call(document.querySelectorAll('[data-tags]'));
+
+  function filterTo(filter) {
+    console.log('set filter to', filter);
+    var isShowAll = (filter === '');
+    
+    items.forEach(function (item) {
+      var tags = item.getAttribute('data-tags').split(',');
+      var isShown = (tags.indexOf(filter) > -1) || isShowAll;
+      item.hidden = !isShown;
+    });
+
+    history.replaceState(undefined, '', filter ? ('#' + hashIndicator + filter) : '#');
+  }
+
+  if (initialHash.indexOf(hashIndicator) === 0) {
+    var baseFilter = initialHash.slice(hashIndicator.length);
+    document.querySelector('#filter-'+(baseFilter || 'all')).checked = true;
+    filterTo(baseFilter);
+  }
+
+  document.addEventListener('input', function (e) {
+    var radio = e.target.closest('[name="filter"]');
+    if (!radio) { return; }
+    var filter = radio.value;
+    filterTo(filter);
+  });
+  {% endset %}
+  {{ designsFilter | jsmin | safe }}
+</script>

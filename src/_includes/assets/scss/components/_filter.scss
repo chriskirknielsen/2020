@@ -1,0 +1,18 @@
+.filtering {
+}
+
+.filtering-list {
+    input[type="radio"]:hover + label {
+        color: var(--c-grey-max);
+        background: var(--c-grey-min);
+    }
+
+    input[type="radio"]:focus-visible + label {
+        outline: 4px dashed var(--c-grey-min);
+    }
+
+    input[type="radio"]:checked + label {
+        color: var(--c-grey-max);
+        background: var(--color-accent);
+    }
+}

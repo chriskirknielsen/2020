@@ -48,7 +48,7 @@
 
 
 /* Display */
-
+[hidden] { display: none !important; }
 .u-displayNone { display: none; }
 .u-displayBlock { display: block; }
 .u-displayInlineBlock { display: inline-block; }
@@ -92,6 +92,7 @@
 // .u-height--100 { height: 100%; }
 
 // Flex & Grid
+.u-gap--small { gap: #{ $spacing * 0.5 }; }
 .u-gap { gap: #{ $spacing * 1.5 }; }
 
 /* Margin */
@@ -212,7 +213,7 @@
 .u-padding--double { padding: #{ $spacing * 2 }; }
 .u-padding--half { padding: #{ $spacing * 0.5 }; }
 // .u-padding--quarter { padding: #{ $spacing * 0.25 }; }
-// .u-padding--none { padding: 0; }
+.u-padding--none { padding: 0; }
 .u-paddingBlock {
     padding-top: #{ $spacing };
     padding-bottom: #{ $spacing };

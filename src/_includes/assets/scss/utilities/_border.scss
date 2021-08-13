@@ -1,5 +1,6 @@
 /* Border */
 
+.u-border--none { border: none; }
 .u-border { border: #{ $border-base-size } solid currentColor; }
 .u-border--double { border: #{ $border-base-size * 2 } solid currentColor; }
 

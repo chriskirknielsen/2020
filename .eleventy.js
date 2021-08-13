@@ -108,6 +108,20 @@ module.exports = function(eleventyConfig) {
 		return string.trim().split(delimiter);
 	});
 
+	eleventyConfig.addFilter("pluck", function(list, key) {
+		let arr = (Array.isArray(list)) ? list : Object.values(list);
+		return arr.map(o => o[ key ]);
+	});
+
+	eleventyConfig.addFilter("flatten", function(array) {
+		const flatten = (arr) => arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) ? flatten(cur) : cur), []);
+		return flatten(array);
+	});
+
+	eleventyConfig.addFilter("unique", function(array) {
+		return [...new Set(array)];
+	});
+
 	eleventyConfig.addFilter('makeUppercase', function(string) { return string.toUpperCase() });
 	eleventyConfig.addFilter('makeLowercase', function(string) { return string.toLowerCase() });
 

@@ -95,7 +95,7 @@ module.exports = {
     },
     powercellHunters: {
         name: 'Powercell Hunters',
-        note: 'Jak And Daxter',
+        note: 'A Jak And Daxter design',
         img: 'powercell-hunters.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Powercell-Hunters-by-ckirknielsen/84952593.2EZFS',
