@@ -124,14 +124,32 @@ fontSpecimenFallback: 'fantasy'
     </form>
 </div>
 
-<h2>Uppercase</h2>
-<p class="specimen-set-demo specimen">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+<div class="specimen-set-demo demo-grid specimen" style="direction: rtl;">
+    <p class="specimen specimen-dlig demo-grid-sample" style="direction: ltr;">
+        Powercell Hunters
+    </p>
 
-<h2>Lowercase</h2>
-<p class="specimen-set-demo specimen">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+    <p class="demo-grid-single" style="direction: ltr;">
+        {% for char in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '_', ':', '-', '.', ',', "'", '&'] %}
+        <span>{{ char }}</span>
+        {% endfor %}
+    </p>
+</div>
 
-<h2>Numbers &amp; Punctuation</h2>
-<p class="specimen-set-demo specimen">1 2 3 4 5 6 7 8 9 0 _ : - . , ' &</p>
+<div class="specimen-set-demo demo-grid specimen">
+    {% set alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'] %}
+    <p class="demo-grid-multi">
+        {% for char in alphabet %}
+        <span>{{ char }}</span>
+        {% endfor %}
+    </p>
+
+    <p class="demo-grid-multi">
+        {% for char in alphabet %}
+        <span>{{ char | makeLowercase }}</span>
+        {% endfor %}
+    </p>
+</div>
 
 <h2>Ligatures</h2>
 {% set ligaList = ['JaKandDAXTER', 'JaK', '&nbsp;and&nbsp;', 'DAXTER', 'JaKh', 'XTER', 'II', 'III', 'IV', 'KrI', 'Pro', 'TER', 'ER', 'KI', 'Kh', 'Ko', 'Kr', 'LA', 'LE', 'Le', 'Ll', 'Lo', 'RO', 'TE', 'XT', 'le', 'li', 'll', 'ls', 'lu', 'rI', 'ri', 'rr', 'ss', 'tt'] %}

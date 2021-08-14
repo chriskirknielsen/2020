@@ -226,6 +226,51 @@ li + li {
 .specimen { font-weight: 400; }
 .specimen-set-demo { font-size: 3rem; }
 
+.demo-grid {
+    $gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+    gap: $gap;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+    line-height: 1;
+
+    & + & { --flow: #{ $gap }; }
+}
+
+.demo-grid-stackflip {
+    direction: rtl;
+
+    & > * {
+        direction: ltr;
+    }
+}
+
+.demo-grid-single {
+    margin-right: auto;
+    text-align: left;
+    
+    & > * {
+        display: inline-block;
+        min-width: 1em;
+
+        text-align: center;
+    }
+}
+
+.demo-grid-sample {
+    font-size: 2em;
+    line-height: 0.8;
+}
+
+.demo-grid-multi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
+    justify-content: space-between;
+}
+
 .full,
 .footer {
     color: var(--color-main);

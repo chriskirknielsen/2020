@@ -86,5 +86,5 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
     filterTo(filter);
   });
   {% endset %}
-  {{ designsFilter | jsmin | safe }}
+  {{- designsFilter | jsmin | safe -}}
 </script>
