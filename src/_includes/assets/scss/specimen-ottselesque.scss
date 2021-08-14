@@ -238,6 +238,8 @@ li + li {
     line-height: 1;
 
     & + & { --flow: #{ $gap }; }
+
+    & * { line-height: 1; }
 }
 
 .demo-grid-stackflip {
@@ -261,8 +263,8 @@ li + li {
 }
 
 .demo-grid-sample {
-    font-size: 2em;
-    line-height: 0.8;
+    font-size: 4rem;
+    font-size: clamp(4rem, calc(4rem + (6 - 4) * ((100vw - 20rem) / (64 - 20))), 6rem);
 }
 
 .demo-grid-multi {

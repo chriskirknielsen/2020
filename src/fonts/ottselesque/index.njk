@@ -76,8 +76,8 @@ fontSpecimenFallback: 'fantasy'
                 <defs>
                     <linearGradient id="specimenPreviewFill" x1="0" y1="0" x2="0" y2="100%">
                         <stop offset="0.2" stop-color="#ff361a"/>
-                        <stop offset="0.5" stop-color="#ecd237"/>
-                        <stop offset="0.8" stop-color="#ff361a"/>
+                        <stop offset="0.6" stop-color="#ecd237"/>
+                        <stop offset="0.9" stop-color="#ff361a"/>
                     </linearGradient>
 
                     <filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="120%" height="120%">
@@ -124,12 +124,12 @@ fontSpecimenFallback: 'fantasy'
     </form>
 </div>
 
-<div class="specimen-set-demo demo-grid specimen" style="direction: rtl;">
-    <p class="specimen specimen-dlig demo-grid-sample" style="direction: ltr;">
+<div class="specimen-set-demo demo-grid specimen demo-grid-stackflip">
+    <p class="specimen specimen-dlig demo-grid-sample">
         Powercell Hunters
     </p>
 
-    <p class="demo-grid-single" style="direction: ltr;">
+    <p class="demo-grid-single">
         {% for char in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '_', ':', '-', '.', ',', "'", '&'] %}
         <span>{{ char }}</span>
         {% endfor %}
