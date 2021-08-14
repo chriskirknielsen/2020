@@ -101,6 +101,6 @@ module.exports = {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Powercell-Hunters-by-ckirknielsen/84952593.2EZFS',
             'TeePublic': 'https://www.teepublic.com/t-shirt/23558909-powercell-hunters',
         },
-        tags: ['video games']
+        tags: ['video-games']
     },
 }
