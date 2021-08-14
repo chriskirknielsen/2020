@@ -227,6 +227,66 @@ code {
 }
 .specimen-set-demo { font-size: 3rem; }
 
+.demo-grid {
+    $gap: 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+    gap: $gap;
+    justify-content: space-between;
+    align-items: start;
+
+    text-align: center;
+    line-height: 1;
+
+    & + & { --flow: #{ $gap }; }
+
+    & * { line-height: 1; }
+}
+
+.demo-grid-heading {
+    &::before { content: none; }
+
+    padding: 0.5em 1em 0.25em;
+    
+    text-align: left;
+    font-size: 1rem;
+    color: var(--palette-04, rebeccapurple);
+    background: linear-gradient(-45deg, transparent 0.5em, var(--palette-06, orange) 0, var(--palette-07, yellow));
+
+    * + & { margin-top: 1em; }
+    & + * { margin-top: 0.5em; }
+}
+
+.demo-grid-single {
+    margin-right: auto;
+    text-align: left;
+    
+    & > span {
+        display: inline-block;
+        min-width: 0.75em;
+
+        text-align: center;
+    }
+}
+
+.demo-grid-sample {
+    padding: 1em;
+
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, calc(1.5rem + (2 - 1.5) * ((100vw - 20rem) / (64 - 20))), 2rem);
+
+    color: var(--palette-04, rebeccapurple);
+    background: linear-gradient(-45deg, transparent 1rem, var(--palette-06, orange) 0, var(--palette-07, yellow));
+    text-shadow: 1px 1px 0 var(--palette-01);
+}
+
+.demo-grid-multi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1.25em, 1fr));
+    justify-content: space-between;
+}
+
 code,
 .full,
 .footer {

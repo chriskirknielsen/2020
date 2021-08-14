@@ -242,21 +242,13 @@ li + li {
     & * { line-height: 1; }
 }
 
-.demo-grid-stackflip {
-    direction: rtl;
-
-    & > * {
-        direction: ltr;
-    }
-}
-
 .demo-grid-single {
     margin-right: auto;
     text-align: left;
     
     & > * {
         display: inline-block;
-        min-width: 1em;
+        min-width: 0.825em;
 
         text-align: center;
     }
@@ -265,6 +257,7 @@ li + li {
 .demo-grid-sample {
     font-size: 4rem;
     font-size: clamp(4rem, calc(4rem + (6 - 4) * ((100vw - 20rem) / (64 - 20))), 6rem);
+    line-height: 0.8;
 }
 
 .demo-grid-multi {

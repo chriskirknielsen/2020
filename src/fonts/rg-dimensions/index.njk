@@ -110,23 +110,51 @@ fontSpecimenFallback: '"Helvetica Extended Black", "Helvetica Extended", "Helvet
     </form>
 </div>
 
-<h2>Uppercase</h2>
-<p class="specimen-set-demo specimen">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+<div class="specimen-set-demo demo-grid specimen">
+    {% set alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'] %}
 
-<h2>Lowercase</h2>
-<p class="specimen-set-demo specimen">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+    <div>
+        <h2 class="demo-grid-heading">Uppercase</h2>
+        <p class="demo-grid-multi">
+            {% for char in alphabet %}
+            <span>{{ char }}</span>
+            {% endfor %}
+        </p>
+    </div>
 
-<h2>Numbers &amp; Punctuation</h2>
-<p class="specimen-set-demo specimen">1 2 3 4 5 6 7 8 9 0 _ - &</p>
+    <div>
+        <h2 class="demo-grid-heading">Lowercase</h2>
+        <p class="demo-grid-multi">
+            {% for char in alphabet %}
+            <span>{{ char | makeLowercase }}</span>
+            {% endfor %}
+        </p>
+    </div>
+</div>
 
-<h2>Ligatures &amp; Stylistic Alternate</h2>
-<p class="specimen-set-demo specimen">
-    <span class="specimen-dlig" title="et">et</span>
-    <span class="specimen-dlig" title="an">an</span>
-    <span class="specimen-ss01" title="t">t</span>
-</p>
+<div class="specimen-set-demo demo-grid specimen">
+    <div>
+        <h2 class="demo-grid-heading">Numbers and Punctuation</h2>
+        <p class="demo-grid-single">
+            {% for char in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '_', '-', '&'] %}
+            <span>{{ char }}</span>
+            {% endfor %}
+        </p>
 
-<div class="full padding-block">
+        <h2 class="demo-grid-heading">Ligatures &amp; Stylistic Alternate</h2>
+        <p class="demo-grid-single">
+            <span class="specimen-dlig" title="Ligature: et">et</span>
+            <span class="specimen-dlig" title="Ligature: an">an</span>
+            <span class="specimen-ss01" title="Stylistic Alternate: t">t</span>
+        </p>
+    </div>
+
+    <p class="specimen specimen-dlig specimen-italic demo-grid-sample">
+        This is what I get for giving my assistant paid paternity leave
+    </p>
+</div>
+
+<div class="full padding-block" style="--flow: 6rem;">
     <div class="full-content flow">
         <h2>Shouldn't there be more stylised ligatures?</h2>
         <p>

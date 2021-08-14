@@ -101,8 +101,8 @@ fontSpecimenFallback: 'fantasy'
                     </symbol>
                 </defs>
                 
-                <use xlink:href="#sample-text" fill="#ffffff" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
-                <use xlink:href="#sample-text" fill="#262425" stroke="#262425" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#noise)" transform="translate(-0.5 -0.5)"/>
+                <use xlink:href="#sample-text" fill="#ffffff" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"/>
+                <use xlink:href="#sample-text" fill="#262425" stroke="#262425" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#noise)" transform="translate(-0.5 -0.5)" aria-hidden="true"/>
                 <use xlink:href="#sample-text" fill="url(#specimenPreviewFill)" filter="url(#bevel)" />
             </svg>
         </output>
@@ -124,30 +124,33 @@ fontSpecimenFallback: 'fantasy'
     </form>
 </div>
 
-<div class="specimen-set-demo demo-grid specimen demo-grid-stackflip">
-    <p class="specimen specimen-dlig demo-grid-sample">
-        Powercell Hunters
+<div class="specimen-set-demo demo-grid specimen">
+    {% set alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'] %}
+    <h2 class="visually-hidden">Uppercase</h2>
+    <p class="demo-grid-multi">
+        {% for char in alphabet %}
+        <span>{{ char }}</span>
+        {% endfor %}
     </p>
 
-    <p class="demo-grid-single">
-        {% for char in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '_', ':', '-', '.', ',', "'", '&'] %}
-        <span>{{ char }}</span>
+    <h2 class="visually-hidden">Lowercase</h2>
+    <p class="demo-grid-multi">
+        {% for char in alphabet %}
+        <span>{{ char | makeLowercase }}</span>
         {% endfor %}
     </p>
 </div>
 
 <div class="specimen-set-demo demo-grid specimen">
-    {% set alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'] %}
-    <p class="demo-grid-multi">
-        {% for char in alphabet %}
+    <h2 class="visually-hidden">Numbers and Punctuation</h2>
+    <p class="demo-grid-single">
+        {% for char in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '_', ':', '-', '.', ',', "'", '&'] %}
         <span>{{ char }}</span>
         {% endfor %}
     </p>
 
-    <p class="demo-grid-multi">
-        {% for char in alphabet %}
-        <span>{{ char | makeLowercase }}</span>
-        {% endfor %}
+    <p class="specimen specimen-dlig demo-grid-sample">
+        Powercell Hunters
     </p>
 </div>
 
