@@ -17,6 +17,20 @@
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
 
+## Special page redirects
+[[redirects]]
+  from = "/design"
+  to = "/designs"
+[[redirects]]
+  from = "/shirts"
+  to = "/designs"
+[[redirects]]
+  from = "/posters"
+  to = "/designs"
+[[redirects]]
+  from = "/art"
+  to = "/designs"
+
 ## Uses redirect
 [[redirects]]
   from = "/uses"
