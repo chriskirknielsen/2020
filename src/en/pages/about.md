@@ -26,7 +26,7 @@ navtitle: About
 
   This led me to study **graphic and motion design** for 4 years, with notable interest in **typography, colour theory, composition, as well as animation**. That said, I kept learning about the web, making blogs and other small projects. I made my way into **freelancing for a few years**, balancing design and development, which was great for me.
 
-  I eventually came to realise what I'd rather be doing: **working on the web to benefit everyone** (or at least, do my part), landing a senior front-end developer role at MOJO PSG. At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me <span data-about-action="hooked-delorean">hooked</span>.
+  I eventually came to realise what I'd rather be doing: **building for the web to benefit everyone** (or at least, do my part), landing a senior front-end developer role at MOJO PSG. At its core, this field is always growing, evolving, which means I can always learn new things. Now, *that* got me <span data-about-action="hooked-delorean">hooked</span>.
 
   <div class="u-displayFlex u-flex--center u-floatClear">
     {% set delorean -%}
@@ -39,9 +39,9 @@ navtitle: About
 
 ## Projects
 
-### VisuBezier
+### Open Source Things
 
-When I write code, I use VS Code, but I sometimes miss features from other editors, like a CSS easing preview, so I took it upon myself to make a plugin for that. The result is [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), which will allow you to preview a CSS animation when hovering the timing function/easing keyword. I am not really into TypeScript (though I understand how it can be useful), and being my first venture into making an extension for VS Code, it was quite a challenge, but it certainly is satisfying to see it in action!
+I've made a few plugins for the tools I use the most. For VS Code, I missed having a CSS easing preview, so I took it upon myself to make a plugin for that. The result is [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), which will allow you to preview a CSS animation when hovering the timing function/easing keyword. I've also built a plugin for 11ty that allows you to copy assets from a directory to the output folder without messing with the passthrough configuration, which is aptly named [eleventy-plugin-copy-local-assets](https://www.npmjs.com/package/eleventy-plugin-copy-local-assets). That way you keep your images in the same folder as your blog post's Markdown file, for example.
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}

@@ -39,9 +39,10 @@ navtitle: À Propos
 
 ## Projets
 
-### VisuBezier
+### Open Source
 
-Quand je code, j'utilise VS Code mais parfois, j'aimerais retrouver des fonctionnalités d'autres logiciels, comme un aperçu des courbes d'accélération CSS, j'ai donc créé une extension ! Le résultat est [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), qui permet d'avoir un aperçu d'une animation CSS lorsque l'on survole une fonction ou un mot-clé de lissage. Je ne suis pas vraiment investi dans TypeScript (mais je comprends son utilité) et ceci étant ma première tentative d'extension pour VS Code, ce fut un défi mais au bout du compte, c'est plaisant de voir mon extension fonctionner.
+J'ai créé quelques extensions pour les outils que j'utilise souvent. Pour VS Code, je voulais retrouver la possibilité de prévisualiser mes courbes de lissage, j'ai donc créé une extension ! Le résultat est [VisuBezier](https://marketplace.visualstudio.com/items?itemName=chriskirknielsen.visubezier), qui permet d'avoir un aperçu d'une animation CSS lorsque l'on survole une fonction ou  un mot-clé de lissage. J'ai aussi créé un plugin pour 11ty qui permet de copier les fichiers d'un dossier sans devoir changer la configuration globale "passthrough" — j'ai nommé…[eleventy-plugin-copy-local-assets](https://www.npmjs.com/package/eleventy-plugin-copy-local-assets). De cette façon, vous pouvez garder vos images dans le même dossier que votre fichier Markdown de votre article, par exemple.
+
 
 <div class="u-floatRight u-marginBlockEnd u-marginInlineStart--double">
   {% set shirt -%}
