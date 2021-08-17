@@ -257,6 +257,19 @@ $about-delorean-transition-duration: 400;
     }
 }
 
+.about__quotebox {
+    padding: $spacing;
+
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.1;
+
+    color: var(--c-primary-max);
+    border-radius: 1rem;
+    background: var(--c-primary-min) radial-gradient(farthest-corner at 0 0, var(--c-primary-min), 66.7%, var(--c-primary-med));
+}
+
 @keyframes about__shirtHanger {
     0% { transform: rotate(0deg); }
     10% { transform: rotate(-20deg); }
