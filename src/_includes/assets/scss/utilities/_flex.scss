@@ -23,6 +23,8 @@
 .u-flex--justifyInline { justify-content: space-between; }
 // .u-flex--alignSelfStart { align-self: start; }
 // .u-flex--alignSelfEnd { align-self: end; }
+.u-flex--alignSelfStart { align-self: flex-start; }
+.u-flex--alignSelfEnd { align-self: flex-end; }
 .u-flex--alignSelfStretch { align-self: stretch; }
 .u-flex--basis-0 { flex-basis: 0; }
 // .u-flex--basis-auto { flex-basis: auto; }

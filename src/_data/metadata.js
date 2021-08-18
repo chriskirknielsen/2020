@@ -50,6 +50,7 @@ module.exports = {
     allStyles: "assets/css/style.css",
     inlineStyles: "assets/css/inline.css",
     globalStyles: "assets/css/global.css",
+    imagesFolder: "assets/img",
     designsFolder: "assets/img/designs",
     fontFaceFolder: "assets/fonts",
     fontFaceStyles: "assets/css/font-face.css",

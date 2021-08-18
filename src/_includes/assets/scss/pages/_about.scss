@@ -1,13 +1,6 @@
 $about-delorean-transition-duration: 400;
 
-.about {
-    /* Square image variables */
-    $box-projection: ( // Coordinates of points projected past their container to obtain diagonal reveals (45deg in a square)
-        'bottom-left':  (   0 -100%,  200%  100%,    0   200%, -100%  100%),
-        'bottom-right': (-100% 100%,  100% -100%,  200%  100%,  100%  200%),
-        'top-left':     ( 200% 100%,  100%  200%, -100%  100%,  100% -100%),
-        'top-right':    ( 100% 200%, -100%    0 ,    0  -100%,  200%  100%),
-    );
+.about__profile {
     $profile-image-border-size: .125rem;
     $profile-image-anim-time: 1.625;
     $profile-image-anim-delay: .25;
@@ -25,167 +18,237 @@ $about-delorean-transition-duration: 400;
     $profile-anim-ladyliberty-delay: $profile-anim-hair-delay;
     $profile-anim-ladyliberty-duration: 1s;
 
-    &__profile {
-        width: 6rem;
-        max-width: 20vw;
+    width: 6rem;
+    max-width: 20vw;
 
-        // shape-margin: #{ $spacing };
-        // shape-outside: ellipse(100% 50% at 100% 50%);
+    &::after {
+        content: '';
+        position: absolute;
+        top: #{ $spacing * -1 };
+        bottom: #{ $spacing * -1 };
+        right: 0;
 
-        &::after {
-            content: '';
-            position: absolute;
-            top: #{ $spacing * -1 };
-            bottom: #{ $spacing * -1 };
-            right: 0;
+        // width: .0625em;
+        width: .125em;
+        
+        background-color: currentColor;
 
-            // width: .0625em;
-            width: .125em;
+        transform-origin: 50% 100%;
+        animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
+    }
+
+    &-path path {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-dasharray: 1 1;
+
+        animation: about__pathDraw #{ $profile-anim-path-duration } #{ $easing-smooth } #{ $profile-anim-path-delay } backwards 1;
+    }
+
+    &-hair path {
+        fill: none;
+        stroke: var(--c-primary-med);
+        stroke-linecap: round;
+        stroke-dasharray: 1 1;
+
+        animation: about__hairGrow #{ $profile-anim-hair-duration } #{ $easing-smooth } #{ $profile-anim-hair-delay } backwards 1;
+    }
+
+    &-glasses {
+        fill: var(--c-primary-min);
+        animation: about__glasses #{ $profile-anim-glasses-duration } #{ $easing-out } #{ $profile-anim-glasses-delay } backwards 1;
+    }
+
+    &-hair--brow {
+        transform-origin: 50% 50%;
+        transition: transform .25s ease-in-out;
+    }
+
+    &:hover &-hair--brow {
+        transform: translateY(-2%) rotate(3deg);
+        // animation: about__browTwitch .5s ease-in-out 1;
+    }
+
+    @include above-medium {
+        margin: 0;
+        transform: scaleX(-1);
+    }
+}
+
+.about__grid {
+    $about-gap: $spacing * 2;
+
+    @supports (display: grid) {
+        @include above-medium {
+            --flow-margin: 0;
             
-            background-color: currentColor;
+            display: grid;
+            grid-template-areas: // ti = title, pa = paragraph, qu = quotebox
+                "ti01 ti01 ti01 ti01" // Origin story
+                "pa01 pa01 pa01 prof"
+                "pa02 pa02 pa02 prof"
+                "pa03 pa03 pa03 pa03"
+                "delo pa04 pa04 pa04"
+                "ti02 ti02 ti02 ti02" // Projects
+                "ti03 ti03 ti03 ti03" // Open source
+                "pa05 pa05 pa05 pa05"
+                "pa06 pa06 pa06 plug"
+                "arts ti04 ti04 ti04" // Posters/shirts
+                "arts pa07 pa07 pa07"
+                "qu01 qu01 qu01 qu01"
+                "ti05 ti05 ti05 ti05" // Chronoise
+                "pa08 pa08 pa08 midi"
+                "ti06 ti07 ti07 ti07" // Typeface/Geekometric
+                "pa09 pa10 pa10 pa10"
+                "ti08 ti08 ti08 ti08" // Hobbies
+                "pa11 pa11 pa12 pa12"
+                "qu02 pa13 pa13 pa13"
+                "ti09 ti09 ti09 ti09" // Professional
+                "pa14 pa14 pa14 pa14"
+                "ti10 ti10 ti11 ti11" // Web/Chat
+                "pa15 pa15 pa16 pa16"
+                "qu03 qu03 qu03 qu03"
+            ;
+            grid-column-gap: $about-gap;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
 
-            transform-origin: 50% 100%;
-            animation: about__lineDraw #{ $profile-anim-line-duration } #{ $easing-smooth } #{ $profile-anim-line-delay } backwards 1;
-        }
-
-        &-path path {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-dasharray: 1 1;
-
-            animation: about__pathDraw #{ $profile-anim-path-duration } #{ $easing-smooth } #{ $profile-anim-path-delay } backwards 1;
-        }
-
-        &-hair path {
-            fill: none;
-            stroke: var(--c-primary-med);
-            stroke-linecap: round;
-            stroke-dasharray: 1 1;
-
-            animation: about__hairGrow #{ $profile-anim-hair-duration } #{ $easing-smooth } #{ $profile-anim-hair-delay } backwards 1;
-        }
-
-        &-glasses {
-            fill: var(--c-primary-min);
-            animation: about__glasses #{ $profile-anim-glasses-duration } #{ $easing-out } #{ $profile-anim-glasses-delay } backwards 1;
-        }
-
-        &-hair--brow {
-            transform-origin: 50% 50%;
-            transition: transform .25s ease-in-out;
-        }
-
-        &:hover &-hair--brow {
-            transform: translateY(-2%) rotate(3deg);
-            // animation: about__browTwitch .5s ease-in-out 1;
-        }
-    }
-
-    @keyframes about__lineDraw {
-        0% {
-            transform: scaleY(0);
-        }
-    }
-
-    @keyframes about__pathDraw {
-        0% {
-            stroke-dashoffset: 1;
-        }
-    }
-
-    @keyframes about__hairGrow {
-        0% {
-            stroke-width: 0;
-            stroke-dashoffset: 1;
-        }
-    }
-
-    @keyframes about__glasses {
-        0% {
-            opacity: .0001;
-            transform: translateY(-15%);
-        }
-    }
-
-    /* // Square image animation
-    &__image {
-        --proj-xy1: #{ nth( map-get($box-projection, 'bottom-left'), 1) };
-        --proj-xy2: #{ nth( map-get($box-projection, 'bottom-left'), 2) };
-        --proj-xy3: #{ nth( map-get($box-projection, 'bottom-left'), 3) };
-        --proj-xy4: #{ nth( map-get($box-projection, 'bottom-left'), 4) };
-        
-        padding: #{ $profile-image-border-size };
-
-        &::before,
-        &::after {
-            padding: inherit;
-        }
-
-        &::before {
-            --proj-xy1: #{ nth( map-get($box-projection, 'bottom-right'), 1) };
-            --proj-xy2: #{ nth( map-get($box-projection, 'bottom-right'), 2) };
-            --proj-xy3: #{ nth( map-get($box-projection, 'bottom-right'), 3) };
-            --proj-xy4: #{ nth( map-get($box-projection, 'bottom-right'), 4) };
-
-            background: var(--c-secondary-med) content-box;
-        }
-
-        &::after {
-            --proj-xy1: #{ nth( map-get($box-projection, 'top-right'), 1) };
-            --proj-xy2: #{ nth( map-get($box-projection, 'top-right'), 2) };
-            --proj-xy3: #{ nth( map-get($box-projection, 'top-right'), 3) };
-            --proj-xy4: #{ nth( map-get($box-projection, 'top-right'), 4) };
-
-            background: var(--c-primary-max) content-box;
-        }
-
-        & > img {
-            width: 8rem;
-            max-width: 30vw;
-
-            --proj-xy1: #{ nth( map-get($box-projection, 'top-left'), 1) };
-            --proj-xy2: #{ nth( map-get($box-projection, 'top-left'), 2) };
-            --proj-xy3: #{ nth( map-get($box-projection, 'top-left'), 3) };
-            --proj-xy4: #{ nth( map-get($box-projection, 'top-left'), 4) };
+            & > * { margin: 0; }
+            & > * + h2 { margin-top: $about-gap; }
+            & > *:not(:is(h2, h3)) + p { margin-top: $spacing; }
         }
         
-        @supports(clip-path: polygon(var(--a))) {
-            &--loaded,
-            &--loaded::before,
-            &--loaded::after,
-            &--loaded > img {
-                animation: about__profilePicture #{ $profile-image-anim-time * 1s } #{ $easing-smooth } 1 forwards;
-            }
-
-            &--loaded::before { animation-delay: #{ $profile-image-anim-delay * .5s }; }
-            &--loaded::after { animation-delay: #{ $profile-image-anim-delay * 1s }; }
-            &--loaded > img { animation-delay: #{ $profile-image-anim-delay * 1.5s }; }
-
-            &,
-            &::before,
-            &::after,
-            & > img {
-                clip-path: polygon(
-                    var(--proj-xy1),
-                    var(--proj-xy2),
-                    var(--proj-xy2),
-                    var(--proj-xy1)
-                );
-            }
+        @include above-large {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-areas: // ti = title, pa = paragraph, qu = quotebox
+                "ti01 ti01 ti01 ti01 ti01" // Origin story
+                "pa01 pa01 pa01 pa01 prof"
+                "pa02 pa02 pa03 pa03 prof"
+                "delo delo pa04 pa04 pa04"
+                "ti02 ti02 ti02 ti02 ti02" // Projects
+                "ti03 ti03 ti03 ti03 ti03" // Open source
+                "pa05 pa05 plug pa06 pa06"
+                "arts arts ti04 ti04 ti04" // Posters/shirts
+                "arts arts pa07 pa07 qu01"
+                "ti05 ti05 ti05 ti05 ti05" // Chronoise
+                "pa08 pa08 pa08 midi midi"
+                "ti06 ti06 ti07 ti07 ti07" // Typeface/Geekometric
+                "pa09 pa09 pa10 pa10 pa10"
+                "ti08 ti08 ti08 ti08 ti08" // Hobbies
+                "pa11 pa11 pa11 pa12 pa12"
+                "qu02 pa13 pa13 pa13   . "
+                "ti09 ti09 ti09 ti09 ti09" // Professional
+                "pa14 pa14 pa14 pa14 pa14"
+                "ti10 ti10   .  ti11 ti11" // Web/Chat
+                "pa15 pa15 qu03 pa16 pa16"
+            ;
         }
 
-        @keyframes about__profilePicture {
-            100% {
-                clip-path: polygon(
-                    var(--proj-xy1),
-                    var(--proj-xy2),
-                    var(--proj-xy3),
-                    var(--proj-xy4)
-                );
-            }
+        /* Here come all the custom grid cells */
+        // ORIGIN
+        & > *:first-child { grid-area: ti01; }
+
+        .about__profile {
+            grid-area: prof;
+            align-self: center;
+            @include above-medium { padding: #{ $spacing * 0.5 } 0; }
         }
-    } // */ // End:Square image animation
+
+        .about__profile + p { grid-area: pa01; }
+        .about__profile + p + p { grid-area: pa02; }
+        .about__profile + p + p + p { grid-area: pa03; }
+        .about__profile + p + p + p + p { grid-area: pa04; }
+
+        .about__delorean-wrap {
+            grid-area: delo;
+            align-self: end;
+        }
+
+        // PROJECTS
+        .about__delorean-wrap + h2 { grid-area: ti02; }
+        
+        // Open source
+        .about__delorean-wrap + h2 + h3 { grid-area: ti03; }
+        .about__delorean-wrap + h2 + h3 + p { grid-area: pa05; }
+
+        .about__plugin-wrap {
+            grid-area: plug;
+            place-self: center;
+            @include above-medium { margin-bottom: $about-gap; }
+        }
+
+        .about__plugin-wrap + p {
+            grid-area: pa06;
+            @include above-medium { margin-bottom: $about-gap; }
+        }
+
+        // Designs
+        .about__designs-wrap { grid-area: arts; }
+        .about__designs-wrap + h3 { grid-area: ti04; }
+        .about__designs-wrap + h3 + p { grid-area: pa07; }
+
+        [data-grid-el="quote-design"] {
+            grid-area: qu01;
+            @include above-medium {
+                margin-top: $about-gap;
+                margin-bottom: $about-gap;
+            }
+            @include above-large { margin: 0; }
+        }
+
+        // Chronoise
+        [data-grid-el="quote-design"] + h3 {
+            grid-area: ti05;
+            @include above-large { margin-top: $about-gap; }
+        }
+        [data-grid-el="quote-design"] + h3 + p { grid-area: pa08; }
+        [data-grid-el="trinket-keyboard"] { grid-area: midi; }
+
+        [data-grid-el="trinket-keyboard"] + h3,
+        [data-grid-el="trinket-keyboard"] + h3 + p + h3 {
+            @include above-medium { margin-top: $about-gap; }
+        }
+
+        // Typefaces
+        [data-grid-el="trinket-keyboard"] + h3 { grid-area: ti06; }
+        [data-grid-el="trinket-keyboard"] + h3 + p { grid-area: pa09; }
+        
+        // Geekometric
+        [data-grid-el="trinket-keyboard"] + h3 + p + h3 { grid-area: ti07; }
+        [data-grid-el="trinket-keyboard"] + h3 + p + h3 + p { grid-area: pa10; }
+
+        // HOBBIES
+        [data-grid-el="trinket-keyboard"] + h3 + p + h3 + p + h2 { grid-area: ti08; }
+        [data-grid-el="trinket-keyboard"] + h3 + p + h3 + p + h2 + p { grid-area: pa11; }
+        [data-grid-el="trinket-keyboard"] + h3 + p + h3 + p + h2 + p + p {
+            grid-area: pa12;
+            @include above-medium { margin-top: 0; }
+        }
+        [data-grid-el="quote-accent"] { grid-area: qu02; }
+        [data-grid-el="quote-accent"] + p { grid-area: pa13; }
+
+        [data-grid-el="quote-accent"],
+        [data-grid-el="quote-accent"] + p {
+            @include above-medium { margin-top: $about-gap; }
+        }
+
+        // Sure, I'm a pro
+        [data-grid-el="quote-accent"] + p + h2 { grid-area: ti09; }
+        [data-grid-el="quote-accent"] + p + h2 + p { grid-area: pa14; }
+        
+        // Find me on the web
+        [data-grid-el="quote-accent"] + p + h2 + p + h2 { grid-area: ti10; }
+        [data-grid-el="quote-accent"] + p + h2 + p + h2 + ul { grid-area: pa15; }
+
+        // Fancy a chat
+        [data-grid-el="quote-phone"] {
+            grid-area: qu03;
+            @include above-medium { margin-top: $about-gap; }
+            @include above-large { margin-top: 0; }
+        }
+        [data-grid-el="quote-phone"] + h2 { grid-area: ti11; }
+        [data-grid-el="quote-phone"] + h2 + p { grid-area: pa16; }
+    }
 }
 
 .about__trinket {
@@ -202,6 +265,7 @@ $about-delorean-transition-duration: 400;
         stroke: currentColor;
     }
 
+    &-strokes--thick > *,
     &-stroke--thick {
         stroke-width: 2.5;
     }
@@ -233,33 +297,81 @@ $about-delorean-transition-duration: 400;
     }
 }
 
-.about__keyboard {
-    width: 14rem;
-    max-width: 30vw;
+.about__plugin {
+    $extra-piece-offset: 14.16096962%; // Magin number, based on SVG size and pice offset
+    
+    width: 80%;
+    max-width: 8rem;
+
+    & path {
+        fill: transparent;
+
+        transition: fill 300ms #{ $easing-smooth };
+    }
+    
+    &-wrap:hover & path {
+        fill: var(--c-primary-med, currentColor);
+    }
+
+    & &--extra-piece {
+        transition:
+            fill 300ms #{ $easing-smooth },
+            transform 300ms #{ $easing-smooth },
+        ;
+    }
+    
+    &-wrap:hover &--extra-piece {
+        transform: translate(#{ $extra-piece-offset * -1 }, #{ $extra-piece-offset });
+    }
 }
 
-.about__headphones {
-    width: 6rem;
+.about__vhs {
+    width: 25%;
+
+    &:not(:first-child) { margin-left: -2.5%; }
+    &:not(:last-child) { margin-right: -2.5%; }
+
+    &--back {
+        z-index: 1;
+        margin-bottom: #{ $spacing * 2 };
+    }
+    &--front {
+        z-index: 2;
+        margin-top: #{ $spacing * 2 };
+    }
+}
+
+.about__designs-wrap {
+    max-width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include above-medium { max-width: 100%; }
 }
 
 .about__shirt {
-    width: 8rem;
-    max-width: 20vw;
-
-    transform-origin: 50% 4%; // 4% is a magic number and corresponds closely to the vertical center of the hanger's hook
-    
-    &.animating {
-        animation: about__shirtHanger 2s ease-in-out forwards;
-    }
+    margin-left: -10%;
+    margin-right: -10%;
+    width: 35%;
 
     &-hanger {
         fill: var(--c-grey-max);
     }
 }
 
+.about__keyboard {
+    width: 100%;
+}
+
 .about__quotebox {
+    --flow-margin: 1.75em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: $spacing;
 
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     font-style: italic;
     text-align: center;
@@ -268,18 +380,30 @@ $about-delorean-transition-duration: 400;
     color: var(--c-primary-max);
     border-radius: 1rem;
     background: var(--c-primary-min) radial-gradient(farthest-corner at 0 0, var(--c-primary-min), 66.7%, var(--c-primary-med));
+
+    @include light-mode {
+        background: var(--c-primary-min) radial-gradient(farthest-corner at 0 0, var(--c-primary-med), 66.7%, var(--c-primary-min));
+    }
 }
 
-@keyframes about__shirtHanger {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(-20deg); }
-    20% { transform: rotate(18deg); }
-    30% { transform: rotate(-12deg); }
-    40% { transform: rotate(8deg); }
-    50% { transform: rotate(-6deg); }
-    60% { transform: rotate(5deg); }
-    70% { transform: rotate(-4deg); }
-    80% { transform: rotate(3deg); }
-    90% { transform: rotate(-1.5deg); }
-    100% { transform: rotate(0deg); }
+@keyframes about__lineDraw {
+    0% { transform: scaleY(0); }
+}
+
+@keyframes about__pathDraw {
+    0% { stroke-dashoffset: 1; }
+}
+
+@keyframes about__hairGrow {
+    0% {
+        stroke-width: 0;
+        stroke-dashoffset: 1;
+    }
+}
+
+@keyframes about__glasses {
+    0% {
+        opacity: .0001;
+        transform: translateY(-15%);
+    }
 }
