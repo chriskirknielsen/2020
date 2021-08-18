@@ -3,7 +3,7 @@ var utilityButtonLink = 'u-displayInlineFlex u-flex--centerBlock u-paddingInline
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };
 
 
-// Handle DeLorean animation on button toggle
+// Handle SVG elements toggle states
 document.addEventListener('DOMContentLoaded', function() {
     var aboutActionAttr = 'data-about-action';
     var aboutActions = document.querySelectorAll('['+aboutActionAttr+']');
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Replace each text hook with an actionable button
     for (var a = 0; a < aboutActions.length; a++) {
+        if (aboutActions[a].closest('svg')) { continue; } // Don't add a button inside SVGs
         var elementHtml = aboutActions[a].innerHTML;
         var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
         var newElement = '<button class="button--reset '+utilityButtonLink+'" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
@@ -25,17 +26,193 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Update the list of elements
-    aboutActions = document.querySelectorAll('['+aboutActionAttr+']');
+    aboutActions = [].slice.call(document.querySelectorAll('['+aboutActionAttr+']'));
 
     // Process action for each element
-    for (var a = 0; a < aboutActions.length; a++) {
-        if (aboutActions[a].getAttribute(aboutActionAttr) === 'hooked-delorean') {
-            var btn = aboutActions[a]; // Assign the toggle trigger
-            
+    aboutActions.forEach(function (btn) {
+        if (btn.getAttribute(aboutActionAttr) === 'hooked-delorean') {    
             btn.addEventListener('click', function() {
                 var deLorean = document.querySelector('.about__delorean');
                 deLorean.classList.toggle('about__delorean--with-hook');
             }, false);
         }
+
+        if (btn.getAttribute(aboutActionAttr) === 'synth') {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                var keyboard = document.querySelector('[data-grid-el="trinket-keyboard"]');
+                keyboard.classList.toggle('about__keyboard--open');
+                if (keyboard.classList.contains('about__keyboard--open')) {
+                    keyboard.focus();
+                }
+
+                return false;
+            }, false);
+        }
+
+        //data-about-action="synth-set-type" aria-pressed="true"
+        if (btn.getAttribute(aboutActionAttr) === 'synth-set-type') {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                var currType = document.querySelector('[data-synth-type][aria-pressed="true"]');
+                currType.setAttribute('aria-pressed', 'false');
+                console.log(btn);
+                btn.setAttribute('aria-pressed', 'true');
+
+                return false;
+            }, false);
+        }
+    });
+});
+
+document.addEventListener('keyup', function (e) {
+    if (e.key === 'Escape') {
+        document.querySelector('[data-grid-el="trinket-keyboard"]').classList.toggle('about__keyboard--open');
     }
 });
+
+// Loosely adapted from https://css-tricks.com/how-to-code-a-playable-synth-keyboard/
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const octaveOffset = 1;
+
+function getHz(note = "A", octave = 4) {
+    const A4 = 440;
+    let N = 0;
+    switch (note) {
+        default:
+        case "A":
+            N = 0;
+            break;
+        case "A#":
+        case "Bb":
+            N = 1;
+            break;
+        case "B":
+            N = 2;
+            break;
+        case "C":
+            N = 3;
+            break;
+        case "C#":
+        case "Db":
+            N = 4;
+            break;
+        case "D":
+            N = 5;
+            break;
+        case "D#":
+        case "Eb":
+            N = 6;
+            break;
+        case "E":
+            N = 7;
+            break;
+        case "F":
+            N = 8;
+            break;
+        case "F#":
+        case "Gb":
+            N = 9;
+            break;
+        case "G":
+            N = 10;
+            break;
+        case "G#":
+        case "Ab":
+            N = 11;
+            break;
+    }
+    N += 12 * (octave - 4);
+    return A4 * Math.pow(2, N / 12);
+}
+
+function playKey(key, type = "triangle") {
+    const osc = audioContext.createOscillator();
+    const noteGainNode = audioContext.createGain();
+    noteGainNode.connect(audioContext.destination);
+
+    const zeroGain = 0.00001;
+    const maxGain = 0.5;
+    const sustainedGain = 0.001;
+
+    noteGainNode.gain.value = zeroGain;
+
+    const setAttack = () =>
+        noteGainNode.gain.exponentialRampToValueAtTime(
+            maxGain,
+            audioContext.currentTime + 0.01
+        );
+    const setDecay = () =>
+        noteGainNode.gain.exponentialRampToValueAtTime(
+            sustainedGain,
+            audioContext.currentTime + 1
+        );
+    const setRelease = () =>
+        noteGainNode.gain.exponentialRampToValueAtTime(
+            zeroGain,
+            audioContext.currentTime + 2
+        );
+
+    setAttack();
+    setDecay();
+    setRelease();
+
+    osc.connect(noteGainNode);
+    osc.type = type;
+
+    const freq = getHz(key.note, (key.octave || 0) + octaveOffset);
+
+    if (Number.isFinite(freq)) {
+        osc.frequency.value = freq;
+    }
+
+    key.element.classList.add("pressed");
+    pressedNotes.set(key, osc);
+    pressedNotes.get(key).start();
+}
+
+function stopKey(key) {
+    if (!key) { return; }
+
+    key.element.classList.remove("pressed");
+    const osc = pressedNotes.get(key);
+
+    if (osc) {
+        setTimeout(() => {
+            osc.stop();
+        }, 2000);
+
+        pressedNotes.delete(key);
+    }
+}
+
+const pressedNotes = new Map();
+let clickedKey = "";
+
+document.addEventListener('click', function(e) {
+    var element = e.target.closest('[data-note]');
+    if (!element) { return; }
+    e.preventDefault();
+    return false;
+}, false);
+
+document.addEventListener('mousedown', function(e) {
+    var element = e.target.closest('[data-note]');
+    if (!element) { return; }
+    e.preventDefault();
+    let key = {
+        element: element,
+        note: element.getAttribute('data-note'),
+        octave: parseInt(element.getAttribute('data-octave'), 10)
+    };
+    let type = document.querySelector('[data-synth-type][aria-pressed="true"]').getAttribute('data-synth-type');
+    clickedKey = key;
+    playKey(key, type);
+    return false;
+}, false);
+
+document.addEventListener('mouseup', function() {
+    stopKey(clickedKey);
+}, false);

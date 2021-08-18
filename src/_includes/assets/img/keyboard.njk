@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.24em" height="2.72em" viewBox="0 0 204.8 54.4" class="about__trinket about__keyboard" aria-label="MIDI keyboard" tabindex="-1">
+    <rect class="about__trinket-stroke" x="0.5" y="0.5" width="203.8" height="53.4" rx="3.25" style="fill:var(--color-bg)" />
+
+    <a xlink:href="#synth-close" data-about-action="synth">
+        <text x="201" y="9" text-anchor="end">{{ localisedContent.closeLabel or "Close" }}</text>
+    </a>
+
+    <a xlink:href="#synth-sin" data-synth-type="sinewave" data-about-action="synth-set-type" aria-pressed="true">
+        <text x="17" y="9" text-anchor="middle">SIN</text>
+    </a>
+    <a xlink:href="#synth-tri" data-synth-type="triangle" data-about-action="synth-set-type" aria-pressed="false">
+        <text x="37" y="9" text-anchor="middle">TRI</text>
+    </a>
+    <a xlink:href="#synth-squ" data-synth-type="square" data-about-action="synth-set-type" aria-pressed="false">
+        <text x="57" y="9" text-anchor="middle">SQU</text>
+    </a>
+    <a xlink:href="#synth-saw" data-synth-type="sawtooth" data-about-action="synth-set-type" aria-pressed="false">
+        <text x="77" y="9" text-anchor="middle">SAW</text>
+    </a>
+
+    {% set keysStartX = 9.3 %}
+    {% set keysStartY = 16.5 %}
+    {% set notes = ['C','D','E','F','G','A','B'] %}
+    {% set whiteKeyWidth = 186.12 / 29 %}
+    {% set blackKeyWidth = 3.99 %}
+
+    <g class="about__trinket-strokes" data-Name="keyboard__keys-white" data-tabindex="0">
+    {% for w in range(0,29) %}
+        {% set noteIndex = w % 7 %}
+        {% set note = notes[ noteIndex ] %}
+        {% set octave = ((w / 7) | round(0, "floor")) + (1 if (noteIndex < 5) else 2) %}
+        <a xlink:href="#synth-{{ note }}{{ octave }}" data-note="{{ note }}" data-octave="{{ octave }}" tabindex="-1">
+            <rect rx="1" x="{{ keysStartX + w * whiteKeyWidth }}" y="{{ keysStartY }}" width="{{ whiteKeyWidth }}" height="34" data-tabindex="0" fill="rgba(0,0,0,0.00001)" />
+        </a>
+    {% endfor %}
+    </g>
+    
+    <g class="about__trinket-fills" data-Name="keyboard__keys-black" data-tabindex="0">
+    {% for b in range(1,28) %}
+        {% set noteIndex = b % 7 - 1 %}
+        {% set note = notes[ noteIndex ] %}
+        {% set octave = ((b / 7) | round(0, "floor")) + (1 if (noteIndex < 5) else 2) %}
+        {% if b % 7 === 0 or ((b + 4) % 7 === 0) %}{# Skip it !#}
+        {% else %}
+        <a xlink:href="#synth-{{ note }}s{{ octave }}" data-note="{{ note }}#" data-octave="{{ octave }}" tabindex="-1">
+            <rect rx="1" x="{{ keysStartX + (whiteKeyWidth / 2) + (blackKeyWidth / 3) + (b - 1) * whiteKeyWidth }}" y="{{ keysStartY }}" width="{{ blackKeyWidth }}" height="23" data-tabindex="0" />
+        </a>
+        {% endif %}
+    {% endfor %}
+    </g>
+
+    <g class="about__trinket-strokes">
+        <path d="M9.3 12.3h186.1v41.6H9.3z"/>
+        <path d="M9.4 16h186.1"/>
+    </g>
+</svg>

@@ -68,11 +68,11 @@ navtitle: About
 
   ### Chronoise
 
-  If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
+  If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production — <span data-about-action="synth">synthesisers</span> are fun!
 
   <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center" data-grid-el="trinket-keyboard">
     {% set keyboard -%}
-    {%- include "assets/img/keyboard.svg" -%}
+    {%- include "assets/img/keyboard.njk" -%}
     {%- endset -%}
     {{ keyboard | htmlmin | safe }}
   </div>

@@ -10,6 +10,7 @@
     "dateFormat": "DD MMMM Y",
     "localisedContent": {
         "skiplink": "Sauter au contenu",
+        "closeLabel": "Fermer",
         "logoLink": "Page d'accueil",
         "feed": {
             "subtitle": "Blog d'un développeur front-end qui aime bidouiller"

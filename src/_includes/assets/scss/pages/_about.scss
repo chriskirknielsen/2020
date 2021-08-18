@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $about-delorean-transition-duration: 400;
 
 .about__profile {
@@ -254,15 +256,15 @@ $about-delorean-transition-duration: 400;
 .about__trinket {
     overflow: visible;
     
-    &-strokes > * {
-        fill: none;
+    &-strokes > *,
+    &-stroke {
+        stroke: currentColor;
         stroke-width: 1.5;
         stroke-miterlimit: 10;
     }
 
-    &-strokes > *,
-    &-stroke {
-        stroke: currentColor;
+    &-strokes > * {
+        fill: none;
     }
 
     &-strokes--thick > *,
@@ -360,7 +362,100 @@ $about-delorean-transition-duration: 400;
 }
 
 .about__keyboard {
+    $keyboard-ratio-wh: math.div(204.8, 54.4);
+    $keyboard-ratio-hw: math.div(54.4, 204.8);
+
     width: 100%;
+    pointer-events: auto;
+
+    &--open {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: z('spotlight', 1);
+
+        width: calc(100vw - 4rem);
+        height: calc(100vh - 4rem);
+        margin: auto;
+
+        pointer-events: none;
+
+        &::before {
+            content: '';
+            
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            background: var(--color-bg);
+            box-shadow: 0 0 0 0.25rem var(--color-text);
+
+            opacity: 0.75;
+
+            pointer-events: none;
+        }
+
+        @media (max-width: 560px) and (orientation: portrait) {
+            top: 50%;
+            bottom: unset;
+            left: 50%;
+            right: unset;
+
+            width: calc(100vh - 4rem);
+            height: calc(100vw - 4rem);
+
+            transform: translate(-50%, -50%) rotate(-90deg);
+
+            & > svg {
+                height: 100%;
+            }
+        }
+        @at-root {
+            [data-grid-el="trinket-keyboard"]:not(#{ & }) a[data-note] { pointer-events: none; }
+            [data-grid-el="trinket-keyboard"]:not(#{ & }) [data-about-action] { display: none; }
+        }
+    }
+}
+
+a[data-about-action] {
+    fill: currentColor;
+    text-decoration: none;
+    color: var(--color-accent);
+
+    &:hover,
+    &:focus {
+        color: currentColor;
+    }
+
+    & > text {
+        fill: currentColor;
+        font-size: 8px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+a[data-about-action="synth-set-type"] {
+    font-family: f('code');
+    
+    &[aria-pressed="true"] {
+        color: var(--c-primary-med);
+        text-decoration: underline;
+    }
+}
+
+[data-note][data-octave] {
+    &:hover,
+    &:focus {
+        color: var(--color-accent);
+        
+        & > * { fill: currentColor; }
+    }
 }
 
 .about__quotebox {

@@ -69,11 +69,11 @@ navtitle: À Propos
 
   ### Chronoise
 
-  Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique !
+  Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique — un <span data-about-action="synth">synthétiseur</span>, c'est assez amusant !
 
   <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center" data-grid-el="trinket-keyboard">
     {% set keyboard -%}
-    {%- include "assets/img/keyboard.svg" -%}
+    {%- include "assets/img/keyboard.njk" -%}
     {%- endset -%}
     {{ keyboard | htmlmin | safe }}
   </div>
