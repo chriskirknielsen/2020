@@ -97,3 +97,10 @@ p {
 :not([class]) > li + li {
     margin-top: 0.5em;
 }
+
+kbd {
+    font-family: f('code');
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875em;
+}

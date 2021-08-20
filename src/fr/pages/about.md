@@ -69,13 +69,21 @@ navtitle: À Propos
 
   ### Chronoise
 
-  Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique — un <span data-about-action="synth">synthétiseur</span>, c'est assez amusant !
+  Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique.
 
-  <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center" data-grid-el="trinket-keyboard">
+  <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-gap u-flex--column u-flex--center" data-grid-el="trinket-keyboard">
     {% set keyboard -%}
-    {%- include "assets/img/keyboard.njk" -%}
+    {%- include "components/synth.njk" -%}
     {%- endset -%}
     {{ keyboard | htmlmin | safe }}
+    <p class="u-fontItalic u-textSmall">
+      Quelques mélodies :<br>
+      1. <kbd>D, D, D, A, G,D, A, G,D, J, J, J, K, G,E, A, G,D</kbd>
+      <br>
+      2. <kbd>G, Y, G, Y, G, F, Y, G, A, G, Y, G, Y, G, F, Y, G, K</kbd>
+      <br>
+      3. <kbd>A,S,D, G, D, S, A, D,G,H, K, J, G, D, F,D,S</kbd>
+    </p>
   </div>
 
   ### Polices d'Écriture

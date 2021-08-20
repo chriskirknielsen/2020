@@ -68,13 +68,21 @@ navtitle: About
 
   ### Chronoise
 
-  If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production — <span data-about-action="synth">synthesisers</span> are fun!
+  If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
 
-  <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-flex--center" data-grid-el="trinket-keyboard">
+  <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-gap u-flex--column u-flex--center" data-grid-el="trinket-keyboard">
     {% set keyboard -%}
-    {%- include "assets/img/keyboard.njk" -%}
+    {%- include "components/synth.njk" -%}
     {%- endset -%}
     {{ keyboard | htmlmin | safe }}
+    <p class="u-fontItalic u-textSmall">
+      A few melodies for you:<br>
+      1. <kbd>D, D, D, A, G,D, A, G,D, J, J, J, K, G,E, A, G,D</kbd>
+      <br>
+      2. <kbd>G, Y, G, Y, G, F, Y, G, A, G, Y, G, Y, G, F, Y, G, K</kbd>
+      <br>
+      3. <kbd>A,S,D, G, D, S, A, D,G,H, K, J, G, D, F,D,S</kbd>
+    </p>
   </div>
 
   ### Typefaces

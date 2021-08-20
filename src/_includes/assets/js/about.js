@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Replace each text hook with an actionable button
     for (var a = 0; a < aboutActions.length; a++) {
-        if (aboutActions[a].closest('svg')) { continue; } // Don't add a button inside SVGs
+        if (aboutActions[a].closest('svg')) { continue; } // Only replace text to buttons outside SVGs
         var elementHtml = aboutActions[a].innerHTML;
         var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
         var newElement = '<button class="button--reset '+utilityButtonLink+'" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Update the list of elements
-    aboutActions = [].slice.call(document.querySelectorAll('['+aboutActionAttr+']'));
+    aboutActions = Array.from(document.querySelectorAll('['+aboutActionAttr+']'));
 
     // Process action for each element
     aboutActions.forEach(function (btn) {
@@ -37,20 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, false);
         }
 
-        if (btn.getAttribute(aboutActionAttr) === 'synth') {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                var keyboard = document.querySelector('[data-grid-el="trinket-keyboard"]');
-                keyboard.classList.toggle('about__keyboard--open');
-                if (keyboard.classList.contains('about__keyboard--open')) {
-                    keyboard.focus();
-                }
-
-                return false;
-            }, false);
-        }
-
         //data-about-action="synth-set-type" aria-pressed="true"
         if (btn.getAttribute(aboutActionAttr) === 'synth-set-type') {
             btn.addEventListener('click', function(e) {
@@ -58,26 +44,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var currType = document.querySelector('[data-synth-type][aria-pressed="true"]');
                 currType.setAttribute('aria-pressed', 'false');
-                console.log(btn);
                 btn.setAttribute('aria-pressed', 'true');
 
                 return false;
             }, false);
         }
     });
-});
 
-document.addEventListener('keyup', function (e) {
-    if (e.key === 'Escape') {
-        document.querySelector('[data-grid-el="trinket-keyboard"]').classList.toggle('about__keyboard--open');
-    }
+    reLabelKeys();
 });
 
 // Loosely adapted from https://css-tricks.com/how-to-code-a-playable-synth-keyboard/
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const octaveOffset = 1;
+const keyNoteMap = [
+    { note: 'C',  octave: 1, key: 'A' },
+    { note: 'C#', octave: 1, key: 'W' },
+    { note: 'D',  octave: 1, key: 'S' },
+    { note: 'D#', octave: 1, key: 'E' },
+    { note: 'E',  octave: 1, key: 'D' },
+    { note: 'F',  octave: 1, key: 'F' },
+    { note: 'F#', octave: 1, key: 'T' },
+    { note: 'G',  octave: 1, key: 'G' },
+    { note: 'G#', octave: 1, key: 'Y' },
+    { note: 'A',  octave: 2, key: 'H' },
+    { note: 'A#', octave: 2, key: 'U' },
+    { note: 'B',  octave: 2, key: 'J' },
+    { note: 'C',  octave: 2, key: 'K' }
+];
 
-function getHz(note = "A", octave = 4) {
+function getHz(note = 'A', octave = 4) {
     const A4 = 440;
     let N = 0;
     switch (note) {
@@ -128,7 +124,8 @@ function getHz(note = "A", octave = 4) {
     return A4 * Math.pow(2, N / 12);
 }
 
-function playKey(key, type = "triangle") {
+function playKey(key) {
+    const type = document.querySelector('[data-synth-type][aria-pressed="true"]').getAttribute('data-synth-type') || 'sinewave';
     const osc = audioContext.createOscillator();
     const noteGainNode = audioContext.createGain();
     noteGainNode.connect(audioContext.destination);
@@ -188,31 +185,75 @@ function stopKey(key) {
     }
 }
 
-const pressedNotes = new Map();
-let clickedKey = "";
+const getNoteByKey = (key) => keyNoteMap.find((mapped) => mapped.key === key) || false;
+const getKeyByNoteOctave = (note, octave) => keyNoteMap.find((mapped) => mapped.note === note && mapped.octave === parseInt(octave, 10)) || false;
 
-document.addEventListener('click', function(e) {
-    var element = e.target.closest('[data-note]');
-    if (!element) { return; }
-    e.preventDefault();
-    return false;
-}, false);
+const pressedNotes = new Map();
+let clickedKey = '';
+
+function reLabelKeys() {
+    const keys = Array.from(document.querySelectorAll('[data-note]'));
+    keys.forEach(key => {
+        const note = key.getAttribute('data-note');
+        const octave = parseInt(key.getAttribute('data-octave'), 10);
+        const keyNote = getKeyByNoteOctave(note, octave);
+        const keyPress = keyNote.key;
+        key.innerText = keyPress;
+    });
+}
+
+function triggerKey(element, note, octave) {
+    let key = { element, note, octave };
+    clickedKey = key;
+    playKey(key);
+}
 
 document.addEventListener('mousedown', function(e) {
     var element = e.target.closest('[data-note]');
     if (!element) { return; }
     e.preventDefault();
-    let key = {
-        element: element,
-        note: element.getAttribute('data-note'),
-        octave: parseInt(element.getAttribute('data-octave'), 10)
-    };
-    let type = document.querySelector('[data-synth-type][aria-pressed="true"]').getAttribute('data-synth-type');
-    clickedKey = key;
-    playKey(key, type);
+    triggerKey(
+        element,
+        element.getAttribute('data-note'),
+        parseInt(element.getAttribute('data-octave'), 10)
+    );
     return false;
 }, false);
 
 document.addEventListener('mouseup', function() {
+    stopKey(clickedKey);
+}, false);
+
+document.addEventListener('keydown', function(e) {
+    const pressedKey = e.key.toUpperCase();
+    
+    // Keyboard shortcuts shouldn't get interrupted
+    if (e.altKey || e.metaKey || e.ctrlKey || e.shiftKey) { return; }
+    
+    // If the user has a key focused and pressed either Enter or Space, play the focused note
+    if (pressedKey === 'ENTER' || pressedKey === ' ') {
+        const element = e.target.closest('[data-note]');
+        if (!element) { return; }
+        triggerKey(
+            element,
+            element.getAttribute('data-note'),
+            parseInt(element.getAttribute('data-octave'), 10)
+        );
+        return;
+    }
+    
+    // Find the note associated with the keyboard key
+    const keyNote = getNoteByKey(pressedKey);
+    if (!keyNote) { return; }
+    let key = {
+        element: document.querySelector(`[data-note="${ keyNote.note }"][data-octave="${ keyNote.octave }"]`),
+        note: keyNote.note,
+        octave: keyNote.octave
+    };
+    clickedKey = key;
+    playKey(key);
+});
+
+document.addEventListener('keyup', function() {
     stopKey(clickedKey);
 }, false);

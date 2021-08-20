@@ -100,7 +100,7 @@ $about-delorean-transition-duration: 400;
                 "arts pa07 pa07 pa07"
                 "qu01 qu01 qu01 qu01"
                 "ti05 ti05 ti05 ti05" // Chronoise
-                "pa08 pa08 pa08 midi"
+                "pa08 pa08 midi midi"
                 "ti06 ti07 ti07 ti07" // Typeface/Geekometric
                 "pa09 pa10 pa10 pa10"
                 "ti08 ti08 ti08 ti08" // Hobbies
@@ -118,6 +118,7 @@ $about-delorean-transition-duration: 400;
             & > * { margin: 0; }
             & > * + h2 { margin-top: $about-gap; }
             & > *:not(:is(h2, h3)) + p { margin-top: $spacing; }
+            & > :is(h2, h3) { align-self: end; }
         }
         
         @include above-large {
@@ -133,7 +134,7 @@ $about-delorean-transition-duration: 400;
                 "arts arts ti04 ti04 ti04" // Posters/shirts
                 "arts arts pa07 pa07 qu01"
                 "ti05 ti05 ti05 ti05 ti05" // Chronoise
-                "pa08 pa08 pa08 midi midi"
+                "pa08 pa08 midi midi midi"
                 "ti06 ti06 ti07 ti07 ti07" // Typeface/Geekometric
                 "pa09 pa09 pa10 pa10 pa10"
                 "ti08 ti08 ti08 ti08 ti08" // Hobbies
@@ -305,25 +306,14 @@ $about-delorean-transition-duration: 400;
     width: 80%;
     max-width: 8rem;
 
-    & path {
-        fill: transparent;
-
-        transition: fill 300ms #{ $easing-smooth };
-    }
-    
-    &-wrap:hover & path {
-        fill: var(--c-primary-med, currentColor);
-    }
-
     & &--extra-piece {
-        transition:
-            fill 300ms #{ $easing-smooth },
-            transform 300ms #{ $easing-smooth },
-        ;
+        transform: translate(#{ $extra-piece-offset }, #{ $extra-piece-offset * -1 });
+
+        transition: transform 300ms #{ $easing-smooth },;
     }
     
     &-wrap:hover &--extra-piece {
-        transform: translate(#{ $extra-piece-offset * -1 }, #{ $extra-piece-offset });
+        transform: translate(0,0 );
     }
 }
 
@@ -362,100 +352,65 @@ $about-delorean-transition-duration: 400;
 }
 
 .about__keyboard {
-    $keyboard-ratio-wh: math.div(204.8, 54.4);
-    $keyboard-ratio-hw: math.div(54.4, 204.8);
-
     width: 100%;
     pointer-events: auto;
-
-    &--open {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: z('spotlight', 1);
-
-        width: calc(100vw - 4rem);
-        height: calc(100vh - 4rem);
-        margin: auto;
-
-        pointer-events: none;
-
-        &::before {
-            content: '';
-            
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
-
-            background: var(--color-bg);
-            box-shadow: 0 0 0 0.25rem var(--color-text);
-
-            opacity: 0.75;
-
-            pointer-events: none;
-        }
-
-        @media (max-width: 560px) and (orientation: portrait) {
-            top: 50%;
-            bottom: unset;
-            left: 50%;
-            right: unset;
-
-            width: calc(100vh - 4rem);
-            height: calc(100vw - 4rem);
-
-            transform: translate(-50%, -50%) rotate(-90deg);
-
-            & > svg {
-                height: 100%;
-            }
-        }
-        @at-root {
-            [data-grid-el="trinket-keyboard"]:not(#{ & }) a[data-note] { pointer-events: none; }
-            [data-grid-el="trinket-keyboard"]:not(#{ & }) [data-about-action] { display: none; }
-        }
-    }
 }
 
-a[data-about-action] {
-    fill: currentColor;
-    text-decoration: none;
-    color: var(--color-accent);
-
-    &:hover,
-    &:focus {
-        color: currentColor;
+.about__keyboard {
+    foreignObject {
+        overflow: visible;
+        display: flex;
     }
 
-    & > text {
-        fill: currentColor;
-        font-size: 8px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-}
-
-a[data-about-action="synth-set-type"] {
-    font-family: f('code');
-    
-    &[aria-pressed="true"] {
-        color: var(--c-primary-med);
-        text-decoration: underline;
-    }
-}
-
-[data-note][data-octave] {
-    &:hover,
-    &:focus {
-        color: var(--color-accent);
+    foreignObject button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
         
-        & > * { fill: currentColor; }
+        font-size: 8px;
+        border: 0;
+        background: transparent;
+
+        appearance: none;
     }
+
+    foreignObject [data-synth-type] {
+        align-items: center;
+
+        font-family: f('code');
+        color: var(--color-accent);
+
+        &[aria-pressed="true"] {
+            color: var(--color-bg);
+            background-color: var(--color-accent);
+        }
+    }
+
+    foreignObject [data-note][data-octave] {
+        align-items: flex-end;
+
+        border-radius: 0 0 4px 4px;
+
+        &[data-key="white"] {
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            box-shadow: inset 0 0 0 1px currentColor;
+        }
+
+        &[data-key="black"] {
+            color: var(--color-bg);
+            background-color: var(--color-text);
+        }
+
+        &.pressed {
+            color: var(--color-bg);
+            background-color: var(--color-accent);
+            box-shadow: inset 0 0 0 1px var(--color-accent);
+        }
+    }  
 }
 
 .about__quotebox {

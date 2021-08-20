@@ -1,0 +1,68 @@
+{% set notes = ['C','D','E','F','G','A','B'] %}
+{% set octaves = 1 %}
+{% set whitesPerOctave = 7 %}
+{% set noteCount = (octaves * whitesPerOctave) + 1 %}
+{% set settingsWidth = 20 %}
+{% set keysStartX = 9.3 %}
+{% set keysStartY = 26.3 %}
+{% set whiteKeyWidth = 186.12 / noteCount | round(4) %}
+{% set blackKeyWidth = whiteKeyWidth * 2/3 | round(4) %}
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="204.8"
+    height="64.4"
+    viewBox="0 0 204.8 64.4"
+    class="about__trinket about__keyboard"
+    aria-label="MIDI keyboard"
+    tabindex="-1"
+>
+    <rect class="about__trinket-stroke" x="0.5" y="0.5" width="203.8" height="63.4" rx="3.25" style="fill:var(--color-bg)" />
+
+    <g class="about__keyboard-settings">
+        <foreignObject x="{{ settingsWidth * 0 + keysStartX - 1 }}" y="3.25" width="{{ settingsWidth }}" height="16">
+            <button type="button" data-synth-type="sinewave" data-about-action="synth-set-type" aria-pressed="true">SIN</button>
+        </foreignObject>
+        <foreignObject x="{{ settingsWidth * 1 + keysStartX - 1 }}" y="3.25" width="{{ settingsWidth }}" height="16">
+            <button type="button" data-synth-type="triangle" data-about-action="synth-set-type" aria-pressed="false">TRI</button>
+        </foreignObject>
+        <foreignObject x="{{ settingsWidth * 2 + keysStartX - 1 }}" y="3.25" width="{{ settingsWidth }}" height="16">
+            <button type="button" data-synth-type="square" data-about-action="synth-set-type" aria-pressed="false">SQU</button>
+        </foreignObject>
+        <foreignObject x="{{ settingsWidth * 3 + keysStartX - 1 }}" y="3.25" width="{{ settingsWidth }}" height="16">
+            <button type="button" data-synth-type="sawtooth" data-about-action="synth-set-type" aria-pressed="false">SAW</button>
+        </foreignObject>
+    </g>
+
+    <g class="about__keyboard-keys">
+        {% for w in range(0, noteCount) %}
+            {% set noteIndex = w % 7 %}
+            {% set note = notes[ noteIndex ] %}
+            {% set octave = ((w / 7) | round(0, "floor")) + (1 if (noteIndex < 5) else 2) %}
+            <foreignObject x="{{ keysStartX + w * whiteKeyWidth }}" y="{{ keysStartY }}" width="{{ whiteKeyWidth }}" height="35">
+                <button type="button" data-key="white" data-note="{{ note }}" data-octave="{{ octave }}" data-name="{{ note }}{{ octave }}">{{ note }}{{ octave }}</button>
+            </foreignObject>
+            {# <a xlink:href="#synth-{{ note }}{{ octave }}" data-note="{{ note }}" data-octave="{{ octave }}" tabindex="-1">
+                <rect rx="2" x="{{ keysStartX + w * whiteKeyWidth }}" y="{{ keysStartY }}" width="{{ whiteKeyWidth }}" height="34" data-tabindex="0" fill="rgba(0,0,0,0.00001)" />
+            </a> #}
+        {% endfor %}
+        
+        {% for b in range(1, (octaves * whitesPerOctave)) %}
+            {% set noteIndex = b % 7 - 1 %}
+            {% set note = notes[ noteIndex ] %}
+            {% set octave = ((b / 7) | round(0, "floor")) + (1 if (noteIndex < 5) else 2) %}
+            {% if b % 7 === 0 or ((b + 4) % 7 === 0) %}{# Skip it !#}
+            {% else %}
+            <foreignObject x="{{ keysStartX + (whiteKeyWidth / 2) + (blackKeyWidth / 4) + (b - 1) * whiteKeyWidth }}" y="{{ keysStartY }}" width="{{ blackKeyWidth }}" height="23">
+                <button type="button" data-key="black" data-note="{{ note }}#" data-octave="{{ octave }}" data-name="{{ note }}#{{ octave }}">{{ note }}#{{ octave }}</button>
+            </foreignObject>
+            {# <a xlink:href="#synth-{{ note }}s{{ octave }}" data-note="{{ note }}#" data-octave="{{ octave }}" tabindex="-1">
+                <rect rx="1" x="{{ keysStartX + (whiteKeyWidth / 2) + (blackKeyWidth / 2) + (b - 1) * whiteKeyWidth }}" y="{{ keysStartY }}" width="{{ blackKeyWidth }}" height="23" data-tabindex="0" />
+            </a> #}
+            {% endif %}
+        {% endfor %}
+    </g>
+    <g class="about__trinket-strokes">
+        <path d="M9.3 22.3h186.1v41.6H9.3z"/>
+        <path d="M9.4 26h186.1"/>
+    </g>
+</svg>
