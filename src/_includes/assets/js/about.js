@@ -2,7 +2,6 @@ var utilityButtonLink = 'u-displayInlineFlex u-flex--centerBlock u-paddingInline
 // Init rAF
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };
 
-
 // Handle SVG elements toggle states
 document.addEventListener('DOMContentLoaded', function() {
     var aboutActionAttr = 'data-about-action';
@@ -52,26 +51,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     reLabelKeys();
+    showMelodies();
 });
 
 // Loosely adapted from https://css-tricks.com/how-to-code-a-playable-synth-keyboard/
+const melodies = [
+    ['D', 'D', 'D', 'A', 'G', 'D', 'A', 'G', 'D', 'J', 'J', 'J', 'K', 'G', 'E', 'A', 'G', 'D'], // Vader theme
+    ['G', 'Y', 'G', 'Y', 'G', 'F', 'Y', 'G', 'A', 'G', 'Y', 'G', 'Y', 'G', 'F', 'Y', 'G', 'K'], // Smeagol theme
+    ['A', 'S', 'D', 'G', 'D', 'S', 'A', 'D', 'G', 'H', 'K', 'J', 'G', 'D', 'F', 'D', 'S'] // Shire theme
+];
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const octaveOffset = 1;
 const keyNoteMap = [
-    { note: 'C',  octave: 1, key: 'A' },
-    { note: 'C#', octave: 1, key: 'W' },
-    { note: 'D',  octave: 1, key: 'S' },
-    { note: 'D#', octave: 1, key: 'E' },
-    { note: 'E',  octave: 1, key: 'D' },
-    { note: 'F',  octave: 1, key: 'F' },
-    { note: 'F#', octave: 1, key: 'T' },
-    { note: 'G',  octave: 1, key: 'G' },
-    { note: 'G#', octave: 1, key: 'Y' },
-    { note: 'A',  octave: 2, key: 'H' },
-    { note: 'A#', octave: 2, key: 'U' },
-    { note: 'B',  octave: 2, key: 'J' },
-    { note: 'C',  octave: 2, key: 'K' }
+    { note: 'C',  octave: 1, key: 'A', keyAzerty: 'Q' },
+    { note: 'C#', octave: 1, key: 'W', keyAzerty: 'Z' },
+    { note: 'D',  octave: 1, key: 'S', keyAzerty: 'S' },
+    { note: 'D#', octave: 1, key: 'E', keyAzerty: 'E' },
+    { note: 'E',  octave: 1, key: 'D', keyAzerty: 'D' },
+    { note: 'F',  octave: 1, key: 'F', keyAzerty: 'F' },
+    { note: 'F#', octave: 1, key: 'T', keyAzerty: 'T' },
+    { note: 'G',  octave: 1, key: 'G', keyAzerty: 'G' },
+    { note: 'G#', octave: 1, key: 'Y', keyAzerty: 'Y' },
+    { note: 'A',  octave: 2, key: 'H', keyAzerty: 'H' },
+    { note: 'A#', octave: 2, key: 'U', keyAzerty: 'U' },
+    { note: 'B',  octave: 2, key: 'J', keyAzerty: 'J' },
+    { note: 'C',  octave: 2, key: 'K', keyAzerty: 'K' }
 ];
+
+function getAzertyForKey(key) {
+    return keyNoteMap.find(keyNote => keyNote.key === key).keyAzerty;
+}
 
 function getHz(note = 'A', octave = 4) {
     const A4 = 440;
@@ -185,11 +194,17 @@ function stopKey(key) {
     }
 }
 
-const getNoteByKey = (key) => keyNoteMap.find((mapped) => mapped.key === key) || false;
+const getNoteByKey = (key) => keyNoteMap.find((mapped) => (getKeyboardLayout() === 'AZERTY' ? mapped.keyAzerty : mapped.key) === key) || false;
 const getKeyByNoteOctave = (note, octave) => keyNoteMap.find((mapped) => mapped.note === note && mapped.octave === parseInt(octave, 10)) || false;
 
 const pressedNotes = new Map();
 let clickedKey = '';
+
+function getKeyboardLayout() {
+    const melodyContainer = document.querySelector('[data-about-keyboard-melodies]');
+    const keyboardLayout = melodyContainer.getAttribute('data-about-keyboard-melodies') || 'QWERTY';
+    return keyboardLayout.toUpperCase();
+}
 
 function reLabelKeys() {
     const keys = Array.from(document.querySelectorAll('[data-note]'));
@@ -197,9 +212,23 @@ function reLabelKeys() {
         const note = key.getAttribute('data-note');
         const octave = parseInt(key.getAttribute('data-octave'), 10);
         const keyNote = getKeyByNoteOctave(note, octave);
-        const keyPress = keyNote.key;
+        const keyPress = (getKeyboardLayout() === 'AZERTY') ? keyNote.keyAzerty : keyNote.key;
         key.innerText = keyPress;
     });
+}
+
+function showMelodies() {
+    const isAzerty = (getKeyboardLayout() === 'AZERTY');
+    const melodyContainer = document.querySelector('[data-about-keyboard-melodies]');
+    melodies.forEach(melody => {
+        const br = document.createElement('br');
+        const kbd = document.createElement('kbd');
+        const melodySequence = (isAzerty) ? (melody.map(k => getAzertyForKey(k))) : melody;
+        kbd.innerText = melodySequence.join(', ');
+        melodyContainer.appendChild(br);
+        melodyContainer.appendChild(kbd);
+    });
+    melodyContainer.hidden = false;
 }
 
 function triggerKey(element, note, octave) {
