@@ -270,6 +270,8 @@ $about-delorean-transition-duration: 400;
         [data-grid-el="quote-phone"] + h2 { grid-area: ti11; }
         [data-grid-el="quote-phone"] + h2 + p { grid-area: pa16; }
     }
+
+    kbd::before { content: ">\00A0"; }
 }
 
 .about__trinket {

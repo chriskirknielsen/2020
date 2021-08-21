@@ -224,7 +224,7 @@ function showMelodies() {
         const br = document.createElement('br');
         const kbd = document.createElement('kbd');
         const melodySequence = (isAzerty) ? (melody.map(k => getAzertyForKey(k))) : melody;
-        kbd.innerText = melodySequence.join(', ');
+        kbd.innerText = melodySequence.join(', ') + '.';
         melodyContainer.appendChild(br);
         melodyContainer.appendChild(kbd);
     });
