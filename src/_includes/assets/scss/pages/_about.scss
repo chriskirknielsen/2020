@@ -81,6 +81,24 @@ $about-delorean-transition-duration: 400;
 .about__grid {
     $about-gap: $spacing * 2;
 
+    .about__profile ~ p:not(:nth-child(n+7)) { // Heading + profile + 4 * paragraphs, so any paragraph that's after the 7th element isn't getting the styles
+        // Move this layer above others so it's in front of the DeLorean layer
+        position: relative;
+        z-index: 1;
+
+        // Add a shadow to keep text legible above DeLorean hook
+        text-shadow:
+        1px -1px 0 var(--color-bg),
+        1px 1px 0 var(--color-bg),
+        -1px -1px 0 var(--color-bg),
+        -1px 1px 0 var(--color-bg),
+        2px -2px 0 var(--color-bg),
+        2px 2px 0 var(--color-bg),
+        -2px -2px 0 var(--color-bg),
+        -2px 2px 0 var(--color-bg),
+        ;
+    }
+
     @supports (display: grid) {
         @include above-medium {
             --flow-margin: 0;
@@ -307,6 +325,9 @@ $about-delorean-transition-duration: 400;
     max-width: 8rem;
 
     & &--extra-piece {
+        fill: var(--c-primary-med);
+        stroke: var(--c-primary-med);
+
         transform: translate(#{ $extra-piece-offset }, #{ $extra-piece-offset * -1 });
 
         transition: transform 300ms #{ $easing-smooth },;
