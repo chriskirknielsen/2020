@@ -7,13 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var aboutActionAttr = 'data-about-action';
     var aboutActions = document.querySelectorAll('['+aboutActionAttr+']');
     if (!aboutActions) { return; }
-    var targetFrameRate = 60;
-    var easeInOutQuad = function (t) { return t<.5 ? 2*t*t : -1+(4-2*t)*t; } // @source https://gist.github.com/gre/1650294
-    var preciseNum = function(x) { return Number.parseFloat(x).toPrecision(4); } // Limit to four decimal places
-    var currentAnimatedValue = function (start, end, progress) { // Provide an eased value
-        var eased = easeInOutQuad(progress);
-        return preciseNum(start + (end - start) * eased);
-    }
 
     // Replace each text hook with an actionable button
     for (var a = 0; a < aboutActions.length; a++) {
