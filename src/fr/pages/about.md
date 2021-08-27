@@ -51,14 +51,15 @@ navtitle: À Propos
 
 
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="Voir ma galerie d'illustrations.">
-    <img src="{{ '/' + metadata.assetUrl.imagesFolder + '/design-vhs-svg.jpg' }}" alt="" width="120" height="220" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
-    <img src="{{ '/' + metadata.assetUrl.imagesFolder + '/design-vhs-html.jpg' }}" alt="" width="120" height="220" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
+    {% set vhsImageRoot = ''/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
+    <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="Une face avant de boîte VHS inspiré par SVG" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
+    <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="Une face avant de boîte VHS inspiré par HTML" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
     {% set shirt -%}
     {%- include "assets/img/shirt.svg" -%}
     {%- endset -%}
     {{ shirt | htmlmin | safe }}
-    <img src="{{ '/' + metadata.assetUrl.imagesFolder + '/design-vhs-css.jpg' }}" alt="" width="120" height="220" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
-    <img src="{{ '/' + metadata.assetUrl.imagesFolder + '/design-vhs-js.jpg' }}" alt="" width="120" height="220" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
+    <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="Une face avant de boîte VHS inspiré par CSS" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
+    <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="Une face avant de boîte VHS inspiré par JavaScript" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
   </a>
 
   ### T-Shirts, Affiches, etc.
