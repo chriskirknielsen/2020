@@ -51,7 +51,7 @@ navtitle: À Propos
 
 
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="Voir ma galerie d'illustrations.">
-    {% set vhsImageRoot = ''/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
+    {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
     <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="Une face avant de boîte VHS inspiré par SVG" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
     <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="Une face avant de boîte VHS inspiré par HTML" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
     {% set shirt -%}
