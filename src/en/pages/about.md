@@ -49,8 +49,8 @@ navtitle: About
   
   I've also built a plugin for 11ty that allows you to copy assets from a directory to the output folder without messing with the passthrough configuration, which is aptly named [eleventy-plugin-copy-local-assets](https://www.npmjs.com/package/eleventy-plugin-copy-local-assets). That way you keep your images in the same folder as your blog post's Markdown file, for example.
 
+  {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="View my designs gallery.">
-    {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
     <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="A VHS tape design inspired by SVG" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
     <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="A VHS tape design inspired by HTML" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
     {% set shirt -%}

@@ -187,7 +187,7 @@
  * @param $xb: Exclude boundaries: doesn't output the boundary stops
  */
 @function gradient-stops($sc: #000, $sa: 1, $ec: #000, $ea: 0, $sp: 0%, $ep: 100%, $s: 8, $xb: false, $ease: 'in-out') {
-    $stops : (); // Initialise the stops
+    $stops: (); // Initialise the stops
 
     // Add start boundary
     @if ($xb == false) {

@@ -49,9 +49,8 @@ navtitle: À Propos
   
   J'ai aussi créé un plugin pour 11ty qui permet de copier les fichiers d'un dossier sans devoir changer la configuration globale "passthrough" — j'ai nommé…[eleventy-plugin-copy-local-assets](https://www.npmjs.com/package/eleventy-plugin-copy-local-assets). De cette façon, vous pouvez garder vos images dans le même dossier que votre fichier Markdown de votre article, par exemple.
 
-
+  {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="Voir ma galerie d'illustrations.">
-    {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
     <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="Une face avant de boîte VHS inspiré par SVG" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
     <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="Une face avant de boîte VHS inspiré par HTML" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
     {% set shirt -%}

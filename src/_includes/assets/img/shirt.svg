@@ -12,7 +12,7 @@
   
   <g class="about__trinket-stroke--round">
     <g>
-      <path d="M157.102 16.163a12.163 12.163 0 1112.163 12.163v13.17" class="about__trinket-stroke" fill="none" stroke-width="6"/>
+      <path d="M157.102 16.163a12.163 12.163 0 1112.163 12.163v13.17" class="about__trinket-stroke about__shirt-hook" fill="none" stroke-width="6"/>
       <path d="M154.797 54.105s2.039-12.608 14.468-12.608 14.468 12.608 14.468 12.608l21.942 9.628v12.655l-36.41-15.094-36.41 15.094V63.733z" class="about__trinket-stroke about__shirt-hanger" stroke-width="2"/>
     </g>
 

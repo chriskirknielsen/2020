@@ -204,7 +204,10 @@ $about-delorean-transition-duration: 400;
         }
 
         // Designs
-        .about__designs-wrap { grid-area: arts; }
+        .about__designs-wrap {
+            grid-area: arts;
+            perspective: 960px;
+        }
         .about__designs-wrap + h3 { grid-area: ti04; }
         .about__designs-wrap + h3 + p { grid-area: pa07; }
 
@@ -343,6 +346,9 @@ $about-delorean-transition-duration: 400;
 .about__vhs {
     width: 25%;
 
+    transition: 300ms ease-in-out;
+    transition-property: box-shadow, transform;
+
     &:not(:first-child) { margin-left: -2.5%; }
     &:not(:last-child) { margin-right: -2.5%; }
 
@@ -353,6 +359,18 @@ $about-delorean-transition-duration: 400;
     &--front {
         z-index: 2;
         margin-top: #{ $spacing * 2 };
+    }
+
+    &:hover {
+        $vhs-fake-3d: ();
+        @for $vhs-layer from 1 through 10 {
+            $shadow: #{1.25px*$vhs-layer} 0 0 #{-0.375px * $vhs-layer} #212121;
+            $vhs-fake-3d: append($vhs-fake-3d, $shadow);
+        }
+
+        box-shadow: zip($vhs-fake-3d);
+        
+        transform: rotateY(-25deg);
     }
 }
 
@@ -369,23 +387,34 @@ $about-delorean-transition-duration: 400;
     margin-right: -10%;
     width: 35%;
 
+    transform-origin: 50% 4%; // 4% is a magic number and corresponds closely to the vertical center of the hanger's hook
+    
+    // transition: transform 300ms cubic-bezier(0.68, -200, 0.265, 200);
+
     &-hanger {
         fill: var(--c-grey-max);
+    }
+    &-hook {
+        stroke-width: 6;
+    }
+
+    .about__designs-wrap:hover &,
+    &:hover {
+        // transform: rotate(0.1deg);
+        animation: about__shirtHanger 2s ease-in-out;
     }
 }
 
 .about__keyboard {
     width: 100%;
     pointer-events: auto;
-}
 
-.about__keyboard {
-    foreignObject {
+    & foreignObject {
         overflow: visible;
         display: flex;
     }
 
-    foreignObject button {
+    & foreignObject button {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -400,7 +429,7 @@ $about-delorean-transition-duration: 400;
         appearance: none;
     }
 
-    foreignObject [data-synth-type] {
+    & foreignObject [data-synth-type] {
         align-items: center;
 
         font-family: f('code');
@@ -412,7 +441,7 @@ $about-delorean-transition-duration: 400;
         }
     }
 
-    foreignObject [data-note][data-octave] {
+    & foreignObject [data-note][data-octave] {
         align-items: flex-end;
 
         border-radius: 0 0 4px 4px;
@@ -479,4 +508,18 @@ $about-delorean-transition-duration: 400;
         opacity: .0001;
         transform: translateY(-15%);
     }
+}
+
+@keyframes about__shirtHanger {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-20deg); }
+    20% { transform: rotate(18deg); }
+    30% { transform: rotate(-12deg); }
+    40% { transform: rotate(8deg); }
+    50% { transform: rotate(-6deg); }
+    60% { transform: rotate(5deg); }
+    70% { transform: rotate(-4deg); }
+    80% { transform: rotate(3deg); }
+    90% { transform: rotate(-1.5deg); }
+    100% { transform: rotate(0deg); }
 }
