@@ -157,7 +157,7 @@ $about-delorean-transition-duration: 400;
                 "pa09 pa09 pa10 pa10 pa10"
                 "ti08 ti08 ti08 ti08 ti08" // Hobbies
                 "pa11 pa11 pa11 pa12 pa12"
-                "qu02 pa13 pa13 pa13   . "
+                "qu02 pa13 pa13 pa13 pa13"
                 "ti09 ti09 ti09 ti09 ti09" // Professional
                 "pa14 pa14 pa14 pa14 pa14"
                 "ti10 ti10   .  ti11 ti11" // Web/Chat
@@ -482,6 +482,7 @@ $about-delorean-transition-duration: 400;
     color: var(--c-primary-max);
     border-radius: 1rem;
     background: var(--c-primary-min) radial-gradient(farthest-corner at 0 0, var(--c-primary-min), 66.7%, var(--c-primary-med));
+    box-shadow: 0.5em 0.5em 2em -1em var(--c-primary-med);
 
     @include light-mode {
         background: var(--c-primary-min) radial-gradient(farthest-corner at 0 0, var(--c-primary-med), 66.7%, var(--c-primary-min));

@@ -95,7 +95,7 @@ navtitle: About
 
   If you like some fantasy or science-fiction books, let me know because I love that stuff. I'm also very much into movies and TV shows, not too picky on the type there but horror is not my cup of tea — as long as it is in the original language.
 
-  <p class="about__quotebox" data-grid-el="quote-accent">My English accent is weird. It's all over the place.</p>
+  <p class="about__quotebox" data-grid-el="quote-accent">My English accent is weird and all over the place.</p>
 
   **I'm originally from Lyon, France**, with immigrant parents from Denmark, and I spent some time in Australia growing up. As a result, I speak English, French and Danish fluently. I also learned some Italian, can read the Cyrillic alphabet, and would like to get back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
