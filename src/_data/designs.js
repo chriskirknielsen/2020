@@ -61,6 +61,26 @@ module.exports = {
         },
         tags: ['js', 'vhs', 'retro']
     },
+    powercellHunters: {
+        name: 'Powercell Hunters',
+        note: 'A Jak And Daxter design',
+        img: 'powercell-hunters.jpg',
+        links: {
+            'RedBubble': 'https://www.redbubble.com/i/t-shirt/Powercell-Hunters-by-ckirknielsen/84952593.2EZFS',
+            'TeePublic': 'https://www.teepublic.com/t-shirt/23558909-powercell-hunters',
+        },
+        tags: ['video-games']
+    },
+    massEffectLeviathan: {
+        name: 'Mass Effect Leviathan',
+        note: 'A wall paiting from Mass Effect',
+        img: 'mass-effect-leviathan.jpg',
+        links: {
+            'RedBubble': 'https://www.redbubble.com/i/t-shirt/Mass-Effect-Leviathan-Reaper-Painting-by-ckirknielsen/87864618.0S66D',
+            'TeePublic': 'https://www.teepublic.com/t-shirt/24110825-mass-effect-leviathan-reaper-painting',
+        },
+        tags: ['video-games']
+    },
     brutalismCssZIndex: {
         name: '#brutalism-css.z-index',
         img: 'brutalism-z-index.jpg',
@@ -92,15 +112,5 @@ module.exports = {
             'Society6': 'https://society6.com/product/brutalicssm_print?sku=s6-19140411p4a1v45',
         },
         tags: ['css', 'brutalism']
-    },
-    powercellHunters: {
-        name: 'Powercell Hunters',
-        note: 'A Jak And Daxter design',
-        img: 'powercell-hunters.jpg',
-        links: {
-            'RedBubble': 'https://www.redbubble.com/i/t-shirt/Powercell-Hunters-by-ckirknielsen/84952593.2EZFS',
-            'TeePublic': 'https://www.teepublic.com/t-shirt/23558909-powercell-hunters',
-        },
-        tags: ['video-games']
     },
 }
