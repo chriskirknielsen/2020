@@ -27,6 +27,13 @@
         return window.localStorage.getItem(schemeStorageKey) || document.documentElement.dataset.scheme || schemeDefault; // Return the current scheme, with fallbacks
     }
 
+    const flipScheme = function() {
+        const currentSchemeIndex = schemeOptions.findIndex(s => s === getScheme());
+        const newSchemeIndex = 1 - currentSchemeIndex; // 1-0 = 1 == dusk | 1-1 = 0 == dawn
+
+        setScheme(schemeOptions[newSchemeIndex]);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         // Retrieve and apply the current scheme from localStorage
         const initScheme = window.localStorage.getItem(schemeStorageKey) || null;
@@ -36,9 +43,12 @@
     document.addEventListener('change', function (e) {
         const schemeToggle = e.target.closest(schemeToggleSelector);
         if (!schemeToggle) { return; } // If the "change" event wasn't triggered by our toggle, bail
-        const currentSchemeIndex = schemeOptions.findIndex(s => s === getScheme());
-        const newSchemeIndex = 1 - currentSchemeIndex; // 1-0 = 1 == dusk | 1-1 = 0 == dawn
-
-        setScheme(schemeOptions[newSchemeIndex]);
+        flipScheme();
     }, false);
+
+    document.addEventListener('keypress', function(e) {
+        if (e.altKey || e.metaKey || e.ctrlKey || e.shiftKey) { return; }
+        if (e.key.toLowerCase() !== 'm') { return; }
+        flipScheme();
+    });
 })();
