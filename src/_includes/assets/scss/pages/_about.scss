@@ -175,6 +175,10 @@ $about-delorean-transition-duration: 400;
             @include above-medium { padding: #{ $spacing * 0.5 } 0; }
         }
 
+        [data-grid-el="trinket-profile"] + p {
+            @include above-medium { margin-top: 0; }
+        }
+
         .about__profile + p { grid-area: pa01; }
         .about__profile + p + p { grid-area: pa02; }
         .about__profile + p + p + p { grid-area: pa03; }
@@ -253,7 +257,7 @@ $about-delorean-transition-duration: 400;
 
         [data-grid-el="quote-accent"],
         [data-grid-el="quote-accent"] + p {
-            @include above-medium { margin-top: $about-gap; }
+            // @include above-medium { margin-top: $about-gap; }
         }
 
         // Sure, I'm a pro

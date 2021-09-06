@@ -12,7 +12,7 @@ navtitle: About
   
   ## Origin Story
 
-  <div class="about__profile u-posRelative u-flex--alignSelfStart u-floatLeft u-marginBlock--double u-marginInlineEnd--double">
+  <div class="about__profile u-posRelative u-flex--alignSelfStart u-floatLeft u-marginBlock--double u-marginInlineEnd--double" data-grid-el="trinket-profile">
     {% set ckn_profile -%}
     {%- include "assets/img/ckn-profile.svg" -%}
     {%- endset -%}
@@ -93,7 +93,7 @@ navtitle: About
 
   Like many other humans, listening to music is a big part of my life, mainly rock, metal, electronica, and everything in between — I'm infatuated with '80s aesthetics. Something about synthesizers really appeals to me — maybe the neon colours just seep straight into my soul.
 
-  If you like some fantasy or science-fiction books, let me know because I love that stuff. I'm also very much into movies and TV shows, not too picky on the type there but horror is not my cup of tea — as long as it is in the original language.
+  If you like some fantasy or science-fiction books, let me know because I love that stuff. I'm also very much into movies and TV shows, not too picky on the genre there (though horror is not my cup of tea) as long as it is in the original language.
 
   <p class="about__quotebox" data-grid-el="quote-accent">My English accent is weird and all over the place.</p>
 

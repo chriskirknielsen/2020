@@ -12,7 +12,7 @@ navtitle: À Propos
 
   ## Débuts
 
-  <div class="about__profile u-posRelative u-flex--alignSelfStart u-floatLeft u-marginBlock--double u-marginInlineEnd--double">
+  <div class="about__profile u-posRelative u-flex--alignSelfStart u-floatLeft u-marginBlock--double u-marginInlineEnd--double" data-grid-el="trinket-profile">
     {% set ckn_profile -%}
     {%- include "assets/img/ckn-profile.svg" -%}
     {%- endset -%}
