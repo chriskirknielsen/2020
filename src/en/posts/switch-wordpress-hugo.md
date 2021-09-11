@@ -3,6 +3,7 @@ title: Switching From WordPress To Hugo
 summary: Running a simple blog doesn't require a large CMS.
 externalHost: Smashing Magazine
 externalUrl: https://www.smashingmagazine.com/2019/05/switch-wordpress-hugo/
+metaImageBackground: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b'
 date: 2019-05-22
 tags:
   - wordpress

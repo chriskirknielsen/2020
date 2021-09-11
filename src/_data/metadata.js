@@ -56,10 +56,16 @@ module.exports = {
     fontFaceStyles: "assets/css/font-face.css",
   },
   cloudinary: {
+    user: 'chriskirknielsen',
     url: 'https://res.cloudinary.com/chriskirknielsen',
     logo: 'ckn_logo',
     image: 'ckn_post_bg',
-    font: 'MarvinVisionsBigBold.otf'
+    font: 'MarvinVisionsBigBold.otf',
+    fontSize: 100,
+    fontBox: 0.75,
+    outlineSize: 12,
+    bg: '#1d122f',
+    color: '#ffe4c2',
   },
   showPostAuthor: false
 }

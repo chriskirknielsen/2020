@@ -11,6 +11,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const slugify = require("slugify");
 const blogTools = require("eleventy-plugin-blog-tools");
 const moment = require("moment");
+const cloudinary = require("cloudinary").v2;
 const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
 const copyLocalAssets = require("eleventy-plugin-copy-local-assets");
@@ -20,6 +21,10 @@ const purgeCssSafeList = {
 	blog: [], // Article list links and external article button
 	about: [],
 };
+cloudinary.config({ 
+	cloud_name: metadata.cloudinary.user,
+	secure: true
+});
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true); // Ensure `ownstyles` are merged together
@@ -99,8 +104,21 @@ module.exports = function(eleventyConfig) {
 		return string.replace(/[\u0020-\u007E]/g, (v) => '&#'+v.charCodeAt()+';');
 	});
 
-	eleventyConfig.addFilter("cloudinaryEscape", function(string) {
-		return encodeURIComponent(string).replaceAll(',', "%252C"); // Double-escape commas to avoid being seens as a parameter-separating comma
+	eleventyConfig.addFilter("cloudinaryMeta", function(title, fetchImage = false) {
+		const encodedTitle = encodeURIComponent(title).replace(/,/g, "%252C"); // Double-escape commas to avoid being seens as a parameter-separating comma
+		const { logo, bg, color, font, fontSize, fontBox, outlineSize, image } = metadata.cloudinary;
+		const src = fetchImage || image;
+		const imageBox = { w: 1200, h: 630 };
+		const textLayer = { overlay: { text: encodedTitle, font_family: font, font_size: `${fontSize}_center` }, crop: 'fit', gravity: 'center' };
+		let params = { transformation: [
+			{ width: imageBox.w, height: imageBox.h, format: 'auto', crop: 'fill', gravity: (fetchImage ? 'auto' : 'center') },
+			{ overlay: logo, gravity: 'south_east', x: 64, y: 42, width: 128 },
+			{ ...textLayer, width: (900 + outlineSize * 2), color: bg, effect: `outline:fill:${outlineSize}:0` },
+			{ ...textLayer, width: (900), color: color },
+		]};
+		if (fetchImage) { params.type = 'fetch'; }
+		const imageUrl = cloudinary.url(src, params);
+		return imageUrl;
 	});
 
 	eleventyConfig.addFilter("split", function(string, delimiter) {

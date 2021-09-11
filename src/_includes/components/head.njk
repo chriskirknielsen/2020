@@ -12,21 +12,21 @@
 	<meta property="og:site_name" content="{{ metadata.title }}">
 	<meta property="og:locale" content="{{ locale or 'en' }}">
 	<meta property="og:type" content="{% if section == "post" %}article{% else %}website{% endif %}">
-	<meta property="og:url" content="{{ localePath or '/' | url | absoluteUrl(metadata.url) }}">
+	<meta property="og:url" content="{{ (localePath or '/') | url | absoluteUrl(metadata.url) }}">
 	
 	{# Add a dynamic image for blog posts, based on https://www.juanfernandes.uk/blog/automated-open-graph-images-with-11ty-and-cloudinary/ #}
 	{% set meta_image_url %}
 		{% if customMetaImage %}
 			{{ customMetaImage | url | absoluteUrl(metadata.url) }}
 		{% elif section == "post" %}
-			{{ metadata.cloudinary.url }}/w_1200,f_auto/l_{{ metadata.cloudinary.logo }},w_128,g_south_east,x_64,y_42/l_text:{{ metadata.cloudinary.font }}_100_center:{{ navtitle or title or renderData.title | cloudinaryEscape }},co_rgb:ffe4c2,c_fit,w_900/{{ metadata.cloudinary.image }}
+			{{ (navtitle or title or renderData.title) | cloudinaryMeta(metaImageBackground) }}
 		{% else %}
 			{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}
 		{% endif %}
 	{% endset %}
 	<meta name="twitter:image" property="og:image" content="{{ meta_image_url | trim }}">
 	<meta name="twitter:image:alt" property="og:image:alt" content="{{ navtitle or title or renderData.title }}" />
-	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:card" content="{% if section == "post" or customMetaImage %}summary_large_image{% else %}summary{% endif %}" />
 
 	{# Add a slash in the final markup for root access #}
 	{# {% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}

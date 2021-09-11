@@ -2,6 +2,7 @@
 title: Breakout Container
 summary: Make a contained element span the entire horizontal space.
 date: 2019-11-23
+metaImageBackground: 'https://images.unsplash.com/photo-1552775838-b0c8d3b881fb'
 tags:
   - css
   - quick-tip

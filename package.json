@@ -39,10 +39,11 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.1.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
     "axios": "^0.21.1",
     "bl": "^4.1.0",
     "clean-css": "^4.2.3",
+    "cloudinary": "^1.26.3",
     "eleventy-plugin-blog-tools": "^0.3.1",
     "eleventy-plugin-copy-local-assets": "^1.0.0",
     "gulp": "^4.0.2",

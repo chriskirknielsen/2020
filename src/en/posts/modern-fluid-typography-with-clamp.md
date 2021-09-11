@@ -2,6 +2,7 @@
 title: Modern Fluid Typography with clamp()
 summary: Get a more consistent sizing with viewport-based font sizing
 date: 2020-05-20
+metaImageBackground: 'https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg'
 tags:
   - css
   - sass

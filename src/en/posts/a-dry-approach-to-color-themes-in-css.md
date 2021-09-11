@@ -3,6 +3,7 @@ title: A DRY Approach to Color Themes in CSS
 summary: Using a CSS custom property trick to define themes variables only once.
 externalHost: CSS-Tricks
 externalUrl: https://css-tricks.com/a-dry-approach-to-color-themes-in-css/
+metaImageBackground: https://css-tricks.com/wp-content/uploads/2021/02/dry-css-dark-mode.jpg
 date: 2021-02-24
 tags:
   - css
