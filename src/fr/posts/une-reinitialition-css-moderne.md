@@ -2,8 +2,9 @@
 title: Une réinitialisation CSS moderne
 summary: Andy Bell propose un reset CSS adapté aux navigateurs modernes.
 date: 2019-10-30
-original: https://hankchizljaw.com/wrote/a-modern-css-reset/
+original: https://piccalil.li/blog/a-modern-css-reset/
 originalTitle: Andy Bell - A Modern CSS Reset
+metaImageBackground: 'https://images.unsplash.com/photo-1483000805330-4eaf0a0d82da'
 tags:
   - css
 ---

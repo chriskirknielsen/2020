@@ -2,6 +2,7 @@
 title: Le petit guide sur var, let et const
 summary: Comment distinguer ces mots-clés JavaScript
 date: 2021-08-07
+metaImageBackground: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80'
 tags:
   - javascript
 ---
