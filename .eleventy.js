@@ -106,13 +106,13 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addFilter("cloudinaryMeta", function(title, fetchImage = false) {
 		const encodedTitle = encodeURIComponent(title).replace(/,/g, "%252C"); // Double-escape commas to avoid being seens as a parameter-separating comma
-		const { logo, bg, color, font, fontSize, fontBox, outlineSize, image } = metadata.cloudinary;
+		const { logo, bg, color, tint, font, fontSize, outlineSize, image } = metadata.cloudinary;
 		const src = fetchImage || image;
 		const imageBox = { w: 1200, h: 630 };
 		const textLayer = { overlay: { text: encodedTitle, font_family: font, font_size: `${fontSize}_center` }, crop: 'fit', gravity: 'center' };
 		let params = { transformation: [
-			{ width: imageBox.w, height: imageBox.h, format: 'auto', crop: 'fill', gravity: (fetchImage ? 'auto' : 'center') },
-			{ overlay: logo, gravity: 'south_east', x: 64, y: 42, width: 128 },
+			{ width: imageBox.w, height: imageBox.h, format: "auto", crop: "fill", gravity: (fetchImage ? 'auto' : 'center'), color: tint, effect: "colorize:25" },
+			{ overlay: logo, gravity: "south_east", x: 32, y: 32, width: 100, color: "#000000", effect: "outline:fill:4" },
 			{ ...textLayer, width: (900 + outlineSize * 2), color: bg, effect: `outline:fill:${outlineSize}:0` },
 			{ ...textLayer, width: (900), color: color },
 		]};
