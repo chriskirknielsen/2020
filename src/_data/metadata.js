@@ -62,10 +62,10 @@ module.exports = {
     image: 'ckn_post_bg',
     font: 'MarvinVisionsBigBold.otf',
     fontSize: 100,
-    fontBox: 0.75,
     outlineSize: 12,
     bg: '#1d122f',
     color: '#ffe4c2',
+    tint: '#ff0196',
   },
   showPostAuthor: false
 }
