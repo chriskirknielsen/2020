@@ -8,15 +8,6 @@ module.exports = {
         },
         tags: ['css', 'retro']
     },
-    cssFactSheet: {
-        name: 'CSS Fact Sheet',
-        img: 'css-fact-sheet.jpg',
-        links: {
-            'RedBubble': 'https://www.redbubble.com/i/sticker/CSS-Fact-Sheet-by-ckirknielsen/58082119.EJUG5',
-            'TeePublic': 'https://www.teepublic.com/t-shirt/14123881-css-fact-sheet?store_id=49603',
-        },
-        tags: ['css', 'cyberpunk']
-    },
     vhsCss: {
         name: 'Blank VHS CSS',
         note: 'For posters, use RedBubble or Society6',
@@ -61,6 +52,15 @@ module.exports = {
         },
         tags: ['js', 'vhs', 'retro']
     },
+    cssFactSheet: {
+        name: 'CSS Fact Sheet',
+        img: 'css-fact-sheet.jpg',
+        links: {
+            'RedBubble': 'https://www.redbubble.com/i/sticker/CSS-Fact-Sheet-by-ckirknielsen/58082119.EJUG5',
+            'TeePublic': 'https://www.teepublic.com/t-shirt/14123881-css-fact-sheet?store_id=49603',
+        },
+        tags: ['css', 'cyberpunk']
+    },
     powercellHunters: {
         name: 'Powercell Hunters',
         note: 'A Jak And Daxter design',
@@ -71,9 +71,20 @@ module.exports = {
         },
         tags: ['video-games']
     },
+    controlServiceWeapon: {
+        name: 'Control Service Weapon',
+        note: 'A handgun found in Control',
+        img: 'control-service-weapon.jpg',
+        links: {
+            'RedBubble': 'https://www.redbubble.com/i/poster/Control-FBC-Service-Weapon-by-ckirknielsen/89267833.LVTDI',
+            'TeePublic': 'https://www.teepublic.com/poster-and-art/24392079-control-fbc-service-weapon',
+            'Society6': 'https://society6.com/product/control-fbc-service-weapon_print',
+        },
+        tags: ['video-games']
+    },
     massEffectLeviathan: {
         name: 'Mass Effect Leviathan',
-        note: 'A wall paiting from Mass Effect',
+        note: 'A wall painting from Mass Effect',
         img: 'mass-effect-leviathan.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Mass-Effect-Leviathan-Reaper-Painting-by-ckirknielsen/87864618.0S66D',
