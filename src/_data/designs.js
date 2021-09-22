@@ -76,9 +76,9 @@ module.exports = {
         note: 'A handgun found in Control',
         img: 'control-service-weapon.jpg',
         links: {
+            'Society6': 'https://society6.com/product/control-fbc-service-weapon_print',
             'RedBubble': 'https://www.redbubble.com/i/poster/Control-FBC-Service-Weapon-by-ckirknielsen/89267833.LVTDI',
             'TeePublic': 'https://www.teepublic.com/poster-and-art/24392079-control-fbc-service-weapon',
-            'Society6': 'https://society6.com/product/control-fbc-service-weapon_print',
         },
         tags: ['video-games']
     },
