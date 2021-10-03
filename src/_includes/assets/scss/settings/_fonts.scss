@@ -62,8 +62,8 @@ $fonts: (
     ),
 
     'home_mark': (
-        'greeting': (#{ map-deep-get($font-token, "home_mark", "greeting") }),
-        'creadev': (#{ map-deep-get($font-token, "home_mark", "creadev") })
+        'greeting': (#{ map-deep-get($font-token, "home_mark", "greeting", "name") }),
+        'creadev': (#{ map-deep-get($font-token, "home_mark", "creadev", "name") })
     )
 );
 

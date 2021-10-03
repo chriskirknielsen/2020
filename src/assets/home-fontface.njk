@@ -1,14 +1,16 @@
 ---
 permalink: /assets/css/home-fontface.css
 ---
-{% for fontPurpose, fontName in tokens.fonts.home_mark %}
+{% for fontPurpose, fontData in tokens.fonts.home_mark %}
+{%- set fontName = fontData.name -%}
+{%- set fontWeight = fontData.weight -%}
 @font-face {
 	font-family: "{{ fontName }}";
 	src: 
 		url("/{{ metadata.assetUrl.fontFaceFolder }}/{{ fontName | replace(" ", "") }}-subset.woff2") format("woff2"),
 		url("/{{ metadata.assetUrl.fontFaceFolder }}/{{ fontName | replace(" ", "") }}-subset.woff") format("woff");
 	font-style: normal;
-	font-weight: 400;
+	font-weight: {{ fontWeight or '400' }};
 	font-display: swap;
 }
 {% endfor %}
