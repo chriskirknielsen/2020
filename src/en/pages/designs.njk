@@ -25,7 +25,7 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
 
 <section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
 {% for key, design in designs %}
-  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med" data-tags="
+  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med" id="{{ key }}" data-tags="
     {%- for tag in design.tags -%}
     {{ tag }}
     {%- if not loop.last %},{% endif -%}

@@ -15,6 +15,25 @@ summary*/ {
     }
 }
 
+[id]:target {
+    outline: #{ $spacing * 0.5 } dashed var(--c-primary-med);
+    animation: targetOutline 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s both;
+}
+
+@keyframes targetOutline {
+    from {
+        outline-offset: #{ $spacing * 0.75 };
+    }
+
+    20% {
+        outline-offset: #{ $spacing };
+    }
+
+    to {
+        outline: #{ $spacing * 0.5 } dashed transparent;
+    }
+}
+
 // details {
 //     & > summary {
 //         cursor: pointer;
