@@ -76,19 +76,31 @@ module.exports = {
         note: 'A handgun found in Control',
         img: 'control-service-weapon.jpg',
         links: {
-            'Society6': 'https://society6.com/product/control-fbc-service-weapon_print',
+            'Society6': 'https://society6.com/product/control-fbc-service-weapon_print?sku=s6-21852486p4a1v1',
             'RedBubble': 'https://www.redbubble.com/i/poster/Control-FBC-Service-Weapon-by-ckirknielsen/89267833.LVTDI',
             'TeePublic': 'https://www.teepublic.com/poster-and-art/24392079-control-fbc-service-weapon',
         },
         tags: ['video-games']
     },
-    massEffectLeviathan: {
-        name: 'Mass Effect Leviathan',
-        note: 'A wall painting from Mass Effect',
-        img: 'mass-effect-leviathan.jpg',
+    godOfWarAxe: {
+        name: 'God of War Leviathan Axe',
+        note: 'A mythical axe from God of War',
+        img: 'gow-axe.jpg',
         links: {
-            'RedBubble': 'https://www.redbubble.com/i/t-shirt/Mass-Effect-Leviathan-Reaper-Painting-by-ckirknielsen/87864618.0S66D',
-            'TeePublic': 'https://www.teepublic.com/t-shirt/24110825-mass-effect-leviathan-reaper-painting',
+            'Society6': 'https://society6.com/product/god-of-war-leviathan-axe6077739_print?sku=s6-22068849p4a1v1',
+            'RedBubble': 'https://www.redbubble.com/i/poster/God-of-War-Leviathan-Axe-by-ckirknielsen/91430397.LVTDI',
+            'TeePublic': 'https://www.teepublic.com/poster-and-art/24830737-god-of-war-leviathan-axe',
+        },
+        tags: ['video-games']
+    },
+    godOfWarLake: {
+        name: 'God of War Lake of Nine',
+        note: 'A main area in God of War',
+        img: 'gow-lake.jpg',
+        links: {
+            'Society6': 'https://society6.com/product/god-of-war-lake-of-nine_print?sku=s6-22069078p4a1v1',
+            'RedBubble': 'https://www.redbubble.com/i/poster/God-of-War-Lake-of-Nine-by-ckirknielsen/91430918.LVTDI',
+            'TeePublic': 'https://www.teepublic.com/poster-and-art/24831149-god-of-war-lake-of-nine',
         },
         tags: ['video-games']
     },
