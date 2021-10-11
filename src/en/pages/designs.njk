@@ -31,9 +31,10 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
     {%- if not loop.last %},{% endif -%}
     {%- endfor-%}
   ">
+    {% set designPermalink = '/designs/' + design.slug %}
     {% if design.img %}
     <div class="card__image u-flex--shrink-0 u-bg--grey-med">
-      <a href="{{ design.slug | url }}" aria-label="{{ design.name }}" tabindex="-1">
+      <a href="{{ designPermalink | url }}" aria-label="{{ design.name }}" tabindex="-1">
         <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">
       </a>
     </div>
@@ -41,7 +42,7 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
 
     <div class="card__content u-displayFlex u-flex--column u-padding u-flex--grow-1 u-bg--grey-max">
       <h2 class="h3">
-        <a href="./{{ design.slug }}/" class="heading-link">{{- design.name -}}</a>
+        <a href="{{ designPermalink | url }}" class="heading-link">{{- design.name -}}</a>
       </h2>
       
       <ul role="list" class="o-inlineList u-marginBlockStart--auto">
