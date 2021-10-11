@@ -1,0 +1,17 @@
+.c-sidebyside {
+    &__media {
+        flex: 0 0 70%;
+
+        & > * { width: 100%; }
+    }
+
+    &__content {
+        flex: 0 0 30%;
+    }
+    
+    @include below-medium {
+        flex-direction: column;
+
+        & > * { flex-basis: 100%; }
+    }
+}

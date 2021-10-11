@@ -1,5 +1,5 @@
 {% set navList = collections['pages_'+locale] | sortNavLocale(metadata.navSet) %}
-<ul class="nav__list | u-displayFlex u-flex--wrap u-flex--stretchBlock">
+<ul role="list" class="nav__list | u-displayFlex u-flex--wrap u-flex--stretchBlock">
 {% for nav in navList %}
 	<li class="nav__item | u-displayFlex u-flex--stretchBlock">
 		<a href="{{ nav.url | url }}" class="nav__link | u-displayInlineFlex u-flex--centerBlock | u-paddingInline--half | u-c--grey-min h_u-textDecoration--none | {{ utilities.glowBoxLink }}"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>

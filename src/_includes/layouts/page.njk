@@ -5,7 +5,8 @@ ownstyles: []
 ---
 <header class="{{ utilities.bigboi }}">
     <div class="{{ utilities.bigboiContent }}">
-        <h1>{{ title }}</h1>
+        {% if backlink %}<p class="u-textSmall"><span aria-hidden="true">&larr;</span> <a href="{{ backlink.url }}">{{ backlink.label }}</a></p>{% endif %}
+        <h1>{{ displayTitle or title }}</h1>
         {% if subtitle %}<p class="u-displayInlineBlock u-marginInlineEnd | u-c--grey-min u-fontBold">{{ subtitle }}</p>{% endif %}
     </div>
 </header>

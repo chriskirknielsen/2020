@@ -13,3 +13,13 @@ a:not([class]),
         text-decoration-color: var(--currentColor, var(--color-text));
     }
 }
+
+.heading-link {
+    &:hover,
+    &:focus,
+    &:active {
+        color: var(--color-accent, currentColor);
+        text-decoration-color: var(--currentColor, var(--color-text));
+        text-decoration-thickness: .1em;
+    }
+}

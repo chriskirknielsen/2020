@@ -1,27 +1,3 @@
-// .o-inlineList {
-//     > li {
-//         display: inline-block;
-
-//         &:not(:last-child) {
-//             &::after {
-//                 content: ",\00a0";
-//             }
-//         }
-//     }
-// }
-
-// .o-basicList[class] { // [class] added to override the ol/ul[class] default style
-//     list-style-type: disc;
-//     list-style-position: inside;
-
-//     ul {
-//         padding-left: $spacing;
-//         // padding-inline-start: $spacing;
-//         list-style-type: square;
-//         list-style-position: inside;
-//     }
-// }
-
 .o-inlineList {
     display: inline-block;
 

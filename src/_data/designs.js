@@ -1,6 +1,8 @@
-module.exports = {
-    retroCss: {
+module.exports = [
+    {
+        slug: 'retro-css',
         name: 'Retro CSS',
+        description: 'A totally tubular t-shirt to show off how rad CSS is!',
         img: 'retro-css.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-CSS-by-ckirknielsen/58081555.DYMRA',
@@ -8,9 +10,11 @@ module.exports = {
         },
         tags: ['css', 'retro']
     },
-    vhsCss: {
+    {
+        slug: 'vhs-css',
         name: 'Blank VHS CSS',
-        note: 'For posters, use RedBubble or Society6',
+        description: 'In a world where the web runs on VHS tapes…',
+        note: '(for posters, RedBubble or Society6 are preferred)',
         img: 'vhs-css.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-CSS-by-ckirknielsen/72710420.6VDG0',
@@ -19,9 +23,11 @@ module.exports = {
         },
         tags: ['css', 'vhs', 'retro']
     },
-    vhsHtml: {
+    {
+        slug: 'vhs-html',
         name: 'Blank VHS HTML',
-        note: 'For posters, use RedBubble or Society6',
+        description: 'In a world where the web runs on VHS tapes…',
+        note: '(for posters, RedBubble or Society6 are preferred)',
         img: 'vhs-html.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-HTML-by-ckirknielsen/73662806.CW2C9.XYZ',
@@ -30,9 +36,11 @@ module.exports = {
         },
         tags: ['html', 'vhs', 'retro']
     },
-    vhsSvg: {
+    {
+        slug: 'vhs-svg',
         name: 'Blank VHS SVG',
-        note: 'For posters, use RedBubble or Society6',
+        description: 'In a world where the web runs on VHS tapes…',
+        note: '(for posters, RedBubble or Society6 are preferred)',
         img: 'vhs-svg.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-SVG-by-ckirknielsen/80893683.DYMRA',
@@ -41,9 +49,11 @@ module.exports = {
         },
         tags: ['svg', 'vhs', 'retro']
     },
-    vhsJs: {
+    {
+        slug: 'vhs-js',
         name: 'Blank VHS JS',
-        note: 'For posters, use RedBubble or Society6',
+        description: 'In a world where the web runs on VHS tapes…',
+        note: '(for posters, RedBubble or Society6 are preferred)',
         img: 'vhs-js.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-JavaScript-ECMAScript-by-ckirknielsen/85189202.CW2C9.XYZ',
@@ -52,8 +62,10 @@ module.exports = {
         },
         tags: ['js', 'vhs', 'retro']
     },
-    cssFactSheet: {
+    {
+        slug: 'css-fact-sheet',
         name: 'CSS Fact Sheet',
+        description: 'A compact fact sheet for CSS that wouldn\'t be out of place in a cyberpunk world…',
         img: 'css-fact-sheet.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/sticker/CSS-Fact-Sheet-by-ckirknielsen/58082119.EJUG5',
@@ -61,9 +73,10 @@ module.exports = {
         },
         tags: ['css', 'cyberpunk']
     },
-    powercellHunters: {
+    {
+        slug: 'jak-daxter-powercell-hunters',
         name: 'Powercell Hunters',
-        note: 'A Jak And Daxter design',
+        description: 'A design inspired by one of my favourite video games: Jak And Daxter.',
         img: 'powercell-hunters.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Powercell-Hunters-by-ckirknielsen/84952593.2EZFS',
@@ -71,9 +84,10 @@ module.exports = {
         },
         tags: ['video-games']
     },
-    controlServiceWeapon: {
+    {
+        slug: 'control-service-weapon',
         name: 'Control Service Weapon',
-        note: 'A handgun found in Control',
+        description: 'A poster showcasing a powerful handgun found in Control.',
         img: 'control-service-weapon.jpg',
         links: {
             'Society6': 'https://society6.com/product/control-fbc-service-weapon_print?sku=s6-21852486p4a1v1',
@@ -82,9 +96,10 @@ module.exports = {
         },
         tags: ['video-games']
     },
-    godOfWarAxe: {
+    {
+        slug: 'god-of-war-leviathan-axe',
         name: 'God of War Leviathan Axe',
-        note: 'A mythical axe from God of War',
+        description: 'A poster showcasing a mythical axe from God of War.',
         img: 'gow-axe.jpg',
         links: {
             'Society6': 'https://society6.com/product/god-of-war-leviathan-axe6077739_print?sku=s6-22068849p4a1v1',
@@ -93,9 +108,10 @@ module.exports = {
         },
         tags: ['video-games']
     },
-    godOfWarLake: {
+    {
+        slug: 'god-of-war-lake-of-nine',
         name: 'God of War Lake of Nine',
-        note: 'A main area in God of War',
+        description: 'A poster presenting a main area in God of War.',
         img: 'gow-lake.jpg',
         links: {
             'Society6': 'https://society6.com/product/god-of-war-lake-of-nine_print?sku=s6-22069078p4a1v1',
@@ -103,37 +119,5 @@ module.exports = {
             'TeePublic': 'https://www.teepublic.com/poster-and-art/24831149-god-of-war-lake-of-nine',
         },
         tags: ['video-games']
-    },
-    brutalismCssZIndex: {
-        name: '#brutalism-css.z-index',
-        img: 'brutalism-z-index.jpg',
-        links: {
-            'Society6': 'https://society6.com/product/brutalism-cssz-index_print?sku=s6-19140452p4a1v45',
-        },
-        tags: ['css', 'brutalism']
-    },
-    brutalismCssGrid: {
-        name: '#brutalism-css.grid',
-        img: 'brutalism-grid.jpg',
-        links: {
-            'Society6': 'https://society6.com/product/brutalism-cssgrid_print?sku=s6-19140479p4a1v45',
-        },
-        tags: ['css', 'brutalism']
-    },
-    brutalismCssTransform: {
-        name: '#brutalism-css.transform',
-        img: 'brutalism-transform.jpg',
-        links: {
-            'Society6': 'https://society6.com/product/brutalism-csstransform_print?sku=s6-19142104p4a1v45',
-        },
-        tags: ['css', 'brutalism']
-    },
-    brutalismCssNesting: {
-        name: '#brutalism-css.nesting',
-        img: 'brutalism-nesting.jpg',
-        links: {
-            'Society6': 'https://society6.com/product/brutalicssm_print?sku=s6-19140411p4a1v45',
-        },
-        tags: ['css', 'brutalism']
-    },
-}
+    }
+]

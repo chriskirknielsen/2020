@@ -12,7 +12,7 @@ ownstyles: []
 		
 		{%- if tags %}
 		<h2 class="visually-hidden" id="article-tags-heading">{{ localisedContent.tagged }}</h2>
-		<ul class="u-displayInline" aria-labelledby="article-tags-heading">
+		<ul role="list" class="u-displayInline" aria-labelledby="article-tags-heading">
 		{% for tag in tags %}
 			{%- if tag != "post" -%}
 			{%- set tagUrl %}/{{ localeRoot }}tags/{{ tag }}/{% endset -%}

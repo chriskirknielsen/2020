@@ -1,0 +1,33 @@
+---
+pagination:
+    data: designs
+    size: 1
+    alias: design
+permalink: "designs/{{ design.slug | slug }}/"
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  displayTitle: "{{ design.name }}"
+  title: "Design — {{ design.name }}"
+  subtitle: "{{ design.description }}"
+  summary: "{{ design.description }} | Design by Christopher Kirk-Nielsen"
+backlink: { url: "/designs", label: "Back to Designs" }
+---
+
+<article class="c-sidebyside u-displayFlex u-border u-border--primary-med">
+  {% if design.img %}
+  <div class="c-sidebyside__media">
+      <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">
+  </div>
+  {% endif %}
+
+  <div class="c-sidebyside__content u-flow u-padding u-bg--grey-max">
+    <h2>Available on</h2>
+    <ul role="list" class="u-paddingInlineStart--none">
+      {%- for site, url in design.links %}
+        <li><a href="{{ url | url }}" class="u-c--secondary-med h_u-c--primary-min u-textDecoration--underline">{{ site }}</li>
+      {% endfor -%}
+    </ul>
+    
+    {% if design.note %}<p class="u-fontItalic">{{ design.note }}</p>{% endif %}
+  </div>
+</article>
