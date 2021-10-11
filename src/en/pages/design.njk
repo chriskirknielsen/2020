@@ -10,6 +10,7 @@ eleventyComputed:
   title: "Design — {{ design.name }}"
   subtitle: "{{ design.description }}"
   summary: "{{ design.description }} | Design by Christopher Kirk-Nielsen"
+  customMetaImage: "{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img }}"
 backlink: { url: "/designs", label: "Back to Designs" }
 ---
 

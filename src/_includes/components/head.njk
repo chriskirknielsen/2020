@@ -108,7 +108,7 @@
 
 	{# <link rel="manifest" href="{{ "/" + metadata.assetUrl.manifest | url }}"> #}
 	
-	{% if page.fileSlug and section %}
+	{% if page.fileSlug and section and not eleventyExcludeFromCollections %}
 		{% set resourceVariants %}{% if section == "post" %}posts_all{% else %}pages_all{% endif %}{% endset %}
 		{% set filteredVariants = collections | findVariants(resourceVariants, page.fileSlug, locale) %}
 		
