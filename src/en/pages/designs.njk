@@ -33,7 +33,7 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
   ">
     {% if design.img %}
     <div class="card__image u-flex--shrink-0 u-bg--grey-med">
-      <a href="./{{ design.slug }}/" aria-label="{{ design.name }}" tabindex="-1">
+      <a href="./{{ design.slug | url }}/" aria-label="{{ design.name }}" tabindex="-1">
         <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">
       </a>
     </div>
