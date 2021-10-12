@@ -39,7 +39,9 @@
 		{% set homeFontStylesPath = "/" + metadata.assetUrl.stylesFolder + "/home-fontface.css" %}
 		<link rel="preload" href="{{ homeFontStylesPath | url }}" as="style">
 
-		{% for fontPurpose, fontName in tokens.fonts.home_mark %}
+		{% for fontPurpose, fontData in tokens.fonts.home_mark %}
+			{%- set fontName = fontData.name -%}
+			{%- set fontWeight = fontData.weight -%}
 			{% set fontAssetUrl = "/"+ metadata.assetUrl.fontFaceFolder + "/" + (fontName | replace(" ", "")) + "-subset.woff2" %}
 			<link rel="preload" href="{{ fontAssetUrl | url }}" as="font" type="font/woff2" crossorigin>
 		{% endfor %}
