@@ -14,7 +14,7 @@ module.exports = [
         slug: 'vhs-css',
         name: 'Blank VHS CSS',
         description: 'In a world where the web runs on VHS tapes…',
-        note: '(for posters, RedBubble or Society6 are preferred)',
+        note: '(for posters, RedBubble or Society6 are recommended)',
         img: 'vhs-css.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-CSS-by-ckirknielsen/72710420.6VDG0',
@@ -27,7 +27,7 @@ module.exports = [
         slug: 'vhs-html',
         name: 'Blank VHS HTML',
         description: 'In a world where the web runs on VHS tapes…',
-        note: '(for posters, RedBubble or Society6 are preferred)',
+        note: '(for posters, RedBubble or Society6 are recommended)',
         img: 'vhs-html.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-HTML-by-ckirknielsen/73662806.CW2C9.XYZ',
@@ -40,7 +40,7 @@ module.exports = [
         slug: 'vhs-svg',
         name: 'Blank VHS SVG',
         description: 'In a world where the web runs on VHS tapes…',
-        note: '(for posters, RedBubble or Society6 are preferred)',
+        note: '(for posters, RedBubble or Society6 are recommended)',
         img: 'vhs-svg.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-SVG-by-ckirknielsen/80893683.DYMRA',
@@ -53,7 +53,7 @@ module.exports = [
         slug: 'vhs-js',
         name: 'Blank VHS JS',
         description: 'In a world where the web runs on VHS tapes…',
-        note: '(for posters, RedBubble or Society6 are preferred)',
+        note: '(for posters, RedBubble or Society6 are recommended)',
         img: 'vhs-js.jpg',
         links: {
             'RedBubble': 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-JavaScript-ECMAScript-by-ckirknielsen/85189202.CW2C9.XYZ',
@@ -71,11 +71,11 @@ module.exports = [
             'RedBubble': 'https://www.redbubble.com/i/sticker/CSS-Fact-Sheet-by-ckirknielsen/58082119.EJUG5',
             'TeePublic': 'https://www.teepublic.com/t-shirt/14123881-css-fact-sheet?store_id=49603',
         },
-        tags: ['css', 'cyberpunk']
+        tags: ['css']
     },
     {
         slug: 'jak-daxter-powercell-hunters',
-        name: 'Powercell Hunters',
+        name: 'Jak & Daxter, Powercell Hunters',
         description: 'A design inspired by one of my favourite video games: Jak And Daxter.',
         img: 'powercell-hunters.jpg',
         links: {
@@ -86,7 +86,7 @@ module.exports = [
     },
     {
         slug: 'control-service-weapon',
-        name: 'Control Service Weapon',
+        name: 'Control, Service Weapon',
         description: 'A poster showcasing a powerful handgun found in Control.',
         img: 'control-service-weapon.jpg',
         links: {
@@ -98,7 +98,7 @@ module.exports = [
     },
     {
         slug: 'god-of-war-leviathan-axe',
-        name: 'God of War Leviathan Axe',
+        name: 'God of War, Leviathan Axe',
         description: 'A poster showcasing a mythical axe from God of War.',
         img: 'gow-axe.jpg',
         links: {
@@ -110,7 +110,7 @@ module.exports = [
     },
     {
         slug: 'god-of-war-lake-of-nine',
-        name: 'God of War Lake of Nine',
+        name: 'God of War, Lake of Nine',
         description: 'A poster presenting a main area in God of War.',
         img: 'gow-lake.jpg',
         links: {
