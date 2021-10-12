@@ -1,6 +1,8 @@
 .card {
     flex: 1 1 0;
     min-width: 200px;
+
+    border-radius: #{ $border-base-radius };
     
     @supports (display: grid) {
         min-width: auto;

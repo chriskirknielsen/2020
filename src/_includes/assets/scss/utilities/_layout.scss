@@ -97,26 +97,26 @@
 
 /* Margin */
 
-// .u-margin { margin: #{ $spacing }; }
-// .u-margin--double { margin: #{ $spacing * 2 }; }
+.u-margin { margin: #{ $spacing }; }
+.u-margin--double { margin: #{ $spacing * 2 }; }
 .u-margin--none { margin: 0; }
 .u-margin--auto { margin: auto; }
-// .u-marginBlock {
-//     margin-top: #{ $spacing };
-//     margin-bottom: #{ $spacing };
-// }
+.u-marginBlock {
+    margin-top: #{ $spacing };
+    margin-bottom: #{ $spacing };
+}
 .u-marginBlock--double {
     margin-top: #{ $spacing * 2 };
     margin-bottom: #{ $spacing * 2 };
 }
-// .u-marginBlock--negative-half {
-//     margin-top: #{ $spacing * -.5 };
-//     margin-bottom: #{ $spacing * -.5 };
-// }
-// .u-marginBlock--none {
-//     margin-top: 0;
-//     margin-bottom: 0;
-// }
+.u-marginBlock--negative-half {
+    margin-top: #{ $spacing * -.5 };
+    margin-bottom: #{ $spacing * -.5 };
+}
+.u-marginBlock--none {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .u-marginBlockStart {
     margin-top: #{ $spacing };
 }
@@ -141,25 +141,25 @@
 .u-marginBlockEnd--double {
     margin-bottom: #{ $spacing * 2 };
 }
-// .u-marginInline--negative {
-//     margin-left: #{ $spacing * -1 };
-//     margin-right: #{ $spacing * -1 };
-// }
-// .u-marginInlineStart--negative-half {
-//     margin-left: #{ $spacing * -.5 };
-// }
-// .u-marginInline--negative-half {
-//     margin-left: #{ $spacing * -.5 };
-//     margin-right: #{ $spacing * -.5 };
-// }
+.u-marginInline--negative {
+    margin-left: #{ $spacing * -1 };
+    margin-right: #{ $spacing * -1 };
+}
+.u-marginInlineStart--negative-half {
+    margin-left: #{ $spacing * -.5 };
+}
+.u-marginInline--negative-half {
+    margin-left: #{ $spacing * -.5 };
+    margin-right: #{ $spacing * -.5 };
+}
 .u-marginInline {
     margin-left: #{ $spacing };
     margin-right: #{ $spacing };
 }
-// .u-marginInline--none {
-//     margin-left: 0;
-//     margin-right: 0;
-// }
+.u-marginInline--none {
+    margin-left: 0;
+    margin-right: 0;
+}
 .u-marginInline--auto {
     margin-left: auto;
     margin-right: auto;
@@ -173,9 +173,9 @@
 .u-marginInlineStart--double {
     margin-left: #{ $spacing * 2 };
 }
-// .u-marginInlineStart--auto {
-//     margin-left: auto;
-// }
+.u-marginInlineStart--auto {
+    margin-left: auto;
+}
 .u-marginInlineStart--none {
     margin-left: 0;
 }
@@ -185,19 +185,19 @@
 .u-marginInlineEnd--double {
     margin-right: #{ $spacing * 2 };
 }
-// .u-marginInlineEnd--none {
-//     margin-right: 0;
-// }
+.u-marginInlineEnd--none {
+    margin-right: 0;
+}
 .u-marginInlineEnd--half {
     margin-right: #{ $spacing * 0.5 };
 }
 .u-marginInlineEnd--auto {
     margin-right: auto;
 }
-// .u-marginInline--auto {
-//     margin-left: auto;
-//     margin-right: auto;
-// }
+.u-marginInline--auto {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 // @include above-medium {
 //     .md_u-marginInline {
@@ -222,20 +222,20 @@
     padding-top: #{ $spacing * 2 };
     padding-bottom: #{ $spacing * 2 };
 }
-// .u-paddingBlock--half {
-//     padding-top: #{ $spacing * 0.5 };
-//     padding-bottom: #{ $spacing * 0.5 };
-// }
+.u-paddingBlock--half {
+    padding-top: #{ $spacing * 0.5 };
+    padding-bottom: #{ $spacing * 0.5 };
+}
 .u-paddingBlock--quarter {
     padding-top: #{ $spacing * 0.25 };
     padding-bottom: #{ $spacing * 0.25 };
 }
-// .u-paddingBlockStart {
-//     padding-top: #{ $spacing };
-// }
-// .u-paddingBlockStart--none {
-//     padding-top: 0;
-// }
+.u-paddingBlockStart {
+    padding-top: #{ $spacing };
+}
+.u-paddingBlockStart--none {
+    padding-top: 0;
+}
 .u-paddingBlockStart--double {
     padding-top: #{ $spacing * 2 };
 }
@@ -263,12 +263,12 @@
 .u-paddingInlineEnd {
     padding-right: #{ $spacing };
 }
-// .u-paddingInlineStart--half {
-//     padding-left: #{ $spacing * 0.5 };
-// }
-// .u-paddingInlineStart--quarter {
-//     padding-left: #{ $spacing * 0.25 };
-// }
+.u-paddingInlineStart--half {
+    padding-left: #{ $spacing * 0.5 };
+}
+.u-paddingInlineStart--quarter {
+    padding-left: #{ $spacing * 0.25 };
+}
 
 
 /* Float */
