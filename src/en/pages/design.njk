@@ -14,7 +14,7 @@ eleventyComputed:
 backlink: { url: "/designs", label: "Back to Designs" }
 ---
 
-<article class="c-sidebyside u-displayFlex u-border u-border--primary-med">
+<article class="c-sidebyside u-displayFlex u-border u-border--primary-med u-border-radius">
   {% if design.img %}
   <div class="c-sidebyside__media">
       <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">

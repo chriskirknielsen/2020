@@ -212,7 +212,7 @@
 .u-padding { padding: #{ $spacing }; }
 .u-padding--double { padding: #{ $spacing * 2 }; }
 .u-padding--half { padding: #{ $spacing * 0.5 }; }
-// .u-padding--quarter { padding: #{ $spacing * 0.25 }; }
+.u-padding--quarter { padding: #{ $spacing * 0.25 }; }
 .u-padding--none { padding: 0; }
 .u-paddingBlock {
     padding-top: #{ $spacing };

@@ -5,9 +5,16 @@ ownstyles: []
 ---
 <header class="{{ utilities.bigboi }}">
     <div class="{{ utilities.bigboiContent }}">
-        {% if backlink %}<p class="u-textSmall"><span aria-hidden="true">&larr;</span> <a href="{{ backlink.url }}">{{ backlink.label }}</a></p>{% endif %}
         <h1>{{ displayTitle or title }}</h1>
         {% if subtitle %}<p class="u-displayInlineBlock u-marginInlineEnd | u-c--grey-min u-fontBold">{{ subtitle }}</p>{% endif %}
+        {% if backlink %}
+            <p class="u-textSmall u-marginBlockStart--half">
+                <a href="{{ backlink.url }}" class="{{ utilities.inlineBoxLink }} {{ utilities.boxLink }} u-lineHeight--1">
+                    <svg class="u-displayInlineBlock u-marginInlineEnd--half u-width--1em" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg>
+                    {{ backlink.label }}
+                </a>
+            </p>
+        {% endif %}
     </div>
 </header>
 
