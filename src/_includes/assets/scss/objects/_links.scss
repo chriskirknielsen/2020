@@ -3,7 +3,6 @@ a:not([class]),
     color: var(--currentColor, var(--color-text));
     text-decoration-line: underline;
     text-decoration-color: var(--color-accent);
-    text-decoration-thickness: .15em;
     text-underline-offset: .2em;
 
     &:hover,
@@ -11,6 +10,8 @@ a:not([class]),
     &:active {
         color: var(--color-accent, currentColor);
         text-decoration-color: var(--currentColor, var(--color-text));
+        text-decoration-thickness: .15em;
+        text-underline-offset: .25em;
     }
 }
 

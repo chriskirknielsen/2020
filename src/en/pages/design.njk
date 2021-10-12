@@ -25,7 +25,7 @@ backlink: { url: "/designs", label: "Back to Designs" }
     <h2>Available on</h2>
     <ul role="list" class="o-bulletedList u-flow u-flow--small">
       {%- for site, url in design.links %}
-        <li><a href="{{ url | url }}" class="u-c--secondary-med h_u-c--primary-min u-textDecoration--underline">{{ site }}</li>
+        <li><a href="{{ url | url }}">{{ site }}</li>
       {% endfor -%}
     </ul>
     
