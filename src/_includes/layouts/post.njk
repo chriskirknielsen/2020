@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 section: post
 ownstyles: []
+backlink: { url: "/blog", label: "{{ localisedContent.blobBacklinkLabel}}" }
 ---
 
 <header class="{{ utilities.bigboi }}">
@@ -16,11 +17,23 @@ ownstyles: []
 		{% for tag in tags %}
 			{%- if tag != "post" -%}
 			{%- set tagUrl %}/{{ localeRoot }}tags/{{ tag }}/{% endset -%}
-			<li class="u-displayInlineBlock"><a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half | u-textDecoration--none | {{ utilities.glowBoxLink }}">{{ tag }}</a></li>
+			<li class="u-displayInlineBlock">
+				<a href="{{ tagUrl | url }}" rel="tag" class="u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half | u-textDecoration--none | {{ utilities.glowBoxLink }}">
+					<span class="u-fontNormal" aria-hidden="true">#</span>{{ tag }}
+				</a>
+			</li>
 			{%- endif -%}
 		{% endfor %}
 		</ul>
 		{% endif %}
+		{% if backlink %}
+            <p class="u-textSmall u-marginBlockStart--half">
+                <a href="{{ localePath }}blog" class="{{ utilities.inlineBoxLink }} {{ utilities.boxLink }} u-lineHeight--1">
+                    <svg class="u-displayInlineBlock u-marginInlineEnd--half u-width--1em" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg>
+                    {{ localisedContent.blobBacklinkLabel }}
+                </a>
+            </p>
+        {% endif %}
 	</div>
 </header>
 
