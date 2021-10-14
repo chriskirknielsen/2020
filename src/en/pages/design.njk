@@ -6,7 +6,7 @@ pagination:
 permalink: "designs/{{ design.slug | slug }}/"
 eleventyExcludeFromCollections: true
 eleventyComputed:
-  displayTitle: "{{ design.name }}"
+  displayTitle: "{{ design.name | safe }}"
   title: "Design — {{ design.name }}"
   subtitle: "{{ design.description }}"
   summary: "{{ design.description }} | Design by Christopher Kirk-Nielsen"
