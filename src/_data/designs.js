@@ -94,7 +94,7 @@ module.exports = [
             'RedBubble': 'https://www.redbubble.com/i/poster/Control-FBC-Service-Weapon-by-ckirknielsen/89267833.LVTDI',
             'TeePublic': 'https://www.teepublic.com/poster-and-art/24392079-control-fbc-service-weapon',
         },
-        tags: ['video-games']
+        tags: ['video-games', 'game-arsenal']
     },
     {
         slug: 'god-of-war-leviathan-axe',
@@ -106,7 +106,7 @@ module.exports = [
             'RedBubble': 'https://www.redbubble.com/i/poster/God-of-War-Leviathan-Axe-by-ckirknielsen/91430397.LVTDI',
             'TeePublic': 'https://www.teepublic.com/poster-and-art/24830737-god-of-war-leviathan-axe',
         },
-        tags: ['video-games']
+        tags: ['video-games', 'game-arsenal']
     },
     {
         slug: 'god-of-war-lake-of-nine',
@@ -119,5 +119,17 @@ module.exports = [
             'TeePublic': 'https://www.teepublic.com/poster-and-art/24831149-god-of-war-lake-of-nine',
         },
         tags: ['video-games']
+    },
+    {
+        slug: 'ratchet-clank-omniwrench',
+        name: 'Ratchet & Clank, Omniwrench',
+        description: 'A poster presenting a versatile tool in Ratchet & Clank.',
+        img: 'rc-wrench.jpg',
+        links: {
+            'Society6': 'https://society6.com/product/ratchet-clank-omniwrench-millenium_print?sku=s6-22239725p4a1v1',
+            'RedBubble': 'https://www.redbubble.com/i/poster/Ratchet-and-Clank-Omniwrench-Millenium-by-ckirknielsen/93357003.LVTDI',
+            'TeePublic': 'https://www.teepublic.com/poster-and-art/25205497-ratchet-and-clank-omniwrench-millenium',
+        },
+        tags: ['video-games', 'game-arsenal']
     }
 ]
