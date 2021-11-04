@@ -13,3 +13,14 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+
+.button-icon {
+    flex: 0 0 auto;
+    width: 1em;
+    height: 1em;
+    
+    &:first-child { margin-right: 0.5em; }
+    &:last-child { margin-left: 0.5em; }
+
+    & * { fill: currentColor; }
+}

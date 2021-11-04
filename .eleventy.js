@@ -89,6 +89,38 @@ module.exports = function(eleventyConfig) {
 		return content.replace(/{(\d+)}/g, (match, index) => (typeof values[index] !== 'undefined') ? values[index] : match);
 	});
 
+    eleventyConfig.addPairedShortcode('iconLinks', function (itemsJson) {
+		const items = JSON.parse(itemsJson.trim());
+
+		const itemsMarkup = items.map((item) => {
+			let iconSvg;
+			switch (item.icon) {
+				case 'question': {
+					iconSvg = `<rect x="10" y="18" width="4" height="4" />
+					<polygon points="20 2 4 2 2 4 2 10 6 10 6 6 18 6 18 10 12 10 10 12 10 16 14 16 14 14 20 14 22 12 22 4 20 2" />`;
+					break;
+				}
+				case 'shirt': {
+					iconSvg = `<path d="M15.426 2a3.77 3.77 0 0 1-6.852 0L.824 5.282l2.235 5.083 2.235-1.046V21h13.412V9.319l2.235 1.046 2.235-5.083Z"/>`;
+					break;
+				}
+				case 'type': {
+					iconSvg = `<path d="M2.032 2h19.936L22 7.968h-.954a5.335 5.335 0 0 0-2.684-4.333 9.094 9.094 0 0 0-3.719-.681v15.59a2.793 2.793 0 0 0 .64 2.17 4.484 4.484 0 0 0 2.659.535V22H6.139v-.751a4.25 4.25 0 0 0 2.579-.542 2.796 2.796 0 0 0 .639-2.163V2.954a9.331 9.331 0 0 0-3.72.681 4.944 4.944 0 0 0-2.683 4.333H2Z"/>`;
+					break;
+				}
+			}
+
+			return `<li class="u-width--100 u-displayFlex u-flex--stretchBlock">
+				<a href="${ item.link }" class="u-width--100 ${ cssUtilityClasses.boxLink } ${ cssUtilityClasses.inlineBoxLink }">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="button-icon">${ iconSvg }</svg>
+					<span class="u-flex--grow-1 u-textCenter">${ item.label }</span>
+				</a>
+			</li>`;
+		});
+
+		return `<ul class="u-gap u-displayFlex u-flex--column md_u-flex--row u-flex--shrink-0" role="list">${ itemsMarkup.join('') }</ul>`;
+    });
+
 	/* FILTERS */
 
 	eleventyConfig.addFilter("slug", (input) => {
