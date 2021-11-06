@@ -311,3 +311,65 @@ footer {
     text-align: center;
     outline: 2px solid currentColor;
 }
+
+// Code
+code,
+.ligature-sample-code {
+    padding: 0.25em 0.5em;
+    
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--color-main);
+    border: 1px solid currentColor;
+    background-color: var(--bg-alt);
+}
+
+.ligature-sample {
+    --easing: cubic-bezier(0.8, 0, 0.2, 1);
+    position: relative;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+
+    font: inherit;  
+    color: inherit;
+    background: none;
+    border: none;
+    appearance: none;
+
+    transition: background-color 200ms var(--easing);
+
+    &:hover,
+    &:focus-within {
+        background-color: var(--bg-alt);
+    }
+    
+    .ligature-sample-code {
+        margin-top: 0.25em;
+
+        text-align: center;
+        font-size: 0.75rem;
+
+        transition: all 200ms var(--easing);
+        transition-property: color, background-color;
+
+        &:hover,
+        &:focus {
+            background-color: var(--bg-main);
+        }
+
+        &.copied {
+            color: var(--bg-alt);
+            background-color: var(--color-main);
+
+            animation: codePress 200ms var(--easing) 1;
+        }
+    }
+}
+
+@keyframes codePress {
+    50% { transform: translateY(2px); }
+}

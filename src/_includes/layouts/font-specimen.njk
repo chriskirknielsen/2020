@@ -43,6 +43,15 @@
 			updateFontPreviewText();
 			updateFontPreviewOptions(e);
 		});
+		document.addEventListener('click', function (e) {
+			var ligCode = e.target.closest('.ligature-sample-code');
+			if (!ligCode) { return; }
+			var ligText = ligCode.parentElement.querySelector('input');
+			ligText.select();
+			document.execCommand('copy');
+			ligCode.classList.add('copied');
+			setTimeout(function() { ligCode.classList.remove('copied'); }, 300);
+		});
 		fontPreviewerForm.addEventListener('keyup', updateFontPreviewText);
 		fontPreviewerForm.addEventListener('change', updateFontPreviewOptions);
 		fontPreviewerForm.addEventListener('submit', function (e) {

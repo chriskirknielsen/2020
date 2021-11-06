@@ -71,6 +71,9 @@ fontSpecimenFallback: 'fantasy'
             <button type="button" id="preview-update">Update</button>
         </div>
 
+        <p class="preview-warning" id="preview-jak-warning" hidden>Tip: Use a capital <code>K</code> when typing "Jak" to get the look of the logo!</p>
+        <p class="preview-warning" id="preview-daxter-warning" hidden>Tip: Use capital <code>DAXTER</code> when typing "Daxter" to get the look of the logo!</p>
+
         <output for="preview-input">
             <svg id="preview-svg" class="preview-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1000 300" width="1000" height="300">
                 <defs>
@@ -154,11 +157,15 @@ fontSpecimenFallback: 'fantasy'
     </p>
 </div>
 
-<h2>Ligatures</h2>
+<h2>Ligatures (click code to copy)</h2>
 {% set ligaList = ['JaKandDAXTER', 'JaK', '&nbsp;and&nbsp;', 'DAXTER', 'JaKh', 'XTER', 'II', 'III', 'IV', 'KrI', 'Pro', 'TER', 'ER', 'KI', 'Kh', 'Ko', 'Kr', 'LA', 'LE', 'Le', 'Ll', 'Lo', 'RO', 'TE', 'XT', 'le', 'li', 'll', 'ls', 'lu', 'rI', 'ri', 'rr', 'ss', 'tt'] %}
 <p class="specimen-set-demo specimen specimen-dlig">
     {% for liga in ligaList %}
-    <span title="&quot;{{ liga | safe }}&quot;">{{ liga | safe }}</span>
+    <span class="ligature-sample" title="&quot;{{ liga | safe }}&quot;">
+        {{ liga | safe }}
+        <button type="button" class="ligature-sample-code" type="text">{{ liga | safe }}</button>
+        <input type="text" class="visually-hidden" value="{{ liga | safe }}" readonly />
+    </span>
     {% endfor %}
 </p>
 
@@ -207,3 +214,12 @@ fontSpecimenFallback: 'fantasy'
 </p>
 
 <p class="text-center font-italic">Jak and Daxter is a licence developed by Naughty Dog and published by Sony Interactive Entertainment Inc.</p>
+
+<script>
+    document.getElementById('preview-input').addEventListener('keyup', function (e) {
+        console.log(e.target.value);
+        // Hidden if the concerned ligature is not present
+        document.getElementById('preview-jak-warning').hidden = (e.target.value.indexOf('Jak') === -1);
+        document.getElementById('preview-daxter-warning').hidden = (e.target.value.indexOf('Daxter') === -1);
+    });
+</script>

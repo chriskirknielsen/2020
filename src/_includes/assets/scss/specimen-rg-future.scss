@@ -61,11 +61,6 @@ li + li {
     margin-top: 0.75em;
 }
 
-code {
-    border: 1px solid currentColor;
-    padding: 0.25em 0.5em;
-}
-
 .main-heading-block {
     position: relative;
 
@@ -229,7 +224,6 @@ code {
 }
 .specimen-set-demo { font-size: 3rem; }
 
-code,
 .full,
 .footer {
     color: var(--color-main);

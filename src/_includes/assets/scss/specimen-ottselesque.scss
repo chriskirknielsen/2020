@@ -291,7 +291,7 @@ li + li {
     line-height: 0.8;
 
     color: var(--palette-04);
-    text-shadow: -1px -1px 0 var(--palette-03), 1px 1px 0 var(--palette-01);
+    text-shadow: -1px -1px 0 var(--palette-01), 1px 1px 0 var(--palette-03);
     background: var(--palette-02) var(--texture-bg);
 
     clip-path: var(--clip);
@@ -301,6 +301,14 @@ li + li {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
     justify-content: space-between;
+}
+
+.preview-warning {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+
+    border: 1px solid currentColor;
+    background: var(--bg-main);
 }
 
 .full,
