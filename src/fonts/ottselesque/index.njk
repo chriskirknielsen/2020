@@ -217,7 +217,6 @@ fontSpecimenFallback: 'fantasy'
 
 <script>
     document.getElementById('preview-input').addEventListener('keyup', function (e) {
-        console.log(e.target.value);
         // Hidden if the concerned ligature is not present
         document.getElementById('preview-jak-warning').hidden = (e.target.value.indexOf('Jak') === -1);
         document.getElementById('preview-daxter-warning').hidden = (e.target.value.indexOf('Daxter') === -1);
