@@ -85,6 +85,17 @@ module.exports = [
         tags: ['video-games']
     },
     {
+        slug: 'crash-bandicoot-wumpa-hoarder',
+        name: 'Crash Bandicoot, Wumpa Hoarder',
+        description: 'A design inspired by the wild, Wumpa-loving bandicoot: Crash!',
+        img: 'wumpa-hoarder.jpg',
+        links: {
+            'RedBubble': 'https://www.redbubble.com/i/t-shirt/Wumpa-Hoarder-by-ckirknielsen/94462053.4AE2Y',
+            'TeePublic': 'https://www.teepublic.com/t-shirt/25571868-wumpa-hoarder',
+        },
+        tags: ['video-games']
+    },
+    {
         slug: 'control-service-weapon',
         name: 'Control, Service Weapon',
         description: 'A poster showcasing a powerful handgun found in Control.',
