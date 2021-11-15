@@ -76,7 +76,12 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
 
   if (initialHash.indexOf(hashIndicator) === 0) {
     var baseFilter = initialHash.slice(hashIndicator.length);
-    document.querySelector('#filter-'+(baseFilter || 'all')).checked = true;
+    var filterSelectBox = document.querySelector('#filter-'+(baseFilter || 'all'));
+    if (!filterSelectBox) {
+      baseFilter = '';
+      filterSelectBox = document.querySelector('#filter-all');
+    }
+    filterSelectBox.checked = true;
     filterTo(baseFilter);
   }
 

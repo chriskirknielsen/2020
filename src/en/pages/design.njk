@@ -32,3 +32,18 @@ backlink: { url: "/designs", label: "Back to Designs" }
     {% if design.note %}<p class="u-fontItalic">{{ design.note }}</p>{% endif %}
   </div>
 </article>
+
+<script>
+  {% set backlinkThroughHistory %}
+  // Send back to a potential filtered view
+  var backlinkEl = document.querySelector('[href="/designs"]');
+  if (document.referrer.replace(/\/$/, '') === backlinkEl.href.replace(/\/$/, '')) {
+    backlinkEl.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.history.go(-1);
+      return false;
+    });
+  }
+  {% endset %}
+  {{- backlinkThroughHistory | jsmin | safe -}}
+</script>
