@@ -2,8 +2,8 @@
 document.documentElement.classList.remove('no-js');
 
 // Get user's preferences
-// window.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-// window.prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// window.prefersReducedMotion = function() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; };
+// window.prefersColorSchemeDark = function() { return window.matchMedia("(prefers-color-scheme: dark)").matches; };
 
 // Handle skip link
 document.addEventListener('click', function (e) {

@@ -1,6 +1,3 @@
-.filtering {
-}
-
 .filtering-list {
     input[type="radio"]:hover + label {
         color: var(--c-grey-max);
@@ -14,5 +11,31 @@
     input[type="radio"]:checked + label {
         color: var(--c-grey-max);
         background: var(--color-accent);
+    }
+}
+
+[data-filtered-item] {
+    transform-origin: 50% -25%;
+
+    transition: 250ms #{ $easing-out };
+    transition-property: filter, opacity, transform;
+    transition-duration: var(--t, 250ms);
+    transition-delay: var(--d, 5ms);
+
+    will-change: transform;
+
+    &[aria-hidden="true"] {
+        @extend .visually-hidden;
+
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        [data-filtered-list="change"] & {
+            filter: grayscale(1) blur(12px);
+            opacity: 0;
+            transform: scale(0.9);
+        }
     }
 }

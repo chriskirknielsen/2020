@@ -23,14 +23,20 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
   </div>
 </fieldset>
 
-<section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
+<section class="cards u-displayFlex u-flex--wrap u-marginBlockStart" data-filtered-list="idle">
 {% for design in designs %}
-  <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med" id="{{ design.slug }}" data-tags="
-    {%- for tag in design.tags -%}
-    {{ tag }}
-    {%- if not loop.last %},{% endif -%}
-    {%- endfor-%}
-  ">
+  <article
+    class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med"
+    id="{{ design.slug }}"
+    data-filtered-item
+    data-tags="
+      {%- for tag in design.tags -%}
+      {{ tag }}
+      {%- if not loop.last %},{% endif -%}
+      {%- endfor-%}
+    "
+    aria-hidden="false"
+  >
     {% set designPermalink = '/designs/' + design.slug %}
     {% if design.img %}
     <div class="card__image u-flex--shrink-0 u-bg--grey-med">
@@ -60,16 +66,29 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
   var hashIndicator = 'filter:';
   var initialHash = window.location.hash.slice(1);
   var items = [].slice.call(document.querySelectorAll('[data-tags]'));
+  var list = document.querySelector('[data-filtered-list]');
+  var duration = 500;
+  list.style.setProperty('--t', duration + 'ms');
 
   function filterTo(filter) {
-    console.log('set filter to', filter);
     var isShowAll = (filter === '');
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    list.setAttribute('data-filtered-list', 'change');
     
     items.forEach(function (item) {
       var tags = item.getAttribute('data-tags').split(',');
       var isShown = (tags.indexOf(filter) > -1) || isShowAll;
-      item.hidden = !isShown;
+      item.style.setProperty('--d', Math.floor(Math.random() * duration / 10) + 'ms');
+
+      setTimeout(function(){
+        item.setAttribute('aria-hidden', (!isShown).toString());
+      }, (prefersReducedMotion ? 0 : duration));
     });
+
+    setTimeout(function() {
+      list.setAttribute('data-filtered-list', 'idle');
+    }, (prefersReducedMotion ? 0 : duration));
 
     history.replaceState(undefined, '', filter ? ('#' + hashIndicator + filter) : '#');
   }
