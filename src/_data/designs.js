@@ -74,6 +74,17 @@ module.exports = [
         tags: ['dev', 'css']
     },
     {
+        slug: 'css-retro-vhs',
+        name: 'CSS Retro VHS',
+        description: 'Show your appreciation for everybody\'s favorite way to style the web with this retro shirt inspired by 90s VHS blank tapes',
+        note: 'Designed for State of CSS 2021',
+        img: 'css-retro-vhs.jpg',
+        links: {
+            'CottonBureau': 'https://cottonbureau.com/products/css-retro-vhs-t-shirt#/13046404/tee-men-standard-tee-vintage-black-tri-blend-s'
+        },
+        tags: ['dev', 'css', 'vhs', 'retro']
+    },
+    {
         slug: 'jak-daxter-powercell-hunters',
         name: 'Jak & Daxter, Powercell Hunters',
         description: 'A design inspired by one of my favourite video games: Jak And Daxter.',

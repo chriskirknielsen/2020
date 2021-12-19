@@ -1,29 +1,20 @@
 .filtering-list {
-    input[type="radio"]:hover + label {
+    & input[type="radio"]:hover + label {
         color: var(--c-grey-max);
         background: var(--c-grey-min);
     }
 
-    input[type="radio"]:focus-visible + label {
+    & input[type="radio"]:focus-visible + label {
         outline: 4px dashed var(--c-grey-min);
     }
 
-    input[type="radio"]:checked + label {
+    & input[type="radio"]:checked + label {
         color: var(--c-grey-max);
         background: var(--color-accent);
     }
 }
 
 [data-filtered-item] {
-    transform-origin: 50% -25%;
-
-    transition: 250ms #{ $easing-out };
-    transition-property: filter, opacity, transform;
-    transition-duration: var(--t, 250ms);
-    transition-delay: var(--d, 5ms);
-
-    will-change: transform;
-
     &[aria-hidden="true"] {
         @extend .visually-hidden;
 
@@ -32,6 +23,14 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
+        transform-origin: 50% -25%;
+        will-change: transform;
+
+        transition: 250ms #{ $easing-out };
+        transition-property: filter, opacity, transform;
+        transition-duration: var(--t, 250ms);
+        transition-delay: var(--d, 5ms);
+
         [data-filtered-list="change"] & {
             filter: grayscale(1) blur(12px);
             opacity: 0;
