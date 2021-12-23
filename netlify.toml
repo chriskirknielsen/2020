@@ -34,7 +34,9 @@
 ## Fix for non-trailing fonts pages failing to load
 [[redirects]]
   from = "/fonts/*"
-  to = "/fonts/:splat/"
+  to = "/fonts/:splat/?f"
+  status = 302
+  force = true
 
 ## Uses redirect
 [[redirects]]
