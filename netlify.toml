@@ -31,6 +31,11 @@
   from = "/art"
   to = "/designs"
 
+## Fix for non-trailing fonts pages failing to load
+[[redirects]]
+  from = "/fonts/*"
+  to = "/fonts/:splat/"
+
 ## Uses redirect
 [[redirects]]
   from = "/uses"

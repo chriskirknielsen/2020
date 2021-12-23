@@ -77,7 +77,7 @@ module.exports = [
         slug: 'css-retro-vhs',
         name: 'CSS Retro VHS',
         description: 'Show your appreciation for everybody\'s favorite way to style the web with this retro shirt inspired by 90s VHS blank tapes',
-        note: 'Designed for State of CSS 2021',
+        note: 'Designed for the State of CSS survey, 2021 edition',
         img: 'css-retro-vhs.jpg',
         links: {
             'CottonBureau': 'https://cottonbureau.com/products/css-retro-vhs-t-shirt#/13046404/tee-men-standard-tee-vintage-black-tri-blend-s'
