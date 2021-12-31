@@ -119,6 +119,18 @@ module.exports = [
         tags: ['video-games', 'gaming-arsenal']
     },
     {
+        slug: 'deathloop-fourpounder',
+        name: 'DEATHLOOP, Fourpounder',
+        description: 'A poster showcasing a stylish gun from DEATHLOOP.',
+        img: 'deathloop-fourpounder.jpg',
+        links: {
+            'Society6': 'https://society6.com/product/deathloop-fourpounder_print?sku=s6-22763844p4a1v45',
+            'RedBubble': 'https://www.redbubble.com/i/poster/DEATHLOOP-Fourpounder-by-ckirknielsen/97903910.LVTDI',
+            'TeePublic': 'https://www.teepublic.com/poster-and-art/26802077-deathloop-fourpounder',
+        },
+        tags: ['video-games', 'gaming-arsenal']
+    },
+    {
         slug: 'god-of-war-leviathan-axe',
         name: 'God of War, Leviathan Axe',
         description: 'A poster showcasing a mythical axe from God of War.',
