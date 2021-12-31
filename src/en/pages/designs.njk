@@ -41,7 +41,22 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
     {% if design.img %}
     <div class="card__image u-flex--shrink-0 u-bg--grey-med">
       <a href="{{ designPermalink | url }}" aria-label="{{ design.name }}" tabindex="-1">
-        <img src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}" alt="" width="600" height="600">
+        <img
+          src="{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }}"
+          srcset="
+            {{ '/' + metadata.assetUrl.designsFolder + '/' + design.img + '?nf_resize=fit&w=300' | url }} 300w,
+            {{ '/' + metadata.assetUrl.designsFolder + '/' + design.img | url }} 600w
+          "
+          sizes="
+            (max-width: 575px) 90vw,
+            (max-width: 847px) 40vw,
+            (max-width: 1023px) 30vw,
+            300px
+          "
+          alt=""
+          width="600"
+          height="600"
+        />
       </a>
     </div>
     {% endif %}
