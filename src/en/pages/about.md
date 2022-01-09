@@ -47,18 +47,26 @@ navtitle: About
     {{ plugin | htmlmin | safe }}
   </div>
   
-  I've also built a plugin for 11ty that allows you to copy assets from a directory to the output folder without messing with the passthrough configuration, which is aptly named [eleventy-plugin-copy-local-assets](https://www.npmjs.com/package/eleventy-plugin-copy-local-assets). That way you keep your images in the same folder as your blog post's Markdown file, for example.
+  I've made micro-contributions here and there but nothing worthy of a mention. Feel free to peruse my GitHub account, though. Perhaps there is something of interest to you in there!
 
   {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="View my designs gallery.">
-    <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="A VHS tape design inspired by SVG" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
-    <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="A VHS tape design inspired by HTML" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Scalable AF!">
+      <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="A VHS tape design inspired by SVG" width="120" height="220" loading="lazy">
+    </span>
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Semantics FTW">
+      <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="A VHS tape design inspired by HTML" width="120" height="220" loading="lazy">
+    </span>
     {% set shirt -%}
     {%- include "assets/img/shirt.svg" -%}
     {%- endset -%}
     {{ shirt | htmlmin | safe }}
-    <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="A VHS tape design inspired by CSS" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
-    <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="A VHS tape design inspired by JavaScript" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Embrace the Cascade">
+      <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="A VHS tape design inspired by CSS" width="120" height="220" loading="lazy">
+    </span>
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Just a pinch">
+      <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="A VHS tape design inspired by JavaScript" width="120" height="220" loading="lazy">
+    </span>
   </a>
 
   ### T-Shirts, Posters & More

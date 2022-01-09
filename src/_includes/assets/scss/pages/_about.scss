@@ -210,7 +210,9 @@ $about-delorean-transition-duration: 400;
         // Designs
         .about__designs-wrap {
             grid-area: arts;
-            perspective: 960px;
+            @include above-medium {
+                margin-top: $about-gap;
+            }
         }
         .about__designs-wrap + h3 { grid-area: ti04; }
         .about__designs-wrap + h3 + p { grid-area: pa07; }
@@ -347,9 +349,20 @@ $about-delorean-transition-duration: 400;
     }
 }
 
+.about__designs-wrap {
+    max-width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include above-medium { max-width: 100%; }
+}
+
 .about__vhs {
     width: 25%;
 
+    transform-style: preserve-3d;
+    transform: perspective(960px);
+    
     transition: 300ms ease-in-out;
     transition-property: box-shadow, transform;
 
@@ -365,28 +378,39 @@ $about-delorean-transition-duration: 400;
         margin-top: #{ $spacing * 2 };
     }
 
-    &:hover {
-        $vhs-fake-3d: ();
-        @for $vhs-layer from 1 through 10 {
-            $shadow: #{1.25px*$vhs-layer} 0 0 #{-0.375px * $vhs-layer} #212121;
-            $vhs-fake-3d: append($vhs-fake-3d, $shadow);
-        }
+    &::after { // Side
+        content: attr(data-vhs-title);
+        writing-mode: vertical-lr;
 
-        box-shadow: zip($vhs-fake-3d);
-        
-        transform: rotateY(-25deg);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+
+        font-size: clamp(6px, 10vw, 9px);
+        font-family: cursive;
+        font-weight: bold;
+        text-align: center;
+        color: #212121;
+        background: #212121 linear-gradient(#ececd3, #ececd3) no-repeat 50% 50% / 66.7% 80%;
+
+        transform-origin: 0 50%;
+        transform: rotateY(90deg);
+    }
+
+    &:hover {       
+        transform: perspective(960px) rotateY(-45deg);
     }
 }
 
-.about__designs-wrap {
-    max-width: 24rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    @include above-medium { max-width: 100%; }
-}
-
 .about__shirt {
+    z-index: 0;
+
     margin-left: -10%;
     margin-right: -10%;
     width: 35%;

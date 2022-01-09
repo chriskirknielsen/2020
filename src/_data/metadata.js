@@ -67,5 +67,5 @@ module.exports = {
     color: '#ffe4c2',
     tint: '#ff0196',
   },
-  showPostAuthor: false
+  showPostAuthor: true
 }

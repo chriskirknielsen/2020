@@ -31,7 +31,7 @@
         "externalLinks": "Retrouvez-moi sur ces autres sites",
         "rssHint": "S'inscrire au flux RSS",
         "postAuthorFormat": "Article rédigé par {0}",
-        "postSupportFormat": "Si ceci vous a plu, vous pouvez <a href=\"{1}\">me soutenir sur Ko-fi</a> ou <a href=\"{2}\">commander un de mes t-shirts</a>. Si vous avez un commentaire, <a href=\"{0}\">taggez-moi sur Twitter</a>. Merci infiniment !"
+        "postSupportFormat": "Si vous avez un commentaire, <a href=\"{0}\">taggez-moi sur Twitter</a> pour discuter ! Si ceci vous a plu, vous pouvez <a href=\"{2}\">commander un de mes t-shirts</a> ou <a href=\"{1}\">me soutenir sur Ko-fi</a>. Merci infiniment !"
     },
     "langSwitchLabel": "Changer de Langue",
     "schemeSwitchLabel": "Basculer entre les modes crépuscule et aube",

@@ -1,7 +1,6 @@
 {
     "layout": "layouts/font-specimen.njk",
     "templateEngineOverride": "njk",
-    "copyLocalAssets": "*",
     "eleventyComputed": {
         "customMetaImage": "{{ page.url }}/{{ customMetaImage }}"
     }

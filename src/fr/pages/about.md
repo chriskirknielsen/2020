@@ -46,19 +46,27 @@ navtitle: À Propos
     {%- endset -%}
     {{ plugin | htmlmin | safe }}
   </div>
-  
-  J'ai aussi créé un plugin pour 11ty qui permet de copier les fichiers d'un dossier sans devoir changer la configuration globale "passthrough" — j'ai nommé…[eleventy-plugin-copy-local-assets](https://www.npmjs.com/package/eleventy-plugin-copy-local-assets). De cette façon, vous pouvez garder vos images dans le même dossier que votre fichier Markdown de votre article, par exemple.
+
+  Je n'ai que fait des micro-contributions par-ci par-là mais rien de majeur qui vaille la peine de mentionner. Libre à vous de fouiller mon compte GitHub, peut-être que vous trouverez quelque chose d'intéressant !
 
   {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="Voir ma galerie d'illustrations.">
-    <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="Une face avant de boîte VHS inspiré par SVG" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
-    <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="Une face avant de boîte VHS inspiré par HTML" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Étirable à volonté">
+      <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="Une face avant de boîte VHS inspiré par le SVG" width="120" height="220" loading="lazy">
+    </span>
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Sémantique à fond">
+      <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="Une face avant de boîte VHS inspiré par le HTML" width="120" height="220" loading="lazy">
+    </span>
     {% set shirt -%}
     {%- include "assets/img/shirt.svg" -%}
     {%- endset -%}
     {{ shirt | htmlmin | safe }}
-    <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="Une face avant de boîte VHS inspiré par CSS" width="120" height="220" loading="lazy" class="u-posRelative u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" />
-    <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="Une face avant de boîte VHS inspiré par JavaScript" width="120" height="220" loading="lazy" class="u-posRelative about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" />
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Vive la Cascade">
+      <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="Une face avant de boîte VHS inspiré par le CSS" width="120" height="220" loading="lazy">
+    </span>
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Juste une pincée">
+      <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="Une face avant de boîte VHS inspiré par le JavaScript" width="120" height="220" loading="lazy">
+    </span>
   </a>
 
   ### T-Shirts, Affiches, etc.

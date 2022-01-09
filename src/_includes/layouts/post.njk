@@ -57,9 +57,7 @@ backlink: { url: "/blog", label: "{{ localisedContent.blobBacklinkLabel}}" }
 {% endif %}
 
 {% if not original and metadata.showPostAuthor %}
-<hr>
-
-<footer class="u-padding u-border u-bg--grey-max u-c--grey-min">
+<footer class="u-padding u-border-radius u-border u-bg--grey-max u-c--grey-min">
 	<img src="{{ "/" + metadata.assetUrl.authorAvatar }}" alt="" width="64" height="64" class="u-width--4em u-floatLeft u-marginInlineEnd--double u-border-radius--circle u-border--double u-border--accent">
 	
 	<p class="u-textSmall u-fontItalic u-c--primary-min">{% printf metadata.author.name %}{{ localisedContent.postAuthorFormat }}{% endprintf %}</p>
