@@ -27,7 +27,7 @@
   },
   "homepage": "https://chriskirknielsen.com",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "fs": "0.0.1-security",
@@ -45,7 +45,7 @@
     "clean-css": "^4.2.3",
     "cloudinary": "^1.26.3",
     "eleventy-plugin-blog-tools": "^0.3.1",
-    "eleventy-plugin-copy-local-assets": "^1.0.0",
+    "eleventy-plugin-page-assets": "^0.3.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.3.0",

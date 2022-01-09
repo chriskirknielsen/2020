@@ -14,7 +14,8 @@ const moment = require("moment");
 const cloudinary = require("cloudinary").v2;
 const metadata = require("./src/_data/metadata.js");
 const cssUtilityClasses = require("./src/_data/utilities.js");
-const copyLocalAssets = require("eleventy-plugin-copy-local-assets");
+const pageAssets = require("./internal_modules/eleventy-plugin-page-assets-mxbck-fix");
+// const pageAssets = require("eleventy-plugin-page-assets"); // Disabled until the version above has its PR merged
 const purgeCssSafeList = {
 	_global: ['translated-rtl'], // Translation class
 	home: [],
@@ -26,9 +27,7 @@ cloudinary.config({
 	secure: true
 });
 
-module.exports = function(eleventyConfig) {
-	eleventyConfig.setDataDeepMerge(true); // Ensure `ownstyles` are merged together
-	
+module.exports = function(eleventyConfig) {	
 	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
 	/* PLUGINS */
@@ -44,7 +43,12 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addPlugin(copyLocalAssets, { verbose: true });
+	eleventyConfig.addPlugin(pageAssets, {
+        mode: 'directory',
+        postsMatching: 'src/fonts/*/*.njk',
+        assetsMatching: '*.jpg|*.png|*.gif|*.otf|*.woff|*.woff2',
+        silent: true
+    });
 
 	/* SHORTCODES */
 
@@ -72,14 +76,14 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPairedShortcode("callout", function(content, pseudo) {
-		const md = new markdownIt();
+		const md = new markdownIt().disable('code');
 		return `<div class="callout ${cssUtilityClasses.callout}"${ typeof pseudo === 'string' ? ' data-callout="'+pseudo+'"' : '' }>
 			<p>${ md.renderInline(content) }</p>
 		</div>`;
 	});
 
 	eleventyConfig.addPairedShortcode("markdown", (content, inline = null) => {
-		const md = new markdownIt();
+		const md = new markdownIt().disable('code');
 		return inline
 			? md.renderInline(content)
 			: md.render(content);
@@ -385,7 +389,7 @@ module.exports = function(eleventyConfig) {
 	// Don't process folders with static assets e.g. images
 	eleventyConfig.addPassthroughCopy({
 		[`${root}/_includes/assets/fonts`]: "/assets/fonts",
-		[`${root}/_includes/assets/img/designs`]: "/assets/img/designs",
+		// [`${root}/_includes/assets/img/designs`]: "/assets/img/designs",
 		[`${root}/_includes/assets/img`]: "/assets/img",
 		[`${root}/_includes/assets/css`]: "/assets/css",
 		[`${root}/_includes/assets/jsmin`]: "/assets/js",
