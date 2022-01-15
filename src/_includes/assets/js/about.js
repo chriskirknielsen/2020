@@ -2,50 +2,109 @@ var utilityButtonLink = 'u-displayInlineFlex u-flex--centerBlock u-paddingInline
 // Init rAF
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000 / 60); };
 
+let vhsWrapper = false;
+let vhsTapesList = [];
+let mousePosition = { x: false, y: false, new: true };
+
 // Handle SVG elements toggle states
 document.addEventListener('DOMContentLoaded', function() {
     var aboutActionAttr = 'data-about-action';
     var aboutActions = document.querySelectorAll('['+aboutActionAttr+']');
-    if (!aboutActions) { return; }
+    
+    if (aboutActions) {
+        // Replace each text hook with an actionable button
+        for (var a = 0; a < aboutActions.length; a++) {
+            if (aboutActions[a].closest('svg')) { continue; } // Only replace text to buttons outside SVGs
+            var elementHtml = aboutActions[a].innerHTML;
+            var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
+            var newElement = '<button class="button--reset '+utilityButtonLink+'" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
+            aboutActions[a].outerHTML = newElement;
+        }
 
-    // Replace each text hook with an actionable button
-    for (var a = 0; a < aboutActions.length; a++) {
-        if (aboutActions[a].closest('svg')) { continue; } // Only replace text to buttons outside SVGs
-        var elementHtml = aboutActions[a].innerHTML;
-        var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
-        var newElement = '<button class="button--reset '+utilityButtonLink+'" '+aboutActionAttr+'="'+elementHook+'">'+elementHtml+'</button>';
-        aboutActions[a].outerHTML = newElement;
+        // Update the list of elements
+        aboutActions = Array.from(document.querySelectorAll('['+aboutActionAttr+']'));
+
+        // Process action for each element
+        aboutActions.forEach(function (btn) {
+            if (btn.getAttribute(aboutActionAttr) === 'hooked-delorean') {    
+                btn.addEventListener('click', function() {
+                    var deLorean = document.querySelector('.about__delorean');
+                    deLorean.classList.toggle('about__delorean--with-hook');
+                }, false);
+            }
+
+            //data-about-action="synth-set-type" aria-pressed="true"
+            if (btn.getAttribute(aboutActionAttr) === 'synth-set-type') {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    var currType = document.querySelector('[data-synth-type][aria-pressed="true"]');
+                    currType.setAttribute('aria-pressed', 'false');
+                    btn.setAttribute('aria-pressed', 'true');
+
+                    return false;
+                }, false);
+            }
+        });
     }
-
-    // Update the list of elements
-    aboutActions = Array.from(document.querySelectorAll('['+aboutActionAttr+']'));
-
-    // Process action for each element
-    aboutActions.forEach(function (btn) {
-        if (btn.getAttribute(aboutActionAttr) === 'hooked-delorean') {    
-            btn.addEventListener('click', function() {
-                var deLorean = document.querySelector('.about__delorean');
-                deLorean.classList.toggle('about__delorean--with-hook');
-            }, false);
-        }
-
-        //data-about-action="synth-set-type" aria-pressed="true"
-        if (btn.getAttribute(aboutActionAttr) === 'synth-set-type') {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                var currType = document.querySelector('[data-synth-type][aria-pressed="true"]');
-                currType.setAttribute('aria-pressed', 'false');
-                btn.setAttribute('aria-pressed', 'true');
-
-                return false;
-            }, false);
-        }
-    });
 
     reLabelKeys();
     showMelodies();
+
+    vhsWrapper = document.querySelector('[data-grid-el="trinket-designs"]');
+    vhsTapesList = Array.from(document.querySelectorAll('.about__vhs'));
+    setTimeout(orientVhsTapes, 100);
 });
+
+function numClamp(min, num, max) {
+    return Math.min(Math.max(num, min), max);
+}
+
+function numRemap(n, in_min, in_max, out_min, out_max) {
+    return (n - in_min) * ((out_max - out_min) / (in_max - in_min)) + out_min;
+}
+
+function getXOffset(el, currentX) {
+    let x = 0;
+
+    while (el && !isNaN(el.offsetLeft)) {
+        x += el.offsetLeft - el.scrollLeft;
+        el = el.offsetParent;
+    }
+
+    return currentX - x;
+}
+
+// Handle rotation of VHS tapes based on the cursor position
+function orientVhsTapes() {
+    requestAnimationFrame(orientVhsTapes);
+
+    if (mousePosition.new === false || mousePosition.x === false) { return; }
+    
+    const prop = '--orientation-factor';
+
+    // If the wrapper isn't the context, reset all the tapes
+    // if (e.type === 'mouseout') { return vhsTapesList.forEach(vhs => vhs.style.removeProperty(prop)); }
+
+    const cursorXOffset = getXOffset(vhsWrapper, mousePosition.x);
+    const vhsWrapperWidth = vhsWrapper.offsetWidth;
+    const offsetMargin = Math.round(vhsWrapperWidth / 4);
+    const cursorXOffsetClamped = numClamp(offsetMargin * -1, cursorXOffset, vhsWrapperWidth + offsetMargin);
+    
+    vhsTapesList.forEach(function (vhs) {
+        const vhsWrapperLeftDistance = vhs.offsetLeft;
+        const vhsWidth = vhs.offsetWidth;
+        const vhsOffsetMin = vhsWrapperLeftDistance - offsetMargin;
+        const vhsOffsetMax = vhsWrapperLeftDistance + vhsWidth + offsetMargin;
+        const vhsLayerRelativeOffset = numClamp(
+            vhsOffsetMin, // Left-most useful position
+            cursorXOffsetClamped, // Mouse position within the layer
+            vhsOffsetMax // Right-most useful position
+        );
+        const influence = numRemap(vhsLayerRelativeOffset, vhsOffsetMin, vhsOffsetMax, -1, 1);
+        vhs.style.setProperty(prop, influence);
+    });
+}
 
 // Loosely adapted from https://css-tricks.com/how-to-code-a-playable-synth-keyboard/
 const melodies = [
@@ -229,6 +288,12 @@ function triggerKey(element, note, octave) {
     clickedKey = key;
     playKey(key);
 }
+
+document.addEventListener('mousemove', function (e) {
+    mousePosition.new = (e.clientX !== mousePosition.x || e.clientY !== mousePosition.y);
+    mousePosition.x = e.clientX;
+    mousePosition.y = e.clientY;
+}, false);
 
 document.addEventListener('mousedown', function(e) {
     var element = e.target.closest('[data-note]');

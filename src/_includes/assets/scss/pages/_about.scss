@@ -350,6 +350,8 @@ $about-delorean-transition-duration: 400;
 }
 
 .about__designs-wrap {
+    --orientation-factor: 0;
+
     max-width: 24rem;
     margin-left: auto;
     margin-right: auto;
@@ -359,12 +361,11 @@ $about-delorean-transition-duration: 400;
 
 .about__vhs {
     width: 25%;
+    
+    font-size: clamp(5px, 10vw, 8px);
 
     transform-style: preserve-3d;
-    transform: perspective(960px);
-    
-    transition: 300ms ease-in-out;
-    transition-property: box-shadow, transform;
+    transform: perspective(960px) rotateY(calc(60deg * clamp(-1, var(--orientation-factor, 0), 1)));
 
     &:not(:first-child) { margin-left: -2.5%; }
     &:not(:last-child) { margin-right: -2.5%; }
@@ -377,34 +378,60 @@ $about-delorean-transition-duration: 400;
         z-index: 2;
         margin-top: #{ $spacing * 2 };
     }
+    &--dark {
+        --vhs-spine-back: #131416;
+        --vhs-spine-text: #f2efe6;
+    }
+    &--light {
+        --vhs-spine-back: #f2efe6;
+        --vhs-spine-text: #131416;
+    }
 
-    &::after { // Side
-        content: attr(data-vhs-title);
-        writing-mode: vertical-lr;
-
+    &::before,
+    &::after {
         position: absolute;
         top: 0;
         bottom: 0;
-        left: 100%;
 
         display: flex;
         justify-content: center;
         align-items: center;
         width: 17.5%;
 
-        font-size: clamp(6px, 10vw, 9px);
-        font-family: "Bradley Hand", "Brush Script", "Brush Script MT", cursive;
-        font-weight: bold;
+        writing-mode: vertical-lr;
+        line-height: 1;
         text-align: center;
+    }
+
+    &::before { // Spine
+        content: attr(data-vhs-spine);
+
+        right: 100%;
+
+        font-size: calc(1px + 1em);
+        font-family: "Roboto", "Open Sans", "Helvetica", "Arial Black", sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--vhs-spine-text, #eee);
+        background: var(--vhs-spine-back, #333) linear-gradient(#c22632,#c22632) no-repeat left 50% bottom .5em / 1em 1em;
+        box-shadow: inset 0 0 1em -0.5em currentColor;
+
+        transform-origin: 100% 50%;
+        transform: rotateY(-90deg);
+    }
+
+    &::after { // Tape
+        content: attr(data-vhs-title);
+
+        left: 100%;
+
+        font-size: calc(0.5px + 1em);
+        font-family: "Bradley Hand", "Brush Script", "Brush Script MT", cursive;
         color: #212121;
         background: #212121 linear-gradient(#ececd3, #ececd3) no-repeat 50% 50% / 66.7% 80%;
 
         transform-origin: 0 50%;
         transform: rotateY(90deg);
-    }
-
-    &:hover {       
-        transform: perspective(960px) rotateY(-60deg);
     }
 }
 

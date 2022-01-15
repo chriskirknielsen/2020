@@ -51,20 +51,20 @@ navtitle: À Propos
 
   {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="Voir ma galerie d'illustrations.">
-    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Étirable à volonté">
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back about__vhs--dark u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Bosser en Vecto" data-vhs-title="Étirable à volonté">
       <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="Une face avant de boîte VHS inspiré par le SVG" width="120" height="220" loading="lazy">
     </span>
-    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Sémantique à fond">
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front about__vhs--light u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Fondation du Web" data-vhs-title="Sémantique à fond">
       <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="Une face avant de boîte VHS inspiré par le HTML" width="120" height="220" loading="lazy">
     </span>
     {% set shirt -%}
     {%- include "assets/img/shirt.svg" -%}
     {%- endset -%}
     {{ shirt | htmlmin | safe }}
-    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Vive la Cascade">
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front about__vhs--dark u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Styler ses pages" data-vhs-title="Vive la Cascade">
       <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="Une face avant de boîte VHS inspiré par le CSS" width="120" height="220" loading="lazy">
     </span>
-    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Juste une pincée">
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back about__vhs--light u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Contenu dynamique" data-vhs-title="Juste une pincée">
       <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="Une face avant de boîte VHS inspiré par le JavaScript" width="120" height="220" loading="lazy">
     </span>
   </a>

@@ -51,20 +51,20 @@ navtitle: About
 
   {% set vhsImageRoot = '/' + metadata.assetUrl.imagesFolder + '/design-vhs-' %}
   <a href="/designs" class="u-posRelative u-displayFlex u-flex--startBlock u-flex--justifyInline u-marginBlockEnd u-c--grey-min about__designs-wrap" data-grid-el="trinket-designs" aria-label="View my designs gallery.">
-    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Scalable AF!">
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back about__vhs--dark u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Vectors" data-vhs-title="Scalable AF!">
       <img src="{{ vhsImageRoot + 'svg.jpg' }}" alt="A VHS tape design inspired by SVG" width="120" height="220" loading="lazy">
     </span>
-    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Semantics FTW">
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front about__vhs--light u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Web Fundamentals" data-vhs-title="Semantics FTW">
       <img src="{{ vhsImageRoot + 'html.jpg' }}" alt="A VHS tape design inspired by HTML" width="120" height="220" loading="lazy">
     </span>
     {% set shirt -%}
     {%- include "assets/img/shirt.svg" -%}
     {%- endset -%}
     {{ shirt | htmlmin | safe }}
-    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Embrace the Cascade">
+    <span class="u-posRelative u-displayBlock u-flex--alignSelfEnd about__vhs about__vhs--front about__vhs--dark u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Style your pages" data-vhs-title="Embrace the Cascade">
       <img src="{{ vhsImageRoot + 'css.jpg' }}" alt="A VHS tape design inspired by CSS" width="120" height="220" loading="lazy">
     </span>
-    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back u-flex--grow-0 u-flex--shrink-1" data-vhs-title="Just a pinch">
+    <span class="u-posRelative u-displayBlock about__vhs about__vhs--back about__vhs--light u-flex--grow-0 u-flex--shrink-1" data-vhs-spine="Dynamic content" data-vhs-title="Just a pinch">
       <img src="{{ vhsImageRoot + 'js.jpg' }}" alt="A VHS tape design inspired by JavaScript" width="120" height="220" loading="lazy">
     </span>
   </a>
