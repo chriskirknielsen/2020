@@ -390,10 +390,10 @@ $about-delorean-transition-duration: 400;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 15%;
+        width: 17.5%;
 
         font-size: clamp(6px, 10vw, 9px);
-        font-family: cursive;
+        font-family: "Bradley Hand", "Brush Script", "Brush Script MT", cursive;
         font-weight: bold;
         text-align: center;
         color: #212121;
@@ -404,7 +404,7 @@ $about-delorean-transition-duration: 400;
     }
 
     &:hover {       
-        transform: perspective(960px) rotateY(-45deg);
+        transform: perspective(960px) rotateY(-60deg);
     }
 }
 
