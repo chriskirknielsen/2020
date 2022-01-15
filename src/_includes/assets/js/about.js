@@ -53,6 +53,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     vhsWrapper = document.querySelector('[data-grid-el="trinket-designs"]');
     vhsTapesList = Array.from(document.querySelectorAll('.about__vhs'));
+
+    vhsWrapper.addEventListener('mouseenter', function (e) {
+        const animClass = 'about__shirt--anim';
+        const shirt = document.querySelector('.about__shirt');
+        if (!shirt) { return; }
+
+        shirt.classList.add(animClass);
+        shirt.addEventListener('animationend', function (e) {
+            shirt.classList.remove(animClass);
+        }, { once: true });
+    });
+
     setTimeout(orientVhsTapes, 100);
 });
 

@@ -443,8 +443,6 @@ $about-delorean-transition-duration: 400;
     width: 35%;
 
     transform-origin: 50% 4%; // 4% is a magic number and corresponds closely to the vertical center of the hanger's hook
-    
-    // transition: transform 300ms cubic-bezier(0.68, -200, 0.265, 200);
 
     &-hanger {
         fill: var(--c-grey-max);
@@ -453,9 +451,7 @@ $about-delorean-transition-duration: 400;
         stroke-width: 6;
     }
 
-    .about__designs-wrap:hover &,
-    &:hover {
-        // transform: rotate(0.1deg);
+    &--anim {
         animation: about__shirtHanger 2s ease-in-out;
     }
 }
