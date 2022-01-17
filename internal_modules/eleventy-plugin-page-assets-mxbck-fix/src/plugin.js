@@ -23,6 +23,7 @@ const pluginOptions = {
   hashingDigest: 'hex', // only mode:parse
 
   addIntegrityAttribute: true,
+  silent: false,
 };
 
 const isRelative = (url) => !/^https?:/.test(url);
@@ -42,7 +43,7 @@ async function transformParser(content, outputPath) {
         const dom = new JSDOM(content);
         const elms = [...dom.window.document.querySelectorAll("img")]; //TODO: handle different tags
 
-        console.log(LOG_PREFIX, `Found ${elms.length} assets in ${outputPath} from template ${inputPath}`);
+        if (!pluginOptions.silent) { console.log(LOG_PREFIX, `Found ${elms.length} assets in ${outputPath} from template ${inputPath}`); }
         await Promise.all(elms.map(async (img) => {
 
           const src = img.getAttribute("src");
@@ -72,7 +73,7 @@ async function transformParser(content, outputPath) {
                 img.setAttribute("src", destPathRelativeToPage);
               }
 
-              console.log(LOG_PREFIX, `Writting ./${destPath} from ./${assetPath}`);
+              if (!pluginOptions.silent) { console.log(LOG_PREFIX, `Writting ./${destPath} from ./${assetPath}`); }
               fs.mkdirSync(destDir, { recursive: true });
               await fs.promises.copyFile(assetPath, destPath);
 
@@ -83,7 +84,7 @@ async function transformParser(content, outputPath) {
 
         }));
         
-        console.log(LOG_PREFIX, `Processed ${elms.length} images in "${outputPath}" from template "${inputPath}"`);
+        if (!pluginOptions.silent) { console.log(LOG_PREFIX, `Processed ${elms.length} images in "${outputPath}" from template "${inputPath}"`); }
         content = dom.serialize();
     }
   }
@@ -121,7 +122,7 @@ async function transformDirectoryWalker(content, outputPath) {
           const destDir = path.join(outputDir, relativeSubDir);
           const dest = path.join(destDir, basename);
 
-          console.log(LOG_PREFIX, `Writting ./${dest} from ./${from}`);
+          if (!pluginOptions.silent) { console.log(LOG_PREFIX, `Writting ./${dest} from ./${from}`); }
           fs.mkdirSync(destDir, { recursive: true });
           await fs.promises.copyFile(from, dest);
         }
