@@ -172,6 +172,10 @@ module.exports = function(eleventyConfig) {
 		return flatten(array);
 	});
 
+	eleventyConfig.addFilter("mergeWith", function(array1, array2) {
+		return [].concat(array1, array2);
+	});
+
 	eleventyConfig.addFilter("unique", function(array) {
 		return [...new Set(array)];
 	});
@@ -282,6 +286,22 @@ module.exports = function(eleventyConfig) {
 			collection.getFilteredByGlob("./src/en/posts/*.njk"),
 			collection.getFilteredByGlob("./src/fr/posts/*.njk"),
 		);
+	});
+
+	eleventyConfig.addCollection("pages_global", function(collection) {
+		let globalPages = collection.getFilteredByGlob("./src/en/pages/*.njk").filter(function (item) {
+			const file = item.inputPath.split('/').pop();
+			const filename = file.split('.').shift();
+			return metadata.navGlobalPages.includes(filename);
+		});
+
+		if (globalPages.length < 2) { return globalPages; }
+
+		let globalPagesSorted = globalPages.slice().sort(function(a, b){
+			return metadata.navGlobalPages.indexOf(a.fileSlug) - metadata.navGlobalPages.indexOf(b.fileSlug);
+		});
+
+		return globalPagesSorted;
 	});
 
 	// -- ENGLISH

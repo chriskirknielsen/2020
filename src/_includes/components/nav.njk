@@ -1,8 +1,10 @@
-{% set navList = collections['pages_'+locale] | sortNavLocale(metadata.navSet) %}
+{% set navItems = collections['pages_'+locale] | sortNavLocale(metadata.navSet) %}
+{% set globalItems = collections.pages_global %}
+{% set navList = navItems | mergeWith(globalItems) %}
 <ul role="list" class="nav__list | u-displayFlex u-flex--wrap u-flex--stretchBlock">
 {% for nav in navList %}
 	<li class="nav__item | u-displayFlex u-flex--stretchBlock">
-		<a href="{{ nav.url | url }}" class="nav__link | u-displayInlineFlex u-flex--centerBlock | u-paddingInline--half | u-c--grey-min h_u-textDecoration--none | {{ utilities.glowBoxLink }}"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle }}</a>
+		<a href="{{ nav.url | url }}" class="nav__link | u-displayInlineFlex u-flex--centerBlock | u-paddingInline--half | u-c--grey-min h_u-textDecoration--none | {{ utilities.glowBoxLink }}"{% if nav.url == page.url %} data-current="true"{% endif %}>{{ nav.data.navtitle or nav.data.title }}</a>
 	</li>
 {% endfor %}
 </ul>

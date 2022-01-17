@@ -11,6 +11,7 @@ module.exports = {
   currentYear: (new Date()).getFullYear(),
   primaryLanguage: "en",
   navSet: ["home", "blog", "about"],
+  navGlobalPages: ["designs"],
   languages: {
     "en": {
       label: "English",
