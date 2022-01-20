@@ -14,7 +14,7 @@
         document.documentElement.dataset.scheme = scheme; // Update the <html>'s data attribute
         
         if (metaThemeColor) {
-            metaThemeColor.setAttribute('content', metaThemeColor.getAttribute('data-'+scheme)); // Update the "theme-color" <meta>'s "content" attribute
+            metaThemeColor.setAttribute('content', metaThemeColor.dataset[ scheme ]); // Update the "theme-color" <meta>'s "content" attribute
         }
 
         [].slice.call(document.querySelectorAll(schemeToggleSelector)).forEach(s => { // Ensure all toggles are set to the right value
@@ -29,14 +29,14 @@
 
     const flipScheme = function() {
         const currentSchemeIndex = schemeOptions.findIndex(s => s === getScheme());
-        const newSchemeIndex = 1 - currentSchemeIndex; // 1-0 = 1 == dusk | 1-1 = 0 == dawn
+        const newSchemeIndex = 1 - currentSchemeIndex; // "Clever" code; 1-0 = 1 == dusk | 1-1 = 0 == dawn
 
         setScheme(schemeOptions[newSchemeIndex]);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         // Retrieve and apply the current scheme from localStorage
-        const initScheme = window.localStorage.getItem(schemeStorageKey) || null;
+        const initScheme = window.localStorage.getItem(schemeStorageKey);
         setScheme(initScheme);
     }, false);
 
