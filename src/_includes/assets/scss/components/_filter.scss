@@ -16,7 +16,7 @@
 
 [data-filtered-item] {
     &[aria-hidden="true"] {
-        @extend .visually-hidden;
+        @extend .visually-hidden; // Hide the element without using `display: none` to preserve animatability
 
         visibility: hidden;
         pointer-events: none;

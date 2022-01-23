@@ -165,5 +165,17 @@ module.exports = [
             'TeePublic': 'https://www.teepublic.com/poster-and-art/25205497-ratchet-and-clank-omniwrench-millenium',
         },
         tags: ['video-games', 'gaming-arsenal']
+    },
+    {
+        slug: 'dead-space-plasma-cutter',
+        name: 'Dead Space, Plasma Cutter',
+        description: 'A poster presenting a  tool in Dead Space.',
+        img: 'ds-plasma-cutter.jpg',
+        links: {
+            'Society6': 'https://society6.com/product/dead-space-plasma-cutter6489712_print?sku=s6-22965519p4a1v45',
+            'RedBubble': 'https://www.redbubble.com/i/poster/Dead-Space-Plasma-Cutter-by-ckirknielsen/99996925.LVTDI',
+            'TeePublic': 'https://www.teepublic.com/poster-and-art/27453494-dead-space-plasma-cutter',
+        },
+        tags: ['video-games', 'gaming-arsenal']
     }
 ]
