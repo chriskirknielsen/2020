@@ -169,7 +169,7 @@ module.exports = [
     {
         slug: 'dead-space-plasma-cutter',
         name: 'Dead Space, Plasma Cutter',
-        description: 'A poster presenting a  tool in Dead Space.',
+        description: 'A poster presenting an essential engineering tool in Dead Space.',
         img: 'ds-plasma-cutter.jpg',
         links: {
             'Society6': 'https://society6.com/product/dead-space-plasma-cutter6489712_print?sku=s6-22965519p4a1v45',
