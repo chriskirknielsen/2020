@@ -51,19 +51,7 @@
 		<noscript><link rel="stylesheet" href="{{ homeFontStylesPath | url }}" media="all"></noscript>
 	{% endif %}
 
-	{%- if fontSpecimen -%}
-		<script>
-		{%- set fontSpecimentRedirect -%}
-			(function(){
-				var loc = window.location.href;
-				if (loc.indexOf('/fonts/') > -1 && loc.slice(-1) !== '/') {
-					window.location.href += '/';
-				}
-			})();
-		{%- endset -%}
-		{{- fontSpecimentRedirect | jsmin | safe -}}
-		</script>
-		
+	{%- if fontSpecimen -%}		
 		{# Initialise variable outside loop scope #}
 		{%- set fontSpecimenStyles = '' -%}
 
