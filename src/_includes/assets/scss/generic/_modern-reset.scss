@@ -37,6 +37,11 @@ dd {
 }
 
 /* Set core body defaults */
+html {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
 body {
     min-height: 100vh;
     scroll-behavior: smooth;
