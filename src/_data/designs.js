@@ -76,7 +76,7 @@ module.exports = [
 	{
 		slug: 'css-retro-vhs',
 		name: 'CSS Retro VHS',
-		description: "Show your appreciation for everybody's favorite way to style the web with this retro shirt inspired by 90s VHS blank tapes",
+		description: "Show your appreciation for everybody's favorite way to style the web with this retro shirt inspired by '90s VHS blank tapes",
 		note: 'Designed for the State of CSS survey, 2021 edition',
 		img: 'css-retro-vhs.jpg',
 		links: {
@@ -103,6 +103,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Powercell-Hunters-by-ckirknielsen/84952593.2EZFS',
 			TeePublic: 'https://www.teepublic.com/t-shirt/23558909-powercell-hunters',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/powercell-hunters/1809059/',
 		},
 		tags: ['video-games'],
 	},
