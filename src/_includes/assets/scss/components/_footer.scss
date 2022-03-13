@@ -36,10 +36,16 @@
         }
 
         @include above-large {
+            grid-template-columns: auto repeat(3, minmax(0, 1fr));
             grid-template-areas:
                 "logo note note hyper"
                 "logo xtra lang hyper"
                 "edit xtra lang hyper"
+                ;
+            grid-template-areas:
+                "logo xtra lang hyper"
+                "logo xtra lang hyper"
+                "note note note edit"
                 ;
         }
 
@@ -51,15 +57,13 @@
 
     &__logo {
         grid-area: logo;
+        padding: #{ $spacing };
+
         background: var(--c-grey-med);
 
-        @include above-medium {
-            aspect-ratio: 1;
-        }
-
         & > svg {
-            width: 4rem;
-            width: max(4rem, 50%);
+            width: 50%;
+            width: clamp(3rem, 50%, 8rem);
             height: auto;
 
             fill: var(--currentBackground);
