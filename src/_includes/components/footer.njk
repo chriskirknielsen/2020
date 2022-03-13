@@ -1,6 +1,12 @@
 <footer class="footer fluid-type u-marginBlockStart--auto u-bg--grey-max">
-	<div class="u-container u-paddingBlock u-flow footer__grid">
-		<p>
+	<div class="u-container footer__grid">
+		<div class="footer__logo u-displayFlex u-flex--center">
+			<svg width="73" height="76" viewBox="0 0 73 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M63.9793 48.1956L72.2873 56.3044C72.7436 56.7498 73 57.3539 73 57.9838V71.25C73 73.8733 70.8211 76 68.1333 76H29.2C13.0733 76 0 63.2401 0 47.5V28.5C0 12.7599 13.0733 0 29.2 0H68.1333C70.821 0 73 2.12667 73 4.75V18.0162C73 18.6461 72.7436 19.2502 72.2872 19.6956L63.9793 27.8044C63.5229 28.2498 62.904 28.5 62.2587 28.5H55.9666C54.6227 28.5 53.5333 27.4367 53.5333 26.125V19H29.2C23.8244 19 19.4667 23.2533 19.4667 28.5V47.5C19.4667 52.7467 23.8244 57 29.2 57H53.5333V49.875C53.5333 48.5633 54.6227 47.5 55.9666 47.5H62.2587C62.9041 47.5 63.523 47.7502 63.9793 48.1956H63.9793Z"/>
+			</svg>
+		</div>
+
+		<p class="footer__note">
 			{% set copyrightYear = (metadata.currentYear
 				if metadata.copyrightStart == metadata.currentYear
 				else metadata.copyrightStart + "&ndash;" + metadata.currentYear
@@ -8,21 +14,24 @@
 			<span class="u-fontBold">{{ metadata.author.name }}</span>
 
 			&copy; {{ copyrightYear }}
-			{# {{ localisedContent.allRights }} #}
 		</p>
 
-		<nav aria-label="{{ localisedContent.footerAdditionalLinks }}">
-			<ul role="list" class="o-inlineList">
+		<p class="footer__edit u-textCenter u-displayFlex u-flex--center">
+			<a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a>
+		</p>
+
+		<nav aria-labelledby="footer-extras-links-title" class="footer__nav" data-footer-nav="extras">
+			<h2 id="footer-extras-links-title">{{ localisedContent.footerAdditionalLinks }}</h2>
+			<ul role="list" class="o-bulletedList">
 				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgements', locale) -%}
 				<li><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
-				<li><a href="{{ metadata.repo }}/blob/main/{{ page.inputPath }}">{{ localisedContent.fixErrorPR }}</a></li>
+				<li><a href="/fonts">Fonts</a></li>
 			</ul>
 		</nav>
 
-		<nav aria-labelledby="footer-language-links-title">
-			<h2 class="u-displayInline u-textSizeInherit u-fontBody u-c--color-text u-letterSpacing--reset" id="footer-language-links-title">{{ localisedContent.langLabel }}{{ punctSp }}:</h2>
-			&nbsp;
-			<ul role="list" class="o-inlineList">
+		<nav aria-labelledby="footer-language-links-title" class="footer__nav" data-footer-nav="lang">
+			<h2 id="footer-language-links-title">{{ localisedContent.langLabel }}</h2>
+			<ul role="list" class="o-bulletedList">
 			{% for langCode, langData in metadata.languages %}
 				{%- set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path -%}
 				<li><a href="{{ langUrl | url }}" hreflang="{{ langCode }}">{{ langData.label }}</a></li>
@@ -30,10 +39,10 @@
 			</ul>
 		</nav>
 
-		<nav aria-labelledby="footer-external-links-title">
-			<h2 class="visually-hidden" id="footer-external-links-title">{{ localisedContent.externalLinks }}</h2>
+		<nav aria-labelledby="footer-external-links-title" class="footer__nav" data-footer-nav="external">
+			<h2 id="footer-external-links-title">{{ localisedContent.externalLinks }}</h2>
 
-			<ul role="list" class="o-inlineList">
+			<ul role="list" class="o-bulletedList">
 				<li><a href="{{ localeRssUrl }}" aria-label="{{ localisedContent.rssHint }}">RSS</a></li>
 			{% for social in social %}
 				<li><a href="{{ social.url | url }}">{{ social.name }}</a></li>

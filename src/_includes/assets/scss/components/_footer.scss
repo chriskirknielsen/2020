@@ -1,27 +1,90 @@
 .footer {
-    outline: .125em solid var(--c-grey-med);
+    outline: 0.125em solid var(--c-grey-med);
 
-    @include above-medium {
-        &__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-            grid-gap: #{ $spacing };
+    &__grid {
+        display: grid;
+        grid-gap: 0.125em;
 
-            &[class] > * { // Overwrites .u-flow > * + *
-                margin-top: 0;
+        grid-template-areas:
+            "logo note"
+            "logo edit"
+            "xtra xtra"
+            "lang lang"
+            "hyper hyper"
+            ;
+        // grid-template-areas:
+        //     "logo note"
+        //     "logo hyper"
+        //     "edit hyper"
+        //     "lang xtra"
+        //     ;
+
+        @include below-large {
+            &[class] {
+                padding-left: 0;
+                padding-right: 0;
             }
+        }
 
-            & > *:nth-child(even) {
-                justify-self: end;
-            }
+        @include above-medium {
+            grid-template-areas:
+                "logo note"
+                "logo edit"
+                "logo hyper"
+                "lang xtra"
+                ;
+        }
+
+        @include above-large {
+            grid-template-areas:
+                "logo note note hyper"
+                "logo xtra lang hyper"
+                "edit xtra lang hyper"
+                ;
+        }
+
+        & > * {
+            padding: #{ $spacing } #{ $spacing * 2 };
+            outline: 0.125em solid var(--c-grey-med);
         }
     }
 
-    // &__social {
-    //     &-link > svg {
-    //         fill: currentColor;
-    //         width: 1.5rem;
-    //         height: 1.5rem;
-    //     }
-    // }
+    &__logo {
+        grid-area: logo;
+        background: var(--c-grey-med);
+
+        @include above-medium {
+            aspect-ratio: 1;
+        }
+
+        & > svg {
+            width: 4rem;
+            width: max(4rem, 50%);
+            height: auto;
+
+            fill: var(--currentBackground);
+        }
+    }
+
+    &__edit {
+        grid-area: edit;
+    }
+
+    &__note {
+        grid-area: note;
+        text-align: center;
+
+        @include above-large {
+            text-align: left;
+        }
+    }
+    &__nav[data-footer-nav="extras"] {
+        grid-area: xtra;
+    }
+    &__nav[data-footer-nav="lang"] {
+        grid-area: lang;
+    }
+    &__nav[data-footer-nav="external"] {
+        grid-area: hyper;
+    }
 }

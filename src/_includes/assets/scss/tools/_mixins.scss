@@ -19,6 +19,12 @@
     }
 }
 
+@mixin below-large {
+    @media (max-width: #{ $large-breakpoint-width - 0.02 }) {
+        @content;
+    }
+}
+
 @mixin below-medium {
     @media (max-width: #{ $medium-breakpoint-width - 0.02 }) {
         @content;
