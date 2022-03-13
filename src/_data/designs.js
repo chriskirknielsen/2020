@@ -155,18 +155,6 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
-		slug: 'god-of-war-lake-of-nine',
-		name: 'God of War, Lake of Nine',
-		description: 'A poster presenting a main area in God of War.',
-		img: 'gow-lake.jpg',
-		links: {
-			Society6: 'https://society6.com/product/god-of-war-lake-of-nine_print?sku=s6-22069078p4a1v1',
-			RedBubble: 'https://www.redbubble.com/i/poster/God-of-War-Lake-of-Nine-by-ckirknielsen/91430918.LVTDI',
-			TeePublic: 'https://www.teepublic.com/poster-and-art/24831149-god-of-war-lake-of-nine',
-		},
-		tags: ['video-games'],
-	},
-	{
 		slug: 'ratchet-clank-omniwrench',
 		name: 'Ratchet & Clank, Omniwrench',
 		description: 'A poster presenting a versatile tool in Ratchet & Clank.',
