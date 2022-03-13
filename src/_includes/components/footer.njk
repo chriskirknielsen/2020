@@ -25,7 +25,7 @@
 			<ul role="list" class="o-bulletedList">
 				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgements', locale) -%}
 				<li><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
-				<li><a href="/fonts">Fonts</a></li>
+				<li><a href="{{ '/fonts' | url }}">{{ localisedContent.customFonts }}</a></li>
 			</ul>
 		</nav>
 
