@@ -38,11 +38,6 @@
         @include above-large {
             grid-template-columns: auto repeat(3, minmax(0, 1fr));
             grid-template-areas:
-                "logo note note hyper"
-                "logo xtra lang hyper"
-                "edit xtra lang hyper"
-                ;
-            grid-template-areas:
                 "logo xtra lang hyper"
                 "logo xtra lang hyper"
                 "note note note edit"
