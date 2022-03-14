@@ -74,6 +74,17 @@ module.exports = [
 		tags: ['dev', 'css'],
 	},
 	{
+		slug: 'www-explorer',
+		name: 'World Wide Web Explorer',
+		description: 'Explore the spaces between what connects us all: the World Wide Web!',
+		img: 'www-explorer.jpg',
+		links: {
+			TeePublic: 'https://www.teepublic.com/t-shirt/28541207-world-wide-web-explorer',
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/World-Wide-Web-Explorer-by-ckirknielsen/104638901.SWO0S?asc=u',
+		},
+		tags: ['dev', 'retro'],
+	},
+	{
 		slug: 'css-retro-vhs',
 		name: 'CSS Retro VHS',
 		description: "Show your appreciation for everybody's favorite way to style the web with this retro shirt inspired by '90s VHS blank tapes",
