@@ -83,7 +83,6 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/t-shirt/28541207-world-wide-web-explorer',
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/World-Wide-Web-Explorer-by-ckirknielsen/104638901.SWO0S?asc=u',
 			Society6: 'https://society6.com/product/world-wide-web-explorer_t-shirt?sku=s6-23447756p15a4v84a5v18a11v49',
-			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/world-wide-web-explorer/1819841/',
 		},
 		tags: ['dev', 'retro'],
 	},
