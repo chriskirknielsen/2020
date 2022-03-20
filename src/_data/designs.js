@@ -63,6 +63,18 @@ module.exports = [
 		tags: ['dev', 'js', 'vhs', 'retro'],
 	},
 	{
+		slug: 'vhs-www',
+		name: 'Blank VHS WWW',
+		description: 'In a world where the web runs on VHS tapes…',
+		note: '(for posters, RedBubble or Society6 are recommended)',
+		img: 'vhs-www.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-WWW-by-ckirknielsen/105322869.DYMRA?asc=u',
+			TeePublic: 'https://www.teepublic.com/t-shirt/28723641-retro-blank-vhs-www',
+		},
+		tags: ['dev', 'www', 'vhs', 'retro'],
+	},
+	{
 		slug: 'css-fact-sheet',
 		name: 'CSS Fact Sheet',
 		description: "A compact fact sheet for CSS that wouldn't be out of place on a crate in a cyberpunk world…",
@@ -84,7 +96,7 @@ module.exports = [
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/World-Wide-Web-Explorer-by-ckirknielsen/104638901.SWO0S?asc=u',
 			Society6: 'https://society6.com/product/world-wide-web-explorer_t-shirt?sku=s6-23447756p15a4v84a5v18a11v49',
 		},
-		tags: ['dev', 'retro'],
+		tags: ['dev', 'www', 'retro'],
 	},
 	{
 		slug: 'css-retro-vhs',
