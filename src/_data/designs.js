@@ -71,7 +71,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Retro-Blank-VHS-WWW-by-ckirknielsen/105322869.DYMRA?asc=u',
 			TeePublic: 'https://www.teepublic.com/t-shirt/28723641-retro-blank-vhs-www',
-			Societ6: 'https://society6.com/product/retro-blank-vhs-www-ecmascript_t-shirt?sku=s6-23525463p15a4v75a5v20a11v49',
+			Society6: 'https://society6.com/product/retro-blank-vhs-www-ecmascript_t-shirt?sku=s6-23525463p15a4v75a5v20a11v49',
 		},
 		tags: ['dev', 'www', 'vhs', 'retro'],
 	},
