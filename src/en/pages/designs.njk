@@ -56,13 +56,14 @@ navtitle: "Designs"
           alt=""
           width="600"
           height="600"
+          {{ ('loading="lazy"' | safe) if loop.index >= 6 }}
         />
       </a>
     </div>
     {% endif %}
 
     <div class="card__content u-displayFlex u-flex--column u-padding u-flex--grow-1 u-bg--grey-max">
-      <h2 class="h3">
+      <h2 class="h3 | u-marginBlockEnd--half">
         <a href="{{ designPermalink | url }}" class="heading-link">{{- design.name -}}</a>
       </h2>
       
