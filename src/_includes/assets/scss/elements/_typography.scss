@@ -14,9 +14,9 @@ body {
 h1,
 h2,
 h3,
-// h4,
-// h5,
-// h6,
+h4,
+h5,
+h6,
 .h {
     @if (f('heading') != f('body')) {
         // Don't declare the font family into heading elements if it's the same as the body
@@ -25,13 +25,9 @@ h3,
 
     font-weight: 700;
     line-height: 1.2;
+    letter-spacing: #{ $heading-font-letter-spacing };
     color: var(--c-primary-min);
     --currentColor: var(--c-primary-min);
-
-    @if (map-deep-get($fonts, 'heading', 'main') == 'Marvin Visions Big') {
-        // Keep the type tight, but not too tight
-        letter-spacing: #{ $heading-font-letter-spacing };
-    }
 }
 
 h1,

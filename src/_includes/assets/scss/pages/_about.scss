@@ -409,7 +409,8 @@ $about-delorean-transition-duration: 400;
         right: 100%;
 
         font-size: calc(1px + 1em);
-        font-family: "Roboto", "Open Sans", "Helvetica", "Arial Black", sans-serif;
+        font-family: #{map-deep-get($fonts, 'heading', 'main')}, "Roboto", "Open Sans", "Helvetica", "Arial Black", sans-serif;
+        letter-spacing: #{ $heading-font-letter-spacing * 2 };
         font-weight: bold;
         text-transform: uppercase;
         color: var(--vhs-spine-text, #eee);
@@ -452,7 +453,7 @@ $about-delorean-transition-duration: 400;
     }
 
     &--anim {
-        animation: about__shirtHanger 2s ease-in-out;
+        animation: about__shirtHanger 4s ease-in-out;
     }
 }
 
@@ -564,14 +565,14 @@ $about-delorean-transition-duration: 400;
 
 @keyframes about__shirtHanger {
     0% { transform: rotate(0deg); }
-    10% { transform: rotate(-20deg); }
-    20% { transform: rotate(18deg); }
-    30% { transform: rotate(-12deg); }
-    40% { transform: rotate(8deg); }
-    50% { transform: rotate(-6deg); }
-    60% { transform: rotate(5deg); }
-    70% { transform: rotate(-4deg); }
-    80% { transform: rotate(3deg); }
-    90% { transform: rotate(-1.5deg); }
-    100% { transform: rotate(0deg); }
+    5% { transform: rotate(-20deg); }
+    10% { transform: rotate(18deg); }
+    15% { transform: rotate(-12deg); }
+    20% { transform: rotate(8deg); }
+    25% { transform: rotate(-6deg); }
+    30% { transform: rotate(5deg); }
+    35% { transform: rotate(-4deg); }
+    40% { transform: rotate(3deg); }
+    45% { transform: rotate(-1.5deg); }
+    50%, 100% { transform: rotate(0deg); }
 }

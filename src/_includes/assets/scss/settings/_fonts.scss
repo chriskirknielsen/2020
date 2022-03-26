@@ -67,5 +67,5 @@ $fonts: (
     )
 );
 
-$heading-font-letter-spacing: .025em !default;
+$heading-font-letter-spacing: if(map-deep-get($fonts, 'heading', 'main') == 'Marvin Visions Big', .025em, 0) !default; // Keep the type tight, but not too tight
 $quotation-mark-font: map-get($font-fallback-list, serif);

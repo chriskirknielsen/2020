@@ -6,7 +6,7 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
 ---
 
 {% set fontslist = collections.fonts %}
-<section class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
+<div class="cards u-displayFlex u-flex--wrap u-marginBlockStart">
 {% for font in fontslist %}
   <article class="card u-posRelative u-displayFlex u-flex--column u-border u-border u-border--grey-med {{ utilities.cardBoxLink }}">
     <div class="card__image u-flex--shrink-0">
@@ -24,4 +24,4 @@ summary: You might find a cool, nerdy font by Christopher Kirk-Nielsen here
     </div>
   </article>
 {% endfor %}
-</section>
+</div>
