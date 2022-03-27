@@ -181,6 +181,18 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
+		slug: 'tlou-switchblade',
+		name: 'The Last of Us, Switchblade',
+		description: "A poster illustrating Ellie's signature knife in The Last of Us.",
+		img: 'tlou-switchblade.jpg',
+		links: {
+			Society6: 'https://society6.com/product/the-last-of-us-switchblade_print?sku=s6-23590071p4a1v45',
+			RedBubble: 'https://www.redbubble.com/i/poster/The-Last-of-Us-Switchblade-by-ckirknielsen/106050948.LVTDI',
+			TeePublic: 'https://www.teepublic.com/poster-and-art/28918532-the-last-of-us-switchblade',
+		},
+		tags: ['video-games', 'gaming-arsenal'],
+	},
+	{
 		slug: 'ratchet-clank-omniwrench',
 		name: 'Ratchet & Clank, Omniwrench',
 		description: 'A poster presenting a versatile tool in Ratchet & Clank.',
