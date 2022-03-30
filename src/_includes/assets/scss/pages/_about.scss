@@ -280,7 +280,61 @@ $about-delorean-transition-duration: 400;
         [data-grid-el="quote-phone"] + h2 + p { grid-area: pa16; }
     }
 
-    kbd::before { content: ">\00A0"; }
+    [data-about-melodies-label] {
+        line-height: 1.75em;
+    }
+
+    .melody-play {
+        position: relative;
+        contain: strict;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.325em;
+        height: 1.325em;
+
+        vertical-align: middle;
+
+        border: 2px solid currentColor;
+        border-radius: 50%;
+
+        &:hover { border-color: var(--c-primary-med); }
+        &:focus { outline: 3px solid var(--c-primary-med); }
+        &:focus:not(:focus-visible) { outline: none; }
+
+        &::before {
+            content: '';
+
+            display: block;
+            width: 0;
+            height: 0;
+
+            border-top: 0.3em solid transparent;
+            border-bottom: 0.3em solid transparent;
+            border-left: 0.6em solid currentColor;
+            border-right: 0 solid currentColor;
+
+            transform: translateX(16.667%);
+
+            transition: border 200ms ease-in-out;
+            transition-property: transform, border, width, height;
+        }
+
+        &[aria-pressed="true"]::before {
+            width: 0.45em;
+            height: 0.5em;
+
+            border-top: 0 solid transparent;
+            border-bottom: 0 solid transparent;
+            border-left: 0.175em solid currentColor;
+            border-right: 0.175em solid currentColor;
+
+            transform: translateX(0.00001%);
+        }
+    }
+
+    button + kbd::before { content: "\00A0"; }
 }
 
 .about__trinket {
