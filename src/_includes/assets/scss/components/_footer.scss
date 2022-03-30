@@ -78,4 +78,7 @@
     &__nav[data-footer-nav="external"] {
         grid-area: hyper;
     }
+    &__nav li + li { // Little bit of spacing for accessibility
+        margin-top: 0.5em;
+    }
 }
