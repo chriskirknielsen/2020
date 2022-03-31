@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			} // Only replace text to buttons outside SVGs
 			var elementHtml = aboutActions[a].innerHTML;
 			var elementHook = aboutActions[a].getAttribute(aboutActionAttr);
-			var newElement = '<button class="button--reset ' + utilityButtonLink + '" ' + aboutActionAttr + '="' + elementHook + '">' + elementHtml + '</button>';
+			var newElement = '<button class="button--reset u-posRelative ' + utilityButtonLink + '" ' + aboutActionAttr + '="' + elementHook + '">' + elementHtml + '</button>';
 			aboutActions[a].outerHTML = newElement;
 		}
 
@@ -148,7 +148,7 @@ function orientVhsTapes() {
 const melodies = [
 	// Spaces add rhythm to the melody for autoplay
 	'D  D  D  A GD  A GD    J  J  J  K GE  A GD'.split(''), // Vader theme
-	'G Y  G Y G F Y G  A    G Y  G Y G F Y G  K'.split(''), // Smeagol theme
+	'G  Y   G Y G F Y G   A      G  Y   G Y G F Y G   K'.split(''), // Smeagol theme
 	'ASD G D S A   DGH K J G D  FDS'.split(''), // Shire theme
 ];
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
