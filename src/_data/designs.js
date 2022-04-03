@@ -176,6 +176,7 @@ module.exports = [
 		links: {
 			Society6: 'https://society6.com/product/god-of-war-leviathan-axe6077739_print?sku=s6-22068849p4a1v1',
 			RedBubble: 'https://www.redbubble.com/i/poster/God-of-War-Leviathan-Axe-by-ckirknielsen/91430397.LVTDI',
+			'RedBubble (Alt)': 'https://www.redbubble.com/i/poster/God-of-War-Leviathan-Axe-Alt-Version-by-ckirknielsen/106755016.LVTDI',
 			TeePublic: 'https://www.teepublic.com/poster-and-art/24830737-god-of-war-leviathan-axe',
 		},
 		tags: ['video-games', 'gaming-arsenal'],
