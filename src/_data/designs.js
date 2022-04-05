@@ -179,6 +179,28 @@ module.exports = [
 		},
 		tags: ['video-games'],
 	},
+	{
+		showInGallery: true,
+		slug: 'deathloop',
+		name: 'DEATHLOOP',
+		description: 'Kill all Visionaries. Break the loop. Easy.',
+		img: 'gameart-deathloop.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/art-print/DEATHLOOP-by-ckirknielsen/106881338.1G4ZT',
+		},
+		tags: ['video-games'],
+	},
+	{
+		showInGallery: true,
+		slug: 'dead-space',
+		name: 'Dead Space',
+		description: 'In space, only Necromorphs can hear you scream.',
+		img: 'gameart-deadspace.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/art-print/Dead-Space-by-ckirknielsen/106878842.1G4ZT',
+		},
+		tags: ['video-games'],
+	},
 
 	{
 		showInGallery: false,
