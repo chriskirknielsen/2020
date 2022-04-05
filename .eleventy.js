@@ -186,6 +186,9 @@ module.exports = function (eleventyConfig) {
 		return [...new Set(array)];
 	});
 
+	eleventyConfig.addFilter('propBool', function (array, prop) {
+		return array.filter((item) => item[prop]);
+	});
 
 	eleventyConfig.addFilter('makeUppercase', function (string) {
 		return string.toUpperCase();

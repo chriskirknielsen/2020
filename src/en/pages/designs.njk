@@ -14,7 +14,7 @@ navtitle: "Designs"
       <label for="filter-all" class="{{ tagClasses }}">All</label>
     </div>
 
-    {% for tag in designs | pluck('tags') | flatten | unique | sort %}
+    {% for tag in designs | propBool('showInGallery') | pluck('tags') | flatten | unique | sort %}
     <div>
       <input type="radio" name="filter" id="filter-{{ tag }}" class="visually-hidden" value="{{ tag | makeLowercase }}">
       <label for="filter-{{ tag }}" class="{{ tagClasses }}">{{ tag }}</label>
@@ -24,7 +24,7 @@ navtitle: "Designs"
 </fieldset>
 
 <div class="cards u-displayFlex u-flex--wrap u-marginBlockStart" data-filtered-list="idle">
-{% for design in designs %}
+{% for design in designs | propBool('showInGallery') %}
   <article
     class="card u-posRelative u-displayFlex u-flex--column u-border u-border--primary-med"
     id="{{ design.slug }}"

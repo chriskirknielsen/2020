@@ -1,5 +1,6 @@
 module.exports = [
 	{
+		showInGallery: true,
 		slug: 'retro-css',
 		name: 'Retro CSS',
 		description: 'A totally tubular t-shirt to show off how rad CSS is!',
@@ -11,6 +12,7 @@ module.exports = [
 		tags: ['dev', 'css', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'vhs-css',
 		name: 'Blank VHS CSS',
 		description: 'In a world where the web runs on VHS tapes…',
@@ -24,6 +26,7 @@ module.exports = [
 		tags: ['dev', 'www', 'css', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'vhs-html',
 		name: 'Blank VHS HTML',
 		description: 'In a world where the web runs on VHS tapes…',
@@ -37,6 +40,7 @@ module.exports = [
 		tags: ['dev', 'www', 'html', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'vhs-svg',
 		name: 'Blank VHS SVG',
 		description: 'In a world where the web runs on VHS tapes…',
@@ -50,6 +54,7 @@ module.exports = [
 		tags: ['dev', 'www', 'svg', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'vhs-js',
 		name: 'Blank VHS JS',
 		description: 'In a world where the web runs on VHS tapes…',
@@ -63,6 +68,7 @@ module.exports = [
 		tags: ['dev', 'www', 'js', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'vhs-www',
 		name: 'Blank VHS WWW',
 		description: 'In a world where the web runs on VHS tapes…',
@@ -76,6 +82,7 @@ module.exports = [
 		tags: ['dev', 'www', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'css-fact-sheet',
 		name: 'CSS Fact Sheet',
 		description: "A compact fact sheet for CSS that wouldn't be out of place on a crate in a cyberpunk world…",
@@ -87,6 +94,7 @@ module.exports = [
 		tags: ['dev', 'css'],
 	},
 	{
+		showInGallery: true,
 		slug: 'www-explorer',
 		name: 'World Wide Web Explorer',
 		description: 'Explore the spaces between what connects us all: the World Wide Web!',
@@ -100,6 +108,7 @@ module.exports = [
 		tags: ['dev', 'www', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'css-retro-vhs',
 		name: 'CSS Retro VHS',
 		description: "Show your appreciation for everybody's favorite way to style the web with this retro shirt inspired by '90s VHS blank tapes",
@@ -111,6 +120,7 @@ module.exports = [
 		tags: ['dev', 'css', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'js-retro-vhs',
 		name: 'JS Retro VHS',
 		description: "Wear your JS colours from the perspective of a '90s VHS tape",
@@ -122,6 +132,7 @@ module.exports = [
 		tags: ['dev', 'js', 'vhs', 'retro'],
 	},
 	{
+		showInGallery: true,
 		slug: 'jak-daxter-powercell-hunters',
 		name: 'Jak & Daxter, Powercell Hunters',
 		description: 'A design inspired by one of my favourite video games: Jak And Daxter.',
@@ -134,6 +145,7 @@ module.exports = [
 		tags: ['video-games'],
 	},
 	{
+		showInGallery: true,
 		slug: 'crash-bandicoot-wumpa-hoarder',
 		name: 'Crash Bandicoot, Wumpa Hoarder',
 		description: 'A design inspired by the wild, Wumpa-loving bandicoot: Crash!',
@@ -145,6 +157,19 @@ module.exports = [
 		tags: ['video-games'],
 	},
 	{
+		showInGallery: true,
+		slug: 'god-of-war',
+		name: 'God of War',
+		description: 'A peaceful moment on the Lake of Nine.',
+		img: 'gameart-gow.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/art-print/God-of-War-by-ckirknielsen/106870471.1G4ZT',
+		},
+		tags: ['video-games'],
+	},
+
+	{
+		showInGallery: false,
 		slug: 'control-service-weapon',
 		name: 'Control, Service Weapon',
 		description: 'A poster showcasing a powerful handgun found in Control.',
@@ -157,6 +182,7 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
+		showInGallery: false,
 		slug: 'deathloop-fourpounder',
 		name: 'DEATHLOOP, Fourpounder',
 		description: 'A poster showcasing a stylish gun from DEATHLOOP.',
@@ -169,6 +195,7 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
+		showInGallery: false,
 		slug: 'god-of-war-leviathan-axe',
 		name: 'God of War, Leviathan Axe',
 		description: 'A poster showcasing a mythical axe from God of War.',
@@ -182,6 +209,7 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
+		showInGallery: false,
 		slug: 'tlou-switchblade',
 		name: 'The Last of Us, Switchblade',
 		description: "A poster illustrating Ellie's signature knife in The Last of Us.",
@@ -194,6 +222,7 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
+		showInGallery: false,
 		slug: 'ratchet-clank-omniwrench',
 		name: 'Ratchet & Clank, Omniwrench',
 		description: 'A poster presenting a versatile tool in Ratchet & Clank.',
@@ -206,6 +235,7 @@ module.exports = [
 		tags: ['video-games', 'gaming-arsenal'],
 	},
 	{
+		showInGallery: false,
 		slug: 'dead-space-plasma-cutter',
 		name: 'Dead Space, Plasma Cutter',
 		description: 'A poster presenting an essential engineering tool in Dead Space.',
