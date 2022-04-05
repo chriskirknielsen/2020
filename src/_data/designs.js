@@ -165,6 +165,7 @@ module.exports = [
 		img: 'gameart-control.jpg',
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/art-print/Control-by-ckirknielsen/106874139.1G4ZT',
+			Society6: 'https://society6.com/product/control6788779_print?sku=s6-23678622p4a1v45',
 		},
 		tags: ['video-games'],
 	},
@@ -176,6 +177,7 @@ module.exports = [
 		img: 'gameart-gow.jpg',
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/art-print/God-of-War-by-ckirknielsen/106870471.1G4ZT',
+			Society6: 'https://society6.com/product/god-of-war6788801_print?sku=s6-23678708p4a1v45',
 		},
 		tags: ['video-games'],
 	},
