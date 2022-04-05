@@ -158,6 +158,18 @@ module.exports = [
 	},
 	{
 		showInGallery: true,
+		slug: 'control',
+		name: 'Control',
+		description:
+			'The Oldest House has many dangers/risks. Be sure to alert the sitting/standing Director. Objects of Power are dangerous/aggressive and interacting/talking with one may result in termination/death/punishment.',
+		img: 'gameart-control.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/art-print/Control-by-ckirknielsen/106874139.1G4ZT',
+		},
+		tags: ['video-games'],
+	},
+	{
+		showInGallery: true,
 		slug: 'god-of-war',
 		name: 'God of War',
 		description: 'A peaceful moment on the Lake of Nine.',
