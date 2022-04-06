@@ -190,6 +190,10 @@ module.exports = function (eleventyConfig) {
 		return array.filter((item) => item[prop]);
 	});
 
+	eleventyConfig.addFilter('itemFromProp', function (array, prop, value) {
+		return array.find((item) => item[prop] === value);
+	});
+
 	eleventyConfig.addFilter('makeUppercase', function (string) {
 		return string.toUpperCase();
 	});

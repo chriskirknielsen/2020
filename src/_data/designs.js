@@ -118,6 +118,7 @@ module.exports = [
 			CottonBureau: 'https://cottonbureau.com/products/css-retro-vhs-t-shirt#/13046404/tee-men-standard-tee-vintage-black-tri-blend-s',
 		},
 		tags: ['dev', 'css', 'vhs', 'retro'],
+		similar: ['js-retro-vhs'],
 	},
 	{
 		showInGallery: true,
@@ -130,6 +131,7 @@ module.exports = [
 			CottonBureau: 'https://cottonbureau.com/products/js-retro-vhs#/13799357/tee-men-standard-tee-vintage-black-tri-blend-s',
 		},
 		tags: ['dev', 'js', 'vhs', 'retro'],
+		similar: ['css-retro-vhs'],
 	},
 	{
 		showInGallery: true,
@@ -143,6 +145,7 @@ module.exports = [
 			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/powercell-hunters/1809059/',
 		},
 		tags: ['video-games'],
+		similar: ['crash-bandicoot-wumpa-hoarder'],
 	},
 	{
 		showInGallery: true,
@@ -155,6 +158,7 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/t-shirt/25571868-wumpa-hoarder',
 		},
 		tags: ['video-games'],
+		similar: ['jak-daxter-powercell-hunters'],
 	},
 	{
 		showInGallery: true,
@@ -189,6 +193,7 @@ module.exports = [
 		img: 'gameart-deathloop.jpg',
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/art-print/DEATHLOOP-by-ckirknielsen/106881338.1G4ZT',
+			Society6: 'https://society6.com/product/deathloop_print?sku=s6-23684963p4a1v45',
 		},
 		tags: ['video-games'],
 	},
@@ -200,9 +205,12 @@ module.exports = [
 		img: 'gameart-deadspace.jpg',
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/art-print/Dead-Space-by-ckirknielsen/106878842.1G4ZT',
+			Society6: 'https://society6.com/product/dead-space6791094_print?sku=s6-23685021p4a1v45',
 		},
 		tags: ['video-games'],
 	},
+
+	// Below are designs that are hidden but still accessible via their unique URL
 
 	{
 		showInGallery: false,
@@ -216,6 +224,7 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/poster-and-art/24392079-control-fbc-service-weapon',
 		},
 		tags: ['video-games', 'gaming-arsenal'],
+		similar: ['control'],
 	},
 	{
 		showInGallery: false,
@@ -229,6 +238,7 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/poster-and-art/26802077-deathloop-fourpounder',
 		},
 		tags: ['video-games', 'gaming-arsenal'],
+		similar: ['deathloop'],
 	},
 	{
 		showInGallery: false,
@@ -243,6 +253,7 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/poster-and-art/24830737-god-of-war-leviathan-axe',
 		},
 		tags: ['video-games', 'gaming-arsenal'],
+		similar: ['god-of-war'],
 	},
 	{
 		showInGallery: false,
@@ -282,5 +293,6 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/poster-and-art/27453494-dead-space-plasma-cutter',
 		},
 		tags: ['video-games', 'gaming-arsenal'],
+		similar: ['dead-space'],
 	},
 ];

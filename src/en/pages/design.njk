@@ -22,14 +22,25 @@ backlink: { url: "/designs", label: "Back to Designs" }
   {% endif %}
 
   <div class="c-sidebyside__content u-flow u-padding u-bg--grey-max">
+    {% if design.links %}
     <h2>Available on</h2>
     <ul role="list" class="o-bulletedList u-flow u-flow--small">
       {%- for site, url in design.links %}
         <li><a href="{{ url | url }}">{{ site }}</li>
       {% endfor -%}
     </ul>
+    {% endif %}
     
     {% if design.note %}<p class="u-fontItalic">{% markdown true %}{{ design.note }}{% endmarkdown %}</p>{% endif %}
+    {% if design.similar %}
+    <h2 class="h3">Similar designs:</h2>
+    <ul role="list" class="o-bulletedList u-flow u-flow--small">
+      {%- for otherDesignSlug in design.similar %}
+        {% set otherDesign = designs | itemFromProp('slug', otherDesignSlug) %}
+        <li><a href="{{ '/designs/' + otherDesign.slug + '/' | slug | url }}">{{ otherDesign.name | safe }}</a></li>
+      {% endfor -%}
+    </ul>
+    {% endif %}
   </div>
 </article>
 
@@ -41,6 +52,8 @@ backlink: { url: "/designs", label: "Back to Designs" }
     backlinkEl.addEventListener('click', function (e) {
       e.preventDefault();
       window.history.go(-1);
+      // If there is an issue with history and nothing happens, go to the basic URL after a short while
+      setTimeout(function() { window.location.href = backlinkEl.href; }, 500);
       return false;
     });
   }
