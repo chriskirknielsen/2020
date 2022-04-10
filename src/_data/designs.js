@@ -145,7 +145,7 @@ module.exports = [
 			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/powercell-hunters/1809059/',
 		},
 		tags: ['video-games'],
-		similar: ['crash-bandicoot-wumpa-hoarder'],
+		similar: ['crash-bandicoot-wumpa-hoarder', 'sly-cooper-gentleman-thief'],
 	},
 	{
 		showInGallery: true,
@@ -158,7 +158,20 @@ module.exports = [
 			TeePublic: 'https://www.teepublic.com/t-shirt/25571868-wumpa-hoarder',
 		},
 		tags: ['video-games'],
-		similar: ['jak-daxter-powercell-hunters'],
+		similar: ['jak-daxter-powercell-hunters', 'sly-cooper-gentleman-thief'],
+	},
+	{
+		showInGallery: true,
+		slug: 'sly-cooper-gentleman-thief',
+		name: 'Sly Cooper, Gentleman Thief',
+		description: 'A design inspired by the charismatic thief, who also happens to be a raccoon… Sly Cooper.',
+		img: 'gentleman-thief.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/Gentleman-Thief-by-ckirknielsen/107478068.ADAKE.XYZ',
+			TeePublic: 'https://www.teepublic.com/t-shirt/29290455-gentleman-thief',
+		},
+		tags: ['video-games'],
+		similar: ['jak-daxter-powercell-hunters', 'crash-bandicoot-wumpa-hoarder'],
 	},
 	{
 		showInGallery: true,
