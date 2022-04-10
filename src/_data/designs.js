@@ -172,6 +172,7 @@ module.exports = [
 			Society6: 'https://society6.com/product/control6788779_print?sku=s6-23678622p4a1v45',
 		},
 		tags: ['video-games'],
+		similar: ['control-service-weapon'],
 	},
 	{
 		showInGallery: true,
