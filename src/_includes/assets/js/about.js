@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	showInteractiveKeys();
 	reLabelKeys();
 	showMelodies();
 
@@ -148,8 +149,9 @@ function orientVhsTapes() {
 const melodies = [
 	// Spaces add rhythm to the melody for autoplay
 	'D  D  D  A GD  A GD    J  J  J  K GE  A GD'.split(''), // Vader theme
-	'G  Y   G Y G F Y G   A      G  Y   G Y G F Y G   K'.split(''), // Smeagol theme
+	// 'G  Y   G Y G F Y G   A      G  Y   G Y G F Y G   K'.split(''), // Smeagol theme
 	'ASD G D S A   DGH K J G D  FDS'.split(''), // Shire theme
+	'F  FFFFF EF     F  FFFFFD SD    F A  AASDF    FFGHU    UUHGH GF'.split(''), // Zelda theme
 ];
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const octaveOffset = 1;
@@ -288,6 +290,13 @@ function getKeyboardLayout() {
 	const melodyContainer = document.querySelector('[data-about-keyboard-melodies]');
 	const keyboardLayout = melodyContainer.getAttribute('data-about-keyboard-melodies') || 'QWERTY';
 	return keyboardLayout.toUpperCase();
+}
+
+function showInteractiveKeys() {
+	const waveSelector = document.querySelector('.about__keyboard-settings');
+	if (waveSelector) {
+		waveSelector.removeAttribute('hidden');
+	}
 }
 
 function reLabelKeys() {
