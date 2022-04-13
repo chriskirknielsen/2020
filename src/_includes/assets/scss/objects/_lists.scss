@@ -8,6 +8,7 @@
             content: " ";
             
             letter-spacing: 0.75em;
+            letter-spacing: max(8px, 0.75em); // Ensure there is at least 8px between items
             background: linear-gradient(90deg, transparent calc(50% - 0.03125em), currentColor 0, currentColor calc(50% + 0.03125em), transparent 0);
             opacity: 0.75;
         }
