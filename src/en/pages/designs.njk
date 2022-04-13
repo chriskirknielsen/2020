@@ -13,6 +13,7 @@ navtitle: "Designs"
 <hr class="u-marginBlockStart--double u-marginBlockEnd">
 
 <fieldset class="u-displayFlex u-margin--none u-padding--none | u-border--none | filtering" hidden>
+  <script>document.querySelector('.filtering').hidden=false</script>
   <legend class="u-padding--none | u-fontBold">Filter:</legend>
   {% set tagClasses = "u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half | u-fontBold u-border u-border--accent u-border-radius" %}
   <div class="u-posRelative u-displayFlex u-gap--small u-flex--wrap filtering-list">
@@ -86,8 +87,6 @@ navtitle: "Designs"
 
 <script>
   {% set designsFilter %}
-  var filtering = document.querySelector('.filtering');
-  if (filtering) { filtering.hidden = false; }
   var hashIndicator = 'filter:';
   var initialHash = window.location.hash.slice(1);
   var items = [].slice.call(document.querySelectorAll('[data-tags]'));
