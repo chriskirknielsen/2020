@@ -5,6 +5,10 @@ summary: Nerdy shirt designs by Christopher Kirk-Nielsen
 navtitle: "Designs"
 ---
 
+<p class="u-textCenter u-fontBold u-textSmall">{{ metadata.merch | hyperlinksFromKeyValuePairs(" | ") | safe }}</p>
+
+<hr class="u-marginBlockStart--double u-marginBlockEnd">
+
 <fieldset class="u-displayFlex u-margin--none u-padding--none | u-border--none | filtering" hidden>
   <legend class="u-padding--none | u-fontBold">Filter:</legend>
   {% set tagClasses = "u-displayInlineBlock u-paddingBlock--quarter u-paddingInline--half | u-fontBold u-border u-border--accent u-border-radius" %}
@@ -75,7 +79,7 @@ navtitle: "Designs"
     </div>
   </article>
 {% endfor %}
-</section>
+</div>
 
 <script>
   {% set designsFilter %}

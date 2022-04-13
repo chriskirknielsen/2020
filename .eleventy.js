@@ -116,9 +116,11 @@ module.exports = function (eleventyConfig) {
 				}
 			}
 
+			const finalSvg = iconSvg ? `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="button-icon">${iconSvg}</svg>` : '';
+
 			return `<li class="u-width--100 u-displayFlex u-flex--stretchBlock">
 				<a href="${item.link}" class="u-width--100 ${cssUtilityClasses.boxLink} ${cssUtilityClasses.inlineBoxLink}">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="button-icon">${iconSvg}</svg>
+					${finalSvg}
 					<span class="u-flex--grow-1 u-textCenter">${item.label}</span>
 				</a>
 			</li>`;
@@ -194,12 +196,16 @@ module.exports = function (eleventyConfig) {
 		return array.find((item) => item[prop] === value);
 	});
 
-	eleventyConfig.addFilter('makeUppercase', function (string) {
-		return string.toUpperCase();
+	eleventyConfig.addFilter('hyperlinksFromKeyValuePairs', function (obj, sep = ', ') {
+		return Object.entries(obj)
+			.map(function ([name, url]) {
+				return `<a href="${url}">${name}</a>`;
+			})
+			.join(sep);
 	});
-	eleventyConfig.addFilter('makeLowercase', function (string) {
-		return string.toLowerCase();
-	});
+
+	eleventyConfig.addFilter('makeUppercase', (string) => string.toUpperCase());
+	eleventyConfig.addFilter('makeLowercase', (string) => string.toLowerCase());
 
 	eleventyConfig.addFilter('console', function (value) {
 		const str = util.inspect(value);
