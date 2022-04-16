@@ -1,10 +1,11 @@
 ---
+slug: le-petit-guide-sur-var-let-et-const
 title: Le petit guide sur var, let et const
 summary: Comment distinguer ces mots-clés JavaScript
 date: 2021-08-07
 metaImageBackground: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80'
 tags:
-  - javascript
+    - javascript
 ---
 
 On m'a posé la question mais puisque je n'ai pas trouvé de ressource en français à ce sujet après trois secondes de recherche, voici mon tout petit guide sur `var`, `let`, et `const` en JavaScript.
@@ -17,7 +18,7 @@ Avec `var`, une variable définie dans une boucle comme `for` sera accessible en
 
 ```js
 for (var i = 1; i <= 10; i++) {
-	var txt = 'Je suis numéro '+i;
+	var txt = 'Je suis numéro ' + i;
 }
 console.log(txt); // Renvoie "Je suis numéro 10"
 ```
@@ -27,7 +28,7 @@ Le seul cas qui me vient à l'esprit où une déclaration avec `var` restera cad
 ```js
 for (var i = 1; i <= 10; i++) {
 	function salutations(nom) {
-		var txt = 'Salut, '+nom+' !';
+		var txt = 'Salut, ' + nom + ' !';
 	}
 	console.log(txt); // Renvoie une erreur, "`txt` is not defined" car `txt` appartient à la fonction
 }
@@ -41,7 +42,7 @@ Avec `let` et `const`, plus de problème : les variables déclarées dans un _sc
 
 ```js
 for (var i = 1; i <= 10; i++) {
-	let txt = `Je suis numéro ${ i }`;
+	let txt = `Je suis numéro ${i}`;
 }
 console.log(txt); // Renvoie une erreur, "`txt` is undefined" car `txt` n'existe pas en-dehors du scope de notre boucle
 ```
@@ -80,8 +81,8 @@ Il y a un petit astérisque sur ce point. En effet, nous pouvons modifier le con
 const film = {
 	title: 'Les Visiteurs',
 	sortie: 1993,
-	note: 9
-}
+	note: 9,
+};
 ```
 
 Et bien, nous pouvons tout à fait modifier la valeur d'une de ces propriétés avec `film.note = 10;`, la supprimer avec `delete film.note;` ou en rajouter avec `film.langue = 'fr';`.

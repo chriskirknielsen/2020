@@ -1,11 +1,12 @@
 ---
+slug: inline-lists-with-conditional-separators
 title: Inline lists with conditional separators
 summary: Only show a separator when two items are next to each other, and skip for new lines.
 date: 2020-07-18
 metaImageBackground: 'https://images.unsplash.com/photo-1609885057077-8e7a8b8effe6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80'
 tags:
-  - css
-  - quick-tip
+    - css
+    - quick-tip
 ---
 
 Here's a quick tip that my manager shared with me (thanks Matthew! — and you can find a version of it on [StackOverflow](https://stackoverflow.com/questions/15306108/css-styling-for-horizontal-list-with-bullet-only-between-elements/40162380#40162380), by Tom Robinson from 2016!). I always keep coming back to it, looking in repositories for old projects: I figured it's about time I had an easy way to find it.
@@ -33,18 +34,18 @@ Here's the whole setup, using a pipe as a separator, similar to what I use on my
 */
 
 .inline-list {
-    display: inline-block; /* 1 */
-    padding: 0; /* 2 */
+	display: inline-block; /* 1 */
+	padding: 0; /* 2 */
 }
 
 .inline-list > li {
-    display: inline; /* 3 */
+	display: inline; /* 3 */
 }
 
 .inline-list > li::after {
-    content: " "; /* 4 */
-    letter-spacing: 1em; /* 5 */
-    background: linear-gradient(90deg, transparent calc(50% - 0.03125em), currentColor 0, currentColor calc(50% + 0.03125em), transparent 0); /* 6 */
+	content: ' '; /* 4 */
+	letter-spacing: 1em; /* 5 */
+	background: linear-gradient(90deg, transparent calc(50% - 0.03125em), currentColor 0, currentColor calc(50% + 0.03125em), transparent 0); /* 6 */
 }
 ```
 
@@ -60,15 +61,15 @@ If you try this and the effect doesn't work, you might want to check that your t
 
 ```html
 <ul class="inline-list">
-    <li>
-        <a href="/en">English</a>
-    </li>
-    <li>
-        <a href="/fr">Français</a>
-    </li>
-    <li>
-        <a href="/da">Dansk</a>
-    </li>
+	<li>
+		<a href="/en">English</a>
+	</li>
+	<li>
+		<a href="/fr">Français</a>
+	</li>
+	<li>
+		<a href="/da">Dansk</a>
+	</li>
 </ul>
 ```
 
@@ -76,15 +77,13 @@ The line break and tab between `</a>` and `</li>` will be counted as whitespace 
 
 ```html
 <ul class="inline-list">
-    <li><a href="/en">English</a></li>
-    <li><!--
-        --><a href="/fr">Français</a><!--
+	<li><a href="/en">English</a></li>
+	<li>
+		<!--
+        --><a href="/fr">Français</a
+		><!--
     --></li>
-    <li
-        ><a
-            href="/da"
-        >Dansk</a
-    ></li>
+	<li><a href="/da">Dansk</a></li>
 </ul>
 ```
 

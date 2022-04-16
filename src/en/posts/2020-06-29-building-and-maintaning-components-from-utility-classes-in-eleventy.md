@@ -1,12 +1,13 @@
 ---
+slug: building-and-maintaning-components-from-utility-classes-in-eleventy
 title: Building and maintaining components from utility classes in Eleventy
 summary: Use a collection of utilities to form components without additional CSS.
 date: 2020-06-29
 metaImageBackground: 'https://images.unsplash.com/photo-1593280527195-3f0d612d90dc'
 tags:
-  - css
-  - quick-tip
-  - eleventy
+    - css
+    - quick-tip
+    - eleventy
 ---
 
 I'm a big fan of Eleventy (this site is built with it), and also a big fan of utility-first CSS. You can check this site's source code in your browser or on GitHub: component classes are rarely used. That said, it can be quite frustrating to constantly have to find the same classes you want to use for a component in different situations — components that are at a low enough level that they shouldn't be their own template file, like a styled link or button. Take this example (the `u-` prefix stands for `utility`):
@@ -23,7 +24,7 @@ First, we create a data file in the `_data` folder and name it `utilities.json`.
 
 ```json
 {
-    "buttonLink": "u-displayInlineFlex u-colorPrimary u-backgroundDark u-borderOne u-paddingBlock u-paddingInline--half"
+	"buttonLink": "u-displayInlineFlex u-colorPrimary u-backgroundDark u-borderOne u-paddingBlock u-paddingInline--half"
 }
 ```
 
@@ -42,15 +43,15 @@ We can now call this collection of utility classes very easily, we don't need to
 I ran into a little problem when I was creating some shortcodes that make use of one of these "utility sets". The file wasn't directly called in `.eleventy.js`, but it's not a big deal. You can call your data file like you'd require a plugin in Eleventy in the global scope of the file:
 
 ```js
-const utilities = require("./src/_data/utilities.js"); // Make sure to adjust the path depending on your setup!
+const utilities = require('./src/_data/utilities.js'); // Make sure to adjust the path depending on your setup!
 ```
 
 You're then free to use the utilities in a shortcode definition, like a callout block in the (simplified) example below:
 
 ```js
-eleventyConfig.addPairedShortcode("callout", function(content) {
-    return `<div class="${ utilities.callout }">
-        <p>${ content }</p>
+eleventyConfig.addPairedShortcode('callout', function (content) {
+	return `<div class="${utilities.callout}">
+        <p>${content}</p>
     </div>`;
 });
 ```

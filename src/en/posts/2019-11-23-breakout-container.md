@@ -1,11 +1,12 @@
 ---
+slug: breakout-container
 title: Breakout Container
 summary: Make a contained element span the entire horizontal space.
 date: 2019-11-23
 metaImageBackground: 'https://images.unsplash.com/photo-1552775838-b0c8d3b881fb'
 tags:
-  - css
-  - quick-tip
+    - css
+    - quick-tip
 ---
 
 Here's a quick tip if you have your content limited to a certain width but you want an element to "break out".
@@ -16,8 +17,8 @@ Say you have a `.container` class with a `max-width` value and `margin: 0 auto`:
 
 ```css
 .container {
-  max-width: 48em;
-  margin: 0 auto;
+	max-width: 48em;
+	margin: 0 auto;
 }
 ```
 
@@ -25,9 +26,9 @@ You can break an element out of this container by making it take up the whole sc
 
 ```css
 .breakout {
-  position: relative;
-  left: calc(50% - 50vw);
-  width: 100vw;
+	position: relative;
+	left: calc(50% - 50vw);
+	width: 100vw;
 }
 ```
 
@@ -39,8 +40,8 @@ You should also add `overflow-x: hidden` to the `body` (or a main wrapper around
 
 ```css
 .main {
-  overflow-x: hidden;
-  width: 100%;
+	overflow-x: hidden;
+	width: 100%;
 }
 ```
 
@@ -54,11 +55,9 @@ This method involves wrapping the content in an element. Doing this will allow u
 
 ```html
 <div class="container">
-  <div class="breakout">
-    <div class="breakout--content">
-      Centred content goes here…
-    </div>
-  </div>
+	<div class="breakout">
+		<div class="breakout--content">Centred content goes here…</div>
+	</div>
 </div>
 ```
 
@@ -76,16 +75,18 @@ This `calc` value will take the screen width (`100vw`) minus the maximum width o
 If the screen width is equal to `80em`, the padding will compute to `0`, but if `100vw` is worth `100em`, the padding will evaluate to `(100em - 80em) / 2 = 10em` on each side. Note that `box-sizing: border-box;` is necessary to ensure the padding is subtracted from the full viewport width instead of added to it.
 
 ```css
-* { box-sizing: border-box; }
+* {
+	box-sizing: border-box;
+}
 
 .breakout--contained {
-  padding-inline: calc((100vw - 80em) / 2);
-  /* Logical property, equivalent to setting this value to padding-left and padding-right in left-to-right contexts */
+	padding-inline: calc((100vw - 80em) / 2);
+	/* Logical property, equivalent to setting this value to padding-left and padding-right in left-to-right contexts */
 }
 ```
 
 {% callout %}
-  A media query is not necessary since negative padding values are invalid. 👍
+A media query is not necessary since negative padding values are invalid. 👍
 {% endcallout %}
 
 Let's have a look at the complete code all together now:
@@ -93,4 +94,5 @@ Let's have a look at the complete code all together now:
 {% codepen "https://codepen.io/chriskirknielsen/pen/abzoJWr/", "html,css", "480"  %}
 
 ## More reading
-- [Logical Properties on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)
+
+-   [Logical Properties on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)

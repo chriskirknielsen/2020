@@ -1,15 +1,16 @@
 ---
+slug: modern-fluid-typography-with-clamp
 title: Modern Fluid Typography with clamp()
 summary: Get a more consistent sizing with viewport-based font sizing
 date: 2020-05-20
 metaImageBackground: 'https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg'
 tags:
-  - css
-  - sass
-  - clamp
-  - typography
-  - font
-  - quick-tip
+    - css
+    - sass
+    - clamp
+    - typography
+    - font
+    - quick-tip
 ---
 
 Recently, CSS introduced `min()` and `max()` which are now available in every major browser. Along with those two came `clamp()`, which is basically a wrapper for the combination of the two aforementioned functions, but easier to read: `clamp(MIN, VAL, MAX)` (where `VAL` would usually be a responsive unit). Here's a quick tip to go along with its use!
@@ -22,32 +23,32 @@ You'd probably be using a pre-processor to define these in the past, like so (st
 
 ```scss
 @mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
-    $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
-    $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+	$factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+	$calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
 
-    font-size: $min-value;
+	font-size: $min-value;
 
-    @media screen and (min-width: #{ $min-vw }) {
-        font-size: calc(#{ $calc-value });
-    }
+	@media screen and (min-width: #{ $min-vw }) {
+		font-size: calc(#{$calc-value});
+	}
 
-    @media screen and (min-width: #{ $max-vw }) {
-        font-size: $max-value;
-    }
+	@media screen and (min-width: #{ $max-vw }) {
+		font-size: $max-value;
+	}
 }
 ```
 
 What is nice about this technique is that it results in a linear range that scales with the target size, instead of using the viewport size, which might be excessive or too small to work across the board. I suppose you could simplify the mixin call by having your viewport breakpoints defined as global variables.
 
-What would you say about getting the best of both worlds? We can reuse our code from before, but strip away a few bits and pieces, to get a condensed Sass mixin, *and* a condensed CSS output:
+What would you say about getting the best of both worlds? We can reuse our code from before, but strip away a few bits and pieces, to get a condensed Sass mixin, _and_ a condensed CSS output:
 
 ```scss
 @mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
-    $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
-    $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+	$factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+	$calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
 
-    font-size: $min-value; // Fallback for older browsers
-    font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
+	font-size: $min-value; // Fallback for older browsers
+	font-size: clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
 }
 ```
 
@@ -59,12 +60,12 @@ Here's an example using this mixin, and its result:
 
 ```scss
 p {
-    // Calling the mixin below…
-    @include fluid-type(20rem, 64rem, 1rem, 2rem);
+	// Calling the mixin below…
+	@include fluid-type(20rem, 64rem, 1rem, 2rem);
 
-    // … outputs the following:
-    font-size: 1rem;
-    font-size: clamp(1rem, 0.5454545455rem + 2.2727272727vw, 2rem);
+	// … outputs the following:
+	font-size: 1rem;
+	font-size: clamp(1rem, 0.5454545455rem + 2.2727272727vw, 2rem);
 }
 ```
 
@@ -74,5 +75,5 @@ CSS is a programming language that just keeps getting better!
 
 ## More reading
 
-- [`clamp()` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
-- ["Sass and clamp" on Adactio](https://adactio.com/journal/16887): a deeper look at font sizing with new CSS, which raises some very good points!
+-   [`clamp()` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
+-   ["Sass and clamp" on Adactio](https://adactio.com/journal/16887): a deeper look at font sizing with new CSS, which raises some very good points!

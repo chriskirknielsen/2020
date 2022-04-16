@@ -1,6 +1,6 @@
 {
-  "layout": "layouts/post.njk",
-  "permalink": "blog/{{ title | slug }}/index.html",
-  "tags": ["post"],
-  "language": "en"
+	"layout": "layouts/post.njk",
+	"permalink": "blog/{{ slug | slug }}/index.html",
+	"tags": ["post"],
+	"language": "en"
 }

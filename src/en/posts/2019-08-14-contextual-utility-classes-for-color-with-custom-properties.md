@@ -1,4 +1,5 @@
 ---
+slug: contextual-utility-classes-for-color-with-custom-properties
 title: Contextual Utility Classes for Color with Custom Properties
 summary: Use the cascade to colour links in their context.
 externalHost: CSS-Tricks
@@ -6,7 +7,7 @@ externalUrl: https://css-tricks.com/contextual-utility-classes-for-color-with-cu
 metaImageBackground: 'https://css-tricks.com/wp-content/uploads/2019/08/currentColor.png'
 date: 2019-08-14
 tags:
-  - css
+    - css
 ---
 
 I wrote an article on CSS-Tricks about using the power of the cascade to style links within their context, with custom properties!
