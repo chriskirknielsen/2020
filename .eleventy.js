@@ -155,7 +155,7 @@ module.exports = function (eleventyConfig) {
 				{ width: imageBox.w, height: imageBox.h, format: 'auto', crop: 'fill', gravity: fetchImage ? 'auto' : 'center', color: tint, effect: 'colorize:25' },
 				{ overlay: logo, gravity: 'south_east', x: 32, y: 32, width: 100, color: '#000000', effect: 'outline:fill:4' },
 				{ ...textLayer, width: 900 + outlineSize * 2, color: bg, effect: `outline:fill:${outlineSize}:0` },
-				{ ...textLayer, width: 900, color: color },
+				{ ...textLayer, width: 900 + outlineSize * 2, color: color },
 			],
 		};
 		if (fetchImage) {
