@@ -25,6 +25,6 @@ In most cases, there will be some collision at that mid-point between two neighb
 Finally, here’s a little demo to show you the end result:
 {% codepen "https://codepen.io/chriskirknielsen/pen/zYpmzgj/", "result", "480" %}
 
-{% callout %} This demo uses a pseudo-element behind the tile that expands via `clip-path` but this idea can be applied to a tile that grows with something like `transform: scale(1.1)` as well. {% endcallout %}
+{% callout %} Here, I am using a pseudo-element behind the tile that expands via `clip-path` (this allows to have an absolute "growth" size), but this idea can be applied to a tile that grows with something like `transform: scale(1.1)` as well.{% endcallout %}
 
 This demo is pretty bare-bones; there are accessibility consideration like reduced motion you might want to take into account on a real project!
