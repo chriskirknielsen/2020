@@ -12,5 +12,24 @@
         width: 100%;
     }
 
-    // &__content {}
+    &__content {
+        padding: $spacing;
+    }
+
+    &__title {
+        position: relative;
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            left: #{ $spacing * -1 };
+
+            width: #{ $border-base-radius * 2 };
+            height: #{ $heading-line-height * 1em };
+
+            background: var(--c-primary-med);
+            border-radius: 0 #{ $border-base-radius * 2 } #{ $border-base-radius * 2 } 0;
+    }
+    }
 }

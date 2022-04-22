@@ -24,7 +24,7 @@ h6,
     }
 
     font-weight: 700;
-    line-height: 1.2;
+    line-height: #{ $heading-line-height };
     letter-spacing: #{ $heading-font-letter-spacing };
     color: var(--c-primary-min);
     --currentColor: var(--c-primary-min);
