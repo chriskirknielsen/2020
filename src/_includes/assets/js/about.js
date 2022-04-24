@@ -151,7 +151,7 @@ const melodies = [
 	'D  D  D  A GD  A GD    J  J  J  K GE  A GD'.split(''), // Vader theme
 	// 'G  Y   G Y G F Y G   A      G  Y   G Y G F Y G   K'.split(''), // Smeagol theme
 	'ASD G D S A   DGH K J G D  FDS'.split(''), // Shire theme
-	'F  FFFFF EF     F  FFFFFD SD    F A  AASDF    FFGHU    UUHGH GF'.split(''), // Zelda theme
+	// 'F  FFFFF EF     F  FFFFFD SD    F A  AASDF    FFGHU    UUHGH GF'.split(''), // Zelda theme
 	'HHHH F G H GH    F E F EY YG YG GF E S EA    F E F EY YG YG GF E F YU'.split(''), // Final Fantasy fanfare
 ];
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();

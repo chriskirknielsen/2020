@@ -8,6 +8,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Retro-CSS-by-ckirknielsen/58081555.DYMRA',
 			TeePublic: 'https://www.teepublic.com/t-shirt/14125152-retro-css?store_id=49603',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/retro-css/1831571/',
 		},
 		tags: ['dev', 'css', 'retro'],
 	},
@@ -90,6 +91,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/sticker/CSS-Fact-Sheet-by-ckirknielsen/58082119.EJUG5',
 			TeePublic: 'https://www.teepublic.com/t-shirt/14123881-css-fact-sheet?store_id=49603',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/css-fact-sheet/1831576/',
 		},
 		tags: ['dev', 'css'],
 	},
@@ -206,6 +208,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Wumpa-Hoarder-by-ckirknielsen/94462053.4AE2Y',
 			TeePublic: 'https://www.teepublic.com/t-shirt/25571868-wumpa-hoarder',
+			// DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/wumpa-hoarder/1831579/',
 		},
 		tags: ['video-games'],
 		similar: ['jak-daxter-powercell-hunters', 'sly-cooper-gentleman-thief'],
@@ -219,9 +222,44 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Gentleman-Thief-by-ckirknielsen/107478068.ADAKE.XYZ',
 			TeePublic: 'https://www.teepublic.com/t-shirt/29290455-gentleman-thief',
+			// DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/gentleman-thief/1831582/',
 		},
 		tags: ['video-games'],
 		similar: ['jak-daxter-powercell-hunters', 'crash-bandicoot-wumpa-hoarder'],
+	},
+	{
+		showInGallery: true,
+		slug: 'synth-element',
+		name: 'The Synth Element',
+		description: 'A cross-over between The Fifth Element and synth waveforms.',
+		note: `Stone variations available as well:
+		[TeePublic](https://www.teepublic.com/t-shirt/19884472-the-synth-element-stones),
+		[RedBubble](https://www.redbubble.com/i/t-shirt/The-Synth-Element-Stones-by-ckirknielsen/108914203.UHLBD),
+		[Society6](https://society6.com/product/the-synth-element-stones_mug),
+		[DesignByHumans](https://www.designbyhumans.com/shop/t-shirt/men/the-synth-element-stones/1831897/)
+		`,
+		img: 'synth-element.jpg',
+		links: {
+			TeePublic: 'https://www.teepublic.com/t-shirt/19884473-the-synth-element-symbols',
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/The-Synth-Element-Symbols-by-ckirknielsen/108913348.DYMRA',
+			Society6: 'https://society6.com/product/the-synth-element_coaster',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/the-synth-element-symbols/1831898/',
+		},
+		tags: ['tv-movies'],
+	},
+	{
+		showInGallery: true,
+		slug: 'outatime-trilogy',
+		name: 'OUTATIME Trilogy',
+		description: 'Taking a few elements from the movies to form this little sticker-appropriate design for one of my favourite franchises…',
+		img: 'outatime-trilogy.jpg',
+		links: {
+			TeePublic: 'https://www.teepublic.com/t-shirt/19884473-the-synth-element-symbols',
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/The-Synth-Element-Symbols-by-ckirknielsen/108913348.DYMRA',
+			Society6: 'https://society6.com/product/the-synth-element_coaster',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/the-synth-element-symbols/1831898/',
+		},
+		tags: ['tv-movies'],
 	},
 
 	// Below are designs that are hidden but still accessible via their unique URL
