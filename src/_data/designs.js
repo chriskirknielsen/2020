@@ -208,7 +208,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Wumpa-Hoarder-by-ckirknielsen/94462053.4AE2Y',
 			TeePublic: 'https://www.teepublic.com/t-shirt/25571868-wumpa-hoarder',
-			// DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/wumpa-hoarder/1831579/',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/wumpa-hoarder/1831579/',
 		},
 		tags: ['video-games'],
 		similar: ['jak-daxter-powercell-hunters', 'sly-cooper-gentleman-thief'],
@@ -222,7 +222,7 @@ module.exports = [
 		links: {
 			RedBubble: 'https://www.redbubble.com/i/t-shirt/Gentleman-Thief-by-ckirknielsen/107478068.ADAKE.XYZ',
 			TeePublic: 'https://www.teepublic.com/t-shirt/29290455-gentleman-thief',
-			// DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/gentleman-thief/1831582/',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/gentleman-thief/1831582/',
 		},
 		tags: ['video-games'],
 		similar: ['jak-daxter-powercell-hunters', 'crash-bandicoot-wumpa-hoarder'],
@@ -255,9 +255,7 @@ module.exports = [
 		img: 'outatime-trilogy.jpg',
 		links: {
 			TeePublic: 'https://www.teepublic.com/sticker/29680717-outatime-trilogy',
-			RedBubble: 'https://www.redbubble.com/i/sticker/OUTATIME-Trilogy-by-ckirknielsen/108839611.EJUG5',
 			Society6: 'https://society6.com/product/outatime-trilogy6857092_sticker',
-			DesignByHumans: 'https://www.designbyhumans.com/shop/sticker/outatime-trilogy/1831893/',
 		},
 		tags: ['tv-movies'],
 	},
