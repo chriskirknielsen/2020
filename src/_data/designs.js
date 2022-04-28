@@ -117,7 +117,7 @@ module.exports = [
 		note: 'Designed for the State of CSS survey, 2021 edition',
 		img: 'css-retro-vhs.jpg',
 		links: {
-			CottonBureau: 'https://cottonbureau.com/products/css-retro-vhs-t-shirt#/13046404/tee-men-standard-tee-vintage-black-tri-blend-s',
+			CottonBureau: 'https://cottonbureau.com/products/css-retro-vhs#/13046404/tee-men-standard-tee-vintage-black-tri-blend-s',
 		},
 		tags: ['dev', 'css', 'vhs', 'retro'],
 		similar: ['js-retro-vhs'],
@@ -130,7 +130,7 @@ module.exports = [
 		note: 'Designed for the State of JS survey, 2021 edition',
 		img: 'js-retro-vhs.jpg',
 		links: {
-			CottonBureau: 'https://cottonbureau.com/products/js-retro-vhs#/13799357/tee-men-standard-tee-vintage-black-tri-blend-s',
+			CottonBureau: 'https://cottonbureau.com/products/javascript-retro-vhs#/13799357/tee-men-standard-tee-vintage-black-tri-blend-s',
 		},
 		tags: ['dev', 'js', 'vhs', 'retro'],
 		similar: ['css-retro-vhs'],
