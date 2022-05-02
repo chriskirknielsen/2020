@@ -232,7 +232,7 @@ module.exports = [
 		slug: 'synth-element',
 		name: 'The Synth Element',
 		description: 'A cross-over between The Fifth Element and synth waveforms.',
-		note: `Stone variations available as well:
+		note: `Stone variations:
 		[TeePublic](https://www.teepublic.com/t-shirt/19884472-the-synth-element-stones),
 		[RedBubble](https://www.redbubble.com/i/t-shirt/The-Synth-Element-Stones-by-ckirknielsen/108914203.UHLBD),
 		[Society6](https://society6.com/product/the-synth-element-stones_mug),

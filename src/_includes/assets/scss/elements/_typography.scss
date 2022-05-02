@@ -90,6 +90,10 @@ p {
     hyphens: auto;
 }
 
+em {
+    color: var(--c-secondary-med);
+}
+
 :not([class]) > li + li {
     margin-top: 0.5em;
 }
