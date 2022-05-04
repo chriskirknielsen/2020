@@ -131,6 +131,7 @@ $about-delorean-transition-duration: 400;
                 "qu03 qu03 qu03 qu03"
             ;
             grid-column-gap: $about-gap;
+            grid-row-gap: 0.5rem;
             grid-template-columns: 2fr 1fr 1fr 2fr;
 
             & > * { margin: 0; }

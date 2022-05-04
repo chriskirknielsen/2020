@@ -5,7 +5,7 @@
     margin-bottom: 0;
 }
 
-.u-flow > :is(h2, h3) + * { --flow-margin: #{ $base-flow-spacing * 0.25 }; }
+.u-flow > :is(h2, h3) + * { --flow-margin: #{ $base-flow-spacing * 0.5 }; }
 .u-flow > h2 + h3 { --flow-margin: #{ $base-flow-spacing * 0.125 }; }
 .u-flow--small > * { --flow-margin: #{ $base-flow-spacing * 0.5 }; }
 
