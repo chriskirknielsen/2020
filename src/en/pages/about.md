@@ -77,7 +77,7 @@ I'll occasionally go back to my designer roots and make some little projects. I'
 
 ### Chronoise
 
-If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production.
+If I'm not doing web-related things, I might be making **electronica music** as [Chronoise](https://chronoise.com), which is a side project I started back in 2010. With no music theory training, it hasn't been easy but it's so fun to experiment with sounds, and there are so many resources available online to learn about music production. In recent years I haven't really had the opportunity to write music, but as much as I suck at guitar, I like having a little session here and there to build up my calluses!
 
   <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-gap u-flex--column u-flex--center" data-grid-el="trinket-keyboard">
     {% set keyboard -%}
@@ -103,9 +103,9 @@ Like many other humans, listening to music is a big part of my life, mainly rock
 
 If you like some fantasy or science-fiction books, let me know because I love that stuff. I'm also very much into movies and TV shows, not too picky on the genre there (though horror is not my cup of tea) as long as it is in the original language.
 
-  <p class="about__quotebox" data-grid-el="quote-accent">My English accent is weird and all over the place.</p>
+  <p class="about__quotebox" data-grid-el="quote-accent">My English accent is weird and all over the place, but it isn't French.</p>
 
-**I'm originally from Lyon, France**, with immigrant parents from Denmark, and I spent some time in Australia growing up. As a result, I speak English, French and Danish fluently. I also learned some Italian, can read the Cyrillic alphabet, and would like to get back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
+**I'm originally from Lyon, France**, with immigrant parents from Denmark, and I spent some time in Australia growing up. As a result, I speak English, French and Danish fluently. I also learned some Italian, can read the Cyrillic alphabet (just read, that is), and am slowly getting back into Japanese. I love languages, if you couldn't tell, and wouldn't mind learning more!
 
 ## Sure, I'm a professional
 

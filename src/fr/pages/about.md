@@ -77,7 +77,7 @@ Parfois, je retourne à mes origines de graphiste et crée de petits projets. Vo
 
 ### Chronoise
 
-Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique.
+Quand je ne suis pas occupé à faire des choses sur le web, je suis potentiellement en train de faire de la **musique électronique** sous le nom de [Chronoise](https://chronoise.com), qui est un petit projet débuté en 2010. Sans aucune éducation musicale, ce n'a pas été facile mais c'est très amusant d'expérimenter avec divers sons et il y a tellement de ressources disponible en ligne pour apprendre à créer de la musique. Ces dernières années, je n'ai pas eu beaucoup de temps pour écrire des morceaux mais même si je suis assez mauvais avec une guitare, j'aime faire une session çà et là pour me dégourdir les mains !
 
   <div class="u-marginBlockEnd u-marginInline--auto u-displayFlex u-gap u-flex--column u-flex--center" data-grid-el="trinket-keyboard">
     {% set keyboard -%}
@@ -105,7 +105,7 @@ Si vous avez des recommandations de livres de fantaisie ou de science-fiction, j
 
   <p class="about__quotebox" data-grid-el="quote-accent">Mon accent anglais est un mélange de tout, c'est un peu bizarre.</p>
 
-Je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark et j'ai passé quelques temps en Australie durant mon enfance. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien et j'aimerais reprendre le japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
+Je suis **originaire de Lyon, en France**, avec des parents immigrés du Danemark et j'ai passé quelques temps en Australie durant mon enfance. Par conséquent, je parle français, anglais et danois couramment, je me débrouille en italien, je sais lire l'alphabet cyrillique (juste le lire) et j'ai repris un peu de japonais. J'adore les langues étrangères, si ce n'était pas déjà évident, et en apprendre d'autres serait bienvenu !
 
 ## Oui oui, je suis un pro
 

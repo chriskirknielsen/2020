@@ -38,4 +38,4 @@ The trick for me is to not go down a rabbit hole and define a type with JSDoc fo
 
 This isn't _exactly_ what TypeScript offers, I know, but it's a similar idea and, well, I guess I'm saying I kind of like it. Having control about when to add details to a piece of code, and being able to execute it without transforming it from TS to JS — all pros, no cons. And hey, if you like TypeScript, cool, I ain't a hater! All the more power to you!
 
-On this topic, [this TC39 proposal for type annotations](https://github.com/tc39/proposal-type-annotations) has got me a little excited (which is rare, I'm usually more excited by CSS stuff!)!
+On this topic, [this TC39 proposal for type annotations](https://github.com/tc39/proposal-type-annotations) has got me a little excited (which is rare, I'm usually more excited by CSS stuff)!
