@@ -259,6 +259,19 @@ module.exports = [
 		},
 		tags: ['tv-movies'],
 	},
+	{
+		showInGallery: true,
+		slug: 'it-crowd-four-five-fire',
+		name: 'Four, I mean Five, I mean Fire!',
+		description: 'One of my favourite quotes from Maurice Moss in the I.T. Crowd…',
+		img: 'it-crowd-four-five-fire.jpg',
+		links: {
+			TeePublic: 'https://www.teepublic.com/t-shirt/30106971-four-i-mean-five-i-mean-fire',
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/Four-I-mean-Five-I-mean-Fire-by-ckirknielsen/110315180.1482B.XYZ',
+			DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/four-i-mean-five-i-mean-fire/1834133/',
+		},
+		tags: ['tv-movies'],
+	},
 
 	// Below are designs that are hidden but still accessible via their unique URL
 
