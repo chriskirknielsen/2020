@@ -111,6 +111,19 @@ module.exports = [
 	},
 	{
 		showInGallery: true,
+		slug: 'vaporwave-aesthetics-css',
+		name: 'Vaporwave Aesthetics CSS',
+		description: 'Enjoy the nostalgic aesthetic of CSS!',
+		img: 'vaporwave-aesthetics-css.jpg',
+		links: {
+			RedBubble: 'https://www.redbubble.com/i/t-shirt/Vaporwave-Aesthetics-CSS-by-ckirknielsen/110853198.M4A2N',
+			TeePublic: 'https://www.teepublic.com/t-shirt/30315700-vaporwave-aesthetics-css',
+			// DesignByHumans: 'https://www.designbyhumans.com/shop/t-shirt/men/retro-css/1831571/',
+		},
+		tags: ['dev', 'css', 'retro'],
+	},
+	{
+		showInGallery: true,
 		slug: 'css-retro-vhs',
 		name: 'CSS Retro VHS',
 		description: "Show your appreciation for everybody's favorite way to style the web with this retro shirt inspired by '90s VHS blank tapes",
