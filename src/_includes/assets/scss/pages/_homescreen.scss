@@ -10,6 +10,7 @@
 
 .homescreen {
     --homescreen-sky-end: #791e74;
+    --homescreen-sun-end: var(--c-primary-max);
     --homescreen-floor-start: #1e0347;
     
     $grid-size: .5;
@@ -28,14 +29,15 @@
     $sun-top: #ed23af;
     $sun-middle: #ffafa3;
     $sun-bottom: #ffffe9;
-    $sun-ref-top: #9d3472;
-    $sun-ref-bottom: #3c0328;
+    $sun-ref-top: unquote('var(--c-primary-med)');
+    $sun-ref-bottom: unquote('var(--homescreen-sun-end)');
     $sun-glow: $sun-top;
     // Hardcode all color values since we don't want this to be affected by color schemes
     
     @include light-mode {
         --homescreen-sky-end: #ecb43a;
-        --homescreen-floor-start: hotpink;
+        --homescreen-floor-start: #f774b5;
+        --homescreen-sun-end: #ff9ece;
     }
 
     width: 100%;
