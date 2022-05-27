@@ -7,7 +7,7 @@ permalink: "designs/{{ design.slug | slug }}/"
 eleventyExcludeFromCollections: true
 eleventyComputed:
   displayTitle: "{{ design.name | safe }}"
-  title: "Design — {{ design.name | safe }}"
+  title: "{{ design.name | safe }} — Design"
   subtitle: "{{ design.description | safe }}"
   summary: "{{ design.description | safe }} | Design by Christopher Kirk-Nielsen"
   customMetaImage: "{{ '/' + metadata.assetUrl.designsFolder + '/' + design.img }}"

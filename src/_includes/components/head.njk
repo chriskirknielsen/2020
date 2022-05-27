@@ -18,15 +18,13 @@
 	{% set meta_image_url %}
 		{% if customMetaImage %}
 			{{ customMetaImage | url | absoluteUrl(metadata.url) }}
-		{% elif section == "post" %}
-			{{ (navtitle or title or renderData.title) | cloudinaryMeta(metaImageBackground) }}
 		{% else %}
 			{{ '/assets/img/metaimage.jpg' | url | absoluteUrl(metadata.url) }}
 		{% endif %}
 	{% endset %}
 	<meta name="twitter:image" property="og:image" content="{{ meta_image_url | trim }}">
 	<meta name="twitter:image:alt" property="og:image:alt" content="{{ navtitle or title or renderData.title }}" />
-	<meta name="twitter:card" content="{% if section == "post" or customMetaImage %}summary_large_image{% else %}summary{% endif %}" />
+	<meta name="twitter:card" content="summary" />
 
 	{# Add a slash in the final markup for root access #}
 	{# {% set globalStylesPath = "/" + metadata.assetUrl.globalStyles %}
