@@ -116,11 +116,20 @@ function getXOffset(el, currentX) {
 function orientVhsTapes() {
 	requestAnimationFrame(orientVhsTapes);
 
-	if (mousePosition.new === false || mousePosition.x === false) {
+	const prop = '--orientation-factor';
+
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		vhsTapesList.forEach(function (vhs, index) {
+			// const influence = numRemap(index, 0, vhsTapesList.length - 1, 1, -1);
+			vhs.style.removeProperty(prop);
+		});
+
 		return;
 	}
 
-	const prop = '--orientation-factor';
+	if (mousePosition.new === false || mousePosition.x === false) {
+		return;
+	}
 
 	// If the wrapper isn't the context, reset all the tapes
 	// if (e.type === 'mouseout') { return vhsTapesList.forEach(vhs => vhs.style.removeProperty(prop)); }
