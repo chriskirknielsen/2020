@@ -22,7 +22,7 @@
 
 		<nav aria-labelledby="footer-extras-links-title" class="footer__nav" data-footer-nav="extras">
 			<h2 class="h3" id="footer-extras-links-title">{{ localisedContent.footerAdditionalLinks }}</h2>
-			<ul role="list" class="o-bulletedList">
+			<ul>
 				{%- set getAcknowledgementsPage = collections | getLocalisedPage('acknowledgements', locale) -%}
 				<li><a href="{{ getAcknowledgementsPage.data.permalink | url }}">{{ getAcknowledgementsPage.data.navtitle }}</a></li>
 				<li><a href="{{ '/fonts' | url }}">{{ localisedContent.customFonts }}</a></li>
@@ -31,7 +31,7 @@
 
 		<nav aria-labelledby="footer-language-links-title" class="footer__nav" data-footer-nav="lang">
 			<h2 class="h3" id="footer-language-links-title">{{ localisedContent.langLabel }}</h2>
-			<ul role="list" class="o-bulletedList">
+			<ul>
 			{% for langCode, langData in metadata.languages %}
 				{%- set langUrl = (langData.path + "/") if langData.path != metadata.primaryLang else langData.path -%}
 				<li><a href="{{ langUrl | url }}" hreflang="{{ langCode }}">{{ langData.label }}</a></li>
@@ -42,7 +42,7 @@
 		<nav aria-labelledby="footer-external-links-title" class="footer__nav" data-footer-nav="external">
 			<h2 class="h3" id="footer-external-links-title">{{ localisedContent.externalLinks }}</h2>
 
-			<ul role="list" class="o-bulletedList">
+			<ul>
 				<li><a href="{{ localeRssUrl }}" aria-label="{{ localisedContent.rssHint }}">RSS</a></li>
 			{% for social in social %}
 				<li><a href="{{ social.url | url }}">{{ social.name }}</a></li>

@@ -4,6 +4,10 @@ ol {
     list-style-position: inside;
 }
 
+ul {
+    list-style-type: square;
+}
+
 .o-inlineList {
     display: inline-block;
     line-height: calc(#{$base-line-height * 1em} + 0.5rem);
@@ -20,8 +24,4 @@ ol {
             opacity: 0.75;
         }
     }
-}
-
-.o-bulletedList {
-    list-style-type: square;
 }
