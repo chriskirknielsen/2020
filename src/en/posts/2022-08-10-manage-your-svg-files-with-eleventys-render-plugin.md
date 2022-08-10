@@ -1,6 +1,6 @@
 ---
 slug: manage-your-svg-files-with-eleventys-render-plugin
-title: "Manage your SVG files with Eleventy’s Render plugin"
+title: 'Manage your SVG files with Eleventy’s Render plugin'
 summary: Using renderFile to keep things tidy
 date: 2022-08-10
 metaImageBackground: 'https://images.unsplash.com/photo-1611764553921-437fb44f747a?ixlib=rb-1.2.1&q=60&cs=tinysrgb&fm=jpg&crop=entropy&w=900'
@@ -16,7 +16,7 @@ Recently, I’ve been working on a new version of my site, still using Eleventy,
 
 In earlier versions of Eleventy, I would typically do something like this:
 
-```njk
+```jinja2
 {% set svgRssIconData = { class: 'icon', title; 'RSS' } %}
 {% include 'assets/svg/rss.svg.njk' %}
 ```
@@ -33,7 +33,7 @@ This works fine, but there are some improvements that can be made:
 
 With [Eleventy’s render plugin in v1.0.0](https://www.11ty.dev/docs/plugins/render/), this all becomes quite possible with the `renderFile` shortcode! After importing the plugin info my configuration file, this is how it looks:
 
-```njk
+```jinja2
 {% renderFile './src/_includes/assets/svg/rss.svg.njk', { class: 'icon', title; 'RSS' } %}
 ```
 
@@ -49,7 +49,7 @@ eleventyConfig.addFilter('svgUrl', (filename) => `./src/_includes/assets/svg/${f
 
 And with the example above, I can now only use the filename and let the filter expand that into the full path, which the `renderFile` shortcode can use:
 
-```njk
+```jinja2
 {% renderFile 'rss' | svgUrl, { class: 'icon', title; 'RSS' } %}
 ```
 
@@ -65,13 +65,13 @@ eleventyConfig.addFilter('svgUrl', (filename, isNjk = true) => `./src/_includes/
 
 Since `isNjk` defaults to `true` here, I can ignore it in most cases, and set `false` in the few cases I needed:
 
-```njk
+```jinja2
 {% renderFile 'grid' | svgUrl(false) %}
 ```
 
 What’s this `Unknown engine for ./src/_includes/assets/svg/grid.svg`? A render error? Well, the solution is to tell it to render as plain HTML using the shortcode’s third parameter to override the target file’s template engine — meaning the second argument must also be passed (`null` will do!):
 
-```njk
+```jinja2
 {% renderFile 'grid' | svgUrl(false), null, 'html' %}
 ```
 
