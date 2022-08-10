@@ -17,7 +17,7 @@ Recently, I’ve been working on a new version of my site, still using Eleventy,
 In earlier versions of Eleventy, I would typically do something like this:
 
 ```jinja2
-{% set svgRssIconData = { class: 'icon', title; 'RSS' } %}
+{% set svgRssIconData = { class: 'icon', title: 'RSS' } %}
 {% include 'assets/svg/rss.svg.njk' %}
 ```
 
@@ -34,10 +34,10 @@ This works fine, but there are some improvements that can be made:
 With [Eleventy’s render plugin in v1.0.0](https://www.11ty.dev/docs/plugins/render/), this all becomes quite possible with the `renderFile` shortcode! After importing the plugin info my configuration file, this is how it looks:
 
 ```jinja2
-{% renderFile './src/_includes/assets/svg/rss.svg.njk', { class: 'icon', title; 'RSS' } %}
+{% renderFile './src/_includes/assets/svg/rss.svg.njk', { class: 'icon', title: 'RSS' } %}
 ```
 
-As you can see, it’s all a on a single line, which scientifically means It’s Totally Better™, and the data that’s passed down is scoped — no more variables polluting the template! This crosses off the two first items on my list. What about the path?
+As you can see, it’s all on a single line, which scientifically means It’s Totally Better™, and the data that’s passed down is scoped — no more variables polluting the template! This crosses off the two first items on my list. What about the path?
 
 Being a developer, I will look for solutions that allow me to be lazy and write as little as possible. I couldn’t just apply a custom filter to a string and be done, could I? That’d be too easy…
 
@@ -50,7 +50,7 @@ eleventyConfig.addFilter('svgUrl', (filename) => `./src/_includes/assets/svg/${f
 And with the example above, I can now only use the filename and let the filter expand that into the full path, which the `renderFile` shortcode can use:
 
 ```jinja2
-{% renderFile 'rss' | svgUrl, { class: 'icon', title; 'RSS' } %}
+{% renderFile 'rss' | svgUrl, { class: 'icon', title: 'RSS' } %}
 ```
 
 That looks pretty concise and easy to remember in my book! I do wish I could wrap the string and filter in parentheses (like `('rss' | svgUrl)`) to compartmentalise each bit of code but sadly it doesn’t like that — if you know why please let me know!
