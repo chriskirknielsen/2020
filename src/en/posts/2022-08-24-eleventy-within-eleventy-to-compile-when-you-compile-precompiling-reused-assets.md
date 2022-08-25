@@ -129,7 +129,7 @@ And now, when the main Eleventy build runs, it’ll run this beforehand, creatin
 {% endraw %}
 ```
 
-The `jsmin` filter now runs once on the same piece of code instead of running on every single page using this layout. It’s a minor optimisation, for sure, but it does make my build time non-trivially faster, so I’ll take it. Given I have 2 scripts and about 80 pages, that's running it twice instead of 160 times, so technically 4000% faster, I guess? Someone who is good at maths please help me calculate this. My statistic is dying.
+The `jsmin` filter now runs once on the same piece of code instead of running on every single page using this layout. It’s a minor optimisation, for sure, but it does make my build time non-trivially faster, so I’ll take it. Given I have 2 scripts and about 80 pages, that's running it twice instead of 160 times, so technically an improvement of 98.75%, I guess? Someone who is good at maths please help me calculate this. My statistic is dying.
 
 ### Uh oh, it’s looping
 
@@ -167,4 +167,4 @@ And that’s it. That’s my hacky solution. But then [on Twitter, I was asked a
 
 # Using a global data file instead
 
-I couldn’t make it work. Maybe I need more cafeine but couldn't figure out where to start, sorry!
+I couldn’t make it work. Maybe I need more caffeine but couldn't figure out where to start, sorry!
