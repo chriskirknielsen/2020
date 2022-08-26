@@ -163,8 +163,44 @@ permalink: head-script.js
 The file is rendered with the HTML engine since that effectively passes it as plaintext, as [noted in the docs](https://www.11ty.dev/docs/languages/), preventing any unnecessary transformations on the file.
 {% endcallout %}
 
-And that’s it. That’s my hacky solution. But then [on Twitter, I was asked about if I had tried a global data file](https://twitter.com/eleven_ty/status/1562480526396919808)… here’s what I came up with.
+One caveat is that those files get rendered at the root of the main build due to the `permalink` in the frontmatter but I'm sure that could be worked around. And that’s it. That’s my hacky solution. But then [on Twitter, I was asked about if I had tried a global data file](https://twitter.com/eleven_ty/status/1562480526396919808)… here’s what I came up with.
 
-# Using a global data file instead
+## Using a global data file instead
 
 I couldn’t make it work. Maybe I need more caffeine but couldn't figure out where to start, sorry!
+
+## Quick update
+
+After publishing this post, [Zach proposed using a custom cache solution](https://twitter.com/eleven_ty/status/1562796287786754049) which is indeed a great idea! I made a minor adjustment to set a particular cache key (so the filter can be called like `… | jsmin('someKey')`), but the idea is the same:
+
+```js
+const jsminCache = {};
+// ...
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addNunjucksAsyncFilter('jsmin', async function (code, ...rest) {
+		const callback = rest.pop();
+		const cacheKey = rest.length > 0 ? rest[0] : null;
+
+		try {
+			if (cacheKey && jsminCache.hasOwnProperty(cacheKey)) {
+				callback(null, jsminCache[cacheKey]);
+			} else {
+				const minified = await minify(code);
+				if (cacheKey) {
+					jsminCache[cacheKey] = minified.code;
+				}
+				callback(null, minified.code);
+			}
+		} catch (err) {
+			console.error('Terser error: ', err);
+			callback(null, code); // Fail gracefully.
+		}
+	});
+};
+```
+
+Given [the callback is always the last argument in an async Nunjucks filter](https://www.11ty.dev/docs/languages/nunjucks/#asynchronous-nunjucks-filters), I used rest parameters to get an array of the arguments. By using `.pop()`, I get the last value in the `rest` array, no matter the length, and it is removed from the array. Whatever is left is either the cache key, or if the filter was used without a second argument, the array will have no items, so I define the key as `null`.
+
+Running Eleventy in Eleventy is a fun challenge, but this caching solution is simple, elegant, and also quicker! I ran my build five times and the caching technique was significantly faster. On average, precompiling took 3.36 seconds, while caching took 2.15 seconds. It's not really surprising, but a 36% build-time decrease is definitely better.
+
+So there you have it. My hacky solution is not a great idea for my use case. But if you have some, please let me know, I'd be super curious to hear what you come up with!
