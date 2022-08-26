@@ -183,13 +183,14 @@ module.exports = function (eleventyConfig) {
 
 		try {
 			if (cacheKey && jsminCache[cacheKey]) {
-				callback(null, jsminCache[cacheKey]);
+				const cacheValue = await Promise.resolve(jsminCache[cacheKey]); // Wait for the data, wrapped in a resolved promise in case the original value already was resolved
+				callback(null, cacheValue.code); // Access the code property of the cached value
 			} else {
-				const minified = await minify(code);
+				const minified = minify(code);
 				if (cacheKey) {
-					jsminCache[cacheKey] = minified.code;
+					jsminCache[cacheKey] = minified; // Store the promise which has the minified output (an object with a code property)
 				}
-				callback(null, minified.code);
+				callback(null, await minified.code); // Await and use the return value in the callback
 			}
 		} catch (err) {
 			console.error('Terser error: ', err);
