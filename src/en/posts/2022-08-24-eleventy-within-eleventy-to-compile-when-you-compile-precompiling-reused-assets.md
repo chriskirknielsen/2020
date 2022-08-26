@@ -182,7 +182,7 @@ module.exports = function (eleventyConfig) {
 		const cacheKey = rest.length > 0 ? rest[0] : null;
 
 		try {
-			if (cacheKey && jsminCache.hasOwnProperty(cacheKey)) {
+			if (cacheKey && jsminCache[cacheKey]) {
 				callback(null, jsminCache[cacheKey]);
 			} else {
 				const minified = await minify(code);
