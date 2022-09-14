@@ -27,7 +27,7 @@ I have needed this but with a specific number of columns: I want 3 columns when 
 }
 ```
 
-I define four pseudo-private custom properties, denoted by an underscore as a prefix (yet another excellent [Lea Verou idea](https://lea.verou.me/2021/10/custom-properties-with-defaults/)). The `.grid` element can take overrides with the `style` attribute, such as `style="--cols: 4; --gap: 10px;"`. The grid is set up with `display: grid;` and the gap between each item is controlled by the `--gap` variable.
+I define four pseudo-private custom properties, denoted by an underscore as a prefix (yet another excellent [Lea Verou idea](https://lea.verou.me/2021/10/custom-properties-with-defaults/)). The `.grid` element can take overrides with the `style` attribute, such as `style="--cols: 4; --gap: 10px;"`. The grid is set up with `display: grid;` and the gap between each item is controlled by the `--_gap` variable.
 
 Now for the interesting part, `grid-template-columns`, which looks a bit complex, so let me break it down:
 
