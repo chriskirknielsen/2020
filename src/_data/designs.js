@@ -173,6 +173,7 @@ module.exports = [
 			Society6: 'https://society6.com/product/god-of-war6788801_print?sku=s6-23678708p4a1v45',
 		},
 		tags: ['video-games'],
+		similar: ['god-of-war-leviathan-axe'],
 	},
 	{
 		showInGallery: true,
@@ -185,6 +186,7 @@ module.exports = [
 			Society6: 'https://society6.com/product/deathloop_print?sku=s6-23684963p4a1v45',
 		},
 		tags: ['video-games'],
+		similar: ['deathloop-fourpounder'],
 	},
 	{
 		showInGallery: true,
@@ -197,6 +199,7 @@ module.exports = [
 			Society6: 'https://society6.com/product/dead-space6791094_print?sku=s6-23685021p4a1v45',
 		},
 		tags: ['video-games'],
+		similar: ['dead-space-plasma-cutter'],
 	},
 	{
 		showInGallery: true,
